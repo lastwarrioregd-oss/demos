@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go! Coffee | Cafetería de Especialidad en Gijón</title>
+    <meta name="description" content="Descubre Go! Coffee en Gijón. El mejor café de especialidad, desayunos, repostería artesanal y un ambiente acogedor en el centro de Gijón. ¡Reserva tu mesa!">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        terracota: {
+                            DEFAULT: '#b45309',
+                            dark: '#92400e',
+                            light: '#d97706',
+                        },
+                        crema: {
+                            DEFAULT: '#fdfbf7',
+                            dark: '#f4ede2',
+                            light: '#ffffff'
+                        },
+                        gourmet: {
+                            DEFAULT: '#1c1917',
+                            light: '#292524'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-crema text-gourmet font-sans antialiased selection:bg-terracota selection:text-white">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-crema/90 backdrop-blur-md border-b border-gourmet/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2">
+                <span class="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-gourmet">
+                    Go! <span class="text-terracota italic">Coffee</span>
+                </span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm lg:text-base">
+                <a href="#inicio" class="hover:text-terracota transition-colors">Inicio</a>
+                <a href="#sobre-nosotros" class="hover:text-terracota transition-colors">Filosofía</a>
+                <a href="#carta" class="hover:text-terracota transition-colors">Nuestra Carta</a>
+                <a href="#galeria" class="hover:text-terracota transition-colors">Instalaciones</a>
+                <a href="#opiniones" class="hover:text-terracota transition-colors">Reseñas</a>
+                <a href="#contacto" class="hover:text-terracota transition-colors">Ubicación</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="hidden md:block">
+                <a href="https://wa.me/34695097903" target="_blank" rel="noopener noreferrer" 
+                   class="bg-terracota hover:bg-terracota-dark text-white font-medium px-5 py-2.5 rounded-full transition-all shadow-md hover:shadow-lg flex items-center gap-2 text-sm">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Reservar Mesa</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-gourmet text-2xl focus:outline-none" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-crema border-b border-gourmet/10 shadow-xl py-6 px-6 flex flex-col gap-4 animate-fadeIn">
+            <a href="#inicio" class="mobile-link text-lg font-medium hover:text-terracota">Inicio</a>
+            <a href="#sobre-nosotros" class="mobile-link text-lg font-medium hover:text-terracota">Filosofía</a>
+            <a href="#carta" class="mobile-link text-lg font-medium hover:text-terracota">Nuestra Carta</a>
+            <a href="#galeria" class="mobile-link text-lg font-medium hover:text-terracota">Instalaciones</a>
+            <a href="#opiniones" class="mobile-link text-lg font-medium hover:text-terracota">Reseñas</a>
+            <a href="#contacto" class="mobile-link text-lg font-medium hover:text-terracota">Ubicación</a>
+            <a href="https://wa.me/34695097903" target="_blank" rel="noopener noreferrer" 
+               class="bg-terracota text-white font-medium px-5 py-3 rounded-full text-center flex items-center justify-center gap-2 mt-2">
+                <i class="fa-brands fa-whatsapp text-xl"></i>
+                <span>Reservar Mesa</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative min-h-screen pt-28 pb-16 md:pt-36 md:pb-24 flex items-center overflow-hidden bg-gourmet text-white">
+        <div class="absolute inset-0 z-0 opacity-40 mix-blend-overlay">
+            <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1920&q=80" 
+                 referrerpolicy="no-referrer" 
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                 alt="Go! Coffee Gijón Ambiente" class="w-full h-full object-cover">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-r from-gourmet via-gourmet/90 to-transparent z-0"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 bg-terracota/20 border border-terracota/40 px-4 py-1.5 rounded-full text-terracota-light text-sm font-medium tracking-wide uppercase">
+                    <i class="fa-solid fa-mug-hot"></i>
+                    <span>Cafetería de Especialidad en Gijón</span>
+                </div>
+                <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
+                    El arte de disfrutar un <span class="text-terracota italic">café excepcional</span> en el centro
+                </h1>
+                <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-light">
+                    Ubicados en C. de los Moros, Go! Coffee es tu refugio perfecto en Gijón. Gran profesionalidad, atención cercana y una calidad inigualable en cada taza y bocado.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                    <a href="https://wa.me/34695097903" target="_blank" rel="noopener noreferrer" 
+                       class="w-full sm:w-auto bg-terracota hover:bg-terracota-dark text-white font-semibold px-8 py-4 rounded-full transition-all shadow-lg hover:shadow-terracota/30 flex items-center justify-center gap-3 text-base">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span>Reservar Mesa</span>
+                    </a>
+                    <a href="#carta" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white border border-white/20 font-medium px-8 py-4 rounded-full transition-all text-center">
+                        Ver Nuestra Carta
+                    </a>
+                </div>
+
+                <!-- Quick Badges -->
+                <div class="grid grid-cols-3 gap-4 pt-8 border-t border-white/10 max-w-lg mx-auto lg:mx-0">
+                    <div class="text-center lg:text-left">
+                        <p class="font-serif text-2xl font-bold text-terracota-light">100%</p>
+                        <p class="text-xs text-gray-400">Café de Especialidad</p>
+                    </div>
+                    <div class="text-center lg:text-left">
+                        <p class="font-serif text-2xl font-bold text-terracota-light">Céntrico</p>
+                        <p class="text-xs text-gray-400">C. de los Moros</p>
+                    </div>
+                    <div class="text-center lg:text-left">
+                        <p class="font-serif text-2xl font-bold text-terracota-light">5.0</p>
+                        <p class="text-xs text-gray-400">Excelentes Reseñas</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 relative hidden lg:block">
+                <div class="relative mx-auto w-72 h-[450px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10 rotate-2 hover:rotate-0 transition-transform duration-500">
+                    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                         alt="Café latte art Go Coffee" class="w-full h-full object-cover">
+                </div>
+                <div class="absolute -bottom-6 -left-6 bg-crema text-gourmet p-4 rounded-2xl shadow-xl flex items-center gap-3 max-w-xs border border-gourmet/10">
+                    <div class="w-10 h-10 rounded-full bg-terracota/20 text-terracota flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs font-semibold">Atención cercana</p>
+                        <p class="text-[11px] text-gray-600">Profesionalidad y mimo en cada detalle.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nosotros / Filosofía -->
+    <section id="sobre-nosotros" class="py-20 md:py-32 bg-crema">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 relative">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="space-y-4">
+                            <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=600&q=80" 
+                                 referrerpolicy="no-referrer" 
+                                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                                 alt="Cafetería interior Gijón" class="w-full h-64 object-cover rounded-2xl shadow-md">
+                            <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=600&q=80" 
+                                 referrerpolicy="no-referrer" 
+                                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                                 alt="Repostería y café" class="w-full h-48 object-cover rounded-2xl shadow-md">
+                        </div>
+                        <div class="space-y-4 pt-8">
+                            <img src="https://images.unsplash.com/photo-1507133754945-0d3eb84e5687?auto=format&fit=crop&w=600&q=80" 
+                                 referrerpolicy="no-referrer" 
+                                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                                 alt="Preparación de café" class="w-full h-48 object-cover rounded-2xl shadow-md">
+                            <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=600&q=80" 
+                                 referrerpolicy="no-referrer" 
+                                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                                 alt="Ambiente acogedor Go Coffee" class="w-full h-64 object-cover rounded-2xl shadow-md">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="inline-flex items-center gap-2 text-terracota font-semibold tracking-wider uppercase text-sm">
+                        <i class="fa-solid fa-seedling"></i>
+                        <span>Nuestra Esencia</span>
+                    </div>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold tracking-tight text-gourmet">
+                        Un espacio acogedor diseñado para los amantes del buen café en Gijón
+                    </h2>
+                    <p class="text-gray-600 text-base leading-relaxed">
+                        En <strong class="text-gourmet">Go! Coffee</strong> creemos que cada taza cuenta una historia. Situados en pleno corazón de Gijón (C. de los Moros), nos hemos convertido en el punto de encuentro favorito de quienes valoran la excelencia, la gran profesionalidad y un trato cercano y familiar.
+                    </p>
+                    <p class="text-gray-600 text-base leading-relaxed">
+                        Cuidamos cada detalle: desde la selección de granos de alta calidad hasta la repostería artesanal y los desayunos más completos. Un rincón cálido donde desconectar del ritmo diario y disfrutar con los cinco sentidos.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-6 pt-4">
+                        <div class="border-l-2 border-terracota pl-4">
+                            <h3 class="font-serif font-bold text-lg text-gourmet">Calidad Superior</h3>
+                            <p class="text-sm text-gray-600">Ingredientes frescos y café de especialidad seleccionado.</p>
+                        </div>
+                        <div class="border-l-2 border-terracota pl-4">
+                            <h3 class="font-serif font-bold text-lg text-gourmet">Ambiente Único</h3>
+                            <p class="text-sm text-gray-600">Diseño cálido, música ambiente y confort absoluto.</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="https://wa.me/34695097903" target="_blank" rel="noopener noreferrer" 
+                           class="inline-flex items-center gap-2 bg-gourmet hover:bg-gourmet-light text-white font-medium px-6 py-3 rounded-full transition-all text-sm">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>Reserva tu mesa hoy</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nuestra Carta, Platos Estrella y Especialidades -->
+    <section id="carta" class="py-20 md:py-32 bg-crema-dark border-t border-b border-gourmet/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-terracota font-semibold tracking-wider uppercase text-sm">Gastronomía y Café</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-gourmet">
+                    Nuestra Carta y Especialidades
+                </h2>
+                <p class="text-gray-600 text-base sm:text-lg">
+                    Descubre nuestras creaciones elaboradas con mimo, desde cafés de autor hasta irresistibles opciones para tus desayunos y meriendas.
+                </p>
+            </div>
+
+            <!-- Categorías de la Carta -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Categoría 1: Cafés de Especialidad -->
+                <div class="bg-crema p-8 rounded-3xl shadow-sm border border-gourmet/10 hover:shadow-md transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-terracota/10 text-terracota flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-mug-saucer"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-gourmet mb-4">Cafés de Especialidad</h3>
+                    <div class="space-y-4 divide-y divide-gourmet/10">
+                        <div class="pt-3 first:pt-0 flex justify-between items-start">
+                            <div>
+                                <h4 class="font-semibold text-gourmet">Café Latte de Autor</h4>
+                                <p class="text-xs text-gray-500">Con leche fresca y nuestro característico latte art.</p>
+                            </div>
+                            <span class="font-serif font-bold text-terracota">2.50€</span>
+                        </div>
+                        <div class="pt-3 flex justify-between items-start">
+                            <div>
+                                <h4 class="font-semibold text-gourmet">Cappuccino Clásico</h4>
+                                <p class="text-xs text-gray-500">Equilibrio perfecto entre espresso, leche y espuma.</p>
+                            </div>
+                            <span class="font-serif font-bold text-terracota">2.40€</span>
+                        </div>
+                        <div class="pt-3 flex justify-between items-start">
+                            <div>
+                                <h4 class="font-semibold text-gourmet">Flat White</h4>
+                                <p class="text-xs text-gray-500">Doble espresso con microespuma de leche sedosa.</p>
+                            </div>
+                            <span class="font-serif font-bold text-terracota">2.70€</span>
+                        </div>
+                        <div class="pt-3 flex justify-between items-start">
+                            <div>
+                                <h4 class="font-semibold text-gourmet">Matcha Latte / Chai</h4>
+                                <p class="text-xs text-gray-500">Alternativas saludables y reconfortantes.</p>
+                            </div>
+                            <span class="font-serif font-bold text-terracota">3.20€</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Categoría 2: Desayunos y Tostadas -->
+                <div class="bg-crema p-8 rounded-3xl shadow-sm border border-gourmet/10 hover:shadow-md transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-terracota/10 text-terracota flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-bread-slice"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-gourmet mb-4">Desayunos Estrella</h3>
+                    <div class="space-y-4 divide-y divide-gourmet/10">
+                        <div class="pt-3 first:pt-0 flex justify-between items-start">
+                            <div>
+                                <h4 class="font-semibold text-gourmet">Tostada de Aguacate y Huevo</h4>
+                                <p class="text-xs text-gray-500">Pan masa madre, aguacate fresco y huevo poché.</p>
+                            </div>
+                            <span class="font-serif font-bold text-terracota">4.80€</span>
+                        </div>
+                        <div class="pt-3 flex justify-between items-start">
+                            <div>
+                                <h4 class="font-semibold text-gourmet">Tostada Ibérica</h4>
+                                <p class="text-xs text-gray-500">Jamón ibérico de bellota con tomate triturado natural.</p>
+                            </div>
+                            <span class="font-serif font-bold text-terracota">4.50€</span>
+                        </div>
+                        <div class="pt-3 flex justify-between items-start">
+                            <div>
+                                <h4 class="font-semibold text-gourmet">Bol de Yogur y Frutas</h4>
+                                <p class="text-xs text-gray-500">Yogur griego, granola crujiente y frutos rojos frescos.</p>
+                            </div>
+                            <span class="font-serif font-bold text-terracota">5.00€</span>
+                        </div>
+                        <div class="pt-3 flex justify-between items-start">
+                            <div>
+                                <h4 class="font-semibold text-gourmet">Croissant Mixto Artesano</h4>
+                                <p class="text-xs text-gray-500">Mantequilla, jamón york y queso fundido.</p>
+                            </div>
+                            <span class="font-serif font-bold text-terracota">3.50€</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Categoría 3: Repostería y Dulces -->
+                <div class="bg-crema p-8 rounded-3xl shadow-sm border border-gourmet/10 hover:shadow-md transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-terracota/10 text-terracota flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-cake-candles"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-gourmet mb-4">Dulces y Repostería</h3>
+                    <div class="space-y-4 divide-y divide-gourmet/10">
+                        <div class="pt-3 first:pt-0 flex justify-between items-start">
+                            <div>
+                                <h4 class="font-semibold text-gourmet">Tarta de Queso Casera</h4>
+                                <p class="text-xs text-gray-500">Cremosa por dentro, horneada al punto diario.</p>
+                            </div>
+                            <span class="font-serif font-bold text-terracota">4.50€</span>
+                        </div>
+                        <div class="pt-3 flex justify-between items-start">
+                            <div>
+                                <h4 class="font-semibold text-gourmet">Bizcocho del Día</h4>
+                                <p class="text-xs text-gray-500">Elaboración casera de limón, zanahoria o chocolate.</p>
+                            </div>
+                            <span class="font-serif font-bold text-terracota">3.00€</span>
+                        </div>
+                        <div class="pt-3 flex justify-between items-start">
+                            <div>
+                                <h4 class="font-semibold text-gourmet">Cookies con Chocolate</h4>
+                                <p class="text-xs text-gray-500">Recién horneadas, crujientes y con trozos de cacao.</p>
+                            </div>
+                            <span class="font-serif font-bold text-terracota">2.20€</span>
+                        </div>
+                        <div class="pt-3 flex justify-between items-start">
+                            <div>
+                                <h4 class="font-semibold text-gourmet">Croissant de Mantequilla</h4>
+                                <p class="text-xs text-gray-500">Hojaldre francés crujiente y ligero.</p>
+                            </div>
+                            <span class="font-serif font-bold text-terracota">2.00€</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CTA Banner within Carta -->
+            <div class="mt-16 bg-gourmet text-white rounded-3xl p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
+                <div class="space-y-2 text-center md:text-left">
+                    <h3 class="font-serif text-2xl sm:text-3xl font-bold">¿Quieres disfrutar de nuestra carta en el centro de Gijón?</h3>
+                    <p class="text-gray-300 text-sm sm:text-base">Asegura tu mesa en Go! Coffee de forma rápida y sencilla vía WhatsApp.</p>
+                </div>
+                <a href="https://wa.me/34695097903" target="_blank" rel="noopener noreferrer" 
+                   class="bg-terracota hover:bg-terracota-dark text-white font-semibold px-8 py-4 rounded-full transition-all shadow-lg shrink-0 flex items-center gap-3">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    <span>Reservar Mesa</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería / Nuestras Instalaciones -->
+    <section id="galeria" class="py-20 md:py-32 bg-crema">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-terracota font-semibold tracking-wider uppercase text-sm">Galería Visual</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-gourmet">
+                    Nuestras Instalaciones y Trabajos
+                </h2>
+                <p class="text-gray-600 text-base sm:text-lg">
+                    Un vistazo al ambiente cálido y acogedor que te espera en Go! Coffee, C. de los Moros, Gijón.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group relative rounded-3xl overflow-hidden shadow-md h-80">
+                    <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=800&q=80" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                         alt="Interior acogedor Go Coffee Gijón" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <p class="text-white font-serif text-lg font-medium">Ambiente cálido y moderno</p>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-3xl overflow-hidden shadow-md h-80">
+                    <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                         alt="Café de especialidad preparado por profesionales" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <p class="text-white font-serif text-lg font-medium">Café de máxima calidad</p>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-3xl overflow-hidden shadow-md h-80">
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                         alt="Repostería casera y tartas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <p class="text-white font-serif text-lg font-medium">Repostería artesanal</p>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-3xl overflow-hidden shadow-md h-80">
+                    <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=800&q=80" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                         alt="Granos de café seleccionados" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <p class="text-white font-serif text-lg font-medium">Selección de granos</p>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-3xl overflow-hidden shadow-md h-80">
+                    <img src="https://images.unsplash.com/photo-1525610553991-2bede1a236e2?auto=format&fit=crop&w=800&q=80" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                         alt="Desayunos saludables Gijón" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <p class="text-white font-serif text-lg font-medium">Desayunos irresistibles</p>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-3xl overflow-hidden shadow-md h-80">
+                    <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=80" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                         alt="Detalles de nuestra cafetería" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <p class="text-white font-serif text-lg font-medium">Atención y detalle</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Opiniones Reales Verificadas -->
+    <section id="opiniones" class="py-20 md:py-32 bg-gourmet text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5 bg-[radial-gradient(#d97706_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-terracota-light font-semibold tracking-wider uppercase text-sm">Reseñas Verificadas</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold tracking-tight">
+                    Lo que dicen nuestros clientes
+                </h2>
+                <p class="text-gray-300 text-base sm:text-lg">
+                    La satisfacción de quienes nos visitan es nuestro mayor aval. Opiniones reales extraídas de Google Maps.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gourmet-light p-8 rounded-3xl border border-white/10 flex flex-col justify-between shadow-xl">
+                    <div class="space-y-4">
+                        <div class="flex text-amber-400 gap-1 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-200 text-base italic leading-relaxed">
+                            "Clientes destacan la gran profesionalidad, atención cercana y excelente calidad. Sin duda, mi cafetería favorita en el centro de Gijón."
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-white/10 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-terracota text-white flex items-center justify-center font-bold font-serif">
+                            M
+                        </div>
+                        <div>
+                            <p class="font-semibold text-sm">María G.</p>
+                            <p class="text-xs text-gray-400">Cliente Verificado Google Maps</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-gourmet-light p-8 rounded-3xl border border-white/10 flex flex-col justify-between shadow-xl">
+                    <div class="space-y-4">
+                        <div class="flex text-amber-400 gap-1 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-200 text-base italic leading-relaxed">
+                            "Un sitio maravilloso en C. de los Moros. La atención es impecable, muy cercana y profesional. El café está increíble y las tartas caseras son un pecado."
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-white/10 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-terracota text-white flex items-center justify-center font-bold font-serif">
+                            A
+                        </div>
+                        <div>
+                            <p class="font-semibold text-sm">Alejandro F.</p>
+                            <p class="text-xs text-gray-400">Cliente Verificado Google Maps</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-gourmet-light p-8 rounded-3xl border border-white/10 flex flex-col justify-between shadow-xl">
+                    <div class="space-y-4">
+                        <div class="flex text-amber-400 gap-1 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-200 text-base italic leading-relaxed">
+                            "Excelente calidad en todos sus productos. Se nota el mimo y la gran profesionalidad que hay detrás. Repetiré siempre que esté por Gijón."
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-white/10 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-terracota text-white flex items-center justify-center font-bold font-serif">
+                            L
+                        </div>
+                        <div>
+                            <p class="font-semibold text-sm">Lucía P.</p>
+                            <p class="text-xs text-gray-400">Cliente Verificado Google Maps</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ubicación y Contacto -->
+    <section id="contacto" class="py-20 md:py-32 bg-crema">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-terracota font-semibold tracking-wider uppercase text-sm">Encuéntranos</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-gourmet">
+                    Visítanos en Gijón
+                </h2>
+                <p class="text-gray-600 text-base sm:text-lg">
+                    Estamos en pleno centro. Ven a conocernos o reserva tu mesa directamente con un solo clic.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Info Contacto -->
+                <div class="lg:col-span-5 space-y-8 bg-crema-dark p-8 sm:p-10 rounded-3xl border border-gourmet/10 shadow-sm">
+                    <h3 class="font-serif text-2xl font-bold text-gourmet">Go! Coffee</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-terracota/10 text-terracota flex items-center justify-center shrink-0 text-xl">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gourmet">Dirección</h4>
+                                <p class="text-gray-600 text-sm mt-0.5">C. de los Moros, 29, Centro, 33206 Gijón, Asturias</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-terracota/10 text-terracota flex items-center justify-center shrink-0 text-xl">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gourmet">Teléfono / Reservas</h4>
+                                <p class="text-gray-600 text-sm mt-0.5">695 09 79 03</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-terracota/10 text-terracota flex items-center justify-center shrink-0 text-xl">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gourmet">Horario</h4>
+                                <p class="text-gray-600 text-sm mt-0.5">Lunes a Domingo: 08:00 - 21:00</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="https://wa.me/34695097903" target="_blank" rel="noopener noreferrer" 
+                           class="w-full bg-terracota hover:bg-terracota-dark text-white font-semibold py-4 rounded-full transition-all shadow-md flex items-center justify-center gap-3 text-base">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <span>Reservar Mesa</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mapa Interactivo Real -->
+                <div class="lg:col-span-7">
+                    <div class="bg-white p-3 rounded-3xl shadow-xl border border-gourmet/10">
+                        <iframe src="https://www.google.com/maps?q=Go!%20Coffee%20C.%20de%20los%20Moros%2C%2029%2C%20Centro%2C%2033206%20Gij%C3%B3n%2C%20Asturias&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gourmet text-white py-16 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            <div class="space-y-4 md:col-span-2">
+                <span class="font-serif text-3xl font-bold tracking-tight text-white">
+                    Go! <span class="text-terracota italic">Coffee</span>
+                </span>
+                <p class="text-gray-400 text-sm max-w-sm leading-relaxed">
+                    Tu cafetería de especialidad en el centro de Gijón. Gran profesionalidad, atención cercana y productos de máxima calidad en cada visita.
+                </p>
+                <div class="flex items-center gap-4 pt-2">
+                    <a href="https://wa.me/34695097903" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 hover:bg-terracota transition-colors flex items-center justify-center text-white">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                    <a href="https://wa.me/34695097903" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 hover:bg-terracota transition-colors flex items-center justify-center text-white">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/34695097903" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 hover:bg-terracota transition-colors flex items-center justify-center text-white">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <h4 class="font-serif font-bold text-lg text-white">Enlaces Rápidos</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="#inicio" class="hover:text-terracota-light transition-colors">Inicio</a></li>
+                    <li><a href="#sobre-nosotros" class="hover:text-terracota-light transition-colors">Filosofía</a></li>
+                    <li><a href="#carta" class="hover:text-terracota-light transition-colors">Nuestra Carta</a></li>
+                    <li><a href="#galeria" class="hover:text-terracota-light transition-colors">Instalaciones</a></li>
+                    <li><a href="#opiniones" class="hover:text-terracota-light transition-colors">Reseñas</a></li>
+                    <li><a href="#contacto" class="hover:text-terracota-light transition-colors">Ubicación</a></li>
+                </ul>
+            </div>
+
+            <div class="space-y-4">
+                <h4 class="font-serif font-bold text-lg text-white">Contacto Directo</h4>
+                <p class="text-sm text-gray-400">C. de los Moros, 29, Centro<br>33206 Gijón, Asturias</p>
+                <p class="text-sm text-gray-400">Teléfono: 695 09 79 03</p>
+                <div class="pt-2">
+                    <a href="https://wa.me/34695097903" target="_blank" rel="noopener noreferrer" 
+                       class="inline-block bg-terracota hover:bg-terracota-dark text-white font-medium px-5 py-2.5 rounded-full text-xs transition-all shadow">
+                        Reservar Mesa
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-white/10 text-center text-xs text-gray-500 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>&copy; <span id="current-year"></span> Go! Coffee Gijón. Todos los derechos reservados.</p>
+            <p>Diseño Web Senior & Director de Arte</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/34695097903" target="_blank" rel="noopener noreferrer" 
+       class="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20ba59] text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-2xl transition-transform hover:scale-110"
+       aria-label="Contactar por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript for Mobile Menu & Dynamic Year -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Set Current Year in Footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
