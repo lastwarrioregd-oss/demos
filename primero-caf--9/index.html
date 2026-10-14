@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Primero Café | Cafetería de Especialidad y Tortilla en Gijón</title>
+  <meta name="description" content="Primero Café en el centro de Gijón. Café de especialidad tostado artesanalmente, la famosa tortilla melosa, pinchos diarios y repostería casera. ¡Visítanos!">
+  
+  <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              crema: '#FDFBF7',
+              pergamino: '#F5EFE6',
+              tostado: '#D4A373',
+              terracota: '#BC6C25',
+              cafe: '#281E19',
+              oscuro: '#1B1410',
+              dorado: '#E09F3E'
+            }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-brand-crema text-brand-oscuro font-sans antialiased selection:bg-brand-terracota selection:text-white">
+
+  <!-- BARRA DE ANUNCIO SUPERIOR -->
+  <aside aria-label="Información de contacto rápido" class="bg-brand-oscuro text-brand-pergamino text-xs py-2 px-4 border-b border-white/10">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center space-x-4">
+        <span class="flex items-center gap-1.5 text-brand-tostado"><i class="fa-solid fa-location-dot"></i> C. Celestino Junquera, 17, Centro, Gijón</span>
+        <span class="hidden md:inline text-white/30">|</span>
+        <span class="hidden md:flex items-center gap-1.5"><i class="fa-solid fa-mug-hot text-brand-dorado"></i> Tostadores propios de café de especialidad</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="tel:984192948" class="font-medium hover:text-brand-tostado transition-colors flex items-center gap-1.5">
+          <i class="fa-solid fa-phone"></i> 984 19 29 48
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- NAVEGACIÓN -->
+  <header class="sticky top-0 z-50 bg-brand-crema/95 backdrop-blur-md border-b border-brand-tostado/20 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-full bg-brand-cafe text-brand-pergamino flex items-center justify-center font-serif text-2xl font-bold tracking-wider shadow-md group-hover:bg-brand-terracota transition-colors">
+          1º
+        </div>
+        <div>
+          <span class="font-serif text-2xl md:text-3xl font-bold text-brand-cafe tracking-tight block leading-none">Primero Café</span>
+          <span class="text-[10px] tracking-[0.25em] uppercase text-brand-terracota font-semibold">Gijón · Specialty Coffee</span>
+        </div>
+      </a>
+
+      <!-- Menú desktop -->
+      <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium tracking-wide">
+        <a href="#experiencia" class="text-brand-cafe/80 hover:text-brand-terracota transition-colors">La Esencia</a>
+        <a href="#carta" class="text-brand-cafe/80 hover:text-brand-terracota transition-colors">Nuestra Carta</a>
+        <a href="#galeria" class="text-brand-cafe/80 hover:text-brand-terracota transition-colors">Galería</a>
+        <a href="#resenas" class="text-brand-cafe/80 hover:text-brand-terracota transition-colors">Opiniones</a>
+        <a href="#ubicacion" class="text-brand-cafe/80 hover:text-brand-terracota transition-colors">Contacto</a>
+      </nav>
+
+      <!-- CTA -->
+      <div class="flex items-center gap-3">
+        <a href="tel:984192948" class="relative inline-flex items-center justify-center px-6 py-2.5 text-sm font-semibold tracking-wide text-white bg-brand-terracota rounded-full overflow-hidden shadow-lg shadow-brand-terracota/20 hover:bg-brand-cafe hover:shadow-brand-cafe/20 transition-all duration-300 group">
+          <span class="relative z-10 flex items-center gap-2">
+            <i class="fa-solid fa-calendar-check text-xs group-hover:scale-110 transition-transform"></i>
+            <span>Reservar Mesa</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative overflow-hidden bg-brand-oscuro text-white pt-16 pb-24 lg:pt-28 lg:pb-32">
+    <!-- Fondos con texturas sutiles -->
+    <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#D4A373_1px,transparent_1px)] [background-size:24px_24px]"></div>
+    <div class="absolute -right-40 -top-40 w-96 h-96 rounded-full bg-brand-terracota/30 blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Copywriting Persuasivo -->
+        <div class="lg:col-span-7 space-y-7">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-tostado/15 border border-brand-tostado/30 text-brand-tostado text-xs font-semibold tracking-wider uppercase">
+            <i class="fa-solid fa-crown text-[10px]"></i> El rincón de culto al café y la tortilla en Gijón
+          </div>
+          <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-brand-pergamino">
+            El café que <span class="italic font-normal text-brand-tostado underline decoration-brand-terracota/60 underline-offset-8">no necesita azúcar</span> y la tortilla más deseada.
+          </h1>
+          <p class="text-lg text-brand-pergamino/80 font-light max-w-xl leading-relaxed">
+            Un templo para los paladares exigentes fundado por Olga y Jairo. Café de especialidad con leche perfectamente cremada a temperatura idónea, pinchos del día con pan de fermentación lenta y repostería casera hecha con mimo.
+          </p>
+
+          <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+            <a href="tel:984192948" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-brand-terracota hover:bg-brand-dorado text-white font-semibold rounded-xl text-base shadow-xl shadow-brand-terracota/30 transition duration-300 transform hover:-translate-y-0.5">
+              <i class="fa-solid fa-phone-volume"></i>
+              <span>Reservar Mesa</span>
+            </a>
+            <a href="#carta" class="inline-flex items-center justify-center gap-2 px-8 py-4 border border-brand-pergamino/30 hover:border-brand-tostado hover:bg-white/5 text-brand-pergamino font-medium rounded-xl text-base transition">
+              <i class="fa-solid fa-utensils text-sm text-brand-tostado"></i>
+              <span>Ver Carta y Pinchos</span>
+            </a>
+          </div>
+
+          <!-- Badges de confianza -->
+          <div class="pt-8 border-t border-white/10 grid grid-cols-3 gap-4 text-center sm:text-left">
+            <div>
+              <p class="font-serif text-2xl font-bold text-brand-tostado">+80 visitas</p>
+              <p class="text-xs text-white/60">Anuales por cliente fiel</p>
+            </div>
+            <div>
+              <p class="font-serif text-2xl font-bold text-brand-tostado">100% Casero</p>
+              <p class="text-xs text-white/60">Bizcocho de cortesía y tartas</p>
+            </div>
+            <div>
+              <p class="font-serif text-2xl font-bold text-brand-tostado">Tueste Propio</p>
+              <p class="text-xs text-white/60">Granos de especialidad</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Imagen Hero con Respaldo Infalible -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10 bg-brand-oscuro aspect-[4/5] sm:aspect-square lg:aspect-[4/5]">
+              <img 
+                src="https://scontent.flpa4-1.fna.fbcdn.net/v/t39.30808-1/274133049_4712014422257817_3802011635608062442_n.jpg?stp=dst-jpg_tt6&cstp=mx2005x2015&ctp=s720x720&_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=3ab345&_nc_ohc=_Kg5Y3XtrTkQ7kNvwHbbHVC&_nc_oc=AdpxAvke-IgreIPkvtfWOwCbo1o8mslsvNhb8VPaa5WgvUxffouZbZHIBYRtunFfXT4&_nc_zt=24&_nc_ht=scontent.flpa4-1.fna&_nc_gid=Gi1cdf6FZloJacBS4JuFfg&_nc_ss=7a289&oh=00_AQPQ6BRjOHUkemqcax_cOHNyPwnYJafVuDaG6gs8lyQ4hA&oe=6AD5C5EF" 
+                alt="Primero Café Gijón - Especialidad y Calidad" 
+                referrerpolicy="no-referrer"
+                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-oscuro/80 via-transparent to-transparent"></div>
+              
+              <!-- Tag flotante -->
+              <div class="absolute bottom-5 left-5 right-5 bg-brand-oscuro/90 backdrop-blur-md p-4 rounded-xl border border-white/10 flex items-center justify-between">
+                <div>
+                  <span class="text-xs uppercase tracking-wider text-brand-tostado font-semibold block">Imprescindible en Gijón</span>
+                  <span class="text-sm font-medium text-white">Tortilla recién hecha y café de origen</span>
+                </div>
+                <span class="w-10 h-10 rounded-full bg-brand-terracota flex items-center justify-center text-white shrink-0">
+                  <i class="fa-solid fa-mug-saucer text-sm"></i>
+                </span>
+              </div>
+            </div>
+            <!-- Elemento decorativo detrás -->
+            <div class="absolute -bottom-4 -left-4 w-28 h-28 border-2 border-brand-tostado/40 rounded-2xl -z-10 hidden sm:block"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- VALORES DIFERENCIALES / LA ESENCIA -->
+  <section id="experiencia" class="py-20 bg-brand-pergamino/50 border-b border-brand-tostado/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-brand-terracota uppercase tracking-widest text-xs font-bold">Por qué somos diferentes</span>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-cafe mt-2">La devoción por hacer las cosas bien</h2>
+        <div class="w-16 h-0.5 bg-brand-terracota mx-auto mt-4"></div>
+        <p class="mt-4 text-brand-cafe/75 text-base leading-relaxed">
+          En Primero Café no hay atajos: hay técnica, producto insuperable y una hospitalidad que convierte a cada persona en un cliente para toda la vida.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-2xl border border-brand-tostado/20 shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-14 h-14 rounded-xl bg-brand-terracota/10 text-brand-terracota flex items-center justify-center text-2xl mb-6">
+            <i class="fa-solid fa-fire-burner"></i>
+          </div>
+          <h3 class="font-serif text-2xl font-bold text-brand-cafe mb-3">Tueste Impecable</h3>
+          <p class="text-brand-cafe/70 leading-relaxed text-sm">
+            Jairo tuesta el café con precisión quirúrgica. Un balance perfecto de acidez, cuerpo y dulzor donde la leche se crema a la temperatura exacta. Como dicen nuestros clientes: «no necesita ni azúcar».
+          </p>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl border border-brand-tostado/20 shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-14 h-14 rounded-xl bg-brand-terracota/10 text-brand-terracota flex items-center justify-center text-2xl mb-6">
+            <i class="fa-solid fa-egg"></i>
+          </div>
+          <h3 class="font-serif text-2xl font-bold text-brand-cafe mb-3">Tortilla Melosa Legendaria</h3>
+          <p class="text-brand-cafe/70 leading-relaxed text-sm">
+            Recién salida de la sartén, en su punto exacto de jugosidad, arropada por un pan artesanal de larga fermentación que complementa su textura única. Considerada por muchos la mejor de Gijón.
+          </p>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl border border-brand-tostado/20 shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-14 h-14 rounded-xl bg-brand-terracota/10 text-brand-terracota flex items-center justify-center text-2xl mb-6">
+            <i class="fa-solid fa-heart"></i>
+          </div>
+          <h3 class="font-serif text-2xl font-bold text-brand-cafe mb-3">Detalle & Cortesía</h3>
+          <p class="text-brand-cafe/70 leading-relaxed text-sm">
+            Cada café se acompaña siempre de bizcocho casero recién horneado (o galletas Lotus/pastas artesanas), agua fresca infusionada con fruta natural y una sonrisa incondicional por parte de Olga y el equipo.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARTA, PLATOS ESTRELLA Y ESPECIALIDADES -->
+  <section id="carta" class="py-24 bg-brand-crema">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div>
+          <span class="text-brand-terracota uppercase tracking-widest text-xs font-bold">Gastronomía & Cafetería de Especialidad</span>
+          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-cafe mt-2">Nuestra Carta, Platos Estrella y Especialidades de la Casa</h2>
+          <div class="w-20 h-0.5 bg-brand-terracota mt-4"></div>
+        </div>
+        <div>
+          <a href="tel:984192948" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-cafe hover:bg-brand-terracota text-white text-sm font-semibold transition-all">
+            <i class="fa-solid fa-phone"></i>
+            <span>Reservar Mesa</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Menú en Grid Organizado -->
+      <div class="grid lg:grid-cols-2 gap-12">
+        
+        <!-- Categoría 1: Café de Especialidad -->
+        <div class="bg-brand-pergamino/40 p-8 rounded-3xl border border-brand-tostado/30">
+          <div class="flex items-center gap-3 pb-6 border-b border-brand-tostado/30 mb-6">
+            <span class="w-10 h-10 rounded-full bg-brand-terracota text-white flex items-center justify-center font-bold text-sm">01</span>
+            <h3 class="font-serif text-2xl font-bold text-brand-cafe">Cafés de Especialidad & Origen</h3>
+          </div>
+          
+          <div class="space-y-6">
+            <div class="flex justify-between items-start gap-4">
+              <div>
+                <h4 class="font-bold text-brand-cafe flex items-center gap-2">
+                  Espresso / Doble Espresso
+                  <span class="bg-brand-terracota/10 text-brand-terracota text-[10px] px-2 py-0.5 rounded font-medium">Tueste Propio</span>
+                </h4>
+                <p class="text-xs text-brand-cafe/70 mt-1">Extracción pura, notas cítricas o achocolatadas según el origen de la semana.</p>
+              </div>
+              <span class="font-serif font-bold text-brand-terracota shrink-0 text-base">Especialidad</span>
+            </div>
+
+            <div class="flex justify-between items-start gap-4">
+              <div>
+                <h4 class="font-bold text-brand-cafe flex items-center gap-2">
+                  Café con Leche / Flat White
+                  <span class="bg-brand-dorado/20 text-brand-oscuro text-[10px] px-2 py-0.5 rounded font-medium">Imprescindible</span>
+                </h4>
+                <p class="text-xs text-brand-cafe/70 mt-1">Leche fresca microcremada a temperatura idónea. Acompañado de bizcocho casero de cortesía.</p>
+              </div>
+              <span class="font-serif font-bold text-brand-terracota shrink-0 text-base">Insuperable</span>
+            </div>
+
+            <div class="flex justify-between items-start gap-4">
+              <div>
+                <h4 class="font-bold text-brand-cafe">Filtro / Batch Brew & V60</h4>
+                <p class="text-xs text-brand-cafe/70 mt-1">Infusión pausada para capturar cada matiz y floralidad del grano de especialidad.</p>
+              </div>
+              <span class="font-serif font-bold text-brand-terracota shrink-0 text-base">Origen</span>
+            </div>
+
+            <div class="flex justify-between items-start gap-4">
+              <div>
+                <h4 class="font-bold text-brand-cafe">Bebidas Frías & Agua Saborizada</h4>
+                <p class="text-xs text-brand-cafe/70 mt-1">Cold Brew fresco y dispensador libre de agua natural infusionada con fruta para clientes.</p>
+              </div>
+              <span class="font-serif font-bold text-brand-terracota shrink-0 text-base">Casero</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Categoría 2: La Famosa Tortilla y Pinchos del Día -->
+        <div class="bg-brand-pergamino/40 p-8 rounded-3xl border border-brand-tostado/30">
+          <div class="flex items-center gap-3 pb-6 border-b border-brand-tostado/30 mb-6">
+            <span class="w-10 h-10 rounded-full bg-brand-terracota text-white flex items-center justify-center font-bold text-sm">02</span>
+            <h3 class="font-serif text-2xl font-bold text-brand-cafe">Tortilla Melosa & Pinchos de Autor</h3>
+          </div>
+          
+          <div class="space-y-6">
+            <div class="flex justify-between items-start gap-4">
+              <div>
+                <h4 class="font-bold text-brand-cafe flex items-center gap-2">
+                  El Pincho de Tortilla Primero Café
+                  <span class="bg-brand-terracota text-white text-[10px] px-2 py-0.5 rounded font-bold uppercase tracking-wider">Top Ventas</span>
+                </h4>
+                <p class="text-xs text-brand-cafe/70 mt-1">Recién cuajada, jugosa y melosa, servida con pan artesanal de fermentación prolongada.</p>
+              </div>
+              <span class="font-serif font-bold text-brand-terracota shrink-0 text-base">Favorito</span>
+            </div>
+
+            <div class="flex justify-between items-start gap-4">
+              <div>
+                <h4 class="font-bold text-brand-cafe">Pincho de Bocadillo de Pollo Asado</h4>
+                <p class="text-xs text-brand-cafe/70 mt-1">Elaboración diaria y sazonado especial sobre pan crujiente. Sabroso y tierno.</p>
+              </div>
+              <span class="font-serif font-bold text-brand-terracota shrink-0 text-base">Diario</span>
+            </div>
+
+            <div class="flex justify-between items-start gap-4">
+              <div>
+                <h4 class="font-bold text-brand-cafe">Pincho de Queso Brie</h4>
+                <p class="text-xs text-brand-cafe/70 mt-1">Calentado con el punto justo de fusión para los amantes del buen queso cremoso.</p>
+              </div>
+              <span class="font-serif font-bold text-brand-terracota shrink-0 text-base">Delicatessen</span>
+            </div>
+
+            <div class="flex justify-between items-start gap-4">
+              <div>
+                <h4 class="font-bold text-brand-cafe">Bocadillo / Pincho de Criollo</h4>
+                <p class="text-xs text-brand-cafe/70 mt-1">Potente, tradicional y cocinado a diario. Uno de los imprescindibles recomendados.</p>
+              </div>
+              <span class="font-serif font-bold text-brand-terracota shrink-0 text-base">Artesanal</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Categoría 3: Tostas & Desayunos Salados -->
+        <div class="bg-brand-pergamino/40 p-8 rounded-3xl border border-brand-tostado/30">
+          <div class="flex items-center gap-3 pb-6 border-b border-brand-tostado/30 mb-6">
+            <span class="w-10 h-10 rounded-full bg-brand-terracota text-white flex items-center justify-center font-bold text-sm">03</span>
+            <h3 class="font-serif text-2xl font-bold text-brand-cafe">Tostas de Masa Madre</h3>
+          </div>
+          
+          <div class="space-y-6">
+            <div class="flex justify-between items-start gap-4">
+              <div>
+                <h4 class="font-bold text-brand-cafe">Tosta de Aceite Virgen Extra & Tomate Rallado</h4>
+                <p class="text-xs text-brand-cafe/70 mt-1">Sobre hogaza de pueblo tostada al momento, sal en escamas y AOVE seleccionado.</p>
+              </div>
+              <span class="font-serif font-bold text-brand-terracota shrink-0 text-base">Clásica</span>
+            </div>
+
+            <div class="flex justify-between items-start gap-4">
+              <div>
+                <h4 class="font-bold text-brand-cafe">Tosta Especial de la Casa</h4>
+                <p class="text-xs text-brand-cafe/70 mt-1">Combinaciones rotativas de aguacate, quesos o ibéricos de temporada.</p>
+              </div>
+              <span class="font-serif font-bold text-brand-terracota shrink-0 text-base">Especial</span>
+            </div>
+
+            <div class="flex justify-between items-start gap-4">
+              <div>
+                <h4 class="font-bold text-brand-cafe">Opción Take Away / Para Llevar</h4>
+                <p class="text-xs text-brand-cafe/70 mt-1">Cualquiera de nuestros pinchos, tortillas y cafés preparados en envases sostenibles.</p>
+              </div>
+              <span class="font-serif font-bold text-brand-terracota shrink-0 text-base">Para Llevar</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Categoría 4: Repostería y Dulces Caseros -->
+        <div class="bg-brand-pergamino/40 p-8 rounded-3xl border border-brand-tostado/30">
+          <div class="flex items-center gap-3 pb-6 border-b border-brand-tostado/30 mb-6">
+            <span class="w-10 h-10 rounded-full bg-brand-terracota text-white flex items-center justify-center font-bold text-sm">04</span>
+            <h3 class="font-serif text-2xl font-bold text-brand-cafe">Repostería Casera & Tartas</h3>
+          </div>
+          
+          <div class="space-y-6">
+            <div class="flex justify-between items-start gap-4">
+              <div>
+                <h4 class="font-bold text-brand-cafe flex items-center gap-2">
+                  La Famosa Tarta de Zanahoria de Mónica
+                  <span class="bg-brand-terracota/15 text-brand-terracota text-[10px] px-2 py-0.5 rounded font-medium">Recomendación Fan</span>
+                </h4>
+                <p class="text-xs text-brand-cafe/70 mt-1">Esponjosa, con especias equilibradas y frosting suave de queso. Aclamada en Gijón.</p>
+              </div>
+              <span class="font-serif font-bold text-brand-terracota shrink-0 text-base">Casera</span>
+            </div>
+
+            <div class="flex justify-between items-start gap-4">
+              <div>
+                <h4 class="font-bold text-brand-cafe">Bizcocho Artesano del Día</h4>
+                <p class="text-xs text-brand-cafe/70 mt-1">Cortesía habitual de la casa con tu taza caliente. Textura tierna e inconfundible.</p>
+              </div>
+              <span class="font-serif font-bold text-brand-terracota shrink-0 text-base">Detalle</span>
+            </div>
+
+            <div class="flex justify-between items-start gap-4">
+              <div>
+                <h4 class="font-bold text-brand-cafe">Pastas de Té y Galletas Lotus</h4>
+                <p class="text-xs text-brand-cafe/70 mt-1">El acompañamiento perfecto para prolongar la experiencia de un buen café.</p>
+              </div>
+              <span class="font-serif font-bold text-brand-terracota shrink-0 text-base">Dulce</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Banner de aviso acogedor -->
+      <div class="mt-12 bg-brand-oscuro text-brand-pergamino rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-brand-terracota flex items-center justify-center shrink-0">
+            <i class="fa-solid fa-clock text-xl text-white"></i>
+          </div>
+          <div>
+            <h4 class="font-serif text-xl font-bold">¿Ves cola fuera? No te desanimes</h4>
+            <p class="text-sm text-brand-pergamino/80">El servicio es dinámico y rápido. En 5 a 10 minutos estarás dentro disfrutando tu mesa.</p>
+          </div>
+        </div>
+        <a href="tel:984192948" class="whitespace-nowrap px-6 py-3 bg-brand-dorado hover:bg-brand-terracota text-brand-oscuro hover:text-white font-bold rounded-xl text-sm transition-all duration-300">
+          Reservar Mesa
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GALERÍA: NUESTRAS INSTALACIONES Y TRABAJOS -->
+  <section id="galeria" class="py-24 bg-brand-pergamino/30 border-y border-brand-tostado/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-brand-terracota uppercase tracking-widest text-xs font-bold">Rincón Auténtico en el Centro</span>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-cafe mt-2">Nuestras Instalaciones y Trabajos</h2>
+        <div class="w-16 h-0.5 bg-brand-terracota mx-auto mt-4"></div>
+        <p class="mt-4 text-brand-cafe/75 text-sm">
+          Un espacio íntimo, vibrante y lleno de aroma a café recién tostado. Descubre la atmósfera de Primero Café.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Foto 1 -->
+        <div class="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-brand-cafe shadow-md">
+          <img 
+            src="https://scontent.flpa4-1.fna.fbcdn.net/v/t39.30808-1/274133049_4712014422257817_3802011635608062442_n.jpg?stp=dst-jpg_tt6&cstp=mx2005x2015&ctp=s720x720&_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=3ab345&_nc_ohc=_Kg5Y3XtrTkQ7kNvwHbbHVC&_nc_oc=AdpxAvke-IgreIPkvtfWOwCbo1o8mslsvNhb8VPaa5WgvUxffouZbZHIBYRtunFfXT4&_nc_zt=24&_nc_ht=scontent.flpa4-1.fna&_nc_gid=Gi1cdf6FZloJacBS4JuFfg&_nc_ss=7a289&oh=00_AQPQ6BRjOHUkemqcax_cOHNyPwnYJafVuDaG6gs8lyQ4hA&oe=6AD5C5EF" 
+            alt="Detalle Primero Café Gijón" 
+            referrerpolicy="no-referrer"
+            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-oscuro/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+            <span class="text-white text-sm font-serif">La esencia Primero Café</span>
+          </div>
+        </div>
+
+        <!-- Foto 2 -->
+        <div class="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-brand-cafe shadow-md">
+          <img 
+            src="https://scontent.flpa4-1.fna.fbcdn.net/v/t39.30808-6/476336458_8937407739718443_5558487783576022039_n.jpg?stp=dst-jpg_fb50_s320x320_tt6&_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=ct3tesPrRVYQ7kNvwHhh0iV&_nc_oc=AdoDQPAb_hduv1iXVsDHlwxGZrg_R8eW242nw1ccIYmMnqFegS2geHGtg7lL4lWxTyQ&_nc_zt=23&_nc_ht=scontent.flpa4-1.fna&_nc_gid=MEBS_p5sNVM4kRiN2nMH6w&_nc_ss=7a289&oh=00_AQMHrHFUGSK34O3zuYjus5nbU41VbL1RnoIDR-4fmkrncA&oe=6AD5BA7A" 
+            alt="Creaciones y barra en Primero Café" 
+            referrerpolicy="no-referrer"
+            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-oscuro/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+            <span class="text-white text-sm font-serif">Café y recetas elaboradas al momento</span>
+          </div>
+        </div>
+
+        <!-- Foto 3 -->
+        <div class="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-brand-cafe shadow-md">
+          <img 
+            src="https://scontent.flpa4-1.fna.fbcdn.net/v/t39.30808-6/476336458_8937407739718443_5558487783576022039_n.jpg?stp=dst-jpg_tt6&cstp=mx689x960&ctp=s689x960&_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=ct3tesPrRVYQ7kNvwHhh0iV&_nc_oc=AdoDQPAb_hduv1iXVsDHlwxGZrg_R8eW242nw1ccIYmMnqFegS2geHGtg7lL4lWxTyQ&_nc_zt=23&_nc_ht=scontent.flpa4-1.fna&_nc_gid=MEBS_p5sNVM4kRiN2nMH6w&_nc_ss=7a289&oh=00_AQNWJ2xZ7_WDomYGIx-NLdiB-opUcMO8VNbemRPdJO4ibg&oe=6AD5BA7A" 
+            alt="Ambiente en C. Celestino Junquera" 
+            referrerpolicy="no-referrer"
+            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-oscuro/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+            <span class="text-white text-sm font-serif">Nuestra dedicación artesanal</span>
+          </div>
+        </div>
+
+        <!-- Foto 4 -->
+        <div class="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-brand-cafe shadow-md">
+          <img 
+            src="https://scontent.flpa4-1.fna.fbcdn.net/v/t51.82787-15/811137771_18433033423181153_7394516709211232504_n.webp?stp=dst-jpg_tt6&cstp=mx1440x1474&ctp=p526x296&_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=riVIR9ePDI8Q7kNvwFHTmur&_nc_oc=AdoAzTvgJS36nqWgsr8eJ_qt_HLF-V1_l4w44dOkODfzp90zGNf0cZgBgjvhRDMazsE&_nc_zt=23&_nc_ht=scontent.flpa4-1.fna&_nc_gid=XVrXkqvTvLvXfoFVrpujcw&_nc_ss=7a289&oh=00_AQPFjb9aE8G-mAolKiUg5FdTrhWVjj6yVawGnye9V0jJZA&oe=6AD5CEDF" 
+            alt="Especialidades servidas con mimo" 
+            referrerpolicy="no-referrer"
+            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-oscuro/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+            <span class="text-white text-sm font-serif">Calidad servida en cada taza</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPINIONES REALES VERIFICADAS (RESEÑAS DEL NEGOCIO) -->
+  <section id="resenas" class="py-24 bg-brand-crema">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-brand-terracota uppercase tracking-widest text-xs font-bold">Voces Auténticas</span>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-cafe mt-2">Opiniones Reales de Nuestros Clientes</h2>
+        <div class="w-16 h-0.5 bg-brand-terracota mx-auto mt-4"></div>
+        <p class="mt-4 text-brand-cafe/75 text-sm">
+          Transparencia y cariño real. Esto es lo que cuentan quienes nos visitan semana tras semana en Gijón.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Reseña 1 (Laura) Destacada -->
+        <div class="lg:col-span-2 bg-brand-pergamino/60 p-8 rounded-3xl border border-brand-tostado/30 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex text-amber-500 gap-1 text-sm">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-xs bg-white text-brand-cafe px-3 py-1 rounded-full font-semibold border border-brand-tostado/20">Cliente Habitual (+80 visitas/año)</span>
+            </div>
+            <p class="text-brand-cafe/85 italic leading-relaxed text-sm mb-6">
+              "Hemos perdido la cuenta de, ya no solo el número de veces, sino los años que llevamos viniendo a Primero Café. Gracias Jairo y gracias Olga por hacer que nuestros días comiencen con un gran sabor de boca. El café es sin duda espectacular, la leche cremada perfectamente y a la temperatura ideal. Ahora además también tuesta el café de una manera impecable. Siempre lo sirven acompañado del mejor bizcocho casero. La tortilla es la mejor de Gijón acompañada de un pan con un sabor potente gracias a su buena fermentación. Pinchos elaborados diariamente: pollo, brie y criollo son los imprescindibles a probar. Las tostas también son geniales y la tarta de zanahoria de Mónica es la mejor. Suelo haber una pequeña cola a la entrada, pero que no te desanime a entrar, en 5-10 minutos pasas. El servicio es excelente: atienden rápido y no fallan nunca. ¡Seguid así chicos!"
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-brand-tostado/20">
+            <div class="w-10 h-10 rounded-full bg-brand-terracota text-white flex items-center justify-center font-serif font-bold">L</div>
+            <div>
+              <h4 class="font-bold text-brand-cafe text-sm">Laura</h4>
+              <p class="text-xs text-brand-cafe/60">Reseña Verificada Google Maps</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reseña 2 (Lucia Albo) -->
+        <div class="bg-brand-pergamino/60 p-8 rounded-3xl border border-brand-tostado/30 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex text-amber-500 gap-1 text-sm">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-xs bg-white text-brand-cafe px-2.5 py-0.5 rounded-full font-medium">Visita obligada</span>
+            </div>
+            <p class="text-brand-cafe/85 italic leading-relaxed text-sm mb-6">
+              "Soy de Coruña pero estoy viviendo en Gijón y cuando vienen mis padres es una visita obligada para ellos. El café es el más rico que hemos probado nunca (no necesita azúcar) y la tortilla está espectacular así como el pincho de bocadillo..."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-brand-tostado/20">
+            <div class="w-10 h-10 rounded-full bg-brand-dorado text-brand-oscuro flex items-center justify-center font-serif font-bold">L</div>
+            <div>
+              <h4 class="font-bold text-brand-cafe text-sm">Lucia Albo</h4>
+              <p class="text-xs text-brand-cafe/60">Reseña Verificada Google Maps</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reseña 3 (María Fernández) -->
+        <div class="bg-brand-pergamino/60 p-8 rounded-3xl border border-brand-tostado/30 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex text-amber-500 gap-1 text-sm">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-xs bg-white text-brand-cafe px-2.5 py-0.5 rounded-full font-medium">Muy recomendable</span>
+            </div>
+            <p class="text-brand-cafe/85 italic leading-relaxed text-sm mb-6">
+              "Comida increíble, probamos la tortilla... Sin palabras de lo rica que estaba. Los cafés deliciosos también. El único pero es que el servicio fue un poco lento (pero con mucho mimo) y el local se les queda pequeño (creo que eso es buena señal). Muy recomendable."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-brand-tostado/20">
+            <div class="w-10 h-10 rounded-full bg-brand-cafe text-white flex items-center justify-center font-serif font-bold">M</div>
+            <div>
+              <h4 class="font-bold text-brand-cafe text-sm">María Fernández</h4>
+              <p class="text-xs text-brand-cafe/60">Reseña Verificada Google Maps</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reseña 4 (Dulce Solórzano) -->
+        <div class="bg-brand-pergamino/60 p-8 rounded-3xl border border-brand-tostado/30 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex text-amber-500 gap-1 text-sm">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-xs bg-white text-brand-cafe px-2.5 py-0.5 rounded-full font-medium">Precio genial</span>
+            </div>
+            <p class="text-brand-cafe/85 italic leading-relaxed text-sm mb-6">
+              "El lugar es muy pequeño, cuesta mucho acomodarse, la comida no estaba mal, pedimos dos bocadillos de pollo. La tortilla está bien, porque estaba recién hecha. La chica muy amable, ¡el precio genial!"
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-brand-tostado/20">
+            <div class="w-10 h-10 rounded-full bg-brand-tostado text-white flex items-center justify-center font-serif font-bold">D</div>
+            <div>
+              <h4 class="font-bold text-brand-cafe text-sm">Dulce Solórzano</h4>
+              <p class="text-xs text-brand-cafe/60">Reseña Verificada Google Maps</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reseña 5 (Luis Redi) -->
+        <div class="bg-brand-pergamino/60 p-8 rounded-3xl border border-brand-tostado/30 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex text-amber-500 gap-1 text-sm">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-xs bg-white text-brand-cafe px-2.5 py-0.5 rounded-full font-medium">Opinión del cliente</span>
+            </div>
+            <p class="text-brand-cafe/85 italic leading-relaxed text-sm mb-6">
+              "Esperaba más, la verdad. La tortilla me gusta poco hecha pero que se pueda comer, no beber y que sepa a algo. Local muy, muy pequeño y eso hace que tengas que guardar cola en la calle para poder entrar..."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-brand-tostado/20">
+            <div class="w-10 h-10 rounded-full bg-brand-oscuro text-white flex items-center justify-center font-serif font-bold">L</div>
+            <div>
+              <h4 class="font-bold text-brand-cafe text-sm">Luis Redi</h4>
+              <p class="text-xs text-brand-cafe/60">Reseña Verificada Google Maps</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- UBICACIÓN, CONTACTO Y MAPA INTERACTIVO -->
+  <section id="ubicacion" class="py-24 bg-brand-pergamino/50 border-t border-brand-tostado/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Info de contacto y horario -->
+        <div class="lg:col-span-5 space-y-6">
+          <span class="text-brand-terracota uppercase tracking-widest text-xs font-bold">Encuéntranos en Gijón</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-cafe leading-tight">
+            Ven a saborear el auténtico café en el corazón de la ciudad
+          </h2>
+          <p class="text-brand-cafe/75 text-sm leading-relaxed">
+            Estamos situados en el centro de Gijón, en la Calle Celestino Junquera. Te esperamos con el café recién tostado y la sartén a punto.
+          </p>
+
+          <div class="space-y-4 pt-2">
+            <div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-brand-tostado/20">
+              <div class="w-10 h-10 rounded-full bg-brand-terracota/10 text-brand-terracota flex items-center justify-center shrink-0 mt-0.5">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div>
+                <p class="text-xs text-brand-cafe/60 font-semibold uppercase tracking-wider">Dirección Exacta</p>
+                <p class="font-medium text-brand-cafe text-sm mt-0.5">C. Celestino Junquera, 17, Centro, 33201 Gijón, Asturias</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-brand-tostado/20">
+              <div class="w-10 h-10 rounded-full bg-brand-terracota/10 text-brand-terracota flex items-center justify-center shrink-0 mt-0.5">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div>
+                <p class="text-xs text-brand-cafe/60 font-semibold uppercase tracking-wider">Teléfono / Reservas</p>
+                <a href="tel:984192948" class="font-bold text-brand-terracota text-base hover:underline mt-0.5 block">984 19 29 48</a>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-brand-tostado/20">
+              <div class="w-10 h-10 rounded-full bg-brand-terracota/10 text-brand-terracota flex items-center justify-center shrink-0 mt-0.5">
+                <i class="fa-solid fa-bag-shopping"></i>
+              </div>
+              <div>
+                <p class="text-xs text-brand-cafe/60 font-semibold uppercase tracking-wider">Servicio Take Away</p>
+                <p class="font-medium text-brand-cafe text-sm mt-0.5">Disponible café y pinchos para llevar</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4">
+            <a href="tel:984192948" class="inline-flex w-full sm:w-auto items-center justify-center gap-3 px-8 py-4 bg-brand-terracota hover:bg-brand-cafe text-white font-bold rounded-xl shadow-lg transition-all">
+              <i class="fa-solid fa-calendar-check"></i>
+              <span>Reservar Mesa</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Mapa interactivo especificado -->
+        <div class="lg:col-span-7">
+          <div class="bg-white p-3 rounded-2xl shadow-xl border border-brand-tostado/30">
+            <iframe 
+              src="https://www.google.com/maps?q=Primero%20Caf%C3%A9%20C.%20Celestino%20Junquera%2C%2017%2C%20Centro%2C%2033201%20Gij%C3%B3n%2C%20Asturias&output=embed" 
+              width="100%" 
+              height="380" 
+              style="border:0; border-radius: 1rem;" 
+              allowfullscreen="" 
+              loading="lazy"
+              title="Ubicación de Primero Café en Gijón">
+            </iframe>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-brand-oscuro text-brand-pergamino border-t border-white/10 pt-16 pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+        
+        <div class="md:col-span-2 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-brand-terracota text-white flex items-center justify-center font-serif text-xl font-bold">
+              1º
+            </div>
+            <span class="font-serif text-2xl font-bold text-white tracking-wide">Primero Café</span>
+          </div>
+          <p class="text-sm text-brand-pergamino/70 max-w-sm">
+            La cafetería de especialidad en Gijón donde el café se tuesta con pasión y la tortilla melosa se sirve con orgullo. Creado por Olga y Jairo.
+          </p>
+        </div>
+
+        <div>
+          <h5 class="text-sm font-semibold uppercase tracking-wider text-brand-tostado mb-4">Enlaces Rápidos</h5>
+          <ul class="space-y-2.5 text-sm text-brand-pergamino/75">
+            <li><a href="#experiencia" class="hover:text-brand-tostado transition">La Esencia</a></li>
+            <li><a href="#carta" class="hover:text-brand-tostado transition">Nuestra Carta</a></li>
+            <li><a href="#galeria" class="hover:text-brand-tostado transition">Instalaciones</a></li>
+            <li><a href="#resenas" class="hover:text-brand-tostado transition">Opiniones de Clientes</a></li>
+            <li><a href="#ubicacion" class="hover:text-brand-tostado transition">Ubicación y Mapa</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="text-sm font-semibold uppercase tracking-wider text-brand-tostado mb-4">Contacto Directo</h5>
+          <p class="text-sm text-brand-pergamino/75 mb-2">C. Celestino Junquera, 17, Centro, 33201 Gijón</p>
+          <a href="tel:984192948" class="text-lg font-bold text-brand-dorado hover:text-white transition block mb-4">984 19 29 48</a>
+          <a href="tel:984192948" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-brand-terracota text-white text-xs font-semibold hover:bg-white hover:text-brand-oscuro transition">
+            <i class="fa-solid fa-phone"></i> Reservar Mesa
+          </a>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-brand-pergamino/50 gap-4">
+        <p>&copy; 2025 Primero Café - Todos los derechos reservados. Cafetería en Gijón.</p>
+        <p>Especialidad · Tortilla Melosa · Repostería Casera</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOTÓN FLOTANTE PARA DISPOSITIVOS MÓVILES -->
+  <div class="fixed bottom-5 right-5 z-40 lg:hidden">
+    <a href="tel:984192948" class="flex items-center gap-2.5 bg-brand-terracota hover:bg-brand-cafe text-white font-bold py-3 px-5 rounded-full shadow-2xl border-2 border-brand-dorado transition duration-300">
+      <i class="fa-solid fa-phone animate-pulse"></i>
+      <span class="text-sm">Reservar Mesa</span>
+    </a>
+  </div>
+
+</body>
+</html>
