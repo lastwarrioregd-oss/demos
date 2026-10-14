@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D'Coffee | Cafetería de Especialidad y Desayunos en Gijón</title>
+  <meta name="description" content="Café de especialidad, afamada tortilla jugosa, cookies artesanales y desayunos inolvidables junto a la playa en el centro de Gijón. ¡Ven a vivir la experiencia D'Coffee!">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              cream: '#FDFBF7',
+              warm: '#F7F2EA',
+              caramel: '#C68B59',
+              terracotta: '#A85836',
+              roasted: '#3D2314',
+              espresso: '#1F120C',
+              gold: '#D4AF37'
+            }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body {
+      background-color: #FDFBF7;
+      color: #3D2314;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .font-serif {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+    .text-balance {
+      text-wrap: balance;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-brand-caramel selection:text-white">
+
+  <!-- TOP BAR -->
+  <aside aria-label="Información de contacto rápida" class="bg-brand-espresso text-brand-cream text-xs sm:text-sm py-2.5 px-4 border-b border-brand-roasted/40">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+      <div class="flex items-center gap-4">
+        <span class="flex items-center gap-1.5 text-brand-caramel font-medium">
+          <i data-lucide="map-pin" class="w-3.5 h-3.5 text-brand-caramel"></i> C. Caridad, 3, Centro, Gijón (Junto a la Playa)
+        </span>
+        <span class="hidden md:inline-block text-brand-cream/40">|</span>
+        <span class="hidden md:flex items-center gap-1.5 text-brand-cream/80">
+          <i data-lucide="coffee" class="w-3.5 h-3.5 text-brand-caramel"></i> Café de Especialidad & Tortilla Casera
+        </span>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="https://wa.me/34684208998" target="_blank" rel="noopener noreferrer" class="hover:text-brand-caramel transition-colors flex items-center gap-1 font-semibold">
+          <i data-lucide="phone-call" class="w-3.5 h-3.5 text-brand-caramel"></i> +34 684 20 89 98
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 bg-[#FDFBF7]/95 backdrop-blur-md border-b border-brand-roasted/10 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3 group">
+        <img src="https://scontent.cdninstagram.com/v/t51.2885-19/432029012_807539087874415_55155691705626860_n.jpg?stp=dst-jpg_s100x100_tt6&_nc_cat=105&ccb=7-5&_nc_sid=bf7eb4&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy45MjEuQzMifQ%3D%3D&_nc_ohc=KUWIHy8fpw8Q7kNvwGdoHaM&_nc_oc=AdoPBDDTC0L9AGc3nos3uRsmlrWpnwTlcyCv3lqpRVzYntQx3wZF8J-2YQtZeEGPBKE&_nc_zt=24&_nc_ht=scontent.cdninstagram.com&_nc_ss=7b689&oh=00_AQOf3kdI1OdragJ5H_HytDfVsfAaoA2FmC0lsTc0YSt0Dw&oe=6AD5A98E" 
+             referrerpolicy="no-referrer" 
+             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';" 
+             alt="Logo D'Coffee Gijón" 
+             class="w-11 h-11 rounded-full object-cover border-2 border-brand-caramel shadow-sm group-hover:scale-105 transition-transform">
+        <div>
+          <span class="font-serif text-2xl font-bold tracking-tight text-brand-espresso block leading-none">D'Coffee</span>
+          <span class="text-[11px] font-semibold tracking-widest text-brand-terracotta uppercase">Specialty & Bakery · Gijón</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-brand-roasted/80">
+        <a href="#experiencia" class="hover:text-brand-terracotta transition-colors">La Experiencia</a>
+        <a href="#carta" class="hover:text-brand-terracotta transition-colors">Nuestra Carta</a>
+        <a href="#instalaciones" class="hover:text-brand-terracotta transition-colors">Instalaciones</a>
+        <a href="#opiniones" class="hover:text-brand-terracotta transition-colors">Opiniones</a>
+        <a href="#contacto" class="hover:text-brand-terracotta transition-colors">Ubicación</a>
+      </nav>
+
+      <!-- CTA -->
+      <div class="flex items-center gap-3">
+        <a href="https://wa.me/34684208998" target="_blank" rel="noopener noreferrer" 
+           class="inline-flex items-center gap-2 bg-brand-terracotta hover:bg-brand-roasted text-white px-5 py-2.5 rounded-full font-medium text-sm transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5">
+          <i data-lucide="calendar" class="w-4 h-4"></i>
+          <span>Reservar Mesa</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative pt-8 pb-16 lg:py-24 overflow-hidden">
+    <div class="absolute -top-40 -right-40 w-96 h-96 bg-brand-caramel/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Text Left -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-caramel/15 text-brand-terracotta font-semibold text-xs tracking-wider uppercase">
+            <i data-lucide="award" class="w-4 h-4 text-brand-terracotta"></i> Top cafetería de especialidad en Gijón
+          </div>
+          
+          <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-brand-espresso leading-tight text-balance">
+            El aroma auténtico del café y la tortilla más deseada de la costa asturiana.
+          </h1>
+
+          <p class="text-base sm:text-lg text-brand-roasted/80 max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
+            A escasos metros de la playa en pleno centro de Gijón. Déjate envolver por nuestro café de especialidad servido con mimo y bizcochito casero de cortesía, tostadas de masa madre y nuestra legendaria tortilla recién hecha.
+          </p>
+
+          <!-- Badges / highlights -->
+          <div class="pt-2 flex flex-wrap justify-center lg:justify-start gap-4 text-xs font-semibold text-brand-roasted">
+            <span class="flex items-center gap-1.5 bg-brand-warm px-3.5 py-2 rounded-xl border border-brand-roasted/10">
+              <i data-lucide="check" class="w-4 h-4 text-brand-terracotta"></i> Café normal o grande
+            </span>
+            <span class="flex items-center gap-1.5 bg-brand-warm px-3.5 py-2 rounded-xl border border-brand-roasted/10">
+              <i data-lucide="check" class="w-4 h-4 text-brand-terracotta"></i> Cookies artesanas variadas
+            </span>
+            <span class="flex items-center gap-1.5 bg-brand-warm px-3.5 py-2 rounded-xl border border-brand-roasted/10">
+              <i data-lucide="check" class="w-4 h-4 text-brand-terracotta"></i> Conexión & ambiente cálido
+            </span>
+          </div>
+
+          <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+            <a href="https://wa.me/34684208998" target="_blank" rel="noopener noreferrer" 
+               class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-brand-terracotta hover:bg-brand-roasted text-white px-8 py-4 rounded-full font-semibold text-base transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+              <span>Reservar Mesa</span>
+              <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </a>
+            <a href="#carta" 
+               class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-brand-warm hover:bg-brand-caramel/20 text-brand-espresso border border-brand-roasted/15 px-7 py-4 rounded-full font-semibold text-base transition-all">
+              <i data-lucide="utensils-crossed" class="w-5 h-5 text-brand-terracotta"></i>
+              <span>Ver Nuestra Carta</span>
+            </a>
+          </div>
+
+          <!-- Rating proof -->
+          <div class="pt-4 flex items-center justify-center lg:justify-start gap-3">
+            <div class="flex text-amber-580 text-brand-gold">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-500 text-amber-500"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-500 text-amber-500"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-500 text-amber-500"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-500 text-amber-500"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-500 text-amber-500"></i>
+            </div>
+            <p class="text-xs sm:text-sm text-brand-roasted/80">
+              <strong class="font-bold text-brand-espresso">Valoración Excelente</strong> en Gijón Centro · Reseñas 100% Reales
+            </p>
+          </div>
+        </div>
+
+        <!-- Visual Mosaic Right with real extracted photos -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative z-10 grid grid-cols-2 gap-3 sm:gap-4">
+            <div class="space-y-3 sm:space-y-4">
+              <div class="overflow-hidden rounded-2xl sm:rounded-3xl shadow-xl aspect-square border-2 border-white">
+                <img src="https://scontent.cdninstagram.com/v/t39.30808-6/450155934_17909006348974926_4978279338691660616_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=104&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=cFxKyp_3NlIQ7kNvwElLF1U&_nc_oc=AdprkO1Vr69-YPJbsjxdDt9kDQoStDo-LwAjO8EjWxJD0G9pzQxs_r8_QylEbtYZQlM&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=bhhwFjVZ7GXTMqyooCVyqA&_nc_ss=7b689&oh=00_AQPCzrVdujRtGKsPJVA3CJWKZD5mPzVpqqBMox1sUXlkGQ&oe=6AD5A256" 
+                     referrerpolicy="no-referrer" 
+                     onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';" 
+                     alt="Cafetería D'Coffee Gijón" 
+                     class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+              </div>
+              <div class="overflow-hidden rounded-2xl sm:rounded-3xl shadow-lg aspect-[4/5] border-2 border-white">
+                <img src="https://scontent.cdninstagram.com/v/t51.82787-15/524910966_18366013894150260_2396167050335156864_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=108&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=E7BAihRZ_lEQ7kNvwFwdGlC&_nc_oc=AdqvHw4twYCk-392x4CdYP1lL2pqvMtASlDB1uileXaNf0KvJkOJxpphyH1ZphGlCaQ&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=bhhwFjVZ7GXTMqyooCVyqA&_nc_ss=7b689&oh=00_AQMPIzTCohFfBst3V8RQ4e0gDwNmSwP649FzjkQ3U0yjPQ&oe=6AD5BBF3" 
+                     referrerpolicy="no-referrer" 
+                     onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';" 
+                     alt="D'Coffee Especialidades" 
+                     class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+              </div>
+            </div>
+            <div class="space-y-3 sm:space-y-4 pt-6 sm:pt-8">
+              <div class="overflow-hidden rounded-2xl sm:rounded-3xl shadow-lg aspect-[4/5] border-2 border-white">
+                <img src="https://scontent.cdninstagram.com/v/t51.75761-15/503866570_18328406467204421_2122539452982585863_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=107&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=Y6QOQ2tyA_oQ7kNvwHyLRZs&_nc_oc=Ado4L81gZ-yYwejc3jYQYpNVEvBydMozpzkfEN4fu4PkDUEBB7ZCQI7hLAVKroDsSC4&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=bhhwFjVZ7GXTMqyooCVyqA&_nc_ss=7b689&oh=00_AQNEOghrn8Lw6nKSVK6NVE3LwYcdy2fJLosUsDIYO6mDDw&oe=6AD5C03F" 
+                     referrerpolicy="no-referrer" 
+                     onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';" 
+                     alt="Ambiente acogedor en D'Coffee" 
+                     class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+              </div>
+              <div class="bg-brand-espresso text-brand-cream p-5 rounded-2xl sm:rounded-3xl shadow-xl flex flex-col justify-center">
+                <span class="text-3xl font-serif text-brand-caramel font-bold">100%</span>
+                <span class="text-xs uppercase tracking-wider text-brand-warm/80 font-medium">Pasión por el grano selecto & masa madre</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES VALUE PROPOSITION -->
+  <section id="experiencia" class="py-16 bg-brand-warm/60 border-y border-brand-roasted/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mx-auto text-center mb-12">
+        <h2 class="font-serif text-3xl font-bold text-brand-espresso">¿Por qué D'Coffee es tu parada obligatoria en Gijón?</h2>
+        <p class="text-brand-roasted/75 mt-2">Cuidamos cada detalle para que tu desayuno o merienda sea un ritual memorable.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div class="bg-brand-cream p-8 rounded-2xl border border-brand-roasted/10 shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-xl bg-brand-caramel/20 flex items-center justify-center text-brand-terracotta mb-5">
+            <i data-lucide="coffee" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-serif text-xl font-bold text-brand-espresso mb-2">Café de Especialidad Real</h3>
+          <p class="text-sm text-brand-roasted/80 leading-relaxed">
+            Granos minuciosamente seleccionados. Tómalo en tamaño normal o grande, preparado al punto exacto con arte latte o como un reconfortante americano frío. Y siempre: acompañado de un tierno bizcochito de la casa.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="bg-brand-cream p-8 rounded-2xl border border-brand-roasted/10 shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-xl bg-brand-caramel/20 flex items-center justify-center text-brand-terracotta mb-5">
+            <i data-lucide="egg" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-serif text-xl font-bold text-brand-espresso mb-2">Nuestra Famosa Tortilla</h3>
+          <p class="text-sm text-brand-roasted/80 leading-relaxed">
+            Compite con las mejores del norte: suave, jugosa, en su punto exacto y servida con pan crujiente de primera calidad. Un manjar que enamora a gijoneses y visitantes a partes iguales.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="bg-brand-cream p-8 rounded-2xl border border-brand-roasted/10 shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-xl bg-brand-caramel/20 flex items-center justify-center text-brand-terracotta mb-5">
+            <i data-lucide="cookie" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-serif text-xl font-bold text-brand-espresso mb-2">Cookies y Repostería de Autor</h3>
+          <p class="text-sm text-brand-roasted/80 leading-relaxed">
+            Elige las cookies por categoría en nuestro mostrador diario: rellenas, crujientes, de chocolate intenso o frutos secos, horneadas con mantequilla de verdad y cariño artesano.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARTA Y ESPECIALIDADES SECTION -->
+  <section id="carta" class="py-20 bg-brand-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-brand-terracotta font-semibold text-xs uppercase tracking-widest">Lo que nos hace únicos</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-espresso mt-2">Nuestra Carta, Platos Estrella y Especialidades de la Casa</h2>
+        <p class="text-brand-roasted/80 mt-3">Disfruta de una propuesta honesta, sabrosa y elaborada con los mejores ingredientes locales y café de finca.</p>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-8">
+        
+        <!-- Categoría 1: Café & Especialidades Líquidas -->
+        <div class="bg-brand-warm/50 p-6 sm:p-8 rounded-3xl border border-brand-roasted/10 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6 pb-4 border-b border-brand-roasted/15">
+              <div class="flex items-center gap-3">
+                <i data-lucide="coffee" class="w-6 h-6 text-brand-terracotta"></i>
+                <h3 class="font-serif text-2xl font-bold text-brand-espresso">Cafés & Brews</h3>
+              </div>
+              <span class="text-xs bg-brand-caramel/20 text-brand-espresso font-semibold px-2.5 py-1 rounded-full">Especialidad</span>
+            </div>
+
+            <ul class="space-y-5 text-sm">
+              <li class="flex justify-between items-start">
+                <div>
+                  <h4 class="font-bold text-brand-espresso">Espresso / Doble Espresso</h4>
+                  <p class="text-xs text-brand-roasted/70">Extracción precisa, notas achocolatadas y cuerpo sedoso.</p>
+                </div>
+                <span class="font-serif font-bold text-brand-terracotta ml-3">Especial</span>
+              </li>
+              <li class="flex justify-between items-start">
+                <div>
+                  <h4 class="font-bold text-brand-espresso">Café con Leche / Flat White (Normal o Grande)</h4>
+                  <p class="text-xs text-brand-roasted/70">Acompañado siempre de 2 esponjosos trocitos de bizcochito artesano.</p>
+                </div>
+                <span class="font-serif font-bold text-brand-terracotta ml-3">Top</span>
+              </li>
+              <li class="flex justify-between items-start">
+                <div>
+                  <h4 class="font-bold text-brand-espresso">Americano con Hielo Especial</h4>
+                  <p class="text-xs text-brand-roasted/70">Servido y filtrado con técnica barista para refrescar sin perder aroma.</p>
+                </div>
+                <span class="font-serif font-bold text-brand-terracotta ml-3">Favorito</span>
+              </li>
+              <li class="flex justify-between items-start">
+                <div>
+                  <h4 class="font-bold text-brand-espresso">Matcha Latte, Chai & Infusiones</h4>
+                  <p class="text-xs text-brand-roasted/70">Opciones vegetales de avena, soja o almendra disponibles.</p>
+                </div>
+                <span class="font-serif font-bold text-brand-terracotta ml-3">Healthy</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-8 pt-4 border-t border-brand-roasted/10 text-xs text-brand-roasted/70 italic">
+            * Todos los cafés incluyen detalle dulce casero de cortesía.
+          </div>
+        </div>
+
+        <!-- Categoría 2: Nuestra Cocina Salada y Tortillas -->
+        <div class="bg-brand-warm/50 p-6 sm:p-8 rounded-3xl border border-brand-roasted/10 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6 pb-4 border-b border-brand-roasted/15">
+              <div class="flex items-center gap-3">
+                <i data-lucide="utensils" class="w-6 h-6 text-brand-terracotta"></i>
+                <h3 class="font-serif text-2xl font-bold text-brand-espresso">Desayunos & Salado</h3>
+              </div>
+              <span class="text-xs bg-brand-caramel/20 text-brand-espresso font-semibold px-2.5 py-1 rounded-full">Casero</span>
+            </div>
+
+            <ul class="space-y-5 text-sm">
+              <li class="flex justify-between items-start">
+                <div>
+                  <h4 class="font-bold text-brand-espresso">El Pincho de Tortilla D'Coffee</h4>
+                  <p class="text-xs text-brand-roasted/70">Jugosa, melosa, suave y servida con un pan crujiente excepcional.</p>
+                </div>
+                <span class="font-serif font-bold text-brand-terracotta ml-3">Estrella</span>
+              </li>
+              <li class="flex justify-between items-start">
+                <div>
+                  <h4 class="font-bold text-brand-espresso">Tostadas con Huevos Revueltos</h4>
+                  <p class="text-xs text-brand-roasted/70">Masa madre tostada, huevos cremosos de corral y aceite de oliva virgen extra.</p>
+                </div>
+                <span class="font-serif font-bold text-brand-terracotta ml-3">Brunch</span>
+              </li>
+              <li class="flex justify-between items-start">
+                <div>
+                  <h4 class="font-bold text-brand-espresso">Tostas Ibéricas & Aguacate</h4>
+                  <p class="text-xs text-brand-roasted/70">Tomate natural rallado, jamón seleccionado y semillas tostadas.</p>
+                </div>
+                <span class="font-serif font-bold text-brand-terracotta ml-3">Gourmet</span>
+              </li>
+              <li class="flex justify-between items-start">
+                <div>
+                  <h4 class="font-bold text-brand-espresso">Sandwiches & Focaccias Calientes</h4>
+                  <p class="text-xs text-brand-roasted/70">Elaborados al momento con quesos fundentes y embutidos locales.</p>
+                </div>
+                <span class="font-serif font-bold text-brand-terracotta ml-3">Al día</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-8 pt-4 border-t border-brand-roasted/10 text-xs text-brand-roasted/70 italic">
+            * Elaborado fresco cada mañana en nuestra cocina.
+          </div>
+        </div>
+
+        <!-- Categoría 3: Elige las Cookies por Categoría & Dulces -->
+        <div class="bg-brand-warm/50 p-6 sm:p-8 rounded-3xl border border-brand-roasted/10 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6 pb-4 border-b border-brand-roasted/15">
+              <div class="flex items-center gap-3">
+                <i data-lucide="cookie" class="w-6 h-6 text-brand-terracotta"></i>
+                <h3 class="font-serif text-2xl font-bold text-brand-espresso">Cookies & Bakery</h3>
+              </div>
+              <span class="text-xs bg-brand-caramel/20 text-brand-espresso font-semibold px-2.5 py-1 rounded-full">Artesano</span>
+            </div>
+
+            <div class="mb-4 bg-brand-cream/80 p-3 rounded-xl border border-brand-roasted/10">
+              <p class="text-xs font-semibold text-brand-terracotta uppercase tracking-wide">Mostrador activo:</p>
+              <p class="text-xs text-brand-roasted/80 font-medium">"Elige las cookies por categoría"</p>
+            </div>
+
+            <ul class="space-y-4 text-sm">
+              <li class="flex justify-between items-start">
+                <div>
+                  <h4 class="font-bold text-brand-espresso">Categoría Clásicas: Choco-Chips</h4>
+                  <p class="text-xs text-brand-roasted/70">Mantequilla dorada, escamas de sal marina y chocolate fundente.</p>
+                </div>
+                <span class="font-serif font-bold text-brand-terracotta ml-3">Dulce</span>
+              </li>
+              <li class="flex justify-between items-start">
+                <div>
+                  <h4 class="font-bold text-brand-espresso">Categoría Rellenas: Nutella & Lotus</h4>
+                  <p class="text-xs text-brand-roasted/70">Corazón líquido irresistible y exterior crujiente.</p>
+                </div>
+                <span class="font-serif font-bold text-brand-terracotta ml-3">Deluxe</span>
+              </li>
+              <li class="flex justify-between items-start">
+                <div>
+                  <h4 class="font-bold text-brand-espresso">Categoría Frutos Secos & Red Velvet</h4>
+                  <p class="text-xs text-brand-roasted/70">Pistacho tostado, nueces pecanas o masa velvet aterciopelada.</p>
+                </div>
+                <span class="font-serif font-bold text-brand-terracotta ml-3">Premium</span>
+              </li>
+              <li class="flex justify-between items-start">
+                <div>
+                  <h4 class="font-bold text-brand-espresso">Bizcochos & Sobaos Tradicionales</h4>
+                  <p class="text-xs text-brand-roasted/70">Los famosos bocados esponjosos que enamoran en cada visita.</p>
+                </div>
+                <span class="font-serif font-bold text-brand-terracotta ml-3">Casero</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-8 pt-4 border-t border-brand-roasted/10 text-xs text-brand-roasted/70 italic">
+            * Pregunta por las variedades del día en barra.
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CTA Carta -->
+      <div class="mt-12 text-center">
+        <a href="https://wa.me/34684208998" target="_blank" rel="noopener noreferrer" 
+           class="inline-flex items-center gap-3 bg-brand-terracotta hover:bg-brand-roasted text-white px-9 py-4 rounded-full font-semibold shadow-md hover:shadow-xl transition-all">
+          <i data-lucide="coffee" class="w-5 h-5"></i>
+          <span>Reservar Mesa y Pedir en Local</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA / INSTALACIONES Y TRABAJOS -->
+  <section id="instalaciones" class="py-20 bg-brand-warm/40 border-t border-brand-roasted/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mx-auto text-center mb-14">
+        <span class="text-brand-terracotta font-semibold text-xs uppercase tracking-widest">Nuestra esencia visual</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-espresso mt-2">Nuestras Instalaciones y Trabajos</h2>
+        <p class="text-brand-roasted/75 mt-3">Diseñado para que te sientas como en casa, con rincones estéticos, luz natural y olor a café recién molido.</p>
+      </div>
+
+      <!-- Real Photos Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Foto 1 -->
+        <div class="group relative overflow-hidden rounded-2xl shadow-md border border-brand-roasted/10 bg-white aspect-square">
+          <img src="https://scontent.cdninstagram.com/v/t39.30808-6/450155934_17909006348974926_4978279338691660616_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=104&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=cFxKyp_3NlIQ7kNvwElLF1U&_nc_oc=AdprkO1Vr69-YPJbsjxdDt9kDQoStDo-LwAjO8EjWxJD0G9pzQxs_r8_QylEbtYZQlM&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=bhhwFjVZ7GXTMqyooCVyqA&_nc_ss=7b689&oh=00_AQPCzrVdujRtGKsPJVA3CJWKZD5mPzVpqqBMox1sUXlkGQ&oe=6AD5A256" 
+               referrerpolicy="no-referrer" 
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';" 
+               alt="Detalle de D'Coffee Gijón" 
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-espresso/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+            <span class="text-white text-sm font-medium">Cafetería de Especialidad en Gijón</span>
+          </div>
+        </div>
+
+        <!-- Foto 2 -->
+        <div class="group relative overflow-hidden rounded-2xl shadow-md border border-brand-roasted/10 bg-white aspect-square">
+          <img src="https://scontent.cdninstagram.com/v/t51.82787-15/524910966_18366013894150260_2396167050335156864_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=108&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=E7BAihRZ_lEQ7kNvwFwdGlC&_nc_oc=AdqvHw4twYCk-392x4CdYP1lL2pqvMtASlDB1uileXaNf0KvJkOJxpphyH1ZphGlCaQ&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=bhhwFjVZ7GXTMqyooCVyqA&_nc_ss=7b689&oh=00_AQMPIzTCohFfBst3V8RQ4e0gDwNmSwP649FzjkQ3U0yjPQ&oe=6AD5BBF3" 
+               referrerpolicy="no-referrer" 
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';" 
+               alt="Elaboración y café barista" 
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-espresso/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+            <span class="text-white text-sm font-medium">Técnica Barista Profesional</span>
+          </div>
+        </div>
+
+        <!-- Foto 3 -->
+        <div class="group relative overflow-hidden rounded-2xl shadow-md border border-brand-roasted/10 bg-white aspect-square">
+          <img src="https://scontent.cdninstagram.com/v/t51.75761-15/503866570_18328406467204421_2122539452982585863_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=107&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=Y6QOQ2tyA_oQ7kNvwHyLRZs&_nc_oc=Ado4L81gZ-yYwejc3jYQYpNVEvBydMozpzkfEN4fu4PkDUEBB7ZCQI7hLAVKroDsSC4&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=bhhwFjVZ7GXTMqyooCVyqA&_nc_ss=7b689&oh=00_AQNEOghrn8Lw6nKSVK6NVE3LwYcdy2fJLosUsDIYO6mDDw&oe=6AD5C03F" 
+               referrerpolicy="no-referrer" 
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';" 
+               alt="Rincón cálido de D'Coffee" 
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-espresso/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+            <span class="text-white text-sm font-medium">Ambiente Tranquilo & Acogedor</span>
+          </div>
+        </div>
+
+        <!-- Foto 4 -->
+        <div class="group relative overflow-hidden rounded-2xl shadow-md border border-brand-roasted/10 bg-white aspect-square">
+          <img src="https://scontent.cdninstagram.com/v/t51.71878-15/501311475_676854705145711_2939200995159453511_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=111&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=sjLwC15lTFwQ7kNvwE1b-JN&_nc_oc=AdqVhngmubdjvMwh7ePf6Pm9ngvYEW7KoTgeSqrlNtP4jK7gewUQ5dCJJQUMmRvXfIo&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=bhhwFjVZ7GXTMqyooCVyqA&_nc_ss=7b689&oh=00_AQOBaIGMqg1wOjbEa1cNPtz4ydJTlswkeJ4awAF2gpOZ0A&oe=6AD5AEAF" 
+               referrerpolicy="no-referrer" 
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';" 
+               alt="Cookies y bakery" 
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-espresso/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+            <span class="text-white text-sm font-medium">Repostería Casera & Cookies</span>
+          </div>
+        </div>
+
+        <!-- Foto 5 -->
+        <div class="group relative overflow-hidden rounded-2xl shadow-md border border-brand-roasted/10 bg-white aspect-square">
+          <img src="https://scontent.cdninstagram.com/v/t51.75761-15/484662258_17899328043153705_9206204927286604622_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=107&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=0WbU8X0CrXYQ7kNvwG7cA9G&_nc_oc=Adq_Ycs4I9rLxz7h_c_q_LPKzyPQ3qsZ0iudFAYA17sYUg6Uy3KzLO2DXt_bm0YK6MY&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=bhhwFjVZ7GXTMqyooCVyqA&_nc_ss=7b689&oh=00_AQOAXZFNSXmwlFL9Ov6capKyS2iyv6AetjGjuo-0m_XAeQ&oe=6AD5AB83" 
+               referrerpolicy="no-referrer" 
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';" 
+               alt="Desayunos completos D'Coffee" 
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-espresso/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+            <span class="text-white text-sm font-medium">Tostadas y Desayunos Saludables</span>
+          </div>
+        </div>
+
+        <!-- Callout Tarjeta 6 -->
+        <div class="p-8 rounded-2xl border border-brand-roasted/15 bg-gradient-to-br from-brand-espresso to-brand-roasted text-brand-cream flex flex-col justify-between aspect-square">
+          <div>
+            <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-caramel/20 text-brand-caramel text-xs font-semibold mb-4">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> Centro de Gijón
+            </span>
+            <h3 class="font-serif text-2xl font-bold leading-snug">Un refugio gastronómico junto al mar</h3>
+            <p class="text-xs text-brand-cream/80 mt-3 leading-relaxed">
+              Pasa a desayunar antes de tu paseo por la playa o recarga energías a media tarde con un café irrepetible.
+            </p>
+          </div>
+          <a href="https://wa.me/34684208998" target="_blank" rel="noopener noreferrer" 
+             class="inline-flex items-center gap-2 text-brand-caramel hover:text-white font-semibold text-sm transition-colors pt-4">
+            <span>Reservar Mesa</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEÑAS REALES DE CLIENTES -->
+  <section id="opiniones" class="py-20 bg-brand-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-brand-terracotta font-semibold text-xs uppercase tracking-widest">Opiniones reales verificadas</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-espresso mt-2">Lo que dicen quienes ya nos han visitado</h2>
+        <p class="text-brand-roasted/75 mt-2">La satisfacción de nuestros clientes habla por nosotros.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Reseña 1 -->
+        <div class="bg-brand-warm/60 p-6 sm:p-7 rounded-2xl border border-brand-roasted/10 flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-500 mb-3">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+            </div>
+            <p class="text-sm text-brand-roasted/90 italic leading-relaxed">
+              "Muy buen sitio para tomar café, está muy bueno, bien decorado todo como los típicos sitios de café de especialidad y muy buen servicio. Está ubicado cerca de la playa. El café puede ser de tamaño normal o grande y viene acompañado con 2 trocitos de bizcocho."
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-brand-roasted/10 flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-brand-caramel/30 flex items-center justify-center font-bold text-brand-espresso text-xs">
+              MP
+            </div>
+            <div>
+              <p class="text-sm font-bold text-brand-espresso">Miguel Angel Perez</p>
+              <p class="text-[11px] text-brand-roasted/60">Cliente Verificado · Google Maps</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reseña 2 -->
+        <div class="bg-brand-warm/60 p-6 sm:p-7 rounded-2xl border border-brand-roasted/10 flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-500 mb-3">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+            </div>
+            <p class="text-sm text-brand-roasted/90 italic leading-relaxed">
+              "Gran descubrimiento en Gijon! Un lugar genial para desayunar,. Si hay algo q envidio a Santander son las riquísimas tortillas de patata q puedes encontrar casi en cualquier parte....pero ya no hace falta ir tan lejos 😅...la tortilla de D'Coffee está buenísima, y lo mismo me pareció el café; todo ello acompañado de una atención de 10, Creo q pasa automáticamente al top 3 de mis lugares favoritos para desayunar en Gijón."
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-brand-roasted/10 flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-brand-caramel/30 flex items-center justify-center font-bold text-brand-espresso text-xs">
+              MA
+            </div>
+            <div>
+              <p class="text-sm font-bold text-brand-espresso">Marta Alvarez</p>
+              <p class="text-[11px] text-brand-roasted/60">Cliente Verificado · Google Maps</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reseña 3 -->
+        <div class="bg-brand-warm/60 p-6 sm:p-7 rounded-2xl border border-brand-roasted/10 flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-500 mb-3">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+            </div>
+            <p class="text-sm text-brand-roasted/90 italic leading-relaxed">
+              "¡Me quede enamorada de la tortilla y de la camarera, muy maja y atenta! Entré por casualidad porque vi buen ambiente y se veía bonito el local. Para mi sorpresa, el café estaba muy rico y la tortilla pf que suave y sabrosa estaba (hasta el pan estaba bueno). De acompañamiento me dieron unos bizcochitos super esponjosos y deliciosos. Sin duda, si me paso otro día por Gijón, iré de nuevo! 😊"
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-brand-roasted/10 flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-brand-caramel/30 flex items-center justify-center font-bold text-brand-espresso text-xs">
+              MC
+            </div>
+            <div>
+              <p class="text-sm font-bold text-brand-espresso">Mariela Carreño Ganchozo</p>
+              <p class="text-[11px] text-brand-roasted/60">Cliente Verificado · Google Maps</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reseña 4 -->
+        <div class="bg-brand-warm/60 p-6 sm:p-7 rounded-2xl border border-brand-roasted/10 flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-500 mb-3">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+            </div>
+            <p class="text-sm text-brand-roasted/90 italic leading-relaxed">
+              "Una cafetería de especialidad que merece mucho la pena. Pedí un café americano con hielo y me encantó todo: la forma en la que estaba preparado, el propio café y cómo estaba servido. La tortilla y el pan, espectaculares.…"
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-brand-roasted/10 flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-brand-caramel/30 flex items-center justify-center font-bold text-brand-espresso text-xs">
+              EJ
+            </div>
+            <div>
+              <p class="text-sm font-bold text-brand-espresso">EleJota</p>
+              <p class="text-[11px] text-brand-roasted/60">Cliente Verificado · Google Maps</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reseña 5 -->
+        <div class="bg-brand-warm/60 p-6 sm:p-7 rounded-2xl border border-brand-roasted/10 flex flex-col justify-between md:col-span-2 lg:col-span-2">
+          <div>
+            <div class="flex text-amber-500 mb-3">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+            </div>
+            <p class="text-sm text-brand-roasted/90 italic leading-relaxed">
+              "Hemos estado desayunando estos días y el café es espectacular. Son súper amables y nos han preparado unas tostadas riquísimas con huevos revueltos. Sin duda un lugar para volver."
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-brand-roasted/10 flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-brand-caramel/30 flex items-center justify-center font-bold text-brand-espresso text-xs">
+              VA
+            </div>
+            <div>
+              <p class="text-sm font-bold text-brand-espresso">Vi-An</p>
+              <p class="text-[11px] text-brand-roasted/60">Cliente Verificado · Google Maps</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACIÓN Y CONTACTO CON MAPA INTERACTIVO -->
+  <section id="contacto" class="py-20 bg-brand-warm/50 border-t border-brand-roasted/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid lg:grid-cols-12 gap-10 items-center">
+        <!-- Info Izquierda -->
+        <div class="lg:col-span-5 space-y-6">
+          <span class="text-brand-terracotta font-semibold text-xs uppercase tracking-widest">Encuéntranos</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-espresso leading-snug">
+            Ven a visitarnos en el corazón de Gijón
+          </h2>
+          <p class="text-brand-roasted/80 text-sm leading-relaxed">
+            Estamos ubicados en una zona tranquila y accesible del centro, a solo pasos del paseo marítimo y la playa. El rincón perfecto para tus pausas con buen café.
+          </p>
+
+          <div class="space-y-4 pt-2">
+            <div class="flex items-start gap-4 p-4 rounded-xl bg-white border border-brand-roasted/10">
+              <div class="p-2.5 rounded-lg bg-brand-caramel/15 text-brand-terracotta">
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="text-xs uppercase font-semibold tracking-wider text-brand-roasted/60">Dirección exacta</p>
+                <p class="font-medium text-sm text-brand-espresso">C. Caridad, 3, bajo, Centro, 33202 Gijón, Asturias</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-4 rounded-xl bg-white border border-brand-roasted/10">
+              <div class="p-2.5 rounded-lg bg-brand-caramel/15 text-brand-terracotta">
+                <i data-lucide="phone" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="text-xs uppercase font-semibold tracking-wider text-brand-roasted/60">Contacto directo & WhatsApp</p>
+                <a href="https://wa.me/34684208998" class="font-bold text-brand-terracotta hover:underline text-sm">684 20 89 98</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <a href="https://wa.me/34684208998" target="_blank" rel="noopener noreferrer" 
+               class="w-full inline-flex items-center justify-center gap-2 bg-brand-terracotta hover:bg-brand-roasted text-white py-4 px-6 rounded-xl font-semibold shadow-md transition-all">
+              <i data-lucide="calendar" class="w-5 h-5"></i>
+              <span>Reservar Mesa</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Mapa interactivo real Derecha -->
+        <div class="lg:col-span-7">
+          <div class="p-3 bg-white rounded-3xl shadow-xl border border-brand-roasted/10">
+            <iframe 
+              src="https://www.google.com/maps?q=D'Coffee%20C.%20Caridad%2C%203%2C%20bajo%2C%20Centro%2C%2033202%20Gij%C3%B3n%2C%20Asturias&output=embed" 
+              width="100%" 
+              height="380" 
+              style="border:0; border-radius: 1rem;" 
+              allowfullscreen="" 
+              loading="lazy"
+              title="Ubicación D'Coffee Gijón">
+            </iframe>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-brand-espresso text-brand-cream/80 py-12 border-t border-brand-roasted">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex items-center gap-3">
+          <img src="https://scontent.cdninstagram.com/v/t51.2885-19/432029012_807539087874415_55155691705626860_n.jpg?stp=dst-jpg_s100x100_tt6&_nc_cat=105&ccb=7-5&_nc_sid=bf7eb4&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy45MjEuQzMifQ%3D%3D&_nc_ohc=KUWIHy8fpw8Q7kNvwGdoHaM&_nc_oc=AdoPBDDTC0L9AGc3nos3uRsmlrWpnwTlcyCv3lqpRVzYntQx3wZF8J-2YQtZeEGPBKE&_nc_zt=24&_nc_ht=scontent.cdninstagram.com&_nc_ss=7b689&oh=00_AQOf3kdI1OdragJ5H_HytDfVsfAaoA2FmC0lsTc0YSt0Dw&oe=6AD5A98E" 
+               referrerpolicy="no-referrer" 
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';" 
+               alt="D'Coffee" 
+               class="w-9 h-9 rounded-full object-cover border border-brand-caramel">
+          <span class="font-serif text-xl font-bold text-white tracking-wide">D'Coffee Gijón</span>
+        </div>
+        <p class="text-xs text-brand-cream/60 text-center md:text-left">
+          © <span id="currentYear"></span> D'Coffee · C. Caridad, 3, bajo, Centro, 33202 Gijón, Asturias. Todos los derechos reservados.
+        </p>
+        <div>
+          <a href="https://wa.me/34684208998" target="_blank" rel="noopener noreferrer" 
+             class="inline-flex items-center gap-2 bg-brand-roasted hover:bg-brand-caramel text-white text-xs font-semibold px-4 py-2 rounded-full border border-brand-caramel/30 transition-colors">
+            <span>Reservar Mesa</span>
+            <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING CTA BUTTON (Mobile & Desktop) -->
+  <div class="fixed bottom-6 right-6 z-50">
+    <a href="https://wa.me/34684208998" target="_blank" rel="noopener noreferrer" 
+       class="flex items-center gap-2.5 bg-brand-terracotta hover:bg-brand-espresso text-white px-5 py-3.5 rounded-full shadow-2xl hover:scale-105 active:scale-95 transition-all border border-brand-caramel/40">
+      <i data-lucide="message-circle" class="w-5 h-5 text-white"></i>
+      <span class="font-bold text-sm tracking-wide">Reservar Mesa</span>
+    </a>
+  </div>
+
+  <!-- Lucide icons initialization & Dynamic Year -->
+  <script>
+    lucide.createIcons();
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
