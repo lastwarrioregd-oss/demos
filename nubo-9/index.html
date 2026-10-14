@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NUBO | Cafetería de Especialidad & Brunch en Gijón</title>
+  <meta name="description" content="NUBO - Cafetería de especialidad, brunch artesanal, focaccias y repostería en el corazón de Gijón (Paseo de Begoña). Terraza y ambiente pet-friendly.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            espresso: {
+              900: '#1A120B',
+              800: '#2A1E17',
+              700: '#3D2B21',
+              600: '#523B2E',
+            },
+            terracotta: {
+              500: '#C86D51',
+              600: '#B85D3B',
+              700: '#9E4A2C',
+            },
+            crema: {
+              50: '#FAF7F2',
+              100: '#F5EFE6',
+              200: '#EBDDCF',
+              300: '#DEC7B2',
+            },
+            accent: '#D4A373'
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="bg-crema-50 text-espresso-800 font-sans antialiased selection:bg-terracotta-500 selection:text-white">
+
+  <!-- Top bar info -->
+  <div class="bg-espresso-900 text-crema-100 text-xs sm:text-sm py-2 px-4 border-b border-espresso-700/50">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-4 flex-wrap justify-center">
+        <span class="flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-terracotta-500"></i> P. Begoña, 16, Centro, Gijón</span>
+        <span class="hidden md:inline text-espresso-600">•</span>
+        <span class="flex items-center gap-1.5"><i class="fa-solid fa-mug-hot text-terracotta-500"></i> Café de Especialidad & Orígenes Honey</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <span class="flex items-center gap-1.5 text-crema-200"><i class="fa-solid fa-paw text-terracotta-500"></i> Dog Friendly</span>
+        <a href="https://wa.me/34610410417" class="hover:text-terracotta-500 transition-colors flex items-center gap-1">
+          <i class="fa-brands fa-whatsapp text-emerald-400"></i> 610 41 04 17
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="sticky top-0 z-50 bg-crema-50/95 backdrop-blur-md border-b border-crema-200/80 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2 group">
+        <span class="text-3xl sm:text-4xl font-serif font-bold tracking-widest text-espresso-900 group-hover:text-terracotta-600 transition-colors">NUBO</span>
+        <span class="text-[10px] tracking-widest uppercase font-semibold text-terracotta-600 border-l border-terracotta-500/30 pl-2 ml-1">Specialty<br>Coffee</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide text-espresso-700">
+        <a href="#carta" class="hover:text-terracotta-600 transition-colors">Nuestra Carta</a>
+        <a href="#experiencia" class="hover:text-terracotta-600 transition-colors">Filosofía</a>
+        <a href="#instalaciones" class="hover:text-terracotta-600 transition-colors">Instalaciones</a>
+        <a href="#opiniones" class="hover:text-terracotta-600 transition-colors">Reseñas</a>
+        <a href="#contacto" class="hover:text-terracotta-600 transition-colors">Dónde Estamos</a>
+      </nav>
+
+      <!-- Action Button -->
+      <div class="flex items-center gap-3">
+        <a href="https://wa.me/34610410417" target="_blank" rel="noopener noreferrer" 
+           class="inline-flex items-center gap-2 bg-terracotta-600 hover:bg-terracotta-700 text-white font-medium px-5 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 text-sm sm:text-base">
+          <i class="fa-brands fa-whatsapp text-lg"></i>
+          <span>Reservar Mesa</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-32 bg-gradient-to-b from-crema-50 via-crema-100/60 to-crema-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Left Column: Copy -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-crema-200/70 border border-terracotta-500/20 text-xs uppercase tracking-wider text-espresso-800 font-semibold">
+            <i class="fa-solid fa-award text-terracotta-600"></i>
+            Cafetería de Especialidad en Gijón Centro
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-espresso-900 leading-[1.15]">
+            El placer del café bien hecho y los sabores que inspiran.
+          </h1>
+          <p class="text-lg sm:text-xl text-espresso-700 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            Un rincón luminoso, diáfano y acogedor junto al emblemático Paseo de Begoña. Granos de finca seleccionados, repostería artesana, focaccias de masa madre y un trato cercano que te hace sentir como en casa.
+          </p>
+
+          <div class="pt-2 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
+            <a href="https://wa.me/34610410417" target="_blank" rel="noopener noreferrer" 
+               class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-espresso-900 hover:bg-terracotta-600 text-crema-50 px-8 py-4 rounded-full font-medium text-base shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-0.5">
+              <span>Reservar Mesa</span>
+              <i class="fa-solid fa-arrow-right text-sm"></i>
+            </a>
+            <a href="#carta" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-crema-100 hover:bg-crema-200 border border-crema-300 text-espresso-800 px-7 py-4 rounded-full font-medium text-base transition-colors">
+              <i class="fa-solid fa-book-open text-terracotta-600"></i>
+              <span>Ver Nuestra Carta</span>
+            </a>
+          </div>
+
+          <!-- Quick badges -->
+          <div class="pt-6 grid grid-cols-3 gap-4 border-t border-crema-200 max-w-lg mx-auto lg:mx-0">
+            <div class="text-center lg:text-left">
+              <p class="font-serif text-2xl font-bold text-espresso-900">100%</p>
+              <p class="text-xs text-espresso-600 font-medium mt-0.5">Café Especialidad</p>
+            </div>
+            <div class="text-center lg:text-left">
+              <p class="font-serif text-2xl font-bold text-espresso-900">P. Begoña</p>
+              <p class="text-xs text-espresso-600 font-medium mt-0.5">Terraza Arbolada</p>
+            </div>
+            <div class="text-center lg:text-left">
+              <p class="font-serif text-2xl font-bold text-espresso-900">Pet Lovers</p>
+              <p class="text-xs text-espresso-600 font-medium mt-0.5">Espacio Amigable</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Visual Composition -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            <div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-4 border-white/80 relative">
+              <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1000&q=80" 
+                   alt="NUBO Cafetería de Especialidad Gijón" 
+                   referrerpolicy="no-referrer"
+                   onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                   class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700">
+              <div class="absolute inset-0 bg-gradient-to-t from-espresso-900/60 via-transparent to-transparent"></div>
+              <div class="absolute bottom-6 left-6 right-6 text-white">
+                <span class="inline-block px-3 py-1 bg-terracotta-600/90 text-xs rounded-full uppercase tracking-wider font-semibold mb-2 backdrop-blur-sm">Tolvas de Origen Honey</span>
+                <p class="font-serif text-xl font-medium">Colombia & Tanzania tostados con precisión</p>
+              </div>
+            </div>
+
+            <!-- Floating review badge -->
+            <div class="absolute -bottom-6 -left-6 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-crema-200 hidden sm:flex items-center gap-3 max-w-xs">
+              <div class="w-10 h-10 rounded-full bg-terracotta-500/10 text-terracotta-600 flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-heart text-lg"></i>
+              </div>
+              <div class="text-xs">
+                <div class="flex text-amber-400 gap-0.5 mb-1">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="font-semibold text-espresso-900">"El café más rico de Gijón"</p>
+                <p class="text-espresso-600 text-[11px] truncate">Atención de 10 y postres únicos</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Value Pillars -->
+  <section class="py-12 bg-white border-y border-crema-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-crema-100 flex items-center justify-center text-terracotta-600 shrink-0 text-xl">
+            <i class="fa-solid fa-seedling"></i>
+          </div>
+          <div>
+            <h4 class="font-serif font-bold text-espresso-900 text-lg">Café de Especialidad</h4>
+            <p class="text-sm text-espresso-600 mt-1">Doble tolva con orígenes seleccionados (Colombia, Tanzania) y extracción por baristas apasionados.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-crema-100 flex items-center justify-center text-terracotta-600 shrink-0 text-xl">
+            <i class="fa-solid fa-bread-slice"></i>
+          </div>
+          <div>
+            <h4 class="font-serif font-bold text-espresso-900 text-lg">Brunch & Focaccias</h4>
+            <p class="text-sm text-espresso-600 mt-1">Pastrami, burrata fresca, pesto de pistacho y recetas caseras preparadas al instante.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-crema-100 flex items-center justify-center text-terracotta-600 shrink-0 text-xl">
+            <i class="fa-solid fa-shield-cat"></i>
+          </div>
+          <div>
+            <h4 class="font-serif font-bold text-espresso-900 text-lg">Espacio Amable & Perros</h4>
+            <p class="text-sm text-espresso-600 mt-1">Local espacioso, sin agobios, terraza con árboles en Paseo de Begoña y bienvenida a tu mascota.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-crema-100 flex items-center justify-center text-terracotta-600 shrink-0 text-xl">
+            <i class="fa-solid fa-utensils"></i>
+          </div>
+          <div>
+            <h4 class="font-serif font-bold text-espresso-900 text-lg">Cuidado con Alergias</h4>
+            <p class="text-sm text-espresso-600 mt-1">Empatía total: adaptamos nuestras recetas a tus intolerancias y preferencias sin complicaciones.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Nuestra Carta, Platos Estrella y Especialidades -->
+  <section id="carta" class="py-20 lg:py-28 bg-crema-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-terracotta-600 font-semibold uppercase tracking-wider text-xs bg-terracotta-500/10 px-3.5 py-1 rounded-full">Sabores Reales</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-espresso-900 mt-3 mb-4">
+          Nuestra Carta, Platos Estrella y Especialidades de la Casa
+        </h2>
+        <p class="text-espresso-700 text-base sm:text-lg">
+          Elaboraciones con ingredientes frescos, café de finca tostado a fuego lento y propuestas que combinan tradición internacional y calidez asturiana.
+        </p>
+      </div>
+
+      <!-- Grid of Categories -->
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-12">
+        
+        <!-- Category 1: Especialidad de Café & Bebidas de Autor -->
+        <div class="bg-white p-8 rounded-3xl shadow-sm border border-crema-200 space-y-6">
+          <div class="flex items-center gap-3 border-b border-crema-200 pb-4">
+            <span class="w-10 h-10 rounded-full bg-crema-100 flex items-center justify-center text-terracotta-600">
+              <i class="fa-solid fa-mug-saucer text-lg"></i>
+            </span>
+            <div>
+              <h3 class="text-2xl font-serif font-bold text-espresso-900">Café de Especialidad & Bebidas</h3>
+              <p class="text-xs text-espresso-600">Tueste medio, proceso honey y extracción milimétrica</p>
+            </div>
+          </div>
+
+          <div class="space-y-5">
+            <div class="flex justify-between items-start gap-4 group">
+              <div>
+                <div class="flex items-center gap-2">
+                  <h4 class="font-serif font-bold text-espresso-900 text-lg group-hover:text-terracotta-600 transition-colors">Flat White de Origen</h4>
+                  <span class="bg-terracotta-500/10 text-terracotta-600 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Estrella</span>
+                </div>
+                <p class="text-sm text-espresso-600 mt-1">Doble shot de espresso seleccionado (Colombia / Tanzania) con leche texturizada sedosa al estilo australiano.</p>
+              </div>
+              <span class="font-serif font-bold text-terracotta-600 text-lg">2,60€</span>
+            </div>
+
+            <div class="flex justify-between items-start gap-4 group">
+              <div>
+                <h4 class="font-serif font-bold text-espresso-900 text-lg group-hover:text-terracotta-600 transition-colors">Espresso Doble Tolva</h4>
+                <p class="text-sm text-espresso-600 mt-1">Elige entre Colombia o Tanzania en proceso honey. Notas aromáticas florales, acidez brillante y cuerpo sedoso.</p>
+              </div>
+              <span class="font-serif font-bold text-terracotta-600 text-lg">1,90€</span>
+            </div>
+
+            <div class="flex justify-between items-start gap-4 group">
+              <div>
+                <div class="flex items-center gap-2">
+                  <h4 class="font-serif font-bold text-espresso-900 text-lg group-hover:text-terracotta-600 transition-colors">Matcha Latte Fresa</h4>
+                  <span class="bg-emerald-50 text-emerald-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Top Venta</span>
+                </div>
+                <p class="text-sm text-espresso-600 mt-1">Té matcha ceremonial de grado superior emulsionado sobre puré artesanal de fresas naturales y bebida a tu elección.</p>
+              </div>
+              <span class="font-serif font-bold text-terracotta-600 text-lg">4,20€</span>
+            </div>
+
+            <div class="flex justify-between items-start gap-4 group">
+              <div>
+                <h4 class="font-serif font-bold text-espresso-900 text-lg group-hover:text-terracotta-600 transition-colors">Smoothie Fresh Vitality</h4>
+                <p class="text-sm text-espresso-600 mt-1">100% fruta natural batida al instante. Refrescante, antioxidante y lleno de vitaminas puras.</p>
+              </div>
+              <span class="font-serif font-bold text-terracotta-600 text-lg">4,00€</span>
+            </div>
+
+            <div class="flex justify-between items-start gap-4 group">
+              <div>
+                <h4 class="font-serif font-bold text-espresso-900 text-lg group-hover:text-terracotta-600 transition-colors">Cappuccino Crema de Nube</h4>
+                <p class="text-sm text-espresso-600 mt-1">Espresso aromático coronado con microespuma densa y espolvoreado de cacao puro.</p>
+              </div>
+              <span class="font-serif font-bold text-terracotta-600 text-lg">2,20€</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 2: Focaccias & Sandwiches Gourmet -->
+        <div class="bg-white p-8 rounded-3xl shadow-sm border border-crema-200 space-y-6">
+          <div class="flex items-center gap-3 border-b border-crema-200 pb-4">
+            <span class="w-10 h-10 rounded-full bg-crema-100 flex items-center justify-center text-terracotta-600">
+              <i class="fa-solid fa-sandwich text-lg"></i>
+            </span>
+            <div>
+              <h3 class="text-2xl font-serif font-bold text-espresso-900">Focaccias & Sandwiches Gourmet</h3>
+              <p class="text-xs text-espresso-600">Panes de masa madre, horneado diario y rellenos prémium</p>
+            </div>
+          </div>
+
+          <div class="space-y-5">
+            <div class="flex justify-between items-start gap-4 group">
+              <div>
+                <div class="flex items-center gap-2">
+                  <h4 class="font-serif font-bold text-espresso-900 text-lg group-hover:text-terracotta-600 transition-colors">Focaccia Mortadela, Burrata & Pistacho</h4>
+                  <span class="bg-terracotta-500/10 text-terracotta-600 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Favorita</span>
+                </div>
+                <p class="text-sm text-espresso-600 mt-1">Masa de fermentación lenta, mortadela de Bolonia italiana, corazón de burrata cremosa, pesto casero y crujiente de pistacho tostado.</p>
+              </div>
+              <span class="font-serif font-bold text-terracotta-600 text-lg">7,80€</span>
+            </div>
+
+            <div class="flex justify-between items-start gap-4 group">
+              <div>
+                <h4 class="font-serif font-bold text-espresso-900 text-lg group-hover:text-terracotta-600 transition-colors">Sandwich de Pastrami Ahumado</h4>
+                <p class="text-sm text-espresso-600 mt-1">Pastrami especiado en finas láminas, pepinillos encurtidos artesanos, queso fundido y mostaza suave en pan rústico dorado a la plancha.</p>
+              </div>
+              <span class="font-serif font-bold text-terracotta-600 text-lg">7,20€</span>
+            </div>
+
+            <div class="flex justify-between items-start gap-4 group">
+              <div>
+                <h4 class="font-serif font-bold text-espresso-900 text-lg group-hover:text-terracotta-600 transition-colors">Sandwich de Atún Especial</h4>
+                <p class="text-sm text-espresso-600 mt-1">Lomos de atún con aliño especial, cebolleta tierna, brotes frescos y un toque cítrico que realza el sabor.</p>
+              </div>
+              <span class="font-serif font-bold text-terracotta-600 text-lg">6,50€</span>
+            </div>
+
+            <div class="flex justify-between items-start gap-4 group">
+              <div>
+                <h4 class="font-serif font-bold text-espresso-900 text-lg group-hover:text-terracotta-600 transition-colors">Combo Desayuno NUBO</h4>
+                <p class="text-sm text-espresso-600 mt-1">Tostadas de hogaza de pueblo con tomate rallado / aguacate, zumo de naranja natural recién exprimido y café de especialidad.</p>
+              </div>
+              <span class="font-serif font-bold text-terracotta-600 text-lg">5,50€</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 3: Dulces, Syrniki & Bowls -->
+        <div class="bg-white p-8 rounded-3xl shadow-sm border border-crema-200 space-y-6">
+          <div class="flex items-center gap-3 border-b border-crema-200 pb-4">
+            <span class="w-10 h-10 rounded-full bg-crema-100 flex items-center justify-center text-terracotta-600">
+              <i class="fa-solid fa-cake-candles text-lg"></i>
+            </span>
+            <div>
+              <h3 class="text-2xl font-serif font-bold text-espresso-900">Dulces Artesanos & Bowls</h3>
+              <p class="text-xs text-espresso-600">Postres originales que no encontrarás en ningún otro rincón</p>
+            </div>
+          </div>
+
+          <div class="space-y-5">
+            <div class="flex justify-between items-start gap-4 group">
+              <div>
+                <div class="flex items-center gap-2">
+                  <h4 class="font-serif font-bold text-espresso-900 text-lg group-hover:text-terracotta-600 transition-colors">Syrniki Tradicionales</h4>
+                  <span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Especialidad</span>
+                </div>
+                <p class="text-sm text-espresso-600 mt-1">Tortitas esponjosas de queso requesón tierno, doradas al punto y acompañadas con mermelada casera de frutos del bosque y crema agria dulce.</p>
+              </div>
+              <span class="font-serif font-bold text-terracotta-600 text-lg">5,90€</span>
+            </div>
+
+            <div class="flex justify-between items-start gap-4 group">
+              <div>
+                <h4 class="font-serif font-bold text-espresso-900 text-lg group-hover:text-terracotta-600 transition-colors">Açaí Bowl Silvestre</h4>
+                <p class="text-sm text-espresso-600 mt-1">Base cremosa de açaí orgánico puro, coronado con granola crujiente, plátano, frutos rojos de temporada y semillas de chía.</p>
+              </div>
+              <span class="font-serif font-bold text-terracotta-600 text-lg">6,80€</span>
+            </div>
+
+            <div class="flex justify-between items-start gap-4 group">
+              <div>
+                <h4 class="font-serif font-bold text-espresso-900 text-lg group-hover:text-terracotta-600 transition-colors">Tartas & Repostería del Día</h4>
+                <p class="text-sm text-espresso-600 mt-1">Pregunta por nuestras tartas horneadas a diario: tarta de queso fluida, carrot cake y opciones sin gluten.</p>
+              </div>
+              <span class="font-serif font-bold text-terracotta-600 text-lg">4,50€</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 4: Adaptaciones & Brunch Personalizado -->
+        <div class="bg-gradient-to-br from-espresso-900 to-espresso-800 p-8 rounded-3xl shadow-xl text-crema-50 space-y-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-3 border-b border-espresso-700 pb-4">
+              <span class="w-10 h-10 rounded-full bg-espresso-700 flex items-center justify-center text-terracotta-500">
+                <i class="fa-solid fa-heart-pulse text-lg"></i>
+              </span>
+              <div>
+                <h3 class="text-2xl font-serif font-bold text-white">Carta Adaptable a Ti</h3>
+                <p class="text-xs text-crema-200">Alergias, celiaquía y opciones vegetarianas</p>
+              </div>
+            </div>
+
+            <div class="mt-6 space-y-4 text-sm text-crema-200 leading-relaxed">
+              <p>
+                En <strong class="text-white">NUBO</strong> creemos que disfrutar de una cafetería debe ser un derecho sin estrés. Nos preocupamos activamente por adaptar nuestros platos a tus necesidades dietéticas e intolerancias.
+              </p>
+              <ul class="space-y-2.5">
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-terracotta-500"></i>
+                  <span>Bebidas vegetales de avena de especialidad, soja y almendra.</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-terracotta-500"></i>
+                  <span>Opciones de pan sin gluten y alternativas dulces seguras.</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-terracotta-500"></i>
+                  <span>Personalización al momento con total delicadeza y empatía.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="pt-6 border-t border-espresso-700/80">
+            <a href="https://wa.me/34610410417" target="_blank" rel="noopener noreferrer" 
+               class="w-full inline-flex items-center justify-center gap-2 bg-terracotta-600 hover:bg-terracotta-500 text-white font-medium py-3.5 px-6 rounded-full transition-colors text-center">
+              <i class="fa-brands fa-whatsapp text-lg"></i>
+              <span>Consultar o Reservar Mesa</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Filosofía & Local -->
+  <section id="experiencia" class="py-20 bg-crema-100/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        
+        <div class="space-y-6">
+          <span class="text-terracotta-600 font-semibold uppercase tracking-wider text-xs bg-terracotta-500/10 px-3.5 py-1 rounded-full">Espacio & Filosofía</span>
+          <h2 class="text-3xl sm:text-4xl font-serif font-bold text-espresso-900 leading-tight">
+            Un oasis espacioso y luminoso en pleno Paseo de Begoña
+          </h2>
+          <p class="text-espresso-700 text-base sm:text-lg leading-relaxed">
+            Huyendo de los locales estrechos y ruidosos, concebimos <strong>NUBO</strong> como un respiro: techos amplios, luz natural, decoración cálida cuidada con mimo y una terraza privilegiada rodeada de árboles.
+          </p>
+          <p class="text-espresso-700 text-base leading-relaxed">
+            Ya sea que vengas a trabajar con tu portátil, a disfrutar de una lectura tranquila, a charlar con amigos degustando una focaccia o a pasear con tu perro por el centro de Gijón, tenemos el rincón perfecto esperándote.
+          </p>
+
+          <div class="pt-2 flex flex-wrap gap-3">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-crema-200 text-xs font-medium text-espresso-800">
+              <i class="fa-solid fa-wifi text-terracotta-600"></i> Wi-Fi de alta velocidad
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-crema-200 text-xs font-medium text-espresso-800">
+              <i class="fa-solid fa-tree text-terracotta-600"></i> Terraza con vistas a la plaza
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-crema-200 text-xs font-medium text-espresso-800">
+              <i class="fa-solid fa-dog text-terracotta-600"></i> 100% Pet Friendly
+            </span>
+          </div>
+
+          <div class="pt-4">
+            <a href="https://wa.me/34610410417" class="inline-flex items-center gap-2 text-terracotta-600 font-bold hover:text-terracotta-700 transition-colors">
+              <span>Escríbenos por WhatsApp para reservar mesa</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div class="space-y-4">
+            <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=700&q=80" 
+                 alt="Interior cafetería NUBO" 
+                 referrerpolicy="no-referrer"
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                 class="w-full h-64 object-cover rounded-2xl shadow-md">
+            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=700&q=80" 
+                 alt="Café de especialidad en NUBO" 
+                 referrerpolicy="no-referrer"
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                 class="w-full h-44 object-cover rounded-2xl shadow-md">
+          </div>
+          <div class="space-y-4 pt-8">
+            <img src="https://images.unsplash.com/photo-1525610553991-2bede1a236e2?auto=format&fit=crop&w=700&q=80" 
+                 alt="Brunch y focaccias NUBO" 
+                 referrerpolicy="no-referrer"
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                 class="w-full h-44 object-cover rounded-2xl shadow-md">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=700&q=80" 
+                 alt="Terraza y ambiente en Gijón" 
+                 referrerpolicy="no-referrer"
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                 class="w-full h-64 object-cover rounded-2xl shadow-md">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Nuestras Instalaciones y Trabajos (Galería) -->
+  <section id="instalaciones" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-terracotta-600 font-semibold uppercase tracking-wider text-xs bg-terracotta-500/10 px-3.5 py-1 rounded-full">Galería Visual</span>
+        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-espresso-900 mt-3 mb-3">
+          Nuestras Instalaciones y Trabajos
+        </h2>
+        <p class="text-espresso-700">
+          Un vistazo a nuestras elaboraciones diarias, las extracciones en barra y la atmósfera que te espera en Paseo de Begoña.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <div class="group relative rounded-2xl overflow-hidden aspect-square shadow-md bg-crema-100">
+          <img src="https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&w=800&q=80" 
+               alt="Arte latte barista NUBO" 
+               referrerpolicy="no-referrer"
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-espresso-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+            <span class="text-white font-serif font-medium text-lg">Precisión en cada taza</span>
+          </div>
+        </div>
+
+        <div class="group relative rounded-2xl overflow-hidden aspect-square shadow-md bg-crema-100">
+          <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?auto=format&fit=crop&w=800&q=80" 
+               alt="Focaccias recién horneadas" 
+               referrerpolicy="no-referrer"
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-espresso-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+            <span class="text-white font-serif font-medium text-lg">Masa madre y rellenos gourmet</span>
+          </div>
+        </div>
+
+        <div class="group relative rounded-2xl overflow-hidden aspect-square shadow-md bg-crema-100">
+          <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=800&q=80" 
+               alt="Ambiente interior espacioso NUBO" 
+               referrerpolicy="no-referrer"
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-espresso-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+            <span class="text-white font-serif font-medium text-lg">Rincón cálido y diáfano</span>
+          </div>
+        </div>
+
+        <div class="group relative rounded-2xl overflow-hidden aspect-square shadow-md bg-crema-100">
+          <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&q=80" 
+               alt="Repostería casera Syrniki" 
+               referrerpolicy="no-referrer"
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-espresso-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+            <span class="text-white font-serif font-medium text-lg">Postres originales y syrniki</span>
+          </div>
+        </div>
+
+        <div class="group relative rounded-2xl overflow-hidden aspect-square shadow-md bg-crema-100">
+          <img src="https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=800&q=80" 
+               alt="Açaí bowl y smoothies naturales" 
+               referrerpolicy="no-referrer"
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-espresso-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+            <span class="text-white font-serif font-medium text-lg">Bowls con fruta fresca</span>
+          </div>
+        </div>
+
+        <div class="group relative rounded-2xl overflow-hidden aspect-square shadow-md bg-crema-100">
+          <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=800&q=80" 
+               alt="Granos de café Colombia y Tanzania" 
+               referrerpolicy="no-referrer"
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-espresso-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+            <span class="text-white font-serif font-medium text-lg">Café de origen y tueste medio</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Opiniones Reales Verificadas -->
+  <section id="opiniones" class="py-20 lg:py-28 bg-crema-100/60 border-t border-crema-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-1 text-amber-500 text-sm mb-2">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          <span class="font-semibold text-espresso-800 ml-1.5 text-xs uppercase tracking-wider">5.0 en Google Reviews</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-espresso-900">
+          La Experiencia NUBO según Nuestros Clientes
+        </h2>
+        <p class="text-espresso-700 mt-3 text-base">
+          Opiniones reales de quienes comparten sus mañanas, desayunos y tardes con nosotros.
+        </p>
+      </div>
+
+      <!-- Reviews Masonry / Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Review 1: Néstor Martínez Ribera (Detailed Barista review) -->
+        <div class="bg-white p-7 rounded-3xl shadow-sm border border-crema-200 flex flex-col justify-between lg:col-span-2">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex text-amber-400 gap-1 text-sm">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-xs text-espresso-400 font-medium flex items-center gap-1">
+                <i class="fa-brands fa-google text-terracotta-500"></i> Reseña verificada
+              </span>
+            </div>
+            <p class="text-espresso-800 text-sm sm:text-base leading-relaxed italic">
+              "Trato al cliente muy cercano y amable. El interior es espacioso, a diferencia de muchas otras cafeterías que dan sensación de claustrofobia de lo estrechas y pequeñas que son. Está decorado con mucho mimo y detalle. También tienen una terraza que da a una plaza amplia que es muy bonita, con árboles y plantas alrededor. Tienen un menú extenso con muchas opciones. Nosotros pedimos: Cappuccino, Flat White (Colombia), Espresso (Tanzania), Matcha fresa, Sandwich pastrami, Sandwich atún, Focaccia mortadela, burrata, pesto y pistacho y Açaí bowl. Estaba todo muy bueno. Si solo os interesa saber si el café estaba bueno, confirmo que es de calidad. Hoy tenían dos tolvas con dos granos distintos: una con un Colombia y la otra con un Tanzania, ambos tueste medio y proceso honey. Muy bien extraídos, tienen una buena máquina y un buen barista. En resumen, buena cafetería de especialidad, con buen producto y trato por parte del personal, en una zona céntrica y bonita de Gijón."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 mt-6 pt-4 border-t border-crema-100">
+            <div class="w-10 h-10 rounded-full bg-terracotta-100 text-terracotta-700 font-bold flex items-center justify-center font-serif">
+              N
+            </div>
+            <div>
+              <p class="font-bold text-sm text-espresso-900">Néstor Martínez Ribera</p>
+              <p class="text-xs text-espresso-500">Cliente habitual de especialidad</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2: María Fernández (Allergies & Dog friendly) -->
+        <div class="bg-white p-7 rounded-3xl shadow-sm border border-crema-200 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex text-amber-400 gap-1 text-sm">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-xs text-espresso-400 font-medium flex items-center gap-1">
+                <i class="fa-brands fa-google text-terracotta-500"></i> Reseña verificada
+              </span>
+            </div>
+            <p class="text-espresso-800 text-sm leading-relaxed italic">
+              "Fuimos ayer y fue una gran experiencia, muy recomendable. La chica que nos atendió puso todo de su parte para ayudarme a adaptar uno de los platos a mis alergias e intolerancias, y me sentí entendida y totalmente cómoda con ello, no pasa así en todas partes, así que lo agradezco por doble. Por otro lado, la comida estaba increíble y el café buenísimo. Son súper agradables en el trato y el disfrute de todo lo demás todavía es mayor. Hasta nuestra perrita estuvo feliz (sí, encima admiten perros, es genial). ¡Muchas gracias!"
+            </p>
+          </div>
+          <div class="flex items-center gap-3 mt-6 pt-4 border-t border-crema-100">
+            <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-800 font-bold flex items-center justify-center font-serif">
+              M
+            </div>
+            <div>
+              <p class="font-bold text-sm text-espresso-900">María Fernández</p>
+              <p class="text-xs text-espresso-500">Gijón</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3: Mariia Petaieva -->
+        <div class="bg-white p-7 rounded-3xl shadow-sm border border-crema-200 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex text-amber-400 gap-1 text-sm">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-xs text-espresso-400 font-medium flex items-center gap-1">
+                <i class="fa-brands fa-google text-terracotta-500"></i> Reseña verificada
+              </span>
+            </div>
+            <p class="text-espresso-800 text-sm leading-relaxed italic">
+              "Un lugar muy acogedor, con un café delicioso y postres originales que merece la pena probar. El ambiente es agradable y el servicio muy amable. ¡Sin duda volveré! ☕🍰…"
+            </p>
+          </div>
+          <div class="flex items-center gap-3 mt-6 pt-4 border-t border-crema-100">
+            <div class="w-10 h-10 rounded-full bg-rose-100 text-rose-700 font-bold flex items-center justify-center font-serif">
+              M
+            </div>
+            <div>
+              <p class="font-bold text-sm text-espresso-900">Mariia Petaieva</p>
+              <p class="text-xs text-espresso-500">Visita por desayuno</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 4: Marina R -->
+        <div class="bg-white p-7 rounded-3xl shadow-sm border border-crema-200 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex text-amber-400 gap-1 text-sm">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-xs text-espresso-400 font-medium flex items-center gap-1">
+                <i class="fa-brands fa-google text-terracotta-500"></i> Reseña verificada
+              </span>
+            </div>
+            <p class="text-espresso-800 text-sm leading-relaxed italic">
+              "Lugar muy acogedor, buen ambiente, atención de 10. Muy buena relación calidad precio. Pedimos el combo desayuno y super buenas las tostadas con el zumo y el café. Volveremos seguro para probar mas cosas de la carta."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 mt-6 pt-4 border-t border-crema-100">
+            <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 font-bold flex items-center justify-center font-serif">
+              M
+            </div>
+            <div>
+              <p class="font-bold text-sm text-espresso-900">Marina R</p>
+              <p class="text-xs text-espresso-500">Combo Desayuno</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 5: Pavel Iar -->
+        <div class="bg-white p-7 rounded-3xl shadow-sm border border-crema-200 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex text-amber-400 gap-1 text-sm">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-xs text-espresso-400 font-medium flex items-center gap-1">
+                <i class="fa-brands fa-google text-terracotta-500"></i> Reseña verificada
+              </span>
+            </div>
+            <p class="text-espresso-800 text-sm leading-relaxed italic">
+              "Excelente ambiente. Los syrniki y el smoothie estaban riquísimos. ¡Muy recomendable!"
+            </p>
+          </div>
+          <div class="flex items-center gap-3 mt-6 pt-4 border-t border-crema-100">
+            <div class="w-10 h-10 rounded-full bg-crema-200 text-espresso-800 font-bold flex items-center justify-center font-serif">
+              P
+            </div>
+            <div>
+              <p class="font-bold text-sm text-espresso-900">Pavel Iar</p>
+              <p class="text-xs text-espresso-500">Brunch dulce</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CTA under reviews -->
+      <div class="mt-12 text-center">
+        <a href="https://wa.me/34610410417" target="_blank" rel="noopener noreferrer" 
+           class="inline-flex items-center gap-2 bg-espresso-900 hover:bg-terracotta-600 text-white px-8 py-3.5 rounded-full font-medium shadow-md transition-all">
+          <i class="fa-brands fa-whatsapp text-lg"></i>
+          <span>Reservar Mesa y Vivir la Experiencia</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Ubicación & Contacto -->
+  <section id="contacto" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Info Column -->
+        <div class="lg:col-span-5 space-y-6">
+          <span class="text-terracotta-600 font-semibold uppercase tracking-wider text-xs bg-terracotta-500/10 px-3.5 py-1 rounded-full">Ven a Conocernos</span>
+          <h2 class="text-3xl sm:text-4xl font-serif font-bold text-espresso-900">
+            Ubicación Privilegiada en Gijón
+          </h2>
+          <p class="text-espresso-700 text-base leading-relaxed">
+            Situados estratégicamente en el <strong>Paseo de Begoña</strong>, en el corazón neurálgico de Gijón. Disfruta de la tranquilidad de nuestra terraza arbolada o de la calidez de nuestro amplio salón.
+          </p>
+
+          <div class="space-y-4 pt-2">
+            <div class="flex items-start gap-3.5">
+              <div class="w-10 h-10 rounded-xl bg-crema-100 flex items-center justify-center text-terracotta-600 shrink-0 text-base">
+                <i class="fa-solid fa-map-pin"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-espresso-900 text-sm">Dirección Exacta</h4>
+                <p class="text-espresso-700 text-sm mt-0.5">P. Begoña, 16, Centro, 33201 Gijón, Asturias</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3.5">
+              <div class="w-10 h-10 rounded-xl bg-crema-100 flex items-center justify-center text-terracotta-600 shrink-0 text-base">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-espresso-900 text-sm">Teléfono & Reservas WhatsApp</h4>
+                <a href="https://wa.me/34610410417" class="text-terracotta-600 font-semibold text-sm hover:underline mt-0.5 block">610 41 04 17</a>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3.5">
+              <div class="w-10 h-10 rounded-xl bg-crema-100 flex items-center justify-center text-terracotta-600 shrink-0 text-base">
+                <i class="fa-solid fa-clock"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-espresso-900 text-sm">Horario de Desayunos y Meriendas</h4>
+                <p class="text-espresso-700 text-sm mt-0.5">Abierto todos los días para cafés, brunchs y momentos especiales.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4">
+            <a href="https://wa.me/34610410417" target="_blank" rel="noopener noreferrer" 
+               class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-terracotta-600 hover:bg-terracotta-700 text-white font-medium px-8 py-3.5 rounded-full shadow-lg transition-all duration-300">
+              <i class="fa-brands fa-whatsapp text-lg"></i>
+              <span>Reservar Mesa</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Map Column -->
+        <div class="lg:col-span-7">
+          <div class="p-3 bg-crema-100 rounded-3xl shadow-lg border border-crema-200">
+            <iframe src="https://www.google.com/maps?q=NUBO%20P.%20Bego%C3%B1a%2C%2016%2C%20Centro%2C%2033201%20Gij%C3%B3n%2C%20Asturias&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-espresso-900 text-crema-100 pt-16 pb-12 border-t border-espresso-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+        
+        <div class="space-y-4 md:col-span-2">
+          <span class="text-3xl font-serif font-bold tracking-widest text-white">NUBO</span>
+          <p class="text-crema-200 text-sm max-w-sm leading-relaxed">
+            Cafetería de especialidad, brunch y repostería artesana en el centro de Gijón. Pasión por el buen grano, servicio cercano y un espacio diseñado para disfrutar sin prisas.
+          </p>
+          <div class="flex items-center gap-3 pt-2">
+            <span class="text-xs uppercase tracking-wider text-terracotta-500 font-semibold">Paseo de Begoña, Gijón</span>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-serif font-bold text-white text-base mb-4">Secciones</h4>
+          <ul class="space-y-2.5 text-sm text-crema-200">
+            <li><a href="#carta" class="hover:text-terracotta-500 transition-colors">Nuestra Carta</a></li>
+            <li><a href="#experiencia" class="hover:text-terracotta-500 transition-colors">El Espacio</a></li>
+            <li><a href="#instalaciones" class="hover:text-terracotta-500 transition-colors">Instalaciones</a></li>
+            <li><a href="#opiniones" class="hover:text-terracotta-500 transition-colors">Opiniones Verificadas</a></li>
+            <li><a href="#contacto" class="hover:text-terracotta-500 transition-colors">Cómo Llegar</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-serif font-bold text-white text-base mb-4">Contacto & Reserva</h4>
+          <p class="text-sm text-crema-200 mb-2">P. Begoña, 16, Centro, 33201 Gijón</p>
+          <p class="text-sm text-crema-200 mb-4">Tel: 610 41 04 17</p>
+          <a href="https://wa.me/34610410417" target="_blank" rel="noopener noreferrer" 
+             class="inline-flex items-center gap-2 bg-terracotta-600 hover:bg-terracotta-500 text-white px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-colors">
+            <i class="fa-brands fa-whatsapp text-sm"></i>
+            <span>Reservar Mesa</span>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="pt-8 border-t border-espresso-800 text-center md:flex md:justify-between items-center text-xs text-crema-300">
+        <p>© 2025 NUBO Cafetería - Todos los derechos reservados. Gijón, Asturias.</p>
+        <p class="mt-2 md:mt-0">Especialistas en Café de Origen & Brunch Artesanal</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp CTA Button -->
+  <aside aria-label="Contacto directo por WhatsApp" class="fixed bottom-6 right-6 z-50">
+    <a href="https://wa.me/34610410417" target="_blank" rel="noopener noreferrer" 
+       class="group flex items-center gap-3 bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-4 py-3.5 rounded-full shadow-2xl hover:shadow-emerald-900/50 transition-all duration-300 transform hover:scale-105"
+       aria-label="Reservar Mesa por WhatsApp">
+      <i class="fa-brands fa-whatsapp text-2xl group-hover:rotate-12 transition-transform duration-300"></i>
+      <span class="text-sm font-semibold pr-1">Reservar Mesa</span>
+    </a>
+  </aside>
+
+</body>
+</html>
