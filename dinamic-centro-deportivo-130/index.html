@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DINAMIC CENTRO DEPORTIVO | Gimnasio en Castellón</title>
+    <meta name="description" content="Tu gimnasio de confianza en Castellón. Buen ambiente, atención cercana de Carlos, clases grupales y equipamiento completo. ¡Ven a conocernos!">
+    
+    <!-- Tailwind CSS v3 CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fff1f2',
+                            100: '#ffe4e6',
+                            500: '#f43f5e',
+                            600: '#e11d48',
+                            700: '#be123c',
+                            900: '#881337',
+                        },
+                        dark: {
+                            900: '#09090b',
+                            800: '#18181b',
+                            700: '#27272a',
+                            600: '#3f3f46'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-dark-900 text-gray-100 font-sans antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- HEADER / NAVBAR -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-dark-900/90 backdrop-blur-md border-b border-dark-700 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2 group">
+                <div class="bg-brand-600 text-white p-2.5 rounded-xl font-black text-xl tracking-wider group-hover:bg-brand-500 transition-colors shadow-lg shadow-brand-600/30">
+                    <i class="fa-solid fa-dumbbell"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-black text-xl tracking-wider text-white">DINAMIC</span>
+                    <span class="text-xs text-brand-500 font-semibold tracking-widest uppercase">Centro Deportivo</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
+                <a href="#inicio" class="hover:text-brand-500 transition-colors">Inicio</a>
+                <a href="#servicios" class="hover:text-brand-500 transition-colors">Programas y Clases</a>
+                <a href="#instalaciones" class="hover:text-brand-500 transition-colors">Instalaciones</a>
+                <a href="#testimonios" class="hover:text-brand-500 transition-colors">Reseñas</a>
+                <a href="#contacto" class="hover:text-brand-500 transition-colors">Ubicación</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="hidden sm:flex items-center gap-4">
+                <a href="tel:964831034" class="bg-brand-600 hover:bg-brand-500 text-white font-bold px-6 py-3 rounded-xl shadow-lg shadow-brand-600/40 transition-all transform hover:-translate-y-0.5 flex items-center gap-2 text-sm">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Probar Clase / Apuntarme</span>
+                </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button id="menu-btn" class="md:hidden text-gray-300 hover:text-white focus:outline-none text-2xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-800 border-b border-dark-700 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="block py-2 text-gray-300 hover:text-brand-500 font-medium">Inicio</a>
+            <a href="#servicios" class="block py-2 text-gray-300 hover:text-brand-500 font-medium">Programas y Clases</a>
+            <a href="#instalaciones" class="block py-2 text-gray-300 hover:text-brand-500 font-medium">Instalaciones</a>
+            <a href="#testimonios" class="block py-2 text-gray-300 hover:text-brand-500 font-medium">Reseñas</a>
+            <a href="#contacto" class="block py-2 text-gray-300 hover:text-brand-500 font-medium">Ubicación</a>
+            <a href="tel:964831034" class="w-full mt-4 bg-brand-600 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-brand-600/30">
+                <i class="fa-solid fa-phone"></i> Probar Clase / Apuntarme
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80" 
+                 referrerpolicy="no-referrer" 
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80';"
+                 alt="Dinamic Centro Deportivo Gimnasio Castellón" 
+                 class="w-full h-full object-cover object-center filter brightness-40">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/60 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-dark-900/90 via-transparent to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
+            <div class="max-w-3xl">
+                <!-- Badge -->
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/30 text-brand-400 font-semibold text-sm mb-6 backdrop-blur-md">
+                    <i class="fa-solid fa-fire text-brand-500 animate-pulse"></i>
+                    <span>El mejor ambiente fitness en Castelló de la Plana</span>
+                </div>
+
+                <!-- Main Title -->
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white mb-6 uppercase leading-none">
+                    Entrena con <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-rose-400">energía</span>, alcanza tus metas.
+                </h1>
+
+                <!-- Subtitle -->
+                <p class="text-lg sm:text-xl text-gray-300 mb-8 font-normal leading-relaxed">
+                    Trato cercano y personalizado de la mano de Carlos. Descubre un centro completo con máquinas, clases grupales y un ambiente inmejorable donde irás con total motivación.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                    <a href="tel:964831034" class="bg-brand-600 hover:bg-brand-500 text-white font-black px-8 py-4 rounded-xl shadow-xl shadow-brand-600/40 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3 text-base">
+                        <i class="fa-solid fa-phone text-lg"></i>
+                        <span>Probar Clase / Apuntarme</span>
+                    </a>
+                    <a href="#servicios" class="bg-dark-800/80 hover:bg-dark-700 text-white border border-dark-600 font-bold px-8 py-4 rounded-xl backdrop-blur-md transition-all flex items-center justify-center gap-2 text-base">
+                        <i class="fa-solid fa-compass"></i>
+                        <span>Ver Clases y Servicios</span>
+                    </a>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="grid grid-cols-3 gap-6 mt-16 pt-8 border-t border-dark-700/60">
+                    <div>
+                        <div class="text-3xl sm:text-4xl font-black text-white">100%</div>
+                        <div class="text-xs sm:text-sm text-gray-400 font-medium">Trato cercano</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl sm:text-4xl font-black text-white">+Clases</div>
+                        <div class="text-xs sm:text-sm text-gray-400 font-medium">Grupales activas</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl sm:text-4xl font-black text-white">Top</div>
+                        <div class="text-xs sm:text-sm text-gray-400 font-medium">Ambiente en Castellón</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HIGHLIGHTS / VALORES -->
+    <section class="py-16 bg-dark-800 border-y border-dark-700 relative z-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-dark-900/60 border border-dark-700 p-8 rounded-2xl relative group hover:border-brand-500/50 transition-all">
+                    <div class="w-14 h-14 bg-brand-500/10 rounded-xl flex items-center justify-center text-brand-500 text-2xl font-bold mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-user-check"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Asesoramiento Personal</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Carlos, el dueño, ofrece un trato muy cercano y te asesora de forma totalmente personalizada para que cumplas tus objetivos paso a paso.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-dark-900/60 border border-dark-700 p-8 rounded-2xl relative group hover:border-brand-500/50 transition-all">
+                    <div class="w-14 h-14 bg-brand-500/10 rounded-xl flex items-center justify-center text-brand-500 text-2xl font-bold mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Gran Ambiente Social</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Un espacio dinámico donde hacer amigos en seguida. Aquí la gente va contenta a entrenar y se respira un compañerismo excepcional.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-dark-900/60 border border-dark-700 p-8 rounded-2xl relative group hover:border-brand-500/50 transition-all">
+                    <div class="w-14 h-14 bg-brand-500/10 rounded-xl flex items-center justify-center text-brand-500 text-2xl font-bold mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Clases Grupales Dinámicas</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Variedad de actividades grupales diseñadas para mantenerte motivado, quemar calorías y entrenar de forma divertida y eficaz.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROGRAMAS DE ENTRENAMIENTO, CLASES Y TARIFAS -->
+    <section id="servicios" class="py-24 bg-dark-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-500 font-bold uppercase tracking-widest text-sm block mb-3">Nuestros Servicios</span>
+                <h2 class="text-3xl sm:text-5xl font-black text-white uppercase tracking-tight mb-4">
+                    Programas y Clases Diseñados Para Ti
+                </h2>
+                <p class="text-gray-400 text-base sm:text-lg">
+                    Todo lo necesario para mantenerte en forma en un centro completo, cómodo y enfocado en tus resultados reales.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Servicio 1 -->
+                <div class="bg-dark-800 border border-dark-700 rounded-2xl overflow-hidden flex flex-col justify-between group hover:border-brand-500/60 transition-all">
+                    <div class="p-8">
+                        <div class="w-12 h-12 bg-brand-500/10 text-brand-500 rounded-xl flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-dumbbell"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Sala de Musculación</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                            Equipamiento completo para trabajar todo el cuerpo. Máquinas eficientes y zona de peso libre optimizada para tu progreso diario.
+                        </p>
+                        <ul class="space-y-2 text-sm text-gray-300">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500"></i> Máquinas cardiovasculares</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500"></i> Tren superior e inferior</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500"></i> Asesoramiento de Carlos</li>
+                        </ul>
+                    </div>
+                    <div class="p-6 bg-dark-700/50 border-t border-dark-700 flex items-center justify-between">
+                        <span class="text-xs text-brand-400 font-semibold uppercase tracking-wider">Acceso Completo</span>
+                        <a href="tel:964831034" class="text-white hover:text-brand-400 font-bold text-sm flex items-center gap-1 transition-colors">
+                            Consultar tarifa <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="bg-dark-800 border border-brand-500/50 rounded-2xl overflow-hidden flex flex-col justify-between group shadow-xl shadow-brand-900/20 relative">
+                    <div class="absolute top-0 right-0 bg-brand-600 text-white text-xs font-black px-3 py-1 rounded-bl-xl uppercase tracking-wider">Popular</div>
+                    <div class="p-8">
+                        <div class="w-12 h-12 bg-brand-500 text-white rounded-xl flex items-center justify-center text-xl mb-6 shadow-md shadow-brand-500/30">
+                            <i class="fa-solid fa-people-group"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Clases Grupales</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                            Entrena en compañía y con la máxima motivación. Clases dinámicas impartidas por profesionales para quemar grasa y tonificar.
+                        </p>
+                        <ul class="space-y-2 text-sm text-gray-300">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500"></i> Excelente ambiente de grupo</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500"></i> Diversos horarios adaptados</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500"></i> Alta quema calórica</li>
+                        </ul>
+                    </div>
+                    <div class="p-6 bg-dark-700/50 border-t border-dark-700 flex items-center justify-between">
+                        <span class="text-xs text-brand-400 font-semibold uppercase tracking-wider">Actividades Dirigidas</span>
+                        <a href="tel:964831034" class="text-white hover:text-brand-400 font-bold text-sm flex items-center gap-1 transition-colors">
+                            Consultar horario <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="bg-dark-800 border border-dark-700 rounded-2xl overflow-hidden flex flex-col justify-between group hover:border-brand-500/60 transition-all">
+                    <div class="p-8">
+                        <div class="w-12 h-12 bg-brand-500/10 text-brand-500 rounded-xl flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-user-gear"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Asesoramiento Personalizado</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                            Planes enfocados a tus metas individuales. Ya sea tonificación, pérdida de peso o ganancia muscular, te guiamos desde el primer día.
+                        </p>
+                        <ul class="space-y-2 text-sm text-gray-300">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500"></i> Seguimiento cercano</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500"></i> Trato familiar y humano</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500"></i> Resolución de dudas constante</li>
+                        </ul>
+                    </div>
+                    <div class="p-6 bg-dark-700/50 border-t border-dark-700 flex items-center justify-between">
+                        <span class="text-xs text-brand-400 font-semibold uppercase tracking-wider">Atención Directa</span>
+                        <a href="tel:964831034" class="text-white hover:text-brand-400 font-bold text-sm flex items-center gap-1 transition-colors">
+                            Saber más <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Banner CTA interno -->
+            <div class="mt-16 bg-gradient-to-r from-brand-900/60 to-dark-800 border border-brand-500/30 rounded-3xl p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-8">
+                <div class="space-y-3 text-center md:text-left">
+                    <h3 class="text-2xl sm:text-3xl font-black text-white uppercase">¿Quieres venir a conocernos y probar una clase?</h3>
+                    <p class="text-gray-300 text-sm sm:text-base">Llámanos ahora y descubre por qué nuestros clientes dicen que somos el mejor gimnasio de Castellón.</p>
+                </div>
+                <a href="tel:964831034" class="bg-brand-600 hover:bg-brand-500 text-white font-black px-8 py-4 rounded-xl shadow-xl shadow-brand-600/40 transition-all transform hover:-translate-y-1 flex items-center gap-3 shrink-0">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Probar Clase / Apuntarme</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- NUESTRAS INSTALACIONES Y TRABAJOS (GALERÍA) -->
+    <section id="instalaciones" class="py-24 bg-dark-800 border-t border-dark-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-500 font-bold uppercase tracking-widest text-sm block mb-3">Galería</span>
+                <h2 class="text-3xl sm:text-5xl font-black text-white uppercase tracking-tight mb-4">
+                    Nuestras Instalaciones
+                </h2>
+                <p class="text-gray-400 text-base sm:text-lg">
+                    Un espacio optimizado, limpio y con todo lo necesario para entrenar a gusto, sin masificaciones molestas.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Image 1 -->
+                <div class="group relative overflow-hidden rounded-2xl h-80 border border-dark-700">
+                    <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=800&q=80" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80';"
+                         alt="Zona de entrenamiento Dinamic Centro Deportivo" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-900/80 via-transparent to-transparent opacity-90"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <span class="text-xs font-bold text-brand-400 uppercase tracking-wider">Zona Musculación</span>
+                        <h4 class="text-lg font-bold text-white">Equipamiento completo</h4>
+                    </div>
+                </div>
+
+                <!-- Image 2 -->
+                <div class="group relative overflow-hidden rounded-2xl h-80 border border-dark-700">
+                    <img src="https://images.unsplash.com/photo-1571902943202-5079261820f4?auto=format&fit=crop&w=800&q=80" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80';"
+                         alt="Clases grupales Dinamic Centro Deportivo" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-900/80 via-transparent to-transparent opacity-90"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <span class="text-xs font-bold text-brand-400 uppercase tracking-wider">Actividades</span>
+                        <h4 class="text-lg font-bold text-white">Clases grupales dinámicas</h4>
+                    </div>
+                </div>
+
+                <!-- Image 3 -->
+                <div class="group relative overflow-hidden rounded-2xl h-80 border border-dark-700 sm:col-span-2 lg:col-span-1">
+                    <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80';"
+                         alt="Ambiente y pesas Dinamic Centro Deportivo" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-900/80 via-transparent to-transparent opacity-90"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <span class="text-xs font-bold text-brand-400 uppercase tracking-wider">Ambiente</span>
+                        <h4 class="text-lg font-bold text-white">Buen ambiente entre clientes</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OPINIONES REALES VERIFICADAS (TESTIMONIOS) -->
+    <section id="testimonios" class="py-24 bg-dark-900 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-500 font-bold uppercase tracking-widest text-sm block mb-3">Reseñas Verificadas</span>
+                <h2 class="text-3xl sm:text-5xl font-black text-white uppercase tracking-tight mb-4">
+                    Lo que opinan nuestros clientes
+                </h2>
+                <p class="text-gray-400 text-base sm:text-lg">
+                    Experiencias reales de personas que ya forman parte de la familia Dinamic en Castellón.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonio 1 -->
+                <div class="bg-dark-800 border border-dark-700 p-8 rounded-2xl flex flex-col justify-between relative">
+                    <div>
+                        <div class="flex text-amber-400 text-sm gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed italic mb-6">
+                            "Tiene todo lo necesario para mantenerte en forma, buen ambiente entre clientes y buen trato por parte de la gerencia."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-dark-700">
+                        <div class="w-10 h-10 bg-brand-600 rounded-full flex items-center justify-center font-bold text-white text-sm">
+                            H
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Héctor Muñoz Delgado</h4>
+                            <span class="text-xs text-gray-400">Cliente Google Maps</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonio 2 -->
+                <div class="bg-dark-800 border border-dark-700 p-8 rounded-2xl flex flex-col justify-between relative">
+                    <div>
+                        <div class="flex text-amber-400 text-sm gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed italic mb-6">
+                            "Muy satisfecho justo lo que buscaba. Lo tiene todo."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-dark-700">
+                        <div class="w-10 h-10 bg-brand-600 rounded-full flex items-center justify-center font-bold text-white text-sm">
+                            S
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Siñelo calo Undivel</h4>
+                            <span class="text-xs text-gray-400">Cliente Google Maps</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonio 3 -->
+                <div class="bg-dark-800 border border-dark-700 p-8 rounded-2xl flex flex-col justify-between relative">
+                    <div>
+                        <div class="flex text-amber-400 text-sm gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed italic mb-6">
+                            "Carlos, el dueño, es muy agradable y de trato muy cercano. Te asesora muy bien, el ambiente es genial. No echo en falta ninguna de las máquinas que hay en otros centros más grandes, y además tienen clases grupales. Se nota que la gente va contenta :)"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-dark-700">
+                        <div class="w-10 h-10 bg-brand-600 rounded-full flex items-center justify-center font-bold text-white text-sm">
+                            O
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Oriana Vila</h4>
+                            <span class="text-xs text-gray-400">Cliente Google Maps</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonio 4 -->
+                <div class="bg-dark-800 border border-dark-700 p-8 rounded-2xl flex flex-col justify-between relative">
+                    <div>
+                        <div class="flex text-amber-400 text-sm gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed italic mb-6">
+                            "Lo mejor que se puede decir del gimnasio es que no hay aglomeraciones excesivas. Para torso mejora bastante y el trato es excelente."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-dark-700">
+                        <div class="w-10 h-10 bg-brand-600 rounded-full flex items-center justify-center font-bold text-white text-sm">
+                            F
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Fran Llopis</h4>
+                            <span class="text-xs text-gray-400">Cliente Google Maps</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonio 5 -->
+                <div class="bg-dark-800 border border-dark-700 p-8 rounded-2xl flex flex-col justify-between relative md:col-span-2 lg:col-span-2">
+                    <div>
+                        <div class="flex text-amber-400 text-sm gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed italic mb-6">
+                            "Muy buen servicio además el dueño súper mago ay muy buenas maquinas aces amigos en seguida el mejor gym de castellon no dudes en venir👌…"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-dark-700">
+                        <div class="w-10 h-10 bg-brand-600 rounded-full flex items-center justify-center font-bold text-white text-sm">
+                            I
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Ibrahim Seghaier</h4>
+                            <span class="text-xs text-gray-400">Cliente Google Maps</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAPA INTERACTIVO Y UBICACIÓN -->
+    <section id="contacto" class="py-24 bg-dark-800 border-t border-dark-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-500 font-bold uppercase tracking-widest text-sm block mb-3">Encuéntranos</span>
+                <h2 class="text-3xl sm:text-5xl font-black text-white uppercase tracking-tight mb-4">
+                    Visita Dinamic Centro Deportivo
+                </h2>
+                <p class="text-gray-400 text-base sm:text-lg">
+                    Estamos ubicados en una zona accesible de Castellón. ¡Pásate a conocernos o llámanos!
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+                <!-- Info Contacto -->
+                <div class="bg-dark-900 border border-dark-700 p-8 rounded-3xl flex flex-col justify-between space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-6">Información de contacto</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-brand-500/10 text-brand-500 rounded-xl flex items-center justify-center shrink-0 text-xl">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white text-sm uppercase">Dirección</h4>
+                                    <p class="text-gray-300 text-sm mt-1">Carrer de Botnic Cavanilles, 36, 12006 Castelló de la Plana, Castelló, España</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-brand-500/10 text-brand-500 rounded-xl flex items-center justify-center shrink-0 text-xl">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white text-sm uppercase">Teléfono</h4>
+                                    <p class="text-gray-300 text-sm mt-1">964 83 10 34</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-brand-500/10 text-brand-500 rounded-xl flex items-center justify-center shrink-0 text-xl">
+                                    <i class="fa-solid fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white text-sm uppercase">Horario</h4>
+                                    <p class="text-gray-300 text-sm mt-1">Lunes a Viernes y Sábados (Consultar disponibilidad de clases y sala)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="tel:964831034" class="w-full bg-brand-600 hover:bg-brand-500 text-white font-black py-4 rounded-xl shadow-xl shadow-brand-600/40 transition-all flex items-center justify-center gap-2 text-base text-center">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>Probar Clase / Apuntarme</span>
+                    </a>
+                </div>
+
+                <!-- Mapa interactivo -->
+                <div class="lg:col-span-2 bg-dark-900 border border-dark-700 p-3 rounded-3xl flex items-center justify-center">
+                    <div class="w-full h-full min-h-[380px] overflow-hidden rounded-2xl">
+                        <iframe src="https://www.google.com/maps?q=DINAMIC%20CENTRO%20DEPORTIVO%20Carrer%20de%20Botnic%20Cavanilles%2C%2036%2C%2012006%20Castell%C3%B3%20de%20la%20Plana%2C%20Castell%C3%B3%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark-900 border-t border-dark-700 py-12 text-gray-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-2">
+                <div class="bg-brand-600 text-white p-2 rounded-lg font-black text-sm">
+                    <i class="fa-solid fa-dumbbell"></i>
+                </div>
+                <span class="font-bold text-white tracking-wider">DINAMIC CENTRO DEPORTIVO</span>
+            </div>
+            
+            <p class="text-center md:text-left text-xs">
+                &copy; <span id="current-year"></span> Dinamic Centro Deportivo. Todos los derechos reservados. Carrer de Botnic Cavanilles, 36, Castellón.
+            </p>
+
+            <div class="flex items-center gap-4 text-lg">
+                <a href="tel:964831034" class="w-10 h-10 bg-dark-800 border border-dark-700 rounded-full flex items-center justify-center text-white hover:bg-brand-600 transition-colors">
+                    <i class="fa-solid fa-phone"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script to toggle mobile menu & dynamic year -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on clicking links
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
