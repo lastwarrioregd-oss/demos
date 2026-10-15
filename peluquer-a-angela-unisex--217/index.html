@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peluquería Angela UNISEX | Estilismo y Cuidado Capilar en Talayuelas</title>
+    <meta name="description" content="Peluquería Angela UNISEX en Talayuelas (Cuenca). Cortes unisex, coloración premium, tratamientos capilares y peinados exclusivos. Reserva tu cita hoy.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        noir: '#121212',
+                        charcoal: '#1E1E1E',
+                        graphite: '#2A2A2A',
+                        gold: {
+                            light: '#F4E8C1',
+                            DEFAULT: '#C5A059',
+                            dark: '#9E7D3B',
+                        },
+                        sand: '#F7F5F0',
+                        cream: '#EFECE6'
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gold-gradient {
+            background: linear-gradient(135deg, #DFBA73 0%, #C5A059 50%, #9E7D3B 100%);
+        }
+        .gold-border {
+            border-image: linear-gradient(to right, #C5A059, #F4E8C1, #C5A059) 1;
+        }
+        .glass-card {
+            background: rgba(30, 30, 30, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-noir text-stone-200 font-sans antialiased selection:bg-gold selection:text-noir">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-charcoal border-b border-stone-800 text-stone-300 text-xs py-2 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <span><i class="fa-solid fa-location-dot text-gold mr-1.5"></i> C. de Alonso de Ojeda, 10, Talayuelas</span>
+                <span class="hidden md:inline text-stone-600">|</span>
+                <span class="hidden md:inline"><i class="fa-solid fa-clock text-gold mr-1.5"></i> Atención Personalizada Unisex</span>
+            </div>
+            <div class="flex items-center gap-4 font-medium">
+                <a href="tel:656432787" class="hover:text-gold transition-colors flex items-center gap-1.5">
+                    <i class="fa-solid fa-phone text-gold text-xs"></i> 656 432 787
+                </a>
+                <span class="text-stone-600">|</span>
+                <a href="mailto:error-lite+84f2@duckduckgo.com" class="hover:text-gold transition-colors flex items-center gap-1.5">
+                    <i class="fa-regular fa-envelope text-gold text-xs"></i> Contacto
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="sticky top-0 z-50 bg-noir/90 backdrop-blur-md border-b border-stone-800/80 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="group flex flex-col">
+                <span class="font-serif text-2xl sm:text-3xl tracking-wider text-stone-100 uppercase group-hover:text-gold transition-colors duration-300 font-semibold">
+                    Angela
+                </span>
+                <span class="text-[9px] sm:text-[10px] tracking-[0.3em] text-gold uppercase font-medium -mt-1">
+                    Peluquería Unisex
+                </span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
+                <a href="#inicio" class="text-stone-300 hover:text-gold transition-colors">Inicio</a>
+                <a href="#nosotros" class="text-stone-300 hover:text-gold transition-colors">El Salón</a>
+                <a href="#servicios" class="text-stone-300 hover:text-gold transition-colors">Tratamientos & Tarifas</a>
+                <a href="#galeria" class="text-stone-300 hover:text-gold transition-colors">Galería</a>
+                <a href="#opiniones" class="text-stone-300 hover:text-gold transition-colors">Opiniones</a>
+                <a href="#contacto" class="text-stone-300 hover:text-gold transition-colors">Ubicación</a>
+            </nav>
+
+            <!-- Action Button -->
+            <div class="hidden sm:block">
+                <a href="tel:656432787" class="gold-gradient text-noir font-semibold text-xs uppercase tracking-widest px-6 py-3 rounded-full hover:shadow-lg hover:shadow-gold/20 hover:scale-105 transition-all duration-300 inline-flex items-center gap-2">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    Reservar Cita
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobileMenuBtn" aria-label="Abrir menú de navegación" class="md:hidden text-stone-300 hover:text-gold text-2xl p-2 focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-charcoal border-b border-stone-800 px-6 py-6 transition-all duration-300">
+            <div class="flex flex-col space-y-4 text-center font-medium">
+                <a href="#inicio" class="mobile-link text-stone-300 hover:text-gold py-2 border-b border-stone-800/60">Inicio</a>
+                <a href="#nosotros" class="mobile-link text-stone-300 hover:text-gold py-2 border-b border-stone-800/60">El Salón</a>
+                <a href="#servicios" class="mobile-link text-stone-300 hover:text-gold py-2 border-b border-stone-800/60">Tratamientos & Tarifas</a>
+                <a href="#galeria" class="mobile-link text-stone-300 hover:text-gold py-2 border-b border-stone-800/60">Galería</a>
+                <a href="#opiniones" class="mobile-link text-stone-300 hover:text-gold py-2 border-b border-stone-800/60">Opiniones</a>
+                <a href="#contacto" class="mobile-link text-stone-300 hover:text-gold py-2 border-b border-stone-800/60">Ubicación</a>
+                <a href="tel:656432787" class="gold-gradient text-noir font-semibold text-xs uppercase tracking-wider py-3.5 rounded-full mt-2 inline-flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-phone"></i>
+                    Reservar Cita: 656 432 787
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-noir">
+        <!-- Background Imagery with Dark Elegant Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img 
+                src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1920&q=80" 
+                alt="Peluquería Angela UNISEX Talayuelas" 
+                class="w-full h-full object-cover object-center scale-105 animate-fade-in filter brightness-[0.35] contrast-110"
+                referrerpolicy="no-referrer"
+                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-noir via-noir/60 to-transparent"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(197,160,89,0.08)_0,transparent_70%)]"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+            <!-- Boutique Tag -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold/40 bg-noir/60 backdrop-blur-md mb-8">
+                <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
+                <span class="text-xs uppercase tracking-[0.25em] text-gold font-medium">Boutique de Belleza Unisex &bull; Talayuelas</span>
+            </div>
+
+            <!-- Main Heading -->
+            <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-normal text-stone-100 tracking-tight leading-[1.1] mb-6">
+                El Arte de Cuidar <br class="hidden sm:inline">
+                <span class="italic font-light text-gold">Tu Imagen y Bienestar</span>
+            </h1>
+
+            <p class="max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-stone-300 font-light leading-relaxed mb-10">
+                Excelencia técnica, estilismo vanguardista y el trato cercano que mereces. Cortes masculinos y femeninos, coloración orgánica y rituales capilares únicos en Cuenca.
+            </p>
+
+            <!-- CTA Cluster -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+                <a href="tel:656432787" class="w-full sm:w-auto gold-gradient text-noir font-bold text-sm uppercase tracking-wider px-8 py-4 rounded-full hover:shadow-xl hover:shadow-gold/25 hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-calendar-check text-base"></i>
+                    Reservar Cita
+                </a>
+                <a href="#servicios" class="w-full sm:w-auto bg-stone-900/80 hover:bg-stone-800 text-stone-200 border border-stone-700 font-medium text-sm tracking-wider px-8 py-4 rounded-full transition-all duration-300 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-scissors text-gold text-xs"></i>
+                    Ver Servicios & Tarifas
+                </a>
+            </div>
+
+            <!-- Trust Badge Pills -->
+            <div class="mt-16 pt-10 border-t border-stone-800/80 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="flex flex-col items-center">
+                    <span class="text-gold font-serif text-2xl font-bold">100%</span>
+                    <span class="text-xs text-stone-400 uppercase tracking-widest mt-1">Atención Unisex</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span class="text-gold font-serif text-2xl font-bold">5.0 ★</span>
+                    <span class="text-xs text-stone-400 uppercase tracking-widest mt-1">Calidad Contrastada</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span class="text-gold font-serif text-2xl font-bold">Premium</span>
+                    <span class="text-xs text-stone-400 uppercase tracking-widest mt-1">Productos Profesionales</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span class="text-gold font-serif text-2xl font-bold">Talayuelas</span>
+                    <span class="text-xs text-stone-400 uppercase tracking-widest mt-1">Tu Salón de Confianza</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="nosotros" class="py-24 bg-charcoal relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                
+                <!-- Left Column: Visual Showcase -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="aspect-[4/5] rounded-2xl overflow-hidden border border-stone-800 shadow-2xl relative">
+                            <img 
+                                src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1000&q=80" 
+                                alt="Angela Peluquería Interior" 
+                                class="w-full h-full object-cover"
+                                referrerpolicy="no-referrer"
+                                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                            >
+                            <div class="absolute inset-0 bg-gradient-to-t from-noir/80 via-transparent to-transparent"></div>
+                        </div>
+
+                        <!-- Floating Accent Card -->
+                        <div class="absolute -bottom-6 -right-4 sm:-right-6 glass-card p-5 rounded-xl max-w-xs shadow-xl hidden sm:block">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full gold-gradient flex items-center justify-center text-noir font-bold">
+                                    <i class="fa-solid fa-award"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-semibold text-stone-100">Cuidado Integral</h4>
+                                    <p class="text-xs text-stone-400">Atención personalizada y asesoramiento de visagismo.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Content -->
+                <div class="lg:col-span-7">
+                    <div class="inline-block text-xs uppercase tracking-[0.25em] text-gold font-medium mb-3">
+                        Filosofía & Compromiso
+                    </div>
+                    <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-stone-100 font-normal leading-tight mb-6">
+                        Peluquería Angela Unisex: <br>
+                        <span class="italic text-gold">Donde cada detalle resalta tu estilo</span>
+                    </h2>
+
+                    <p class="text-stone-300 text-base leading-relaxed mb-6 font-light">
+                        Ubicada en pleno corazón de Talayuelas, en la <strong>Calle de Alonso de Ojeda, 10</strong>, 
+                        <strong>PELUQUERÍA Angela UNISEX</strong> nace con la vocación de ofrecer un servicio de peluquería y estilismo de alto nivel en un espacio íntimo, cálido y refinado.
+                    </p>
+
+                    <p class="text-stone-400 text-sm leading-relaxed mb-8 font-light">
+                        Creemos que el cabello es una extensión de la personalidad. Por ello, combinamos técnicas de corte actualizadas para mujeres, hombres y niños, con colorimetría experta que respeta la salud capilar. Nuestro objetivo es que salgas del salón sintiéndote renovado y seguro.
+                    </p>
+
+                    <!-- Features List -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 mb-10">
+                        <div class="flex items-start gap-3">
+                            <div class="text-gold mt-1"><i class="fa-solid fa-check-circle"></i></div>
+                            <div>
+                                <h4 class="text-sm font-medium text-stone-200">Enfoque Unisex Completo</h4>
+                                <p class="text-xs text-stone-400">Servicios pensados tanto para damas, caballeros y niños.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="text-gold mt-1"><i class="fa-solid fa-check-circle"></i></div>
+                            <div>
+                                <h4 class="text-sm font-medium text-stone-200">Asesoramiento de Imagen</h4>
+                                <p class="text-xs text-stone-400">Te aconsejamos el corte o tono que mejor favorece tus rasgos.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="text-gold mt-1"><i class="fa-solid fa-check-circle"></i></div>
+                            <div>
+                                <h4 class="text-sm font-medium text-stone-200">Técnicas de Color de Vanguardia</h4>
+                                <p class="text-xs text-stone-400">Balayage, babylights, matices y cobertura perfecta de canas.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="text-gold mt-1"><i class="fa-solid fa-check-circle"></i></div>
+                            <div>
+                                <h4 class="text-sm font-medium text-stone-200">Productos Seleccionados</h4>
+                                <p class="text-xs text-stone-400">Tratamientos nutritivos y reparadores de máxima eficacia.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="tel:656432787" class="inline-flex items-center gap-3 gold-gradient text-noir font-semibold text-xs uppercase tracking-widest px-8 py-3.5 rounded-full hover:shadow-lg hover:shadow-gold/20 transition-all">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        Reservar Cita Ahora
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services & Pricing Section -->
+    <section id="servicios" class="py-24 bg-noir relative border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-[0.25em] text-gold font-medium block mb-3">Carta de Belleza</span>
+                <h2 class="font-serif text-3xl sm:text-5xl text-stone-100 font-normal">Nuestros Tratamientos, Cortes y Tarifas</h2>
+                <div class="w-16 h-0.5 bg-gold mx-auto my-4"></div>
+                <p class="text-stone-400 text-sm sm:text-base font-light">
+                    Servicios profesionales adaptados a cada necesidad. Consulta nuestras especialidades y pide cita directamente por teléfono.
+                </p>
+            </div>
+
+            <!-- Categories Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Category 1: Cortes y Estilismo Unisex -->
+                <div class="bg-charcoal rounded-2xl p-7 border border-stone-800 hover:border-gold/50 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-graphite flex items-center justify-center text-gold text-xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-scissors"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl text-stone-100 mb-2 font-medium">Cortes & Estilismo Unisex</h3>
+                        <p class="text-xs text-stone-400 mb-6">Diseños precisos acordes a tu rostro, ritmo de vida y preferencias de peinado.</p>
+                        
+                        <ul class="space-y-4 text-sm border-t border-stone-800/80 pt-4">
+                            <li class="flex justify-between items-baseline">
+                                <div>
+                                    <span class="text-stone-200 font-medium block">Corte Caballero & Arreglo</span>
+                                    <span class="text-xs text-stone-500">Lavado, asesoramiento y acabado</span>
+                                </div>
+                                <span class="text-gold font-semibold ml-2">Desde 12€</span>
+                            </li>
+                            <li class="flex justify-between items-baseline">
+                                <div>
+                                    <span class="text-stone-200 font-medium block">Corte Señora & Peinado</span>
+                                    <span class="text-xs text-stone-500">Diseño personalizado y styling</span>
+                                </div>
+                                <span class="text-gold font-semibold ml-2">Desde 16€</span>
+                            </li>
+                            <li class="flex justify-between items-baseline">
+                                <div>
+                                    <span class="text-stone-200 font-medium block">Corte Infantil</span>
+                                    <span class="text-xs text-stone-500">Paciencia, diversión y técnica suave</span>
+                                </div>
+                                <span class="text-gold font-semibold ml-2">Desde 10€</span>
+                            </li>
+                            <li class="flex justify-between items-baseline">
+                                <div>
+                                    <span class="text-stone-200 font-medium block">Lavado & Secado Brushing</span>
+                                    <span class="text-xs text-stone-500">Volumen, brillo y movimiento duradero</span>
+                                </div>
+                                <span class="text-gold font-semibold ml-2">Desde 14€</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-stone-800/60">
+                        <a href="tel:656432787" class="text-xs uppercase tracking-wider text-gold hover:text-stone-100 font-semibold inline-flex items-center gap-1.5 transition-colors">
+                            Reservar Cita <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Category 2: Coloración & Técnicas Especiales -->
+                <div class="bg-charcoal rounded-2xl p-7 border border-stone-800 hover:border-gold/50 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-graphite flex items-center justify-center text-gold text-xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl text-stone-100 mb-2 font-medium">Color & Mechas</h3>
+                        <p class="text-xs text-stone-400 mb-6">Tonos luminosos y duraderos mediante tintes respetuosos y matices de brillo.</p>
+                        
+                        <ul class="space-y-4 text-sm border-t border-stone-800/80 pt-4">
+                            <li class="flex justify-between items-baseline">
+                                <div>
+                                    <span class="text-stone-200 font-medium block">Tinte Completo / Raíz</span>
+                                    <span class="text-xs text-stone-500">Cobertura 100% canas y nutrición</span>
+                                </div>
+                                <span class="text-gold font-semibold ml-2">Desde 24€</span>
+                            </li>
+                            <li class="flex justify-between items-baseline">
+                                <div>
+                                    <span class="text-stone-200 font-medium block">Mechas Balayage & Babylights</span>
+                                    <span class="text-xs text-stone-500">Gradación natural y puntos de luz</span>
+                                </div>
+                                <span class="text-gold font-semibold ml-2">Desde 35€</span>
+                            </li>
+                            <li class="flex justify-between items-baseline">
+                                <div>
+                                    <span class="text-stone-200 font-medium block">Matización & Baño de Brillo</span>
+                                    <span class="text-xs text-stone-500">Neutraliza tonos indeseados</span>
+                                </div>
+                                <span class="text-gold font-semibold ml-2">Desde 15€</span>
+                            </li>
+                            <li class="flex justify-between items-baseline">
+                                <div>
+                                    <span class="text-stone-200 font-medium block">Decoloración Global / Fantasía</span>
+                                    <span class="text-xs text-stone-500">Con protectores de fibra capilar</span>
+                                </div>
+                                <span class="text-gold font-semibold ml-2">Consultar</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-stone-800/60">
+                        <a href="tel:656432787" class="text-xs uppercase tracking-wider text-gold hover:text-stone-100 font-semibold inline-flex items-center gap-1.5 transition-colors">
+                            Reservar Cita <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Category 3: Tratamientos & Eventos -->
+                <div class="bg-charcoal rounded-2xl p-7 border border-stone-800 hover:border-gold/50 transition-all duration-300 flex flex-col justify-between group md:col-span-2 lg:col-span-1">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-graphite flex items-center justify-center text-gold text-xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-spa"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl text-stone-100 mb-2 font-medium">Tratamientos & Recogidos</h3>
+                        <p class="text-xs text-stone-400 mb-6">Restauración intensiva de la fibra capilar y looks para ocasiones memorables.</p>
+                        
+                        <ul class="space-y-4 text-sm border-t border-stone-800/80 pt-4">
+                            <li class="flex justify-between items-baseline">
+                                <div>
+                                    <span class="text-stone-200 font-medium block">Hidratación Profunda & Keratina</span>
+                                    <span class="text-xs text-stone-500">Adiós encrespamiento, cabello sedoso</span>
+                                </div>
+                                <span class="text-gold font-semibold ml-2">Desde 25€</span>
+                            </li>
+                            <li class="flex justify-between items-baseline">
+                                <div>
+                                    <span class="text-stone-200 font-medium block">Peinados para Bodas & Eventos</span>
+                                    <span class="text-xs text-stone-500">Recogidos y semi-recogidos elegantes</span>
+                                </div>
+                                <span class="text-gold font-semibold ml-2">Desde 30€</span>
+                            </li>
+                            <li class="flex justify-between items-baseline">
+                                <div>
+                                    <span class="text-stone-200 font-medium block">Pack Novia / Invitada</span>
+                                    <span class="text-xs text-stone-500">Prueba previa y peinado del día especial</span>
+                                </div>
+                                <span class="text-gold font-semibold ml-2">Consultar</span>
+                            </li>
+                            <li class="flex justify-between items-baseline">
+                                <div>
+                                    <span class="text-stone-200 font-medium block">Tratamiento Detox Anticaída</span>
+                                    <span class="text-xs text-stone-500">Estimulación y purificación del cuero cabelludo</span>
+                                </div>
+                                <span class="text-gold font-semibold ml-2">Desde 20€</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-stone-800/60">
+                        <a href="tel:656432787" class="text-xs uppercase tracking-wider text-gold hover:text-stone-100 font-semibold inline-flex items-center gap-1.5 transition-colors">
+                            Reservar Cita <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Service Banner Note -->
+            <div class="mt-12 p-6 rounded-xl bg-graphite/40 border border-stone-800 text-center max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="text-left">
+                    <p class="text-stone-200 text-sm font-medium">¿Tienes un evento especial o necesitas un presupuesto a medida?</p>
+                    <p class="text-stone-400 text-xs">Llámanos sin compromiso para valorar tu cabello y darte un asesoramiento previo.</p>
+                </div>
+                <a href="tel:656432787" class="gold-gradient text-noir font-bold text-xs uppercase tracking-wider px-6 py-2.5 rounded-full shrink-0 hover:scale-105 transition-transform">
+                    Llamar al 656 432 787
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galeria" class="py-24 bg-charcoal relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-[0.25em] text-gold font-medium block mb-3">Portfolio Visual</span>
+                <h2 class="font-serif text-3xl sm:text-5xl text-stone-100 font-normal">Nuestras Instalaciones y Trabajos</h2>
+                <div class="w-16 h-0.5 bg-gold mx-auto my-4"></div>
+                <p class="text-stone-400 text-sm sm:text-base font-light">
+                    Un vistazo a la atmósfera acogedora de nuestro salón en Talayuelas y a las creaciones capilares realizadas con máxima dedicación.
+                </p>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery Item 1 -->
+                <div class="group relative rounded-xl overflow-hidden aspect-[4/5] bg-stone-900 border border-stone-800">
+                    <img 
+                        src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80" 
+                        alt="Estilismo Capilar en Angela Unisex" 
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                        referrerpolicy="no-referrer"
+                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-noir/90 via-noir/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-gold text-xs uppercase tracking-widest block font-medium">Estilismo y Acabado</span>
+                            <h4 class="text-stone-100 font-serif text-xl">Peinados con Volumen</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="group relative rounded-xl overflow-hidden aspect-[4/5] bg-stone-900 border border-stone-800">
+                    <img 
+                        src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=800&q=80" 
+                        alt="Coloración y Mechas Cuenca" 
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                        referrerpolicy="no-referrer"
+                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-noir/90 via-noir/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-gold text-xs uppercase tracking-widest block font-medium">Colorimetría</span>
+                            <h4 class="text-stone-100 font-serif text-xl">Rubios y Reflejos Naturales</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="group relative rounded-xl overflow-hidden aspect-[4/5] bg-stone-900 border border-stone-800">
+                    <img 
+                        src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=80" 
+                        alt="Corte Caballero Talayuelas" 
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                        referrerpolicy="no-referrer"
+                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-noir/90 via-noir/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-gold text-xs uppercase tracking-widest block font-medium">Área Masculina</span>
+                            <h4 class="text-stone-100 font-serif text-xl">Corte y Arreglo Masculino</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="group relative rounded-xl overflow-hidden aspect-[4/5] bg-stone-900 border border-stone-800">
+                    <img 
+                        src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=800&q=80" 
+                        alt="Ambiente del Salón Angela Unisex" 
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                        referrerpolicy="no-referrer"
+                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-noir/90 via-noir/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-gold text-xs uppercase tracking-widest block font-medium">Espacio</span>
+                            <h4 class="text-stone-100 font-serif text-xl">Rincón de Lavado y Confort</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5 -->
+                <div class="group relative rounded-xl overflow-hidden aspect-[4/5] bg-stone-900 border border-stone-800">
+                    <img 
+                        src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=800&q=80" 
+                        alt="Peinados de Fiesta" 
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                        referrerpolicy="no-referrer"
+                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-noir/90 via-noir/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-gold text-xs uppercase tracking-widest block font-medium">Eventos</span>
+                            <h4 class="text-stone-100 font-serif text-xl">Recogidos y Ondas al Agua</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6 -->
+                <div class="group relative rounded-xl overflow-hidden aspect-[4/5] bg-stone-900 border border-stone-800">
+                    <img 
+                        src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=800&q=80" 
+                        alt="Detalles de Peluquería" 
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                        referrerpolicy="no-referrer"
+                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-noir/90 via-noir/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-gold text-xs uppercase tracking-widest block font-medium">Tratamientos</span>
+                            <h4 class="text-stone-100 font-serif text-xl">Nutrición y Brillo Espejo</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="opiniones" class="py-24 bg-noir relative border-t border-stone-800 overflow-hidden">
+        <!-- Background subtle glow -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gold/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <span class="text-xs uppercase tracking-[0.25em] text-gold font-medium block mb-3">La Voz de Quienes Confían en Nosotros</span>
+                <h2 class="font-serif text-3xl sm:text-5xl text-stone-100 font-normal">Opiniones Reales Verificadas</h2>
+                <div class="w-16 h-0.5 bg-gold mx-auto my-4"></div>
+            </div>
+
+            <!-- Featured Highlight Review Card -->
+            <div class="glass-card rounded-2xl p-8 sm:p-12 text-center max-w-3xl mx-auto border border-gold/30 shadow-2xl relative">
+                <!-- Quotation Mark Icon -->
+                <div class="text-gold/20 text-6xl font-serif leading-none mb-4">
+                    <i class="fa-solid fa-quote-left"></i>
+                </div>
+
+                <!-- Stars Rating -->
+                <div class="flex justify-center gap-1.5 text-gold text-lg sm:text-xl mb-6">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+
+                <!-- Actual Verified Customer Quote -->
+                <blockquote class="font-serif text-2xl sm:text-3xl text-stone-100 italic leading-relaxed mb-8">
+                    "Excelente trato, profesionalidad y calidad."
+                </blockquote>
+
+                <div class="flex items-center justify-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center text-gold font-bold text-sm">
+                        <i class="fa-solid fa-user-check"></i>
+                    </div>
+                    <div class="text-left">
+                        <div class="text-stone-200 font-medium text-sm">Cliente Verificado</div>
+                        <div class="text-stone-400 text-xs">Reseña en Google Maps &bull; Talayuelas</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Trust Factors -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+                <div class="p-6 rounded-xl bg-charcoal/60 border border-stone-800 text-center">
+                    <i class="fa-solid fa-shield-halved text-gold text-2xl mb-3"></i>
+                    <h4 class="text-stone-200 font-medium text-sm mb-1">Higiene & Esterilización</h4>
+                    <p class="text-xs text-stone-400">Herramientas desinfectadas y espacio cuidado al milímetro.</p>
+                </div>
+                <div class="p-6 rounded-xl bg-charcoal/60 border border-stone-800 text-center">
+                    <i class="fa-solid fa-clock-rotate-left text-gold text-2xl mb-3"></i>
+                    <h4 class="text-stone-200 font-medium text-sm mb-1">Puntualidad en Citas</h4>
+                    <p class="text-xs text-stone-400">Atendemos con horario reservado para evitar esperas innecesarias.</p>
+                </div>
+                <div class="p-6 rounded-xl bg-charcoal/60 border border-stone-800 text-center">
+                    <i class="fa-solid fa-heart text-gold text-2xl mb-3"></i>
+                    <h4 class="text-stone-200 font-medium text-sm mb-1">Cercanía y Confianza</h4>
+                    <p class="text-xs text-stone-400">El cariño del comercio de proximidad con técnica contemporánea.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact Section -->
+    <section id="contacto" class="py-24 bg-charcoal relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-[0.25em] text-gold font-medium block mb-3">¿Cómo Encontrarnos?</span>
+                <h2 class="font-serif text-3xl sm:text-5xl text-stone-100 font-normal">Ubicación & Contacto Directo</h2>
+                <div class="w-16 h-0.5 bg-gold mx-auto my-4"></div>
+                <p class="text-stone-400 text-sm sm:text-base font-light">
+                    Estamos en el corazón de Talayuelas para ofrecerte la mejor experiencia de peluquería unisex.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Info Column -->
+                <div class="lg:col-span-5 space-y-6">
+                    <!-- Address Card -->
+                    <div class="bg-noir p-6 rounded-2xl border border-stone-800 flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl gold-gradient text-noir flex items-center justify-center shrink-0 text-xl font-bold">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-stone-200 font-medium text-base mb-1">Dirección del Salón</h4>
+                            <p class="text-stone-400 text-sm leading-relaxed">
+                                C. de Alonso de Ojeda, 10<br>
+                                16320 Talayuelas, Cuenca, España
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Phone Card -->
+                    <div class="bg-noir p-6 rounded-2xl border border-stone-800 flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl gold-gradient text-noir flex items-center justify-center shrink-0 text-xl font-bold">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-stone-200 font-medium text-base mb-1">Teléfono Directo de Citas</h4>
+                            <p class="text-stone-400 text-sm mb-3">Llámanos para confirmar disponibilidad y horario.</p>
+                            <a href="tel:656432787" class="inline-flex items-center gap-2 text-gold font-semibold text-lg hover:underline">
+                                656 432 787
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Email Card -->
+                    <div class="bg-noir p-6 rounded-2xl border border-stone-800 flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl gold-gradient text-noir flex items-center justify-center shrink-0 text-xl font-bold">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div class="overflow-hidden">
+                            <h4 class="text-stone-200 font-medium text-base mb-1">Correo Electrónico</h4>
+                            <p class="text-stone-400 text-xs truncate max-w-full">
+                                <a href="mailto:error-lite+84f2@duckduckgo.com" class="hover:text-gold transition-colors">
+                                    error-lite+84f2@duckduckgo.com
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Big Call Action -->
+                    <div class="pt-2">
+                        <a href="tel:656432787" class="w-full gold-gradient text-noir font-bold text-sm uppercase tracking-wider py-4 rounded-xl flex items-center justify-center gap-3 shadow-xl hover:shadow-gold/20 hover:scale-[1.02] transition-all">
+                            <i class="fa-solid fa-calendar-check text-base"></i>
+                            Reservar Cita por Teléfono
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Map Column -->
+                <div class="lg:col-span-7 bg-noir p-3 rounded-2xl border border-stone-800 shadow-xl overflow-hidden">
+                    <iframe 
+                        src="https://www.google.com/maps?q=PELUQUER%C3%8DA%20Angela%20UNISEX.%20C.%20de%20Alonso%20de%20Ojeda%2C%2010%2C%2016320%20Talayuelas%2C%20Cuenca%2C%20Espa%C3%B1a&output=embed" 
+                        width="100%" 
+                        height="380" 
+                        style="border:0; border-radius: 1rem;" 
+                        allowfullscreen="" 
+                        loading="lazy"
+                        title="Mapa interactivo de PELUQUERÍA Angela UNISEX en Talayuelas"
+                    ></iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-noir border-t border-stone-800 text-stone-400 text-sm py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-8 pb-8 border-b border-stone-800/80">
+                <div class="text-center md:text-left">
+                    <span class="font-serif text-2xl text-stone-100 uppercase font-semibold tracking-wider">Angela</span>
+                    <span class="block text-[10px] text-gold uppercase tracking-[0.25em]">Peluquería Unisex &bull; Talayuelas</span>
+                    <p class="text-stone-500 text-xs mt-2">C. de Alonso de Ojeda, 10, 16320 Talayuelas, Cuenca, España</p>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-6 text-xs uppercase tracking-wider">
+                    <a href="#inicio" class="hover:text-gold transition-colors">Inicio</a>
+                    <a href="#nosotros" class="hover:text-gold transition-colors">El Salón</a>
+                    <a href="#servicios" class="hover:text-gold transition-colors">Tarifas</a>
+                    <a href="#galeria" class="hover:text-gold transition-colors">Galería</a>
+                    <a href="#opiniones" class="hover:text-gold transition-colors">Opiniones</a>
+                    <a href="#contacto" class="hover:text-gold transition-colors">Contacto</a>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <a href="tel:656432787" aria-label="Llamar por teléfono" class="w-10 h-10 rounded-full bg-charcoal border border-stone-700 flex items-center justify-center text-gold hover:border-gold transition-colors">
+                        <i class="fa-solid fa-phone"></i>
+                    </a>
+                    <a href="mailto:error-lite+84f2@duckduckgo.com" aria-label="Enviar email" class="w-10 h-10 rounded-full bg-charcoal border border-stone-700 flex items-center justify-center text-gold hover:border-gold transition-colors">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-between items-center text-xs text-stone-500 gap-4">
+                <p>&copy; <span id="currentYear"></span> PELUQUERÍA Angela UNISEX. Todos los derechos reservados.</p>
+                <p>Talayuelas, Cuenca &bull; Belleza, Calidad y Profesionalidad.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed Floating Action Button (Mobile Booking Bar) -->
+    <div class="md:hidden fixed bottom-4 left-4 right-4 z-50">
+        <a href="tel:656432787" class="w-full gold-gradient text-noir font-bold py-3.5 px-6 rounded-full shadow-2xl flex items-center justify-center gap-3 text-sm uppercase tracking-wider border border-white/20 active:scale-95 transition-transform">
+            <i class="fa-solid fa-calendar-check text-base"></i>
+            <span>Reservar Cita (656 432 787)</span>
+        </a>
+    </div>
+
+    <!-- Inline Interaction Script -->
+    <script>
+        // Set dynamic current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Close mobile menu on outside click
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
