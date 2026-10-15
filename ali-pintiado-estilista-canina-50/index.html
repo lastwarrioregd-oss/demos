@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ali Pintiado Estilista Canina | Peluquería Canina Boutique en Huelva</title>
+  <meta name="description" content="Estilismo canino de alta gama en Huelva. Especialistas en Perro de Agua Español, cachorros y cortes de raza. Tratamiento sensible, amoroso y sin estrés en Av. Adoratrices, 3.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: {
+              50: '#FAF6EF',
+              100: '#F4ECCF',
+              200: '#E8D9A0',
+              300: '#DCB96B',
+              400: '#D4AF37',
+              500: '#C5A059',
+              600: '#B08B44',
+              700: '#8C6C30',
+              800: '#695022',
+            },
+            matte: '#121212',
+            cardDark: '#1A1A1A',
+            sand: '#F7F5F0',
+            sandDark: '#EFECE6',
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #F3E5AB 0%, #C5A059 50%, #9A7B38 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gold-bg-gradient {
+      background: linear-gradient(135deg, #D4AF37 0%, #C5A059 50%, #B08B44 100%);
+    }
+    .gold-border-gradient {
+      border-image: linear-gradient(to right, #C5A059, #F3E5AB, #C5A059) 1;
+    }
+    .custom-shadow {
+      box-shadow: 0 10px 30px -10px rgba(197, 160, 89, 0.15);
+    }
+  </style>
+</head>
+<body class="bg-sand text-neutral-800 font-sans antialiased selection:bg-gold-500 selection:text-white">
+
+  <!-- HEADER / NAVBAR -->
+  <header class="sticky top-0 z-50 bg-matte/95 backdrop-blur-md border-b border-gold-500/20 text-white transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Brand Logo -->
+        <a href="#" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-full border border-gold-500/40 flex items-center justify-center bg-matte group-hover:border-gold-400 transition-colors">
+            <i class="fa-solid fa-scissors text-gold-400 text-lg"></i>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-serif text-lg sm:text-xl font-bold tracking-wide text-white group-hover:text-gold-300 transition-colors">
+              Ali Pintiado
+            </span>
+            <span class="text-[10px] tracking-widest uppercase text-gold-400 font-semibold">
+              Estilista Canina • Huelva
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
+          <a href="#inicio" class="text-gray-300 hover:text-gold-400 transition-colors">Inicio</a>
+          <a href="#nosotros" class="text-gray-300 hover:text-gold-400 transition-colors">El Salón</a>
+          <a href="#servicios" class="text-gray-300 hover:text-gold-400 transition-colors">Tratamientos</a>
+          <a href="#galeria" class="text-gray-300 hover:text-gold-400 transition-colors">Instalaciones</a>
+          <a href="#opiniones" class="text-gray-300 hover:text-gold-400 transition-colors">Reseñas</a>
+          <a href="#contacto" class="text-gray-300 hover:text-gold-400 transition-colors">Ubicación</a>
+        </nav>
+
+        <!-- CTA Direct Button -->
+        <div class="hidden sm:flex items-center gap-4">
+          <a href="https://wa.me/34655883971" target="_blank" rel="noopener noreferrer" 
+             class="gold-bg-gradient hover:brightness-110 text-matte font-semibold px-5 py-2.5 rounded-full text-sm transition-all transform hover:-translate-y-0.5 shadow-lg shadow-gold-500/20 flex items-center gap-2">
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+            <span>Reservar Cita</span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-gold-400 focus:outline-none p-2" aria-label="Abrir menú">
+          <i class="fa-solid fa-bars text-2xl"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Navigation -->
+    <div id="mobile-menu" class="hidden md:hidden bg-matte border-b border-gold-500/20 px-4 pt-2 pb-6 space-y-3">
+      <a href="#inicio" class="block text-gray-300 hover:text-gold-400 py-2">Inicio</a>
+      <a href="#nosotros" class="block text-gray-300 hover:text-gold-400 py-2">El Salón</a>
+      <a href="#servicios" class="block text-gray-300 hover:text-gold-400 py-2">Tratamientos & Tarifas</a>
+      <a href="#galeria" class="block text-gray-300 hover:text-gold-400 py-2">Instalaciones & Trabajos</a>
+      <a href="#opiniones" class="block text-gray-300 hover:text-gold-400 py-2">Opiniones de Clientes</a>
+      <a href="#contacto" class="block text-gray-300 hover:text-gold-400 py-2">Contacto & Mapa</a>
+      <a href="https://wa.me/34655883971" target="_blank" rel="noopener noreferrer" 
+         class="w-full gold-bg-gradient text-matte font-bold py-3 rounded-xl text-center block shadow-md mt-4">
+        <i class="fa-brands fa-whatsapp mr-2"></i> Reservar Cita por WhatsApp
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="inicio" class="relative bg-matte text-white overflow-hidden py-20 lg:py-28">
+    <!-- Subtle Background Pattern / Glows -->
+    <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#C5A059_1px,transparent_1px)] [background-size:24px_24px]"></div>
+    <div class="absolute -top-40 -right-40 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Text Content -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-gold-500/30 bg-gold-500/10 text-gold-300 text-xs sm:text-sm font-medium uppercase tracking-wider">
+            <i class="fa-solid fa-crown text-gold-400"></i> Estilismo Canino Boutique en Huelva
+          </div>
+          
+          <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+            Sensibilidad, belleza y cuidado <span class="gold-gradient-text italic">exclusivo</span> para tu mascota.
+          </h1>
+          
+          <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+            Especialistas reconocidos en <strong class="text-white font-semibold">Perros de Agua Español (PDA)</strong>, arreglos de raza y primeros cortes para cachorros. Un trato caracterizado por la calma, el cariño sin prisas y la máxima cosmética canina.
+          </p>
+
+          <!-- Badges -->
+          <div class="pt-2 pb-2 flex flex-wrap justify-center lg:justify-start gap-4 text-xs text-gray-300">
+            <span class="flex items-center gap-1.5 bg-neutral-900/80 px-3 py-1.5 rounded-md border border-neutral-800">
+              <i class="fa-solid fa-heart text-gold-400"></i> Cuidado 100% Sin Estrés
+            </span>
+            <span class="flex items-center gap-1.5 bg-neutral-900/80 px-3 py-1.5 rounded-md border border-neutral-800">
+              <i class="fa-solid fa-award text-gold-400"></i> Especialista Perros de Agua
+            </span>
+            <span class="flex items-center gap-1.5 bg-neutral-900/80 px-3 py-1.5 rounded-md border border-neutral-800">
+              <i class="fa-solid fa-location-dot text-gold-400"></i> Av. Adoratrices, 3 (Huelva)
+            </span>
+          </div>
+
+          <!-- CTAs -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+            <a href="https://wa.me/34655883971" target="_blank" rel="noopener noreferrer" 
+               class="w-full sm:w-auto gold-bg-gradient text-matte font-bold px-8 py-4 rounded-full text-base transition-all transform hover:scale-105 shadow-xl shadow-gold-500/20 flex items-center justify-center gap-3">
+              <i class="fa-brands fa-whatsapp text-xl"></i>
+              <span>Reservar Cita</span>
+            </a>
+            
+            <a href="#servicios" 
+               class="w-full sm:w-auto border border-gold-500/40 hover:border-gold-400 text-white font-medium px-8 py-4 rounded-full text-base transition-all hover:bg-gold-500/10 flex items-center justify-center gap-2">
+              <span>Ver Tratamientos</span>
+              <i class="fa-solid fa-arrow-right text-xs text-gold-400"></i>
+            </a>
+          </div>
+
+          <!-- Rating badge -->
+          <div class="pt-6 border-t border-neutral-800/80 flex items-center justify-center lg:justify-start gap-4">
+            <div class="flex text-gold-400 text-sm">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-xs text-gray-400">
+              <strong class="text-white">5.0 / 5.0</strong> según clientes en Google Maps en Huelva
+            </p>
+          </div>
+        </div>
+
+        <!-- Right Visual Showcase -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            <!-- Decorative framing -->
+            <div class="absolute -inset-2 rounded-2xl gold-bg-gradient opacity-30 blur-lg"></div>
+            <div class="relative bg-neutral-900 border border-gold-500/30 rounded-2xl overflow-hidden shadow-2xl p-3">
+              <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=1000&q=80" 
+                   alt="Peluquería Canina Ali Pintiado Huelva" 
+                   referrerpolicy="no-referrer"
+                   onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                   class="w-full h-[420px] object-cover rounded-xl hover:scale-105 transition-transform duration-700">
+              
+              <div class="absolute bottom-6 left-6 right-6 bg-matte/90 backdrop-blur-md p-4 rounded-xl border border-gold-500/30">
+                <div class="flex items-center gap-3">
+                  <div class="p-2.5 rounded-lg bg-gold-500/20 text-gold-400">
+                    <i class="fa-solid fa-dog text-xl"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-serif text-white font-semibold text-sm">Trato Sensible & Personalizado</h4>
+                    <p class="text-xs text-gray-300">Cada mascota recibe atención enfocada en su bienestar.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- POR QUÉ ELEGIRNOS / SOBRE ALI -->
+  <section id="nosotros" class="py-20 bg-sand">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        
+        <!-- Image Composite -->
+        <div class="relative order-2 lg:order-1">
+          <div class="grid grid-cols-2 gap-4">
+            <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=800&q=80" 
+                 alt="Cuidado amoroso canino" 
+                 referrerpolicy="no-referrer"
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                 class="rounded-2xl shadow-md h-64 sm:h-80 w-full object-cover">
+            
+            <img src="https://images.unsplash.com/photo-1535294435445-d7249524ef2e?auto=format&fit=crop&w=800&q=80" 
+                 alt="Perro feliz tras peluquería" 
+                 referrerpolicy="no-referrer"
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                 class="rounded-2xl shadow-md h-64 sm:h-80 w-full object-cover mt-8">
+          </div>
+          <div class="absolute -bottom-6 -right-2 sm:right-6 bg-matte text-white p-6 rounded-2xl border border-gold-500/30 max-w-xs hidden sm:block shadow-xl">
+            <p class="font-serif italic text-gold-300 text-sm">"Se nota que le gusta lo que hace y que cuida a los perros con un cariño único."</p>
+            <p class="text-xs text-gray-400 mt-2 font-semibold">— Lucia GS (Cliente verificada)</p>
+          </div>
+        </div>
+
+        <!-- Text Content -->
+        <div class="space-y-6 order-1 lg:order-2">
+          <span class="text-gold-600 font-semibold uppercase text-xs tracking-widest">La Filosofía de Ali Pintiado</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-neutral-900 leading-tight">
+            Sensibilidad especial por el respeto y la belleza del animal
+          </h2>
+          <p class="text-neutral-600 leading-relaxed">
+            En <strong class="text-neutral-900">Ali Pintiado Estilista Canina</strong> no entendemos la peluquería canina como un proceso rápido en cadena. Nuestro espacio en la Av. Adoratrices (Huelva) ha sido diseñado para ofrecer una experiencia relajante donde el bienestar emocional del perro es tan importante como su acabado estético.
+          </p>
+
+          <div class="space-y-4 pt-2">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-gold-100 flex items-center justify-center text-gold-700 shrink-0 mt-1">
+                <i class="fa-solid fa-shield-cat"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-neutral-900">Especialidad en Perros de Agua (PDA)</h4>
+                <p class="text-sm text-neutral-600">Tratamiento idóneo para el bucle y la lana del perro de agua español. Arreglos técnicos que mantienen el rizo sano, nutrido y sin nudos.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-gold-100 flex items-center justify-center text-gold-700 shrink-0 mt-1">
+                <i class="fa-solid fa-heart text-gold-600"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-neutral-900">Primeras Experiencias y Cachorros</h4>
+                <p class="text-sm text-neutral-600">Adaptación progresiva con paciencia absoluta para que la primera sesión de corte de tu cachorro sea un recuerdo alegre e imborrable.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-gold-100 flex items-center justify-center text-gold-700 shrink-0 mt-1">
+                <i class="fa-solid fa-pump-soap"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-neutral-900">Cosmética Canina de Alta Gama</h4>
+                <p class="text-sm text-neutral-600">Champús dermatológicos, mascarillas dermoprotectoras y acondicionadores específicos según el manto de cada peludo.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4">
+            <a href="https://wa.me/34655883971" target="_blank" rel="noopener noreferrer" 
+               class="inline-flex items-center gap-3 gold-bg-gradient text-matte font-bold px-7 py-3.5 rounded-full hover:brightness-110 transition-all shadow-md">
+              <i class="fa-brands fa-whatsapp text-lg"></i>
+              <span>Reservar Cita por WhatsApp</span>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TRATAMIENTOS Y SERVICIOS -->
+  <section id="servicios" class="py-20 bg-matte text-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="text-gold-400 font-semibold uppercase text-xs tracking-widest">Carta de Servicios Exclusivos</span>
+        <h2 class="font-serif text-3xl sm:text-5xl font-bold">Nuestros Tratamientos y Cortes</h2>
+        <div class="w-20 h-0.5 bg-gold-500 mx-auto"></div>
+        <p class="text-gray-300 text-sm sm:text-base font-light">
+          Adaptamos cada sesión a las necesidades fisiológicas, estado del manto y fisionomía de tu compañero canino.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Card 1 -->
+        <div class="bg-cardDark p-8 rounded-2xl border border-neutral-800 hover:border-gold-500/50 transition-all group flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 text-xl mb-6 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-water"></i>
+            </div>
+            <span class="text-xs font-semibold text-gold-400 tracking-wider uppercase">Especialidad de la Casa</span>
+            <h3 class="font-serif text-xl font-bold text-white mt-1 mb-3">Especial Perro de Agua Español (PDA)</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">
+              Servicio técnico adaptado a las necesidades específicas del pelo rizado. Desanudado respetuoso, corte higiénico, perfilado característico de la raza y baño de hidratación profunda para un bucle definido y esponjoso.
+            </p>
+          </div>
+          <a href="https://wa.me/34655883971" target="_blank" rel="noopener noreferrer" 
+             class="w-full text-center py-2.5 rounded-lg border border-gold-500/30 hover:bg-gold-500 text-gold-300 hover:text-matte font-semibold text-sm transition-colors block">
+            Reservar Cita
+          </a>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-cardDark p-8 rounded-2xl border border-neutral-800 hover:border-gold-500/50 transition-all group flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 text-xl mb-6 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-scissors"></i>
+            </div>
+            <span class="text-xs font-semibold text-gold-400 tracking-wider uppercase">Estilismo y Raza</span>
+            <h3 class="font-serif text-xl font-bold text-white mt-1 mb-3">Corte Comercial & Estilo de Raza</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">
+              Corte a tijera o máquina de alta precisión adaptado al estándar de razas (Caniche, Bichón, Schnauzer, Yorkshire...) o arreglos comerciales a petición del dueño siempre velando por la salud cutánea.
+            </p>
+          </div>
+          <a href="https://wa.me/34655883971" target="_blank" rel="noopener noreferrer" 
+             class="w-full text-center py-2.5 rounded-lg border border-gold-500/30 hover:bg-gold-500 text-gold-300 hover:text-matte font-semibold text-sm transition-colors block">
+            Reservar Cita
+          </a>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-cardDark p-8 rounded-2xl border border-neutral-800 hover:border-gold-500/50 transition-all group flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 text-xl mb-6 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-baby"></i>
+            </div>
+            <span class="text-xs font-semibold text-gold-400 tracking-wider uppercase">Adaptación Positiva</span>
+            <h3 class="font-serif text-xl font-bold text-white mt-1 mb-3">Primer Corte para Cachorros</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">
+              Sesión de habituación progresiva con sonidos, mesa, secador y tijera. Diseñado con dosis extra de paciencia y cariño para que el cachorro genere una asociación positiva para el resto de su vida.
+            </p>
+          </div>
+          <a href="https://wa.me/34655883971" target="_blank" rel="noopener noreferrer" 
+             class="w-full text-center py-2.5 rounded-lg border border-gold-500/30 hover:bg-gold-500 text-gold-300 hover:text-matte font-semibold text-sm transition-colors block">
+            Reservar Cita
+          </a>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="bg-cardDark p-8 rounded-2xl border border-neutral-800 hover:border-gold-500/50 transition-all group flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 text-xl mb-6 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-shower"></i>
+            </div>
+            <span class="text-xs font-semibold text-gold-400 tracking-wider uppercase">Baño & Tratamiento Dermocosmético</span>
+            <h3 class="font-serif text-xl font-bold text-white mt-1 mb-3">Baño Spa e Hidratación Profunda</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">
+              Lavado completo con agua templada, champú específico según mantos grasos, secos o sensibles, mascarilla nutritiva, secado a mano con flujo de aire regulado y cepillado profundo.
+            </p>
+          </div>
+          <a href="https://wa.me/34655883971" target="_blank" rel="noopener noreferrer" 
+             class="w-full text-center py-2.5 rounded-lg border border-gold-500/30 hover:bg-gold-500 text-gold-300 hover:text-matte font-semibold text-sm transition-colors block">
+            Reservar Cita
+          </a>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="bg-cardDark p-8 rounded-2xl border border-neutral-800 hover:border-gold-500/50 transition-all group flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 text-xl mb-6 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-wind"></i>
+            </div>
+            <span class="text-xs font-semibold text-gold-400 tracking-wider uppercase">Técnicas Especializadas</span>
+            <h3 class="font-serif text-xl font-bold text-white mt-1 mb-3">Stripping & Deslanado Profesional</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">
+              Renovación del pelo duro de forma indolora o eliminación técnica del subpelo acumulado en razas de doble capa para favorecer la termorregulación natural y reducir el pelo en casa.
+            </p>
+          </div>
+          <a href="https://wa.me/34655883971" target="_blank" rel="noopener noreferrer" 
+             class="w-full text-center py-2.5 rounded-lg border border-gold-500/30 hover:bg-gold-500 text-gold-300 hover:text-matte font-semibold text-sm transition-colors block">
+            Reservar Cita
+          </a>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="bg-cardDark p-8 rounded-2xl border border-neutral-800 hover:border-gold-500/50 transition-all group flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 text-xl mb-6 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-sparkles"></i>
+            </div>
+            <span class="text-xs font-semibold text-gold-400 tracking-wider uppercase">Salud & Higiene Básica</span>
+            <h3 class="font-serif text-xl font-bold text-white mt-1 mb-3">Higiene Completa e Higienización</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">
+              Incluido en nuestros tratamientos integrales: vaciado de glándulas anales si se requiere, corte de uñas con máxima precisión, limpieza del conducto auditivo y rasurado del área higiénica y plantares.
+            </p>
+          </div>
+          <a href="https://wa.me/34655883971" target="_blank" rel="noopener noreferrer" 
+             class="w-full text-center py-2.5 rounded-lg border border-gold-500/30 hover:bg-gold-500 text-gold-300 hover:text-matte font-semibold text-sm transition-colors block">
+            Reservar Cita
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Banner Cita Previa -->
+      <div class="mt-16 bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900 border border-gold-500/30 rounded-2xl p-8 text-center flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
+        <div class="text-left space-y-1">
+          <h4 class="font-serif text-2xl font-bold text-white">¿Tienes dudas sobre el servicio ideal para tu perro?</h4>
+          <p class="text-gray-300 text-sm">Consultanos sin compromiso por WhatsApp. Ali te atenderá personalmente.</p>
+        </div>
+        <a href="https://wa.me/34655883971" target="_blank" rel="noopener noreferrer" 
+           class="gold-bg-gradient text-matte font-bold px-8 py-3.5 rounded-full whitespace-nowrap hover:brightness-110 transition-transform hover:scale-105 shadow-md flex items-center gap-2">
+          <i class="fa-brands fa-whatsapp text-lg"></i>
+          <span>Reservar Cita</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GALERÍA E INSTALACIONES Y TRABAJOS -->
+  <section id="galeria" class="py-20 bg-sand">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="text-gold-600 font-semibold uppercase text-xs tracking-widest">Nuestra Galería</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-neutral-900">Nuestras Instalaciones y Trabajos</h2>
+        <div class="w-20 h-0.5 bg-gold-500 mx-auto"></div>
+        <p class="text-neutral-600 text-sm sm:text-base">
+          Ambiente higiénico, equipado con herramientas de máxima calidad y creado para el relax de tu mejor amigo.
+        </p>
+      </div>
+
+      <!-- Grid Gallery -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <div class="group relative overflow-hidden rounded-2xl shadow-md h-72 bg-matte">
+          <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=800&q=80" 
+               alt="Grooming Canino Profesional" 
+               referrerpolicy="no-referrer"
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-90 group-hover:opacity-100">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+            <span class="text-white font-serif font-semibold">Acabados impecables a tijera</span>
+          </div>
+        </div>
+
+        <div class="group relative overflow-hidden rounded-2xl shadow-md h-72 bg-matte">
+          <img src="https://images.unsplash.com/photo-1541599540903-216a46ca1dc0?auto=format&fit=crop&w=800&q=80" 
+               alt="Perro feliz baño" 
+               referrerpolicy="no-referrer"
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-90 group-hover:opacity-100">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+            <span class="text-white font-serif font-semibold">Baños Spa reconfortantes</span>
+          </div>
+        </div>
+
+        <div class="group relative overflow-hidden rounded-2xl shadow-md h-72 bg-matte">
+          <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=800&q=80" 
+               alt="Atención cariñosa a mascotas" 
+               referrerpolicy="no-referrer"
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-90 group-hover:opacity-100">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+            <span class="text-white font-serif font-semibold">Paciencia y cariño garantizados</span>
+          </div>
+        </div>
+
+        <div class="group relative overflow-hidden rounded-2xl shadow-md h-72 bg-matte">
+          <img src="https://images.unsplash.com/photo-1535294435445-d7249524ef2e?auto=format&fit=crop&w=800&q=80" 
+               alt="Cuidado Perros de Agua Español" 
+               referrerpolicy="no-referrer"
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-90 group-hover:opacity-100">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+            <span class="text-white font-serif font-semibold">Especialistas en Perros de Agua</span>
+          </div>
+        </div>
+
+        <div class="group relative overflow-hidden rounded-2xl shadow-md h-72 bg-matte">
+          <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=800&q=80" 
+               alt="Peluquería canina limpia y moderna" 
+               referrerpolicy="no-referrer"
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-90 group-hover:opacity-100">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+            <span class="text-white font-serif font-semibold">Atención individualizada por cita</span>
+          </div>
+        </div>
+
+        <div class="group relative overflow-hidden rounded-2xl shadow-md h-72 bg-matte">
+          <img src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&w=800&q=80" 
+               alt="Resultado impecable perros" 
+               referrerpolicy="no-referrer"
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-90 group-hover:opacity-100">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+            <span class="text-white font-serif font-semibold">Salida feliz y renovada</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- RESEÑAS REALES DE CLIENTES -->
+  <section id="opiniones" class="py-20 bg-neutral-900 text-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <div class="inline-flex items-center gap-1.5 text-gold-400 font-semibold uppercase text-xs tracking-widest">
+          <i class="fa-solid fa-quote-left"></i> Reseñas Reales Verificadas
+        </div>
+        <h2 class="font-serif text-3xl sm:text-5xl font-bold">Lo Que Dicen Sus Dueños</h2>
+        <div class="w-20 h-0.5 bg-gold-500 mx-auto"></div>
+        <p class="text-gray-400 text-sm sm:text-base">
+          La satisfacción y tranquilidad de quienes nos confían a su mejor amigo en Huelva.
+        </p>
+      </div>
+
+      <!-- Reviews Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Review 1 -->
+        <div class="bg-matte p-8 rounded-2xl border border-neutral-800 relative flex flex-col justify-between custom-shadow">
+          <div>
+            <div class="flex text-gold-400 text-sm mb-4">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-gray-300 text-sm leading-relaxed italic mb-6">
+              "Muy muy buena experiencia! Es la primera vez que vamos y aunque muchísimas personas con PDAs me habían recomendado ir, nunca habíamos probado hasta hoy! Ha pelado a mi perro genial y el trato ha sido estupendo. Se nota que le gusta lo que hace y que cuida a los perros con cariño. Todo ha ido perfecto y hemos salido encantados. Repetiré sin duda y Trece está guapísimo! Gracias Por todo Ali! 🫶🫶🫶"
+            </p>
+          </div>
+          <div class="pt-4 border-t border-neutral-800 flex items-center justify-between">
+            <div>
+              <h5 class="font-bold text-white text-sm">Lucia GS</h5>
+              <span class="text-xs text-gold-400">Dueña de "Trece" (PDA)</span>
+            </div>
+            <i class="fa-brands fa-google text-gray-500 text-lg"></i>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="bg-matte p-8 rounded-2xl border border-neutral-800 relative flex flex-col justify-between custom-shadow">
+          <div>
+            <div class="flex text-gold-400 text-sm mb-4">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-gray-300 text-sm leading-relaxed italic mb-6">
+              "Hoy hemos llevado a lukas y lola por primera vez a Ali y volveremos , guapisimos los dos ella super profesional se la recomiendo a todos los dueños q tengan perros y en especial perros de agua gracias Ali..y nos vemos en septiembre"
+            </p>
+          </div>
+          <div class="pt-4 border-t border-neutral-800 flex items-center justify-between">
+            <div>
+              <h5 class="font-bold text-white text-sm">Jesus jj</h5>
+              <span class="text-xs text-gold-400">Dueño de Lukas y Lola</span>
+            </div>
+            <i class="fa-brands fa-google text-gray-500 text-lg"></i>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="bg-matte p-8 rounded-2xl border border-neutral-800 relative flex flex-col justify-between custom-shadow">
+          <div>
+            <div class="flex text-gold-400 text-sm mb-4">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-gray-300 text-sm leading-relaxed italic mb-6">
+              "Fuimos por primera vez con nuestro perro y salimos encantados, sobre todo Brownie que para ser su primer corte de pelo se porto muy muy bien, volverá seguro, gracias por el trato a nuestro peludo."
+            </p>
+          </div>
+          <div class="pt-4 border-t border-neutral-800 flex items-center justify-between">
+            <div>
+              <h5 class="font-bold text-white text-sm">Angelica Rodriguez</h5>
+              <span class="text-xs text-gold-400">Dueña de "Brownie"</span>
+            </div>
+            <i class="fa-brands fa-google text-gray-500 text-lg"></i>
+          </div>
+        </div>
+
+        <!-- Review 4 -->
+        <div class="bg-matte p-8 rounded-2xl border border-neutral-800 relative flex flex-col justify-between custom-shadow">
+          <div>
+            <div class="flex text-gold-400 text-sm mb-4">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-gray-300 text-sm leading-relaxed italic mb-6">
+              "Encanta con el trato recibo por Ali tanto hacia mí como con mí perrita , es nuestra primera cita, muchas gracias💗…"
+            </p>
+          </div>
+          <div class="pt-4 border-t border-neutral-800 flex items-center justify-between">
+            <div>
+              <h5 class="font-bold text-white text-sm">Raquel del Trigo Méndez</h5>
+              <span class="text-xs text-gold-400">Cliente Verificada</span>
+            </div>
+            <i class="fa-brands fa-google text-gray-500 text-lg"></i>
+          </div>
+        </div>
+
+        <!-- Review 5 -->
+        <div class="bg-matte p-8 rounded-2xl border border-neutral-800 relative flex flex-col justify-between custom-shadow md:col-span-2 lg:col-span-1">
+          <div>
+            <div class="flex text-gold-400 text-sm mb-4">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-gray-300 text-sm leading-relaxed italic mb-6">
+              "Ali tiene una sensibilidad especial para los perros. Encantada con todo, desde el trato que recibe mi perro nada más entrar y por supuesto lo guapo que lo deja cada vez que sale. Se que está en muy buenas manos . Se nota cuando a un…"
+            </p>
+          </div>
+          <div class="pt-4 border-t border-neutral-800 flex items-center justify-between">
+            <div>
+              <h5 class="font-bold text-white text-sm">Peña Ponce carrasco</h5>
+              <span class="text-xs text-gold-400">Cliente Asidua</span>
+            </div>
+            <i class="fa-brands fa-google text-gray-500 text-lg"></i>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- UBICACIÓN Y MAPA INTERACTIVO -->
+  <section id="contacto" class="py-20 bg-sand relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Address & Contact Details -->
+        <div class="lg:col-span-5 space-y-8">
+          <div>
+            <span class="text-gold-600 font-semibold uppercase text-xs tracking-widest">En pleno corazón de Huelva</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-neutral-900 mt-1">Visita Nuestro Salón Canino</h2>
+            <p class="text-neutral-600 text-sm mt-3">
+              Un entorno acogedor y perfectamente comunicado en la zona de Adoratrices. Atendemos siempre bajo cita previa para dedicarle a cada perrito el tiempo exclusivo que merece.
+            </p>
+          </div>
+
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-matte text-gold-400 flex items-center justify-center shrink-0 text-xl shadow-md">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-neutral-900 text-base">Dirección</h4>
+                <p class="text-neutral-600 text-sm">Av. Adoratrices, 3, 21004 Huelva, España</p>
+                <a href="https://maps.google.com/?q=Ali+Pintiado+Estilista+Canina+Av.+Adoratrices,+3,+21004+Huelva" 
+                   target="_blank" rel="noopener noreferrer" 
+                   class="inline-block text-xs text-gold-600 font-bold hover:underline mt-1">
+                  Cómo llegar en Google Maps &rarr;
+                </a>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-matte text-gold-400 flex items-center justify-center shrink-0 text-xl shadow-md">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-neutral-900 text-base">Teléfono & WhatsApp Directo</h4>
+                <p class="text-neutral-600 text-sm font-semibold">655 88 39 71</p>
+                <p class="text-xs text-neutral-500">Atención rápida y reservas directas</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-matte text-gold-400 flex items-center justify-center shrink-0 text-xl shadow-md">
+                <i class="fa-solid fa-clock"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-neutral-900 text-base">Horario de Atención</h4>
+                <p class="text-neutral-600 text-sm">Lunes a Viernes: Mañanas y Tardes (Bajo Cita Previa)</p>
+                <p class="text-xs text-neutral-500">Sábados y Festivos: Consultar disponibilidad</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <a href="https://wa.me/34655883971" target="_blank" rel="noopener noreferrer" 
+               class="w-full sm:w-auto gold-bg-gradient text-matte font-bold px-8 py-4 rounded-full text-base transition-all transform hover:scale-105 shadow-lg flex items-center justify-center gap-3">
+              <i class="fa-brands fa-whatsapp text-xl"></i>
+              <span>Reservar Cita</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Google Map Container -->
+        <div class="lg:col-span-7">
+          <div class="bg-white p-3 rounded-2xl shadow-xl border border-neutral-200">
+            <iframe src="https://www.google.com/maps?q=Ali%20Pintiado%20Estilista%20Canina%20Av.%20Adoratrices%2C%203%2C%2021004%20Huelva%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-matte text-white border-t border-neutral-800 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        
+        <div class="md:col-span-2 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full border border-gold-500/40 flex items-center justify-center bg-matte">
+              <i class="fa-solid fa-scissors text-gold-400 text-sm"></i>
+            </div>
+            <span class="font-serif text-xl font-bold tracking-wide text-white">Ali Pintiado</span>
+          </div>
+          <p class="text-gray-400 text-sm max-w-sm">
+            Estilismo canino boutique en Huelva. Especialistas en Perro de Agua Español, belleza de raza y bienestar animal sin estrés.
+          </p>
+        </div>
+
+        <div>
+          <h5 class="font-serif font-semibold text-gold-400 mb-3 text-sm tracking-wider uppercase">Enlaces Rápidos</h5>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li><a href="#inicio" class="hover:text-white transition-colors">Inicio</a></li>
+            <li><a href="#nosotros" class="hover:text-white transition-colors">Sobre Ali</a></li>
+            <li><a href="#servicios" class="hover:text-white transition-colors">Tratamientos</a></li>
+            <li><a href="#opiniones" class="hover:text-white transition-colors">Opiniones</a></li>
+            <li><a href="#contacto" class="hover:text-white transition-colors">Ubicación</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="font-serif font-semibold text-gold-400 mb-3 text-sm tracking-wider uppercase">Contacto Directo</h5>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li>Av. Adoratrices, 3</li>
+            <li>21004 Huelva, España</li>
+            <li class="pt-2">
+              <a href="https://wa.me/34655883971" target="_blank" rel="noopener noreferrer" class="text-gold-300 font-bold hover:underline flex items-center gap-2">
+                <i class="fa-brands fa-whatsapp text-lg"></i> 655 88 39 71
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pt-8 border-t border-neutral-800 text-center text-xs text-gray-500 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p>&copy; <span id="year"></span> Ali Pintiado Estilista Canina. Todos los derechos reservados.</p>
+        <p>Peluquero de mascotas en Huelva • Especialista Perros de Agua</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/34655883971" target="_blank" rel="noopener noreferrer" 
+     class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-3xl transform hover:scale-110 transition-all duration-300"
+     aria-label="Contactar por WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- SCRIPTS -->
+  <script>
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu on link click
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  </script>
+</body>
+</html>
