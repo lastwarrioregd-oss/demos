@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bar Restaurante La Forca | Benimarfull, Alicante</title>
+    <meta name="description" content="Descubre el Bar Restaurante La Forca en Benimarfull, Alicante. Excelente trato, profesionalidad y la mejor gastronomía tradicional en un ambiente acogedor.">
+    
+    <!-- Tailwind CSS (vía CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        terracota: {
+                            50: '#fdf8f6',
+                            100: '#fbeee9',
+                            500: '#c85a32',
+                            600: '#b24721',
+                            700: '#943818',
+                            800: '#7a3016',
+                            900: '#652a16',
+                        },
+                        gourmet: {
+                            dark: '#1a1818',
+                            card: '#242121',
+                            cream: '#fcfbfa',
+                            sand: '#f4ede2'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gourmet-cream text-gourmet-dark font-sans antialiased selection:bg-terracota-500 selection:text-white">
+
+    <!-- Topbar Informativa -->
+    <div class="bg-gourmet-dark text-gourmet-sand text-xs sm:text-sm py-2 px-4 border-b border-white/10">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <span><i class="fa-solid fa-location-dot text-terracota-500 mr-1.5"></i> C. Alcoi, 20, 03827 Benimarfull, Alicante</span>
+                <span class="hidden md:inline"><i class="fa-solid fa-clock text-terracota-500 mr-1.5"></i> Abierto de Martes a Domingo</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="tel:604481808" class="hover:text-terracota-500 transition"><i class="fa-solid fa-phone text-terracota-500 mr-1.5"></i> 604 48 18 08</a>
+                <a href="mailto:error-lite+84f2@duckduckgo.com" class="hidden sm:inline hover:text-terracota-500 transition"><i class="fa-solid fa-envelope text-terracota-500 mr-1.5"></i> Contacto</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-gourmet-cream/95 backdrop-blur-md border-b border-gourmet-dark/10 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-terracota-600 flex items-center justify-center text-white font-serif text-xl font-bold shadow-md">
+                    F
+                </div>
+                <div>
+                    <span class="font-serif font-bold text-xl sm:text-2xl text-gourmet-dark tracking-wide">La Forca</span>
+                    <span class="block text-[10px] uppercase tracking-widest text-terracota-600 font-semibold">Bar Restaurante</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
+                <a href="#inicio" class="hover:text-terracota-600 transition">Inicio</a>
+                <a href="#nosotros" class="hover:text-terracota-600 transition">El Restaurante</a>
+                <a href="#carta" class="hover:text-terracota-600 transition">Nuestra Carta</a>
+                <a href="#instalaciones" class="hover:text-terracota-600 transition">Instalaciones</a>
+                <a href="#opiniones" class="hover:text-terracota-600 transition">Reseñas</a>
+                <a href="#contacto" class="hover:text-terracota-600 transition">Ubicación</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="tel:604481808" class="hidden sm:inline-flex items-center gap-2 bg-terracota-600 hover:bg-terracota-700 text-white px-5 py-2.5 rounded-full text-sm font-semibold shadow-lg shadow-terracota-600/20 transition transform hover:-translate-y-0.5">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <span>Reservar Mesa</span>
+                </a>
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" class="md:hidden text-gourmet-dark text-xl p-2 focus:outline-none" aria-label="Menú móvil">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gourmet-cream border-b border-gourmet-dark/10 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="block py-2 font-medium border-b border-gourmet-dark/5">Inicio</a>
+            <a href="#nosotros" class="block py-2 font-medium border-b border-gourmet-dark/5">El Restaurante</a>
+            <a href="#carta" class="block py-2 font-medium border-b border-gourmet-dark/5">Nuestra Carta</a>
+            <a href="#instalaciones" class="block py-2 font-medium border-b border-gourmet-dark/5">Instalaciones</a>
+            <a href="#opiniones" class="block py-2 font-medium border-b border-gourmet-dark/5">Reseñas</a>
+            <a href="#contacto" class="block py-2 font-medium border-b border-gourmet-dark/5">Ubicación</a>
+            <div class="pt-2">
+                <a href="tel:604481808" class="flex items-center justify-center gap-2 w-full bg-terracota-600 text-white py-3 rounded-xl font-semibold shadow-md">
+                    <i class="fa-solid fa-phone-volume"></i> Reservar Mesa
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative min-h-[90vh] flex items-center bg-gourmet-dark text-white overflow-hidden">
+        <!-- Background Image with overlay -->
+        <div class="absolute inset-0 z-0 opacity-40">
+            <img src="https://scontent-iad3-1.xx.fbcdn.net/v/t39.30808-1/448774355_2502728566585486_1266442962039834630_n.jpg?stp=dst-jpg_tt6&cstp=mx431x430&ctp=s431x430&_nc_cat=108&ccb=1-7&_nc_sid=3ab345&_nc_ohc=biP7EH57hgoQ7kNvwHlyKEE&_nc_oc=AdpQdwn6T3tMxXRZTwWGHwiBqw7Jf1V-TppkrDqK5X9bG0vl21_JIE4UZwSGeenQSBk&_nc_zt=24&_nc_ht=scontent-iad3-1.xx&_nc_gid=wQkykzyqYiipWb9ZYBjU6w&_nc_ss=7f289&oh=00_AQP1j8N91o8wIZU4jnizW_D5lyzkVptYXiQvUNFTtAFx-g&oe=6AD6F682" 
+                 alt="Bar Restaurante La Forca Benimarfull" 
+                 class="w-full h-full object-cover"
+                 referrerpolicy="no-referrer"
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-gourmet-dark via-gourmet-dark/60 to-transparent z-0"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full text-center lg:text-left">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-terracota-500/20 border border-terracota-500/40 text-terracota-400 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-6 backdrop-blur-sm">
+                    <i class="fa-solid fa-star text-terracota-500"></i> Calidad y Tradición en Benimarfull
+                </div>
+                <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-tight">
+                    Bar Restaurante <span class="text-terracota-500 italic">La Forca</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-gourmet-sand/90 font-light mb-10 max-w-2xl leading-relaxed">
+                    Disfruta de un excelente trato, profesionalidad inigualable y la mejor cocina casera en el corazón de Benimarfull, Alicante. Tu punto de encuentro gastronómico.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                    <a href="tel:604481808" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-terracota-600 hover:bg-terracota-700 text-white px-8 py-4 rounded-full font-bold text-base shadow-xl shadow-terracota-600/30 transition transform hover:-translate-y-1">
+                        <i class="fa-solid fa-phone-volume text-lg"></i>
+                        <span>Reservar Mesa</span>
+                    </a>
+                    <a href="#carta" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white px-8 py-4 rounded-full font-bold text-base backdrop-blur-sm transition">
+                        <span>Ver Especialidades</span>
+                        <i class="fa-solid fa-arrow-down text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="mt-16 pt-10 border-t border-white/10 grid grid-cols-2 md:grid-cols-3 gap-6 text-center lg:text-left">
+                <div>
+                    <span class="block font-serif text-3xl sm:text-4xl font-bold text-terracota-500">100%</span>
+                    <span class="text-xs sm:text-sm text-gourmet-sand/70">Ambiente Acogedor</span>
+                </div>
+                <div>
+                    <span class="block font-serif text-3xl sm:text-4xl font-bold text-terracota-500">Top</span>
+                    <span class="text-xs sm:text-sm text-gourmet-sand/70">Excelente Trato Profesional</span>
+                </div>
+                <div class="col-span-2 md:col-span-1">
+                    <span class="block font-serif text-3xl sm:text-4xl font-bold text-terracota-500">Benimarfull</span>
+                    <span class="text-xs sm:text-sm text-gourmet-sand/70">Alicante, España</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nosotros / Sección Destacada -->
+    <section id="nosotros" class="py-24 bg-gourmet-sand/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 relative">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+                        <img src="https://scontent-iad3-1.xx.fbcdn.net/v/t39.30808-1/448774355_2502728566585486_1266442962039834630_n.jpg?stp=dst-jpg_tt6&cstp=mx431x430&ctp=s431x430&_nc_cat=108&ccb=1-7&_nc_sid=3ab345&_nc_ohc=biP7EH57hgoQ7kNvwHlyKEE&_nc_oc=AdpQdwn6T3tMxXRZTwWGHwiBqw7Jf1V-TppkrDqK5X9bG0vl21_JIE4UZwSGeenQSBk&_nc_zt=24&_nc_ht=scontent-iad3-1.xx&_nc_gid=wQkykzyqYiipWb9ZYBjU6w&_nc_ss=7f289&oh=00_AQP1j8N91o8wIZU4jnizW_D5lyzkVptYXiQvUNFTtAFx-g&oe=6AD6F682" 
+                             alt="Interior Bar Restaurante La Forca" 
+                             class="w-full h-[450px] object-cover"
+                             referrerpolicy="no-referrer"
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+                    </div>
+                    <!-- Floating Badge -->
+                    <div class="absolute -bottom-6 -right-6 bg-terracota-600 text-white p-6 rounded-2xl shadow-xl hidden sm:block max-w-xs">
+                        <div class="flex items-center gap-3 mb-1">
+                            <i class="fa-solid fa-award text-2xl text-terracota-200"></i>
+                            <span class="font-serif font-bold text-lg">Garantía de Calidad</span>
+                        </div>
+                        <p class="text-xs text-terracota-100">Reconocidos por nuestro excelente trato y profesionalidad con cada cliente.</p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-terracota-600 font-semibold text-sm uppercase tracking-widest block">Nuestra Esencia</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-gourmet-dark leading-tight">
+                        Un espacio pensado para disfrutar del buen comer
+                    </h2>
+                    <p class="text-gourmet-dark/80 leading-relaxed text-base sm:text-lg">
+                        En <strong class="text-terracota-700">Bar Restaurante La Forca</strong> combinamos la tradición culinaria con un ambiente cálido y familiar. Situados en el encantador municipio de Benimarfull, nos esforzamos cada día para ofrecer una experiencia inolvidable a todos nuestros visitantes.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div class="flex items-start gap-3 bg-white p-4 rounded-2xl shadow-sm border border-gourmet-dark/5">
+                            <div class="w-10 h-10 rounded-xl bg-terracota-100 text-terracota-600 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-utensils"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-gourmet-dark">Cocina Auténtica</h4>
+                                <p class="text-xs text-gourmet-dark/70 mt-0.5">Platos elaborados con mimo y productos seleccionados.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 bg-white p-4 rounded-2xl shadow-sm border border-gourmet-dark/5">
+                            <div class="w-10 h-10 rounded-xl bg-terracota-100 text-terracota-600 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-gourmet-dark">Trato Excepcional</h4>
+                                <p class="text-xs text-gourmet-dark/70 mt-0.5">Profesionalidad y cercanía en el servicio diario.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-4">
+                        <a href="tel:604481808" class="inline-flex items-center gap-2 text-terracota-600 font-bold hover:text-terracota-700 transition">
+                            <span>Reserva tu mesa hoy mismo</span>
+                            <i class="fa-solid fa-arrow-right text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Carta, Platos Estrella y Especialidades -->
+    <section id="carta" class="py-24 bg-gourmet-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-terracota-600 font-semibold text-sm uppercase tracking-widest block mb-2">Gastronomía Exquisita</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-gourmet-dark mb-4">
+                    Nuestra Carta y Especialidades
+                </h2>
+                <p class="text-gourmet-dark/70 text-base sm:text-lg">
+                    Descubre una selección pensada para satisfacer todos los paladares. Desde almuerzos tradicionales hasta tapas y platos principales de categoría.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Categoría 1 -->
+                <div class="bg-white rounded-3xl p-8 shadow-xl shadow-gourmet-dark/5 border border-gourmet-dark/5 flex flex-col justify-between hover:border-terracota-500/30 transition">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-terracota-500/10 text-terracota-600 flex items-center justify-center text-2xl font-bold mb-6">
+                            <i class="fa-solid fa-mug-hot"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-gourmet-dark mb-3">Almuerzos Populares</h3>
+                        <p class="text-gourmet-dark/70 text-sm mb-6 leading-relaxed">
+                            Empieza el día con energía con nuestros tradicionales almuerzos caseros, bocadillos especiales y el mejor café de la zona.
+                        </p>
+                        <ul class="space-y-3 text-sm text-gourmet-dark/80 border-t border-gourmet-dark/5 pt-6">
+                            <li class="flex items-center justify-between">
+                                <span class="font-medium">Bocadillo de la Casa</span>
+                                <span class="text-terracota-600 font-bold">Tradicional</span>
+                            </li>
+                            <li class="flex items-center justify-between">
+                                <span class="font-medium">Esmorzaret Benimarfull</span>
+                                <span class="text-terracota-600 font-bold">Imprescindible</span>
+                            </li>
+                            <li class="flex items-center justify-between">
+                                <span class="font-medium">Café y Carajillo</span>
+                                <span class="text-terracota-600 font-bold">Artesanal</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-gourmet-dark/5">
+                        <a href="tel:604481808" class="block w-full text-center bg-gourmet-dark hover:bg-terracota-600 text-white font-semibold py-3 rounded-xl transition text-sm">
+                            Consultar Disponibilidad
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Categoría 2 (Destacada) -->
+                <div class="bg-gourmet-dark text-white rounded-3xl p-8 shadow-2xl relative flex flex-col justify-between border-2 border-terracota-500">
+                    <div class="absolute -top-4 right-8 bg-terracota-600 text-white text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full shadow-md">
+                        Especial de la Casa
+                    </div>
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-terracota-500 text-white flex items-center justify-center text-2xl font-bold mb-6 shadow-lg shadow-terracota-500/30">
+                            <i class="fa-solid fa-utensils"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold mb-3">Platos Estrella & Tapas</h3>
+                        <p class="text-gourmet-sand/80 text-sm mb-6 leading-relaxed">
+                            Nuestra selección de tapas, raciones y platos principales elaborados con productos frescos de primera calidad.
+                        </p>
+                        <ul class="space-y-3 text-sm text-gourmet-sand/90 border-t border-white/10 pt-6">
+                            <li class="flex items-center justify-between">
+                                <span class="font-medium">Tapas Caseras Variadas</span>
+                                <span class="text-terracota-400 font-bold">Fresco</span>
+                            </li>
+                            <li class="flex items-center justify-between">
+                                <span class="font-medium">Carnes Seleccionadas</span>
+                                <span class="text-terracota-400 font-bold">A la brasa</span>
+                            </li>
+                            <li class="flex items-center justify-between">
+                                <span class="font-medium">Especialidades del Chef</span>
+                                <span class="text-terracota-400 font-bold">Sugerencia</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-white/10">
+                        <a href="tel:604481808" class="block w-full text-center bg-terracota-600 hover:bg-terracota-700 text-white font-semibold py-3 rounded-xl transition text-sm shadow-lg shadow-terracota-600/30">
+                            Reservar Mesa
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Categoría 3 -->
+                <div class="bg-white rounded-3xl p-8 shadow-xl shadow-gourmet-dark/5 border border-gourmet-dark/5 flex flex-col justify-between hover:border-terracota-500/30 transition">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-terracota-500/10 text-terracota-600 flex items-center justify-center text-2xl font-bold mb-6">
+                            <i class="fa-solid fa-wine-glass-empty"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-gourmet-dark mb-3">Bebidas y Vinos</h3>
+                        <p class="text-gourmet-dark/70 text-sm mb-6 leading-relaxed">
+                            Bodega seleccionada para maridar perfectamente con cada plato, además de cervezas bien frías y refrescos.
+                        </p>
+                        <ul class="space-y-3 text-sm text-gourmet-dark/80 border-t border-gourmet-dark/5 pt-6">
+                            <li class="flex items-center justify-between">
+                                <span class="font-medium">Vinos con Denominación</span>
+                                <span class="text-terracota-600 font-bold">Selección</span>
+                            </li>
+                            <li class="flex items-center justify-between">
+                                <span class="font-medium">Cervezas de Barril</span>
+                                <span class="text-terracota-600 font-bold">Muy fría</span>
+                            </li>
+                            <li class="flex items-center justify-between">
+                                <span class="font-medium">Licores y Copas</span>
+                                <span class="text-terracota-600 font-bold">Premium</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-gourmet-dark/5">
+                        <a href="tel:604481808" class="block w-full text-center bg-gourmet-dark hover:bg-terracota-600 text-white font-semibold py-3 rounded-xl transition text-sm">
+                            Consultar Carta
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería: Nuestras Instalaciones y Trabajos -->
+    <section id="instalaciones" class="py-24 bg-gourmet-sand/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-terracota-600 font-semibold text-sm uppercase tracking-widest block mb-2">Galería Fotográfica</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-gourmet-dark mb-4">
+                    Nuestras Instalaciones y Trabajos
+                </h2>
+                <p class="text-gourmet-dark/70 text-base sm:text-lg">
+                    Un vistazo a nuestro acogedor espacio y la dedicación que ponemos en cada detalle para hacerte sentir como en casa.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group relative rounded-3xl overflow-hidden shadow-xl h-80 bg-gourmet-dark">
+                    <img src="https://scontent-iad3-1.xx.fbcdn.net/v/t39.30808-1/448774355_2502728566585486_1266442962039834630_n.jpg?stp=dst-jpg_tt6&cstp=mx431x430&ctp=s431x430&_nc_cat=108&ccb=1-7&_nc_sid=3ab345&_nc_ohc=biP7EH57hgoQ7kNvwHlyKEE&_nc_oc=AdpQdwn6T3tMxXRZTwWGHwiBqw7Jf1V-TppkrDqK5X9bG0vl21_JIE4UZwSGeenQSBk&_nc_zt=24&_nc_ht=scontent-iad3-1.xx&_nc_gid=wQkykzyqYiipWb9ZYBjU6w&_nc_ss=7f289&oh=00_AQP1j8N91o8wIZU4jnizW_D5lyzkVptYXiQvUNFTtAFx-g&oe=6AD6F682" 
+                         alt="Instalaciones Bar Restaurante La Forca 1" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet-dark/90 via-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-terracota-400 text-xs font-bold uppercase tracking-wider">Ambiente</span>
+                            <h4 class="text-white font-serif text-lg font-bold">Salón Principal La Forca</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-3xl overflow-hidden shadow-xl h-80 bg-gourmet-dark">
+                    <img src="https://scontent-iad3-1.xx.fbcdn.net/v/t39.30808-1/448774355_2502728566585486_1266442962039834630_n.jpg?stp=dst-jpg_tt6&cstp=mx431x430&ctp=s431x430&_nc_cat=108&ccb=1-7&_nc_sid=3ab345&_nc_ohc=biP7EH57hgoQ7kNvwHlyKEE&_nc_oc=AdpQdwn6T3tMxXRZTwWGHwiBqw7Jf1V-TppkrDqK5X9bG0vl21_JIE4UZwSGeenQSBk&_nc_zt=24&_nc_ht=scontent-iad3-1.xx&_nc_gid=wQkykzyqYiipWb9ZYBjU6w&_nc_ss=7f289&oh=00_AQP1j8N91o8wIZU4jnizW_D5lyzkVptYXiQvUNFTtAFx-g&oe=6AD6F682" 
+                         alt="Instalaciones Bar Restaurante La Forca 2" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet-dark/90 via-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-terracota-400 text-xs font-bold uppercase tracking-wider">Gastronomía</span>
+                            <h4 class="text-white font-serif text-lg font-bold">Platos Elaborados con Cariño</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-3xl overflow-hidden shadow-xl h-80 bg-gourmet-dark sm:col-span-2 lg:col-span-1">
+                    <img src="https://scontent-iad3-1.xx.fbcdn.net/v/t39.30808-1/448774355_2502728566585486_1266442962039834630_n.jpg?stp=dst-jpg_tt6&cstp=mx431x430&ctp=s431x430&_nc_cat=108&ccb=1-7&_nc_sid=3ab345&_nc_ohc=biP7EH57hgoQ7kNvwHlyKEE&_nc_oc=AdpQdwn6T3tMxXRZTwWGHwiBqw7Jf1V-TppkrDqK5X9bG0vl21_JIE4UZwSGeenQSBk&_nc_zt=24&_nc_ht=scontent-iad3-1.xx&_nc_gid=wQkykzyqYiipWb9ZYBjU6w&_nc_ss=7f289&oh=00_AQP1j8N91o8wIZU4jnizW_D5lyzkVptYXiQvUNFTtAFx-g&oe=6AD6F682" 
+                         alt="Instalaciones Bar Restaurante La Forca 3" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet-dark/90 via-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-terracota-400 text-xs font-bold uppercase tracking-wider">Benimarfull</span>
+                            <h4 class="text-white font-serif text-lg font-bold">Tu Rincón Favorito</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Opiniones Reales Verificadas -->
+    <section id="opiniones" class="py-24 bg-gourmet-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-terracota-600 font-semibold text-sm uppercase tracking-widest block mb-2">Opiniones Verificadas</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-gourmet-dark mb-4">
+                    Lo que dicen nuestros clientes
+                </h2>
+                <p class="text-gourmet-dark/70 text-base sm:text-lg">
+                    La satisfacción de quienes nos visitan es nuestro mayor aval y motivación diaria.
+                </p>
+            </div>
+
+            <div class="max-w-2xl mx-auto">
+                <!-- Reseña Real -->
+                <div class="bg-white rounded-3xl p-8 sm:p-10 shadow-xl shadow-gourmet-dark/5 border border-gourmet-dark/5 relative">
+                    <div class="absolute top-8 right-8 text-terracota-500/20 text-5xl font-serif">
+                        <i class="fa-solid fa-quote-right"></i>
+                    </div>
+                    <div class="flex items-center gap-1 text-amber-500 mb-6">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="font-serif text-xl sm:text-2xl text-gourmet-dark italic mb-8 leading-relaxed">
+                        "Excelente trato, profesionalidad y calidad."
+                    </p>
+                    <div class="flex items-center gap-4 pt-6 border-t border-gourmet-dark/5">
+                        <div class="w-12 h-12 rounded-full bg-terracota-600 text-white font-bold flex items-center justify-center font-serif text-lg shadow-md">
+                            G
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gourmet-dark">Cliente Verificado</h4>
+                            <span class="text-xs text-gourmet-dark/60">Reseña de Google Maps</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección CTA Llamativa -->
+    <section class="py-20 bg-terracota-700 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h2 class="font-serif text-3xl sm:text-5xl font-bold mb-6">¿Listo para disfrutar de una gran experiencia?</h2>
+            <p class="text-terracota-100 text-base sm:text-xl max-w-2xl mx-auto mb-10 font-light">
+                Reserva tu mesa ahora en Bar Restaurante La Forca en Benimarfull y déjate cuidar por nuestro equipo.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="tel:604481808" class="inline-flex items-center justify-center gap-3 bg-white text-terracota-800 hover:bg-terracota-50 px-8 py-4 rounded-full font-bold text-base shadow-2xl transition transform hover:-translate-y-1">
+                    <i class="fa-solid fa-phone-volume text-terracota-600"></i>
+                    <span>Reservar Mesa: 604 48 18 08</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa Interactivo y Ubicación -->
+    <section id="contacto" class="py-24 bg-gourmet-sand/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-terracota-600 font-semibold text-sm uppercase tracking-widest block mb-2">Encuéntranos</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-gourmet-dark mb-4">
+                            Visítanos en Benimarfull
+                        </h2>
+                        <p class="text-gourmet-dark/70 text-sm sm:text-base leading-relaxed">
+                            Estamos situados en una ubicación privilegiada. Ven a conocernos y disfruta de un momento agradable en el mejor ambiente.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-terracota-500/10 text-terracota-600 flex items-center justify-center text-xl shrink-0 mt-1">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gourmet-dark mb-1">Dirección</h4>
+                                <p class="text-sm text-gourmet-dark/70">C. Alcoi, 20, 03827 Benimarfull, Alicante, España</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-terracota-500/10 text-terracota-600 flex items-center justify-center text-xl shrink-0 mt-1">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gourmet-dark mb-1">Teléfono de Reservas</h4>
+                                <a href="tel:604481808" class="text-sm text-terracota-600 font-bold hover:underline">604 48 18 08</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-terracota-500/10 text-terracota-600 flex items-center justify-center text-xl shrink-0 mt-1">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gourmet-dark mb-1">Correo Electrónico</h4>
+                                <a href="mailto:error-lite+84f2@duckduckgo.com" class="text-sm text-terracota-600 font-bold hover:underline">error-lite+84f2@duckduckgo.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
+                        <a href="tel:604481808" class="inline-flex items-center gap-2 bg-terracota-600 hover:bg-terracota-700 text-white px-6 py-3 rounded-full font-semibold text-sm shadow-lg shadow-terracota-600/20 transition">
+                            <i class="fa-solid fa-phone-volume"></i>
+                            <span>Reservar Mesa</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <div class="bg-white p-3 rounded-3xl shadow-2xl border border-gourmet-dark/10">
+                        <iframe src="https://www.google.com/maps?q=Bar%20Restaurante%20La%20Forca%20C.%20Alcoi%2C%2020%2C%2003827%20Benimarfull%2C%20Alicante%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gourmet-dark text-gourmet-sand/80 py-16 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-terracota-600 flex items-center justify-center text-white font-serif text-xl font-bold">
+                            F
+                        </div>
+                        <span class="font-serif font-bold text-xl text-white tracking-wide">La Forca</span>
+                    </div>
+                    <p class="text-sm text-gourmet-sand/70 leading-relaxed mb-6">
+                        Bar Restaurante La Forca en Benimarfull. Excelencia, tradición y profesionalidad en cada servicio.
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <a href="tel:604481808" class="w-10 h-10 rounded-full bg-white/5 hover:bg-terracota-600 text-white flex items-center justify-center transition" aria-label="Teléfono">
+                            <i class="fa-solid fa-phone"></i>
+                        </a>
+                        <a href="mailto:error-lite+84f2@duckduckgo.com" class="w-10 h-10 rounded-full bg-white/5 hover:bg-terracota-600 text-white flex items-center justify-center transition" aria-label="Email">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-serif font-bold text-white text-lg mb-4">Enlaces Rápidos</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="#inicio" class="hover:text-terracota-500 transition">Inicio</a></li>
+                        <li><a href="#nosotros" class="hover:text-terracota-500 transition">El Restaurante</a></li>
+                        <li><a href="#carta" class="hover:text-terracota-500 transition">Nuestra Carta</a></li>
+                        <li><a href="#instalaciones" class="hover:text-terracota-500 transition">Instalaciones</a></li>
+                        <li><a href="#opiniones" class="hover:text-terracota-500 transition">Reseñas</a></li>
+                        <li><a href="#contacto" class="hover:text-terracota-500 transition">Ubicación</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-serif font-bold text-white text-lg mb-4">Contacto Directo</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-location-dot text-terracota-500"></i>
+                            <span>C. Alcoi, 20, 03827 Benimarfull, Alicante</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-terracota-500"></i>
+                            <a href="tel:604481808" class="hover:text-terracota-500 transition font-bold">604 48 18 08</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-terracota-500"></i>
+                            <a href="mailto:error-lite+84f2@duckduckgo.com" class="hover:text-terracota-500 transition">error-lite+84f2@duckduckgo.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-white/10 text-center text-xs text-gourmet-sand/50 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p>&copy; <span id="year"></span> Bar Restaurante La Forca. Todos los derechos reservados.</p>
+                <p class="text-terracota-400 font-medium">Benimarfull, Alicante, España</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
