@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estética Integral Beauty | Centro de Estética Avanzada en Barcelona</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            50: '#fdfbf7',
+                            100: '#f7f1e3',
+                            200: '#eddcc7',
+                            300: '#e0c29e',
+                            400: '#d4a373',
+                            500: '#c59b27',
+                            600: '#a67c1c',
+                            700: '#856015',
+                        },
+                        darkmatte: {
+                            DEFAULT: '#121212',
+                            light: '#1a1a1a',
+                            lighter: '#262626'
+                        },
+                        sand: {
+                            DEFAULT: '#f4f1ea',
+                            dark: '#e8e2d5'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Cormorant Garamond', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .font-serif { font-family: 'Cormorant Garamond', serif; }
+        .font-sans { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-darkmatte text-sand font-sans antialiased selection:bg-gold-500 selection:text-white">
+
+    <!-- Top Bar de Contacto Rápido -->
+    <div class="bg-darkmatte-light border-b border-white/10 text-xs py-2 px-4 sm:px-8">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4 text-sand/80">
+                <span><i class="fas fa-map-marker-alt text-gold-400 mr-1.5"></i> Carrer de la Torre dels Pardals, 30, Horta-Guinardó, Barcelona</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="tel:604380921" class="hover:text-gold-400 transition-colors flex items-center gap-1.5">
+                    <i class="fas fa-phone-alt text-gold-400"></i> 604 380 921
+                </a>
+                <a href="mailto:error-lite+84f2@duckduckgo.com" class="hover:text-gold-400 transition-colors hidden md:flex items-center gap-1.5">
+                    <i class="fas fa-envelope text-gold-400"></i> error-lite+84f2@duckduckgo.com
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-darkmatte/90 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex flex-col">
+                <span class="font-serif text-2xl sm:text-3xl font-bold tracking-wider text-sand">ESTÉTICA INTEGRAL</span>
+                <span class="text-[10px] uppercase tracking-[0.3em] text-gold-400 font-semibold -mt-1">Beauty Barcelona</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium tracking-wide">
+                <a href="#inicio" class="text-sand hover:text-gold-400 transition-colors">Inicio</a>
+                <a href="#tratamientos" class="text-sand hover:text-gold-400 transition-colors">Tratamientos</a>
+                <a href="#instalaciones" class="text-sand hover:text-gold-400 transition-colors">Instalaciones</a>
+                <a href="#experiencias" class="text-sand hover:text-gold-400 transition-colors">Opiniones</a>
+                <a href="#contacto" class="text-sand hover:text-gold-400 transition-colors">Ubicación</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="hidden sm:flex items-center gap-4">
+                <a href="tel:604380921" class="bg-gold-500 hover:bg-gold-600 text-darkmatte font-semibold px-6 py-3 rounded-full text-sm transition-all duration-300 shadow-lg shadow-gold-500/20 flex items-center gap-2">
+                    <i class="fas fa-calendar-check"></i> Reservar Cita
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="lg:hidden text-sand text-2xl focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-darkmatte-light border-b border-white/10 px-6 py-6 space-y-4">
+            <a href="#inicio" class="block text-sand hover:text-gold-400 transition-colors py-2 border-b border-white/5">Inicio</a>
+            <a href="#tratamientos" class="block text-sand hover:text-gold-400 transition-colors py-2 border-b border-white/5">Tratamientos</a>
+            <a href="#instalaciones" class="block text-sand hover:text-gold-400 transition-colors py-2 border-b border-white/5">Instalaciones</a>
+            <a href="#experiencias" class="block text-sand hover:text-gold-400 transition-colors py-2 border-b border-white/5">Opiniones</a>
+            <a href="#contacto" class="block text-sand hover:text-gold-400 transition-colors py-2">Ubicación</a>
+            <a href="tel:604380921" class="w-full mt-4 bg-gold-500 hover:bg-gold-600 text-darkmatte font-semibold px-6 py-3 rounded-full text-sm text-center transition-all duration-300 flex items-center justify-center gap-2">
+                <i class="fas fa-calendar-check"></i> Reservar Cita
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-20">
+        <!-- Background Overlay Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://d375139ucebi94.cloudfront.net/region2/es/148539/biz_photo/199270257ea143cbb0af767fefd822-integral-beauty-biz-photo-47a26da50681462788bda259cf113f-booksy.jpeg" 
+                 alt="Estética Integral Beauty" 
+                 class="w-full h-full object-cover object-center filter brightness-[0.35]"
+                 referrerpolicy="no-referrer" 
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" />
+            <div class="absolute inset-0 bg-gradient-to-t from-darkmatte via-darkmatte/60 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 text-center">
+            <span class="inline-block uppercase tracking-[0.4em] text-gold-400 text-xs sm:text-sm font-semibold mb-4 bg-gold-500/10 border border-gold-500/20 px-4 py-2 rounded-full">
+                Boutique de Belleza Exclusiva en Barcelona
+            </span>
+            <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-sand mb-6 leading-tight">
+                El Arte de Cuidar tu <span class="italic text-gold-400 font-normal">Belleza Natural</span>
+            </h1>
+            <p class="text-base sm:text-xl text-sand/80 max-w-2xl mx-auto mb-10 font-light">
+                Descubre protocolos faciales avanzados, alta cosmética y tratamientos personalizados diseñados para devolver la luminosidad y vitalidad a tu piel.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="tel:604380921" class="w-full sm:w-auto bg-gold-500 hover:bg-gold-600 text-darkmatte font-bold px-8 py-4 rounded-full text-base transition-all duration-300 shadow-xl shadow-gold-500/20 flex items-center justify-center gap-3">
+                    <i class="fas fa-phone-alt"></i> Reservar Cita
+                </a>
+                <a href="#tratamientos" class="w-full sm:w-auto bg-white/5 hover:bg-white/10 text-sand border border-white/20 font-semibold px-8 py-4 rounded-full text-base transition-all duration-300 flex items-center justify-center gap-3">
+                    Ver Tratamientos <i class="fas fa-arrow-down text-xs"></i>
+                </a>
+            </div>
+
+            <!-- Trust Badges -->
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mt-16 pt-12 border-t border-white/10 max-w-3xl mx-auto text-left">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gold-500/10 border border-gold-500/20 flex items-center justify-center text-gold-400 shrink-0">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div>
+                        <p class="text-sand font-bold text-sm">Excelente Trato</p>
+                        <p class="text-sand/60 text-xs">Profesionalidad garantizada</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gold-500/10 border border-gold-500/20 flex items-center justify-center text-gold-400 shrink-0">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <div>
+                        <p class="text-sand font-bold text-sm">Cosmética Avanzada</p>
+                        <p class="text-sand/60 text-xs">Christina & Cómmodex</p>
+                    </div>
+                </div>
+                <div class="col-span-2 md:col-span-1 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gold-500/10 border border-gold-500/20 flex items-center justify-center text-gold-400 shrink-0">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div>
+                        <p class="text-sand font-bold text-sm">Alta Calidad</p>
+                        <p class="text-sand/60 text-xs">Tecnología de vanguardia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: Nuestros Tratamientos y Tarifas -->
+    <section id="tratamientos" class="py-24 bg-darkmatte-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-400 uppercase tracking-[0.3em] text-xs font-semibold block mb-3">Nuestra Carta de Servicios</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-sand mb-4">Tratamientos Exclusivos Faciales y Estéticos</h2>
+                <p class="text-sand/70 font-light">Soluciones profesionales adaptadas a las necesidades específicas de cada tipo de piel.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Card 1 -->
+                <div class="bg-darkmatte border border-white/10 rounded-2xl p-8 hover:border-gold-500/50 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="text-xs uppercase tracking-wider text-gold-400 font-semibold bg-gold-500/10 px-3 py-1 rounded-full">Esenciales</span>
+                            <i class="fas fa-spa text-gold-400 text-xl group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-sand mb-3">Diseño de Cejas Clásico</h3>
+                        <p class="text-sand/70 text-sm leading-relaxed mb-6">Estudio personalizado de la mirada para realzar la armonía y expresión natural de tu rostro con un acabado impecable.</p>
+                    </div>
+                    <div class="pt-6 border-t border-white/10 flex items-center justify-between">
+                        <span class="text-xs text-sand/50 uppercase tracking-widest">Resultado preciso</span>
+                        <a href="tel:604380921" class="text-gold-400 hover:text-gold-300 text-sm font-semibold flex items-center gap-1 transition-colors">
+                            Reservar <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-darkmatte border border-white/10 rounded-2xl p-8 hover:border-gold-500/50 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="text-xs uppercase tracking-wider text-gold-400 font-semibold bg-gold-500/10 px-3 py-1 rounded-full">Piel Grasa / Acneica</span>
+                            <i class="fas fa-leaf text-gold-400 text-xl group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-sand mb-3">Limpieza Profunda COMODEX</h3>
+                        <p class="text-sand/70 text-sm leading-relaxed mb-6">Tratamiento especializado en purificar, equilibrar y sanar pieles con tendencia grasa o acneica, reduciendo imperfecciones visiblemente.</p>
+                    </div>
+                    <div class="pt-6 border-t border-white/10 flex items-center justify-between">
+                        <span class="text-xs text-sand/50 uppercase tracking-widest">Protocolo Christina</span>
+                        <a href="tel:604380921" class="text-gold-400 hover:text-gold-300 text-sm font-semibold flex items-center gap-1 transition-colors">
+                            Reservar <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-darkmatte border border-white/10 rounded-2xl p-8 hover:border-gold-500/50 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="text-xs uppercase tracking-wider text-gold-400 font-semibold bg-gold-500/10 px-3 py-1 rounded-full">Renovación Celular</span>
+                            <i class="fas fa-magic text-gold-400 text-xl group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-sand mb-3">Limpieza Facial + Peeling BioRePeel</h3>
+                        <p class="text-sand/70 text-sm leading-relaxed mb-6">Combinación magistral de limpieza profunda y peeling químico avanzado para estimular la regeneración de la piel sin tiempos de recuperación.</p>
+                    </div>
+                    <div class="pt-6 border-t border-white/10 flex items-center justify-between">
+                        <span class="text-xs text-sand/50 uppercase tracking-widest">Efecto Glow</span>
+                        <a href="tel:604380921" class="text-gold-400 hover:text-gold-300 text-sm font-semibold flex items-center gap-1 transition-colors">
+                            Reservar <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-darkmatte border border-white/10 rounded-2xl p-8 hover:border-gold-500/50 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="text-xs uppercase tracking-wider text-gold-400 font-semibold bg-gold-500/10 px-3 py-1 rounded-full">Pieles Apagadas</span>
+                            <i class="fas fa-sun text-gold-400 text-xl group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-sand mb-3">Limpieza Profunda BIOPHYTO</h3>
+                        <p class="text-sand/70 text-sm leading-relaxed mb-6">Revitaliza las pieles fatigadas y apagadas mediante ingredientes botánicos activos que oxigenan y devuelven la vitalidad natural.</p>
+                    </div>
+                    <div class="pt-6 border-t border-white/10 flex items-center justify-between">
+                        <span class="text-xs text-sand/50 uppercase tracking-widest">Protocolo Christina</span>
+                        <a href="tel:604380921" class="text-gold-400 hover:text-gold-300 text-sm font-semibold flex items-center gap-1 transition-colors">
+                            Reservar <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-darkmatte border border-white/10 rounded-2xl p-8 hover:border-gold-500/50 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="text-xs uppercase tracking-wider text-gold-400 font-semibold bg-gold-500/10 px-3 py-1 rounded-full">Pieles Maduras</span>
+                            <i class="fas fa-feather text-gold-400 text-xl group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-sand mb-3">Limpieza Profunda NUANCE</h3>
+                        <p class="text-sand/70 text-sm leading-relaxed mb-6">Tratamiento específicamente formulado para nutrir, reafirmar y tratar las pieles maduras, aportando elasticidad y suavidad extrema.</p>
+                    </div>
+                    <div class="pt-6 border-t border-white/10 flex items-center justify-between">
+                        <span class="text-xs text-sand/50 uppercase tracking-widest">Anti-Edad</span>
+                        <a href="tel:604380921" class="text-gold-400 hover:text-gold-300 text-sm font-semibold flex items-center gap-1 transition-colors">
+                            Reservar <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-darkmatte border border-white/10 rounded-2xl p-8 hover:border-gold-500/50 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="text-xs uppercase tracking-wider text-gold-400 font-semibold bg-gold-500/10 px-3 py-1 rounded-full">Aparatología Avanzada</span>
+                            <i class="fas fa-microchip text-gold-400 text-xl group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-sand mb-3">HydroDiamond Glass Skin</h3>
+                        <p class="text-sand/70 text-sm leading-relaxed mb-6">Exfoliación con punta de diamante e infusión simultánea de sueros para conseguir el codiciado efecto "piel de cristal", limpia y ultraluminosa.</p>
+                    </div>
+                    <div class="pt-6 border-t border-white/10 flex items-center justify-between">
+                        <span class="text-xs text-sand/50 uppercase tracking-widest">Facial Avanzado</span>
+                        <a href="tel:604380921" class="text-gold-400 hover:text-gold-300 text-sm font-semibold flex items-center gap-1 transition-colors">
+                            Reservar <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="bg-darkmatte border border-white/10 rounded-2xl p-8 hover:border-gold-500/50 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="text-xs uppercase tracking-wider text-gold-400 font-semibold bg-gold-500/10 px-3 py-1 rounded-full">Exosomas</span>
+                            <i class="fas fa-dna text-gold-400 text-xl group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-sand mb-3">Hydrodiamond + Microneedling con Exosomas</h3>
+                        <p class="text-sand/70 text-sm leading-relaxed mb-6">La cúspide de la regeneración celular. Combina la limpieza profunda con microagujas y exosomas para una bio-revitalización profunda.</p>
+                    </div>
+                    <div class="pt-6 border-t border-white/10 flex items-center justify-between">
+                        <span class="text-xs text-sand/50 uppercase tracking-widest">Máxima Innovación</span>
+                        <a href="tel:604380921" class="text-gold-400 hover:text-gold-300 text-sm font-semibold flex items-center gap-1 transition-colors">
+                            Reservar <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="bg-darkmatte border border-white/10 rounded-2xl p-8 hover:border-gold-500/50 transition-all duration-300 flex flex-col justify-between group lg:col-span-2">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="text-xs uppercase tracking-wider text-gold-400 font-semibold bg-gold-500/10 px-3 py-1 rounded-full">Tratamiento Integral Full Face</span>
+                            <i class="fas fa-star text-gold-400 text-xl group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-sand mb-3">Hydrodiamond + Microneedling FULL FACE</h3>
+                        <p class="text-sand/70 text-sm leading-relaxed mb-6">Protocolo integral de rejuvenecimiento para todo el rostro que unifica textura, combate arrugas finas y estimula la producción natural de colágeno y elastina con resultados visibles desde la primera sesión.</p>
+                    </div>
+                    <div class="pt-6 border-t border-white/10 flex items-center justify-between">
+                        <span class="text-xs text-sand/50 uppercase tracking-widest">Recomendado Top</span>
+                        <a href="tel:604380921" class="bg-gold-500 hover:bg-gold-600 text-darkmatte font-bold px-6 py-2.5 rounded-full text-xs transition-all duration-300 flex items-center gap-2">
+                            <i class="fas fa-phone-alt"></i> Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: Galería / Instalaciones -->
+    <section id="instalaciones" class="py-24 bg-darkmatte">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-400 uppercase tracking-[0.3em] text-xs font-semibold block mb-3">Espacio Exclusivo</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-sand mb-4">Nuestras Instalaciones</h2>
+                <p class="text-sand/70 font-light">Un ambiente diseñado para tu desconexión, confort y bienestar en Barcelona.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="rounded-3xl overflow-hidden border border-white/10 shadow-2xl h-[400px]">
+                    <img src="https://d375139ucebi94.cloudfront.net/region2/es/148539/biz_photo/199270257ea143cbb0af767fefd822-integral-beauty-biz-photo-47a26da50681462788bda259cf113f-booksy.jpeg" 
+                         alt="Instalaciones Estética Integral Beauty" 
+                         class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" />
+                </div>
+                <div class="space-y-6">
+                    <span class="text-gold-400 font-serif italic text-2xl">"Donde la ciencia estética se fusiona con el bienestar"</span>
+                    <h3 class="font-serif text-3xl font-bold text-sand">Cabinas equipadas con tecnología de última generación</h3>
+                    <p class="text-sand/70 font-light leading-relaxed">
+                        En Estética Integral Beauty cuidamos cada detalle para ofrecerte una experiencia inigualable. Nuestras cabinas están diseñadas para garantizar la máxima higiene, privacidad y relajación mientras aplicamos protocolos vanguardistas como Christina Cosmetics y tratamientos con aparatología puntera.
+                    </p>
+                    <div class="pt-4">
+                        <a href="tel:604380921" class="inline-flex items-center gap-3 bg-gold-500 hover:bg-gold-600 text-darkmatte font-bold px-8 py-4 rounded-full text-sm transition-all duration-300 shadow-lg shadow-gold-500/20">
+                            <i class="fas fa-calendar-check"></i> Reserva tu Experiencia
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: Reseñas / Opiniones Verificadas -->
+    <section id="experiencias" class="py-24 bg-darkmatte-light border-y border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-400 uppercase tracking-[0.3em] text-xs font-semibold block mb-3">Testimonios Reales</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-sand mb-4">Lo que opinan nuestros clientes</h2>
+                <p class="text-sand/70 font-light">La satisfacción y confianza de quienes nos visitan es nuestra mejor carta de presentación.</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto">
+                <!-- Tarjeta de Reseña Única / Destacada -->
+                <div class="bg-darkmatte border border-gold-500/30 rounded-3xl p-8 sm:p-12 relative shadow-2xl">
+                    <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-gold-500 text-darkmatte px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
+                        <i class="fas fa-google"></i> Reseña Verificada Google Maps
+                    </div>
+                    
+                    <div class="flex justify-center gap-1 text-gold-400 text-xl mb-6 mt-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+
+                    <blockquote class="text-center font-serif text-2xl sm:text-3xl text-sand italic mb-8 leading-relaxed">
+                        "Excelente trato, profesionalidad y calidad."
+                    </blockquote>
+
+                    <div class="text-center border-t border-white/10 pt-6">
+                        <p class="font-bold text-sand text-base">Cliente Verificado</p>
+                        <p class="text-gold-400 text-xs uppercase tracking-widest mt-1">Google Reviews</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: Ubicación y Mapa Interactivo -->
+    <section id="contacto" class="py-24 bg-darkmatte">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-400 uppercase tracking-[0.3em] text-xs font-semibold block mb-3">Encuéntranos</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-sand mb-4">Visítanos en Barcelona</h2>
+                <p class="text-sand/70 font-light">Estamos ubicados en una zona privilegiada, listos para recibirte.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                <!-- Info Contacto -->
+                <div class="bg-darkmatte-light border border-white/10 rounded-3xl p-8 space-y-8">
+                    <h3 class="font-serif text-2xl font-bold text-sand border-b border-white/10 pb-4">Información de Contacto</h3>
+                    
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-gold-500/10 border border-gold-500/20 flex items-center justify-center text-gold-400 text-xl shrink-0">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-sand text-sm">Dirección</p>
+                            <p class="text-sand/70 text-sm mt-1">Carrer de la Torre dels Pardals, 30, Horta-Guinardó, 08041 Barcelona, España</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-gold-500/10 border border-gold-500/20 flex items-center justify-center text-gold-400 text-xl shrink-0">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-sand text-sm">Teléfono / Reservas</p>
+                            <a href="tel:604380921" class="text-gold-400 hover:text-gold-300 text-sm font-semibold mt-1 inline-block">604 380 921</a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-gold-500/10 border border-gold-500/20 flex items-center justify-center text-gold-400 text-xl shrink-0">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-sand text-sm">Correo Electrónico</p>
+                            <a href="mailto:error-lite+84f2@duckduckgo.com" class="text-sand/70 hover:text-gold-400 text-sm mt-1 inline-block break-all">error-lite+84f2@duckduckgo.com</a>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="tel:604380921" class="w-full bg-gold-500 hover:bg-gold-600 text-darkmatte font-bold py-4 rounded-xl text-sm transition-all duration-300 shadow-lg shadow-gold-500/20 flex items-center justify-center gap-2">
+                            <i class="fas fa-calendar-check"></i> Reservar Cita Ahora
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mapa Interactivo Real -->
+                <div class="lg:col-span-2 bg-darkmatte-light border border-white/10 rounded-3xl p-4 shadow-2xl">
+                    <div class="w-full h-[380px] overflow-hidden rounded-2xl">
+                        <iframe src="https://www.google.com/maps?q=Est%C3%A9tica%20Integral%20Beauty%20Carrer%20de%20la%20Torre%20dels%20Pardals%2C%2030%2C%20Horta-Guinard%C3%B3%2C%2008041%20Barcelona%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-darkmatte-light border-t border-white/10 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
+            <div>
+                <span class="font-serif text-2xl font-bold tracking-wider text-sand block">ESTÉTICA INTEGRAL BEAUTY</span>
+                <p class="text-sand/60 text-xs mt-1">Centro de estética avanzada en Horta-Guinardó, Barcelona.</p>
+            </div>
+
+            <div class="flex items-center gap-6">
+                <a href="tel:604380921" class="w-10 h-10 rounded-full bg-gold-500/10 border border-gold-500/20 flex items-center justify-center text-gold-400 hover:bg-gold-500 hover:text-darkmatte transition-all">
+                    <i class="fas fa-phone-alt"></i>
+                </a>
+                <a href="mailto:error-lite+84f2@duckduckgo.com" class="w-10 h-10 rounded-full bg-gold-500/10 border border-gold-500/20 flex items-center justify-center text-gold-400 hover:bg-gold-500 hover:text-darkmatte transition-all">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+
+            <div>
+                <p class="text-sand/40 text-xs">&copy; 2024 Estética Integral Beauty. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script para Menú Móvil -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú al hacer clic en un enlace del menú móvil
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
