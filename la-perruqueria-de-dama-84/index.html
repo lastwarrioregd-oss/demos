@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Perruqueria de Dama | Peluquería Canina Exclusiva en Almería</title>
+    <!-- Tailwind CSS v3 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#121212',
+                            card: '#1A1A1A',
+                            gold: '#D4AF37',
+                            goldLight: '#F3E5AB',
+                            sand: '#F5F2EB',
+                            sandDark: '#E5DFD3'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-brand-dark text-brand-sand font-sans antialiased selection:bg-brand-gold selection:text-brand-dark">
+
+    <!-- Top Bar de Contacto Rápido -->
+    <div class="bg-brand-card border-b border-brand-gold/20 text-xs py-2 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4 text-brand-sand/80">
+                <span><i class="fa-solid fa-location-dot text-brand-gold mr-1.5"></i> Calle Padre Joaquin Reina, 56, 04009 Almería</span>
+                <span class="hidden md:inline"><i class="fa-solid fa-clock text-brand-gold mr-1.5"></i> Lunes a Viernes con Cita Previa</span>
+            </div>
+            <a href="https://wa.me/34611472784" target="_blank" rel="noopener noreferrer" class="text-brand-gold hover:text-brand-goldLight font-medium transition-colors flex items-center gap-1.5">
+                <i class="fa-brands fa-whatsapp text-sm"></i> 611 47 27 84 (Atención Directa)
+            </a>
+        </div>
+    </div>
+
+    <!-- Navegación Principal -->
+    <header class="sticky top-0 z-50 bg-brand-dark/90 backdrop-blur-md border-b border-brand-gold/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full bg-brand-gold/10 border border-brand-gold/40 flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-dark transition-all duration-300">
+                    <i class="fa-solid fa-paw text-lg"></i>
+                </div>
+                <div>
+                    <span class="font-serif text-xl sm:text-2xl font-bold tracking-wide text-brand-sand">La Perruqueria de Dama</span>
+                    <span class="block text-[10px] uppercase tracking-widest text-brand-gold">Boutique Canina en Almería</span>
+                </div>
+            </a>
+
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-brand-sand/90">
+                <a href="#servicios" class="hover:text-brand-gold transition-colors">Servicios & Tarifas</a>
+                <a href="#nosotros" class="hover:text-brand-gold transition-colors">Filosofía</a>
+                <a href="#galeria" class="hover:text-brand-gold transition-colors">Instalaciones</a>
+                <a href="#opiniones" class="hover:text-brand-gold transition-colors">Opiniones Reales</a>
+                <a href="#contacto" class="hover:text-brand-gold transition-colors">Ubicación</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="https://wa.me/34611472784" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 bg-brand-gold text-brand-dark font-semibold px-5 py-2.5 rounded-full text-sm hover:bg-brand-goldLight transition-all duration-300 shadow-lg shadow-brand-gold/10 hover:scale-105">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    Reservar Cita
+                </a>
+                <!-- Botón Menú Móvil -->
+                <button id="menu-btn" class="lg:hidden text-brand-sand hover:text-brand-gold focus:outline-none p-2" aria-label="Abrir menú">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menú Móvil desplegable -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-brand-card border-b border-brand-gold/20 px-4 pt-2 pb-6 space-y-3">
+            <a href="#servicios" class="block py-2 text-brand-sand hover:text-brand-gold font-medium">Servicios & Tarifas</a>
+            <a href="#nosotros" class="block py-2 text-brand-sand hover:text-brand-gold font-medium">Filosofía</a>
+            <a href="#galeria" class="block py-2 text-brand-sand hover:text-brand-gold font-medium">Instalaciones</a>
+            <a href="#opiniones" class="block py-2 text-brand-sand hover:text-brand-gold font-medium">Opiniones Reales</a>
+            <a href="#contacto" class="block py-2 text-brand-sand hover:text-brand-gold font-medium">Ubicación</a>
+            <div class="pt-2">
+                <a href="https://wa.me/34611472784" target="_blank" rel="noopener noreferrer" class="w-full inline-flex justify-center items-center gap-2 bg-brand-gold text-brand-dark font-semibold px-5 py-3 rounded-xl text-sm">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    Reservar Cita
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-20 px-4 sm:px-6 lg:px-8">
+        <!-- Fondo con gradiente y elemento visual -->
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-card/60 via-brand-dark to-brand-dark z-10"></div>
+        <div class="absolute inset-0 opacity-20">
+            <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=1920&q=80" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" alt="Fondo Peluquería Canina" class="w-full h-full object-cover">
+        </div>
+
+        <div class="relative z-20 max-w-5xl mx-auto text-center">
+            <div class="inline-flex items-center gap-2 bg-brand-card border border-brand-gold/30 px-4 py-1.5 rounded-full text-xs sm:text-sm text-brand-gold mb-6 tracking-wide shadow-xl">
+                <i class="fa-solid fa-award"></i> Peluquería Canina Boutique en Almería
+            </div>
+            
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-brand-sand mb-6 leading-tight">
+                El Arte del Bienestar y la <span class="text-brand-gold italic">Belleza Canina</span>
+            </h1>
+            
+            <p class="text-base sm:text-xl text-brand-sand/80 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+                Tratamientos de alta gama adaptados a los tiempos y necesidades emocionales de tu mejor amigo. Cariño, paciencia y profesionalidad inmejorable en Almería.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="https://wa.me/34611472784" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-brand-gold text-brand-dark font-bold px-8 py-4 rounded-full text-base hover:bg-brand-goldLight transition-all duration-300 shadow-xl shadow-brand-gold/20 hover:scale-105">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    Reservar Cita
+                </a>
+                <a href="#servicios" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-brand-card/80 hover:bg-brand-card text-brand-sand border border-brand-gold/30 font-medium px-8 py-4 rounded-full text-base transition-all duration-300">
+                    Ver Tratamientos y Tarifas
+                </a>
+            </div>
+
+            <!-- Trust badges / estadísticas -->
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mt-16 pt-12 border-t border-brand-gold/10 max-w-3xl mx-auto text-center">
+                <div>
+                    <div class="font-serif text-3xl font-bold text-brand-gold mb-1">100%</div>
+                    <div class="text-xs sm:text-sm text-brand-sand/70 uppercase tracking-wider">Trato Libre de Estrés</div>
+                </div>
+                <div>
+                    <div class="font-serif text-3xl font-bold text-brand-gold mb-1">Respeto</div>
+                    <div class="text-xs sm:text-sm text-brand-sand/70 uppercase tracking-wider">Tiempos de Adaptación</div>
+                </div>
+                <div class="col-span-2 md:col-span-1">
+                    <div class="font-serif text-3xl font-bold text-brand-gold mb-1">5 Estrellas</div>
+                    <div class="text-xs sm:text-sm text-brand-sand/70 uppercase tracking-wider">Valoración Google Maps</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Filosofía / Por qué nos eligen -->
+    <section id="nosotros" class="py-24 bg-brand-card relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-brand-gold uppercase tracking-widest text-xs font-semibold block mb-2">Compromiso y Pasión</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-brand-sand mb-6 leading-tight">
+                        Un espacio tranquilo donde tu peludito se siente como en casa
+                    </h2>
+                    <p class="text-brand-sand/80 text-base sm:text-lg mb-6 leading-relaxed font-light">
+                        En <strong class="text-brand-gold font-normal">La Perruqueria de Dama</strong> sabemos que cada mascota es única. Por ello, ofrecemos una experiencia de belleza totalmente personalizada, respetando los tiempos de adaptación necesarios para que cada perro disfrute de su sesión sin miedos ni prisas.
+                    </p>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-brand-gold/20 text-brand-gold flex items-center justify-center shrink-0 mt-1">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <p class="text-sm text-brand-sand/90"><strong class="text-brand-sand">Ambiente relajado y sin aglomeraciones:</strong> Atención individualizada y enfocada 100% en la tranquilidad del animal.</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-brand-gold/20 text-brand-gold flex items-center justify-center shrink-0 mt-1">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <p class="text-sm text-brand-sand/90"><strong class="text-brand-sand">Profesionalidad experta en razas difíciles:</strong> Especialistas en mantos complejos (como pastores australianos, maltipoo, etc.) con resultados impecables.</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-brand-gold/20 text-brand-gold flex items-center justify-center shrink-0 mt-1">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <p class="text-sm text-brand-sand/90"><strong class="text-brand-sand">Transparencia y cariño absoluto:</strong> Cuidamos cada detalle (uñas, orejas, higiene profunda) con productos de máxima calidad.</p>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/34611472784" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-brand-gold text-brand-dark font-semibold px-6 py-3 rounded-full text-sm hover:bg-brand-goldLight transition-all duration-300">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        Consulta por tu Mascota
+                    </a>
+                </div>
+                <div class="relative">
+                    <div class="absolute -inset-2 bg-gradient-to-r from-brand-gold to-brand-sand/20 rounded-2xl blur-lg opacity-30"></div>
+                    <div class="relative rounded-2xl overflow-hidden border border-brand-gold/30 shadow-2xl bg-brand-dark">
+                        <img src="https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?auto=format&fit=crop&w=1000&q=80" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" alt="Perro feliz en peluquería" class="w-full h-[450px] object-cover hover:scale-105 transition-transform duration-700">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Servicios, Tratamientos y Tarifas -->
+    <section id="servicios" class="py-24 bg-brand-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-gold uppercase tracking-widest text-xs font-semibold block mb-2">Carta de Bienestar</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-brand-sand mb-4">Nuestros Tratamientos y Cortes</h2>
+                <p class="text-brand-sand/70 text-base">Cuidado estético profesional adaptado a la morfología, tipo de pelo y necesidades de adaptación de tu perro.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Servicio 1 -->
+                <div class="bg-brand-card rounded-2xl p-8 border border-brand-gold/10 hover:border-brand-gold/40 transition-all duration-300 flex flex-col justify-between group shadow-lg">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold text-xl mb-6 group-hover:bg-brand-gold group-hover:text-brand-dark transition-all duration-300">
+                            <i class="fa-solid fa-bath"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-brand-sand mb-3">Baño e Higiene Profunda</h3>
+                        <p class="text-brand-sand/70 text-sm mb-6 leading-relaxed">
+                            Baño con champús específicos según el tipo de piel y manto. Incluye vaciado de glándulas, secado profesional, limpieza minuciosa de orejas y corte/lim-piado de uñas.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-brand-gold/10 flex items-center justify-between">
+                        <span class="text-xs uppercase tracking-wider text-brand-gold font-medium">Bajo Cita Previa</span>
+                        <a href="https://wa.me/34611472784" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-brand-sand hover:text-brand-gold flex items-center gap-1 transition-colors">
+                            Reservar <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="bg-brand-card rounded-2xl p-8 border border-brand-gold/10 hover:border-brand-gold/40 transition-all duration-300 flex flex-col justify-between group shadow-lg">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold text-xl mb-6 group-hover:bg-brand-gold group-hover:text-brand-dark transition-all duration-300">
+                            <i class="fa-solid fa-scissors"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-brand-sand mb-3">Corte de Pelo & Estilismo</h3>
+                        <p class="text-brand-sand/70 text-sm mb-6 leading-relaxed">
+                            Cortes comerciales, de raza (Maltipoo, Poodle, etc.) o a tijera adaptados al estilo de vida de tu mascota, respetando siempre la salud y protección natural de su piel.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-brand-gold/10 flex items-center justify-between">
+                        <span class="text-xs uppercase tracking-wider text-brand-gold font-medium">Especialidad Razas</span>
+                        <a href="https://wa.me/34611472784" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-brand-sand hover:text-brand-gold flex items-center gap-1 transition-colors">
+                            Reservar <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="bg-brand-card rounded-2xl p-8 border border-brand-gold/10 hover:border-brand-gold/40 transition-all duration-300 flex flex-col justify-between group shadow-lg">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold text-xl mb-6 group-hover:bg-brand-gold group-hover:text-brand-dark transition-all duration-300">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-brand-sand mb-3">Deslanado & Manto Largo</h3>
+                        <p class="text-brand-sand/70 text-sm mb-6 leading-relaxed">
+                            Tratamiento especializado para mantos indomables y doble capa (como pastores australianos). Eliminación exhaustiva de pelo muerto, nudos y brushing profesional.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-brand-gold/10 flex items-center justify-between">
+                        <span class="text-xs uppercase tracking-wider text-brand-gold font-medium">Manto Indomable</span>
+                        <a href="https://wa.me/34611472784" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-brand-sand hover:text-brand-gold flex items-center gap-1 transition-colors">
+                            Reservar <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Banner inferior servicios -->
+            <div class="mt-16 bg-gradient-to-r from-brand-card to-brand-dark border border-brand-gold/30 rounded-3xl p-8 sm:p-12 text-center relative overflow-hidden shadow-2xl">
+                <div class="relative z-10 max-w-2xl mx-auto">
+                    <h3 class="font-serif text-2xl sm:text-3xl font-bold text-brand-sand mb-4">¿Tienes dudas sobre qué servicio necesita tu peludito?</h3>
+                    <p class="text-brand-sand/80 text-sm sm:text-base mb-8">Escríbenos directamente por WhatsApp y te asesoraremos sin compromiso sobre el cuidado ideal para su tipo de pelo y tamaño.</p>
+                    <a href="https://wa.me/34611472784" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-brand-gold text-brand-dark font-bold px-8 py-4 rounded-full text-base hover:bg-brand-goldLight transition-all duration-300 shadow-xl shadow-brand-gold/20 hover:scale-105">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        Hablar por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Galería: Nuestras Instalaciones y Trabajos -->
+    <section id="galeria" class="py-24 bg-brand-card relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-gold uppercase tracking-widest text-xs font-semibold block mb-2">Galería de Trabajos</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-brand-sand mb-4">Nuestras Instalaciones y Resultados</h2>
+                <p class="text-brand-sand/70 text-base">Un vistazo al cariño, la dedicación y el impecable acabado de nuestros pequeños clientes.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group relative rounded-2xl overflow-hidden aspect-square border border-brand-gold/20 shadow-lg bg-brand-dark">
+                    <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=800&q=80" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" alt="Peluquería canina trabajo 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-brand-sand font-serif text-lg">Sesión de Belleza Boutique</span>
+                    </div>
+                </div>
+                <div class="group relative rounded-2xl overflow-hidden aspect-square border border-brand-gold/20 shadow-lg bg-brand-dark">
+                    <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" alt="Peluquería canina trabajo 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-brand-sand font-serif text-lg">Cuidado y Adaptación</span>
+                    </div>
+                </div>
+                <div class="group relative rounded-2xl overflow-hidden aspect-square border border-brand-gold/20 shadow-lg bg-brand-dark">
+                    <img src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=800&q=80" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" alt="Peluquería canina trabajo 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-brand-sand font-serif text-lg">Higiene y Estilo Impecable</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Opiniones Reales Verificadas -->
+    <section id="opiniones" class="py-24 bg-brand-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-gold uppercase tracking-widest text-xs font-semibold block mb-2">Testimonios Verificados</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-brand-sand mb-4">Lo que dicen quienes más nos quieren</h2>
+                <p class="text-brand-sand/70 text-base">Reseñas reales de clientes en Google Maps que confían en nosotros día a día.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Reseña 1 -->
+                <div class="bg-brand-card p-8 rounded-2xl border border-brand-gold/10 flex flex-col justify-between shadow-xl">
+                    <div>
+                        <div class="flex text-brand-gold gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-brand-sand/90 text-sm italic mb-6 leading-relaxed">
+                            "Llevo a mi cachorra maltipoo a esta peluquería canina y no puedo estar más contenta con el servicio. Desde el primer momento se nota el cariño y la profesionalidad con la que trabajan. Tratan a los perritos con mucha paciencia y cuidado... El resultado siempre es impecable: mi perrita sale guapísima, limpia y súper bien cuidada, respetando su tipo de pelo y su comodidad."
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-brand-gold/10 flex items-center justify-between">
+                        <span class="font-serif font-bold text-brand-sand text-sm">Brenda Espinoza Jaramillo</span>
+                        <span class="text-xs text-brand-gold">Google Maps</span>
+                    </div>
+                </div>
+
+                <!-- Reseña 2 -->
+                <div class="bg-brand-card p-8 rounded-2xl border border-brand-gold/10 flex flex-col justify-between shadow-xl">
+                    <div>
+                        <div class="flex text-brand-gold gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-brand-sand/90 text-sm italic mb-6 leading-relaxed">
+                            "La Perruqueria de Dama es el mejor sitio para llevar a tu peludito a una sesión de belleza! Son muy amables y tratan respetuosamente a cada perrito, atendiendo a los tiempos necesarios para la adaptación que requiere cada uno ❤️"
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-brand-gold/10 flex items-center justify-between">
+                        <span class="font-serif font-bold text-brand-sand text-sm">Raquel Correas</span>
+                        <span class="text-xs text-brand-gold">Google Maps</span>
+                    </div>
+                </div>
+
+                <!-- Reseña 3 -->
+                <div class="bg-brand-card p-8 rounded-2xl border border-brand-gold/10 flex flex-col justify-between shadow-xl">
+                    <div>
+                        <div class="flex text-brand-gold gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-brand-sand/90 text-sm italic mb-6 leading-relaxed">
+                            "Experiencia... Inmejorable. Trato, amabilidad, transparencia y profesionalidad al más alto nivel. Tengo dos pastores australianos con un pelo largo indomable, que en casa ni por asomo era posible ducharlos y peinarlos... Los llevamos con algo de 'miedo' pero volvemos a por ellos y qué satisfacción de TRABAJO!! Recomendable 100%"
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-brand-gold/10 flex items-center justify-between">
+                        <span class="font-serif font-bold text-brand-sand text-sm">Nicolas Martin Ortega</span>
+                        <span class="text-xs text-brand-gold">Google Maps</span>
+                    </div>
+                </div>
+
+                <!-- Reseña 4 -->
+                <div class="bg-brand-card p-8 rounded-2xl border border-brand-gold/10 flex flex-col justify-between shadow-xl">
+                    <div>
+                        <div class="flex text-brand-gold gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-brand-sand/90 text-sm italic mb-6 leading-relaxed">
+                            "Siempre una experiencia muy agradable para mi perrita Gala, que la tratan como si fuese suya. Las chicas son super amables. Quise un arnés pero no dábamos con la talla de mi..."
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-brand-gold/10 flex items-center justify-between">
+                        <span class="font-serif font-bold text-brand-sand text-sm">Sara Domene Rodríguez</span>
+                        <span class="text-xs text-brand-gold">Google Maps</span>
+                    </div>
+                </div>
+
+                <!-- Reseña 5 -->
+                <div class="bg-brand-card p-8 rounded-2xl border border-brand-gold/10 flex flex-col justify-between shadow-xl md:col-span-2 lg:col-span-2">
+                    <div>
+                        <div class="flex text-brand-gold gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-brand-sand/90 text-sm italic mb-6 leading-relaxed">
+                            "Desde que empecé a llevar a mi perro hace más de un año estoy super contenta con el trato. Mi Coco sale guapísimo, hecho un osito, oliendo super bien, orejas limpias, las uñitas de las patas…. todo genial. Pero lo que más tranquilidad me da, es que se nota que a ellas les encanta su trabajo, porque a pesar de que Coco es un dramas y no se queda bien con cualquiera, cuando se queda con ellas sale feliz."
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-brand-gold/10 flex items-center justify-between">
+                        <span class="font-serif font-bold text-brand-sand text-sm">Toñy Simón</span>
+                        <span class="text-xs text-brand-gold">Google Maps</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Ubicación y Mapa Interactivo -->
+    <section id="contacto" class="py-24 bg-brand-card relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-brand-gold uppercase tracking-widest text-xs font-semibold block mb-2">Encuéntranos en Almería</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-brand-sand mb-6">Visítanos o Reserva tu Cita</h2>
+                    <p class="text-brand-sand/80 text-base mb-8 font-light leading-relaxed">
+                        Ven a conocernos y dale a tu mascota el tratamiento de belleza y bienestar que se merece. Atendemos con cita previa para garantizar la tranquilidad y exclusividad de cada perro.
+                    </p>
+
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold shrink-0">
+                                <i class="fa-solid fa-location-dot text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-bold text-brand-sand text-base mb-1">Dirección</h4>
+                                <p class="text-brand-sand/70 text-sm">Calle Padre Joaquin Reina, 56, 04009 Almería, España</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold shrink-0">
+                                <i class="fa-solid fa-phone text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-bold text-brand-sand text-base mb-1">Teléfono & WhatsApp</h4>
+                                <a href="https://wa.me/34611472784" target="_blank" rel="noopener noreferrer" class="text-brand-gold hover:underline text-sm font-medium">611 47 27 84</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold shrink-0">
+                                <i class="fa-solid fa-clock text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-bold text-brand-sand text-base mb-1">Horario</h4>
+                                <p class="text-brand-sand/70 text-sm">Lunes a Viernes (Bajo Cita Previa)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="https://wa.me/34611472784" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-brand-gold text-brand-dark font-bold px-8 py-4 rounded-full text-base hover:bg-brand-goldLight transition-all duration-300 shadow-xl shadow-brand-gold/20 hover:scale-105">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        Reservar Cita por WhatsApp
+                    </a>
+                </div>
+
+                <!-- Mapa Interactivo -->
+                <div class="bg-brand-dark p-3 rounded-2xl border border-brand-gold/30 shadow-2xl">
+                    <iframe src="https://www.google.com/maps?q=La%20Perruqueria%20de%20Dama%20Calle%20Padre%20Joaquin%20Reina%2C%2056%2C%2004009%20Almer%C3%ADa%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark border-t border-brand-gold/20 py-12 px-4 sm:px-6 lg:px-8 text-center sm:text-left">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-brand-gold/10 border border-brand-gold/40 flex items-center justify-center text-brand-gold">
+                    <i class="fa-solid fa-paw text-lg"></i>
+                </div>
+                <div>
+                    <span class="font-serif text-lg font-bold text-brand-sand">La Perruqueria de Dama</span>
+                    <span class="block text-[10px] uppercase tracking-widest text-brand-gold">Peluquería Canina en Almería</span>
+                </div>
+            </div>
+
+            <p class="text-xs text-brand-sand/60">
+                &copy; <script>document.write(new Date().getFullYear())</script> La Perruqueria de Dama. Todos los derechos reservados.
+            </p>
+
+            <div class="flex items-center gap-4">
+                <a href="https://wa.me/34611472784" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-brand-card border border-brand-gold/30 flex items-center justify-center text-brand-gold hover:bg-brand-gold hover:text-brand-dark transition-colors">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script para menú móvil -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú al hacer click en un enlace
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
