@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro de Masajes León | Salud y Bienestar en el Centro</title>
+    <!-- TailwindCSS v3 CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        medical: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            800: '#115e59',
+                            900: '#134e4a',
+                        },
+                        wellness: {
+                            light: '#e6fffa',
+                            DEFAULT: '#2dd4bf',
+                            dark: '#042f2e'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .fallback-bg {
+            background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%);
+        }
+    </style>
+</head>
+<body class="bg-medical-50 text-slate-700 font-sans antialiased selection:bg-medical-500 selection:text-white">
+
+    <!-- BARRA SUPERIOR DE ANUNCIO / CONTACTO RAPIDO -->
+    <div class="bg-medical-800 text-teal-100 text-xs sm:text-sm py-2 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-location-dot text-medical-500"></i>
+                <span>Melchor Ocampo, Centro, 37000 León de los Aldama, Gto., México</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="flex items-center gap-1.5"><i class="fa-regular fa-clock text-medical-500"></i> Lun - Sáb: 9:00 AM - 8:00 PM</span>
+                <a href="tel:" class="bg-medical-600 hover:bg-medical-500 text-white px-3 py-1 rounded-full font-medium transition flex items-center gap-1 shadow-sm">
+                    <i class="fa-solid fa-phone"></i> Pedir Cita Previa
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVEGACIÓN PRINCIPAL -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-xs border-b border-medical-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-medical-600 flex items-center justify-center text-white shadow-md">
+                    <i class="fa-solid fa-spa text-xl"></i>
+                </div>
+                <div>
+                    <span class="font-serif font-bold text-xl sm:text-2xl text-slate-800 block leading-none">Centro de Masajes</span>
+                    <span class="text-xs tracking-widest text-medical-600 uppercase font-semibold">Salud y Bienestar • León</span>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 font-medium text-slate-600">
+                <a href="#inicio" class="hover:text-medical-600 transition">Inicio</a>
+                <a href="#servicios" class="hover:text-medical-600 transition">Tratamientos</a>
+                <a href="#nosotros" class="hover:text-medical-600 transition">Instalaciones</a>
+                <a href="#testimonios" class="hover:text-medical-600 transition">Opiniones</a>
+                <a href="#contacto" class="hover:text-medical-600 transition">Ubicación</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <a href="tel:" class="hidden sm:inline-flex items-center gap-2 bg-medical-700 hover:bg-medical-800 text-white font-medium px-5 py-2.5 rounded-xl shadow-md hover:shadow-lg transition transform hover:-translate-y-0.5">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <span>Pedir Cita Previa</span>
+                </a>
+                <!-- Botón móvil -->
+                <button id="menu-btn" class="md:hidden text-slate-700 p-2 focus:outline-none">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-medical-100 px-6 py-4 space-y-3">
+            <a href="#inicio" class="block text-slate-700 font-medium py-1">Inicio</a>
+            <a href="#servicios" class="block text-slate-700 font-medium py-1">Tratamientos</a>
+            <a href="#nosotros" class="block text-slate-700 font-medium py-1">Instalaciones</a>
+            <a href="#testimonios" class="block text-slate-700 font-medium py-1">Opiniones</a>
+            <a href="#contacto" class="block text-slate-700 font-medium py-1">Ubicación</a>
+            <a href="tel:" class="w-full text-center block bg-medical-600 text-white py-3 rounded-xl font-medium shadow">
+                Pedir Cita Previa
+            </a>
+        </div>
+    </header>
+
+    <!-- SECCIÓN HERO -->
+    <section id="inicio" class="relative py-16 lg:py-24 overflow-hidden fallback-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-medical-200 px-4 py-1.5 rounded-full text-medical-800 text-sm font-semibold shadow-xs">
+                        <i class="fa-solid fa-leaf text-medical-600"></i> Tu santuario de paz en el Centro de León
+                    </div>
+                    
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-800 leading-tight">
+                        Encuentra la armonía perfecta para tu <span class="text-medical-600 italic">cuerpo y mente</span>
+                    </h1>
+                    
+                    <p class="text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0">
+                        Excelente lugar para relajarse y conectarse desde el interior. Disfruta de masajes holísticos, relajantes y sanadores diseñados para limpiar y relajar tu cuerpo con un ambiente impecable y atención profesional.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="tel:" class="w-full sm:w-auto bg-medical-600 hover:bg-medical-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition flex items-center justify-center gap-3 text-lg transform hover:-translate-y-0.5">
+                            <i class="fa-solid fa-calendar-check"></i>
+                            <span>Pedir Cita Previa</span>
+                        </a>
+                        <a href="#servicios" class="w-full sm:w-auto bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 font-semibold px-8 py-4 rounded-xl transition flex items-center justify-center gap-2 text-lg shadow-sm">
+                            <span>Ver Tratamientos</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+
+                    <!-- PUNTUACIÓN DE CONFIANZA -->
+                    <div class="pt-6 border-t border-medical-200/60 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm text-slate-600">
+                        <div class="flex items-center gap-1 text-amber-500">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <span class="font-bold text-slate-700 ml-1">5.0</span>
+                        </div>
+                        <span class="text-slate-300">|</span>
+                        <span>Clientes 100% Satisfechos</span>
+                        <span class="text-slate-300">|</span>
+                        <span>Productos Saludables Disponibles</span>
+                    </div>
+                </div>
+
+                <!-- IMAGEN HERO -->
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="absolute -inset-4 bg-medical-200 rounded-3xl transform rotate-3 filter blur-sm opacity-70"></div>
+                        <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-white aspect-[4/5]">
+                            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1000&q=80" 
+                                 referrerpolicy="no-referrer" 
+                                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80';"
+                                 alt="Centro de Masajes León" 
+                                 class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent flex items-end p-6">
+                                <div class="text-white">
+                                    <p class="font-serif text-xl font-medium">Ambiente relajante y privado</p>
+                                    <p class="text-xs text-teal-200 mt-1">Cuidado absoluto en cada detalle del entorno</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE CARACTERÍSTICAS / BENEFICIOS CLÍNICOS Y LIMPIOS -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div class="bg-medical-50 p-8 rounded-2xl border border-medical-100 text-center hover:shadow-md transition">
+                    <div class="w-16 h-16 bg-medical-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl shadow-md">
+                        <i class="fa-solid fa-hands-bubbles"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-slate-800 mb-3">Higiene y Limpieza</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Lugar limpio, de fácil acceso y con estrictos protocolos de sanitización para garantizar tu total tranquilidad y seguridad.
+                    </p>
+                </div>
+
+                <div class="bg-medical-50 p-8 rounded-2xl border border-medical-100 text-center hover:shadow-md transition">
+                    <div class="w-16 h-16 bg-medical-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl shadow-md">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-slate-800 mb-3">Técnicas Especializadas</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Variedad de técnicas de masajes profesionales adaptadas a tus necesidades específicas de relajación y sanación profunda.
+                    </p>
+                </div>
+
+                <div class="bg-medical-50 p-8 rounded-2xl border border-medical-100 text-center hover:shadow-md transition">
+                    <div class="w-16 h-16 bg-medical-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl shadow-md">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-slate-800 mb-3">Productos Saludables</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Contamos con muy ricos productos saludables complementarios para potenciar tu experiencia de bienestar integral.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE ESPECIALIDADES Y TRATAMIENTOS -->
+    <section id="servicios" class="py-20 bg-medical-50/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-medical-600 font-semibold tracking-wider uppercase text-sm block mb-2">Carta de Tratamientos</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-800">Nuestras Especialidades y Terapias</h2>
+                <p class="text-slate-600 mt-4">Varias opciones profesionales para reencontrarte contigo mismo, limpiar y relajar nuestro cuerpo a precios accesibles.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Servicio 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition border border-medical-100 flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=800&q=80" 
+                             referrerpolicy="no-referrer" 
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80';"
+                             alt="Masaje Holístico" class="w-full h-full object-cover">
+                        <span class="absolute top-4 right-4 bg-white/90 backdrop-blur-xs text-medical-800 text-xs font-bold px-3 py-1 rounded-full shadow-xs">Más Solicitado</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-xl font-bold text-slate-800 mb-2">Masaje Holístico</h3>
+                            <p class="text-slate-600 text-sm mb-4">Ideal para relajarse y conectarse desde el interior. Armoniza energía, cuerpo y mente mediante movimientos fluidos y conscientes.</p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-xs text-medical-700 font-semibold uppercase tracking-wider">Duración flexible</span>
+                            <a href="tel:" class="bg-medical-50 hover:bg-medical-600 hover:text-white text-medical-700 px-4 py-2 rounded-xl text-sm font-semibold transition flex items-center gap-1.5">
+                                <i class="fa-solid fa-phone text-xs"></i> Pedir Cita
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition border border-medical-100 flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&q=80" 
+                             referrerpolicy="no-referrer" 
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80';"
+                             alt="Masaje Relajante y Sanador" class="w-full h-full object-cover">
+                        <span class="absolute top-4 right-4 bg-white/90 backdrop-blur-xs text-medical-800 text-xs font-bold px-3 py-1 rounded-full shadow-xs">Sanación Profunda</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-xl font-bold text-slate-800 mb-2">Masaje Relajante y Sanador</h3>
+                            <p class="text-slate-600 text-sm mb-4">Excelente atención enfocada en liberar tensiones acumuladas, aliviar el estrés diario y devolver la vitalidad a tus músculos.</p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-xs text-medical-700 font-semibold uppercase tracking-wider">Altamente recomendado</span>
+                            <a href="tel:" class="bg-medical-50 hover:bg-medical-600 hover:text-white text-medical-700 px-4 py-2 rounded-xl text-sm font-semibold transition flex items-center gap-1.5">
+                                <i class="fa-solid fa-phone text-xs"></i> Pedir Cita
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition border border-medical-100 flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=800&q=80" 
+                             referrerpolicy="no-referrer" 
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80';"
+                             alt="Parejas y Técnicas Mixtas" class="w-full h-full object-cover">
+                        <span class="absolute top-4 right-4 bg-white/90 backdrop-blur-xs text-medical-800 text-xs font-bold px-3 py-1 rounded-full shadow-xs">Ideal Aniversarios</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-xl font-bold text-slate-800 mb-2">Experiencia en Pareja y Técnicas Mixtas</h3>
+                            <p class="text-slate-600 text-sm mb-4">Disfrutado por parejas en aniversarios y ocasiones especiales. Combinación de diferentes técnicas expertas en un ambiente impecable.</p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-xs text-medical-700 font-semibold uppercase tracking-wider">Precios accesibles</span>
+                            <a href="tel:" class="bg-medical-50 hover:bg-medical-600 hover:text-white text-medical-700 px-4 py-2 rounded-xl text-sm font-semibold transition flex items-center gap-1.5">
+                                <i class="fa-solid fa-phone text-xs"></i> Pedir Cita
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE INSTALACIONES (GALERÍA CON FOTOS REALES) -->
+    <section id="nosotros" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-medical-600 font-semibold tracking-wider uppercase text-sm block mb-2">Nuestras Instalaciones</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-800">Espacios diseñados para tu confort</h2>
+                <p class="text-slate-600 mt-4">Un entorno limpio, tranquilo, puntual y con un cuidado extremo en cada detalle para hacerte sentir con total confianza y comodidad.</p>
+            </div>
+
+            <!-- Galería adaptada con imágenes de alta calidad del sector -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="rounded-2xl overflow-hidden shadow-md h-72 border border-slate-100 group">
+                    <img src="https://images.unsplash.com/photo-1519415510236-718bdfcd89c2?auto=format&fit=crop&w=800&q=80" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80';"
+                         alt="Instalación Centro de Masajes" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-md h-72 border border-slate-100 group">
+                    <img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=800&q=80" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80';"
+                         alt="Cabina de masajes" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-md h-72 border border-slate-100 group sm:col-span-2 lg:col-span-1">
+                    <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80';"
+                         alt="Ambiente de relajación" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE RESEÑAS REALES -->
+    <section id="testimonios" class="py-20 bg-medical-50/60 border-y border-medical-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-medical-600 font-semibold tracking-wider uppercase text-sm block mb-2">Opiniones Verificadas</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-800">Lo que dicen nuestros clientes</h2>
+                <p class="text-slate-600 mt-4">Experiencias reales compartidas por quienes ya han confiado en nuestro centro de salud y bienestar en León.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Reseña 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-xs border border-medical-100 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 italic text-sm leading-relaxed mb-6">
+                            "Excelente lugar para relajarse y conectarse desde el interior. Disfrute mucho de un rico masaje holístico. Visiten el lugar que les garantizo no se arrepentirán y volverán 😻😻🥰🤩🥰😻…"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+                        <div class="w-10 h-10 rounded-full bg-medical-100 text-medical-700 font-bold flex items-center justify-center">
+                            M
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-slate-800 text-sm">mar marc</h4>
+                            <span class="text-xs text-slate-400">Google Maps Review</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-xs border border-medical-100 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 italic text-sm leading-relaxed mb-6">
+                            "Nos gusta mucho el servicio, muy puntual, siempre un ambiente muy relajante, cuida mucho de los detalles tanto del entorno como en el servicio 🙌 cada aniversario vamos por nuestro masaje mi esposo y yo, y nos gustaría ir más seguido 👌…"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+                        <div class="w-10 h-10 rounded-full bg-medical-100 text-medical-700 font-bold flex items-center justify-center">
+                            N
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-slate-800 text-sm">Nataly Avila</h4>
+                            <span class="text-xs text-slate-400">Google Maps Review</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-xs border border-medical-100 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 italic text-sm leading-relaxed mb-6">
+                            "Excelente lugar, personal muy amable , cuenta con varias opciones para rencontrarce con uno mismo y limpiar y relajar nuestro cuerpo a precios accesibles"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+                        <div class="w-10 h-10 rounded-full bg-medical-100 text-medical-700 font-bold flex items-center justify-center">
+                            G
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-slate-800 text-sm">Gloria gabriela Del rio hinojosa</h4>
+                            <span class="text-xs text-slate-400">Google Maps Review</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 4 -->
+                <div class="bg-white p-8 rounded-2xl shadow-xs border border-medical-100 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 italic text-sm leading-relaxed mb-6">
+                            "Excelente atención, me encantó recibir el masaje relajante y sanador. Lugar limpio de fácil acceso. Lo recomiendo al 100%"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+                        <div class="w-10 h-10 rounded-full bg-medical-100 text-medical-700 font-bold flex items-center justify-center">
+                            L
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-slate-800 text-sm">Lupita Oliva</h4>
+                            <span class="text-xs text-slate-400">Google Maps Review</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 5 -->
+                <div class="bg-white p-8 rounded-2xl shadow-xs border border-medical-100 flex flex-col justify-between lg:col-span-2">
+                    <div>
+                        <div class="flex text-amber-400 gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 italic text-sm leading-relaxed mb-6">
+                            "Excelente servicio 👍 me sentí con mucha confianza y muy cómoda. Ya que son diferentes técnicas de masajes 🤩 💆 Y tiene muy ricos productos saludables. Super recomendable 👌…"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+                        <div class="w-10 h-10 rounded-full bg-medical-100 text-medical-700 font-bold flex items-center justify-center">
+                            E
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-slate-800 text-sm">Esther Gtz Guerra</h4>
+                            <span class="text-xs text-slate-400">Google Maps Review</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE UBICACIÓN Y MAPA -->
+    <section id="contacto" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-medical-600 font-semibold tracking-wider uppercase text-sm block">Ubicación y Contacto</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-800">Visítanos en el Centro de León</h2>
+                    <p class="text-slate-600">
+                        Disfruta de una experiencia revitalizante en pleno corazón de León de los Aldama. Fácil acceso y un espacio completamente adaptado para tu comodidad.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-medical-100 text-medical-700 rounded-xl flex items-center justify-center shrink-0 mt-1">
+                                <i class="fa-solid fa-location-dot text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800">Dirección Exacta</h4>
+                                <p class="text-slate-600 text-sm">Melchor Ocampo, Centro, 37000 León de los Aldama, Gto., México</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-medical-100 text-medical-700 rounded-xl flex items-center justify-center shrink-0 mt-1">
+                                <i class="fa-solid fa-clock text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800">Horario de Atención</h4>
+                                <p class="text-slate-600 text-sm">Lunes a Sábado: 9:00 AM – 8:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="tel:" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-medical-600 hover:bg-medical-700 text-white font-semibold px-8 py-4 rounded-xl shadow-md transition text-lg">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>Pedir Cita Previa</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <div class="bg-white p-3 rounded-2xl shadow-xl border border-medical-100">
+                        <iframe src="https://www.google.com/maps?q=Centro%20de%20masajes%20Melchor%20Ocampo%2C%20Centro%2C%2037000%20Le%C3%B3n%20de%20los%20Aldama%2C%20Gto.%2C%20M%C3%A9xico&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 items-center">
+                <div>
+                    <span class="font-serif text-xl font-bold text-white block mb-2">Centro de Masajes</span>
+                    <p class="text-sm text-slate-400">Centro de salud y bienestar especializado en masajes holísticos, relajantes y sanadores en León, Gto.</p>
+                </div>
+                <div class="flex justify-start md:justify-center gap-6 text-sm">
+                    <a href="#inicio" class="hover:text-white transition">Inicio</a>
+                    <a href="#servicios" class="hover:text-white transition">Tratamientos</a>
+                    <a href="#nosotros" class="hover:text-white transition">Instalaciones</a>
+                    <a href="#testimonios" class="hover:text-white transition">Opiniones</a>
+                    <a href="#contacto" class="hover:text-white transition">Ubicación</a>
+                </div>
+                <div class="flex justify-start md:justify-end">
+                    <a href="tel:" class="bg-medical-600 hover:bg-medical-500 text-white font-semibold px-6 py-3 rounded-xl transition flex items-center gap-2 text-sm shadow-md">
+                        <i class="fa-solid fa-phone"></i> Pedir Cita Previa
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-4">
+                <p>&copy; <span id="year"></span> Centro de Masajes. Todos los derechos reservados.</p>
+                <p>Melchor Ocampo, Centro, 37000 León de los Aldama, Gto., México</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPT PARA INTERACTIVIDAD SIMPLE -->
+    <script>
+        // Año actual en el footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Menú móvil toggle
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú al hacer click en un enlace móvil
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
