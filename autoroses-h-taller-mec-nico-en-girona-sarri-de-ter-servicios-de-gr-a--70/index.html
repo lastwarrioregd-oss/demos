@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autoroses.H | Taller Mecánico en Girona y Sarrià de Ter</title>
+    <meta name="description" content="Taller mecánico de confianza en Girona. Mecánica general, servicios de grúa 24h y reparaciones garantizadas. ¡Solicita tu presupuesto hoy!">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        industrial: {
+                            900: '#1a1c1e',
+                            800: '#2d3436',
+                            700: '#34495e',
+                            steel: '#4b6584',
+                            accent: '#f39c12', // Naranja alta visibilidad
+                            highlight: '#e67e22'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glass-effect {
+            background: rgba(26, 28, 30, 0.8);
+            backdrop-filter: blur(10px);
+        }
+        .text-glow {
+            text-shadow: 0 0 15px rgba(243, 156, 18, 0.5);
+        }
+        .card-shadow {
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-industrial-900 font-sans">
+
+    <!-- Header / Navigation -->
+    <header class="fixed w-full z-50 glass-effect border-b border-white/10">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="bg-industrial-accent p-2 rounded-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                </div>
+                <span class="font-heading font-extrabold text-white text-xl tracking-tighter">AUTOROSES.H</span>
+            </div>
+            <nav class="hidden md:flex space-x-8 text-white/90 font-medium">
+                <a href="#servicios" class="hover:text-industrial-accent transition">Servicios</a>
+                <a href="#nosotros" class="hover:text-industrial-accent transition">Nosotros</a>
+                <a href="#opiniones" class="hover:text-industrial-accent transition">Opiniones</a>
+                <a href="#contacto" class="hover:text-industrial-accent transition">Contacto</a>
+            </nav>
+            <a href="https://wa.me/34617531586" class="bg-industrial-accent hover:bg-industrial-highlight text-white px-6 py-2 rounded-full font-bold transition transform hover:scale-105 card-shadow flex items-center">
+                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-[90vh] flex items-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1920&q=80" 
+                 referrerpolicy="no-referrer" 
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1200&q=80';"
+                 alt="Taller Mecánico Autoroses.H" 
+                 class="w-full h-full object-cover brightness-[0.3]">
+        </div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-3xl">
+                <span class="inline-block bg-industrial-accent text-white font-bold px-4 py-1 rounded-md mb-6 tracking-widest text-sm uppercase">Expertos en Mecánica y Grúas</span>
+                <h1 class="font-heading text-5xl md:text-7xl text-white font-extrabold leading-tight mb-6">
+                    Tu coche en <span class="text-industrial-accent">buenas manos</span> en Girona.
+                </h1>
+                <p class="text-xl text-gray-300 mb-10 leading-relaxed max-w-2xl">
+                    Soluciones mecánicas profesionales, diagnóstico transparente y servicio de grúa en Sarrià de Ter. Calidad y precio sin competencia.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="https://wa.me/34617531586" class="bg-industrial-accent hover:bg-industrial-highlight text-white text-center px-8 py-4 rounded-lg font-bold text-lg transition transform hover:-translate-y-1 shadow-2xl">
+                        Solicitar Presupuesto
+                    </a>
+                    <a href="#servicios" class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white text-center px-8 py-4 rounded-lg font-bold text-lg border border-white/30 transition">
+                        Nuestros Servicios
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce hidden md:block">
+            <svg class="w-6 h-6 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+        </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <section class="bg-industrial-900 py-12 border-b border-white/5">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-industrial-accent text-4xl font-bold mb-1">24/7</div>
+                    <div class="text-gray-400 text-sm uppercase tracking-wider">Servicio de Grúa</div>
+                </div>
+                <div>
+                    <div class="text-industrial-accent text-4xl font-bold mb-1">100%</div>
+                    <div class="text-gray-400 text-sm uppercase tracking-wider">Transparencia</div>
+                </div>
+                <div>
+                    <div class="text-industrial-accent text-4xl font-bold mb-1">+500</div>
+                    <div class="text-gray-400 text-sm uppercase tracking-wider">Clientes Satisfechos</div>
+                </div>
+                <div>
+                    <div class="text-industrial-accent text-4xl font-bold mb-1">Girona</div>
+                    <div class="text-gray-400 text-sm uppercase tracking-wider">Ubicación Estratégica</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="py-24 bg-white">
+        <div class="container mx-auto px-4 text-center mb-16">
+            <h2 class="font-heading text-4xl font-extrabold text-industrial-900 mb-4 uppercase tracking-tight">Servicios Técnicos Especializados</h2>
+            <div class="w-24 h-1.5 bg-industrial-accent mx-auto mb-6"></div>
+            <p class="text-gray-600 max-w-2xl mx-auto">Ofrecemos un servicio integral para su vehículo, desde mantenimiento preventivo hasta reparaciones complejas de motor.</p>
+        </div>
+
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Servicio 1 -->
+            <div class="group bg-gray-50 p-8 rounded-2xl border border-gray-100 hover:border-industrial-accent transition-all duration-300 card-shadow">
+                <div class="bg-industrial-900 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:bg-industrial-accent transition-colors">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+                </div>
+                <h3 class="font-heading text-xl font-bold mb-4">Mecánica General</h3>
+                <p class="text-gray-600 mb-6">Reparación de motores, cambio de mariposas, pedales de aceleración, embragues y sistemas de transmisión.</p>
+                <ul class="text-sm text-gray-500 space-y-2 mb-8">
+                    <li class="flex items-center"><span class="text-industrial-accent mr-2">✓</span> Reparación de motor</li>
+                    <li class="flex items-center"><span class="text-industrial-accent mr-2">✓</span> Sustitución de piezas</li>
+                    <li class="flex items-center"><span class="text-industrial-accent mr-2">✓</span> Revisión pre-ITV</li>
+                </ul>
+                <a href="https://wa.me/34617531586" class="text-industrial-accent font-bold hover:underline">Solicitar Presupuesto &rarr;</a>
+            </div>
+
+            <!-- Servicio 2 -->
+            <div class="group bg-gray-50 p-8 rounded-2xl border border-gray-100 hover:border-industrial-accent transition-all duration-300 card-shadow">
+                <div class="bg-industrial-900 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:bg-industrial-accent transition-colors">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                </div>
+                <h3 class="font-heading text-xl font-bold mb-4">Mantenimiento y Aceite</h3>
+                <p class="text-gray-600 mb-6">Cambios de aceite de alta calidad y filtros para prolongar la vida útil de su motor con precios competitivos.</p>
+                <ul class="text-sm text-gray-500 space-y-2 mb-8">
+                    <li class="flex items-center"><span class="text-industrial-accent mr-2">✓</span> Cambio de aceite y filtros</li>
+                    <li class="flex items-center"><span class="text-industrial-accent mr-2">✓</span> Revisión de niveles</li>
+                    <li class="flex items-center"><span class="text-industrial-accent mr-2">✓</span> Mantenimiento preventivo</li>
+                </ul>
+                <a href="https://wa.me/34617531586" class="text-industrial-accent font-bold hover:underline">Solicitar Presupuesto &rarr;</a>
+            </div>
+
+            <!-- Servicio 3 -->
+            <div class="group bg-industrial-900 p-8 rounded-2xl border border-industrial-accent transition-all duration-300 card-shadow">
+                <div class="bg-industrial-accent w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"></path><path d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"></path></svg>
+                </div>
+                <h3 class="font-heading text-xl font-bold mb-4 text-white">Servicio de Grúa 24H</h3>
+                <p class="text-gray-400 mb-6">Asistencia en carretera y rescate. Estamos disponibles incluso en festivos especiales para ayudarte.</p>
+                <ul class="text-sm text-gray-400 space-y-2 mb-8">
+                    <li class="flex items-center"><span class="text-industrial-accent mr-2">✓</span> Disponibilidad 24 horas</li>
+                    <li class="flex items-center"><span class="text-industrial-accent mr-2">✓</span> Emergencias nocturnas</li>
+                    <li class="flex items-center"><span class="text-industrial-accent mr-2">✓</span> Traslado a taller</li>
+                </ul>
+                <a href="https://wa.me/34617531586" class="bg-industrial-accent text-white px-4 py-2 rounded font-bold hover:bg-industrial-highlight transition">Llamar Ahora</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section id="nosotros" class="py-20 bg-industrial-800 text-white overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2 relative">
+                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-industrial-accent/20 rounded-full blur-3xl"></div>
+                    <img src="https://images.unsplash.com/photo-1530046339160-ce3e5b0c7a2f?auto=format&fit=crop&w=800&q=80" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80';"
+                         alt="Mecánico trabajando" 
+                         class="rounded-3xl shadow-2xl relative z-10 border border-white/10">
+                </div>
+                <div class="lg:w-1/2">
+                    <h2 class="font-heading text-4xl font-extrabold mb-8 uppercase">¿Por qué elegir <span class="text-industrial-accent">Autoroses.H</span>?</h2>
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 bg-industrial-accent/10 p-3 rounded-lg self-start">
+                                <svg class="w-6 h-6 text-industrial-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-1">Diagnóstico Claro y Directo</h4>
+                                <p class="text-gray-400 text-sm">Explicamos cada avería con detalle y paciencia. Sin sorpresas finales ni reparaciones innecesarias.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 bg-industrial-accent/10 p-3 rounded-lg self-start">
+                                <svg class="w-6 h-6 text-industrial-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-1">Precios Asequibles</h4>
+                                <p class="text-gray-400 text-sm">Ofrecemos tarifas mucho más competitivas que los talleres oficiales sin sacrificar la calidad de los componentes.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 bg-industrial-accent/10 p-3 rounded-lg self-start">
+                                <svg class="w-6 h-6 text-industrial-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-1">Dedicación y Compromiso</h4>
+                                <p class="text-gray-400 text-sm">Incluso en festivos como Año Nuevo, estamos ahí para solucionar tus emergencias mecánicas.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-10">
+                        <a href="https://wa.me/34617531586" class="inline-block bg-industrial-accent hover:bg-industrial-highlight text-white px-10 py-4 rounded-lg font-bold transition shadow-xl">
+                            Solicitar Presupuesto
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-24 bg-gray-50">
+        <div class="container mx-auto px-4 text-center mb-16">
+            <h2 class="font-heading text-4xl font-extrabold text-industrial-900 mb-4 uppercase">Nuestras Instalaciones y Trabajos</h2>
+            <div class="w-24 h-1.5 bg-industrial-accent mx-auto mb-6"></div>
+        </div>
+        <div class="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="h-64 overflow-hidden rounded-xl">
+                <img src="https://images.unsplash.com/photo-1517524204709-440d7e6a3ad2?auto=format&fit=crop&w=600&q=80" 
+                     referrerpolicy="no-referrer" 
+                     onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=600&q=80';"
+                     class="w-full h-full object-cover hover:scale-110 transition duration-500" alt="Trabajo mecánica">
+            </div>
+            <div class="h-64 overflow-hidden rounded-xl">
+                <img src="https://images.unsplash.com/photo-1542282088-fe8426682b8f?auto=format&fit=crop&w=600&q=80" 
+                     referrerpolicy="no-referrer" 
+                     onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=600&q=80';"
+                     class="w-full h-full object-cover hover:scale-110 transition duration-500" alt="Motor">
+            </div>
+            <div class="h-64 overflow-hidden rounded-xl">
+                <img src="https://images.unsplash.com/photo-1635437536607-b8572f443763?auto=format&fit=crop&w=600&q=80" 
+                     referrerpolicy="no-referrer" 
+                     onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=600&q=80';"
+                     class="w-full h-full object-cover hover:scale-110 transition duration-500" alt="Herramientas">
+            </div>
+            <div class="h-64 overflow-hidden rounded-xl">
+                <img src="https://images.unsplash.com/photo-1563206767-5b18f218e8de?auto=format&fit=crop&w=600&q=80" 
+                     referrerpolicy="no-referrer" 
+                     onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=600&q=80';"
+                     class="w-full h-full object-cover hover:scale-110 transition duration-500" alt="Taller">
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="opiniones" class="py-24 bg-white">
+        <div class="container mx-auto px-4 text-center mb-16">
+            <h2 class="font-heading text-4xl font-extrabold text-industrial-900 mb-4 uppercase">Opiniones Reales Verificadas</h2>
+            <div class="w-24 h-1.5 bg-industrial-accent mx-auto mb-6"></div>
+        </div>
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Reseña 1 -->
+            <div class="bg-gray-50 p-8 rounded-2xl relative card-shadow italic">
+                <div class="flex text-industrial-accent mb-4">
+                    ★★★★★
+                </div>
+                <p class="text-gray-700 mb-6">"Llevé mi coche al taller con cierta preocupación, pero desde el primer momento me transmitieron mucha confianza. Fueron muy claros con el diagnóstico y las opciones de reparación, sin presiones. El mecánico se tomó el tiempo de explicarme todo pacientemente."</p>
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-industrial-steel rounded-full flex items-center justify-center text-white font-bold mr-3">F</div>
+                    <span class="font-bold text-industrial-900">- Fatima Al harduz</span>
+                </div>
+            </div>
+            <!-- Reseña 2 -->
+            <div class="bg-gray-50 p-8 rounded-2xl relative card-shadow italic">
+                <div class="flex text-industrial-accent mb-4">
+                    ★★★★★
+                </div>
+                <p class="text-gray-700 mb-6">"Genial mi experiencia. Calidad precio bien, se me rompio la mariposa y el pedal de acelerar, tambien tenia que cambiar aceite. El me enseño las piezas rotas y me las compro nuevas y las monto. Por todo me hizo un super precio."</p>
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-industrial-steel rounded-full flex items-center justify-center text-white font-bold mr-3">E</div>
+                    <span class="font-bold text-industrial-900">- Elodi Montero</span>
+                </div>
+            </div>
+            <!-- Reseña 3 -->
+            <div class="bg-gray-50 p-8 rounded-2xl relative card-shadow italic border-2 border-industrial-accent/20">
+                <div class="flex text-industrial-accent mb-4">
+                    ★★★★★
+                </div>
+                <p class="text-gray-700 mb-6">"Tuvimos una emergencia durante la nochevieja, y nos abrieron el taller el día de año nuevo paransoluciionar nuestro problema. Estaremos totalmente agradecidos por su dedicación y por ayudarnos en esos momentos tan difíciles."</p>
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-industrial-steel rounded-full flex items-center justify-center text-white font-bold mr-3">R</div>
+                    <span class="font-bold text-industrial-900">- Rubén Rubio Gálvez</span>
+                </div>
+            </div>
+            <!-- Reseña 4 -->
+            <div class="bg-gray-50 p-8 rounded-2xl relative card-shadow italic">
+                <div class="flex text-industrial-accent mb-4">
+                    ★★★★★
+                </div>
+                <p class="text-gray-700 mb-6">"El personal es súper amable y profesional, me explicaron todo con detalle y transparencia. El mecánico D fue muy claro con el diagnóstico y las reparaciones. El tiempo de espera fue mínimo y la zona de espera muy cómoda."</p>
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-industrial-steel rounded-full flex items-center justify-center text-white font-bold mr-3">A</div>
+                    <span class="font-bold text-industrial-900">- Alae El khaldi</span>
+                </div>
+            </div>
+            <!-- Reseña 5 -->
+            <div class="bg-gray-50 p-8 rounded-2xl relative card-shadow italic">
+                <div class="flex text-industrial-accent mb-4">
+                    ★★★★★
+                </div>
+                <p class="text-gray-700 mb-6">"Muy buen trabajo, todo a disposición. Tube un problema con el motor del coche y me ayudaron a cambiarlo. Precio asequible, mucho mas económico que a diferencia de otros talleres. Muy recomendable!"</p>
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-industrial-steel rounded-full flex items-center justify-center text-white font-bold mr-3">E</div>
+                    <span class="font-bold text-industrial-900">- emma</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map & Contact Section -->
+    <section id="contacto" class="py-24 bg-industrial-900 text-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2">
+                    <h2 class="font-heading text-4xl font-extrabold mb-8 uppercase tracking-tight">¿Dónde estamos?</h2>
+                    <div class="space-y-6 mb-10">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-industrial-accent p-3 rounded-lg">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold">Dirección</h4>
+                                <p class="text-gray-400">Carrer Josep Flores, 28, 17840 Sarrià de Ter, Girona, España</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-industrial-accent p-3 rounded-lg">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold">Teléfono / WhatsApp</h4>
+                                <p class="text-gray-400">617 53 15 86</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white/5 p-8 rounded-2xl border border-white/10">
+                        <h4 class="text-2xl font-bold mb-4">Solicitar Presupuesto</h4>
+                        <p class="text-gray-400 mb-6">Envíanos una foto de tu ficha técnica o explícanos el problema por WhatsApp para una valoración rápida.</p>
+                        <a href="https://wa.me/34617531586" class="block w-full bg-industrial-accent hover:bg-industrial-highlight text-white text-center py-4 rounded-lg font-bold text-lg transition">
+                            Enviar WhatsApp Ahora
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 h-[500px]">
+                    <iframe src="https://www.google.com/maps?q=Autoroses.H%20taller%20mec%C3%A1nico%20en%20Girona%2FSarri%C3%A0%20de%20Ter%2C%20servicios%20de%20gr%C3%BAa!%20Carrer%20Josep%20Flores%2C%2028%2C%2017840%20Sarri%20de%20Ter%2C%20Girona%2C%20Espa%C3%B1a&output=embed" width="100%" height="100%" style="border:0; border-radius: 1.5rem;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-industrial-900 border-t border-white/5 py-12">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex items-center justify-center space-x-2 mb-6">
+                <div class="bg-industrial-accent p-1.5 rounded-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066-1.724 1.724 0 00-2.37-2.37 1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                    </svg>
+                </div>
+                <span class="font-heading font-extrabold text-white text-lg tracking-tighter uppercase">Autoroses.H</span>
+            </div>
+            <p class="text-gray-500 text-sm">© 2024 Autoroses.H - Taller Mecánico en Girona. Todos los derechos reservados.</p>
+            <p class="text-gray-600 text-xs mt-2">Expertos en mecánica, chapa, pintura y servicios de grúa 24h.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button Mobile -->
+    <a href="https://wa.me/34617531586" class="fixed bottom-6 right-6 z-[100] md:hidden bg-[#25D366] text-white p-4 rounded-full shadow-2xl animate-pulse">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+</body>
+</html>
