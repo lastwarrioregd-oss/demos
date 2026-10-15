@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Fisioterapia Y Rehab L S | Fisioterapia Avanzada en Albatera</title>
+    
+    <!-- Tailwind CSS v3 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        medical: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            900: '#134e4a',
+                        },
+                        clinical: {
+                            light: '#f8fafc',
+                            blue: '#0284c7',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="font-sans text-slate-700 bg-medical-50/30 antialiased selection:bg-medical-500 selection:text-white">
+
+    <!-- TOP BAR -->
+    <div class="bg-medical-900 text-white py-2 px-4 text-xs sm:text-sm">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <span><i class="fa-solid fa-location-dot text-medical-400 mr-1.5"></i> C. Vicente Pardo, 17, 03340 Albatera, Alicante</span>
+                <span class="hidden md:inline"><i class="fa-solid fa-clock text-medical-400 mr-1.5"></i> Lunes a Viernes: Cita Previa</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="tel:965485560" class="hover:text-medical-300 transition-colors font-medium">
+                    <i class="fa-solid fa-phone text-medical-400 mr-1.5"></i> 965 48 55 60
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER / NAVBAR -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-medical-600 text-white flex items-center justify-center font-bold text-xl shadow-md shadow-medical-600/20 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-hand-holding-medical"></i>
+                </div>
+                <div>
+                    <span class="block font-bold text-slate-900 text-lg leading-tight tracking-tight">Fisioterapia & Rehab L S</span>
+                    <span class="text-xs text-medical-600 font-semibold uppercase tracking-wider">Clínica Ambulatoria • Albatera</span>
+                </div>
+            </a>
+
+            <nav class="hidden lg:flex items-center gap-8 font-medium text-sm text-slate-600">
+                <a href="#inicio" class="hover:text-medical-600 transition-colors">Inicio</a>
+                <a href="#especialidades" class="hover:text-medical-600 transition-colors">Tratamientos</a>
+                <a href="#instalaciones" class="hover:text-medical-600 transition-colors">Instalaciones</a>
+                <a href="#opiniones" class="hover:text-medical-600 transition-colors">Opiniones</a>
+                <a href="#contacto" class="hover:text-medical-600 transition-colors">Ubicación</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <a href="tel:965485560" class="hidden sm:inline-flex items-center justify-center bg-medical-600 hover:bg-medical-700 text-white font-semibold px-5 py-2.5 rounded-xl shadow-lg shadow-medical-600/25 transition-all transform hover:-translate-y-0.5 text-sm">
+                    <i class="fa-solid fa-calendar-check mr-2"></i> Pedir Cita Previa
+                </a>
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" class="lg:hidden text-slate-700 p-2 focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-100 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="block py-2 text-slate-600 hover:text-medical-600 font-medium">Inicio</a>
+            <a href="#especialidades" class="block py-2 text-slate-600 hover:text-medical-600 font-medium">Tratamientos</a>
+            <a href="#instalaciones" class="block py-2 text-slate-600 hover:text-medical-600 font-medium">Instalaciones</a>
+            <a href="#opiniones" class="block py-2 text-slate-600 hover:text-medical-600 font-medium">Opiniones</a>
+            <a href="#contacto" class="block py-2 text-slate-600 hover:text-medical-600 font-medium">Ubicación</a>
+            <a href="tel:965485560" class="w-full text-center block bg-medical-600 text-white font-semibold py-3 rounded-xl shadow-md">
+                <i class="fa-solid fa-calendar-check mr-2"></i> Pedir Cita Previa
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-32 bg-gradient-to-b from-white to-medical-50/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-medical-100 text-medical-800 px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider">
+                        <i class="fa-solid fa-star text-amber-500"></i> Excelencia y Profesionalidad en Albatera
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight leading-none">
+                        Recupera tu bienestar con <span class="text-medical-600">Fisioterapia Avanzada</span>
+                    </h1>
+                    <p class="text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0">
+                        Centro de fisioterapia y rehabilitación ambulatoria en Albatera. Tratamientos personalizados orientados a devolverte la movilidad, aliviar el dolor y mejorar tu calidad de vida desde la primera sesión.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-2">
+                        <a href="tel:965485560" class="inline-flex items-center justify-center bg-medical-600 hover:bg-medical-700 text-white font-semibold px-8 py-4 rounded-xl shadow-xl shadow-medical-600/30 transition-all transform hover:-translate-y-0.5 text-base">
+                            <i class="fa-solid fa-phone-volume mr-2.5"></i> Pedir Cita Previa
+                        </a>
+                        <a href="#especialidades" class="inline-flex items-center justify-center bg-white hover:bg-slate-50 text-slate-700 font-semibold px-8 py-4 rounded-xl border border-slate-200 shadow-sm transition-all text-base">
+                            Ver Tratamientos
+                        </a>
+                    </div>
+                    
+                    <div class="pt-6 border-t border-slate-200/80 grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0">
+                        <div>
+                            <span class="block text-2xl font-bold text-slate-900">100%</span>
+                            <span class="text-xs text-slate-500">Personalizado</span>
+                        </div>
+                        <div>
+                            <span class="block text-2xl font-bold text-slate-900">5★</span>
+                            <span class="text-xs text-slate-500">Valoración Google</span>
+                        </div>
+                        <div>
+                            <span class="block text-2xl font-bold text-slate-900">Albatera</span>
+                            <span class="text-xs text-slate-500">Ubicación céntrica</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="absolute -inset-4 bg-medical-500/20 rounded-3xl filter blur-2xl -z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1000&q=80" 
+                             alt="Clínica Fisioterapia Y Rehab L S" 
+                             referrerpolicy="no-referrer"
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80';"
+                             class="rounded-3xl shadow-2xl object-cover w-full h-[450px]">
+                        
+                        <!-- Floating Badge -->
+                        <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-xl bg-medical-50 text-medical-600 flex items-center justify-center text-xl font-bold">
+                                <i class="fa-solid fa-user-doctor"></i>
+                            </div>
+                            <div>
+                                <span class="block font-bold text-slate-900 text-sm">Trato Excelente</span>
+                                <span class="text-xs text-slate-500">Profesionalidad garantizada</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONFIANZA / CARACTERÍSTICAS -->
+    <section class="py-16 bg-white border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="flex gap-4 items-start p-6 rounded-2xl bg-medical-50/50 border border-medical-100/60">
+                    <div class="w-12 h-12 rounded-xl bg-medical-600 text-white flex-shrink-0 flex items-center justify-center text-lg shadow-md">
+                        <i class="fa-solid fa-stethoscope"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-900 text-lg mb-1">Diagnóstico Clínico Preciso</h3>
+                        <p class="text-slate-600 text-sm">Evaluación exhaustiva de cada lesión para aplicar el tratamiento de rehabilitación óptimo.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 items-start p-6 rounded-2xl bg-medical-50/50 border border-medical-100/60">
+                    <div class="w-12 h-12 rounded-xl bg-medical-600 text-white flex-shrink-0 flex items-center justify-center text-lg shadow-md">
+                        <i class="fa-solid fa-hands-holding-child"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-900 text-lg mb-1">Atención Cercana y Humana</h3>
+                        <p class="text-slate-600 text-sm">Destacamos por un excelente trato humano y profesionalidad con cada paciente en Albatera.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 items-start p-6 rounded-2xl bg-medical-50/50 border border-medical-100/60">
+                    <div class="w-12 h-12 rounded-xl bg-medical-600 text-white flex-shrink-0 flex items-center justify-center text-lg shadow-md">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-900 text-lg mb-1">Recuperación Acelerada</h3>
+                        <p class="text-slate-600 text-sm">Técnicas avanzadas de fisioterapia para recuperar tu movilidad en el menor tiempo posible.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESPECIALIDADES Y TRATAMIENTOS -->
+    <section id="especialidades" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-medical-600 font-semibold text-sm uppercase tracking-wider">Nuestros Servicios</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 mb-4">Especialidades, Tratamientos y Rehabilitación</h2>
+                <p class="text-slate-600">Soluciones especializadas para dolencias musculoesqueléticas, lesiones deportivas y rehabilitación funcional.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-md transition-shadow flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-medical-50 text-medical-600 flex items-center justify-center text-2xl mb-6">
+                            <i class="fa-solid fa-bone"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Fisioterapia Traumatológica</h3>
+                        <p class="text-slate-600 text-sm mb-6">Tratamiento de esguinces, tendinopatías, fracturas, luxaciones y recuperación postquirúrgica para devolver la funcionalidad completa.</p>
+                    </div>
+                    <a href="tel:965485560" class="inline-flex items-center text-medical-600 font-semibold text-sm hover:text-medical-700">
+                        Pedir Cita Previa <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-md transition-shadow flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-medical-50 text-medical-600 flex items-center justify-center text-2xl mb-6">
+                            <i class="fa-solid fa-person-running"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Rehabilitación Deportiva</h3>
+                        <p class="text-slate-600 text-sm mb-6">Enfoque específico para deportistas de todas las disciplinas. Prevención de lesiones y optimización del rendimiento físico.</p>
+                    </div>
+                    <a href="tel:965485560" class="inline-flex items-center text-medical-600 font-semibold text-sm hover:text-medical-700">
+                        Pedir Cita Previa <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-md transition-shadow flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-medical-50 text-medical-600 flex items-center justify-center text-2xl mb-6">
+                            <i class="fa-solid fa-child-reaching"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Fisioterapia de Columna y Dolor Crónico</h3>
+                        <p class="text-slate-600 text-sm mb-6">Abordaje especializado para cervicalgias, dorsalgias, lumbalgias y corrección postural mediante terapia manual avanzada.</p>
+                    </div>
+                    <a href="tel:965485560" class="inline-flex items-center text-medical-600 font-semibold text-sm hover:text-medical-700">
+                        Pedir Cita Previa <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-md transition-shadow flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-medical-50 text-medical-600 flex items-center justify-center text-2xl mb-6">
+                            <i class="fa-solid fa-hand-sparkles"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Terapia Manual Ortopédica</h3>
+                        <p class="text-slate-600 text-sm mb-6">Técnicas manuales específicas orientadas al alivio del dolor articular, liberación miofascial y restauración del movimiento.</p>
+                    </div>
+                    <a href="tel:965485560" class="inline-flex items-center text-medical-600 font-semibold text-sm hover:text-medical-700">
+                        Pedir Cita Previa <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-md transition-shadow flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-medical-50 text-medical-600 flex items-center justify-center text-2xl mb-6">
+                            <i class="fa-solid fa-wheelchair"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Rehabilitación Ambulatoria</h3>
+                        <p class="text-slate-600 text-sm mb-6">Programas completos de recuperación funcional adaptados a las necesidades individuales de cada paciente en nuestra clínica.</p>
+                    </div>
+                    <a href="tel:965485560" class="inline-flex items-center text-medical-600 font-semibold text-sm hover:text-medical-700">
+                        Pedir Cita Previa <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-md transition-shadow flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-medical-50 text-medical-600 flex items-center justify-center text-2xl mb-6">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Prevención y Salud</h3>
+                        <p class="text-slate-600 text-sm mb-6">Asesoramiento ergonómico, pautas de ejercicio terapéutico y educación para evitar recaídas y mantener un estilo de vida saludable.</p>
+                    </div>
+                    <a href="tel:965485560" class="inline-flex items-center text-medical-600 font-semibold text-sm hover:text-medical-700">
+                        Pedir Cita Previa <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INSTALACIONES -->
+    <section id="instalaciones" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-medical-600 font-semibold text-sm uppercase tracking-wider">Espacios Clínicos</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 mb-4">Nuestras Instalaciones</h2>
+                <p class="text-slate-600">Un entorno moderno, limpio y perfectamente equipado para garantizar tu comodidad y una óptima recuperación.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="overflow-hidden rounded-2xl shadow-md group">
+                    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80" 
+                         alt="Instalaciones de la clínica"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80';"
+                         class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="overflow-hidden rounded-2xl shadow-md group">
+                    <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=80" 
+                         alt="Sala de rehabilitación"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80';"
+                         class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="overflow-hidden rounded-2xl shadow-md group">
+                    <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=800&q=80" 
+                         alt="Consulta de fisioterapia"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80';"
+                         class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OPINIONES REALES -->
+    <section id="opiniones" class="py-20 bg-medical-50/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-medical-600 font-semibold text-sm uppercase tracking-wider">Testimonios Reales</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 mb-4">Lo que opinan nuestros pacientes</h2>
+                <p class="text-slate-600">La satisfacción de quienes confían en nosotros es nuestra mejor carta de presentación.</p>
+            </div>
+
+            <div class="max-w-xl mx-auto">
+                <div class="bg-white rounded-3xl p-8 sm:p-10 shadow-lg border border-slate-100 relative">
+                    <div class="absolute -top-4 right-8 bg-medical-600 text-white w-10 h-10 rounded-full flex items-center justify-center shadow-md">
+                        <i class="fa-solid fa-quote-right"></i>
+                    </div>
+                    <div class="flex text-amber-500 gap-1 mb-6 text-lg">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-700 text-lg italic mb-6 leading-relaxed">
+                        "Excelente trato, profesionalidad y calidad."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-medical-100 text-medical-700 flex items-center justify-center font-bold text-lg">
+                            P
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900">Paciente Verificado</h4>
+                            <p class="text-xs text-slate-500">Reseña de Google Maps</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="py-16 bg-medical-600 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-4">¿Sufres de dolor o necesitas recuperación?</h2>
+            <p class="text-medical-100 text-lg max-w-2xl mx-auto mb-8">
+                Ponte en manos de profesionales en Albatera. Reserva tu cita previa hoy mismo y comienza tu recuperación.
+            </p>
+            <a href="tel:965485560" class="inline-flex items-center justify-center bg-white hover:bg-medical-50 text-medical-700 font-bold px-8 py-4 rounded-xl shadow-xl transition-all transform hover:-translate-y-0.5 text-base">
+                <i class="fa-solid fa-phone-volume mr-2.5 text-medical-600"></i> Pedir Cita Previa: 965 48 55 60
+            </a>
+        </div>
+    </section>
+
+    <!-- UBICACIÓN Y CONTACTO -->
+    <section id="contacto" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div>
+                        <span class="text-medical-600 font-semibold text-sm uppercase tracking-wider">Encuéntranos</span>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 mb-4">Visita nuestra clínica en Albatera</h2>
+                        <p class="text-slate-600">Estamos situados en una zona accesible para ofrecerte la mejor atención ambulatoria.</p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-medical-50 text-medical-600 flex-shrink-0 flex items-center justify-center text-xl font-bold">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 mb-1">Dirección</h4>
+                                <p class="text-slate-600 text-sm">De Dios, Calle Maestro Juan, C. Vicente Pardo, 17, 03340 Albatera, Alicante, España</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-medical-50 text-medical-600 flex-shrink-0 flex items-center justify-center text-xl font-bold">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 mb-1">Teléfono</h4>
+                                <a href="tel:965485560" class="text-medical-600 font-semibold text-sm hover:underline">965 48 55 60</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-medical-50 text-medical-600 flex-shrink-0 flex items-center justify-center text-xl font-bold">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 mb-1">Correo Electrónico</h4>
+                                <a href="mailto:error-lite+84f2@duckduckgo.com" class="text-slate-600 text-sm hover:text-medical-600">error-lite+84f2@duckduckgo.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <a href="tel:965485560" class="inline-flex items-center justify-center bg-medical-600 hover:bg-medical-700 text-white font-semibold px-6 py-3.5 rounded-xl shadow-lg shadow-medical-600/20 transition-all text-sm">
+                            <i class="fa-solid fa-calendar-check mr-2"></i> Pedir Cita Previa
+                        </a>
+                    </div>
+                </div>
+
+                <div class="w-full">
+                    <div class="bg-slate-100 p-3 rounded-2xl shadow-inner border border-slate-200">
+                        <iframe src="https://www.google.com/maps?q=Cl%C3%ADnica%20Fisioterapia%20Y%20Rehab%20L%20S%20De%20Dios%2C%20Calle%20Maestro%20Juan%2C%20C.%20Vicente%20Pardo%2C%2017%2C%2003340%20Albatera%2C%20Alicante%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-8 pb-8 border-b border-slate-800">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-9 h-9 rounded-xl bg-medical-600 text-white flex items-center justify-center font-bold text-lg">
+                            <i class="fa-solid fa-hand-holding-medical"></i>
+                        </div>
+                        <span class="font-bold text-white text-lg">Clínica Fisioterapia Y Rehab L S</span>
+                    </div>
+                    <p class="text-sm text-slate-400">
+                        Clínica ambulatoria de fisioterapia y rehabilitación avanzada en Albatera, Alicante. Tu salud y bienestar en manos expertas.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Enlaces Rápidos</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#inicio" class="hover:text-white transition-colors">Inicio</a></li>
+                        <li><a href="#especialidades" class="hover:text-white transition-colors">Tratamientos</a></li>
+                        <li><a href="#instalaciones" class="hover:text-white transition-colors">Instalaciones</a></li>
+                        <li><a href="#opiniones" class="hover:text-white transition-colors">Opiniones</a></li>
+                        <li><a href="#contacto" class="hover:text-white transition-colors">Ubicación y Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Contacto Directo</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><i class="fa-solid fa-phone text-medical-500 mr-2"></i> <a href="tel:965485560" class="hover:text-white">965 48 55 60</a></li>
+                        <li><i class="fa-solid fa-envelope text-medical-500 mr-2"></i> <a href="mailto:error-lite+84f2@duckduckgo.com" class="hover:text-white">error-lite+84f2@duckduckgo.com</a></li>
+                        <li><i class="fa-solid fa-location-dot text-medical-500 mr-2"></i> C. Vicente Pardo, 17, Albatera</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-4">
+                <p>&copy; <span id="year"></span> Clínica Fisioterapia Y Rehab L S. Todos los derechos reservados.</p>
+                <p>Clínica ambulatoria en Albatera, Alicante.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPT MOBILE MENU & YEAR -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on click a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
