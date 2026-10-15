@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesón El Viso | Restaurante Asturiano en Oviedo</title>
+    <meta name="description" content="Disfruta de la mejor fabada, cachopo y comida casera asturiana en Mesón El Viso, Oviedo. Calidad, tradición y el mejor trato familiar.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'astur-gold': '#d4af37',
+                        'astur-red': '#8b0000',
+                        'gourmet-black': '#1c1917',
+                        'warm-cream': '#fefce8',
+                        'terracotta': '#92400e',
+                    },
+                    fontFamily: {
+                        'serif-title': ['"Playfair Display"', 'serif'],
+                        'serif-body': ['"Lora"', 'serif'],
+                        'sans': ['"Inter"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .hero-gradient {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-warm-cream text-stone-900 font-sans">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-md border-b border-terracotta/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="font-serif-title text-2xl md:text-3xl font-bold text-terracotta tracking-tighter">Mesón El Viso</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#inicio" class="hover:text-terracotta font-medium transition-colors">Inicio</a>
+                        <a href="#carta" class="hover:text-terracotta font-medium transition-colors">Nuestra Carta</a>
+                        <a href="#resenas" class="hover:text-terracotta font-medium transition-colors">Opiniones</a>
+                        <a href="#ubicacion" class="hover:text-terracotta font-medium transition-colors">Contacto</a>
+                        <a href="tel:985252447" class="bg-terracotta text-white px-6 py-2 rounded-full font-bold hover:bg-stone-800 transition-all shadow-lg">
+                            <i class="fas fa-phone-alt mr-2"></i> Reservar Mesa
+                        </a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <a href="tel:985252447" class="bg-terracotta text-white px-4 py-2 rounded-full text-sm font-bold">
+                        Reservar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative h-screen flex items-center justify-center text-center text-white hero-gradient pt-20">
+        <div class="max-w-4xl px-4">
+            <span class="inline-block px-4 py-1 mb-4 border border-astur-gold text-astur-gold uppercase tracking-[0.3em] text-sm font-semibold animate-fade-in">Tradición Asturiana en Oviedo</span>
+            <h1 class="font-serif-title text-5xl md:text-7xl font-bold mb-6">Sabor casero, <br><span class="italic text-astur-gold">corazón asturiano.</span></h1>
+            <p class="font-serif-body text-xl md:text-2xl mb-10 text-stone-200 max-w-2xl mx-auto">
+                Descubre por qué somos la joya escondida de Oviedo para disfrutar de la mejor fabada, el cachopo más auténtico y un trato que te hará sentir como en casa.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="tel:985252447" class="bg-terracotta hover:bg-white hover:text-terracotta text-white px-10 py-4 rounded-sm font-bold text-lg transition-all shadow-2xl uppercase tracking-wider">
+                    Reservar Mesa
+                </a>
+                <a href="#carta" class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 px-10 py-4 rounded-sm font-bold text-lg transition-all uppercase tracking-wider">
+                    Ver la Carta
+                </a>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-2xl opacity-50"></i>
+        </div>
+    </section>
+
+    <!-- Intro / About -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=800&q=80" 
+                         alt="Comida Asturiana Mesón El Viso" 
+                         class="rounded-lg shadow-2xl relative z-10"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute -bottom-6 -right-6 w-48 h-48 bg-terracotta/10 rounded-full -z-0"></div>
+                </div>
+                <div>
+                    <h2 class="font-serif-title text-4xl text-stone-900 mb-6 underline decoration-astur-gold decoration-4 underline-offset-8">Una "pequeña joya" en Oviedo</h2>
+                    <p class="font-serif-body text-lg text-stone-700 mb-6 leading-relaxed">
+                        Ubicado cerca del Palacio de Congresos, en la calle Rafael Altamira, el <strong>Mesón El Viso</strong> es un lugar con historia donde la materia prima de calidad y el cariño en la cocina son los protagonistas.
+                    </p>
+                    <p class="font-serif-body text-lg text-stone-700 mb-8 leading-relaxed">
+                        Desde nuestras famosas croquetas cremosas hasta nuestra fabada premiada por nuestros clientes, cada plato es un homenaje a la gastronomía asturiana más auténtica y casera.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6 border-t border-stone-100 pt-8">
+                        <div>
+                            <span class="block text-3xl font-bold text-terracotta">100%</span>
+                            <span class="text-sm uppercase tracking-widest text-stone-500">Casero</span>
+                        </div>
+                        <div>
+                            <span class="block text-3xl font-bold text-terracotta">13€</span>
+                            <span class="text-sm uppercase tracking-widest text-stone-500">Menú del día</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="carta" class="py-24 bg-stone-900 text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-serif-title text-5xl font-bold mb-4">Nuestra Carta</h2>
+                <div class="w-24 h-1 bg-astur-gold mx-auto mb-6"></div>
+                <p class="text-stone-400 max-w-2xl mx-auto uppercase tracking-widest text-sm">Especialidades de la casa y platos estrella</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-12">
+                <!-- Category 1 -->
+                <div class="space-y-8">
+                    <h3 class="font-serif-title text-2xl text-astur-gold border-b border-white/10 pb-2">Entrantes y Cuchara</h3>
+                    <div class="group">
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h4 class="text-xl font-semibold group-hover:text-astur-gold transition-colors">Fabada Asturiana</h4>
+                            <span class="text-astur-gold font-bold italic">La mejor</span>
+                        </div>
+                        <p class="text-stone-400 text-sm italic">Receta tradicional con compango de primera calidad.</p>
+                    </div>
+                    <div class="group">
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h4 class="text-xl font-semibold group-hover:text-astur-gold transition-colors">Croquetas de Jamón</h4>
+                        </div>
+                        <p class="text-stone-400 text-sm italic">Crujientes por fuera y extremadamente cremosas por dentro.</p>
+                    </div>
+                    <div class="group">
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h4 class="text-xl font-semibold group-hover:text-astur-gold transition-colors">Garbanzos de Olla</h4>
+                        </div>
+                        <p class="text-stone-400 text-sm italic">Te dejamos la olla en la mesa, como en casa.</p>
+                    </div>
+                    <div class="group">
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h4 class="text-xl font-semibold group-hover:text-astur-gold transition-colors">Sartén de Setas</h4>
+                        </div>
+                        <p class="text-stone-400 text-sm italic">Con gambas y jamón, un equilibrio de sabor espectacular.</p>
+                    </div>
+                </div>
+
+                <!-- Category 2 -->
+                <div class="space-y-8">
+                    <h3 class="font-serif-title text-2xl text-astur-gold border-b border-white/10 pb-2">Platos Principales</h3>
+                    <div class="group">
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h4 class="text-xl font-semibold group-hover:text-astur-gold transition-colors">Cachopo Tradicional</h4>
+                        </div>
+                        <p class="text-stone-400 text-sm italic">De jamón serrano y queso, con pan crujiente y relleno generoso.</p>
+                    </div>
+                    <div class="group">
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h4 class="text-xl font-semibold group-hover:text-astur-gold transition-colors">Arroz a la Asturiana</h4>
+                        </div>
+                        <p class="text-stone-400 text-sm italic">Un plato espectacular cargado de sabor local.</p>
+                    </div>
+                    <div class="group">
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h4 class="text-xl font-semibold group-hover:text-astur-gold transition-colors">Tacos de Atún</h4>
+                        </div>
+                        <p class="text-stone-400 text-sm italic">Salteados con ajo, producto fresco y de calidad.</p>
+                    </div>
+                    <div class="bg-terracotta/20 p-4 border border-terracotta/40 rounded-lg">
+                        <h4 class="text-astur-gold font-bold mb-2 uppercase tracking-tighter">Nuestro Menú del Día</h4>
+                        <p class="text-3xl font-serif-title mb-1">13,00€</p>
+                        <p class="text-xs text-stone-300">Incluye primer plato (servido en olla), segundo, pan, bebida y postre casero.</p>
+                    </div>
+                </div>
+
+                <!-- Category 3 -->
+                <div class="space-y-8">
+                    <h3 class="font-serif-title text-2xl text-astur-gold border-b border-white/10 pb-2">Postres Caseros</h3>
+                    <div class="group">
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h4 class="text-xl font-semibold group-hover:text-astur-gold transition-colors">Arroz con Leche</h4>
+                        </div>
+                        <p class="text-stone-400 text-sm italic">Cremoso, con su costra de azúcar quemada. Imprescindible.</p>
+                    </div>
+                    <div class="group">
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h4 class="text-xl font-semibold group-hover:text-astur-gold transition-colors">Natillas de la Casa</h4>
+                        </div>
+                        <p class="text-stone-400 text-sm italic">Hechas a mano diariamente, sabor a tradición.</p>
+                    </div>
+                    <div class="mt-12 p-6 bg-white/5 rounded-xl border border-white/10 text-center">
+                        <i class="fas fa-wine-glass-alt text-3xl text-astur-gold mb-4"></i>
+                        <p class="text-sm font-medium italic">"Materia prima de calidad y cocina con alma."</p>
+                        <a href="tel:985252447" class="inline-block mt-4 text-astur-gold border-b border-astur-gold pb-1 hover:text-white transition-colors">Reservar para comer hoy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-20 bg-warm-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-serif-title text-4xl text-center mb-12">Nuestras Instalaciones y Platos</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="h-64 overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=600&q=80" alt="Plato Mesón El Viso" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+                </div>
+                <div class="h-64 overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80" alt="Interior Mesón El Viso" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+                </div>
+                <div class="h-64 overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80" alt="Comida Casera" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+                </div>
+                <div class="h-64 overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1547573854-74d2a71d0826?auto=format&fit=crop&w=600&q=80" alt="Mesa servida" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="resenas" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-serif-title text-4xl font-bold mb-4 text-stone-900">Lo que dicen nuestros comensales</h2>
+                <div class="flex justify-center text-astur-gold mb-4">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="text-stone-500">Reseñas reales de Google Maps</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-warm-cream p-8 rounded-2xl shadow-sm border border-stone-100 card-hover">
+                    <div class="flex mb-4 text-astur-gold text-sm">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="font-serif-body text-stone-700 italic mb-6">"Sin duda este fue el mejor sitio para comerte la mejor fabada y con el mejor trato. Cabe destacar que el cachopo y el arroz con el leche también es de los mejores que hemos probado después de haber probado varios sitios de Asturias."</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-terracotta rounded-full flex items-center justify-center text-white font-bold">E</div>
+                        <div class="ml-3">
+                            <p class="font-bold text-stone-900 text-sm">Eduarda Almeida</p>
+                            <p class="text-xs text-stone-500">Guía Local</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-warm-cream p-8 rounded-2xl shadow-sm border border-stone-100 card-hover">
+                    <div class="flex mb-4 text-astur-gold text-sm">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="font-serif-body text-stone-700 italic mb-6">"Comida casera. Con un buen servicio y en un lugar con historia. Está cerca del Palacio de Congresos y es una “pequeña joya” para comer una espléndida comida asturiana. Comimos de menú (13 euros) unos garbanzos (te dejan la olla en la mesa)…"</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-stone-800 rounded-full flex items-center justify-center text-white font-bold">F</div>
+                        <div class="ml-3">
+                            <p class="font-bold text-stone-900 text-sm">Francisco Sanchez Diaz</p>
+                            <p class="text-xs text-stone-500">Cliente verificado</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-warm-cream p-8 rounded-2xl shadow-sm border border-stone-100 card-hover">
+                    <div class="flex mb-4 text-astur-gold text-sm">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="font-serif-body text-stone-700 italic mb-6">"Un arroz a la asturiana espectacular, unos tacos de atun salteados con ajo y una racion de natillas. Todo bien de cantidad sin exagerar, pero con una calidad muy alta tanto en producto como en el trabajo realizado. Un diez sin duda."</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-terracotta rounded-full flex items-center justify-center text-white font-bold">T</div>
+                        <div class="ml-3">
+                            <p class="font-bold text-stone-900 text-sm">txarly sparrow</p>
+                            <p class="text-xs text-stone-500">Cliente verificado</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="bg-warm-cream p-8 rounded-2xl shadow-sm border border-stone-100 card-hover">
+                    <div class="flex mb-4 text-astur-gold text-sm">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="font-serif-body text-stone-700 italic mb-6">"Segunda vez que venimos, se come muy bien, ya que la materia prima es de calidad y la comida es casera. Además, los platos son contundentes y los dueños son muy agradables. Si volvemos a Oviedo, volveremos!!!"</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-stone-800 rounded-full flex items-center justify-center text-white font-bold">N</div>
+                        <div class="ml-3">
+                            <p class="font-bold text-stone-900 text-sm">Naiara Carmona Vicario</p>
+                            <p class="text-xs text-stone-500">Cliente verificado</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 5 (Featured) -->
+                <div class="bg-stone-900 p-8 rounded-2xl shadow-xl border border-astur-gold/30 card-hover lg:col-span-2 text-white">
+                    <div class="flex mb-4 text-astur-gold text-sm">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="font-serif-body text-stone-200 italic mb-6 text-lg">"Tuvimos una experiencia espectacular. Desde el primer momento, el ambiente acogedor y la atención del propietario nos hicieron sentir como en casa. Las croquetas de jamón estaban crujientes por fuera y cremosas por dentro. El cachopo con un relleno generoso de ingredientes de calidad. Relación calidad-precio excelente."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-astur-gold rounded-full flex items-center justify-center text-stone-900 font-bold text-xl">W</div>
+                        <div class="ml-4">
+                            <p class="font-bold text-white text-base">Walvin</p>
+                            <p class="text-xs text-stone-400">Reseña destacada</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Map -->
+    <section id="ubicacion" class="py-24 bg-stone-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="font-serif-title text-4xl font-bold mb-8 text-stone-900">¿Dónde encontrarnos?</h2>
+                    <div class="space-y-6 mb-10">
+                        <div class="flex items-start">
+                            <div class="bg-terracotta/10 p-3 rounded-lg text-terracotta mr-4">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Dirección</h4>
+                                <p class="text-stone-600">C. Rafael Altamira, 5, 33006 Oviedo, Asturias, España</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-terracotta/10 p-3 rounded-lg text-terracotta mr-4">
+                                <i class="fas fa-phone-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Teléfono de Reservas</h4>
+                                <a href="tel:985252447" class="text-terracotta font-bold text-2xl hover:underline">985 25 24 47</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-terracotta/10 p-3 rounded-lg text-terracotta mr-4">
+                                <i class="fas fa-clock text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Horario de Cocina</h4>
+                                <p class="text-stone-600">Servicio de comida y cena. Se recomienda reserva previa, especialmente para el Menú del Día y fines de semana.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="tel:985252447" class="block text-center bg-terracotta text-white py-5 rounded-xl font-bold text-xl shadow-lg hover:bg-stone-800 transition-all uppercase tracking-widest">
+                        Llamar para Reservar Mesa
+                    </a>
+                </div>
+                <div class="relative min-h-[400px] shadow-2xl rounded-2xl overflow-hidden">
+                    <iframe src="https://www.google.com/maps?q=Mes%C3%B3n%20El%20Viso%20C.%20Rafael%20Altamira%2C%205%2C%2033006%20Oviedo%2C%20Asturias%2C%20Espa%C3%B1a&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-stone-900 text-stone-400 py-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h3 class="font-serif-title text-3xl font-bold text-white mb-4">Mesón El Viso</h3>
+            <p class="mb-8 max-w-md mx-auto">Auténtica gastronomía asturiana en Oviedo. Calidad, tradición y un servicio que te hará volver.</p>
+            <div class="flex justify-center space-x-6 mb-8 text-2xl">
+                <a href="#" class="hover:text-astur-gold transition-colors"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="hover:text-astur-gold transition-colors"><i class="fab fa-instagram"></i></a>
+                <a href="tel:985252447" class="hover:text-astur-gold transition-colors"><i class="fas fa-phone"></i></a>
+            </div>
+            <div class="text-sm border-t border-white/5 pt-8">
+                &copy; 2024 Mesón El Viso - Oviedo. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating (Optional but effective) -->
+    <a href="tel:985252447" class="fixed bottom-6 right-6 bg-terracotta text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl z-50 animate-pulse hover:scale-110 transition-transform">
+        <i class="fas fa-phone-alt text-2xl"></i>
+    </a>
+
+</body>
+</html>
