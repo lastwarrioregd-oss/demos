@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peluquería Canina Souad | Badajoz - Expertos en Belleza y Bienestar Animal</title>
+    <meta name="description" content="Peluquería Canina y Felina Souad en Badajoz. 14 años de experiencia, paciencia y cariño. Cortes personalizados, baños y trato sin estrés. ¡Reserva cita!">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#121212',
+                            card: '#1A1A1A',
+                            gold: '#D4AF37',
+                            'gold-light': '#F3E5AB',
+                            sand: '#FDFBF7',
+                            muted: '#888888'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-brand-dark text-brand-sand font-sans antialiased selection:bg-brand-gold selection:text-brand-dark">
+
+    <!-- TOP BAR -->
+    <div class="bg-brand-card border-b border-white/5 text-xs py-2 px-4 text-center md:flex md:justify-between md:px-12 text-brand-muted">
+        <div class="flex items-center justify-center gap-4 mb-1 md:mb-0">
+            <span><i class="fa-solid fa-location-dot text-brand-gold mr-1.5"></i> C. Adelardo Covarsí, 2, 06005 Badajoz</span>
+            <span class="hidden lg:inline"><i class="fa-solid fa-clock text-brand-gold mr-1.5"></i> Lunes a Sábado con cita previa</span>
+        </div>
+        <div class="flex items-center justify-center gap-4">
+            <a href="https://wa.me/34636985198" target="_blank" class="hover:text-brand-gold transition-colors"><i class="fa-brands fa-whatsapp text-brand-gold"></i> 636 98 51 98</a>
+            <div class="flex gap-2 text-brand-gold">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <span class="text-white ml-1 font-semibold">Excelencia 5 Estrellas en Badajoz</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER / NAVBAR -->
+    <header class="sticky top-0 z-50 bg-brand-dark/90 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-brand-gold to-brand-gold-light flex items-center justify-center text-brand-dark font-bold text-xl shadow-lg shadow-brand-gold/20 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-paw"></i>
+                </div>
+                <div>
+                    <span class="font-serif text-xl sm:text-2xl font-bold tracking-wide text-white block leading-tight">Souad</span>
+                    <span class="text-[10px] uppercase tracking-widest text-brand-gold font-semibold block">Peluquería Canina & Felina</span>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#servicios" class="text-brand-sand/80 hover:text-brand-gold transition-colors">Servicios</a>
+                <a href="#sobre-mi" class="text-brand-sand/80 hover:text-brand-gold transition-colors">Sobre Souad</a>
+                <a href="#experiencias" class="text-brand-sand/80 hover:text-brand-gold transition-colors">Opiniones Reales</a>
+                <a href="#ubicacion" class="text-brand-sand/80 hover:text-brand-gold transition-colors">Ubicación</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="https://wa.me/34636985198" target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-brand-gold hover:bg-brand-gold-light text-brand-dark font-semibold px-5 py-2.5 rounded-full transition-all shadow-lg shadow-brand-gold/20 transform hover:-translate-y-0.5">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Reservar Cita</span>
+                </a>
+                <button id="menu-btn" class="md:hidden text-white text-2xl focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-card border-b border-white/10 px-6 py-6 space-y-4">
+            <a href="#servicios" class="block text-brand-sand hover:text-brand-gold text-lg font-medium">Servicios</a>
+            <a href="#sobre-mi" class="block text-brand-sand hover:text-brand-gold text-lg font-medium">Sobre Souad</a>
+            <a href="#experiencias" class="block text-brand-sand hover:text-brand-gold text-lg font-medium">Opiniones Reales</a>
+            <a href="#ubicacion" class="block text-brand-sand hover:text-brand-gold text-lg font-medium">Ubicación</a>
+            <a href="https://wa.me/34636985198" target="_blank" class="flex items-center justify-center gap-2 w-full bg-brand-gold text-brand-dark font-bold py-3 rounded-xl mt-4">
+                <i class="fa-brands fa-whatsapp text-xl"></i> Reservar Cita
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-20 lg:py-32">
+        <!-- Background Overlay / Image -->
+        <div class="absolute inset-0 z-0 opacity-25">
+            <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" alt="Peluquería Canina Souad Badajoz" class="w-full h-full object-cover">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/90 to-transparent z-1"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 px-4 py-1.5 rounded-full text-brand-gold text-xs font-semibold tracking-wider uppercase">
+                    <i class="fa-solid fa-award"></i> La referencia absoluta en Badajoz desde hace más de 14 años
+                </div>
+                <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1]">
+                    El arte del cuidado y <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold to-brand-gold-light">amor peludo</span>
+                </h1>
+                <p class="text-brand-sand/80 text-lg sm:text-xl font-light max-w-2xl mx-auto lg:mx-0">
+                    Paciencia infinita, profesionalidad contrastada y un trato exquisito. Especialistas en perros con miedo, cortes complejos y peluquería felina sin sedación en Badajoz.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                    <a href="https://wa.me/34636985198" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-brand-gold hover:bg-brand-gold-light text-brand-dark font-bold px-8 py-4 rounded-full text-lg transition-all shadow-xl shadow-brand-gold/20 transform hover:-translate-y-0.5">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                        <span>Reservar Cita</span>
+                    </a>
+                    <a href="#servicios" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 text-white font-medium px-8 py-4 rounded-full text-lg border border-white/10 transition-all">
+                        <span>Ver Tratamientos</span>
+                        <i class="fa-solid fa-arrow-down text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Trust badges under hero -->
+                <div class="pt-8 grid grid-cols-3 gap-4 border-t border-white/10 max-w-lg mx-auto lg:mx-0">
+                    <div>
+                        <span class="block font-serif text-2xl sm:text-3xl font-bold text-brand-gold">+14 Años</span>
+                        <span class="text-xs text-brand-muted">Trayectoria en Badajoz</span>
+                    </div>
+                    <div>
+                        <span class="block font-serif text-2xl sm:text-3xl font-bold text-brand-gold">100%</span>
+                        <span class="text-xs text-brand-muted">Paciencia y Cariño</span>
+                    </div>
+                    <div>
+                        <span class="block font-serif text-2xl sm:text-3xl font-bold text-brand-gold">Económica</span>
+                        <span class="text-xs text-brand-muted">Calidad superior</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Image / Card Box -->
+            <div class="lg:col-span-5">
+                <div class="relative mx-auto max-w-md lg:max-w-none">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-brand-gold to-brand-gold-light rounded-2xl blur-xl opacity-30 animate-pulse"></div>
+                    <div class="relative bg-brand-card border border-white/10 rounded-2xl p-6 shadow-2xl overflow-hidden space-y-6">
+                        <div class="aspect-[4/3] rounded-xl overflow-hidden relative">
+                            <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=800&q=80';" alt="Peluquería canina profesional" class="w-full h-full object-cover">
+                            <div class="absolute bottom-3 left-3 bg-brand-dark/80 backdrop-blur-md px-3 py-1.5 rounded-lg text-xs font-semibold text-brand-gold border border-brand-gold/20">
+                                <i class="fa-solid fa-heart text-red-500 mr-1"></i> Trato familiar y respetuoso
+                            </div>
+                        </div>
+
+                        <div class="space-y-3">
+                            <h3 class="font-serif text-xl font-bold text-white">¿Por qué confían en Souad?</h3>
+                            <p class="text-sm text-brand-muted leading-relaxed">
+                                "La única que consigue pelarla y lavarla... Sabe tratar a nuestras mascotas con cariño y respeto. Además, ¡es la más económica!" — Ignacio C.
+                            </p>
+                        </div>
+
+                        <a href="https://wa.me/34636985198" target="_blank" class="block w-full py-3 bg-white/5 hover:bg-brand-gold hover:text-brand-dark text-center font-semibold rounded-xl border border-white/10 transition-colors text-sm">
+                            Consulta disponibilidad por WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: NUESTROS TRATAMIENTOS, CORTES Y TARIFAS -->
+    <section id="servicios" class="py-24 bg-brand-card/50 relative border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="text-brand-gold text-xs font-semibold tracking-widest uppercase">Especialidades & Servicios</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white">Tratamientos a medida para tu mascota</h2>
+                <p class="text-brand-muted text-base sm:text-lg">
+                    Cada animal es único. Ofrecemos técnicas adaptadas a su tipo de pelo, sensibilidad y necesidades específicas con total profesionalidad.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Servicio 1 -->
+                <div class="bg-brand-card border border-white/10 rounded-2xl p-8 hover:border-brand-gold/50 transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-scissors"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-3">Corte a Tijera y Máquina</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed mb-6">
+                            Especialistas en perros miedosos o con pánico a la máquina. A base de paciencia y cariño, conseguimos que pierdan el miedo al corte de pelo.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/5 flex items-center justify-between">
+                        <span class="text-xs text-brand-gold font-semibold uppercase tracking-wider">Adaptado por raza</span>
+                        <a href="https://wa.me/34636985198" target="_blank" class="text-xs font-bold text-white hover:text-brand-gold flex items-center gap-1">Reservar <i class="fa-solid fa-chevron-right text-[10px]"></i></a>
+                    </div>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="bg-brand-card border border-white/10 rounded-2xl p-8 hover:border-brand-gold/50 transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-cat"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-3">Peluquería Felina Experta</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed mb-6">
+                            Una de las pocas profesionales capaces de pelar y lavar gatos <strong class="text-white">sin necesidad de anestesia</strong>. Tranquilidad absoluta garantizada.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/5 flex items-center justify-between">
+                        <span class="text-xs text-brand-gold font-semibold uppercase tracking-wider">Sin anestesia</span>
+                        <a href="https://wa.me/34636985198" target="_blank" class="text-xs font-bold text-white hover:text-brand-gold flex items-center gap-1">Reservar <i class="fa-solid fa-chevron-right text-[10px]"></i></a>
+                    </div>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="bg-brand-card border border-white/10 rounded-2xl p-8 hover:border-brand-gold/50 transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-bath"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-3">Baños Profesionales y Secado</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed mb-6">
+                            Lavado profundo con productos de alta gama adaptados al PH de la piel de tu perro o gato. Desenredado profesional y secado cuidadoso.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/5 flex items-center justify-between">
+                        <span class="text-xs text-brand-gold font-semibold uppercase tracking-wider">Higiene óptima</span>
+                        <a href="https://wa.me/34636985198" target="_blank" class="text-xs font-bold text-white hover:text-brand-gold flex items-center gap-1">Reservar <i class="fa-solid fa-chevron-right text-[10px]"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Banner económico / calidad -->
+            <div class="mt-12 bg-gradient-to-r from-brand-card to-brand-dark border border-brand-gold/20 rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-gold text-xl flex-shrink-0">
+                        <i class="fa-solid fa-percent"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-serif text-lg font-bold text-white">La mejor relación calidad-precio de Badajoz</h4>
+                        <p class="text-sm text-brand-muted">Tarifas económicas sin renunciar a un trato cariñoso, rápido y de máxima calidad profesional.</p>
+                    </div>
+                </div>
+                <a href="https://wa.me/34636985198" target="_blank" class="bg-brand-gold hover:bg-brand-gold-light text-brand-dark font-bold px-6 py-3 rounded-xl transition-all whitespace-nowrap shadow-lg shadow-brand-gold/20">
+                    Consultar Precio por Raza
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE SOUAD (HISTORIA Y CONFIANZA) -->
+    <section id="sobre-mi" class="py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-brand-gold text-xs font-semibold tracking-widest uppercase">Vocación y Experiencia</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white">Más de una década cuidando de los reyes de la casa</h2>
+                    <p class="text-brand-muted text-base leading-relaxed">
+                        En la Peluquería Canina Souad sabemos que tu mascota no es solo un animal, es parte de tu familia. Por eso, cada sesión se realiza con paciencia infinita, respetando sus tiempos y ganándose su confianza paso a paso.
+                    </p>
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-brand-gold/20 text-brand-gold flex items-center justify-center text-xs mt-1 flex-shrink-0">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <p class="text-sm text-brand-sand/90"><strong>Especialistas en perros miedosos o nerviosos:</strong> Mediante refuerzo positivo y cariño logramos que pierdan el miedo a la tijera.</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-brand-gold/20 text-brand-gold flex items-center justify-center text-xs mt-1 flex-shrink-0">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <p class="text-sm text-brand-sand/90"><strong>Pioneros en gatos en Badajoz:</strong> Capaz de tratar y pelar felinos sin anestesia gracias a una técnica experta y calmada.</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-brand-gold/20 text-brand-gold flex items-center justify-center text-xs mt-1 flex-shrink-0">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <p class="text-sm text-brand-sand/90"><strong>Clientes fieles de por vida:</strong> Dueños que llevan a sus mascotas desde hace más de 14 años avalan nuestro compromiso diario.</p>
+                        </div>
+                    </div>
+                    <div class="pt-4">
+                        <a href="https://wa.me/34636985198" target="_blank" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3 rounded-xl transition-all border border-white/10">
+                            <i class="fa-brands fa-whatsapp text-brand-gold text-lg"></i> Hablar con Souad
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 grid grid-cols-2 gap-4">
+                    <div class="space-y-4">
+                        <div class="aspect-[4/5] rounded-2xl overflow-hidden border border-white/10">
+                            <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?auto=format&fit=crop&w=600&q=80';" alt="Perro feliz en peluquería" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="bg-brand-card p-6 rounded-2xl border border-white/10 text-center">
+                            <span class="block font-serif text-3xl font-bold text-brand-gold">14+</span>
+                            <span class="text-xs text-brand-muted uppercase tracking-wider">Años de fidelidad</span>
+                        </div>
+                    </div>
+                    <div class="space-y-4 pt-8">
+                        <div class="bg-brand-card p-6 rounded-2xl border border-white/10 text-center">
+                            <span class="block font-serif text-3xl font-bold text-brand-gold">5★</span>
+                            <span class="text-xs text-brand-muted uppercase tracking-wider">Reseñas en Google</span>
+                        </div>
+                        <div class="aspect-[4/5] rounded-2xl overflow-hidden border border-white/10">
+                            <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=600&q=80';" alt="Cuidado de mascotas Badajoz" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OPINIONES REALES VERIFICADAS -->
+    <section id="experiencias" class="py-24 bg-brand-card/30 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="text-brand-gold text-xs font-semibold tracking-widest uppercase">Opiniones Reales Verificadas</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white">Lo que dicen quienes confían en nosotros</h2>
+                <p class="text-brand-muted text-base">Palabras sinceras de dueños y dueñas que traen a sus perros y gatos desde hace años.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Reseña 1 -->
+                <div class="bg-brand-card border border-white/10 rounded-2xl p-6 flex flex-col justify-between shadow-lg relative">
+                    <div class="text-brand-gold text-sm mb-4 flex gap-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-brand-sand/90 text-sm leading-relaxed italic mb-6">
+                        "Un 10 para Souad. Llevo 14 años llevando a my perrita Inda. Es la única que consigue pelarla y lavarla, ni siquiera lo lograron en otros de Madrid. Sabe tratar a nuestras mascotas con cariño y respeto. Además, ¡es la más económica! Sin dudas, la recomiendo."
+                    </p>
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/5">
+                        <div class="w-10 h-10 rounded-full bg-brand-gold/20 flex items-center justify-center font-bold text-brand-gold text-sm">IC</div>
+                        <div>
+                            <span class="block font-semibold text-white text-sm">Ignacio Chipa</span>
+                            <span class="text-xs text-brand-muted">Cliente desde hace 14 años</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 2 -->
+                <div class="bg-brand-card border border-white/10 rounded-2xl p-6 flex flex-col justify-between shadow-lg relative">
+                    <div class="text-brand-gold text-sm mb-4 flex gap-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-brand-sand/90 text-sm leading-relaxed italic mb-6">
+                        "Muy cariñosa y paciente con los perritos además de ser toda una profesional en su trabajo. Mi perrito y yo vamos desde que él tenía 3 meses y para nosotros es la mejor. De hecho él solo quiere ir con ella, cada vez que pasamos por la peluquería en nuestros paseos se va directo a verla y saludarla y eso ya es la mejor señal de cariño y buen trato."
+                    </p>
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/5">
+                        <div class="w-10 h-10 rounded-full bg-brand-gold/20 flex items-center justify-center font-bold text-brand-gold text-sm">M</div>
+                        <div>
+                            <span class="block font-semibold text-white text-sm">Mary</span>
+                            <span class="text-xs text-brand-muted">Cliente habitual</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 3 -->
+                <div class="bg-brand-card border border-white/10 rounded-2xl p-6 flex flex-col justify-between shadow-lg relative">
+                    <div class="text-brand-gold text-sm mb-4 flex gap-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-brand-sand/90 text-sm leading-relaxed italic mb-6">
+                        "Encantada con Souad y su peluquería. Le llevo a dos de mis perritos desde hace AÑOS y siempre genial. Es alucinante la rapidez y lo bien que los deja! Muchas veces cuando voy a recogerlos Souad ya ha acabado y los está paseando al lado..."
+                    </p>
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/5">
+                        <div class="w-10 h-10 rounded-full bg-brand-gold/20 flex items-center justify-center font-bold text-brand-gold text-sm">L</div>
+                        <div>
+                            <span class="block font-semibold text-white text-sm">L BPg</span>
+                            <span class="text-xs text-brand-muted">Dueña de dos perritos</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 4 -->
+                <div class="bg-brand-card border border-white/10 rounded-2xl p-6 flex flex-col justify-between shadow-lg relative">
+                    <div class="text-brand-gold text-sm mb-4 flex gap-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-brand-sand/90 text-sm leading-relaxed italic mb-6">
+                        "Profesionalidad y calidad de 10! Mi perra bastante miedosa, a base de paciencia y cariño, ha conseguido ganársela y que no tenga miedo a las tijeras ni la máquina! Mi tranquilidad va por encima de todo. Gracias por tu trato y por nunca fallar. Recomendable 💯x💯..."
+                    </p>
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/5">
+                        <div class="w-10 h-10 rounded-full bg-brand-gold/20 flex items-center justify-center font-bold text-brand-gold text-sm">EP</div>
+                        <div>
+                            <span class="block font-semibold text-white text-sm">Eva Pimi</span>
+                            <span class="text-xs text-brand-muted">Propietaria de mascota miedosa</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 5 -->
+                <div class="bg-brand-card border border-white/10 rounded-2xl p-6 flex flex-col justify-between shadow-lg relative md:col-span-2 lg:col-span-2">
+                    <div class="text-brand-gold text-sm mb-4 flex gap-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-brand-sand/90 text-sm leading-relaxed italic mb-6">
+                        "Souad, para mí la mejor peluquera felina que hay en Badajoz y alrededores, se atrevió a pelar a mi gata sin anestesiar, me tranquilizó desde el minuto uno, impresionante como la trató y con qué profesionalidad lo hizo. Encantada con ella, recomendable 100%, encantadora y siempre dispuesta."
+                    </p>
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/5">
+                        <div class="w-10 h-10 rounded-full bg-brand-gold/20 flex items-center justify-center font-bold text-brand-gold text-sm">CA</div>
+                        <div>
+                            <span class="block font-semibold text-white text-sm">Conchi Aguilar</span>
+                            <span class="text-xs text-brand-muted">Dueña de gata</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAPA INTERACTIVO Y UBICACIÓN -->
+    <section id="ubicacion" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-brand-gold text-xs font-semibold tracking-widest uppercase">Encuéntranos en Badajoz</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">Visítanos en nuestro salón</h2>
+                    <p class="text-brand-muted text-sm sm:text-base leading-relaxed">
+                        Ven a conocernos o ponte en contacto con nosotros para reservar tu cita previa. Atendemos de forma personalizada a cada peludo.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center text-lg flex-shrink-0 mt-1">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <span class="block font-semibold text-white">Dirección Exacta</span>
+                                <span class="text-sm text-brand-muted">C. Adelardo Covarsí, 2, 06005 Badajoz</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center text-lg flex-shrink-0 mt-1">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <span class="block font-semibold text-white">Teléfono y WhatsApp</span>
+                                <a href="https://wa.me/34636985198" target="_blank" class="text-sm text-brand-gold hover:underline">636 98 51 98</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center text-lg flex-shrink-0 mt-1">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <span class="block font-semibold text-white">Horario</span>
+                                <span class="text-sm text-brand-muted">Lunes a Sábado (Con cita previa)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="https://wa.me/34636985198" target="_blank" class="inline-flex items-center gap-2 bg-brand-gold hover:bg-brand-gold-light text-brand-dark font-bold px-8 py-4 rounded-full transition-all shadow-lg shadow-brand-gold/20">
+                            <i class="fa-brands fa-whatsapp text-xl"></i> Reservar Cita Ahora
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <div class="bg-brand-card p-4 rounded-2xl border border-white/10 shadow-2xl">
+                        <iframe src="https://www.google.com/maps?q=Peluquer%C3%ADa%20Canina%20Souad%20C.%20Adelardo%20Covars%C3%AD%2C%202%2C%2006005%20Badajoz&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALL TO ACTION FINAL -->
+    <section class="py-20 bg-gradient-to-tr from-brand-card via-brand-dark to-brand-card border-t border-white/10 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=80';" alt="Mascotas felices" class="w-full h-full object-cover">
+        </div>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
+            <span class="text-brand-gold text-xs font-semibold tracking-widest uppercase">¿Listo para que luzcan radiantes?</span>
+            <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white">Dale a tu mascota el cuidado que se merece en Badajoz</h2>
+            <p class="text-brand-muted text-base sm:text-lg max-w-2xl mx-auto">
+                Escríbenos directamente por WhatsApp y agenda su próxima sesión de baño o corte con Souad. ¡Te esperamos!
+            </p>
+            <div class="pt-4">
+                <a href="https://wa.me/34636985198" target="_blank" class="inline-flex items-center gap-3 bg-brand-gold hover:bg-brand-gold-light text-brand-dark font-bold px-10 py-5 rounded-full text-lg transition-all shadow-2xl shadow-brand-gold/30 transform hover:-translate-y-1">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    <span>Reservar Cita por WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-dark border-t border-white/10 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-brand-gold flex items-center justify-center text-brand-dark font-bold text-sm">
+                    <i class="fa-solid fa-paw"></i>
+                </div>
+                <span class="font-serif text-lg font-bold text-white">Peluquería Canina Souad</span>
+            </div>
+            
+            <p class="text-xs text-brand-muted">
+                © <script>document.write(new Date().getFullYear())</script> Peluquería Canina Souad. C. Adelardo Covarsí, 2, 06005 Badajoz. Todos los derechos reservados.
+            </p>
+
+            <div class="flex items-center gap-4 text-brand-gold text-lg">
+                <a href="https://wa.me/34636985198" target="_blank" class="hover:text-white transition-colors" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script para menú móvil -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
