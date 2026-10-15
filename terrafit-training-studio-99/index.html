@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terrafit Training Studio | Entrenador Personal en A Coruña</title>
+    <!-- Tailwind CSS (vía CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f4fce3',
+                            100: '#e9fcc7',
+                            500: '#84cc16',
+                            600: '#65a30d',
+                            700: '#4d7c0f',
+                            900: '#365314',
+                            dark: '#0a0a0a',
+                            card: '#121212',
+                            border: '#262626'
+                        }
+                    }
+                }
+            }
+        }
+    </spanscript>
+    <!-- Google Fonts: Inter & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome para Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #f3f4f6;
+        }
+        h1, h2, h3, h4, h5, h6, .font-heading {
+            font-family: 'Outfit', sans-serif;
+        }
+        .hero-glow {
+            background: radial-gradient(circle at center, rgba(132, 204, 22, 0.15) 0%, rgba(10, 10, 10, 0) 70%);
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-gray-100 selection:bg-brand-500 selection:text-black">
+
+    <!-- Barra Superior de Anuncio / Contacto Rápido -->
+    <div class="bg-brand-600 text-black px-4 py-2 text-xs sm:text-sm font-semibold text-center flex flex-wrap justify-center items-center gap-4">
+        <span><i class="fa-solid fa-location-dot mr-1"></i> Rúa Adelaida Muro, 5, 15002 A Coruña</span>
+        <span class="hidden md:inline">|</span>
+        <span><i class="fa-solid fa-star text-yellow-300 mr-1"></i> Entrenamientos 100% Personalizados con Andreas Avila</span>
+        <span class="hidden md:inline">|</span>
+        <a href="https://wa.me/34664675272" target="_blank" class="underline hover:text-white transition-colors">
+            <i class="fa-brands fa-whatsapp mr-1"></i> 664 67 52 72
+        </a>
+    </div>
+
+    <!-- Navegación Principal -->
+    <header class="sticky top-0 z-50 bg-brand-dark/95 backdrop-blur-md border-b border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2 group">
+                <div class="bg-brand-500 text-black font-black text-xl px-3 py-1.5 rounded-lg tracking-wider font-heading group-hover:scale-105 transition-transform">
+                    TF
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-heading font-extrabold text-lg sm:text-xl tracking-tight leading-none text-white">TERRAFIT</span>
+                    <span class="text-xs text-brand-500 font-semibold tracking-widest uppercase">Training Studio A Coruña</span>
+                </div>
+            </a>
+
+            <!-- Navegación Escritorio -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+                <a href="#metodo" class="hover:text-brand-500 transition-colors">El Método</a>
+                <a href="#programas" class="hover:text-brand-500 transition-colors">Programas y Tarifas</a>
+                <a href="#instalaciones" class="hover:text-brand-500 transition-colors">Instalaciones</a>
+                <a href="#testimonios" class="hover:text-brand-500 transition-colors">Opiniones</a>
+                <a href="#contacto" class="hover:text-brand-500 transition-colors">Ubicación</a>
+            </nav>
+
+            <!-- CTA Botón -->
+            <div class="flex items-center gap-4">
+                <a href="https://wa.me/34664675272" target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-black font-bold px-5 py-2.5 rounded-xl text-sm transition-all transform hover:-translate-y-0.5 shadow-lg shadow-brand-500/20">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    Probar Clase / Apuntarme
+                </a>
+                <!-- Menú móvil botón -->
+                <button id="menu-btn" class="md:hidden text-gray-300 hover:text-white focus:outline-none text-2xl">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-card border-b border-brand-border px-4 pt-2 pb-6 space-y-3">
+            <a href="#metodo" class="block py-2 text-gray-300 hover:text-brand-500 font-medium">El Método</a>
+            <a href="#programas" class="block py-2 text-gray-300 hover:text-brand-500 font-medium">Programas y Tarifas</a>
+            <a href="#instalaciones" class="block py-2 text-gray-300 hover:text-brand-500 font-medium">Instalaciones</a>
+            <a href="#testimonios" class="block py-2 text-gray-300 hover:text-brand-500 font-medium">Opiniones</a>
+            <a href="#contacto" class="block py-2 text-gray-300 hover:text-brand-500 font-medium">Ubicación</a>
+            <div class="pt-2">
+                <a href="https://wa.me/34664675272" target="_blank" class="flex items-center justify-center gap-2 bg-brand-500 text-black font-bold px-5 py-3 rounded-xl text-sm w-full">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    Probar Clase / Apuntarme
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden hero-glow pt-12 pb-20">
+        <div class="absolute inset-0 z-0 opacity-20">
+            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80';" alt="Terrafit Training Studio Fondo" class="w-full h-full object-cover">
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 bg-brand-500/10 border border-brand-500/30 text-brand-500 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold mb-6">
+                <i class="fa-solid fa-fire"></i> Entrenador Internacional en A Coruña
+            </div>
+            <h1 class="font-heading text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight mb-6">
+                Transforma tu cuerpo y supera tus límites con <span class="text-brand-500">Andreas Avila</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto mb-10 font-normal">
+                Entrenamiento personal especializado y readaptación en el estudio más exclusivo de A Coruña. Progreso real, técnica impecable y motivación constante.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="https://wa.me/34664675272" target="_blank" class="w-full sm:w-auto bg-brand-500 hover:bg-brand-600 text-black font-extrabold px-8 py-4 rounded-xl text-base transition-all transform hover:-translate-y-1 shadow-xl shadow-brand-500/25 flex items-center justify-center gap-3">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    Probar Clase / Apuntarme
+                </a>
+                <a href="#programas" class="w-full sm:w-auto bg-brand-card hover:bg-neutral-800 text-white border border-brand-border font-semibold px-8 py-4 rounded-xl text-base transition-all flex items-center justify-center gap-2">
+                    Ver Programas <i class="fa-solid fa-arrow-down text-xs"></i>
+                </a>
+            </div>
+
+            <!-- Trust badges rápidos -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 pt-10 border-t border-brand-border/60 max-w-5xl mx-auto text-left">
+                <div class="flex items-center gap-3">
+                    <div class="bg-brand-500/10 p-3 rounded-lg text-brand-500"><i class="fa-solid fa-user-check text-xl"></i></div>
+                    <div>
+                        <div class="font-bold text-white">100% Adaptado</div>
+                        <div class="text-xs text-gray-400">A tu nivel y objetivos</div>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="bg-brand-500/10 p-3 rounded-lg text-brand-500"><i class="fa-solid fa-heart-pulse text-xl"></i></div>
+                    <div>
+                        <div class="font-bold text-white">Readaptación</div>
+                        <div class="text-xs text-gray-400">Reducción de dolores crónicos</div>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="bg-brand-500/10 p-3 rounded-lg text-brand-500"><i class="fa-solid fa-chart-line text-xl"></i></div>
+                    <div>
+                        <div class="font-bold text-white">Progreso Real</div>
+                        <div class="text-xs text-gray-400">Resultados medibles</div>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="bg-brand-500/10 p-3 rounded-lg text-brand-500"><i class="fa-solid fa-star text-xl"></i></div>
+                    <div>
+                        <div class="font-bold text-white">5 Estrellas</div>
+                        <div class="text-xs text-gray-400">Valoraciones excelentes</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección El Método / Andreas Avila -->
+    <section id="metodo" class="py-20 bg-brand-card border-y border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="inline-flex items-center gap-2 bg-brand-500/10 text-brand-500 px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider">
+                        Entrenador Internacional
+                    </div>
+                    <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                        Experiencia internacional y profesionalismo al servicio de tu salud
+                    </h2>
+                    <p class="text-gray-300 leading-relaxed">
+                        Con trayectoria en Suiza y ahora en A Coruña, <strong>Andreas Avila</strong> lidera Terrafit Training Studio combinando un rigor técnico absoluto con una energía y buen humor contagiantes. 
+                    </p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Ya sea que busques mejorar tu rendimiento, ganar adherencia al deporte, o recuperarte de limitaciones físicas y dolores crónicos, aquí encontrarás un ambiente profesional, cercano y exigente a la vez.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-brand-500 mt-1"></i>
+                            <span class="text-sm text-gray-200">Planificación específica por perfil</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-brand-500 mt-1"></i>
+                            <span class="text-sm text-gray-200">Corrección postural y técnica</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-brand-500 mt-1"></i>
+                            <span class="text-sm text-gray-200">Motivación y constancia asegurada</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-brand-500 mt-1"></i>
+                            <span class="text-sm text-gray-200">Tratamiento de lesiones y dolor</span>
+                        </div>
+                    </div>
+                    <div class="pt-4">
+                        <a href="https://wa.me/34664675272" target="_blank" class="inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-black font-bold px-6 py-3 rounded-xl transition-colors">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            Reserva tu sesión con Andreas
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:col-span-6">
+                    <div class="relative rounded-2xl overflow-hidden border border-brand-border shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1200&q=80" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80';" alt="Entrenamiento en Terrafit Training Studio" class="w-full h-[420px] object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent opacity-80"></div>
+                        <div class="absolute bottom-6 left-6 right-6 p-6 bg-brand-dark/90 backdrop-blur-md rounded-xl border border-brand-border">
+                            <p class="text-sm italic text-gray-200 mb-2">"Andreas ha sido capaz de identificar el problema y planificar un entrenamiento que no solo me ayuda a conseguir mis objetivos, sino a reducir muchísimo el dolor."</p>
+                            <span class="text-xs font-bold text-brand-500 uppercase tracking-widest">— Cristina Mayor (Cliente Verificada)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programas de Entrenamiento, Clases y Tarifas -->
+    <section id="programas" class="py-20 bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-500 font-bold uppercase tracking-widest text-xs sm:text-sm">Nuestros Servicios</span>
+                <h2 class="font-heading text-3xl sm:text-5xl font-extrabold text-white mt-2 mb-4">Programas de Entrenamiento y Tarifas</h2>
+                <p class="text-gray-400 text-base sm:text-lg">Soluciones especializadas adaptadas 100% a tus necesidades físicas, metas y estilo de vida en A Coruña.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Programa 1 -->
+                <div class="bg-brand-card rounded-2xl border border-brand-border p-8 flex flex-col justify-between hover:border-brand-500 transition-all group">
+                    <div>
+                        <div class="bg-brand-500/10 w-14 h-14 rounded-xl flex items-center justify-center text-brand-500 text-2xl mb-6 group-hover:bg-brand-500 group-hover:text-black transition-colors">
+                            <i class="fa-solid fa-user-gear"></i>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold text-white mb-3">Entrenamiento Personal 1 a 1</h3>
+                        <p class="text-gray-400 text-sm mb-6">Sesiones totalmente individualizadas con Andreas Avila. Atención exclusiva para corregir técnica, potenciar tu fuerza y maximizar resultados en tiempo récord.</p>
+                        <ul class="space-y-3 text-sm text-gray-300 mb-8">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500"></i> Evaluación inicial completa</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500"></i> Adaptación absoluta al nivel</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check total text-brand-500"></i> Seguimiento constante</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="border-t border-brand-border pt-4 mb-6">
+                            <span class="text-xs text-gray-400 uppercase tracking-wider block">Asesoramiento Exclusivo</span>
+                            <span class="text-2xl font-extrabold text-white font-heading">Planes a Medida</span>
+                        </div>
+                        <a href="https://wa.me/34664675272" target="_blank" class="w-full bg-neutral-800 hover:bg-brand-500 hover:text-black text-white font-bold py-3 rounded-xl text-center block transition-all">
+                            Probar Clase / Apuntarme
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Programa 2 (Destacado) -->
+                <div class="bg-brand-card rounded-2xl border-2 border-brand-500 p-8 flex flex-col justify-between relative shadow-2xl shadow-brand-500/10">
+                    <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-brand-500 text-black text-xs font-black uppercase px-4 py-1 rounded-full tracking-wider">
+                        Más Popular
+                    </div>
+                    <div>
+                        <div class="bg-brand-500 w-14 h-14 rounded-xl flex items-center justify-center text-black text-2xl mb-6">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold text-white mb-3">Readaptación y Salud Física</h3>
+                        <p class="text-gray-300 text-sm mb-6">Especialmente diseñado para personas con dolores crónicos, limitaciones físicas o lesiones previas. Planificación clínica para recuperar una vida normal y sin dolor.</p>
+                        <ul class="space-y-3 text-sm text-gray-300 mb-8">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500"></i> Identificación de origen del dolor</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500"></i> Readaptación funcional segura</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500"></i> Recuperación de movilidad y energía</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="border-t border-brand-border pt-4 mb-6">
+                            <span class="text-xs text-gray-400 uppercase tracking-wider block">Especialidad Clínica</span>
+                            <span class="text-2xl font-extrabold text-white font-heading">Resultados Comprobados</span>
+                        </div>
+                        <a href="https://wa.me/34664675272" target="_blank" class="w-full bg-brand-500 hover:bg-brand-600 text-black font-extrabold py-3 rounded-xl text-center block transition-all shadow-lg shadow-brand-500/20">
+                            Probar Clase / Apuntarme
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Programa 3 -->
+                <div class="bg-brand-card rounded-2xl border border-brand-border p-8 flex flex-col justify-between hover:border-brand-500 transition-all group">
+                    <div>
+                        <div class="bg-brand-500/10 w-14 h-14 rounded-xl flex items-center justify-center text-brand-500 text-2xl mb-6 group-hover:bg-brand-500 group-hover:text-black transition-colors">
+                            <i class="fa-solid fa-dumbbell"></i>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold text-white mb-3">Grupos Reducidos & Rendimiento</h3>
+                        <p class="text-gray-400 text-sm mb-6">Entrenamientos dinámicos, divertidos y altamente motivadores en grupos reducidos. Supera tus marcas con la mejor compañía y ambiente profesional.</p>
+                        <ul class="space-y-3 text-sm text-gray-300 mb-8">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500"></i> Dinámicas amenas y retadoras</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500"></i> Ganancia de adherencia al deporte</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-500"></i> Energía y buen ambiente</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="border-t border-brand-border pt-4 mb-6">
+                            <span class="text-xs text-gray-400 uppercase tracking-wider block">Plazas Limitadas</span>
+                            <span class="text-2xl font-extrabold text-white font-heading">Consultar Horarios</span>
+                        </div>
+                        <a href="https://wa.me/34664675272" target="_blank" class="w-full bg-neutral-800 hover:bg-brand-500 hover:text-black text-white font-bold py-3 rounded-xl text-center block transition-all">
+                            Probar Clase / Apuntarme
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería / Instalaciones -->
+    <section id="instalaciones" class="py-20 bg-brand-card border-t border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-500 font-bold uppercase tracking-widest text-xs sm:text-sm">Espacio Exclusivo</span>
+                <h2 class="font-heading text-3xl sm:text-5xl font-extrabold text-white mt-2 mb-4">Nuestras Instalaciones</h2>
+                <p class="text-gray-400 text-base sm:text-lg">Un estudio totalmente equipado en Rúa Adelaida Muro diseñado para potenciar tu rendimiento sin aglomeraciones.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="overflow-hidden rounded-2xl border border-brand-border group">
+                    <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=800&q=80" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80';" alt="Estudio Terrafit 1" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="overflow-hidden rounded-2xl border border-brand-border group">
+                    <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80';" alt="Estudio Terrafit 2" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="overflow-hidden rounded-2xl border border-brand-border group">
+                    <img src="https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?auto=format&fit=crop&w=800&q=80" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80';" alt="Estudio Terrafit 3" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Opiniones Reales Verificadas -->
+    <section id="testimonios" class="py-20 bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-500 font-bold uppercase tracking-widest text-xs sm:text-sm">Reseñas de Google Maps</span>
+                <h2 class="font-heading text-3xl sm:text-5xl font-extrabold text-white mt-2 mb-4">Lo que dicen nuestros clientes</h2>
+                <p class="text-gray-400 text-base sm:text-lg">Historias reales de superación, salud y constancia en Terrafit Training Studio.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Reseña 1 -->
+                <div class="bg-brand-card p-6 rounded-2xl border border-brand-border flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-yellow-400 gap-1 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                            "¡La ciudad de A Coruña tiene mucha suerte de contar con un entrenador como Andreas Avila! Cuando vivía en Suiza ayudó a muchísimas personas con su profesionalismo, su competencia y su buen humor contagioso. Es un entrenador internacional de gran valor, apasionado y siempre atento. ¡Los que entrenan hoy con él en Terrafit Training Studio tienen realmente mucha suerte!"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-brand-border">
+                        <div class="w-10 h-10 rounded-full bg-brand-500/20 text-brand-500 font-bold flex items-center justify-center font-heading">
+                            HS
+                        </div>
+                        <div>
+                            <div class="font-bold text-white text-sm">Heddra Sagredo</div>
+                            <div class="text-xs text-gray-400">Google Local Guide</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 2 -->
+                <div class="bg-brand-card p-6 rounded-2xl border border-brand-border flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-yellow-400 gap-1 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                            "Llevo más de un año entrenando con Andreas y la experiencia no podría ser mejor. El ambiente es súper profesional pero al mismo tiempo cercano, el entrenador se preocupa por adaptar cada sesión a mis objetivos y nivel deseado…"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-brand-border">
+                        <div class="w-10 h-10 rounded-full bg-brand-500/20 text-brand-500 font-bold flex items-center justify-center font-heading">
+                            ID
+                        </div>
+                        <div>
+                            <div class="font-bold text-white text-sm">INÊS DUVALE</div>
+                            <div class="text-xs text-gray-400">Cliente Verificada</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 3 -->
+                <div class="bg-brand-card p-6 rounded-2xl border border-brand-border flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-yellow-400 gap-1 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                            "100% recomendable! Por primera vez, después de probar con distintos entrenadores, veo un progreso real en poco tiempo. Las sesiones son amenas y se adaptan a tu nivel, además Andreas siempre consigue que te superes. Estoy consiguiendo aprender mucho, mejorar mi técnica y ganar adherencia al entreno."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-brand-border">
+                        <div class="w-10 h-10 rounded-full bg-brand-500/20 text-brand-500 font-bold flex items-center justify-center font-heading">
+                            DM
+                        </div>
+                        <div>
+                            <div class="font-bold text-white text-sm">David Martínez Marín</div>
+                            <div class="text-xs text-gray-400">Cliente Verificado</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 4 -->
+                <div class="bg-brand-card p-6 rounded-2xl border border-brand-border flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-yellow-400 gap-1 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                            "Entrenar con Andreas ha sido una de las mejores decisiones que he tomado. Llevo ya un año y medio trabajando con él, y la evolución ha sido increíble: me siento más fuerte, con más energía y motivación que nunca."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-brand-border">
+                        <div class="w-10 h-10 rounded-full bg-brand-500/20 text-brand-500 font-bold flex items-center justify-center font-heading">
+                            A
+                        </div>
+                        <div>
+                            <div class="font-bold text-white text-sm">Alberto</div>
+                            <div class="text-xs text-gray-400">Cliente Verificado</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 5 (Ocupa dos columnas en md si se desea, o tarjeta normal) -->
+                <div class="bg-brand-card p-6 rounded-2xl border border-brand-border flex flex-col justify-between md:col-span-2 lg:col-span-2">
+                    <div>
+                        <div class="flex text-yellow-400 gap-1 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                            "Andreas es un profesional increíble y, aunque muy exigente, consigue que los entrenamientos sean dinámicos y divertidos, transmitiendo siempre buena onda y animándote para superarte a ti mismo. En mi caso, partía de un dolor crónico en la pierna que me limitaba muchísimo, pero Andreas ha sido capaz de identificar el problema y planificar un entrenamiento que no solo me está ayudando a conseguir mis objetivos, sino que me ha ayudado a reducir muchísimo el dolor y a poder llevar una vida completamente normal de nuevo. ¡Recomendadísimo al 1000%!"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-brand-border">
+                        <div class="w-10 h-10 rounded-full bg-brand-500/20 text-brand-500 font-bold flex items-center justify-center font-heading">
+                            CM
+                        </div>
+                        <div>
+                            <div class="font-bold text-white text-sm">Cristina Mayor</div>
+                            <div class="text-xs text-gray-400">Cliente Verificado</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección CTA Persuasivo Intermedia -->
+    <section class="py-16 bg-brand-500 text-black">
+        <div class="max-w-5xl mx-auto px-4 text-center">
+            <h2 class="font-heading text-3xl sm:text-4xl font-black mb-4 uppercase tracking-tight">¿Listo para dar el cambio definitivo en A Coruña?</h2>
+            <p class="text-black/80 font-medium text-lg mb-8 max-w-2xl mx-auto">Da el primer paso hoy mismo. Escríbenos directamente por WhatsApp y agenda tu primera sesión con Andreas Avila.</p>
+            <a href="https://wa.me/34664675272" target="_blank" class="inline-flex items-center gap-3 bg-black text-white hover:bg-neutral-900 font-extrabold px-8 py-4 rounded-xl text-lg shadow-2xl transition-transform hover:scale-105">
+                <i class="fa-brands fa-whatsapp text-2xl text-brand-500"></i>
+                Probar Clase / Apuntarme
+            </a>
+        </div>
+    </section>
+
+    <!-- Mapa Interactivo y Ubicación -->
+    <section id="contacto" class="py-20 bg-brand-card border-t border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-brand-500 font-bold uppercase tracking-widest text-xs sm:text-sm">Encuéntranos</span>
+                    <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Visita Terrafit Training Studio</h2>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Estamos ubicados en una zona privilegiada de A Coruña, listos para ofrecerte un espacio íntimo, profesional y enfocado al 100% en tus metas.
+                    </p>
+                    
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-brand-500/10 text-brand-500 p-3 rounded-xl"><i class="fa-solid fa-location-dot text-xl"></i></div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Dirección</h4>
+                                <p class="text-gray-400 text-sm">Rúa Adelaida Muro, 5, 15002 A Coruña, España</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-brand-500/10 text-brand-500 p-3 rounded-xl"><i class="fa-solid fa-phone text-xl"></i></div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Teléfono / WhatsApp</h4>
+                                <a href="https://wa.me/34664675272" target="_blank" class="text-brand-500 hover:underline text-sm font-semibold">664 67 52 72</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-brand-500/10 text-brand-500 p-3 rounded-xl"><i class="fa-solid fa-clock text-xl"></i></div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Horarios</h4>
+                                <p class="text-gray-400 text-sm">Lunes a Sábado (Con cita previa)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="https://wa.me/34664675272" target="_blank" class="inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-black font-bold px-6 py-3 rounded-xl transition-all shadow-lg shadow-brand-500/20">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            Probar Clase / Apuntarme
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <div class="bg-brand-dark p-3 rounded-2xl border border-brand-border shadow-2xl">
+                        <iframe src="https://www.google.com/maps?q=Terrafit%20Training%20Studio%20R%C3%BAa%20Adelaida%20Muro%2C%205%2C%2015002%20A%20Coru%C3%B1a%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark border-t border-brand-border py-12 text-gray-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-2">
+                <div class="bg-brand-500 text-black font-black text-lg px-2.5 py-1 rounded-md font-heading">
+                    TF
+                </div>
+                <span class="font-heading font-bold text-white tracking-wide">Terrafit Training Studio</span>
+            </div>
+            <div class="text-center md:text-left text-xs text-gray-500">
+                &copy; <span id="year"></span> Terrafit Training Studio. Rúa Adelaida Muro, 5, 15002 A Coruña. Todos los derechos reservados.
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="https://wa.me/34664675272" target="_blank" class="w-10 h-10 rounded-full bg-brand-card border border-brand-border flex items-center justify-center text-brand-500 hover:bg-brand-500 hover:text-black transition-all">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="#contacto" class="w-10 h-10 rounded-full bg-brand-card border border-brand-border flex items-center justify-center text-brand-500 hover:bg-brand-500 hover:text-black transition-all">
+                    <i class="fa-solid fa-location-dot"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script para menú móvil y año dinámico -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú al hacer click en un enlace móvil
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
