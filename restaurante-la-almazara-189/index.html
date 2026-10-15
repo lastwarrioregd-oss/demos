@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante La Almazara | Almonacid de Zorita, Guadalajara</title>
+    <meta name="description" content="Disfruta de la mejor gastronomía tradicional en Restaurante La Almazara, Almonacid de Zorita, Guadalajara. Excelente trato, profesionalidad y calidad. Reserva tu mesa.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        terracota: {
+                            DEFAULT: '#b45309',
+                            dark: '#92400e',
+                            light: '#d97706',
+                        },
+                        gourmet: {
+                            900: '#1c1917',
+                            800: '#292524',
+                            700: '#44403c',
+                            50: '#fafaf9',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(28, 25, 23, 0.7), rgba(28, 25, 23, 0.85));
+        }
+    </style>
+</head>
+<body class="bg-gourmet-50 text-gourmet-800 font-sans antialiased selection:bg-terracota selection:text-white">
+
+    <!-- Top Bar informativa -->
+    <div class="bg-gourmet-900 text-stone-300 text-xs sm:text-sm py-2 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <span><i class="fa-solid fa-location-dot text-terracota mr-1.5"></i> C. Estajadero, s/n, Almonacid de Zorita, Guadalajara</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="tel:649548121" class="hover:text-terracota transition-colors"><i class="fa-solid fa-phone text-terracota mr-1.5"></i> 649 54 81 21</a>
+                <a href="mailto:error-lite+84f2@duckduckgo.com" class="hover:text-terracota transition-colors hidden md:inline"><i class="fa-solid fa-envelope text-terracota mr-1.5"></i> error-lite+84f2@duckduckgo.com</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-gourmet-900/95 backdrop-blur-md border-b border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2">
+                <span class="font-serif text-2xl sm:text-3xl font-bold tracking-wider text-white">LA ALMAZARA</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-stone-300">
+                <a href="#inicio" class="hover:text-terracota transition-colors">Inicio</a>
+                <a href="#sobre-nosotros" class="hover:text-terracota transition-colors">Nosotros</a>
+                <a href="#carta" class="hover:text-terracota transition-colors">Carta & Especialidades</a>
+                <a href="#galeria" class="hover:text-terracota transition-colors">Instalaciones</a>
+                <a href="#opiniones" class="hover:text-terracota transition-colors">Opiniones</a>
+                <a href="#contacto" class="hover:text-terracota transition-colors">Ubicación</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="tel:649548121" class="hidden sm:inline-flex items-center justify-center bg-terracota hover:bg-terracota-dark text-white font-medium px-5 py-2.5 rounded-full transition-all shadow-lg hover:shadow-terracota/30">
+                    <i class="fa-solid fa-utensils mr-2"></i> Reservar Mesa
+                </a>
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" class="md:hidden text-stone-300 hover:text-white focus:outline-none text-2xl" aria-label="Abrir menú">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gourmet-900 border-b border-stone-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="block py-2 text-stone-300 hover:text-terracota font-medium">Inicio</a>
+            <a href="#sobre-nosotros" class="block py-2 text-stone-300 hover:text-terracota font-medium">Nosotros</a>
+            <a href="#carta" class="block py-2 text-stone-300 hover:text-terracota font-medium">Carta & Especialidades</a>
+            <a href="#galeria" class="block py-2 text-stone-300 hover:text-terracota font-medium">Instalaciones</a>
+            <a href="#opiniones" class="block py-2 text-stone-300 hover:text-terracota font-medium">Opiniones</a>
+            <a href="#contacto" class="block py-2 text-stone-300 hover:text-terracota font-medium">Ubicación</a>
+            <div class="pt-2">
+                <a href="tel:649548121" class="w-full inline-flex items-center justify-center bg-terracota hover:bg-terracota-dark text-white font-medium px-5 py-3 rounded-full transition-all">
+                    <i class="fa-solid fa-phone mr-2"></i> Reservar Mesa (649548121)
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative min-h-[90vh] flex items-center justify-center bg-gourmet-900 text-white overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1920&q=80" 
+                 alt="Restaurante La Almazara Interior" 
+                 class="w-full h-full object-cover opacity-40 scale-105 animate-pulse duration-[10000ms]"
+                 referrerpolicy="no-referrer" 
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 text-center py-20">
+            <span class="inline-block py-1 px-4 rounded-full bg-terracota/20 text-terracota-light border border-terracota/30 text-sm font-semibold tracking-widest uppercase mb-6 backdrop-blur-sm">
+                Almonacid de Zorita, Guadalajara
+            </span>
+            <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight mb-6 leading-tight">
+                Restaurante <span class="text-terracota-light italic">La Almazara</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-stone-300 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+                Un rincón gastronómico único donde la tradición, la excelencia en el servicio y la calidad superior se dan la mano en Guadalajara.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="tel:649548121" class="w-full sm:w-auto bg-terracota hover:bg-terracota-dark text-white font-semibold px-8 py-4 rounded-full transition-all shadow-xl hover:shadow-terracota/40 text-lg flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-calendar-check"></i> Reservar Mesa
+                </a>
+                <a href="#carta" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-8 py-4 rounded-full transition-all backdrop-blur-sm text-lg flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-book-open"></i> Ver Nuestra Carta
+                </a>
+            </div>
+
+            <div class="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 pt-10 border-t border-stone-800 text-left max-w-3xl mx-auto">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-full bg-terracota/10 flex items-center justify-center text-terracota text-xl shrink-0">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-sm">Máxima Calidad</h4>
+                        <p class="text-xs text-stone-400">Ingredientes selectos</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-full bg-terracota/10 flex items-center justify-center text-terracota text-xl shrink-0">
+                        <i class="fa-solid fa-face-smile"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-sm">Excelente Trato</h4>
+                        <p class="text-xs text-stone-400">Profesionalidad cercana</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-full bg-terracota/10 flex items-center justify-center text-terracota text-xl shrink-0">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-sm">Ambiente Acogedor</h4>
+                        <p class="text-xs text-stone-400">Ideal para familias y parejas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nosotros -->
+    <section id="sobre-nosotros" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-terracota font-semibold tracking-wider text-sm uppercase">Nuestra Esencia</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-gourmet-900 mt-2 mb-6">
+                        Pasión por la buena mesa y el servicio excepcional
+                    </h2>
+                    <p class="text-stone-600 mb-6 leading-relaxed">
+                        Ubicados en el corazón de Almonacid de Zorita, en Guadalajara, en <strong class="text-gourmet-900">Restaurante La Almazara</strong> nos enorgullecemos de ofrecer una experiencia culinaria inolvidable. Cuidamos cada detalle, desde la selección de materias primas de primera calidad hasta un trato cercano y altamente profesional que hace que cada cliente se sienta como en casa.
+                    </p>
+                    <p class="text-stone-600 mb-8 leading-relaxed">
+                        Nuestro compromiso es la excelencia. Ya sea para una comida familiar, una celebración especial o una cena tranquila, nuestras instalaciones y nuestro equipo están preparados para superar tus expectativas.
+                    </p>
+                    <div class="flex items-center gap-6">
+                        <div class="border-l-4 border-terracota pl-4">
+                            <p class="font-serif italic text-gourmet-900 text-lg">"Excelente trato, profesionalidad y calidad."</p>
+                            <span class="text-xs text-stone-500 uppercase tracking-wider mt-1 block">— Opinión Verificada Google Maps</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+                        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1000&q=80" 
+                             alt="Plato gourmet en Restaurante La Almazara" 
+                             class="w-full h-[450px] object-cover hover:scale-105 transition-transform duration-500"
+                             referrerpolicy="no-referrer" 
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 w-48 h-48 bg-terracota/10 rounded-full z-0 -blur-xl"></div>
+                    <div class="absolute -top-6 -right-6 w-48 h-48 bg-amber-500/10 rounded-full z-0 -blur-xl"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Carta, Platos Estrella y Especialidades -->
+    <section id="carta" class="py-20 bg-gourmet-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-terracota font-semibold tracking-wider text-sm uppercase">Gastronomía Auténtica</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-gourmet-900 mt-2 mb-4">
+                    Nuestra Carta y Especialidades
+                </h2>
+                <p class="text-stone-600">
+                    Descubre una cuidada selección de platos elaborados con mimo, respetando los sabores tradicionales y elevándolos con un toque contemporáneo.
+                </p>
+            </div>
+
+            <!-- Categorías de Menú -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Categoría 1: Entrantes y Tapas -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-stone-200/60 hover:shadow-xl transition-shadow relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-terracota/5 rounded-bl-full transition-all group-hover:bg-terracota/10"></div>
+                    <div class="w-14 h-14 rounded-xl bg-terracota/10 text-terracota flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-plate-wheat"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-gourmet-900 mb-3">Entrantes Tradicionales</h3>
+                    <p class="text-stone-600 text-sm mb-6 leading-relaxed">
+                        Para abrir el apetito con productos de nuestra tierra, embutidos selectos y raciones caseras preparadas al momento.
+                    </p>
+                    <ul class="space-y-3 text-sm text-stone-700 border-t border-stone-100 pt-4">
+                        <li class="flex justify-between items-center">
+                            <span class="font-medium">Embutidos y Quesos Artesanos</span>
+                            <span class="text-terracota font-bold">Recomendado</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span class="font-medium">Croquetas Caseras de la Abuela</span>
+                            <span class="text-terracota font-bold">Estrella</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span class="font-medium">Revuelto de la Almazara</span>
+                            <span class="text-stone-500">Fresco</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Categoría 2: Carnes y Asados -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-stone-200/60 hover:shadow-xl transition-shadow relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-terracota/5 rounded-bl-full transition-all group-hover:bg-terracota/10"></div>
+                    <div class="w-14 h-14 rounded-xl bg-terracota/10 text-terracota flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-fire-burner"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-gourmet-900 mb-3">Carnes y Asados</h3>
+                    <p class="text-stone-600 text-sm mb-6 leading-relaxed">
+                        Cortes seleccionados y carnes de primera calidad cocinadas en su punto óptimo para los amantes del buen comer.
+                    </p>
+                    <ul class="space-y-3 text-sm text-stone-700 border-t border-stone-100 pt-4">
+                        <li class="flex justify-between items-center">
+                            <span class="font-medium">Carnes Rojas a la Brasa</span>
+                            <span class="text-terracota font-bold">Top Ventas</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span class="font-medium">Asados Tradicionales por Encargo</span>
+                            <span class="text-terracota font-bold">Especial</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span class="font-medium">Solomillo al Punto</span>
+                            <span class="text-stone-500">Gourmet</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Categoría 3: Pescados y Postres -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-stone-200/60 hover:shadow-xl transition-shadow relative overflow-hidden group md:col-span-2 lg:col-span-1">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-terracota/5 rounded-bl-full transition-all group-hover:bg-terracota/10"></div>
+                    <div class="w-14 h-14 rounded-xl bg-terracota/10 text-terracota flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-fish"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-gourmet-900 mb-3">Pescados y Postres Caseros</h3>
+                    <p class="text-stone-600 text-sm mb-6 leading-relaxed">
+                        El toque fresco del mar y el broche de oro con nuestros postres de elaboración 100% artesanal.
+                    </p>
+                    <ul class="space-y-3 text-sm text-stone-700 border-t border-stone-100 pt-4">
+                        <li class="flex justify-between items-center">
+                            <span class="font-medium">Pescado Fresco del Día</span>
+                            <span class="text-terracota font-bold">Sugerencia</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span class="font-medium">Tarta Casera de la Casa</span>
+                            <span class="text-terracota font-bold">Imprescindible</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span class="font-medium">Postres Tradicionales</span>
+                            <span class="text-stone-500">Casero</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Call to action carta -->
+            <div class="mt-12 text-center">
+                <a href="tel:649548121" class="inline-flex items-center gap-3 bg-gourmet-900 hover:bg-gourmet-800 text-white font-semibold px-8 py-4 rounded-full transition-all shadow-lg">
+                    <i class="fa-solid fa-phone text-terracota"></i> Llámanos al 649 54 81 21 y consulta el menú del día
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería / Nuestras Instalaciones -->
+    <section id="galeria" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-terracota font-semibold tracking-wider text-sm uppercase">Espacios Únicos</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-gourmet-900 mt-2 mb-4">
+                    Nuestras Instalaciones
+                </h2>
+                <p class="text-stone-600">
+                    Un ambiente cálido, acogedor y diseñado para que disfrutes de una comida o cena perfecta en compañía de familiares y amigos.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group relative rounded-2xl overflow-hidden shadow-md h-72">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" 
+                         alt="Salón comedor Restaurante La Almazara" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <p class="text-white font-serif text-lg font-semibold">Salón Comedor Principal</p>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-2xl overflow-hidden shadow-md h-72">
+                    <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=800&q=80" 
+                         alt="Ambiente acogedor en Restaurante La Almazara" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <p class="text-white font-serif text-lg font-semibold">Espacios Acogedores</p>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-2xl overflow-hidden shadow-md h-72 sm:col-span-2 lg:col-span-1">
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" 
+                         alt="Detalle culinario Restaurante La Almazara" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <p class="text-white font-serif text-lg font-semibold">Calidad y Cuidado en los Detalles</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Opiniones Reales Verificadas -->
+    <section id="opiniones" class="py-20 bg-gourmet-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-terracota-light font-semibold tracking-wider text-sm uppercase">Testimonios Reales</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold mt-2 mb-4">
+                    Lo que opinan nuestros clientes
+                </h2>
+                <p class="text-stone-300">
+                    La satisfacción de quienes nos visitan es nuestro mayor aval. Esto es lo que destacan de su experiencia en La Almazara.
+                </p>
+            </div>
+
+            <div class="max-w-2xl mx-auto">
+                <!-- Reseña Real Única / Destacada -->
+                <div class="bg-gourmet-800 rounded-3xl p-8 sm:p-10 border border-stone-700 shadow-2xl relative">
+                    <div class="absolute -top-5 right-10 text-terracota text-5xl opacity-40">
+                        <i class="fa-solid fa-quote-right"></i>
+                    </div>
+                    <div class="flex text-amber-400 gap-1 mb-6 text-lg">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="font-serif text-xl sm:text-2xl italic text-stone-100 mb-8 leading-relaxed">
+                        "Excelente trato, profesionalidad y calidad."
+                    </p>
+                    <div class="flex items-center justify-between border-t border-stone-700 pt-6">
+                        <div>
+                            <h4 class="font-bold text-white text-base">Cliente Verificado</h4>
+                            <p class="text-xs text-stone-400">Reseña oficial de Google Maps</p>
+                        </div>
+                        <div class="w-10 h-10 rounded-full bg-terracota/20 text-terracota-light flex items-center justify-center font-bold">
+                            <i class="fa-brands fa-google text-lg"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto y Ubicación -->
+    <section id="contacto" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-terracota font-semibold tracking-wider text-sm uppercase">Visítanos y Reserva</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-gourmet-900 mt-2 mb-4">
+                    ¿Dónde Encontrarnos?
+                </h2>
+                <p class="text-stone-600">
+                    Estamos situados en una ubicación privilegiada en Almonacid de Zorita. Ven a conocernos o reserva tu mesa por teléfono.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Info de contacto y botones de acción rápida -->
+                <div class="bg-gourmet-50 p-8 sm:p-10 rounded-3xl border border-stone-200">
+                    <h3 class="font-serif text-2xl font-bold text-gourmet-900 mb-6">Información de Contacto</h3>
+                    
+                    <ul class="space-y-6 mb-8 text-stone-700">
+                        <li class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-terracota/10 text-terracota flex items-center justify-center text-xl shrink-0 mt-1">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <strong class="block text-gourmet-900 font-semibold mb-1">Dirección</strong>
+                                <span class="text-stone-600">C. Estajadero, s/n, 19118 Almonacid de Zorita, Guadalajara, España</span>
+                            </div>
+                        </li>
+
+                        <li class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-terracota/10 text-terracota flex items-center justify-center text-xl shrink-0 mt-1">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <strong class="block text-gourmet-900 font-semibold mb-1">Teléfono de Reservas</strong>
+                                <a href="tel:649548121" class="text-terracota font-bold text-lg hover:underline">649 54 81 21</a>
+                            </div>
+                        </li>
+
+                        <li class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-terracota/10 text-terracota flex items-center justify-center text-xl shrink-0 mt-1">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <strong class="block text-gourmet-900 font-semibold mb-1">Correo Electrónico</strong>
+                                <a href="mailto:error-lite+84f2@duckduckgo.com" class="text-stone-600 hover:text-terracota transition-colors">error-lite+84f2@duckduckgo.com</a>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="space-y-3">
+                        <a href="tel:649548121" class="w-full bg-terracota hover:bg-terracota-dark text-white font-semibold py-4 px-6 rounded-2xl transition-all shadow-lg hover:shadow-terracota/30 text-center block text-lg">
+                            <i class="fa-solid fa-phone mr-2"></i> Reservar Mesa (649548121)
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mapa Interactivo Real -->
+                <div class="rounded-3xl overflow-hidden shadow-xl border border-stone-200">
+                    <iframe src="https://www.google.com/maps?q=Restaurante%20La%20Almazara%20C.%20Estajadero%2C%20s%2Fn%2C%2019118%20Almonacid%20de%20Zorita%2C%20Guadalajara%2C%20Espa%C3%B1a&output=embed" width="100%" height="420" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gourmet-900 text-stone-400 py-12 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-8">
+                <div>
+                    <span class="font-serif text-2xl font-bold text-white tracking-wider">RESTAURANTE LA ALMAZARA</span>
+                    <p class="text-sm mt-2 text-stone-400">Auténtica gastronomía en Almonacid de Zorita, Guadalajara.</p>
+                </div>
+                <div class="flex items-center gap-6 text-xl">
+                    <a href="tel:649548121" class="w-10 h-10 rounded-full bg-stone-800 hover:bg-terracota text-white flex items-center justify-center transition-colors" aria-label="Teléfono">
+                        <i class="fa-solid fa-phone"></i>
+                    </a>
+                    <a href="mailto:error-lite+84f2@duckduckgo.com" class="w-10 h-10 rounded-full bg-stone-800 hover:bg-terracota text-white flex items-center justify-center transition-colors" aria-label="Email">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-stone-800 pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-stone-500 gap-4">
+                <p>&copy; <span id="current-year"></span> Restaurante La Almazara. Todos los derechos reservados.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-stone-300 transition-colors">Aviso Legal</a>
+                    <a href="#" class="hover:text-stone-300 transition-colors">Política de Privacidad</a>
+                    <a href="#" class="hover:text-stone-300 transition-colors">Política de Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script para menú móvil y año automático -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú al hacer click en un enlace del móvil
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Año actual en footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
