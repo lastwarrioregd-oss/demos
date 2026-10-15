@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante Casa Lin | Sabor Tradicional en Oviedo</title>
+    <meta name="description" content="Disfruta de la mejor cocina tradicional en Oviedo. Especialistas en alcachofas, carnes a la piedra y postres caseros. Reserva tu mesa en Casa Lin.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Playfair Display (Serif) & Inter (Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fdf8f6',
+                            100: '#f2e8e5',
+                            200: '#eaddd7',
+                            300: '#e0c1b7',
+                            400: '#d9a697',
+                            500: '#b45d44', // Terracotta principal
+                            600: '#a34e39',
+                            700: '#893f2f',
+                            800: '#723529',
+                            900: '#5e2e25',
+                        },
+                        gourmet: '#1a1a1a',
+                        cream: '#FCF9F5'
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+        }
+        .hero-overlay {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7));
+        }
+        .menu-card:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-cream text-gourmet font-sans leading-relaxed">
+
+    <!-- Header / Navigation -->
+    <header class="fixed w-full z-50 glass-nav border-b border-brand-100">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="flex flex-col">
+                <span class="font-serif text-2xl font-bold text-brand-800 tracking-tight">CASA LIN</span>
+                <span class="text-[10px] uppercase tracking-[0.2em] text-brand-500 font-semibold -mt-1 text-center">Oviedo</span>
+            </a>
+            
+            <nav class="hidden md:flex space-x-8 font-medium text-sm uppercase tracking-wider">
+                <a href="#inicio" class="hover:text-brand-600 transition">Inicio</a>
+                <a href="#carta" class="hover:text-brand-600 transition">La Carta</a>
+                <a href="#experiencias" class="hover:text-brand-600 transition">Opiniones</a>
+                <a href="#contacto" class="hover:text-brand-600 transition">Contacto</a>
+            </nav>
+
+            <a href="tel:985274489" class="bg-brand-600 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-brand-700 transition-all shadow-lg hover:shadow-brand-200 flex items-center gap-2">
+                <i class="fas fa-phone-alt text-xs"></i>
+                RESERVAR MESA
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1920&q=80" 
+                 alt="Interior Casa Lin" 
+                 class="w-full h-full object-cover"
+                 referrerpolicy="no-referrer"
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10 text-white">
+            <div class="max-w-3xl">
+                <span class="inline-block px-4 py-1 border border-brand-400 text-brand-300 rounded-full text-sm font-semibold mb-6 tracking-widest uppercase">Tradición y Sabor desde Oviedo</span>
+                <h1 class="font-serif text-5xl md:text-7xl mb-6 leading-tight">Cocina con alma, <br><span class="italic text-brand-300">atención con pasión.</span></h1>
+                <p class="text-lg md:text-xl mb-10 text-gray-200 font-light max-w-xl">
+                    Descubre un rincón gastronómico donde el producto de calidad y las recetas de siempre se fusionan para crear momentos inolvidables.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="tel:985274489" class="bg-brand-600 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-brand-700 transition shadow-xl text-center">
+                        Reservar Mesa
+                    </a>
+                    <a href="#carta" class="bg-white/10 backdrop-blur-md border border-white/30 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white/20 transition text-center">
+                        Ver la Carta
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-white/50">
+            <i class="fas fa-chevron-down text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- Nuestra Carta Section -->
+    <section id="carta" class="py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="font-serif text-4xl md:text-5xl mb-4 text-brand-900">Especialidades de la Casa</h2>
+                <div class="w-24 h-1 bg-brand-500 mx-auto mb-6"></div>
+                <p class="text-gray-600">Nuestros platos están elaborados con materias primas seleccionadas y el cariño de la cocina tradicional asturiana.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Plato 1 -->
+                <div class="group bg-cream p-6 rounded-2xl border border-brand-100 hover:shadow-xl transition-all">
+                    <div class="overflow-hidden rounded-xl mb-6 aspect-video">
+                        <img src="https://images.unsplash.com/photo-1626128665085-483747621778?auto=format&fit=crop&w=800&q=80" 
+                             alt="Alcachofas con rabo de vaca" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                             referrerpolicy="no-referrer"
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+                    </div>
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-serif text-xl font-bold text-brand-900">Alcachofas Salteadas</h3>
+                        <span class="text-brand-600 font-bold">Plato Estrella</span>
+                    </div>
+                    <p class="text-gray-600 text-sm italic mb-4">Con deliciosa boloñesa de rabo de vaca. Una explosión de sabor que cautiva a nuestros clientes.</p>
+                </div>
+
+                <!-- Plato 2 -->
+                <div class="group bg-cream p-6 rounded-2xl border border-brand-100 hover:shadow-xl transition-all">
+                    <div class="overflow-hidden rounded-xl mb-6 aspect-video">
+                        <img src="https://images.unsplash.com/photo-1560717845-968823efbee1?auto=format&fit=crop&w=800&q=80" 
+                             alt="Foie de pato" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                             referrerpolicy="no-referrer"
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-brand-900 mb-2">Foie de Pato al PX</h3>
+                    <p class="text-gray-600 text-sm italic mb-4">Reducción de Pedro Ximénez, acompañado de naranjas y uvas frescas. Simplemente increíble.</p>
+                </div>
+
+                <!-- Plato 3 -->
+                <div class="group bg-cream p-6 rounded-2xl border border-brand-100 hover:shadow-xl transition-all">
+                    <div class="overflow-hidden rounded-xl mb-6 aspect-video">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" 
+                             alt="Entrecot a la piedra" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                             referrerpolicy="no-referrer"
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-brand-900 mb-2">Entrecot a la Piedra</h3>
+                    <p class="text-gray-600 text-sm italic mb-4">Carne de calidad 10/10 servida al punto que desees sobre piedra caliente.</p>
+                </div>
+
+                <!-- Plato 4 -->
+                <div class="group bg-cream p-6 rounded-2xl border border-brand-100 hover:shadow-xl transition-all">
+                    <h3 class="font-serif text-lg font-bold text-brand-900 mb-1">Tagliatelle de Chipirón</h3>
+                    <p class="text-gray-600 text-sm">Presentación impecable y sabor marino auténtico.</p>
+                </div>
+
+                <!-- Plato 5 -->
+                <div class="group bg-cream p-6 rounded-2xl border border-brand-100 hover:shadow-xl transition-all">
+                    <h3 class="font-serif text-lg font-bold text-brand-900 mb-1">Torrija Artesana</h3>
+                    <p class="text-gray-600 text-sm">El broche de oro dulce y altamente recomendable para terminar tu comida.</p>
+                </div>
+
+                <!-- Plato 6 -->
+                <div class="group bg-brand-900 p-6 rounded-2xl border border-brand-800 flex flex-col justify-center items-center text-center">
+                    <p class="text-brand-100 italic mb-4">"Ambiente genial y atención buenísima, lo más importante: la comida es excelente."</p>
+                    <a href="tel:985274489" class="text-white font-bold underline hover:text-brand-300">Reservar para probar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería / Instalaciones -->
+    <section class="py-24 bg-brand-50">
+        <div class="container mx-auto px-4">
+            <h2 class="font-serif text-4xl text-center mb-16 text-brand-900">Nuestras Instalaciones</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="h-64 overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover hover:scale-110 transition duration-500" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+                </div>
+                <div class="h-64 overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover hover:scale-110 transition duration-500" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+                </div>
+                <div class="h-64 overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1550966842-2862ba996344?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover hover:scale-110 transition duration-500" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+                </div>
+                <div class="h-64 overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1537047902294-62a40c20a6ae?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover hover:scale-110 transition duration-500" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="experiencias" class="py-24 bg-white overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/3">
+                    <h2 class="font-serif text-4xl md:text-5xl text-brand-900 mb-6">Lo que dicen nuestros comensales</h2>
+                    <p class="text-gray-600 mb-8">La satisfacción de nuestros clientes es el ingrediente principal de nuestro éxito.</p>
+                    <div class="flex items-center gap-2 text-yellow-500 text-2xl mb-2">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="font-bold text-brand-800">4.5/5 en Google Maps</p>
+                </div>
+                
+                <div class="w-full md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Review 1 -->
+                    <div class="bg-cream p-8 rounded-2xl shadow-sm border-l-4 border-brand-500">
+                        <p class="text-gray-700 italic mb-4">"He llegado tarde para cenar pero me han atendido estupendamente. He comido unas alcachofas espectaculares y un buen postre. La camarera muy amable y atenta. ¡Volveré seguro!"</p>
+                        <p class="font-bold text-brand-900">- Asier Asier</p>
+                    </div>
+                    <!-- Review 2 -->
+                    <div class="bg-cream p-8 rounded-2xl shadow-sm border-l-4 border-brand-500">
+                        <p class="text-gray-700 italic mb-4">"E S P E C T A C U L A R con estas palabras dejo clara mi reseña... un local de antes con buena cocina y mejor atención, ha superado mis expectativas."</p>
+                        <p class="font-bold text-brand-900">- Mar Gomez</p>
+                    </div>
+                    <!-- Review 3 -->
+                    <div class="bg-cream p-8 rounded-2xl shadow-sm border-l-4 border-brand-500">
+                        <p class="text-gray-700 italic mb-4">"Comida muy rica. El foie de pato al Pedro Ximénez con naranjas y uvas, simplemente increíble. La torrija de postre bastante recomendable."</p>
+                        <p class="font-bold text-brand-900">- Covadonga Casado</p>
+                    </div>
+                    <!-- Review 4 -->
+                    <div class="bg-cream p-8 rounded-2xl shadow-sm border-l-4 border-brand-500">
+                        <p class="text-gray-700 italic mb-4">"Un lujo, ambiente genial y la atención buenísima, lo más importante: la comida, excelente. Merece la pena."</p>
+                        <p class="font-bold text-brand-900">- Yuxing</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Map Section -->
+    <section id="contacto" class="py-24 bg-brand-900 text-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="font-serif text-4xl md:text-5xl mb-8">¿Te reservamos una mesa?</h2>
+                    
+                    <div class="space-y-8">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-brand-500 p-3 rounded-lg">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Ubicación</h4>
+                                <p class="text-brand-200">Av. de Colón, 14, 33013 Oviedo, Asturias, España</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="bg-brand-500 p-3 rounded-lg">
+                                <i class="fas fa-phone-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Teléfono de Reservas</h4>
+                                <a href="tel:985274489" class="text-2xl font-serif text-brand-300 hover:text-white transition">985 274 489</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="bg-brand-500 p-3 rounded-lg">
+                                <i class="fas fa-clock text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Horario de Cocina</h4>
+                                <p class="text-brand-200">Martes a Domingo: 13:00 - 16:00 | 20:30 - 23:30<br>Lunes: Cerrado por descanso</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-12">
+                        <a href="tel:985274489" class="inline-block bg-white text-brand-900 px-10 py-4 rounded-full font-bold text-lg hover:bg-brand-100 transition shadow-xl">
+                            LLAMAR AHORA
+                        </a>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-brand-500/20 blur-3xl rounded-full"></div>
+                    <div class="relative z-10 overflow-hidden rounded-2xl shadow-2xl border-4 border-white/10">
+                        <iframe src="https://www.google.com/maps?q=Restaurante%20Casa%20Lin%20Av.%20de%20Col%C3%B3n%2C%2014%2C%2033013%20Oviedo%2C%20Asturias%2C%20Espa%C3%B1a&output=embed" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gourmet text-gray-400 py-12 border-t border-white/5">
+        <div class="container mx-auto px-4 text-center">
+            <div class="mb-8">
+                <span class="font-serif text-3xl font-bold text-white tracking-tight">CASA LIN</span>
+                <p class="mt-2 text-sm uppercase tracking-widest text-brand-500 font-semibold">Oviedo</p>
+            </div>
+            
+            <div class="flex justify-center space-x-6 mb-8 text-xl">
+                <a href="#" class="hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fab fa-tripadvisor"></i></a>
+            </div>
+
+            <p class="text-sm">
+                &copy; 2024 Restaurante Casa Lin. Todos los derechos reservados. <br class="md:hidden"> 
+                <span class="hidden md:inline">|</span> 
+                Diseño Gastronómico de Alta Calidad.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Botón Flotante Móvil -->
+    <div class="md:hidden fixed bottom-6 right-6 z-50">
+        <a href="tel:985274489" class="bg-brand-600 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl animate-pulse">
+            <i class="fas fa-phone-alt text-2xl"></i>
+        </a>
+    </div>
+
+</body>
+</html>
