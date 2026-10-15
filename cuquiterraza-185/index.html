@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuquiterraza | Heladería Exclusiva en Cudillero</title>
+    <!-- Tailwind CSS v3 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#121212',
+                            card: '#1A1A1A',
+                            gold: '#D4AF37',
+                            'gold-light': '#F3E5AB',
+                            sand: '#F5F2EB',
+                            muted: '#A3A3A3'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-brand-dark text-brand-sand font-sans antialiased selection:bg-brand-gold selection:text-brand-dark">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-brand-dark/90 backdrop-blur-md border-b border-brand-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="font-serif text-2xl sm:text-3xl font-bold tracking-wider text-brand-gold flex items-center gap-2">
+                <i class="fa-solid fa-ice-cream text-xl"></i> Cuquiterraza
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-8 text-sm uppercase tracking-widest font-medium">
+                <a href="#inicio" class="hover:text-brand-gold transition-colors">Inicio</a>
+                <a href="#experiencia" class="hover:text-brand-gold transition-colors">El Concepto</a>
+                <a href="#carta" class="hover:text-brand-gold transition-colors">Especialidades</a>
+                <a href="#instalaciones" class="hover:text-brand-gold transition-colors">Instalaciones</a>
+                <a href="#opiniones" class="hover:text-brand-gold transition-colors">Reseñas</a>
+                <a href="#contacto" class="hover:text-brand-gold transition-colors">Ubicación</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="mailto:error-lite+84f2@duckduckgo.com" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-full border border-brand-gold text-brand-gold text-xs uppercase tracking-widest font-semibold hover:bg-brand-gold hover:text-brand-dark transition-all duration-300">
+                    Reservar Cita
+                </a>
+                <!-- Mobile menu button -->
+                <button id="menu-btn" class="md:hidden text-brand-gold text-2xl focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-dark border-b border-brand-gold/20 px-6 py-6 space-y-4">
+            <a href="#inicio" class="block text-sm uppercase tracking-widest hover:text-brand-gold">Inicio</a>
+            <a href="#experiencia" class="block text-sm uppercase tracking-widest hover:text-brand-gold">El Concepto</a>
+            <a href="#carta" class="block text-sm uppercase tracking-widest hover:text-brand-gold">Especialidades</a>
+            <a href="#instalaciones" class="block text-sm uppercase tracking-widest hover:text-brand-gold">Instalaciones</a>
+            <a href="#opiniones" class="block text-sm uppercase tracking-widest hover:text-brand-gold">Reseñas</a>
+            <a href="#contacto" class="block text-sm uppercase tracking-widest hover:text-brand-gold">Ubicación</a>
+            <a href="mailto:error-lite+84f2@duckduckgo.com" class="block text-center w-full py-3 rounded-full bg-brand-gold text-brand-dark font-semibold uppercase tracking-widest text-xs">
+                Reservar Cita
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <!-- Background Overlay & Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://scontent-iad3-2.xx.fbcdn.net/v/t39.30808-1/327183946_884030756245802_2398932925086487933_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx956x960&amp;ctp=s720x720&amp;_nc_cat=103&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=BrbYvxwRU90Q7kNvwHHg1iq&amp;_nc_oc=Adonpcnds-olGCF2jGO1Dxe0t7fySqrMSd_IBd3qtsDSyEceSGu2txOKe1Z6T8CJOsk&amp;_nc_zt=24&amp;_nc_ht=scontent-iad3-2.xx&amp;_nc_gid=wkFuDH8t94rRxcI2lYcPGg&amp;_nc_ss=7f289&amp;oh=00_AQPrWmfMXgKsRYK5dgpVDTX1msuPssrobYJVdwDxrhpVPQ&amp;oe=6AD6FBED" 
+                 alt="Cuquiterraza Heladería Cudillero" 
+                 referrerpolicy="no-referrer" 
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                 class="w-full h-full object-cover opacity-30 scale-105 transform transition-transform duration-1000">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/60 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 text-center py-20">
+            <span class="inline-block px-4 py-1.5 rounded-full border border-brand-gold/40 bg-brand-gold/10 text-brand-gold text-xs uppercase tracking-[0.25em] mb-6 backdrop-blur-sm">
+                Heladería Exclusiva • Cudillero, Asturias
+            </span>
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-tight">
+                El Arte de Disfrutar <br><span class="text-brand-gold italic">con Elegancia y Sabor</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-brand-muted text-base sm:text-lg mb-10 font-light leading-relaxed">
+                Ubicados en el corazón de uno de los pueblos más bellos de España. Disfruta de una experiencia única donde la alta calidad y la distinción se encuentran frente al mar.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="mailto:error-lite+84f2@duckduckgo.com" class="w-full sm:w-auto px-8 py-4 rounded-full bg-brand-gold text-brand-dark font-semibold uppercase tracking-widest text-xs hover:bg-brand-gold-light transition-all shadow-lg hover:shadow-brand-gold/20 flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-calendar-check"></i> Reservar Cita
+                </a>
+                <a href="#carta" class="w-full sm:w-auto px-8 py-4 rounded-full border border-brand-sand/30 hover:border-brand-gold text-brand-sand hover:text-brand-gold font-semibold uppercase tracking-widest text-xs transition-all flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-utensils"></i> Ver Especialidades
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features / Experience Section -->
+    <section id="experiencia" class="py-24 bg-brand-card/50 border-t border-b border-brand-gold/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-sand mb-4">Un Concepto Boutique Único</h2>
+                <div class="w-16 h-0.5 bg-brand-gold mx-auto mb-6"></div>
+                <p class="text-brand-muted font-light">Cuidamos cada detalle para ofrecerte momentos inolvidables en un ambiente sofisticado, impecable y diseñado para tu máximo bienestar.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-brand-card p-8 rounded-2xl border border-brand-gold/20 hover:border-brand-gold/60 transition-all group">
+                    <div class="w-14 h-14 rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-gem"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold mb-3 text-brand-sand">Calidad Superior</h3>
+                    <p class="text-brand-muted text-sm font-light leading-relaxed">Selección de materias primas de primera categoría y elaboración con los más altos estándares profesionales.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-brand-card p-8 rounded-2xl border border-brand-gold/20 hover:border-brand-gold/60 transition-all group">
+                    <div class="w-14 h-14 rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-crown"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold mb-3 text-brand-sand">Trato Exclusivo</h3>
+                    <p class="text-brand-muted text-sm font-light leading-relaxed">Un servicio personalizado y profesional que garantiza una experiencia memorable desde el primer instante.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-brand-card p-8 rounded-2xl border border-brand-gold/20 hover:border-brand-gold/60 transition-all group">
+                    <div class="w-14 h-14 rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold mb-3 text-brand-sand">Entorno Privilegiado</h3>
+                    <p class="text-brand-muted text-sm font-light leading-relaxed">Situados en la emblemática localidad marinera de Cudillero, con vistas y ambiente incomparables.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Menu Section -->
+    <section id="carta" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-brand-gold text-xs uppercase tracking-[0.25em] font-semibold block mb-3">Nuestra Carta & Especialidades</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold mb-4">Selección de Heladería & Delicatessen</h2>
+            <div class="w-16 h-0.5 bg-brand-gold mx-auto mb-6"></div>
+            <p class="text-brand-muted font-light">Descubre nuestras creaciones artesanales y propuestas pensadas para los paladares más exigentes.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+            <!-- Categoria 1 -->
+            <div class="bg-brand-card/80 p-8 rounded-2xl border border-brand-gold/20">
+                <div class="flex items-center gap-4 mb-6 pb-4 border-b border-brand-gold/10">
+                    <div class="text-brand-gold text-2xl"><i class="fa-solid fa-ice-cream"></i></div>
+                    <h3 class="font-serif text-2xl font-bold text-brand-sand">Helados Artesanales Premium</h3>
+                </div>
+                <div class="space-y-6">
+                    <div class="flex justify-between items-start gap-4">
+                        <div>
+                            <h4 class="font-semibold text-brand-sand text-lg">Helado de Vainilla Bourbon de Madagascar</h4>
+                            <p class="text-brand-muted text-sm font-light mt-1">Elaboración propia con auténticas vainas y leche fresca.</p>
+                        </div>
+                        <span class="text-brand-gold font-serif font-bold text-lg">Artisanal</span>
+                    </div>
+                    <div class="flex justify-between items-start gap-4">
+                        <div>
+                            <h4 class="font-semibold text-brand-sand text-lg">Chocolate Negro Intenso 70%</h4>
+                            <p class="text-brand-muted text-sm font-light mt-1">Cacao seleccionado con textura cremosa y profunda.</p>
+                        </div>
+                        <span class="text-brand-gold font-serif font-bold text-lg">Boutique</span>
+                    </div>
+                    <div class="flex justify-between items-start gap-4">
+                        <div>
+                            <h4 class="font-semibold text-brand-sand text-lg">Sorbetes de Frutas de Temporada</h4>
+                            <p class="text-brand-muted text-sm font-light mt-1">Frescura natural con frutos recolectados en su punto óptimo.</p>
+                        </div>
+                        <span class="text-brand-gold font-serif font-bold text-lg">Natural</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categoria 2 -->
+            <div class="bg-brand-card/80 p-8 rounded-2xl border border-brand-gold/20">
+                <div class="flex items-center gap-4 mb-6 pb-4 border-b border-brand-gold/10">
+                    <div class="text-brand-gold text-2xl"><i class="fa-solid fa-mug-hot"></i></div>
+                    <h3 class="font-serif text-2xl font-bold text-brand-sand">Cafetería & Terraza Exclusiva</h3>
+                </div>
+                <div class="space-y-6">
+                    <div class="flex justify-between items-start gap-4">
+                        <div>
+                            <h4 class="font-semibold text-brand-sand text-lg">Café de Especialidad 100% Arábica</h4>
+                            <p class="text-brand-muted text-sm font-light mt-1">Tueste natural y preparación barista experta.</p>
+                        </div>
+                        <span class="text-brand-gold font-serif font-bold text-lg">Selección</span>
+                    </div>
+                    <div class="flex justify-between items-start gap-4">
+                        <div>
+                            <h4 class="font-semibold text-brand-sand text-lg">Copas Heladas de Autor</h4>
+                            <p class="text-brand-muted text-sm font-light mt-1">Combinaciones sofisticadas con toppings y licores selectos.</p>
+                        </div>
+                        <span class="text-brand-gold font-serif font-bold text-lg">Especial</span>
+                    </div>
+                    <div class="flex justify-between items-start gap-4">
+                        <div>
+                            <h4 class="font-semibold text-brand-sand text-lg">Infusiones y Repostería Fina</h4>
+                            <p class="text-brand-muted text-sm font-light mt-1">Acompañamientos perfectos para disfrutar en nuestra terraza.</p>
+                        </div>
+                        <span class="text-brand-gold font-serif font-bold text-lg">Gourmet</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-12 text-center">
+            <a href="mailto:error-lite+84f2@duckduckgo.com" class="inline-flex items-center justify-center px-8 py-4 rounded-full bg-brand-gold text-brand-dark font-semibold uppercase tracking-widest text-xs hover:bg-brand-gold-light transition-all shadow-lg gap-3">
+                <i class="fa-solid fa-calendar-check"></i> Reservar Cita
+            </a>
+        </div>
+    </section>
+
+    <!-- Gallery / Instalaciones Section -->
+    <section id="instalaciones" class="py-24 bg-brand-card/30 border-t border-brand-gold/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-gold text-xs uppercase tracking-[0.25em] font-semibold block mb-3">Nuestras Instalaciones</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold mb-4">Un Espacio Diseñado para Ti</h2>
+                <div class="w-16 h-0.5 bg-brand-gold mx-auto mb-6"></div>
+                <p class="text-brand-muted font-light">Imágenes reales de nuestro establecimiento y ambiente en Cudillero.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="overflow-hidden rounded-2xl border border-brand-gold/20 shadow-2xl group">
+                    <img src="https://scontent-iad3-2.xx.fbcdn.net/v/t39.30808-1/327183946_884030756245802_2398932925086487933_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx956x960&amp;ctp=s720x720&amp;_nc_cat=103&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=BrbYvxwRU90Q7kNvwHHg1iq&amp;_nc_oc=Adonpcnds-olGCF2jGO1Dxe0t7fySqrMSd_IBd3qtsDSyEceSGu2txOKe1Z6T8CJOsk&amp;_nc_zt=24&amp;_nc_ht=scontent-iad3-2.xx&amp;_nc_gid=wkFuDH8t94rRxcI2lYcPGg&amp;_nc_ss=7f289&amp;oh=00_AQPrWmfMXgKsRYK5dgpVDTX1msuPssrobYJVdwDxrhpVPQ&amp;oe=6AD6FBED" 
+                         alt="Cuquiterraza Instalaciones" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                         class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="overflow-hidden rounded-2xl border border-brand-gold/20 shadow-2xl group">
+                    <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=1200&q=80" 
+                         alt="Heladería artesanal Cuquiterraza" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                         class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-700">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="opiniones" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-brand-gold text-xs uppercase tracking-[0.25em] font-semibold block mb-3">Opiniones Verificadas</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold mb-4">Lo que Dicen Nuestros Clientes</h2>
+            <div class="w-16 h-0.5 bg-brand-gold mx-auto mb-6"></div>
+            <p class="text-brand-muted font-light">La satisfacción de quienes nos visitan es nuestro mayor aval.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-1 max-w-xl mx-auto gap-8">
+            <!-- Review Card -->
+            <div class="bg-brand-card p-8 rounded-2xl border border-brand-gold/20 shadow-xl relative">
+                <div class="text-brand-gold text-lg mb-4 flex gap-1">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <p class="font-serif italic text-brand-sand text-lg mb-6 leading-relaxed">
+                    "Excelente trato, profesionalidad y calidad."
+                </p>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-gold font-bold">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-brand-sand text-sm">Cliente Verificado</h4>
+                        <span class="text-brand-muted text-xs">Google Maps</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Map Section -->
+    <section id="contacto" class="py-24 bg-brand-card/50 border-t border-brand-gold/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-gold text-xs uppercase tracking-[0.25em] font-semibold block mb-3">Ubicación y Contacto</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold mb-4">Visítanos en Cudillero</h2>
+                <div class="w-16 h-0.5 bg-brand-gold mx-auto mb-6"></div>
+                <p class="text-brand-muted font-light">Ven a conocernos y disfruta de un entorno inigualable.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Info -->
+                <div class="space-y-8">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold text-xl flex-shrink-0 mt-1">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif text-xl font-bold text-brand-sand mb-1">Dirección</h3>
+                            <p class="text-brand-muted font-light">P. del Gral. Marqués, s/n, 33150 Cudillero, Asturias, España</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold text-xl flex-shrink-0 mt-1">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif text-xl font-bold text-brand-sand mb-1">Correo Electrónico</h3>
+                            <a href="mailto:error-lite+84f2@duckduckgo.com" class="text-brand-gold hover:underline font-light">error-lite+84f2@duckduckgo.com</a>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="mailto:error-lite+84f2@duckduckgo.com" class="inline-flex items-center justify-center px-8 py-4 rounded-full bg-brand-gold text-brand-dark font-semibold uppercase tracking-widest text-xs hover:bg-brand-gold-light transition-all shadow-lg gap-3">
+                            <i class="fa-solid fa-calendar-check"></i> Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Map -->
+                <div class="bg-brand-dark p-3 rounded-2xl border border-brand-gold/20 shadow-2xl">
+                    <iframe src="https://www.google.com/maps?q=Cuquiterraza%20P.%20del%20Gral.%20Marqu%C3%A9s%2C%20s%2Fn%2C%2033150%20Cudillero%2C%20Asturias%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark border-t border-brand-gold/20 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div>
+                <a href="#" class="font-serif text-2xl font-bold text-brand-gold flex items-center justify-center md:justify-start gap-2 mb-2">
+                    <i class="fa-solid fa-ice-cream text-lg"></i> Cuquiterraza
+                </a>
+                <p class="text-brand-muted text-xs font-light">Heladería Exclusiva en Cudillero, Asturias.</p>
+            </div>
+            <div class="text-brand-muted text-xs font-light">
+                &copy; <script>document.write(new Date().getFullYear())</script> Cuquiterraza. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script for Mobile Menu Toggle -->
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on click a link
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
