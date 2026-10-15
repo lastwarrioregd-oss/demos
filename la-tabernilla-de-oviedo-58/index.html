@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Tabernilla de Oviedo | Restaurante Asturiano y Cocina de Autor</title>
+    <meta name="description" content="Disfruta de la mejor cocina asturiana y platos de autor en Oviedo. Fabada de alta calidad, cachopo tradicional, arroz con boletus y queso de Pría, y un trato inmejorable.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        terracotta: {
+                            50: '#FDF8F6',
+                            100: '#FBF0EC',
+                            200: '#F6DDD4',
+                            500: '#B85031',
+                            600: '#9E3F23',
+                            700: '#83321B',
+                        },
+                        cream: {
+                            50: '#FFFDF9',
+                            100: '#FAF6F0',
+                            200: '#F3EADF',
+                            300: '#E7D9C7',
+                        },
+                        espresso: {
+                            800: '#2A211D',
+                            900: '#1A1412',
+                            950: '#110D0B',
+                        },
+                        gold: {
+                            400: '#D4AF37',
+                            500: '#C5A059',
+                            600: '#A6823B',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-header {
+            background: rgba(26, 20, 18, 0.92);
+            backdrop-filter: blur(12px);
+        }
+        .text-shadow {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+        }
+    </style>
+</head>
+<body class="bg-cream-100 text-espresso-900 font-sans antialiased selection:bg-terracotta-500 selection:text-white">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-header border-b border-espresso-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#inicio" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-full bg-terracotta-500 flex items-center justify-center text-white text-xl font-serif font-bold group-hover:bg-gold-500 transition-colors">
+                        <i class="fa-solid font-serif">T</i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-serif text-xl sm:text-2xl font-bold tracking-tight text-white group-hover:text-gold-400 transition-colors">La Tabernilla</span>
+                        <span class="text-xs uppercase tracking-widest text-terracotta-200 font-medium -mt-1">de Oviedo</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-cream-200">
+                    <a href="#inicio" class="hover:text-gold-400 transition-colors">Inicio</a>
+                    <a href="#nosotros" class="hover:text-gold-400 transition-colors">Nosotros</a>
+                    <a href="#carta" class="hover:text-gold-400 transition-colors">Nuestra Carta</a>
+                    <a href="#galeria" class="hover:text-gold-400 transition-colors">Instalaciones</a>
+                    <a href="#opiniones" class="hover:text-gold-400 transition-colors">Opiniones</a>
+                    <a href="#contacto" class="hover:text-gold-400 transition-colors">Ubicación</a>
+                </nav>
+
+                <!-- Header CTA Button -->
+                <div class="hidden sm:flex items-center">
+                    <a href="https://wa.me/34636560424" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white font-medium text-sm transition-all shadow-lg hover:shadow-terracotta-500/30 transform hover:-translate-y-0.5">
+                        <i class="fa-brands fa-whatsapp text-lg mr-2"></i>
+                        Reservar Mesa
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" type="button" class="text-cream-200 hover:text-white p-2 rounded-md focus:outline-none" aria-label="Abrir menú">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-espresso-900 border-b border-espresso-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-espresso-800">Inicio</a>
+            <a href="#nosotros" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-cream-200 hover:bg-espresso-800">Nosotros</a>
+            <a href="#carta" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-cream-200 hover:bg-espresso-800">Nuestra Carta</a>
+            <a href="#galeria" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-cream-200 hover:bg-espresso-800">Instalaciones</a>
+            <a href="#opiniones" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-cream-200 hover:bg-espresso-800">Opiniones</a>
+            <a href="#contacto" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-cream-200 hover:bg-espresso-800">Ubicación</a>
+            <div class="pt-2">
+                <a href="https://wa.me/34636560424" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center px-5 py-3 rounded-xl bg-terracotta-500 text-white font-medium text-base shadow-md">
+                    <i class="fa-brands fa-whatsapp text-xl mr-2"></i>
+                    Reservar Mesa
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-20 pb-16 bg-espresso-950 text-white overflow-hidden">
+        <!-- Background Overlay Image -->
+        <div class="absolute inset-0 z-0 opacity-40">
+            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1920&q=80" 
+                 alt="Ambiente acogedor de restaurante" 
+                 class="w-full h-full object-cover"
+                 referrerpolicy="no-referrer"
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';" />
+            <div class="absolute inset-0 bg-gradient-to-t from-espresso-950 via-espresso-950/70 to-espresso-950/40"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-12">
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-terracotta-500/20 border border-terracotta-500/40 backdrop-blur-md mb-8">
+                <i class="fa-solid fa-utensils text-gold-400 text-xs"></i>
+                <span class="text-xs sm:text-sm font-semibold tracking-wide text-cream-100 uppercase">Restaurante Asturiano en Oviedo</span>
+            </div>
+
+            <!-- Title -->
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
+                Tradición Asturiana y <br class="hidden sm:inline"/>
+                <span class="italic text-gold-400 font-normal">Sabor de Autor</span> en Oviedo
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="max-w-2xl mx-auto text-lg sm:text-xl text-cream-200 font-light mb-10 leading-relaxed">
+                Un rincón cálido y acogedor donde disfrutar sin prisas de una gastronomía auténtica: fabada con compango de primera, cachopos crujientes, arroces melosos y sorpresas gourmet inolvidables.
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
+                <a href="https://wa.me/34636560424" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white font-semibold text-base transition-all shadow-xl hover:shadow-terracotta-500/40 transform hover:-translate-y-1">
+                    <i class="fa-brands fa-whatsapp text-xl mr-2"></i>
+                    Reservar Mesa
+                </a>
+                <a href="#carta" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold text-base backdrop-blur-md transition-all">
+                    Ver Carta y Platos
+                    <i class="fa-solid fa-arrow-down text-sm ml-2"></i>
+                </a>
+            </div>
+
+            <!-- Key Highlights Badges -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 pt-8 border-t border-white/10 text-cream-200 text-sm">
+                <div class="flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-heart text-terracotta-500"></i>
+                    <span>Trato Cercano y Amable</span>
+                </div>
+                <div class="flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-fire text-terracotta-500"></i>
+                    <span>Fabada y Compango TOP</span>
+                </div>
+                <div class="flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-shield-halved text-terracotta-500"></i>
+                    <span>Materia Prima Seleccionada</span>
+                </div>
+                <div class="flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-spa text-terracotta-500"></i>
+                    <span>Ambiente Tranquilo</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE NOSOTROS / LA EXPERIENCIA -->
+    <section id="nosotros" class="py-20 bg-cream-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Text Column -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 text-terracotta-600 font-semibold text-xs uppercase tracking-widest">
+                        <i class="fa-solid fa-gem"></i>
+                        <span>La Experiencia en La Tabernilla</span>
+                    </div>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-espresso-900 leading-tight">
+                        Un refugio gastronómico tranquilo, acogedor y sin jaleos
+                    </h2>
+                    <p class="text-espresso-800 text-base sm:text-lg leading-relaxed">
+                        En <strong class="text-terracotta-600">La Tabernilla de Oviedo</strong> creemos que comer bien es solo la mitad de la experiencia. La otra mitad es el espacio y el trato: un lugar con encanto que invita a la tranquilidad, donde el personal te atiende de forma inmejorable, cercana y cercana.
+                    </p>
+                    <p class="text-espresso-800/80 text-base leading-relaxed">
+                        Nuestra propuesta combina los grandes estandartes de la tradición asturiana —como la fabada de excelente calidad, los callos caseros o el cachopo tierno— con creaciones especiales como nuestro afamado arroz con boletus y queso ahumado de Pría, las croquetas artesanas o especialidades únicas como la hamburguesa gourmet de canguro.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div class="p-4 rounded-2xl bg-white border border-cream-200 shadow-sm flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-terracotta-100 text-terracotta-600 flex items-center justify-center shrink-0 mt-1">
+                                <i class="fa-solid fa-hand-holding-heart text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-espresso-900 text-sm">Servicio Super Amable</h3>
+                                <p class="text-xs text-espresso-800/70 mt-1">Atención personalizada y respetuosa que te hace sentir como en casa.</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-white border border-cream-200 shadow-sm flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-terracotta-100 text-terracotta-600 flex items-center justify-center shrink-0 mt-1">
+                                <i class="fa-solid fa-wheat-awn text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-espresso-900 text-sm">Calidad Incondicional</h3>
+                                <p class="text-xs text-espresso-800/70 mt-1">Faba de Asturias, compango de calidad superior y carnes seleccionadas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="https://wa.me/34636560424" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-terracotta-600 font-bold hover:text-terracotta-700 text-base group">
+                            <span>Reserva tu mesa para hoy</span>
+                            <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Image Grid Column -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1000&q=80" 
+                             alt="Plato gastronómico asturiano" 
+                             class="w-full h-[420px] object-cover hover:scale-105 transition-transform duration-700"
+                             referrerpolicy="no-referrer"
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';" />
+                    </div>
+                    <!-- Decorative Badge Overlay -->
+                    <div class="absolute -bottom-6 -left-6 z-20 bg-espresso-900 text-white p-6 rounded-2xl shadow-xl max-w-xs border border-espresso-800">
+                        <div class="flex items-center gap-1 text-gold-400 mb-1">
+                            <i class="fa-solid fa-star text-xs"></i>
+                            <i class="fa-solid fa-star text-xs"></i>
+                            <i class="fa-solid fa-star text-xs"></i>
+                            <i class="fa-solid fa-star text-xs"></i>
+                            <i class="fa-solid fa-star text-xs"></i>
+                        </div>
+                        <p class="text-xs text-cream-200 italic font-serif">"Lugar con encanto y comida de calidad al que merece la pena desplazarse."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NUESTRA CARTA, PLATOS ESTRELLA Y ESPECIALIDADES -->
+    <section id="carta" class="py-20 bg-cream-50 border-y border-cream-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-terracotta-600 font-semibold text-xs uppercase tracking-widest block mb-2">Gastronomía Con Alma</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-espresso-900 mb-4">
+                    Nuestra Carta y Especialidades de la Casa
+                </h2>
+                <p class="text-espresso-800/80 text-base">
+                    Platos elogiados por nuestros comensales, preparados al momento con ingredientes frescos de la más alta calidad.
+                </p>
+            </div>
+
+            <!-- Categories Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Dish Card 1: Fabada Asturiana -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-cream-200 hover:shadow-xl transition-all duration-300 flex flex-col group">
+                    <div class="relative h-52 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80" 
+                             alt="Fabada Asturiana" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             referrerpolicy="no-referrer"
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';" />
+                        <span class="absolute top-3 right-3 bg-terracotta-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
+                            Plato Estrella
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-xl font-bold text-espresso-900 mb-2">Fabada Asturiana Tradicional</h3>
+                            <p class="text-xs text-espresso-800/70 leading-relaxed mb-4">
+                                Elaborada con faba seleccionada de extrema finura y un compango ahumado artesanal de excelente calidad. Ración abundante y muy sabrosa.
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-cream-100">
+                            <span class="text-xs text-terracotta-600 font-semibold uppercase tracking-wider"><i class="fa-solid fa-crown mr-1"></i> Recomendado</span>
+                            <a href="https://wa.me/34636560424" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-espresso-900 hover:text-terracotta-500">Reservar Mesa &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dish Card 2: Cachopo Tradicional -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-cream-200 hover:shadow-xl transition-all duration-300 flex flex-col group">
+                    <div class="relative h-52 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" 
+                             alt="Cachopo Tradicional" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             referrerpolicy="no-referrer"
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';" />
+                        <span class="absolute top-3 right-3 bg-espresso-900 text-gold-400 text-xs font-bold px-3 py-1 rounded-full shadow">
+                            Clásico Imparable
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-xl font-bold text-espresso-900 mb-2">Cachopo de Ternera Asturiana</h3>
+                            <p class="text-xs text-espresso-800/70 leading-relaxed mb-4">
+                                Filetes de ternera asturiana super tierna, empanado crujiente y dorado, relleno abundante. Servido con guarnición crujiente.
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-cream-100">
+                            <span class="text-xs text-terracotta-600 font-semibold uppercase tracking-wider"><i class="fa-solid fa-fire mr-1"></i> Favorito</span>
+                            <a href="https://wa.me/34636560424" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-espresso-900 hover:text-terracotta-500">Reservar Mesa &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dish Card 3: Arroz con Boletus y Queso Ahumado de Pría -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-cream-200 hover:shadow-xl transition-all duration-300 flex flex-col group">
+                    <div class="relative h-52 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1633964913295-ceb43826e7c9?auto=format&fit=crop&w=800&q=80" 
+                             alt="Arroz con boletus y queso ahumado de Pría" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             referrerpolicy="no-referrer"
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';" />
+                        <span class="absolute top-3 right-3 bg-gold-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
+                            Especialidad de Autor
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-xl font-bold text-espresso-900 mb-2">Arroz con Boletus y Queso de Pría</h3>
+                            <p class="text-xs text-espresso-800/70 leading-relaxed mb-4">
+                                Espectacular equilibrio de sabores, punto de cocción meloso y la inconfundible potencia aromática del queso ahumado de Pría.
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-cream-100">
+                            <span class="text-xs text-terracotta-600 font-semibold uppercase tracking-wider"><i class="fa-solid fa-star mr-1"></i> Muy Elogiado</span>
+                            <a href="https://wa.me/34636560424" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-espresso-900 hover:text-terracotta-500">Reservar Mesa &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dish Card 4: Hamburguesa de Canguro -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-cream-200 hover:shadow-xl transition-all duration-300 flex flex-col group">
+                    <div class="relative h-52 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80" 
+                             alt="Hamburguesa de Canguro Gourmet" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             referrerpolicy="no-referrer"
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';" />
+                        <span class="absolute top-3 right-3 bg-terracotta-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
+                            Exclusivo
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-xl font-bold text-espresso-900 mb-2">Hamburguesa Gourmet de Canguro</h3>
+                            <p class="text-xs text-espresso-800/70 leading-relaxed mb-4">
+                                Una experiencia diferente e increíblemente jugosa. Carne de canguro perfectamente sazonada con un acompañamiento que cierra el conjunto perfecto.
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-cream-100">
+                            <span class="text-xs text-terracotta-600 font-semibold uppercase tracking-wider"><i class="fa-solid fa-utensils mr-1"></i> Para Repetir</span>
+                            <a href="https://wa.me/34636560424" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-espresso-900 hover:text-terracotta-500">Reservar Mesa &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dish Card 5: Croquetas de Boletus y Revuelto -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-cream-200 hover:shadow-xl transition-all duration-300 flex flex-col group">
+                    <div class="relative h-52 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80" 
+                             alt="Croquetas Caseras de Boletus" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             referrerpolicy="no-referrer"
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';" />
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-xl font-bold text-espresso-900 mb-2">Croquetas Caseras de Boletus</h3>
+                            <p class="text-xs text-espresso-800/70 leading-relaxed mb-4">
+                                Croquetas hipercremosas por dentro y de rebozado extremadamente crujiente. Imprescindibles para empezar a compartir.
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-cream-100">
+                            <span class="text-xs text-terracotta-600 font-semibold uppercase tracking-wider"><i class="fa-solid fa-thumbs-up mr-1"></i> Entrante Top</span>
+                            <a href="https://wa.me/34636560424" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-espresso-900 hover:text-terracotta-500">Reservar Mesa &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dish Card 6: Callos a la Asturiana y Calçots -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-cream-200 hover:shadow-xl transition-all duration-300 flex flex-col group">
+                    <div class="relative h-52 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1588168333986-5078d3ae3976?auto=format&fit=crop&w=800&q=80" 
+                             alt="Callos a la asturiana" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             referrerpolicy="no-referrer"
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';" />
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-xl font-bold text-espresso-900 mb-2">Callos a la Asturiana & Calçots</h3>
+                            <p class="text-xs text-espresso-800/70 leading-relaxed mb-4">
+                                Callos riquísimos y melosos en su justa sazón, así como Calçots a la parrilla servidos en temporada con su salsa artesana.
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-cream-100">
+                            <span class="text-xs text-terracotta-600 font-semibold uppercase tracking-wider"><i class="fa-solid fa-leaf mr-1"></i> Tradición Pura</span>
+                            <a href="https://wa.me/34636560424" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-espresso-900 hover:text-terracotta-500">Reservar Mesa &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CTA Callout inside Menu Section -->
+            <div class="mt-12 text-center bg-espresso-900 text-white rounded-3xl p-8 sm:p-12 relative overflow-hidden shadow-xl">
+                <div class="relative z-10 max-w-2xl mx-auto space-y-4">
+                    <h3 class="font-serif text-2xl sm:text-3xl font-bold text-gold-400">¿Quieres asegurar tu mesa para este fin de semana?</h3>
+                    <p class="text-cream-200 text-sm sm:text-base">
+                        Te recomendamos reservar con antelación para disfrutar sin esperas en un entorno relajado.
+                    </p>
+                    <div class="pt-2">
+                        <a href="https://wa.me/34636560424" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-8 py-4 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white font-bold text-base transition-all shadow-lg hover:shadow-terracotta-500/30">
+                            <i class="fa-brands fa-whatsapp text-xl mr-2"></i>
+                            Reservar Mesa por WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERÍA / NUESTRAS INSTALACIONES -->
+    <section id="galeria" class="py-20 bg-cream-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-terracotta-600 font-semibold text-xs uppercase tracking-widest block mb-2">Ambiente y Espacio</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-espresso-900">
+                    Nuestras Instalaciones y Gastronomía
+                </h2>
+                <p class="text-espresso-800/80 text-sm mt-2">
+                    Un espacio pensado para sentirse cómodo, conversar tranquilamente y degustar la buena mesa.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="rounded-2xl overflow-hidden h-64 group shadow-md relative">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" 
+                         alt="Comedor acogedor La Tabernilla" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-espresso-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <span class="text-white text-xs font-semibold">Salón Principal Agradable</span>
+                    </div>
+                </div>
+
+                <div class="rounded-2xl overflow-hidden h-64 group shadow-md relative">
+                    <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=800&q=80" 
+                         alt="Mesa preparada" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-espresso-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <span class="text-white text-xs font-semibold">Cuidado por los Detalles</span>
+                    </div>
+                </div>
+
+                <div class="rounded-2xl overflow-hidden h-64 group shadow-md relative">
+                    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=800&q=80" 
+                         alt="Platos y gastronomía" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-espresso-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <span class="text-white text-xs font-semibold">Presentación Impecable</span>
+                    </div>
+                </div>
+
+                <div class="rounded-2xl overflow-hidden h-64 group shadow-md relative">
+                    <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80" 
+                         alt="Selección de vinos" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-espresso-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <span class="text-white text-xs font-semibold">Bodega Seleccionada</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESEÑAS REALES DE CLIENTES -->
+    <section id="opiniones" class="py-20 bg-espresso-900 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-2 text-gold-400 font-semibold text-xs uppercase tracking-widest mb-2">
+                    <i class="fa-solid fa-star"></i>
+                    <span>Opiniones Verificadas en Google</span>
+                </div>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-4">
+                    Lo que dicen quienes nos visitan
+                </h2>
+                <p class="text-cream-200 text-sm sm:text-base font-light">
+                    La opinión de nuestros comensales es nuestro mayor orgullo. Reseñas reales extraídas directamente de sus visitas.
+                </p>
+            </div>
+
+            <!-- Review Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Review 1 -->
+                <div class="bg-espresso-800/90 rounded-2xl p-6 border border-espresso-700 flex flex-col justify-between shadow-lg relative">
+                    <i class="fa-solid fa-quote-right text-4xl text-terracotta-500/20 absolute top-4 right-4"></i>
+                    <div>
+                        <div class="flex items-center gap-1 text-gold-400 mb-4">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                        </div>
+                        <p class="text-cream-100 text-sm leading-relaxed italic mb-6">
+                            "Pues fuimos porque había mucha gente en otro restaurante cercano, o sea, de casualidad. Nos encontramos un sitio bastante agradable, con un ambiente que invita a la tranquilidad, sin jaleos, donde comimos muy bien. Lo que comimos estaba bastante bueno: un cachopo y un revuelto de huevo. El servicio super amable. Repetiría y lo aconsejo."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-espresso-700/60">
+                        <div class="w-9 h-9 rounded-full bg-terracotta-500 text-white font-bold flex items-center justify-center text-sm">
+                            S
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white text-sm">Summit</h3>
+                            <span class="text-xs text-cream-200/60">Cliente verificado en Google</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-espresso-800/90 rounded-2xl p-6 border border-espresso-700 flex flex-col justify-between shadow-lg relative">
+                    <i class="fa-solid fa-quote-right text-4xl text-terracotta-500/20 absolute top-4 right-4"></i>
+                    <div>
+                        <div class="flex items-center gap-1 text-gold-400 mb-4">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                        </div>
+                        <p class="text-cream-100 text-sm leading-relaxed italic mb-6">
+                            "Hemos estado el fin de semana y ha sido espectacular. La comida en general riquísima. Probamos los calçots por primera vez y nos encantaron. Mención especial a la fabada, tanto la faba como el compango eran de muy buena calidad..."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-espresso-700/60">
+                        <div class="w-9 h-9 rounded-full bg-gold-500 text-white font-bold flex items-center justify-center text-sm">
+                            D
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white text-sm">DarkYors</h3>
+                            <span class="text-xs text-cream-200/60">Cliente verificado en Google</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-espresso-800/90 rounded-2xl p-6 border border-espresso-700 flex flex-col justify-between shadow-lg relative">
+                    <i class="fa-solid fa-quote-right text-4xl text-terracotta-500/20 absolute top-4 right-4"></i>
+                    <div>
+                        <div class="flex items-center gap-1 text-gold-400 mb-4">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                        </div>
+                        <p class="text-cream-100 text-sm leading-relaxed italic mb-6">
+                            "Segunda vez que vamos. Nos habíamos quedado con ganas de probar la hamburguesa de canguro, riquísima!!, tanto la carne como el acompañamiento, eran el conjunto perfecto. Pedimos también un arroz con boletus y queso ahumado de Pria, espectacular en todos los puntos de sabor, cocción y texturas. Volveremos y recomendaremos siempre..."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-espresso-700/60">
+                        <div class="w-9 h-9 rounded-full bg-terracotta-600 text-white font-bold flex items-center justify-center text-sm">
+                            M
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white text-sm">Maria Gomez Rodriguez</h3>
+                            <span class="text-xs text-cream-200/60">Cliente verificado en Google</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="bg-espresso-800/90 rounded-2xl p-6 border border-espresso-700 flex flex-col justify-between shadow-lg relative">
+                    <i class="fa-solid fa-quote-right text-4xl text-terracotta-500/20 absolute top-4 right-4"></i>
+                    <div>
+                        <div class="flex items-center gap-1 text-gold-400 mb-4">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                        </div>
+                        <p class="text-cream-100 text-sm leading-relaxed italic mb-6">
+                            "Comida bastante rica. Muy recomendables las croquetas de boletus. Servicio bastante bien, muy amables, agradables y respetuosos en todo momento."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-espresso-700/60">
+                        <div class="w-9 h-9 rounded-full bg-slate-600 text-white font-bold flex items-center justify-center text-sm">
+                            Á
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white text-sm">ÁLVARO S.S</h3>
+                            <span class="text-xs text-cream-200/60">Cliente verificado en Google</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 5 -->
+                <div class="bg-espresso-800/90 rounded-2xl p-6 border border-espresso-700 flex flex-col justify-between shadow-lg relative md:col-span-2 lg:col-span-1">
+                    <i class="fa-solid fa-quote-right text-4xl text-terracotta-500/20 absolute top-4 right-4"></i>
+                    <div>
+                        <div class="flex items-center gap-1 text-gold-400 mb-4">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                        </div>
+                        <p class="text-cream-100 text-sm leading-relaxed italic mb-6">
+                            "Fuimos allí a comer, es un sitio súper agradable. El trato inmejorable, personal muy cercano y amable. Los callos estaban riquísimos, al igual que el resto de comida. Sin duda repetiremos."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-espresso-700/60">
+                        <div class="w-9 h-9 rounded-full bg-emerald-700 text-white font-bold flex items-center justify-center text-sm">
+                            G
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white text-sm">Ge Rodriguez</h3>
+                            <span class="text-xs text-cream-200/60">Cliente verificado en Google</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- UBICACIÓN, CONTACTO Y MAPA INTERACTIVO -->
+    <section id="contacto" class="py-20 bg-cream-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Info Column -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-terracotta-600 font-semibold text-xs uppercase tracking-widest block mb-2">Encuéntranos Fácilmente</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-espresso-900">
+                            Visítanos en Oviedo
+                        </h2>
+                        <p class="text-espresso-800/80 text-sm mt-2">
+                            Estamos esperándote con la mesa lista y los mejores platos recién preparados.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <!-- Address -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-terracotta-500 text-white flex items-center justify-center shrink-0 shadow-md">
+                                <i class="fa-solid fa-location-dot text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-espresso-900 text-base">Dirección</h3>
+                                <p class="text-espresso-800 text-sm mt-1">
+                                    C. Tomás Crespo Frígilis, 6, bajo, 33013 Oviedo, Asturias, España
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-terracotta-500 text-white flex items-center justify-center shrink-0 shadow-md">
+                                <i class="fa-solid fa-phone text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-espresso-900 text-base">Teléfono / Reservas Directas</h3>
+                                <p class="text-espresso-800 text-sm mt-1">
+                                    <a href="https://wa.me/34636560424" target="_blank" rel="noopener noreferrer" class="hover:text-terracotta-600 font-semibold transition-colors">
+                                        636 56 04 24
+                                    </a>
+                                </p>
+                                <span class="text-xs text-emerald-700 font-medium inline-block mt-0.5">
+                                    <i class="fa-brands fa-whatsapp mr-1"></i> WhatsApp activo para reservas
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Horarios aproximados -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-terracotta-500 text-white flex items-center justify-center shrink-0 shadow-md">
+                                <i class="fa-solid fa-clock text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-espresso-900 text-base">Atención y Reservas</h3>
+                                <p class="text-espresso-800 text-sm mt-1">
+                                    Comidas y Cenas. Se recomienda reserva previa para garantizar disponibilidad de mesa.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Direct Reservation Box -->
+                    <div class="p-6 rounded-2xl bg-white border border-cream-200 shadow-md">
+                        <h4 class="font-serif font-bold text-espresso-900 text-lg mb-2">¿Quieres consultar disponibilidad?</h4>
+                        <p class="text-xs text-espresso-800/70 mb-4">
+                            Envíanos un mensaje rápido indicando el número de personas, la fecha y la hora deseada.
+                        </p>
+                        <a href="https://wa.me/34636560424" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-terracotta-500 hover:bg-terracotta-600 text-white font-bold text-sm transition-all shadow-md">
+                            <i class="fa-brands fa-whatsapp text-lg mr-2"></i>
+                            Reservar Mesa
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Map Column -->
+                <div class="lg:col-span-7">
+                    <div class="bg-white p-3 rounded-2xl shadow-xl border border-cream-200">
+                        <iframe src="https://www.google.com/maps?q=La%20Tabernilla%20de%20Oviedo%20C.%20Tom%C3%A1s%20Crespo%20Fr%C3%ADgilis%2C%206%2C%20bajo%2C%2033013%20Oviedo%2C%20Asturias%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-espresso-950 text-white border-t border-espresso-800 pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-10 border-b border-espresso-800/80">
+                
+                <!-- Col 1: Brand -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-terracotta-500 flex items-center justify-center text-white text-lg font-serif font-bold">
+                            T
+                        </div>
+                        <span class="font-serif text-xl font-bold text-white">La Tabernilla de Oviedo</span>
+                    </div>
+                    <p class="text-xs text-cream-200/70 leading-relaxed max-w-sm">
+                        Restaurante asturiano tradicional y cocina de autor. El mejor ambiente para compartir buenos momentos y comida inolvidable en Oviedo.
+                    </p>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div class="space-y-2">
+                    <h4 class="text-sm font-bold text-gold-400 uppercase tracking-wider mb-3">Acceso Rápido</h4>
+                    <ul class="space-y-2 text-xs text-cream-200/80">
+                        <li><a href="#inicio" class="hover:text-gold-400 transition-colors">Inicio</a></li>
+                        <li><a href="#nosotros" class="hover:text-gold-400 transition-colors">Sobre Nosotros</a></li>
+                        <li><a href="#carta" class="hover:text-gold-400 transition-colors">Carta y Platos Estrella</a></li>
+                        <li><a href="#galeria" class="hover:text-gold-400 transition-colors">Instalaciones</a></li>
+                        <li><a href="#opiniones" class="hover:text-gold-400 transition-colors">Opiniones de Clientes</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Direct Action -->
+                <div class="space-y-4">
+                    <h4 class="text-sm font-bold text-gold-400 uppercase tracking-wider">Reservas Rápidas</h4>
+                    <p class="text-xs text-cream-200/80">
+                        Haz clic a continuación para comunicarte con nosotros por WhatsApp.
+                    </p>
+                    <a href="https://wa.me/34636560424" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white font-medium text-xs transition-colors">
+                        <i class="fa-brands fa-whatsapp text-sm mr-2"></i>
+                        Reservar Mesa
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Copyright -->
+            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-cream-200/50 gap-4">
+                <p>&copy; <span id="year"></span> La Tabernilla de Oviedo. Todos los derechos reservados.</p>
+                <p class="text-center sm:text-right">C. Tomás Crespo Frígilis, 6, bajo, 33013 Oviedo, Asturias, España</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/34636560424" target="_blank" rel="noopener noreferrer" 
+       class="fixed bottom-6 right-6 z-50 bg-emerald-600 hover:bg-emerald-500 text-white p-4 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 flex items-center justify-center group"
+       aria-label="Reservar Mesa por WhatsApp">
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+        <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs group-hover:ml-2 transition-all duration-300 font-semibold text-sm">
+            Reservar Mesa
+        </span>
+    </a>
+
+    <!-- JAVASCRIPT FOR MOBILE MENU & DYNAMIC YEAR -->
+    <script>
+        // Set dynamic current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
+    </script>
+</body>
+</html>
