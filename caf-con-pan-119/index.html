@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café con Pan | La mejor cafetería y desayunos en Gijón</title>
+    <meta name="description" content="Disfruta de los mejores desayunos, cruasáns de masa madre, tostadas y café de especialidad en el centro de Gijón. ¡Te esperamos!">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        terracota: {
+                            50: '#fdf8f6',
+                            100: '#fbeee6',
+                            500: '#c86d51',
+                            600: '#b2583d',
+                            700: '#95462f',
+                        },
+                        crema: {
+                            50: '#fcfbfa',
+                            100: '#f5f2eb',
+                            200: '#ebe4d8',
+                            800: '#4a453f',
+                            900: '#2c2824',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-crema-50 text-crema-900 font-sans antialiased selection:bg-terracota-500 selection:text-white">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-crema-50/90 backdrop-blur-md border-b border-crema-200 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2">
+                <span class="font-serif text-2xl font-bold tracking-tight text-crema-900">Café <span class="text-terracota-600">con Pan</span></span>
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
+                <a href="#carta" class="hover:text-terracota-600 transition-colors">Nuestra Carta</a>
+                <a href="#experiencia" class="hover:text-terracota-600 transition-colors">El Local</a>
+                <a href="#opiniones" class="hover:text-terracota-600 transition-colors">Opiniones</a>
+                <a href="#contacto" class="hover:text-terracota-600 transition-colors">Ubicación</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="https://wa.me/34637457622" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 bg-terracota-600 hover:bg-terracota-700 text-white px-5 py-2.5 rounded-full font-medium text-sm transition-all shadow-sm hover:shadow">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    Reservar Mesa
+                </a>
+                <button id="menu-btn" class="md:hidden text-crema-900 text-xl focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-crema-50 border-b border-crema-200 px-6 py-6 space-y-4 shadow-lg">
+            <a href="#carta" class="block font-medium text-crema-900 hover:text-terracota-600">Nuestra Carta</a>
+            <a href="#experiencia" class="block font-medium text-crema-900 hover:text-terracota-600">El Local</a>
+            <a href="#opiniones" class="block font-medium text-crema-900 hover:text-terracota-600">Opiniones</a>
+            <a href="#contacto" class="block font-medium text-crema-900 hover:text-terracota-600">Ubicación</a>
+            <a href="https://wa.me/34637457622" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full bg-terracota-600 text-white py-3 rounded-xl font-medium">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                Reservar Mesa
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 md:pt-40 md:overflow-hidden bg-crema-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-terracota-100 text-terracota-700 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider">
+                        <i class="fa-solid fa-mug-hot"></i> Cafetería en el centro de Gijón
+                    </div>
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-crema-900 leading-tight">
+                        Desayunos inolvidables y café de especialidad
+                    </h1>
+                    <p class="text-lg text-crema-800 font-light max-w-xl mx-auto lg:mx-0">
+                        Un ambiente tranquilo, acogedor y coqueta en Gijón. Disfruta de nuestros cruasáns de masa madre a la plancha, tostadas crujientes y un trato excelente.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="https://wa.me/34637457622" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-terracota-600 hover:bg-terracota-700 text-white px-8 py-4 rounded-full font-semibold text-base transition-all shadow-md hover:shadow-lg">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            Reservar Mesa
+                        </a>
+                        <a href="#carta" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-crema-200 hover:bg-crema-800 hover:text-white text-crema-900 px-8 py-4 rounded-full font-semibold text-base transition-all">
+                            Ver Carta
+                        </a>
+                    </div>
+                    
+                    <div class="flex items-center justify-center lg:justify-start gap-6 pt-6 text-sm text-crema-800">
+                        <div class="flex items-center gap-1.5">
+                            <i class="fa-solid fa-star text-amber-500"></i>
+                            <span class="font-bold">4.9/5</span> Reseñas en Google
+                        </div>
+                        <div class="w-1 h-1 bg-crema-300 rounded-full"></div>
+                        <div class="flex items-center gap-1.5">
+                            <i class="fa-solid fa-location-dot text-terracota-600"></i>
+                            <span>Centro de Gijón</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="absolute -inset-2 bg-gradient-to-r from-terracota-500 to-amber-500 rounded-3xl blur-lg opacity-30 animate-pulse"></div>
+                        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=80" 
+                             alt="Café con Pan Gijón" 
+                             referrerpolicy="no-referrer" 
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                             class="relative rounded-2xl shadow-2xl object-cover w-full h-[450px]">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Características Destacadas -->
+    <section class="py-16 bg-crema-50 border-b border-crema-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-crema-100 p-8 rounded-2xl border border-crema-200 flex flex-col items-start">
+                    <div class="w-12 h-12 bg-terracota-100 text-terracota-600 rounded-xl flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-mug-saucer"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold mb-2">Café Excepcional</h3>
+                    <p class="text-crema-800 text-sm leading-relaxed">
+                        Cafés de gran calidad con opción de cacao o canela, siempre acompañados de una deliciosa galletita de mantequilla.
+                    </p>
+                </div>
+
+                <div class="bg-crema-100 p-8 rounded-2xl border border-crema-200 flex flex-col items-start">
+                    <div class="w-12 h-12 bg-terracota-100 text-terracota-600 rounded-xl flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-wheat-awn"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold mb-2">Masa Madre & Tostadas</h3>
+                    <p class="text-crema-800 text-sm leading-relaxed">
+                        Cruasáns de masa madre para chuparse los dedos (con mermelada y mantequilla a la plancha) y pan riquísimo para tostadas.
+                    </p>
+                </div>
+
+                <div class="bg-crema-100 p-8 rounded-2xl border border-crema-200 flex flex-col items-start">
+                    <div class="w-12 h-12 bg-terracota-100 text-terracota-600 rounded-xl flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold mb-2">Ambiente Acogedor</h3>
+                    <p class="text-crema-800 text-sm leading-relaxed">
+                        Un local pequeño pero muy coqueto, limpio y cuidado, con un trato inmejorable y precios muy asequibles.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menú / Carta Section -->
+    <section id="carta" class="py-20 bg-crema-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-terracota-600 font-semibold text-sm uppercase tracking-wider">Nuestra Carta</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold mt-2 text-crema-900">Platos Estrella y Especialidades</h2>
+                <p class="text-crema-800 mt-3">Elaborado con ingredientes de primera calidad, pan excelente y mucho mimo.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+                <!-- Desayunos y Panadería -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-crema-200 space-y-6">
+                    <div class="flex items-center gap-3 border-b border-crema-200 pb-4">
+                        <div class="w-10 h-10 bg-terracota-100 text-terracota-600 rounded-full flex items-center justify-center">
+                            <i class="fa-solid fa-bread-slice"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-crema-900">Desayunos y Panadería</h3>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex justify-between items-start gap-4">
+                            <div>
+                                <h4 class="font-bold text-crema-900 text-lg">Cruasán de Masa Madre a la Plancha</h4>
+                                <p class="text-crema-800 text-sm mt-1">Imprescindible. Servido con mantequilla y mermelada. ¡Tan rico que repetirás!</p>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-start gap-4">
+                            <div>
+                                <h4 class="font-bold text-crema-900 text-lg">Tostadas Variadas</h4>
+                                <p class="text-crema-800 text-sm mt-1">Con pan de excelente calidad, crujiente y tierno por dentro.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-start gap-4">
+                            <div>
+                                <h4 class="font-bold text-crema-900 text-lg">Tortilla Casera</h4>
+                                <p class="text-crema-800 text-sm mt-1">Deliciosa tortilla recién hecha, ideal para acompañar tu mañana.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cafés y Salados -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-crema-200 space-y-6">
+                    <div class="flex items-center gap-3 border-b border-crema-200 pb-4">
+                        <div class="w-10 h-10 bg-terracota-100 text-terracota-600 rounded-full flex items-center justify-center">
+                            <i class="fa-solid fa-mug-hot"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-crema-900">Cafés y Contundentes</h3>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex justify-between items-start gap-4">
+                            <div>
+                                <h4 class="font-bold text-crema-900 text-lg">Café de Especialidad</h4>
+                                <p class="text-crema-800 text-sm mt-1">Muy buenos cafés con opción de añadir cacao o canela. Incluye galletita de mantequilla.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-start gap-4">
+                            <div>
+                                <h4 class="font-bold text-crema-900 text-lg">Sándwiches Contundentes</h4>
+                                <p class="text-crema-800 text-sm mt-1">Preparados al momento, generosos y llenos de sabor.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-start gap-4">
+                            <div>
+                                <h4 class="font-bold text-crema-900 text-lg">Bocadillos Variados</h4>
+                                <p class="text-crema-800 text-sm mt-1">Opciones clásicas y modernas con pan crujiente del día.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="https://wa.me/34637457622" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-terracota-600 hover:bg-terracota-700 text-white px-8 py-4 rounded-full font-semibold text-base transition-all shadow-md hover:shadow-lg">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    Reservar Mesa y Consultar Precios
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería / Instalaciones -->
+    <section id="experiencia" class="py-20 bg-crema-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-terracota-600 font-semibold text-sm uppercase tracking-wider">Ambiente</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold mt-2 text-crema-900">Nuestras Instalaciones</h2>
+                <p class="text-crema-800 mt-3">Un espacio pequeño pero coqueta, tranquilo y extremadamente limpio para que disfrutes al máximo.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="overflow-hidden rounded-2xl shadow-md group">
+                    <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=80" 
+                         alt="Interior de la cafetería" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                         class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="overflow-hidden rounded-2xl shadow-md group">
+                    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80" 
+                         alt="Café y bollería" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                         class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="overflow-hidden rounded-2xl shadow-md group sm:col-span-2 lg:col-span-1">
+                    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80" 
+                         alt="Detalle de tostadas y café" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                         class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Opiniones Reales Verificadas -->
+    <section id="opiniones" class="py-20 bg-crema-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-terracota-600 font-semibold text-sm uppercase tracking-wider">Testimonios</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold mt-2 text-crema-900">Lo que dicen nuestros clientes</h2>
+                <p class="text-crema-800 mt-3">Reseñas reales extraídas de Google Maps de clientes que ya nos han visitado.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Reseña 1 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-crema-200 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex text-amber-500 text-sm gap-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-crema-800 text-sm leading-relaxed italic">
+                            "Hemos desayunado aquí y la experiencia ha sido de 10. Pedimos unas tostadas y un cruasán, y estaba todo buenísimo. El cruasán nos sorprendió especialmente: estaba tan rico que tuvimos que pedir otro. El café también estaba muy bueno. Además, el trato del chico que nos atendió fue excelente..."
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-crema-100 flex items-center justify-between">
+                        <span class="font-bold text-crema-900 text-sm">- Pablo Molina</span>
+                        <span class="text-xs text-crema-800">Google Maps</span>
+                    </div>
+                </div>
+
+                <!-- Reseña 2 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-crema-200 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex text-amber-500 text-sm gap-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-crema-800 text-sm leading-relaxed italic">
+                            "Bar con mucho encanto los cafés están muy buenos además te ofrece añadirte cacao o canela acompañado de una galletita de mantequilla buenísima. Las tostadas muy ricas con el pan muy bueno y los sándwiches contundente..."
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-crema-100 flex items-center justify-between">
+                        <span class="font-bold text-crema-900 text-sm">- Marta RCBS</span>
+                        <span class="text-xs text-crema-800">Google Maps</span>
+                    </div>
+                </div>
+
+                <!-- Reseña 3 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-crema-200 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex text-amber-500 text-sm gap-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-crema-800 text-sm leading-relaxed italic">
+                            "Fuimos hoy a probar el sitio ya que teníamos ganas de conocerlo desde hace unas semanas. Destacar la atención del chico que nos atendió. Ojalá más negocios así, y más personas como él. El café muy bueno, y la comida más de lo mismo. Precios muy asequibles para desayunos..."
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-crema-100 flex items-center justify-between">
+                        <span class="font-bold text-crema-900 text-sm">- Nai L</span>
+                        <span class="text-xs text-crema-800">Google Maps</span>
+                    </div>
+                </div>
+
+                <!-- Reseña 4 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-crema-200 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex text-amber-500 text-sm gap-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-crema-800 text-sm leading-relaxed italic">
+                            "Super! Un ambiente tranquilo, acogedor, pequeña pero coqueta. Muy limpia y cuidada. El camarero amable y atento, paciente a todas nuestras preguntas y dudas. La comida super rica: croissants de masa madre para chuparse los dedos..."
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-crema-100 flex items-center justify-between">
+                        <span class="font-bold text-crema-900 text-sm">- Paola Brito</span>
+                        <span class="text-xs text-crema-800">Google Maps</span>
+                    </div>
+                </div>
+
+                <!-- Reseña 5 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-crema-200 flex flex-col justify-between md:col-span-2 lg:col-span-2">
+                    <div class="space-y-4">
+                        <div class="flex text-amber-500 text-sm gap-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-crema-800 text-sm leading-relaxed italic">
+                            "He ido a desayunar con dos amigos y todo espectacular. El chico que nos atendió muy amable, el desayuno muy bueno, el ambiente muy tranquilo y encima tirado de precio. Nos vamos contentos y con el estómago lleno."
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-crema-100 flex items-center justify-between">
+                        <span class="font-bold text-crema-900 text-sm">- David Muñoz</span>
+                        <span class="text-xs text-crema-800">Google Maps</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto y Ubicación -->
+    <section id="contacto" class="py-20 bg-crema-100 border-t border-crema-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-terracota-600 font-semibold text-sm uppercase tracking-wider">Encuéntranos</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-crema-900">Visítanos en Gijón</h2>
+                    <p class="text-crema-800">
+                        Ven a disfrutar de un desayuno tranquilo o reserva tu mesa directamente a través de nuestro WhatsApp.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-terracota-100 text-terracota-600 rounded-xl flex items-center justify-center shrink-0 mt-1">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-crema-900">Dirección</h4>
+                                <p class="text-crema-800 text-sm">C. Juan Alvargonzález, 64, bajo 2, Centro, 33208 Gijón, Asturias, España</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-terracota-100 text-terracota-600 rounded-xl flex items-center justify-center shrink-0 mt-1">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-crema-900">Teléfono / WhatsApp</h4>
+                                <p class="text-crema-800 text-sm">637 45 76 22</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="https://wa.me/34637457622" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-terracota-600 hover:bg-terracota-700 text-white px-8 py-4 rounded-full font-semibold text-base transition-all shadow-md hover:shadow-lg w-full sm:w-auto justify-center">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            Reservar Mesa
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <div class="bg-white p-3 rounded-3xl shadow-sm border border-crema-200">
+                        <iframe src="https://www.google.com/maps?q=Caf%C3%A9%20con%20Pan%20C.%20Juan%20Alvargonz%C3%A1lez%2C%2064%2C%20bajo%202%2C%20Centro%2C%2033208%20Gij%C3%B3n%2C%20Asturias%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-crema-900 text-crema-200 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div>
+                <span class="font-serif text-2xl font-bold text-white">Café <span class="text-terracota-500">con Pan</span></span>
+                <p class="text-sm text-crema-200/80 mt-1">Tu cafetería de confianza en el centro de Gijón.</p>
+            </div>
+
+            <div class="flex items-center gap-6">
+                <a href="https://wa.me/34637457622" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-crema-800 hover:bg-terracota-600 text-white rounded-full flex items-center justify-center transition-colors">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                </a>
+            </div>
+
+            <div class="text-xs text-crema-200/60">
+                &copy; <span id="year"></span> Café con Pan. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script to handle mobile menu and year -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
