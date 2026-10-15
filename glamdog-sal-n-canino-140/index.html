@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLAMDOG Salón Canino | Peluquería y Estética de Mascotas en Oviedo</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#121212',
+                            card: '#1A1A1A',
+                            gold: '#D4AF37',
+                            'gold-light': '#F3E5AB',
+                            sand: '#F5F2EB',
+                            accent: '#C5A059'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome para Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gold-gradient {
+            background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 50%, #C5A059 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-bg-gradient {
+            background: linear-gradient(135deg, #D4AF37 0%, #C5A059 100%);
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-gray-100 font-sans antialiased selection:bg-brand-gold selection:text-brand-dark">
+
+    <!-- Header / Barra de Navegación -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-brand-dark/95 backdrop-blur-md border-b border-brand-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-full gold-bg-gradient flex items-center justify-center text-brand-dark font-serif font-bold text-xl shadow-lg shadow-brand-gold/20">
+                    G
+                </div>
+                <div>
+                    <span class="font-serif text-2xl font-bold tracking-wider text-white">GLAMDOG</span>
+                    <span class="block text-[10px] uppercase tracking-widest text-brand-gold font-semibold">Salón Canino • Oviedo</span>
+                </div>
+            </a>
+            
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="#servicios" class="hover:text-brand-gold transition-colors">Servicios & Tarifas</a>
+                <a href="#nosotros" class="hover:text-brand-gold transition-colors">El Salón</a>
+                <a href="#galeria" class="hover:text-brand-gold transition-colors">Trabajos</a>
+                <a href="#opiniones" class="hover:text-brand-gold transition-colors">Opiniones</a>
+                <a href="#contacto" class="hover:text-brand-gold transition-colors">Ubicación</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <a href="https://wa.me/34624075112" target="_blank" rel="noopener noreferrer" 
+                   class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-full gold-bg-gradient text-brand-dark font-semibold text-sm hover:opacity-95 transition-all transform hover:scale-105 shadow-md shadow-brand-gold/10">
+                    <i class="fab fa-whatsapp mr-2 text-base"></i> Reservar Cita
+                </a>
+                <!-- Menú móvil botón -->
+                <button id="menu-btn" class="md:hidden text-brand-gold focus:outline-none text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-card border-b border-brand-gold/20 px-4 pt-2 pb-6 space-y-3">
+            <a href="#servicios" class="block py-2 text-gray-200 hover:text-brand-gold">Servicios & Tarifas</a>
+            <a href="#nosotros" class="block py-2 text-gray-200 hover:text-brand-gold">El Salón</a>
+            <a href="#galeria" class="block py-2 text-gray-200 hover:text-brand-gold">Trabajos</a>
+            <a href="#opiniones" class="block py-2 text-gray-200 hover:text-brand-gold">Opiniones</a>
+            <a href="#contacto" class="block py-2 text-gray-200 hover:text-brand-gold">Ubicación</a>
+            <a href="https://wa.me/34624075112" target="_blank" rel="noopener noreferrer" 
+               class="w-full mt-4 flex items-center justify-center px-5 py-3 rounded-full gold-bg-gradient text-brand-dark font-semibold text-sm shadow-md">
+                <i class="fab fa-whatsapp mr-2 text-lg"></i> Reservar Cita
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden bg-brand-dark">
+        <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-brand-card border border-brand-gold/30 text-brand-gold text-xs font-medium uppercase tracking-wider">
+                        <i class="fas fa-crown text-xs"></i>
+                        <span>Boutique de Belleza Exclusiva en Oviedo</span>
+                    </div>
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
+                        Donde el amor por los animales se une a la <span class="gold-gradient">alta peluquería canina</span>
+                    </h1>
+                    <p class="text-lg text-gray-300 max-w-2xl mx-auto lg:mx-0 font-light">
+                        Tratamientos personalizados con cariño, paciencia y profesionalidad. Experiencias de bienestar únicas para que tu fiel compañero luzca radiante y feliz.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="https://wa.me/34624075112" target="_blank" rel="noopener noreferrer" 
+                           class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-full gold-bg-gradient text-brand-dark font-bold text-base hover:opacity-95 transition-all shadow-lg shadow-brand-gold/20 transform hover:-translate-y-0.5">
+                            <i class="fab fa-whatsapp mr-2 text-xl"></i> Reservar Cita
+                        </a>
+                        <a href="#servicios" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-full bg-brand-card border border-brand-gold/30 text-white font-medium text-base hover:bg-brand-gold/10 transition-all">
+                            Ver Tratamientos
+                        </a>
+                    </div>
+                    <div class="pt-6 flex items-center justify-center lg:justify-start space-x-6 text-sm text-gray-400">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-star text-brand-gold"></i>
+                            <span class="text-gray-200 font-semibold">5.0 Estrellas</span> en Reseñas
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-paw text-brand-gold"></i>
+                            <span>Tati & Diego Profesionales</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="absolute -inset-1.5 rounded-3xl gold-bg-gradient opacity-30 blur-lg"></div>
+                        <div class="relative rounded-2xl overflow-hidden border-2 border-brand-gold/30 shadow-2xl bg-brand-card">
+                            <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=1200&q=80" 
+                                 alt="Perro feliz en salón canino GLAMDOG Oviedo" 
+                                 class="w-full h-[450px] object-cover"
+                                 referrerpolicy="no-referrer"
+                                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-brand-dark via-brand-dark/70 to-transparent p-6">
+                                <span class="text-brand-gold text-xs font-semibold tracking-widest uppercase">Cuidado & Mimitos</span>
+                                <p class="text-white font-serif text-lg font-medium">"Por fin he encontrado un sitio donde lo tratan con auténtico amor"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Confianza / Por qué elegirnos -->
+    <section class="py-16 bg-brand-card border-y border-brand-gold/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="flex items-start space-x-4 p-6 rounded-2xl bg-brand-dark/50 border border-brand-gold/10">
+                    <div class="w-12 h-12 rounded-xl gold-bg-gradient flex items-center justify-center text-brand-dark text-xl flex-shrink-0">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-serif text-lg font-bold text-white mb-1">Trato Cercano y Amable</h3>
+                        <p class="text-gray-400 text-sm">Paciencia infinita y mimos en cada sesión para que tu mascota esté tranquila y feliz.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start space-x-4 p-6 rounded-2xl bg-brand-dark/50 border border-brand-gold/10">
+                    <div class="w-12 h-12 rounded-xl gold-bg-gradient flex items-center justify-center text-brand-dark text-xl flex-shrink-0">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-serif text-lg font-bold text-white mb-1">Especialistas en Cortes y Deslanado</h3>
+                        <p class="text-gray-400 text-sm">Expertos en mantos complejos, caniches, pastor suizos y todo tipo de razas con acabado impecable.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start space-x-4 p-6 rounded-2xl bg-brand-dark/50 border border-brand-gold/10">
+                    <div class="w-12 h-12 rounded-xl gold-bg-gradient flex items-center justify-center text-brand-dark text-xl flex-shrink-0">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-serif text-lg font-bold text-white mb-1">Detalles que Enamoran</h3>
+                        <p class="text-gray-400 text-sm">Olor estupendo duradero, bolsita de chuches de cortesía y lazos o accesorios ideales.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nuestros Tratamientos, Cortes y Tarifas -->
+    <section id="servicios" class="py-24 bg-brand-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-gold text-xs font-semibold tracking-widest uppercase mb-3 block">Carta de Servicios</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-4">Tratamientos, Cortes y Tarifas</h2>
+                <p class="text-gray-400">Cada mascota es única. Adaptamos nuestros servicios profesionales a las necesidades específicas de su manto y piel.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Servicio 1 -->
+                <div class="bg-brand-card rounded-2xl p-8 border border-brand-gold/20 flex flex-col justify-between relative group hover:border-brand-gold transition-all">
+                    <div class="absolute top-0 right-0 bg-brand-gold/10 text-brand-gold px-4 py-1.5 rounded-bl-xl rounded-tr-xl text-xs font-semibold">
+                        Popular
+                    </div>
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-brand-dark border border-brand-gold/30 flex items-center justify-center text-brand-gold text-xl mb-6">
+                            <i class="fas fa-bath"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-2">Baño y Deslanado Completo</h3>
+                        <p class="text-gray-400 text-sm mb-6">Ideal para razas con doble capa (como Pastor Suizo, Huskies, etc.). Eliminación profunda de pelo muerto, baño con champús específicos y secado profesional.</p>
+                    </div>
+                    <div>
+                        <div class="flex items-center justify-between pt-4 border-t border-brand-gold/10 mb-6">
+                            <span class="text-xs text-gray-400 uppercase tracking-wider">Resultado</span>
+                            <span class="text-brand-gold font-semibold text-sm">Pelo sano y brillante</span>
+                        </div>
+                        <a href="https://wa.me/34624075112" target="_blank" rel="noopener noreferrer" 
+                           class="w-full block text-center py-3 rounded-full gold-bg-gradient text-brand-dark font-bold text-sm hover:opacity-90 transition-all">
+                            Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="bg-brand-card rounded-2xl p-8 border border-brand-gold/20 flex flex-col justify-between relative group hover:border-brand-gold transition-all">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-brand-dark border border-brand-gold/30 flex items-center justify-center text-brand-gold text-xl mb-6">
+                            <i class="fas fa-cut"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-2">Arreglo Estético y Corte a Tijera</h3>
+                        <p class="text-gray-400 text-sm mb-6">Corte personalizado según estándar de raza o estilo comercial (como corte pomposo y pulido en Caniches). Incluye arreglo de carita, patitas y uñas.</p>
+                    </div>
+                    <div>
+                        <div class="flex items-center justify-between pt-4 border-t border-brand-gold/10 mb-6">
+                            <span class="text-xs text-gray-400 uppercase tracking-wider">Especialidad</span>
+                            <span class="text-brand-gold font-semibold text-sm">Precisión y Estilo</span>
+                        </div>
+                        <a href="https://wa.me/34624075112" target="_blank" rel="noopener noreferrer" 
+                           class="w-full block text-center py-3 rounded-full gold-bg-gradient text-brand-dark font-bold text-sm hover:opacity-90 transition-all">
+                            Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="bg-brand-card rounded-2xl p-8 border border-brand-gold/20 flex flex-col justify-between relative group hover:border-brand-gold transition-all">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-brand-dark border border-brand-gold/30 flex items-center justify-center text-brand-gold text-xl mb-6">
+                            <i class="fas fa-spa"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-2">Sesión de Bienestar GLAMDOG</h3>
+                        <p class="text-gray-400 text-sm mb-6">Baño relajante, hidratación profunda, perfume de larga duración, bolsita de chuches artesanas de regalo y mimos ilimitados garantizados.</p>
+                    </div>
+                    <div>
+                        <div class="flex items-center justify-between pt-4 border-t border-brand-gold/10 mb-6">
+                            <span class="text-xs text-gray-400 uppercase tracking-wider">Incluye</span>
+                            <span class="text-brand-gold font-semibold text-sm">Olor estupendo y chuches</span>
+                        </div>
+                        <a href="https://wa.me/34624075112" target="_blank" rel="noopener noreferrer" 
+                           class="w-full block text-center py-3 rounded-full gold-bg-gradient text-brand-dark font-bold text-sm hover:opacity-90 transition-all">
+                            Reservar Cita
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Banner secundario inferior -->
+            <div class="mt-12 bg-gradient-to-r from-brand-card via-brand-dark to-brand-card rounded-2xl p-8 border border-brand-gold/30 text-center flex flex-col sm:flex-row items-center justify-between gap-6">
+                <div class="text-left">
+                    <h4 class="font-serif text-xl font-bold text-white mb-1">¿Tienes dudas sobre qué servicio necesita tu peludo?</h4>
+                    <p class="text-gray-400 text-sm">Consúltanos directamente por WhatsApp y te asesoramos sin compromiso.</p>
+                </div>
+                <a href="https://wa.me/34624075112" target="_blank" rel="noopener noreferrer" 
+                   class="inline-flex items-center justify-center px-6 py-3 rounded-full gold-bg-gradient text-brand-dark font-bold text-sm flex-shrink-0 hover:opacity-95 shadow-md">
+                    <i class="fab fa-whatsapp mr-2 text-base"></i> Consultar por WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección El Salón / Nosotros -->
+    <section id="nosotros" class="py-24 bg-brand-card relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-brand-gold text-xs font-semibold tracking-widest uppercase block">Profesionales Apasionados</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">Tati & Diego: Amor y dedicación en cada detalle</h2>
+                    <p class="text-gray-300 font-light leading-relaxed">
+                        En GLAMDOG Salón Canino sabemos que tu mascota es parte fundamental de tu familia. Por eso, creamos un ambiente tranquilo, libre de estrés, donde cada perro se siente seguro y querido desde el primer instante.
+                    </p>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Nuestra filosofía se basa en el respeto absoluto hacia el animal, combinando técnicas avanzadas de peluquería estética y comercial con una atención sumamente cordial, amable y cercana.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6 pt-4">
+                        <div class="border-l-2 border-brand-gold pl-4">
+                            <span class="block font-serif text-2xl font-bold text-white">100%</span>
+                            <span class="text-xs text-gray-400 uppercase tracking-wider">Cariño y Paciencia</span>
+                        </div>
+                        <div class="border-l-2 border-brand-gold pl-4">
+                            <span class="block font-serif text-2xl font-bold text-white">5 Estrellas</span>
+                            <span class="text-xs text-gray-400 uppercase tracking-wider">Satisfacción Cliente</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 grid grid-cols-2 gap-4">
+                    <div class="space-y-4">
+                        <div class="rounded-2xl overflow-hidden border border-brand-gold/30 shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?auto=format&fit=crop&w=600&q=80" 
+                                 alt="Perro bien cuidado en Oviedo" 
+                                 class="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
+                                 referrerpolicy="no-referrer"
+                                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                        </div>
+                        <div class="rounded-2xl overflow-hidden border border-brand-gold/30 shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=600&q=80" 
+                                 alt="Corte y peluquería canina profesional" 
+                                 class="w-full h-64 object-cover hover:scale-105 transition-transform duration-500"
+                                 referrerpolicy="no-referrer"
+                                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                        </div>
+                    </div>
+                    <div class="space-y-4 pt-8">
+                        <div class="rounded-2xl overflow-hidden border border-brand-gold/30 shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1541599540903-216a46ca1dc0?auto=format&fit=crop&w=600&q=80" 
+                                 alt="Mascota feliz en GLAMDOG" 
+                                 class="w-full h-64 object-cover hover:scale-105 transition-transform duration-500"
+                                 referrerpolicy="no-referrer"
+                                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                        </div>
+                        <div class="rounded-2xl overflow-hidden border border-brand-gold/30 shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=600&q=80" 
+                                 alt="Peluquero de mascotas en Oviedo" 
+                                 class="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
+                                 referrerpolicy="no-referrer"
+                                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería "Nuestras Instalaciones y Trabajos" -->
+    <section id="galeria" class="py-24 bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-gold text-xs font-semibold tracking-widest uppercase mb-3 block">Galería</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-4">Nuestras Instalaciones y Trabajos</h2>
+                <p class="text-gray-400">Un vistazo al resultado de nuestro trabajo diario y al mimo con el que tratamos a cada peludo.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group relative rounded-2xl overflow-hidden border border-brand-gold/20 bg-brand-card aspect-square">
+                    <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=800&q=80" 
+                         alt="Trabajo de peluquería canina GLAMDOG" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white font-serif text-lg">Corte y Estética Profesional</span>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-2xl overflow-hidden border border-brand-gold/20 bg-brand-card aspect-square">
+                    <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=800&q=80" 
+                         alt="Deslanado y baño canino" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white font-serif text-lg">Cuidado de Mantos</span>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-2xl overflow-hidden border border-brand-gold/20 bg-brand-card aspect-square">
+                    <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=800&q=80" 
+                         alt="Mascotas felices en Oviedo" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white font-serif text-lg">Paciencia y Bienestar</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Opiniones Reales Verificadas -->
+    <section id="opiniones" class="py-24 bg-brand-card relative border-y border-brand-gold/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-gold text-xs font-semibold tracking-widest uppercase mb-3 block">Testimonios</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-4">Opiniones Reales de Nuestros Clientes</h2>
+                <p class="text-gray-400">La felicidad de nuestros peludos y la tranquilidad de sus dueños es nuestra mejor carta de presentación.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Reseña 1 -->
+                <div class="bg-brand-dark p-8 rounded-2xl border border-brand-gold/20 flex flex-col justify-between shadow-lg">
+                    <div>
+                        <div class="flex text-brand-gold space-x-1 mb-4 text-sm">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed italic mb-6">
+                            "Quiero agradecer de corazón el trato tan maravilloso que hemos recibido. Desde el primer momento nos hicieron sentir en las mejores manos, con un cariño, una paciencia y una profesionalidad que se notan en cada detalle. Ver a mi Baloo tan bien cuidado y tan tranquilo no tiene precio. El resultado ha sido precioso... ¡Os recomendaré siempre! 🐾❤️"
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-3 pt-4 border-t border-brand-gold/10">
+                        <div class="w-10 h-10 rounded-full gold-bg-gradient flex items-center justify-center text-brand-dark font-bold text-sm">
+                            CM
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white text-sm">Corina Mariana</h4>
+                            <span class="text-xs text-brand-gold">Cliente Verificado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 2 -->
+                <div class="bg-brand-dark p-8 rounded-2xl border border-brand-gold/20 flex flex-col justify-between shadow-lg">
+                    <div>
+                        <div class="flex text-brand-gold space-x-1 mb-4 text-sm">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed italic mb-6">
+                            "Llevo a mis dos pastor suizos cada 4 meses a bañar y a deslanar y siempre quedan preciosas. Tanto Tati como Diego son dos profesionales. Yo siempre los recomiendo 💞💞…"
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-3 pt-4 border-t border-brand-gold/10">
+                        <div class="w-10 h-10 rounded-full gold-bg-gradient flex items-center justify-center text-brand-dark font-bold text-sm">
+                            CG
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white text-sm">Conchi Gonzalez Blanco</h4>
+                            <span class="text-xs text-brand-gold">Cliente Verificado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 3 -->
+                <div class="bg-brand-dark p-8 rounded-2xl border border-brand-gold/20 flex flex-col justify-between shadow-lg">
+                    <div>
+                        <div class="flex text-brand-gold space-x-1 mb-4 text-sm">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed italic mb-6">
+                            "Es la segunda vez que llevo a Cleo y siempre vuelve encantada por el cariño, el buen trato que recibe y su bolsita de chuches 😊. Además, la dejan guapísima y con un olor estupendo. Por fin he encontrado un sitio donde le cortan el pelo…"
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-3 pt-4 border-t border-brand-gold/10">
+                        <div class="w-10 h-10 rounded-full gold-bg-gradient flex items-center justify-center text-brand-dark font-bold text-sm">
+                            P
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white text-sm">Pilar</h4>
+                            <span class="text-xs text-brand-gold">Cliente Verificado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 4 -->
+                <div class="bg-brand-dark p-8 rounded-2xl border border-brand-gold/20 flex flex-col justify-between shadow-lg">
+                    <div>
+                        <div class="flex text-brand-gold space-x-1 mb-4 text-sm">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed italic mb-6">
+                            "Muy contenta con el resultado. Dejé a mi perrita para su arreglo y, cuando fui a recogerla, estaba preciosa y muy contenta. 🐶🎀 Se nota el buen trabajo y el cuidado que ponen. La atención fue muy amable, cordial y cercana. ¡Quedamos encantadas y volveremos! ❤️🐾"
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-3 pt-4 border-t border-brand-gold/10">
+                        <div class="w-10 h-10 rounded-full gold-bg-gradient flex items-center justify-center text-brand-dark font-bold text-sm">
+                            YY
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white text-sm">Yeli YS</h4>
+                            <span class="text-xs text-brand-gold">Cliente Verificado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 5 -->
+                <div class="bg-brand-dark p-8 rounded-2xl border border-brand-gold/20 flex flex-col justify-between shadow-lg md:col-span-2 lg:col-span-2">
+                    <div>
+                        <div class="flex text-brand-gold space-x-1 mb-4 text-sm">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed italic mb-6">
+                            "He llevado esta mañana a mi perrita Amelie (Caniche) desde el primer momento han sido encantadores con ella, dándole un montón de mimos. El resultado me ha encantado tanto el corte pomposo y pulido como el olor a limpio. Peluquería donde te da total confianza."
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-3 pt-4 border-t border-brand-gold/10">
+                        <div class="w-10 h-10 rounded-full gold-bg-gradient flex items-center justify-center text-brand-dark font-bold text-sm">
+                            LG
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white text-sm">Laura González</h4>
+                            <span class="text-xs text-brand-gold">Cliente Verificado</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa Interactivo y Ubicación -->
+    <section id="contacto" class="py-24 bg-brand-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-gold text-xs font-semibold tracking-widest uppercase mb-3 block">Encuéntranos</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-4">Visita Nuestro Salón en Oviedo</h2>
+                <p class="text-gray-400">Estaremos encantados de recibirte a ti y a tu mascota en nuestras instalaciones.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5 space-y-8 bg-brand-card p-8 rounded-3xl border border-brand-gold/20">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 rounded-xl gold-bg-gradient flex items-center justify-center text-brand-dark text-xl flex-shrink-0">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif text-lg font-bold text-white mb-1">Dirección Exacta</h3>
+                            <p class="text-gray-300 text-sm">C. Marcelino Suárez, 18, 4 Bjo</p>
+                            <p class="text-gray-400 text-sm">33012 Oviedo, Asturias, España</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 rounded-xl gold-bg-gradient flex items-center justify-center text-brand-dark text-xl flex-shrink-0">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif text-lg font-bold text-white mb-1">Teléfono y Citas</h3>
+                            <p class="text-gray-300 text-sm">624 07 51 12</p>
+                            <a href="https://wa.me/34624075112" target="_blank" rel="noopener noreferrer" class="text-brand-gold text-xs font-semibold hover:underline mt-1 inline-block">
+                                Hablar por WhatsApp &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 rounded-xl gold-bg-gradient flex items-center justify-center text-brand-dark text-xl flex-shrink-0">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif text-lg font-bold text-white mb-1">Horario</h3>
+                            <p class="text-gray-300 text-sm">Lunes a Viernes: Con cita previa</p>
+                            <p class="text-gray-400 text-xs mt-1">Reserva anticipada recomendada vía WhatsApp</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="https://wa.me/34624075112" target="_blank" rel="noopener noreferrer" 
+                           class="w-full flex items-center justify-center px-6 py-4 rounded-full gold-bg-gradient text-brand-dark font-bold text-sm hover:opacity-95 shadow-lg">
+                            <i class="fab fa-whatsapp mr-2 text-lg"></i> Reservar Cita Ahora
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <div class="rounded-3xl overflow-hidden border-2 border-brand-gold/30 shadow-2xl bg-brand-card p-2">
+                        <iframe src="https://www.google.com/maps?q=GLAMDOG%20Sal%C3%B3n%20canino%20C.%20Marcelino%20Su%C3%A1rez%2C%2018%2C%204%20Bjo%2C%2033012%20Oviedo%2C%20Asturias%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-card border-t border-brand-gold/20 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-brand-gold/10">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-full gold-bg-gradient flex items-center justify-center text-brand-dark font-serif font-bold text-xl">
+                        G
+                    </div>
+                    <div>
+                        <span class="font-serif text-2xl font-bold tracking-wider text-white">GLAMDOG</span>
+                        <span class="block text-[10px] uppercase tracking-widest text-brand-gold font-semibold">Salón Canino • Oviedo</span>
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-6 text-sm">
+                    <a href="#servicios" class="text-gray-400 hover:text-brand-gold transition-colors">Servicios</a>
+                    <a href="#nosotros" class="text-gray-400 hover:text-brand-gold transition-colors">El Salón</a>
+                    <a href="#galeria" class="text-gray-400 hover:text-brand-gold transition-colors">Trabajos</a>
+                    <a href="#opiniones" class="text-gray-400 hover:text-brand-gold transition-colors">Opiniones</a>
+                    <a href="#contacto" class="text-gray-400 hover:text-brand-gold transition-colors">Ubicación</a>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <a href="https://wa.me/34624075112" target="_blank" rel="noopener noreferrer" 
+                       class="w-10 h-10 rounded-full bg-brand-dark border border-brand-gold/30 flex items-center justify-center text-brand-gold hover:bg-brand-gold hover:text-brand-dark transition-all">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+                <p>&copy; <span id="current-year"></span> GLAMDOG Salón Canino. C. Marcelino Suárez, 18, Oviedo, Asturias. Todos los derechos reservados.</p>
+                <p>Diseño exclusivo para Peluquería Canina Boutique.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script para menú móvil y año dinámico -->
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú al hacer clic en un enlace
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
