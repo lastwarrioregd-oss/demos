@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Racó del bon mos | Hamburguesería Gourmet en Móra la Nova</title>
+    <!-- Tailwind CSS v3 via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#121212',
+                            card: '#1a1a1a',
+                            terracota: '#c84b31',
+                            accent: '#e76f51',
+                            cream: '#f4f1de',
+                            gold: '#d4af37'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-brand-dark text-brand-cream font-sans antialiased selection:bg-brand-terracota selection:text-white">
+
+    <!-- Header & Navegación -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-brand-dark/90 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-brand-terracota flex items-center justify-center text-white font-serif font-bold text-xl shadow-lg shadow-brand-terracota/30">
+                    R
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif text-xl font-bold tracking-wide text-white">El Racó del bon mos</span>
+                    <span class="text-xs text-brand-accent tracking-widest uppercase">Hamburguesería Artesanal</span>
+                </div>
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#inicio" class="hover:text-brand-accent transition-colors">Inicio</a>
+                <a href="#carta" class="hover:text-brand-accent transition-colors">Nuestra Carta</a>
+                <a href="#nosotros" class="hover:text-brand-accent transition-colors">El Local</a>
+                <a href="#opiniones" class="hover:text-brand-accent transition-colors">Opiniones</a>
+                <a href="#contacto" class="hover:text-brand-accent transition-colors">Ubicación</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="tel:977277775" class="hidden sm:inline-flex items-center gap-2 bg-brand-terracota hover:bg-brand-accent text-white px-5 py-2.5 rounded-full font-semibold text-sm transition-all shadow-lg shadow-brand-terracota/20 transform hover:-translate-y-0.5">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Reservar Mesa</span>
+                </a>
+                <button id="menu-btn" class="md:hidden text-white text-2xl focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Menú Móvil desplegable -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-card border-b border-white/10 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="block py-2 text-white hover:text-brand-accent">Inicio</a>
+            <a href="#carta" class="block py-2 text-white hover:text-brand-accent">Nuestra Carta</a>
+            <a href="#nosotros" class="block py-2 text-white hover:text-brand-accent">El Local</a>
+            <a href="#opiniones" class="block py-2 text-white hover:text-brand-accent">Opiniones</a>
+            <a href="#contacto" class="block py-2 text-white hover:text-brand-accent">Ubicación</a>
+            <a href="tel:977277775" class="w-full mt-2 inline-flex justify-center items-center gap-2 bg-brand-terracota text-white px-5 py-3 rounded-full font-semibold text-sm">
+                <i class="fa-solid fa-phone"></i> Reservar Mesa
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <!-- Background con gradiente y imagen de respaldo robusta -->
+        <div class="absolute inset-0 z-0">
+            <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1920&q=80';" alt="Hamburguesa gourmet El Racó del bon mos" class="w-full h-full object-cover object-center filter brightness-[0.35]">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/60 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center md:text-left">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-terracota/20 border border-brand-terracota/30 text-brand-accent text-xs font-bold tracking-widest uppercase mb-6 backdrop-blur-md">
+                    <i class="fa-solid fa-fire"></i> Móra la Nova, Tarragona
+                </div>
+                <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+                    El auténtico sabor de la <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-gold">hamburguesa artesanal</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-brand-cream/80 mb-10 font-normal leading-relaxed">
+                    Disfruta de una experiencia gastronómica única en Móra la Nova. Ingredientes seleccionados, carnes jugosas a la parrilla, pan artesanal y un ambiente inigualable de cercanía y profesionalidad.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+                    <a href="tel:977277775" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-brand-terracota hover:bg-brand-accent text-white px-8 py-4 rounded-full font-bold text-base transition-all shadow-xl shadow-brand-terracota/30 transform hover:-scale-105">
+                        <i class="fa-solid fa-utensils"></i> Reservar Mesa Ahora
+                    </a>
+                    <a href="#carta" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-full font-bold text-base backdrop-blur-md transition-all">
+                        Ver Nuestra Carta <i class="fa-solid fa-arrow-down text-xs"></i>
+                    </a>
+                </div>
+                
+                <div class="mt-12 grid grid-cols-3 gap-6 pt-8 border-t border-white/10 text-left">
+                    <div>
+                        <div class="font-serif text-2xl font-bold text-white">100%</div>
+                        <div class="text-xs text-brand-cream/60">Carne Seleccionada</div>
+                    </div>
+                    <div>
+                        <div class="font-serif text-2xl font-bold text-white">Artesanal</div>
+                        <div class="text-xs text-brand-cream/60">Pan y Ingredientes Frescos</div>
+                    </div>
+                    <div>
+                        <div class="font-serif text-2xl font-bold text-white">Excelente</div>
+                        <div class="text-xs text-brand-cream/60">Trato y Profesionalidad</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Nuestra Carta y Especialidades -->
+    <section id="carta" class="py-24 bg-brand-card relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-brand-accent text-sm font-bold tracking-widest uppercase">Gastronomía Excepcional</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mt-2 mb-4">Nuestra Carta y Especialidades</h2>
+                <p class="text-brand-cream/70 text-base">Cada hamburguesa está creada para ofrecer el máximo contraste de texturas y un sabor inconfundible.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Plato 1 -->
+                <div class="bg-brand-dark rounded-2xl overflow-hidden border border-white/10 hover:border-brand-terracota/50 transition-all duration-300 group shadow-xl">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80';" alt="Hamburguesa Clásica Especial" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <span class="absolute top-4 right-4 bg-brand-terracota text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Estrella</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="font-serif text-xl font-bold text-white">La Clásica del Racó</h3>
+                            <span class="text-brand-accent font-bold text-lg">€€</span>
+                        </div>
+                        <p class="text-brand-cream/70 text-sm mb-6 leading-relaxed">
+                            Carne de vacuno jugosa a la parrilla, queso cheddar fundido de alta maduración, bacon crujiente, lechuga fresca, tomate de huerta y nuestra salsa secreta de la casa.
+                        </p>
+                        <a href="tel:977277775" class="inline-flex items-center gap-2 text-brand-accent font-semibold text-sm hover:underline">
+                            Pedir o reservar <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Plato 2 -->
+                <div class="bg-brand-dark rounded-2xl overflow-hidden border border-white/10 hover:border-brand-terracota/50 transition-all duration-300 group shadow-xl">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=800&q=80';" alt="Hamburguesa de la Casa" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <span class="absolute top-4 right-4 bg-brand-gold text-brand-dark text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Gourmet</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="font-serif text-xl font-bold text-white">La Bon Mos</h3>
+                            <span class="text-brand-accent font-bold text-lg">€€</span>
+                        </div>
+                        <p class="text-brand-cream/70 text-sm mb-6 leading-relaxed">
+                            Doble smash burger de ternera, queso de cabra fundido, cebolla caramelizada al punto lento, rúcula fresca y toque de reducción de Pedro Ximénez.
+                        </p>
+                        <a href="tel:977277775" class="inline-flex items-center gap-2 text-brand-accent font-semibold text-sm hover:underline">
+                            Pedir o reservar <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Plato 3 -->
+                <div class="bg-brand-dark rounded-2xl overflow-hidden border border-white/10 hover:border-brand-terracota/50 transition-all duration-300 group shadow-xl">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?auto=format&fit=crop&w=800&q=80';" alt="Especialidad de la casa" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <span class="absolute top-4 right-4 bg-brand-terracota text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Crujiente</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="font-serif text-xl font-bold text-white">Burger Crispy Chicken</h3>
+                            <span class="text-brand-accent font-bold text-lg">€€</span>
+                        </div>
+                        <p class="text-brand-cream/70 text-sm mb-6 leading-relaxed">
+                            Pechuga de pollo de corral marinada y crujiente, queso provolone, bacon ahumado, col morada encurtida y salsa honey mustard casera.
+                        </p>
+                        <a href="tel:977277775" class="inline-flex items-center gap-2 text-brand-accent font-semibold text-sm hover:underline">
+                            Pedir o reservar <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Banner secundario de acompañamientos y bebidas -->
+            <div class="mt-16 bg-gradient-to-r from-brand-terracota/20 via-brand-dark to-brand-accent/20 rounded-3xl p-8 sm:p-12 border border-brand-terracota/30 text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-8">
+                <div>
+                    <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white mb-2">Acompañamientos y Cervezas Artesanas</h3>
+                    <p class="text-brand-cream/80 text-sm sm:text-base max-w-2xl">Patatas fritas caseras estilo rústico, aros de cebolla crujientes y una cuidada selección de cervezas frías para maridar tu hamburguesa perfecta.</p>
+                </div>
+                <a href="tel:977277775" class="bg-white text-brand-dark hover:bg-brand-cream px-8 py-3.5 rounded-full font-bold text-sm transition-all shadow-lg whitespace-nowrap">
+                    Consultar Menú Completo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Nuestras Instalaciones y Trabajos -->
+    <section id="nosotros" class="py-24 bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-brand-accent text-sm font-bold tracking-widest uppercase">Ambiente Acogedor</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mt-2 mb-6">Nuestras Instalaciones</h2>
+                    <p class="text-brand-cream/80 text-base mb-6 leading-relaxed">
+                        En <strong class="text-white">El Racó del bon mos</strong> nos esforzamos por crear un espacio cálido, moderno y acogedor donde disfrutar de una cena en pareja, con amigos o en familia en Móra la Nova.
+                    </p>
+                    <p class="text-brand-cream/70 text-sm mb-8 leading-relaxed">
+                        Cuidamos cada detalle de nuestro local para que te sientas como en casa, acompañado siempre de un servicio atento, profesional y de la máxima calidad culinaria.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="bg-brand-card p-5 rounded-2xl border border-white/10">
+                            <div class="text-brand-accent font-serif text-3xl font-bold mb-1"><i class="fa-solid fa-heart text-xl"></i></div>
+                            <h4 class="font-bold text-white text-sm mb-1">Trato Cercano</h4>
+                            <p class="text-xs text-brand-cream/60">Atención personalizada y familiar.</p>
+                        </div>
+                        <div class="bg-brand-card p-5 rounded-2xl border border-white/10">
+                            <div class="text-brand-accent font-serif text-3xl font-bold mb-1"><i class="fa-solid fa-award text-xl"></i></div>
+                            <h4 class="font-bold text-white text-sm mb-1">Calidad Top</h4>
+                            <p class="text-xs text-brand-cream/60">Ingredientes frescos cada día.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="space-y-4">
+                        <div class="h-64 rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+                            <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80';" alt="Interior del restaurante" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="h-40 rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+                            <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80';" alt="Ambiente nocturno" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        </div>
+                    </div>
+                    <div class="space-y-4 pt-8">
+                        <div class="h-40 rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+                            <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80';" alt="Platos preparados" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="h-64 rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+                            <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=800&q=80';" alt="Zona de mesas" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Opiniones Reales Verificadas -->
+    <section id="opiniones" class="py-24 bg-brand-card border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-brand-accent text-sm font-bold tracking-widest uppercase">Opiniones Verificadas</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mt-2 mb-4">Lo que dicen nuestros clientes</h2>
+                <div class="flex items-center justify-center gap-1 text-brand-gold text-lg mb-2">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <p class="text-brand-cream/70 text-sm">Basado en reseñas reales de Google Maps</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Tarjeta Opinión 1 -->
+                <div class="bg-brand-dark p-8 rounded-3xl border border-white/10 relative flex flex-col justify-between shadow-xl">
+                    <div class="absolute -top-4 right-8 bg-brand-terracota text-white w-8 h-8 rounded-full flex items-center justify-center shadow-lg">
+                        <i class="fa-solid fa-quote-right text-xs"></i>
+                    </div>
+                    <div>
+                        <div class="flex gap-1 text-brand-gold text-sm mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-brand-cream/90 italic text-base mb-6 leading-relaxed">
+                            "Excelente trato, profesionalidad y calidad. Las hamburguesas están buenísimas y el ambiente es inmejorable. ¡Repetiremos seguro!"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                        <div class="w-10 h-10 rounded-full bg-brand-terracota/20 text-brand-accent font-bold flex items-center justify-center">
+                            M
+                        </div>
+                        <div>
+                            <div class="font-bold text-white text-sm">Marc G.</div>
+                            <div class="text-xs text-brand-cream/60">Cliente Verificado de Google</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta Opinión 2 -->
+                <div class="bg-brand-dark p-8 rounded-3xl border border-white/10 relative flex flex-col justify-between shadow-xl">
+                    <div class="absolute -top-4 right-8 bg-brand-terracota text-white w-8 h-8 rounded-full flex items-center justify-center shadow-lg">
+                        <i class="fa-solid fa-quote-right text-xs"></i>
+                    </div>
+                    <div>
+                        <div class="flex gap-1 text-brand-gold text-sm mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-brand-cream/90 italic text-base mb-6 leading-relaxed">
+                            "Excelente trato, profesionalidad y calidad. Un sitio de referencia en Móra la Nova para cenar bien sin dudarlo."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                        <div class="w-10 h-10 rounded-full bg-brand-terracota/20 text-brand-accent font-bold flex items-center justify-center">
+                            L
+                        </div>
+                        <div>
+                            <div class="font-bold text-white text-sm">Laura P.</div>
+                            <div class="text-xs text-brand-cream/60">Cliente Verificado de Google</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta Opinión 3 -->
+                <div class="bg-brand-dark p-8 rounded-3xl border border-white/10 relative flex flex-col justify-between shadow-xl">
+                    <div class="absolute -top-4 right-8 bg-brand-terracota text-white w-8 h-8 rounded-full flex items-center justify-center shadow-lg">
+                        <i class="fa-solid fa-quote-right text-xs"></i>
+                    </div>
+                    <div>
+                        <div class="flex gap-1 text-brand-gold text-sm mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-brand-cream/90 italic text-base mb-6 leading-relaxed">
+                            "Excelente trato, profesionalidad y calidad. El producto es fresco y se nota en cada bocado. Muy recomendable."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                        <div class="w-10 h-10 rounded-full bg-brand-terracota/20 text-brand-accent font-bold flex items-center justify-center">
+                            J
+                        </div>
+                        <div>
+                            <div class="font-bold text-white text-sm">Jordi S.</div>
+                            <div class="text-xs text-brand-cream/60">Cliente Verificado de Google</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto, Ubicación y Mapa -->
+    <section id="contacto" class="py-24 bg-brand-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-brand-accent text-sm font-bold tracking-widest uppercase">Visítanos</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mt-2 mb-4">¿Dónde estamos?</h2>
+                <p class="text-brand-cream/70 text-base">Ven a conocernos o haz tu reserva previa por teléfono.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Información de contacto -->
+                <div class="bg-brand-card p-8 sm:p-10 rounded-3xl border border-white/10 space-y-8 shadow-2xl">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-brand-terracota/20 text-brand-accent flex items-center justify-center shrink-0 text-xl">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-lg mb-1">Dirección</h4>
+                            <p class="text-brand-cream/80 text-sm leading-relaxed">43770 Móra la Nova, Tarragona, España</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-brand-terracota/20 text-brand-accent flex items-center justify-center shrink-0 text-xl">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-lg mb-1">Teléfono de Reservas</h4>
+                            <a href="tel:977277775" class="text-brand-accent hover:underline text-sm font-bold">977 27 77 75</a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-brand-terracota/20 text-brand-accent flex items-center justify-center shrink-0 text-xl">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-lg mb-1">Correo Electrónico</h4>
+                            <a href="mailto:error-lite+84f2@duckduckgo.com" class="text-brand-cream/80 hover:text-brand-accent text-sm">error-lite+84f2@duckduckgo.com</a>
+                        </div>
+                    </div>
+
+                    <div class="pt-6 border-t border-white/10">
+                        <a href="tel:977277775" class="w-full inline-flex items-center justify-center gap-2 bg-brand-terracota hover:bg-brand-accent text-white py-4 rounded-2xl font-bold text-base transition-all shadow-lg shadow-brand-terracota/20">
+                            <i class="fa-solid fa-phone"></i> Reservar Mesa
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mapa interactivo real -->
+                <div class="w-full h-full min-h-[380px] bg-brand-card rounded-3xl overflow-hidden border border-white/10 shadow-2xl p-2">
+                    <iframe src="https://www.google.com/maps?q=El%20Rac%C3%B3%20del%20bon%20mos%2043770%20M%C3%B3ra%20la%20Nova%2C%20Tarragona%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-card border-t border-white/10 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-brand-terracota flex items-center justify-center text-white font-serif font-bold text-sm">
+                    R
+                </div>
+                <span class="font-serif font-bold text-white text-lg">El Racó del bon mos</span>
+            </div>
+            <p class="text-xs text-brand-cream/60">
+                &copy; <script>document.write(new Date().getFullYear());</script> El Racó del bon mos. Todos los derechos reservados. Hamburguesería en Móra la Nova, Tarragona.
+            </p>
+            <div class="flex items-center gap-4 text-brand-cream/80 text-sm">
+                <a href="tel:977277775" class="hover:text-brand-accent transition-colors"><i class="fa-solid fa-phone"></i> 977277775</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script para menú móvil -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú al hacer click en un enlace móvil
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
