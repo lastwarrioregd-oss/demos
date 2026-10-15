@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marta Caballero Martínez | Peluquería y Estética en Talayuelas</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            DEFAULT: '#D4AF37',
+                            light: '#F3E5AB',
+                            dark: '#AA8C2C',
+                        },
+                        dark: {
+                            DEFAULT: '#121212',
+                            card: '#1A1A1A',
+                            soft: '#242424',
+                        }
+                        },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 50%, #AA8C2C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-gradient-bg {
+            background: linear-gradient(135deg, #D4AF37 0%, #AA8C2C 100%);
+        }
+    </style>
+</head>
+<body class="bg-dark text-gray-100 font-sans selection:bg-gold selection:text-black">
+
+    <!-- HEADER / NAVEGACIÓN -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-dark/90 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2">
+                <span class="font-serif text-2xl tracking-wider font-bold gold-gradient-text">Marta Caballero</span>
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
+                <a href="#inicio" class="hover:text-gold transition-colors">Inicio</a>
+                <a href="#servicios" class="hover:text-gold transition-colors">Servicios y Tarifas</a>
+                <a href="#galeria" class="hover:text-gold transition-colors">Instalaciones</a>
+                <a href="#opiniones" class="hover:text-gold transition-colors">Opiniones</a>
+                <a href="#contacto" class="hover:text-gold transition-colors">Ubicación</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="tel:626091488" class="hidden sm:inline-flex items-center gap-2 bg-gold hover:bg-gold-light text-black font-semibold px-5 py-2.5 rounded-full transition-all duration-300 shadow-lg shadow-gold/20 text-sm">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Reservar Cita</span>
+                </a>
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" class="md:hidden text-2xl text-gold focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-card border-b border-white/10 px-4 pt-2 pb-6 space-y-4">
+            <a href="#inicio" class="block py-2 hover:text-gold transition-colors">Inicio</a>
+            <a href="#servicios" class="block py-2 hover:text-gold transition-colors">Servicios y Tarifas</a>
+            <a href="#galeria" class="block py-2 hover:text-gold transition-colors">Instalaciones</a>
+            <a href="#opiniones" class="block py-2 hover:text-gold transition-colors">Opiniones</a>
+            <a href="#contacto" class="block py-2 hover:text-gold transition-colors">Ubicación</a>
+            <a href="tel:626091488" class="flex items-center justify-center gap-2 w-full bg-gold text-black font-semibold py-3 rounded-full mt-4">
+                <i class="fa-solid fa-phone"></i> Reservar Cita (626 09 14 88)
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <!-- Background Overlay Image with Fallback -->
+        <div class="absolute inset-0 z-0 opacity-30">
+            <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1920&q=80';" alt="Peluquería Marta Caballero" class="w-full h-full object-cover">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-dark/60 via-dark/80 to-dark z-0"></div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-24">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/10 border border-gold/30 text-gold text-xs sm:text-sm font-medium mb-6 uppercase tracking-widest">
+                <i class="fa-solid fa-sparkles"></i> Peluquería & Estética en Talayuelas
+            </div>
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-tight">
+                El arte de realzar tu <span class="gold-gradient-text">belleza natural</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+                Descubre un espacio exclusivo en Cuenca donde la profesionalidad, la cercanía y las últimas tendencias se unen para ofrecerte una experiencia única.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="tel:626091488" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-gold hover:bg-gold-light text-black font-bold px-8 py-4 rounded-full transition-all duration-300 shadow-xl shadow-gold/20 text-base">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span>Reservar Cita Ahora</span>
+                </a>
+                <a href="#servicios" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 border border-white/20 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 text-base">
+                    <span>Ver Servicios</span>
+                    <i class="fa-solid fa-arrow-down"></i>
+                </a>
+            </div>
+
+            <!-- Trust Badges -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-3 gap-6 pt-10 border-t border-white/10 max-w-3xl mx-auto text-left">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center text-gold shrink-0">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm font-bold text-white">5 Estrellas</p>
+                        <p class="text-xs text-gray-400">Excelencia valorada</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center text-gold shrink-0">
+                        <i class="fa-solid fa-hands-holding-child"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm font-bold text-white">Trato Exclusivo</p>
+                        <p class="text-xs text-gray-400">Atención personalizada</p>
+                    </div>
+                </div>
+                <div class="col-span-2 md:col-span-1 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center text-gold shrink-0">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm font-bold text-white">Talayuelas</p>
+                        <p class="text-xs text-gray-400">C. Francisco Pizarro, 10</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE NOSOTROS -->
+    <section class="py-20 bg-dark-card border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 aspect-[4/3]">
+                        <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1000&q=80';" alt="Salón Marta Caballero" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 bg-gold text-black p-6 rounded-2xl shadow-xl hidden sm:block max-w-xs">
+                        <p class="font-serif font-bold text-lg mb-1">Pasión por el detalle</p>
+                        <p class="text-xs opacity-90">Comprometidas con ofrecerte el mejor resultado adaptado a tu estilo de vida y personalidad.</p>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 text-gold text-xs font-medium uppercase tracking-wider">
+                        Tu salón de confianza
+                    </div>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold tracking-tight">
+                        Profesionalidad y calidad en cada servicio
+                    </h2>
+                    <p class="text-gray-300 font-light leading-relaxed">
+                        En <strong class="text-white font-medium">Marta Caballero Martínez</strong> entendemos que tu cabello y tu imagen personal son tu mejor carta de presentación. Por ello, combinamos técnicas vanguardistas de peluquería con productos de máxima calidad para cuidar la salud de tu melena.
+                    </p>
+                    <p class="text-gray-300 font-light leading-relaxed">
+                        Ven a visitarnos en Talayuelas y disfruta de un ambiente relajado y acogedor donde tú eres la única protagonista. ¡Te esperamos!
+                    </p>
+                    <div class="pt-4">
+                        <a href="tel:626091488" class="inline-flex items-center gap-2 text-gold font-semibold hover:text-gold-light transition-colors">
+                            <span>Reserva tu cita previa llamando al 626 09 14 88</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS Y TARIFAS -->
+    <section id="servicios" class="py-24 bg-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold text-sm font-semibold uppercase tracking-widest block mb-2">Carta de Tratamientos</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold tracking-tight mb-4">Nuestros Servicios y Tarifas</h2>
+                <p class="text-gray-400 font-light">Especialidades diseñadas para cuidar, transformar y embotellar la esencia de tu cabello.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Servicio 1 -->
+                <div class="bg-dark-card border border-white/10 rounded-2xl p-8 hover:border-gold/50 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold mb-6 group-hover:bg-gold group-hover:text-black transition-all">
+                            <i class="fa-solid fa-scissors text-xl"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold mb-3 text-white">Cortes y Estilismos</h3>
+                        <p class="text-gray-400 text-sm font-light mb-6">Cortes de tendencia, clásicos renovados, flequillos y asesoramiento de imagen personalizado según la morfología de tu rostro.</p>
+                    </div>
+                    <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                        <span class="text-xs text-gold uppercase tracking-wider font-semibold">Atención Personalizada</span>
+                        <a href="tel:626091488" class="text-sm font-bold text-white hover:text-gold transition-colors flex items-center gap-1">
+                            Reservar <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="bg-dark-card border border-white/10 rounded-2xl p-8 hover:border-gold/50 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold mb-6 group-hover:bg-gold group-hover:text-black transition-all">
+                            <i class="fa-solid fa-wand-magic-sparkles text-xl"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold mb-3 text-white">Color y Mechas</h3>
+                        <p class="text-gray-400 text-sm font-light mb-6">TINTO, baños de brillo, mechas balayage, babylights y técnicas avanzadas para conseguir un color vibrante, natural y duradero.</p>
+                    </div>
+                    <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                        <span class="text-xs text-gold uppercase tracking-wider font-semibold">Productos Premium</span>
+                        <a href="tel:626091488" class="text-sm font-bold text-white hover:text-gold transition-colors flex items-center gap-1">
+                            Reservar <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="bg-dark-card border border-white/10 rounded-2xl p-8 hover:border-gold/50 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold mb-6 group-hover:bg-gold group-hover:text-black transition-all">
+                            <i class="fa-solid fa-spa text-xl"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold mb-3 text-white">Tratamientos Capilares</h3>
+                        <p class="text-gray-400 text-sm font-light mb-6">Hidratación profunda, nutrición, reconstrucción de la fibra capilar y rituales específicos para devolver la salud y la vitalidad a tu pelo.</p>
+                    </div>
+                    <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                        <span class="text-xs text-gold uppercase tracking-wider font-semibold">Salud Capilar</span>
+                        <a href="tel:626091488" class="text-sm font-bold text-white hover:text-gold transition-colors flex items-center gap-1">
+                            Reservar <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action Banner inside services -->
+            <div class="mt-16 bg-gradient-to-r from-gold/20 via-dark-card to-gold/10 border border-gold/30 rounded-3xl p-8 sm:p-12 text-center relative overflow-hidden">
+                <div class="relative z-10 max-w-2xl mx-auto">
+                    <h3 class="font-serif text-2xl sm:text-3xl font-bold mb-4">¿Quieres un cambio de look o lucir perfecta para un evento?</h3>
+                    <p class="text-gray-300 text-sm sm:text-base font-light mb-8">Llámanos directamente y consulta disponibilidad o presupuesto sin compromiso. Te asesoramos encantadas.</p>
+                    <a href="tel:626091488" class="inline-flex items-center gap-3 bg-gold hover:bg-gold-light text-black font-bold px-8 py-4 rounded-full transition-all duration-300 shadow-lg text-base">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>Llamar al 626 09 14 88</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERÍA / INSTALACIONES -->
+    <section id="galeria" class="py-24 bg-dark-card border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold text-sm font-semibold uppercase tracking-widest block mb-2">Galería Visual</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold tracking-tight mb-4">Nuestras Instalaciones y Trabajos</h2>
+                <p class="text-gray-400 font-light">Un vistazo a nuestro espacio en Talayuelas y a los resultados que elaboramos con pasión cada día.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="rounded-2xl overflow-hidden border border-white/10 aspect-[4/3] group relative">
+                    <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80';" alt="Instalación Peluquería 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white font-serif text-lg font-medium">Salón Marta Caballero</span>
+                    </div>
+                </div>
+                <div class="rounded-2xl overflow-hidden border border-white/10 aspect-[4/3] group relative">
+                    <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?auto=format&fit=crop&w=800&q=80';" alt="Trabajo de Peluquería" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white font-serif text-lg font-medium">Estilismo y Cuidado</span>
+                    </div>
+                </div>
+                <div class="rounded-2xl overflow-hidden border border-white/10 aspect-[4/3] group relative sm:col-span-2 lg:col-span-1">
+                    <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=800&q=80';" alt="Ambiente y Detalles" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white font-serif text-lg font-medium">Ambiente Exclusivo</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OPINIONES REALES -->
+    <section id="opiniones" class="py-24 bg-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold text-sm font-semibold uppercase tracking-widest block mb-2">Reseñas Verificadas</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold tracking-tight mb-4">Lo que dicen nuestros clientes</h2>
+                <p class="text-gray-400 font-light">La satisfacción de quienes confían en nosotros es nuestra mejor carta de presentación.</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto">
+                <div class="bg-dark-card border border-white/10 rounded-3xl p-8 sm:p-10 relative shadow-2xl">
+                    <div class="absolute -top-4 right-10 bg-gold text-black w-10 h-10 rounded-full flex items-center justify-center font-bold shadow-lg">
+                        <i class="fa-solid fa-quote-right"></i>
+                    </div>
+                    <div class="flex text-gold gap-1 mb-6 text-lg">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <blockquote class="text-gray-200 text-lg sm:text-xl font-serif italic mb-6 leading-relaxed">
+                        "Excelente trato, profesionalidad y calidad."
+                    </blockquote>
+                    <div class="flex items-center gap-4 pt-6 border-t border-white/10">
+                        <div class="w-12 h-12 rounded-full bg-gold/20 flex items-center justify-center text-gold font-bold text-lg font-serif">
+                            <span>G</span>
+                        </div>
+                        <div>
+                            <p class="font-bold text-white">Cliente Verificado</p>
+                            <p class="text-xs text-gray-400">Reseña de Google Maps</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO Y UBICACIÓN -->
+    <section id="contacto" class="py-24 bg-dark-card border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold text-sm font-semibold uppercase tracking-widest block mb-2">Encuéntranos</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold tracking-tight mb-4">Visítanos en Talayuelas</h2>
+                <p class="text-gray-400 font-light">Estamos a tu completa disposición para atenderte y cuidar de tu imagen.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <!-- Información y Datos -->
+                <div class="bg-dark border border-white/10 rounded-3xl p-8 sm:p-10 space-y-8">
+                    <h3 class="font-serif text-2xl font-bold text-white mb-6">Información de Contacto</h3>
+                    
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold shrink-0 mt-1">
+                            <i class="fa-solid fa-location-dot text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-base mb-1">Dirección</h4>
+                            <p class="text-gray-400 text-sm font-light">C. de Francisco Pizarro, 10, 16320 Talayuelas, Cuenca, España</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold shrink-0 mt-1">
+                            <i class="fa-solid fa-phone text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-base mb-1">Teléfono de Citas</h4>
+                            <a href="tel:626091488" class="text-gold hover:text-gold-light text-sm font-semibold transition-colors">626 09 14 88</a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold shrink-0 mt-1">
+                            <i class="fa-solid fa-envelope text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-base mb-1">Correo Electrónico</h4>
+                            <a href="mailto:error-lite+84f2@duckduckgo.com" class="text-gray-400 hover:text-gold text-sm font-light transition-colors">error-lite+84f2@duckduckgo.com</a>
+                        </div>
+                    </div>
+
+                    <div class="pt-6 border-t border-white/10">
+                        <a href="tel:626091488" class="w-full flex items-center justify-center gap-3 bg-gold hover:bg-gold-light text-black font-bold px-6 py-4 rounded-full transition-all duration-300 shadow-lg text-base">
+                            <i class="fa-solid fa-calendar-check"></i>
+                            <span>Reservar Cita Previa</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mapa Interactivo Real -->
+                <div class="bg-dark border border-white/10 rounded-3xl p-4 overflow-hidden shadow-2xl h-full min-h-[400px] flex flex-col justify-center">
+                    <iframe src="https://www.google.com/maps?q=Marta%20Caballero%20Mart%C3%ADnez%20C.%20de%20Francisco%20Pizarro%2C%2010%2C%2016320%20Talayuelas%2C%20Cuenca%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black text-gray-400 py-12 border-t border-white/10 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div>
+                <p class="font-serif text-white font-bold text-lg mb-1">Marta Caballero Martínez</p>
+                <p class="text-xs text-gray-500">Peluquería en Talayuelas, Cuenca, España. Todos los derechos reservados.</p>
+            </div>
+            <div class="flex items-center gap-6 text-xs">
+                <a href="#inicio" class="hover:text-gold transition-colors">Inicio</a>
+                <a href="#servicios" class="hover:text-gold transition-colors">Servicios</a>
+                <a href="#galeria" class="hover:text-gold transition-colors">Galería</a>
+                <a href="#contacto" class="hover:text-gold transition-colors">Ubicación</a>
+            </div>
+            <div>
+                <a href="tel:626091488" class="inline-flex items-center gap-2 text-gold hover:underline font-semibold">
+                    <i class="fa-solid fa-phone"></i> 626 09 14 88
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
