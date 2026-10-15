@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rida barber style | Barbería en Tembleque, Toledo</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gourmet: {
+                            900: '#1a1816',
+                            800: '#26221f',
+                            700: '#3d3632',
+                            600: '#5c524b',
+                            gold: '#d4af37',
+                            lightgold: '#f3e5ab',
+                            cream: '#f9f6f0',
+                            terracota: '#9c4a2f'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome para Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gourmet-900 text-gourmet-cream font-sans antialiased selection:bg-gourmet-gold selection:text-gourmet-900">
+
+    <!-- Header / Barra de Navegación -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-gourmet-900/95 backdrop-blur-md border-b border-gourmet-700/50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2 group">
+                <div class="w-10 h-10 rounded-full bg-gourmet-gold/10 border border-gourmet-gold/30 flex items-center justify-center text-gourmet-gold group-hover:bg-gourmet-gold group-hover:text-gourmet-900 transition-all duration-300">
+                    <i class="fa-solid fa-scissors"></i>
+                </div>
+                <span class="font-serif text-2xl font-bold tracking-wider text-gourmet-cream">Rida <span class="text-gourmet-gold font-light">Barber Style</span></span>
+            </a>
+
+            <!-- Navegación Escritorio -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
+                <a href="#inicio" class="text-gourmet-cream/80 hover:text-gourmet-gold transition-colors">Inicio</a>
+                <a href="#carta" class="text-gourmet-cream/80 hover:text-gourmet-gold transition-colors">Especialidades</a>
+                <a href="#galeria" class="text-gourmet-cream/80 hover:text-gourmet-gold transition-colors">Instalaciones</a>
+                <a href="#opiniones" class="text-gourmet-cream/80 hover:text-gourmet-gold transition-colors">Reseñas</a>
+                <a href="#contacto" class="text-gourmet-cream/80 hover:text-gourmet-gold transition-colors">Ubicación</a>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-4">
+                <a href="tel:615669534" class="inline-flex items-center gap-2 bg-gourmet-gold hover:bg-gourmet-lightgold text-gourmet-900 font-semibold px-6 py-2.5 rounded-full transition-all duration-300 shadow-lg shadow-gourmet-gold/10 hover:scale-105">
+                    <i class="fa-solid fa-phone text-xs"></i>
+                    <span>Reservar Mesa</span>
+                </a>
+            </div>
+
+            <!-- Botón Menú Móvil -->
+            <button id="menu-btn" class="md:hidden text-gourmet-cream focus:outline-none text-2xl p-2">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Menú Móvil desplegable -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gourmet-800 border-b border-gourmet-700 px-6 py-6 space-y-4">
+            <a href="#inicio" class="block text-lg font-medium text-gourmet-cream hover:text-gourmet-gold">Inicio</a>
+            <a href="#carta" class="block text-lg font-medium text-gourmet-cream hover:text-gourmet-gold">Especialidades</a>
+            <a href="#galeria" class="block text-lg font-medium text-gourmet-cream hover:text-gourmet-gold">Instalaciones</a>
+            <a href="#opiniones" class="block text-lg font-medium text-gourmet-cream hover:text-gourmet-gold">Reseñas</a>
+            <a href="#contacto" class="block text-lg font-medium text-gourmet-cream hover:text-gourmet-gold">Ubicación</a>
+            <div class="pt-4">
+                <a href="tel:615669534" class="w-full text-center flex items-center justify-center gap-2 bg-gourmet-gold text-gourmet-900 font-semibold px-6 py-3 rounded-full">
+                    <i class="fa-solid fa-phone text-xs"></i>
+                    <span>Reservar Mesa</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <!-- Imagen de fondo con overlay elegante -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1920&q=80" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';" alt="Rida barber style Tembleque" class="w-full h-full object-cover object-center filter brightness-[0.35] scale-105 animate-pulse duration-[10000ms]">
+            <div class="absolute inset-0 bg-gradient-to-t from-gourmet-900 via-gourmet-900/60 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-24">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gourmet-gold/10 border border-gourmet-gold/30 text-gourmet-gold text-sm font-medium mb-8 animate-fade-in">
+                <i class="fa-solid fa-star text-xs"></i>
+                <span>Barbería Premium en Tembleque, Toledo</span>
+            </div>
+            
+            <h1 class="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-gourmet-cream mb-8 leading-none">
+                Estilo, Tradición <br>y <span class="italic font-normal text-gourmet-gold">Vanguardia</span>
+            </h1>
+
+            <p class="max-w-2xl mx-auto text-lg sm:text-xl text-gourmet-cream/80 font-light mb-10 leading-relaxed">
+                Descubre el arte de la barbería clásica con un toque moderno y acogedor en el corazón de Tembleque. Cuidado de barba, cortes impecables y una experiencia inigualable.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="tel:615669534" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-gourmet-gold hover:bg-gourmet-lightgold text-gourmet-900 font-bold px-8 py-4 rounded-full transition-all duration-300 shadow-xl shadow-gourmet-gold/20 hover:scale-105 text-lg">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span>Reservar Mesa</span>
+                </a>
+                <a href="#carta" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-gourmet-800/80 hover:bg-gourmet-700 text-gourmet-cream font-medium px-8 py-4 rounded-full border border-gourmet-600/50 transition-all duration-300 backdrop-blur-sm text-lg">
+                    <i class="fa-solid fa-scissors"></i>
+                    <span>Ver Servicios</span>
+                </a>
+            </div>
+
+            <!-- Datos rápidos -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20 pt-12 border-t border-gourmet-700/50 text-left">
+                <div class="flex items-start gap-4 p-4 rounded-2xl bg-gourmet-800/40 border border-gourmet-700/30">
+                    <div class="text-gourmet-gold text-2xl mt-1"><i class="fa-solid fa-location-dot"></i></div>
+                    <div>
+                        <h4 class="font-serif font-bold text-gourmet-cream">Ubicación</h4>
+                        <p class="text-sm text-gourmet-cream/70 mt-1">C. Castelar, 45780 Tembleque, Toledo</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-4 rounded-2xl bg-gourmet-800/40 border border-gourmet-700/30">
+                    <div class="text-gourmet-gold text-2xl mt-1"><i class="fa-solid fa-phone"></i></div>
+                    <div>
+                        <h4 class="font-serif font-bold text-gourmet-cream">Teléfono</h4>
+                        <p class="text-sm text-gourmet-cream/70 mt-1">615 66 95 34</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-4 rounded-2xl bg-gourmet-800/40 border border-gourmet-700/30">
+                    <div class="text-gourmet-gold text-2xl mt-1"><i class="fa-solid fa-award"></i></div>
+                    <div>
+                        <h4 class="font-serif font-bold text-gourmet-cream">Calidad Garantizada</h4>
+                        <p class="text-sm text-gourmet-cream/70 mt-1">Excelente trato y máxima profesionalidad</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Especialidades / Servicios (Carta) -->
+    <section id="carta" class="py-24 bg-gourmet-800/50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gourmet-gold text-sm font-semibold tracking-widest uppercase block mb-3">Nuestra Carta y Servicios</span>
+                <h2 class="font-serif text-4xl sm:text-5xl font-bold text-gourmet-cream mb-6">Especialidades de la Casa</h2>
+                <div class="w-24 h-1 bg-gourmet-gold mx-auto mb-6"></div>
+                <p class="text-gourmet-cream/80 text-lg font-light">
+                    Cada corte, afeitado y tratamiento está diseñado meticulosamente para ofrecerte una experiencia superior de cuidado personal en Tembleque.
+                </p>
+            </div>
+
+            <!-- Grid de Servicios / Platos -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Servicio 1 -->
+                <div class="bg-gourmet-800 rounded-2xl p-8 border border-gourmet-700/60 hover:border-gourmet-gold/50 transition-all duration-300 shadow-xl group flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs uppercase tracking-wider font-semibold text-gourmet-gold bg-gourmet-gold/10 px-3 py-1 rounded-full">Clásico</span>
+                            <span class="font-serif text-xl font-bold text-gourmet-gold">15€</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-gourmet-cream mb-3 group-hover:text-gourmet-gold transition-colors">Corte de Cabello Gentleman</h3>
+                        <p class="text-gourmet-cream/70 text-sm font-light leading-relaxed mb-6">
+                            Corte tradicional o moderno adaptado a tu estilo, con lavado incluido, productos de acabado premium y peinado profesional.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-gourmet-700/50 flex items-center justify-between">
+                        <span class="text-xs text-gourmet-cream/60 flex items-center gap-1"><i class="fa-regular fa-clock"></i> 30 mins</span>
+                        <a href="tel:615669534" class="text-gourmet-gold hover:text-gourmet-lightgold text-sm font-semibold flex items-center gap-1">
+                            Reservar Mesa <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="bg-gourmet-800 rounded-2xl p-8 border border-gourmet-700/60 hover:border-gourmet-gold/50 transition-all duration-300 shadow-xl group flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs uppercase tracking-wider font-semibold text-gourmet-gold bg-gourmet-gold/10 px-3 py-1 rounded-full">Especialidad</span>
+                            <span class="font-serif text-xl font-bold text-gourmet-gold">12€</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-gourmet-cream mb-3 group-hover:text-gourmet-gold transition-colors">Diseño y Ritual de Barba</h3>
+                        <p class="text-gourmet-cream/70 text-sm font-light leading-relaxed mb-6">
+                            Perfilado perfecto con navaja, toalla caliente relajante, aceites esenciales nutritivos y bálsamo para un acabado impecable.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-gourmet-700/50 flex items-center justify-between">
+                        <span class="text-xs text-gourmet-cream/60 flex items-center gap-1"><i class="fa-regular fa-clock"></i> 25 mins</span>
+                        <a href="tel:615669534" class="text-gourmet-gold hover:text-gourmet-lightgold text-sm font-semibold flex items-center gap-1">
+                            Reservar Mesa <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="bg-gourmet-800 rounded-2xl p-8 border border-gourmet-700/60 hover:border-gourmet-gold/50 transition-all duration-300 shadow-xl group flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs uppercase tracking-wider font-semibold text-gourmet-gold bg-gourmet-gold/10 px-3 py-1 rounded-full">Combo Estrella</span>
+                            <span class="font-serif text-xl font-bold text-gourmet-gold">24€</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-gourmet-cream mb-3 group-hover:text-gourmet-gold transition-colors">Pack Completo Rida</h3>
+                        <p class="text-gourmet-cream/70 text-sm font-light leading-relaxed mb-6">
+                            La experiencia definitiva. Incluye nuestro corte de cabello signature más el ritual completo de barba y lavado terapéutico.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-gourmet-700/50 flex items-center justify-between">
+                        <span class="text-xs text-gourmet-cream/60 flex items-center gap-1"><i class="fa-regular fa-clock"></i> 50 mins</span>
+                        <a href="tel:615669534" class="text-gourmet-gold hover:text-gourmet-lightgold text-sm font-semibold flex items-center gap-1">
+                            Reservar Mesa <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 4 -->
+                <div class="bg-gourmet-800 rounded-2xl p-8 border border-gourmet-700/60 hover:border-gourmet-gold/50 transition-all duration-300 shadow-xl group flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs uppercase tracking-wider font-semibold text-gourmet-gold bg-gourmet-gold/10 px-3 py-1 rounded-full">Juvenil</span>
+                            <span class="font-serif text-xl font-bold text-gourmet-gold">10€</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-gourmet-cream mb-3 group-hover:text-gourmet-gold transition-colors">Corte Junior / Infantil</h3>
+                        <p class="text-gourmet-cream/70 text-sm font-light leading-relaxed mb-6">
+                            Cortes modernos y actuales para los más jóvenes de la casa, con la paciencia y profesionalidad que se merecen.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-gourmet-700/50 flex items-center justify-between">
+                        <span class="text-xs text-gourmet-cream/60 flex items-center gap-1"><i class="fa-regular fa-clock"></i> 25 mins</span>
+                        <a href="tel:615669534" class="text-gourmet-gold hover:text-gourmet-lightgold text-sm font-semibold flex items-center gap-1">
+                            Reservar Mesa <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 5 -->
+                <div class="bg-gourmet-800 rounded-2xl p-8 border border-gourmet-700/60 hover:border-gourmet-gold/50 transition-all duration-300 shadow-xl group flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs uppercase tracking-wider font-semibold text-gourmet-gold bg-gourmet-gold/10 px-3 py-1 rounded-full">Tratamiento</span>
+                            <span class="font-serif text-xl font-bold text-gourmet-gold">18€</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-gourmet-cream mb-3 group-hover:text-gourmet-gold transition-colors">Afeitado Clásico a Navaja</h3>
+                        <p class="text-gourmet-cream/70 text-sm font-light leading-relaxed mb-6">
+                            Afeitado tradicional completo de rostro con espuma caliente, toallas aromatizadas y loción calmante post-afeitado.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-gourmet-700/50 flex items-center justify-between">
+                        <span class="text-xs text-gourmet-cream/60 flex items-center gap-1"><i class="fa-regular fa-clock"></i> 30 mins</span>
+                        <a href="tel:615669534" class="text-gourmet-gold hover:text-gourmet-lightgold text-sm font-semibold flex items-center gap-1">
+                            Reservar Mesa <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 6 -->
+                <div class="bg-gourmet-800 rounded-2xl p-8 border border-gourmet-700/60 hover:border-gourmet-gold/50 transition-all duration-300 shadow-xl group flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs uppercase tracking-wider font-semibold text-gourmet-gold bg-gourmet-gold/10 px-3 py-1 rounded-full">Cuidado</span>
+                            <span class="font-serif text-xl font-bold text-gourmet-gold">8€</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-gourmet-cream mb-3 group-hover:text-gourmet-gold transition-colors">Marcado de Contornos</h3>
+                        <p class="text-gourmet-cream/70 text-sm font-light leading-relaxed mb-6">
+                            Mantenimiento rápido de patillas, cuello y contornos para lucir siempre impecable entre corte y corte.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-gourmet-700/50 flex items-center justify-between">
+                        <span class="text-xs text-gourmet-cream/60 flex items-center gap-1"><i class="fa-regular fa-clock"></i> 15 mins</span>
+                        <a href="tel:615669534" class="text-gourmet-gold hover:text-gourmet-lightgold text-sm font-semibold flex items-center gap-1">
+                            Reservar Mesa <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center">
+                <a href="tel:615669534" class="inline-flex items-center gap-3 bg-gourmet-gold hover:bg-gourmet-lightgold text-gourmet-900 font-bold px-10 py-4 rounded-full transition-all duration-300 shadow-xl shadow-gourmet-gold/20 hover:scale-105 text-lg">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Reservar Mesa Ahora</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería / Nuestras Instalaciones y Trabajos -->
+    <section id="galeria" class="py-24 bg-gourmet-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gourmet-gold text-sm font-semibold tracking-widest uppercase block mb-3">Galería Visual</span>
+                <h2 class="font-serif text-4xl sm:text-5xl font-bold text-gourmet-cream mb-6">Nuestras Instalaciones y Trabajos</h2>
+                <div class="w-24 h-1 bg-gourmet-gold mx-auto mb-6"></div>
+                <p class="text-gourmet-cream/80 text-lg font-light">
+                    Un espacio diseñado para el confort, la relajación y el cuidado masculino en Tembleque.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group relative overflow-hidden rounded-2xl h-80 shadow-xl border border-gourmet-700/40">
+                    <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=800&q=80" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';" alt="Rida barber style trabajo 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet-900/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-gourmet-gold text-xs font-semibold tracking-wider uppercase">Estilo & Precisión</span>
+                            <h4 class="font-serif text-xl font-bold text-gourmet-cream">Cortes Detallados</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-2xl h-80 shadow-xl border border-gourmet-700/40">
+                    <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=800&q=80" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';" alt="Rida barber style trabajo 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet-900/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-gourmet-gold text-xs font-semibold tracking-wider uppercase">Ambiente Acogedor</span>
+                            <h4 class="font-serif text-xl font-bold text-gourmet-cream">Instalaciones Exclusivas</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-2xl h-80 shadow-xl border border-gourmet-700/40">
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=80" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';" alt="Rida barber style trabajo 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet-900/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-gourmet-gold text-xs font-semibold tracking-wider uppercase">Tradición & Modernidad</span>
+                            <h4 class="font-serif text-xl font-bold text-gourmet-cream">Afeitados Clásicos</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Opiniones Reales Verificadas -->
+    <section id="opiniones" class="py-24 bg-gourmet-800/50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gourmet-gold text-sm font-semibold tracking-widest uppercase block mb-3">Testimonios Verificados</span>
+                <h2 class="font-serif text-4xl sm:text-5xl font-bold text-gourmet-cream mb-6">Lo que dicen nuestros clientes</h2>
+                <div class="w-24 h-1 bg-gourmet-gold mx-auto mb-6"></div>
+                <p class="text-gourmet-cream/80 text-lg font-light">
+                    La satisfacción de quienes confían en nosotros es nuestra mejor carta de presentación.
+                </p>
+            </div>
+
+            <div class="max-w-2xl mx-auto">
+                <!-- Tarjeta de Reseña Real -->
+                <div class="bg-gourmet-800 p-8 sm:p-10 rounded-3xl border border-gourmet-gold/30 shadow-2xl relative">
+                    <div class="absolute -top-5 left-10 w-10 h-10 bg-gourmet-gold text-gourmet-900 rounded-full flex items-center justify-center font-serif text-2xl font-bold shadow-lg">
+                        <i class="fa-solid fa-quote-left"></i>
+                    </div>
+                    <div class="flex items-center gap-1 text-gourmet-gold mb-6 mt-2">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="font-serif text-2xl italic text-gourmet-cream/90 mb-8 leading-relaxed">
+                        "Excelente trato, profesionalidad y calidad."
+                    </p>
+                    <div class="flex items-center justify-between border-t border-gourmet-700/50 pt-6">
+                        <div>
+                            <h4 class="font-serif font-bold text-gourmet-cream text-lg">Cliente Verificado de Google Maps</h4>
+                            <p class="text-xs text-gourmet-gold mt-0.5">Reseña oficial de Tembleque</p>
+                        </div>
+                        <div class="w-10 h-10 rounded-full bg-gourmet-gold/10 text-gourmet-gold flex items-center justify-center font-bold">
+                            <i class="fa-brands fa-google"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Ubicación y Contacto -->
+    <section id="contacto" class="py-24 bg-gourmet-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gourmet-gold text-sm font-semibold tracking-widest uppercase block mb-3">Encuéntranos</span>
+                <h2 class="font-serif text-4xl sm:text-5xl font-bold text-gourmet-cream mb-6">Ubicación y Contacto</h2>
+                <div class="w-24 h-1 bg-gourmet-gold mx-auto mb-6"></div>
+                <p class="text-gourmet-cream/80 text-lg font-light">
+                    Visítanos en Tembleque o reserva tu cita llamando directamente. ¡Te esperamos!
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Información de contacto -->
+                <div class="bg-gourmet-800 p-8 sm:p-10 rounded-3xl border border-gourmet-700/60 shadow-xl space-y-8">
+                    <h3 class="font-serif text-3xl font-bold text-gourmet-cream">Rida barber style</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-gourmet-gold/10 text-gourmet-gold flex items-center justify-center text-xl shrink-0 mt-1">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-bold text-gourmet-cream text-lg">Dirección</h4>
+                                <p class="text-gourmet-cream/70 text-sm mt-1">C. Castelar, 45780 Tembleque, Toledo, España</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-gourmet-gold/10 text-gourmet-gold flex items-center justify-center text-xl shrink-0 mt-1">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-bold text-gourmet-cream text-lg">Teléfono de Reservas</h4>
+                                <p class="text-gourmet-cream/70 text-sm mt-1">615 66 95 34</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-gourmet-gold/10 text-gourmet-gold flex items-center justify-center text-xl shrink-0 mt-1">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-bold text-gourmet-cream text-lg">Correo Electrónico</h4>
+                                <p class="text-gourmet-cream/70 text-sm mt-1">error-lite+84f2@duckduckgo.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-gourmet-gold/10 text-gourmet-gold flex items-center justify-center text-xl shrink-0 mt-1">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-bold text-gourmet-cream text-lg">Horario</h4>
+                                <p class="text-gourmet-cream/70 text-sm mt-1">Lunes a Sábado: 9:30 - 14:00 y 17:00 - 21:00</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="tel:615669534" class="w-full flex items-center justify-center gap-3 bg-gourmet-gold hover:bg-gourmet-lightgold text-gourmet-900 font-bold px-8 py-4 rounded-full transition-all duration-300 shadow-xl shadow-gourmet-gold/20 text-lg">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>Reservar Mesa</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mapa Interactivo Real -->
+                <div class="bg-gourmet-800 p-4 rounded-3xl border border-gourmet-700/60 shadow-xl">
+                    <iframe src="https://www.google.com/maps?q=Rida%20barber%20style%20C.%20Castelar%2C%2045780%20Tembleque%2C%20Toledo%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gourmet-800 border-t border-gourmet-700/60 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-full bg-gourmet-gold/10 border border-gourmet-gold/30 flex items-center justify-center text-gourmet-gold">
+                    <i class="fa-solid fa-scissors text-xs"></i>
+                </div>
+                <span class="font-serif text-xl font-bold tracking-wider text-gourmet-cream">Rida <span class="text-gourmet-gold font-light">Barber Style</span></span>
+            </div>
+
+            <p class="text-sm text-gourmet-cream/60">
+                &copy; <span id="current-year"></span> Rida barber style. Todos los derechos reservados. Tembleque, Toledo, España.
+            </p>
+
+            <div class="flex items-center gap-4 text-gourmet-gold">
+                <a href="tel:615669534" class="w-10 h-10 rounded-full bg-gourmet-gold/10 hover:bg-gourmet-gold hover:text-gourmet-900 flex items-center justify-center transition-all duration-300">
+                    <i class="fa-solid fa-phone"></i>
+                </a>
+                <a href="mailto:error-lite+84f2@duckduckgo.com" class="w-10 h-10 rounded-full bg-gourmet-gold/10 hover:bg-gourmet-gold hover:text-gourmet-900 flex items-center justify-center transition-all duration-300">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script para menú móvil y año dinámico -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú móvil al hacer click en un enlace
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Año actual dinámico
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
