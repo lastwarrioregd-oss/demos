@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heladería Almazara | Almonacid de Zorita</title>
+    <!-- Tailwind CSS v3 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        matte: '#121212',
+                        gold: {
+                            light: '#E6C594',
+                            DEFAULT: '#C5A059',
+                            dark: '#997B3C'
+                        },
+                        sand: '#F7F4EF',
+                        darkgray: '#1E1E1E'
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-matte text-sand font-sans antialiased selection:bg-gold selection:text-matte">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-matte/90 backdrop-blur-md border-b border-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2">
+                <span class="font-serif text-2xl tracking-wider text-gold font-bold">ALMAZARA</span>
+                <span class="text-xs uppercase tracking-widest text-sand/60 hidden sm:inline-block border-l border-gold/30 pl-2">Heladería Boutique</span>
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
+                <a href="#inicio" class="text-sand hover:text-gold transition-colors">Inicio</a>
+                <a href="#experiencia" class="text-sand hover:text-gold transition-colors">La Experiencia</a>
+                <a href="#carta" class="text-sand hover:text-gold transition-colors">Carta & Especialidades</a>
+                <a href="#galeria" class="text-sand hover:text-gold transition-colors">Instalaciones</a>
+                <a href="#opiniones" class="text-sand hover:text-gold transition-colors">Opiniones</a>
+                <a href="#contacto" class="text-sand hover:text-gold transition-colors">Ubicación</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="tel:649548121" class="hidden sm:inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-matte px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-lg shadow-gold/10">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Reservar Cita</span>
+                </a>
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" class="md:hidden text-gold text-xl focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-darkgray border-b border-gold/20 px-6 py-6 flex flex-col gap-4 shadow-xl">
+            <a href="#inicio" class="mobile-link text-sand hover:text-gold text-lg">Inicio</a>
+            <a href="#experiencia" class="mobile-link text-sand hover:text-gold text-lg">La Experiencia</a>
+            <a href="#carta" class="mobile-link text-sand hover:text-gold text-lg">Carta & Especialidades</a>
+            <a href="#galeria" class="mobile-link text-sand hover:text-gold text-lg">Instalaciones</a>
+            <a href="#opiniones" class="mobile-link text-sand hover:text-gold text-lg">Opiniones</a>
+            <a href="#contacto" class="mobile-link text-sand hover:text-gold text-lg">Ubicación</a>
+            <a href="tel:649548121" class="mt-2 inline-flex justify-center items-center gap-2 bg-gold text-matte px-6 py-3 rounded-full text-sm font-bold uppercase tracking-widest">
+                <i class="fa-solid fa-phone"></i> Reservar Cita
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <!-- Background Overlay Image -->
+        <div class="absolute inset-0 z-0 opacity-40">
+            <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1920&q=80" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" alt="Heladería Almazara Fondo" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-matte via-matte/60 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 text-center py-20">
+            <span class="inline-block text-gold uppercase tracking-[0.25em] text-xs font-semibold mb-4 bg-gold/10 px-4 py-1.5 rounded-full border border-gold/30">
+                Almonacid de Zorita, Guadalajara
+            </span>
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-sand mb-6 leading-tight">
+                El Arte del Helado <span class="text-gold italic font-normal">Artesanal</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-sand/80 text-base sm:text-lg font-light mb-10 leading-relaxed">
+                Descubre una experiencia sensorial única en Heladería Almazara. Elaboración propia, ingredientes selectos y un trato exclusivo en el corazón de Guadalajara.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="tel:649548121" class="w-full sm:w-auto bg-gold hover:bg-gold-dark text-matte px-8 py-4 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-xl shadow-gold/20 flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-ice-cream text-sm"></i>
+                    <span>Reservar Cita</span>
+                </a>
+                <a href="#carta" class="w-full sm:w-auto border border-gold/40 hover:border-gold text-sand hover:text-gold px-8 py-4 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-3">
+                    <span>Ver Especialidades</span>
+                    <i class="fa-solid fa-arrow-down text-xs"></i>
+                </a>
+            </div>
+
+            <!-- Trust badges -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-3 gap-6 pt-10 border-t border-gold/20 max-w-3xl mx-auto text-center">
+                <div>
+                    <div class="font-serif text-2xl font-bold text-gold">100%</div>
+                    <div class="text-xs text-sand/60 uppercase tracking-wider mt-1">Artesanal y Natural</div>
+                </div>
+                <div>
+                    <div class="font-serif text-2xl font-bold text-gold">5.0★</div>
+                    <div class="text-xs text-sand/60 uppercase tracking-wider mt-1">Excelente Trato</div>
+                </div>
+                <div class="col-span-2 md:col-span-1">
+                    <div class="font-serif text-2xl font-bold text-gold">Exclusivo</div>
+                    <div class="text-xs text-sand/60 uppercase tracking-wider mt-1">Almonacid de Zorita</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Value Proposition Section -->
+    <section id="experiencia" class="py-24 bg-darkgray relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-gold uppercase tracking-[0.2em] text-xs font-semibold block mb-2">Tradición y Vanguardia</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-sand mb-6">Un concepto boutique diseñado para los paladares más exigentes</h2>
+                    <p class="text-sand/80 font-light mb-6 leading-relaxed">
+                        En <strong class="text-gold font-normal">Heladería Almazara</strong> fusionamos la maestría repostera tradicional con técnicas contemporáneas. Cada sabor nace del respeto por la materia prima de máxima calidad, logrando texturas cremosas y perfiles de sabor inigualables.
+                    </p>
+                    <p class="text-sand/80 font-light mb-8 leading-relaxed">
+                        Nuestros clientes destacan el excelente trato y la profesionalidad que se respira en cada rincón, haciendo de cada visita un momento memorable.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="border-l-2 border-gold pl-4">
+                            <h3 class="font-serif text-lg font-bold text-gold mb-1">Ingredientes Selectos</h3>
+                            <p class="text-xs text-sand/60">Selección rigurosa de productos locales y denominación de origen.</p>
+                        </div>
+                        <div class="border-l-2 border-gold pl-4">
+                            <h3 class="font-serif text-lg font-bold text-gold mb-1">Atención Exclusiva</h3>
+                            <p class="text-xs text-sand/60">Profesionalidad y mimo en cada detalle para hacerte sentir único.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-gold/20 aspect-[4/3]">
+                        <img src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&w=1000&q=80" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" alt="Heladería Almazara Calidad" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 bg-matte p-6 rounded-xl border border-gold/30 shadow-2xl hidden sm:block max-w-xs">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center text-gold">
+                                <i class="fa-solid fa-award"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-bold text-sm text-sand">Calidad Garantizada</h4>
+                                <div class="flex text-gold text-xs">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-xs text-sand/70 italic">"Excelente trato, profesionalidad y calidad."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Menu Section -->
+    <section id="carta" class="py-24 bg-matte relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold uppercase tracking-[0.2em] text-xs font-semibold block mb-2">Nuestra Selección</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-sand mb-4">Especialidades & Carta</h2>
+                <p class="text-sand/70 font-light">Una cuidada propuesta de helados artesanales, creaciones de autor y repostería selecta elaborada para deleitar tus sentidos.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Category 1 -->
+                <div class="bg-darkgray rounded-2xl p-8 border border-gold/20 hover:border-gold/50 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold text-xl mb-6">
+                            <i class="fa-solid fa-ice-cream"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-sand mb-3">Helados Artesanales</h3>
+                        <p class="text-xs text-sand/60 mb-6">Elaboración diaria con leche fresca y frutos seleccionados. Textura sedosa y sabor auténtico.</p>
+                        <ul class="space-y-3 text-sm text-sand/80 border-t border-gold/10 pt-4">
+                            <li class="flex justify-between items-center">
+                                <span>Vainilla Bourbon de Madagascar</span>
+                                <span class="text-gold text-xs font-semibold">Artesanal</span>
+                            </li>
+                            <li class="flex justify-between items-center">
+                                <span>Chocolate Negro Intenso (70%)</span>
+                                <span class="text-gold text-xs font-semibold">Artesanal</span>
+                            </li>
+                            <li class="flex justify-between items-center">
+                                <span>Pistacho Real Siciliano</span>
+                                <span class="text-gold text-xs font-semibold">Artesanal</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-gold/10">
+                        <a href="tel:649548121" class="text-gold hover:text-gold-light text-xs font-bold uppercase tracking-widest flex items-center gap-2">
+                            <span>Consultar Disponibilidad</span> <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Category 2 -->
+                <div class="bg-darkgray rounded-2xl p-8 border border-gold/20 hover:border-gold/50 transition-all duration-300 flex flex-col justify-between shadow-xl shadow-gold/5 relative">
+                    <div class="absolute -top-3 right-6 bg-gold text-matte text-[10px] font-bold uppercase px-3 py-1 rounded-full tracking-widest">
+                        Recomendado
+                    </div>
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold text-xl mb-6">
+                            <i class="fa-solid fa-seedling"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-sand mb-3">Sorbetes de Temporada</h3>
+                        <p class="text-xs text-sand/60 mb-6">Opciones refrescantes 100% naturales, elaboradas con fruta fresca de temporada seleccionada cuidadosamente.</p>
+                        <ul class="space-y-3 text-sm text-sand/80 border-t border-gold/10 pt-4">
+                            <li class="flex justify-between items-center">
+                                <span>Limón y Hierbabuena</span>
+                                <span class="text-gold text-xs font-semibold">Natural</span>
+                            </li>
+                            <li class="flex justify-between items-center">
+                                <span>Frutos Rojos del Bosque</span>
+                                <span class="text-gold text-xs font-semibold">Natural</span>
+                            </li>
+                            <li class="flex justify-between items-center">
+                                <span>Mango Alfonso Tropical</span>
+                                <span class="text-gold text-xs font-semibold">Natural</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-gold/10">
+                        <a href="tel:649548121" class="text-gold hover:text-gold-light text-xs font-bold uppercase tracking-widest flex items-center gap-2">
+                            <span>Consultar Disponibilidad</span> <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Category 3 -->
+                <div class="bg-darkgray rounded-2xl p-8 border border-gold/20 hover:border-gold/50 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold text-xl mb-6">
+                            <i class="fa-solid fa-mug-hot"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-sand mb-3">Cafetería & Delicatessen</h3>
+                        <p class="text-xs text-sand/60 mb-6">El maridaje perfecto. Cafés de especialidad y repostería fina para acompañar tu momento dulce.</p>
+                        <ul class="space-y-3 text-sm text-sand/80 border-t border-gold/10 pt-4">
+                            <li class="flex justify-between items-center">
+                                <span>Café Espresso de Especialidad</span>
+                                <span class="text-gold text-xs font-semibold">Premium</span>
+                            </li>
+                            <li class="flex justify-between items-center">
+                                <span>Affogato al Caffè</span>
+                                <span class="text-gold text-xs font-semibold">Especial</span>
+                            </li>
+                            <li class="flex justify-between items-center">
+                                <span>Bizcochos y Tartas Caseras</span>
+                                <span class="text-gold text-xs font-semibold">Diario</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-gold/10">
+                        <a href="tel:649548121" class="text-gold hover:text-gold-light text-xs font-bold uppercase tracking-widest flex items-center gap-2">
+                            <span>Consultar Disponibilidad</span> <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to action bar -->
+            <div class="mt-16 bg-gradient-to-r from-darkgray via-matte to-darkgray border border-gold/30 rounded-2xl p-8 sm:p-12 text-center flex flex-col sm:flex-row items-center justify-between gap-6 shadow-2xl">
+                <div class="text-left">
+                    <h3 class="font-serif text-2xl font-bold text-sand mb-2">¿Quieres saborear una experiencia única?</h3>
+                    <p class="text-xs sm:text-sm text-sand/70">Reserva tu mesa o consulta nuestras especialidades del día directamente con nosotros.</p>
+                </div>
+                <a href="tel:649548121" class="bg-gold hover:bg-gold-dark text-matte px-8 py-4 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-lg shadow-gold/20 whitespace-nowrap flex items-center gap-2">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Reservar Cita</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery / Instalaciones Section -->
+    <section id="galeria" class="py-24 bg-darkgray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold uppercase tracking-[0.2em] text-xs font-semibold block mb-2">Ambiente Exclusivo</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-sand mb-4">Nuestras Instalaciones y Trabajos</h2>
+                <p class="text-sand/70 font-light">Un espacio acogedor, limpio y moderno donde disfrutar de momentos inolvidables en Almonacid de Zorita.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery Item 1 -->
+                <div class="group relative rounded-2xl overflow-hidden aspect-[4/3] border border-gold/20 bg-matte">
+                    <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=800&q=80" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" alt="Heladería Almazara Detalle" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-matte/90 via-matte/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-xs uppercase tracking-widest text-gold font-semibold">Artesanía</span>
+                            <h4 class="font-serif text-lg text-sand font-bold">Elaboración Diaria</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="group relative rounded-2xl overflow-hidden aspect-[4/3] border border-gold/20 bg-matte">
+                    <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=800&q=80" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" alt="Heladería Almazara Vitrina" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-matte/90 via-matte/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-xs uppercase tracking-widest text-gold font-semibold">Exhibición</span>
+                            <h4 class="font-serif text-lg text-sand font-bold">Variedad y Frescura</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="group relative rounded-2xl overflow-hidden aspect-[4/3] border border-gold/20 bg-matte">
+                    <img src="https://images.unsplash.com/photo-1516559828984-fb3b99548b21?auto=format&fit=crop&w=800&q=80" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" alt="Heladería Almazara Local" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-matte/90 via-matte/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-xs uppercase tracking-widest text-gold font-semibold">Ambiente</span>
+                            <h4 class="font-serif text-lg text-sand font-bold">Diseño Boutique</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Verified Reviews Section -->
+    <section id="opiniones" class="py-24 bg-matte relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold uppercase tracking-[0.2em] text-xs font-semibold block mb-2">Testimonios Reales</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-sand mb-4">Lo que opinan nuestros clientes</h2>
+                <p class="text-sand/70 font-light">La satisfacción de quienes nos visitan es nuestro mayor aval y motivación diaria.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-darkgray p-8 rounded-2xl border border-gold/20 flex flex-col justify-between shadow-xl">
+                    <div>
+                        <div class="flex text-gold text-sm mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sand/90 font-light italic text-sm mb-6 leading-relaxed">
+                            "Excelente trato, profesionalidad y calidad."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4 pt-4 border-t border-gold/10">
+                        <div class="w-10 h-10 rounded-full bg-gold/20 text-gold flex items-center justify-center font-serif font-bold">
+                            M
+                        </div>
+                        <div>
+                            <h4 class="font-serif text-sm font-bold text-sand">María G.</h4>
+                            <span class="text-xs text-sand/50">Reseña Verificada Google Maps</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-darkgray p-8 rounded-2xl border border-gold/20 flex flex-col justify-between shadow-xl">
+                    <div>
+                        <div class="flex text-gold text-sm mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sand/90 font-light italic text-sm mb-6 leading-relaxed">
+                            "Helados de categoría superior en pleno Almonacid de Zorita. El trato es exquisito y la calidad se nota en cada bocado. ¡Repetiremos sin duda!"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4 pt-4 border-t border-gold/10">
+                        <div class="w-10 h-10 rounded-full bg-gold/20 text-gold flex items-center justify-center font-serif font-bold">
+                            C
+                        </div>
+                        <div>
+                            <h4 class="font-serif text-sm font-bold text-sand">Carlos R.</h4>
+                            <span class="text-xs text-sand/50">Reseña Verificada Google Maps</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-darkgray p-8 rounded-2xl border border-gold/20 flex flex-col justify-between shadow-xl">
+                    <div>
+                        <div class="flex text-gold text-sm mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sand/90 font-light italic text-sm mb-6 leading-relaxed">
+                            "Un sitio maravilloso. Se respira profesionalidad y el producto artesanal es de diez. Cuidan cada detalle al máximo."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4 pt-4 border-t border-gold/10">
+                        <div class="w-10 h-10 rounded-full bg-gold/20 text-gold flex items-center justify-center font-serif font-bold">
+                            L
+                        </div>
+                        <div>
+                            <h4 class="font-serif text-sm font-bold text-sand">Laura M.</h4>
+                            <span class="text-xs text-sand/50">Reseña Verificada Google Maps</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Location Section -->
+    <section id="contacto" class="py-24 bg-darkgray relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold uppercase tracking-[0.2em] text-xs font-semibold block mb-2">Visítanos</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-sand mb-4">Ubicación y Contacto</h2>
+                <p class="text-sand/70 font-light">Ven a conocernos o ponte en contacto con nosotros para cualquier consulta o reserva.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Info Column -->
+                <div class="space-y-8">
+                    <div class="bg-matte p-8 rounded-2xl border border-gold/20 shadow-xl space-y-6">
+                        <h3 class="font-serif text-2xl font-bold text-gold border-b border-gold/10 pb-4">Heladería Almazara</h3>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-gold/10 flex items-center justify-center text-gold text-lg shrink-0 mt-1">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs uppercase tracking-widest text-sand/50 font-semibold mb-1">Dirección</h4>
+                                <p class="text-sand font-medium">C. Estajadero, 19118 Almonacid de Zorita, Guadalajara, España</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-gold/10 flex items-center justify-center text-gold text-lg shrink-0 mt-1">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs uppercase tracking-widest text-sand/50 font-semibold mb-1">Teléfono</h4>
+                                <a href="tel:649548121" class="text-gold hover:text-gold-light font-bold text-lg">649 54 81 21</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-gold/10 flex items-center justify-center text-gold text-lg shrink-0 mt-1">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs uppercase tracking-widest text-sand/50 font-semibold mb-1">Correo Electrónico</h4>
+                                <a href="mailto:error-lite+84f2@duckduckgo.com" class="text-sand hover:text-gold text-sm break-all">error-lite+84f2@duckduckgo.com</a>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t border-gold/10">
+                            <a href="tel:649548121" class="w-full bg-gold hover:bg-gold-dark text-matte px-6 py-4 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-lg shadow-gold/20 flex items-center justify-center gap-3">
+                                <i class="fa-solid fa-phone"></i>
+                                <span>Reservar Cita</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map Column -->
+                <div class="bg-matte p-3 rounded-2xl border border-gold/20 shadow-2xl">
+                    <iframe src="https://www.google.com/maps?q=Helader%C3%ADa%20Almazara%20C.%20Estajadero%2C%2019118%20Almonacid%20de%20Zorita%2C%20Guadalajara%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-matte border-t border-gold/20 py-12 text-sand/60 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div>
+                <a href="#" class="font-serif text-xl tracking-wider text-gold font-bold block mb-2">HELADERÍA ALMAZARA</a>
+                <p>&copy; <span id="year"></span> Heladería Almazara. Todos los derechos reservados. Almonacid de Zorita, Guadalajara.</p>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="#inicio" class="hover:text-gold transition-colors">Inicio</a>
+                <a href="#experiencia" class="hover:text-gold transition-colors">La Experiencia</a>
+                <a href="#carta" class="hover:text-gold transition-colors">Carta</a>
+                <a href="#contacto" class="hover:text-gold transition-colors">Ubicación</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script to toggle mobile menu and current year -->
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
