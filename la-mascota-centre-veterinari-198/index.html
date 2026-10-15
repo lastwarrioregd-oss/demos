@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Mascota Centre Veterinari | Súria y Calders</title>
+    <meta name="description" content="Clínica veterinaria de confianza en Súria y Calders, Barcelona. Excelente trato, profesionalidad y calidad para tu mascota. ¡Pide cita previa!">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        medical: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#14b8a6', // Turquesa clínico
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            800: '#115e59',
+                            900: '#134e4a',
+                        },
+                        brand: {
+                            light: '#e0f2fe',
+                            DEFAULT: '#0284c7',
+                            dark: '#0369a1',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-medical-500 selection:text-white">
+
+    <!-- Barra Superior de Contacto Rápido -->
+    <div class="bg-medical-900 text-white text-sm py-2 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-6">
+                <a href="tel:938682305" class="flex items-center gap-2 hover:text-medical-100 transition-colors">
+                    <i class="fa-solid fa-phone text-medical-500"></i>
+                    <span>938 68 23 05</span>
+                </a>
+                <a href="mailto:error-lite+84f2@duckduckgo.com" class="hidden md:flex items-center gap-2 hover:text-medical-100 transition-colors">
+                    <i class="fa-solid fa-envelope text-medical-500"></i>
+                    <span>error-lite+84f2@duckduckgo.com</span>
+                </a>
+            </div>
+            <div class="flex items-center gap-2 text-medical-100 text-xs sm:text-sm">
+                <i class="fa-solid fa-location-dot text-medical-500"></i>
+                <span>Carrer d'Ernest Solvay, 4, Súria (Barcelona) & Calders</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header / Navbar Principal -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logotipo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 rounded-2xl bg-medical-500 flex items-center justify-center text-white shadow-md shadow-medical-500/20 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-paw text-2xl"></i>
+                </div>
+                <div>
+                    <span class="text-xl font-bold tracking-tight text-slate-900 block leading-none">La Mascota</span>
+                    <span class="text-xs font-semibold tracking-wider text-medical-600 uppercase mt-1 block">Centre Veterinari</span>
+                </div>
+            </a>
+
+            <!-- Navegación Desktop -->
+            <nav class="hidden lg:flex items-center gap-8 font-medium text-sm text-slate-600">
+                <a href="#inicio" class="hover:text-medical-600 transition-colors">Inicio</a>
+                <a href="#nosotros" class="hover:text-medical-600 transition-colors">El Centro</a>
+                <a href="#servicios" class="hover:text-medical-600 transition-colors">Servicios</a>
+                <a href="#instalaciones" class="hover:text-medical-600 transition-colors">Instalaciones</a>
+                <a href="#opiniones" class="hover:text-medical-600 transition-colors">Opiniones</a>
+                <a href="#contacto" class="hover:text-medical-600 transition-colors">Contacto</a>
+            </nav>
+
+            <!-- Botón CTA Acción -->
+            <div class="flex items-center gap-4">
+                <a href="tel:938682305" class="hidden sm:inline-flex items-center justify-center gap-2 bg-medical-500 hover:bg-medical-600 text-white font-medium px-5 py-2.5 rounded-xl shadow-lg shadow-medical-500/25 transition-all hover:scale-[1.02] active:scale-[0.98]">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span>Pedir Cita Previa</span>
+                </a>
+                <!-- Botón Menú Móvil -->
+                <button id="menu-btn" class="lg:hidden text-slate-700 hover:text-medical-600 p-2 focus:outline-none" aria-label="Abrir menú">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-100 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="block py-2 text-slate-700 hover:text-medical-600 font-medium">Inicio</a>
+            <a href="#nosotros" class="block py-2 text-slate-700 hover:text-medical-600 font-medium">El Centro</a>
+            <a href="#servicios" class="block py-2 text-slate-700 hover:text-medical-600 font-medium">Servicios</a>
+            <a href="#instalaciones" class="block py-2 text-slate-700 hover:text-medical-600 font-medium">Instalaciones</a>
+            <a href="#opiniones" class="block py-2 text-slate-700 hover:text-medical-600 font-medium">Opiniones</a>
+            <a href="#contacto" class="block py-2 text-slate-700 hover:text-medical-600 font-medium">Contacto</a>
+            <div class="pt-2">
+                <a href="tel:938682305" class="w-full flex items-center justify-center gap-2 bg-medical-500 hover:bg-medical-600 text-white font-medium px-5 py-3 rounded-xl shadow-md">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span>Pedir Cita Previa</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative bg-gradient-to-b from-medical-50/50 to-white py-16 lg:py-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Contenido Texto -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-medical-100 text-medical-800 px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider">
+                        <i class="fa-solid fa-shield-heart text-medical-600"></i>
+                        <span>Clínica Veterinaria en Súria y Calders</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                        Cuidado experto y <span class="text-medical-600">máxima confianza</span> para tu mascota
+                    </h1>
+                    <p class="text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0">
+                        Brindamos atención veterinaria integral con un excelente trato, profesionalidad y calidad inigualable. La salud y bienestar de tu compañero peludo en las mejores manos.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="tel:938682305" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-medical-500 hover:bg-medical-600 text-white font-semibold text-lg px-8 py-4 rounded-2xl shadow-xl shadow-medical-500/25 transition-all hover:scale-105">
+                            <i class="fa-solid fa-phone-volume"></i>
+                            <span>Pedir Cita Previa</span>
+                        </a>
+                        <a href="#servicios" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-100 text-slate-700 font-semibold text-base px-6 py-4 rounded-2xl border border-slate-200 transition-all">
+                            <i class="fa-solid fa-stethoscope text-medical-500"></i>
+                            <span>Ver Especialidades</span>
+                        </a>
+                    </div>
+                    
+                    <!-- Reseña destacada rápida -->
+                    <div class="pt-6 border-t border-slate-200/60 flex items-center justify-center lg:justify-start gap-4">
+                        <div class="flex text-amber-400 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="text-sm font-medium text-slate-700">"Excelente trato, profesionalidad y calidad." — Clientes verificados</span>
+                    </div>
+                </div>
+
+                <!-- Imagen Hero / Ilustración con respaldo infalible -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="absolute -inset-4 bg-medical-500/10 rounded-3xl blur-2xl -z-10"></div>
+                        <img src="" alt="La Mascota Centre Veterinari - Súria y Calders" 
+                             class="rounded-3xl shadow-2xl object-cover w-full h-[420px] sm:h-[480px] border-4 border-white"
+                             referrerpolicy="no-referrer" 
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80';">
+                        
+                        <!-- Badge flotante -->
+                        <div class="absolute bottom-6 left-6 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-medical-500 text-white flex items-center justify-center font-bold text-lg">
+                                <i class="fa-solid fa-user-doctor"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-slate-900">Equipo Profesional</h4>
+                                <p class="text-xs text-slate-500">Atención personalizada y cercana</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Confianza / Características -->
+    <section class="py-12 bg-white border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="flex items-start gap-4 p-6 rounded-2xl bg-slate-50 hover:bg-medical-50/50 transition-colors border border-slate-100">
+                    <div class="w-12 h-12 rounded-xl bg-medical-100 text-medical-600 flex items-center justify-center shrink-0 text-xl font-bold">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-1">Trato Excelente</h3>
+                        <p class="text-sm text-slate-600">Nos importa cada paciente. Ofrecemos un trato humano, cuidadoso y adaptado a las necesidades de tu animal.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-6 rounded-2xl bg-slate-50 hover:bg-medical-50/50 transition-colors border border-slate-100">
+                    <div class="w-12 h-12 rounded-xl bg-medical-100 text-medical-600 flex items-center justify-center shrink-0 text-xl font-bold">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-1">Máxima Profesionalidad</h3>
+                        <p class="text-sm text-slate-600">Experiencia veterinaria contrastada en Súria y Calders con protocolos médicos rigurosos y actualizados.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-6 rounded-2xl bg-slate-50 hover:bg-medical-50/50 transition-colors border border-slate-100">
+                    <div class="w-12 h-12 rounded-xl bg-medical-100 text-medical-600 flex items-center justify-center shrink-0 text-xl font-bold">
+                        <i class="fa-solid fa-gem"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-1">Calidad Garantizada</h3>
+                        <p class="text-sm text-slate-600">Equipamiento moderno y productos de primera línea para garantizar diagnósticos precisos y tratamientos eficaces.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Especialidades, Tratamientos y Equipo Profesional -->
+    <section id="servicios" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-medical-600 font-semibold text-sm uppercase tracking-wider block mb-2">Nuestros Servicios Médicos</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Especialidades y Tratamientos Profesionales</h2>
+                <p class="text-slate-600 mt-4 text-base">Cuidamos de perros, gatos y animales de compañía abarcando todas las áreas de la medicina veterinaria preventiva y curativa.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Servicio 1 -->
+                <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all border border-slate-100 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-medical-50 text-medical-600 flex items-center justify-center text-2xl font-bold mb-6 group-hover:bg-medical-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-syringe"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Medicina Preventiva y Vacunación</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Plan de vacunación adaptado, desparasitación interna y externa, y revisiones periódicas para prevenir enfermedades y asegurar una larga vida saludable.
+                        </p>
+                    </div>
+                    <a href="tel:938682305" class="inline-flex items-center gap-2 text-medical-600 font-semibold text-sm group-hover:text-medical-700">
+                        <span>Pedir Cita Previa</span>
+                        <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all border border-slate-100 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-medical-50 text-medical-600 flex items-center justify-center text-2xl font-bold mb-6 group-hover:bg-medical-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-stethoscope"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Consulta General y Diagnóstico</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Exhaustivas exploraciones físicas, diagnóstico clínico preciso y seguimiento de patologías crónicas o agudas con total profesionalidad.
+                        </p>
+                    </div>
+                    <a href="tel:938682305" class="inline-flex items-center gap-2 text-medical-600 font-semibold text-sm group-hover:text-medical-700">
+                        <span>Pedir Cita Previa</span>
+                        <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all border border-slate-100 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-medical-50 text-medical-600 flex items-center justify-center text-2xl font-bold mb-6 group-hover:bg-medical-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-microscope"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Análisis Clínicos y Pruebas</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Pruebas de laboratorio avanzadas y analíticas para detectar infecciones, alteraciones bioquímicas u otros problemas de salud de forma temprana.
+                        </p>
+                    </div>
+                    <a href="tel:938682305" class="inline-flex items-center gap-2 text-medical-600 font-semibold text-sm group-hover:text-medical-700">
+                        <span>Pedir Cita Previa</span>
+                        <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Servicio 4 -->
+                <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all border border-slate-100 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-medical-50 text-medical-600 flex items-center justify-center text-2xl font-bold mb-6 group-hover:bg-medical-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-scalpel"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Cirugía de Pequeños Animales</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Intervenciones quirúrgicas realizadas con estrictos protocolos de seguridad, monitorización anestésica y un cuidado postoperatorio excelente.
+                        </p>
+                    </div>
+                    <a href="tel:938682305" class="inline-flex items-center gap-2 text-medical-600 font-semibold text-sm group-hover:text-medical-700">
+                        <span>Pedir Cita Previa</span>
+                        <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Servicio 5 -->
+                <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all border border-slate-100 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-medical-50 text-medical-600 flex items-center justify-center text-2xl font-bold mb-6 group-hover:bg-medical-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-bone"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Nutrición y Dietética Veterinaria</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Asesoramiento nutricional especializado según la edad, raza, nivel de actividad o patologías específicas (obesidad, alergias, insuficiencia renal).
+                        </p>
+                    </div>
+                    <a href="tel:938682305" class="inline-flex items-center gap-2 text-medical-600 font-semibold text-sm group-hover:text-medical-700">
+                        <span>Pedir Cita Previa</span>
+                        <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Servicio 6 -->
+                <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all border border-slate-100 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-medical-50 text-medical-600 flex items-center justify-center text-2xl font-bold mb-6 group-hover:bg-medical-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-id-card"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Identificación y Pasaportes</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Implantación de microchip homologado, registro en censos oficiales y expedición de pasaporte europeo para animales de compañía.
+                        </p>
+                    </div>
+                    <a href="tel:938682305" class="inline-flex items-center gap-2 text-medical-600 font-semibold text-sm group-hover:text-medical-700">
+                        <span>Pedir Cita Previa</span>
+                        <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Banner CTA interno -->
+            <div class="mt-16 bg-gradient-to-r from-medical-700 to-medical-900 rounded-3xl p-8 sm:p-12 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-8">
+                <div>
+                    <h3 class="text-2xl sm:text-3xl font-bold mb-2">¿Necesitas asesoramiento o consulta para tu mascota?</h3>
+                    <p class="text-medical-100 text-base">Llámanos ahora y te atenderemos con la cercanía y profesionalidad que nos caracteriza en Súria y Calders.</p>
+                </div>
+                <a href="tel:938682305" class="inline-flex items-center gap-3 bg-white text-medical-900 font-bold px-8 py-4 rounded-2xl shadow-lg hover:bg-medical-50 transition-all hover:scale-105 shrink-0">
+                    <i class="fa-solid fa-phone text-medical-600"></i>
+                    <span>Pedir Cita Previa</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería / Nuestras Instalaciones y Trabajos -->
+    <section id="instalaciones" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-medical-600 font-semibold text-sm uppercase tracking-wider block mb-2">Entorno Clínico Adaptado</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Nuestras Instalaciones y Trabajos</h2>
+                <p class="text-slate-600 mt-4 text-base">Espacios limpios, modernos y equipados para reducir el estrés de tu mascota y ofrecer diagnósticos y tratamientos seguros.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="overflow-hidden rounded-3xl shadow-md border border-slate-100 group h-72">
+                    <img src="" alt="Instalación La Mascota Súria" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=800&q=80';">
+                </div>
+                <div class="overflow-hidden rounded-3xl shadow-md border border-slate-100 group h-72">
+                    <img src="" alt="Consulta Veterinaria Calders" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80';">
+                </div>
+                <div class="overflow-hidden rounded-3xl shadow-md border border-slate-100 group h-72">
+                    <img src="" alt="Atención a mascotas" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?auto=format&fit=crop&w=800&q=80';">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Opiniones Reales Verificadas -->
+    <section id="opiniones" class="py-20 bg-slate-50 border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-medical-600 font-semibold text-sm uppercase tracking-wider block mb-2">Testimonios Reales</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Lo que opinan nuestros clientes</h2>
+                <p class="text-slate-600 mt-4 text-base">La satisfacción de las familias de Súria, Calders y alrededores es nuestro mayor orgullo y aval profesional.</p>
+            </div>
+
+            <div class="max-w-xl mx-auto">
+                <div class="bg-white rounded-3xl p-8 sm:p-10 shadow-sm border border-slate-100 relative">
+                    <div class="absolute -top-4 right-8 bg-medical-500 text-white w-10 h-10 rounded-2xl flex items-center justify-center shadow-md">
+                        <i class="fa-solid fa-quote-right text-lg"></i>
+                    </div>
+                    <div class="flex text-amber-400 text-base mb-6">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-700 text-lg font-medium italic mb-6 leading-relaxed">
+                        "Excelente trato, profesionalidad y calidad."
+                    </p>
+                    <div class="flex items-center gap-4 pt-4 border-t border-slate-100">
+                        <div class="w-12 h-12 rounded-full bg-medical-100 text-medical-700 flex items-center justify-center font-bold text-lg">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900">Cliente Verificado</h4>
+                            <p class="text-xs text-slate-500">Google Maps / Reseñas locales</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto y Mapa Interactivo -->
+    <section id="contacto" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Info Contacto -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-medical-600 font-semibold text-sm uppercase tracking-wider block mb-2">Estamos para ayudarte</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Visítanos o ponte en contacto</h2>
+                        <p class="text-slate-600 mt-3 text-base">Atendemos en Súria y Calders con cita previa para garantizar la mejor atención sin esperas innecesarias para tu mascota.</p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-medical-50 text-medical-600 flex items-center justify-center shrink-0 text-xl font-bold shadow-sm">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 mb-1">Dirección</h4>
+                                <p class="text-slate-600 text-sm">Carrer d'Ernest Solvay, 4, 08260 Súria, Barcelona, España</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-medical-50 text-medical-600 flex items-center justify-center shrink-0 text-xl font-bold shadow-sm">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 mb-1">Teléfono</h4>
+                                <a href="tel:938682305" class="text-medical-600 hover:text-medical-700 font-semibold text-base">938 68 23 05</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-medical-50 text-medical-600 flex items-center justify-center shrink-0 text-xl font-bold shadow-sm">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 mb-1">Correo Electrónico</h4>
+                                <a href="mailto:error-lite+84f2@duckduckgo.com" class="text-slate-600 hover:text-medical-600 text-sm">error-lite+84f2@duckduckgo.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="tel:938682305" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-medical-500 hover:bg-medical-600 text-white font-bold px-8 py-4 rounded-2xl shadow-xl shadow-medical-500/25 transition-all hover:scale-105">
+                            <i class="fa-solid fa-calendar-check"></i>
+                            <span>Pedir Cita Previa</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mapa Interactivo Real -->
+                <div class="lg:col-span-7">
+                    <div class="bg-slate-100 p-3 rounded-3xl border border-slate-200 shadow-lg">
+                        <iframe src="https://www.google.com/maps?q=La%20Mascota%20Centre%20Veterinari%20Carrer%20dErnest%20Solvay%2C%204%2C%2008260%20S%C3%BAria%2C%20Barcelona%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 items-center">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-medical-500 flex items-center justify-center text-white">
+                        <i class="fa-solid fa-paw text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-lg font-bold text-white block leading-none">La Mascota</span>
+                        <span class="text-xs text-medical-400 tracking-wider uppercase mt-0.5 block">Centre Veterinari</span>
+                    </div>
+                </div>
+                <div class="text-sm text-center">
+                    <p class="text-slate-300 font-medium">Cuidando de tu mascota en Súria y Calders</p>
+                    <p class="text-xs text-slate-500 mt-1">Excelente trato, profesionalidad y calidad garantizada.</p>
+                </div>
+                <div class="flex justify-md-end justify-center">
+                    <a href="tel:938682305" class="inline-flex items-center gap-2 bg-medical-600 hover:bg-medical-500 text-white font-medium px-5 py-2.5 rounded-xl text-sm transition-colors">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>938 68 23 05</span>
+                    </a>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
+                <p>&copy; <span id="current-year"></span> La Mascota Centre Veterinari. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script Menú Móvil & Año Automático -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú móvil al hacer clic en un enlace
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
