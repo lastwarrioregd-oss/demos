@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peluquería Michelangelo | Peluquería en el Centro de Valladolid</title>
+    <!-- Tailwind CSS v3 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            DEFAULT: '#D4AF37',
+                            light: '#E6C687',
+                            dark: '#AA8C2C',
+                        },
+                        darkmate: {
+                            DEFAULT: '#121212',
+                            light: '#1E1E1E',
+                            card: '#181818',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .gold-gradient {
+            background: linear-gradient(135deg, #E6C687 0%, #D4AF37 50%, #AA8C2C 100%);
+        }
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #E6C687 0%, #D4AF37 50%, #AA8C2C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-pattern {
+            background-image: radial-gradient(rgba(212, 175, 55, 0.05) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-darkmate text-gray-200 font-sans antialiased bg-pattern selection:bg-gold selection:text-black">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-darkmate/90 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2 group">
+                <div class="w-10 h-10 rounded-full border border-gold flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-black transition-all duration-300">
+                    <i class="fa-solid fa-scissors"></i>
+                </div>
+                <div>
+                    <span class="font-serif text-xl sm:text-2xl font-bold tracking-wider text-white">MICHELANGELO</span>
+                    <span class="block text-[10px] tracking-[0.2em] text-gold uppercase">Peluquería Valladolid</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm tracking-wide">
+                <a href="#servicios" class="text-gray-300 hover:text-gold transition-colors">Servicios & Tarifas</a>
+                <a href="#experiencia" class="text-gray-300 hover:text-gold transition-colors">Por qué elegirnos</a>
+                <a href="#instalaciones" class="text-gray-300 hover:text-gold transition-colors">Instalaciones</a>
+                <a href="#opiniones" class="text-gray-300 hover:text-gold transition-colors">Reseñas</a>
+                <a href="#contacto" class="text-gray-300 hover:text-gold transition-colors">Ubicación</a>
+            </nav>
+
+            <div class="hidden md:block">
+                <a href="https://wa.me/34617879604" target="_blank" rel="noopener noreferrer" class="gold-gradient text-black font-semibold px-6 py-2.5 rounded-full shadow-lg hover:opacity-90 transition-all transform hover:scale-105 flex items-center gap-2 text-sm">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    Reservar Cita
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-gold text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 right-0 bg-darkmate-light border-b border-white/10 px-6 py-6 flex flex-col gap-4 shadow-2xl">
+            <a href="#servicios" class="mobile-link text-lg text-gray-200 hover:text-gold">Servicios & Tarifas</a>
+            <a href="#experiencia" class="mobile-link text-lg text-gray-200 hover:text-gold">Por qué elegirnos</a>
+            <a href="#instalaciones" class="mobile-link text-lg text-gray-200 hover:text-gold">Instalaciones</a>
+            <a href="#opiniones" class="mobile-link text-lg text-gray-200 hover:text-gold">Reseñas</a>
+            <a href="#contacto" class="mobile-link text-lg text-gray-200 hover:text-gold">Ubicación</a>
+            <a href="https://wa.me/34617879604" target="_blank" rel="noopener noreferrer" class="gold-gradient text-black font-semibold text-center py-3 rounded-full shadow-md flex items-center justify-center gap-2 mt-2">
+                <i class="fa-brands fa-whatsapp text-xl"></i>
+                Reservar Cita
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <!-- Background Overlay Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1920&q=80" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" alt="Peluquería Michelangelo Valladolid" class="w-full h-full object-cover opacity-25 filter brightness-75">
+            <div class="absolute inset-0 bg-gradient-to-t from-darkmate via-darkmate/60 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold/40 bg-gold/10 text-gold text-xs sm:text-sm font-medium mb-6 uppercase tracking-widest">
+                <i class="fa-solid fa-star text-xs"></i> Tu Peluquero de Confianza en el Centro de Valladolid
+            </div>
+            
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
+                El Arte del Corte en <span class="text-gold-gradient">Peluquería Michelangelo</span>
+            </h1>
+            
+            <p class="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto mb-10 font-light leading-relaxed">
+                Más de una década ofreciendo maestría, cercanía y atención al detalle. Especialistas en cortes impecables para toda la familia en pleno centro de Valladolid.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="https://wa.me/34617879604" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto gold-gradient text-black font-bold px-8 py-4 rounded-full shadow-2xl hover:opacity-90 transition-all transform hover:scale-105 flex items-center justify-center gap-3 text-base">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    Reservar Cita Previa
+                </a>
+                <a href="#servicios" class="w-full sm:w-auto bg-transparent border border-white/20 hover:border-gold text-white hover:text-gold font-medium px-8 py-4 rounded-full transition-all text-base flex items-center justify-center gap-2">
+                    Ver Tarifas y Servicios <i class="fa-solid fa-arrow-down text-xs"></i>
+                </a>
+            </div>
+
+            <!-- Trust badges quick view -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-3 gap-6 pt-10 border-t border-white/10 text-left max-w-3xl mx-auto">
+                <div class="flex items-center gap-3">
+                    <div class="text-gold text-2xl"><i class="fa-solid fa-award"></i></div>
+                    <div>
+                        <h3 class="text-white font-semibold text-sm">Más de 10 años</h3>
+                        <p class="text-xs text-gray-400">Clientes fieles que avalan el servicio</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="text-gold text-2xl"><i class="fa-solid fa-child-reaching"></i></div>
+                    <div>
+                        <h3 class="text-white font-semibold text-sm">Zona Infantil</h3>
+                        <p class="text-xs text-gray-400">Con consola y detalles para niños</p>
+                    </div>
+                </div>
+                <div class="col-span-2 md:col-span-1 flex items-center gap-3">
+                    <div class="text-gold text-2xl"><i class="fa-solid fa-location-dot"></i></div>
+                    <div>
+                        <h3 class="text-white font-semibold text-sm">Calle San Blas, 8</h3>
+                        <p class="text-xs text-gray-400">Pleno centro de Valladolid</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Por qué elegirnos (Experiencia & Clientes) -->
+    <section id="experiencia" class="py-24 bg-darkmate-light relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold uppercase tracking-[0.2em] text-xs font-semibold block mb-2">Excelencia & Cercanía</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-4">Lo que nos hace únicos</h2>
+                <div class="w-20 h-1 bg-gold mx-auto rounded-full mb-6"></div>
+                <p class="text-gray-400">Miguel Ángel combina la maestría profesional de toda la vida con un trato humano inigualable, creando un espacio donde cada visita es una experiencia agradable.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-darkmate-card p-8 rounded-2xl border border-white/5 hover:border-gold/40 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-xl bg-gold/10 text-gold flex items-center justify-center text-2xl mb-6 group-hover:bg-gold group-hover:text-black transition-all">
+                        <i class="fa-solid fa-face-smile"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-3">Atención al Detalle</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Un profesional volcado en escuchar lo que pides. Sabe dar exactamente el corte que buscas, cuidando cada milímetro con esmero y dedicación absoluta.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-darkmate-card p-8 rounded-2xl border border-white/5 hover:border-gold/40 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-xl bg-gold/10 text-gold flex items-center justify-center text-2xl mb-6 group-hover:bg-gold group-hover:text-black transition-all">
+                        <i class="fa-solid fa-gamepad"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-3">Espacio para los más pequeños</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        ¡Cortarse el pelo nunca fue tan divertido! Disponemos de consola para que los niños jueguen mientras esperan o se cortan el pelo, además de sus tradicionales chupachups dobles.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-darkmate-card p-8 rounded-2xl border border-white/5 hover:border-gold/40 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-xl bg-gold/10 text-gold flex items-center justify-center text-2xl mb-6 group-hover:bg-gold group-hover:text-black transition-all">
+                        <i class="fa-solid fa-tags"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-3">Excelente Relación Calidad-Precio</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Servicios premium adaptados a todos los bolsillos en pleno centro de Valladolid. Servicio completo de lavado, corte y peinado con tarifas imbatibles.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios y Tarifas -->
+    <section id="servicios" class="py-24 bg-darkmate relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold uppercase tracking-[0.2em] text-xs font-semibold block mb-2">Carta y Especialidades</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-4">Nuestros Servicios y Tarifas</h2>
+                <div class="w-20 h-1 bg-gold mx-auto rounded-full mb-6"></div>
+                <p class="text-gray-400">Trabajos minuciosos, asesoramiento personalizado y productos de primera calidad para tu cabello.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Servicio 1 -->
+                <div class="bg-darkmate-card p-6 rounded-2xl border border-white/5 flex items-center justify-between gap-4">
+                    <div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-1">Corte, Lava y Peina</h3>
+                        <p class="text-gray-400 text-xs sm:text-sm">Servicio completo de peluquería masculina con lavado, corte adaptado y peinado profesional.</p>
+                    </div>
+                    <div class="text-right flex-shrink-0">
+                        <span class="text-2xl font-bold text-gold">10€</span>
+                        <span class="block text-[10px] text-gray-500 uppercase">Precio Centro</span>
+                    </div>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="bg-darkmate-card p-6 rounded-2xl border border-white/5 flex items-center justify-between gap-4">
+                    <div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-1">Corte Infantil</h3>
+                        <p class="text-gray-400 text-xs sm:text-sm">Corte de pelo para niños con zona de consola y recompensa dulce incluida.</p>
+                    </div>
+                    <div class="text-right flex-shrink-0">
+                        <span class="text-2xl font-bold text-gold">Especial</span>
+                        <span class="block text-[10px] text-gray-500 uppercase">Ambiente Amigable</span>
+                    </div>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="bg-darkmate-card p-6 rounded-2xl border border-white/5 flex items-center justify-between gap-4">
+                    <div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-1">Corte Clásico & Moderno</h3>
+                        <p class="text-gray-400 text-xs sm:text-sm">Dominio absoluto de tijera y máquina. Estilos tradicionales o tendencias actuales a tu medida.</p>
+                    </div>
+                    <div class="text-right flex-shrink-0">
+                        <span class="text-2xl font-bold text-gold">Top</span>
+                        <span class="block text-[10px] text-gray-500 uppercase">Maestría</span>
+                    </div>
+                </div>
+
+                <!-- Servicio 4 -->
+                <div class="bg-darkmate-card p-6 rounded-2xl border border-white/5 flex items-center justify-between gap-4">
+                    <div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-1">Asesoramiento de Imagen</h3>
+                        <p class="text-gray-400 text-xs sm:text-sm">Te orientamos sobre el tipo de corte que mejor favorece a tus facciones y estilo de vida.</p>
+                    </div>
+                    <div class="text-right flex-shrink-0">
+                        <span class="text-2xl font-bold text-gold">Gratuito</span>
+                        <span class="block text-[10px] text-gray-500 uppercase">Con tu corte</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to action inside services -->
+            <div class="mt-12 text-center">
+                <a href="https://wa.me/34617879604" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 gold-gradient text-black font-bold px-8 py-4 rounded-full shadow-lg hover:opacity-90 transition-all transform hover:scale-105">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    Reserva tu cita por WhatsApp ahora
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería de Instalaciones y Trabajos -->
+    <section id="instalaciones" class="py-24 bg-darkmate-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold uppercase tracking-[0.2em] text-xs font-semibold block mb-2">Galería Fotográfica</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-4">Nuestras Instalaciones y Trabajos</h2>
+                <div class="w-20 h-1 bg-gold mx-auto rounded-full mb-6"></div>
+                <p class="text-gray-400">Un espacio acogedor, limpio y equipado pensado para ofrecerte la máxima comodidad en el corazón de Valladolid.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="overflow-hidden rounded-2xl shadow-xl group h-72">
+                    <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=800&q=80" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" alt="Salón Peluquería Michelangelo" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="overflow-hidden rounded-2xl shadow-xl group h-72">
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=80" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" alt="Herramientas y Corte Profesional" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="overflow-hidden rounded-2xl shadow-xl group h-72">
+                    <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=800&q=80" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" alt="Ambiente y Detalle Peluquería" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Opiniones Reales Verificadas -->
+    <section id="opiniones" class="py-24 bg-darkmate relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold uppercase tracking-[0.2em] text-xs font-semibold block mb-2">Testimonios de Google Maps</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-4">Lo que opinan nuestros clientes</h2>
+                <div class="w-20 h-1 bg-gold mx-auto rounded-full mb-6"></div>
+                <p class="text-gray-400">La fidelidad de nuestros clientes a lo largo de los años es nuestra mejor carta de presentación.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Reseña 1 -->
+                <div class="bg-darkmate-card p-8 rounded-2xl border border-white/5 flex flex-col justify-between shadow-xl">
+                    <div>
+                        <div class="flex text-gold gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed italic mb-6">
+                            "Mi peluquero de confianza desde hace más de once años. 100% recomendable!!"
+                        </p>
+                    </div>
+                    <div class="border-t border-white/10 pt-4 flex items-center justify-between">
+                        <span class="font-semibold text-white text-sm">Julio Sanz del Rio</span>
+                        <span class="text-xs text-gold"><i class="fa-brands fa-google"></i> Google Verified</span>
+                    </div>
+                </div>
+
+                <!-- Reseña 2 -->
+                <div class="bg-darkmate-card p-8 rounded-2xl border border-white/5 flex flex-col justify-between shadow-xl">
+                    <div>
+                        <div class="flex text-gold gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed italic mb-6">
+                            "He ido un día a salto mata sin cita y me ha atendido genial. Conversación amena con el peluquero, profesional y muy preocupado en los detalles. Lava, corta y peina por 10€. Muy buen precio para la zona del centro. Tiene consola para los niños, para que jueguen mientras les corta, un acierto."
+                        </p>
+                    </div>
+                    <div class="border-t border-white/10 pt-4 flex items-center justify-between">
+                        <span class="font-semibold text-white text-sm">Miguel Angel</span>
+                        <span class="text-xs text-gold"><i class="fa-brands fa-google"></i> Google Verified</span>
+                    </div>
+                </div>
+
+                <!-- Reseña 3 -->
+                <div class="bg-darkmate-card p-8 rounded-2xl border border-white/5 flex flex-col justify-between shadow-xl">
+                    <div>
+                        <div class="flex text-gold gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed italic mb-6">
+                            "Excelente peluquero. Domina su trabajo y he quedado muy satisfecho con el corte de pelo. Sabe darte el corte que le pides y es muy amable y los chupachups que les dan a los niños les encantan y no da uno sino 2."
+                        </p>
+                    </div>
+                    <div class="border-t border-white/10 pt-4 flex items-center justify-between">
+                        <span class="font-semibold text-white text-sm">José J. Ruiz</span>
+                        <span class="text-xs text-gold"><i class="fa-brands fa-google"></i> Google Verified</span>
+                    </div>
+                </div>
+
+                <!-- Reseña 4 -->
+                <div class="bg-darkmate-card p-8 rounded-2xl border border-white/5 flex flex-col justify-between shadow-xl">
+                    <div>
+                        <div class="flex text-gold gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed italic mb-6">
+                            "Toda la vida con él desde que tengo recuerdos de cortarme el pelo. Le he seguido en las distintas ubicaciones en las que se ha instalado y volvería a hacerlo si se moviera. Excelente trato, servicio, precio y conversaciones de amigo"
+                        </p>
+                    </div>
+                    <div class="border-t border-white/10 pt-4 flex items-center justify-between">
+                        <span class="font-semibold text-white text-sm">Miguel SS</span>
+                        <span class="text-xs text-gold"><i class="fa-brands fa-google"></i> Google Verified</span>
+                    </div>
+                </div>
+
+                <!-- Reseña 5 -->
+                <div class="bg-darkmate-card p-8 rounded-2xl border border-white/5 flex flex-col justify-between shadow-xl md:col-span-2 lg:col-span-2">
+                    <div>
+                        <div class="flex text-gold gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed italic mb-6">
+                            "El mejor peluquero de Valladolid. El corte, la amabilidad y la profesionalidad de Miguel Ángel está a otro nivel."
+                        </p>
+                    </div>
+                    <div class="border-t border-white/10 pt-4 flex items-center justify-between">
+                        <span class="font-semibold text-white text-sm">Rubén Barinaga</span>
+                        <span class="text-xs text-gold"><i class="fa-brands fa-google"></i> Google Verified</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa Interactivo y Ubicación -->
+    <section id="contacto" class="py-24 bg-darkmate-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold uppercase tracking-[0.2em] text-xs font-semibold block mb-2">Encuéntranos</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-4">Visítanos en Valladolid</h2>
+                <div class="w-20 h-1 bg-gold mx-auto rounded-full mb-6"></div>
+                <p class="text-gray-400">Estamos situados en el corazón de la ciudad. Ven a conocernos o reserva tu cita previa.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                <!-- Info Contacto -->
+                <div class="bg-darkmate-card p-8 rounded-2xl border border-white/5 space-y-6">
+                    <h3 class="font-serif text-2xl font-bold text-white mb-4">Peluquería Michelangelo</h3>
+                    
+                    <div class="flex items-start gap-4">
+                        <div class="text-gold text-xl mt-1"><i class="fa-solid fa-location-dot"></i></div>
+                        <div>
+                            <h4 class="text-white font-semibold text-sm">Dirección</h4>
+                            <p class="text-gray-400 text-sm">Calle San Blas, 8, 47003 Valladolid, España</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="text-gold text-xl mt-1"><i class="fa-solid fa-phone"></i></div>
+                        <div>
+                            <h4 class="text-white font-semibold text-sm">Teléfono / WhatsApp</h4>
+                            <a href="https://wa.me/34617879604" target="_blank" rel="noopener noreferrer" class="text-gold hover:underline text-sm font-medium">617 87 96 04</a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="text-gold text-xl mt-1"><i class="fa-solid fa-clock"></i></div>
+                        <div>
+                            <h4 class="text-white font-semibold text-sm">Horario</h4>
+                            <p class="text-gray-400 text-sm">Lunes a Sábado (Consulte cita previa)</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="https://wa.me/34617879604" target="_blank" rel="noopener noreferrer" class="w-full gold-gradient text-black font-bold py-3.5 px-6 rounded-xl shadow-lg hover:opacity-90 transition-all flex items-center justify-center gap-2 text-sm">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            Reservar Cita Ahora
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mapa interactivo -->
+                <div class="lg:col-span-2 bg-darkmate-card p-4 rounded-2xl border border-white/5 shadow-2xl">
+                    <iframe src="https://www.google.com/maps?q=Peluquer%C3%ADa%20Michelangelo%20Calle%20San%20Blas%2C%208%2C%2047003%20Valladolid%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-white/10 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full border border-gold flex items-center justify-center text-gold">
+                    <i class="fa-solid fa-scissors"></i>
+                </div>
+                <div>
+                    <span class="font-serif text-lg font-bold text-white tracking-wider">PELUQUERÍA MICHELANGELO</span>
+                    <span class="block text-[10px] tracking-[0.2em] text-gold uppercase">Valladolid</span>
+                </div>
+            </div>
+
+            <p class="text-gray-500 text-xs">
+                &copy; <span id="current-year"></span> Peluquería Michelangelo. Todos los derechos reservados. Calle San Blas, 8, Valladolid.
+            </p>
+
+            <div class="flex items-center gap-4">
+                <a href="https://wa.me/34617879604" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/5 hover:bg-gold hover:text-black text-white flex items-center justify-center transition-all">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script to toggle mobile menu & set year -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
