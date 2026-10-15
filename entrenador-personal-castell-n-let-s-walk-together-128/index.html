@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrenador Personal Castellón | LET'S WALK TOGETHER</title>
+    <!-- Tailwind CSS (vía CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#10B981', // Emerald 500 - Energía, salud, vitalidad
+                        dark: '#0F172A',     // Slate 900 - Elegancia y modernidad
+                        darkCard: '#1E293B', // Slate 800
+                        accent: '#F59E0B'    // Amber 500 - Destacados
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .hero-bg {
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('https://static.xx.fbcdn.net/rsrc.php/yb/r/HpEiFYDux5j.webp');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-dark text-slate-100 font-sans antialiased selection:bg-primary selection:text-white">
+
+    <!-- Topbar Informativa -->
+    <div class="bg-slate-900 border-b border-slate-800 py-2 px-4 text-xs sm:text-sm text-slate-400">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <span><i class="fa-solid fa-location-dot text-primary mr-1.5"></i> Carrer de Barranco de Fraga, 31, 12005 Castelló</span>
+                <span class="hidden md:inline"><i class="fa-solid fa-clock text-primary mr-1.5"></i> Lunes a Sábado: Horario Flexible</span>
+            </div>
+            <div>
+                <a href="https://wa.me/34692530490" class="hover:text-primary transition font-medium"><i class="fa-brands fa-whatsapp text-primary mr-1"></i> 692 53 04 90</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-slate-950/90 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2.5">
+                <div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-dark font-extrabold text-xl shadow-lg shadow-primary/30">
+                    <i class="fa-solid fa-dumbbell"></i>
+                </div>
+                <div>
+                    <span class="text-lg sm:text-xl font-extrabold tracking-tight text-white block leading-tight">LET'S WALK TOGETHER</span>
+                    <span class="text-xs text-primary font-semibold tracking-wider uppercase">Entrenador Personal Castellón</span>
+                </div>
+            </a>
+            
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#inicio" class="hover:text-primary transition">Inicio</a>
+                <a href="#servicios" class="hover:text-primary transition">Servicios</a>
+                <a href="#sobre-mi" class="hover:text-primary transition">Jesús | Entrenador</a>
+                <a href="#instalaciones" class="hover:text-primary transition">Instalaciones</a>
+                <a href="#opiniones" class="hover:text-primary transition">Opiniones</a>
+                <a href="#contacto" class="hover:text-primary transition">Ubicación</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="https://wa.me/34692530490" class="hidden sm:inline-flex items-center gap-2 bg-primary hover:bg-emerald-600 text-dark font-bold px-5 py-2.5 rounded-xl transition duration-300 shadow-lg shadow-primary/20 text-sm">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Contactar Ahora</span>
+                </a>
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" class="lg:hidden text-slate-300 hover:text-white text-2xl focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="block py-2 text-slate-300 hover:text-primary">Inicio</a>
+            <a href="#servicios" class="block py-2 text-slate-300 hover:text-primary">Servicios</a>
+            <a href="#sobre-mi" class="block py-2 text-slate-300 hover:text-primary">Jesús | Entrenador</a>
+            <a href="#instalaciones" class="block py-2 text-slate-300 hover:text-primary">Instalaciones</a>
+            <a href="#opiniones" class="block py-2 text-slate-300 hover:text-primary">Opiniones</a>
+            <a href="#contacto" class="block py-2 text-slate-300 hover:text-primary">Ubicación</a>
+            <a href="https://wa.me/34692530490" class="flex items-center justify-center gap-2 bg-primary text-dark font-bold px-5 py-3 rounded-xl w-full text-center mt-4">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>Contactar Ahora</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-bg min-h-[90vh] flex items-center relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+            <div class="space-y-6 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 px-3.5 py-1.5 rounded-full text-primary text-xs sm:text-sm font-semibold tracking-wide">
+                    <i class="fa-solid fa-star text-accent"></i> Referente en Castellón de la Plana
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                    Transforma tu cuerpo y tu salud con <span class="text-primary">Jesús</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-slate-300 max-w-xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                    Entrenamiento personal 100% personalizado y planes de nutrición adaptados a cada etapa de tu vida. Resultados reales, seguros y duraderos en Castellón.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                    <a href="https://wa.me/34692530490" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-primary hover:bg-emerald-600 text-dark font-extrabold px-8 py-4 rounded-xl transition duration-300 shadow-xl shadow-primary/30 text-base">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                        <span>Contactar Ahora</span>
+                    </a>
+                    <a href="#servicios" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-slate-800/80 hover:bg-slate-700 text-white font-semibold px-6 py-4 rounded-xl transition border border-slate-700 text-base">
+                        <span>Ver Especialidades</span>
+                        <i class="fa-solid fa-arrow-down text-sm"></i>
+                    </a>
+                </div>
+                
+                <div class="pt-6 grid grid-cols-3 gap-4 border-t border-slate-800/80 max-w-md mx-auto lg:mx-0">
+                    <div>
+                        <p class="text-2xl sm:text-3xl font-extrabold text-white">100%</p>
+                        <p class="text-xs text-slate-400 mt-1">Personalizado</p>
+                    </div>
+                    <div>
+                        <p class="text-2xl sm:text-3xl font-extrabold text-white">+5 Años</p>
+                        <p class="text-xs text-slate-400 mt-1">Experiencia</p>
+                    </div>
+                    <div>
+                        <p class="text-2xl sm:text-3xl font-extrabold text-white">5.0 <i class="fa-solid fa-star text-accent text-sm"></i></p>
+                        <p class="text-xs text-slate-400 mt-1">Reseñas Google</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Image / Card Box -->
+            <div class="relative flex justify-center">
+                <div class="relative w-full max-w-md lg:max-w-lg aspect-square rounded-3xl overflow-hidden shadow-2xl border border-slate-700/50 bg-slate-800">
+                    <img src="https://static.xx.fbcdn.net/rsrc.php/yb/r/HpEiFYDux5j.webp" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80';" 
+                         referrerpolicy="no-referrer" 
+                         alt="Entrenador Personal Castellón Let's Walk Together" 
+                         class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-transparent to-transparent flex items-end p-6">
+                        <div class="bg-slate-900/90 backdrop-blur-md p-4 rounded-2xl border border-slate-700 w-full flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary text-xl flex-shrink-0">
+                                <i class="fa-solid fa-heart-pulse"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Atención Individualizada</h4>
+                                <p class="text-xs text-slate-300">Embarazos, recuperación, fuerza y pérdida de peso.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Confianza / Por qué elegirnos -->
+    <section class="py-16 bg-slate-900 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-primary font-bold uppercase tracking-wider text-sm mb-2">Método Comprobado</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">¿Por qué confiar en LET'S WALK TOGETHER?</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-darkCard p-8 rounded-2xl border border-slate-700/60 shadow-lg relative overflow-hidden group hover:border-primary transition duration-300">
+                    <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary text-2xl mb-6 group-hvoer:bg-primary group-hover:text-dark transition">
+                        <i class="fa-solid fa-user-check"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Dedicación y Cercanía</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Años de experiencia demostrable (desde 2019) respaldan un trato humano único. Clientes que repiten y vuelven por la implicación absoluta de Jesús.
+                    </p>
+                </div>
+
+                <div class="bg-darkCard p-8 rounded-2xl border border-slate-700/60 shadow-lg relative overflow-hidden group hover:border-primary transition duration-300">
+                    <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary text-2xl mb-6 group-hvoer:bg-primary group-hover:text-dark transition">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Nutrición y Entrenamiento</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Planes combinados de alimentación personalizada y ejercicios medidos que multiplican tus resultados en pocas semanas de constancia.
+                    </p>
+                </div>
+
+                <div class="bg-darkCard p-8 rounded-2xl border border-slate-700/60 shadow-lg relative overflow-hidden group hover:border-primary transition duration-300">
+                    <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary text-2xl mb-6 group-hvoer:bg-primary group-hover:text-dark transition">
+                        <i class="fa-solid fa-shield-heart"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Casos Especiales y Salud</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Especialistas en acompañamiento durante el embarazo de forma segura, postparto, ganancia de fuerza y readaptación física total.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Servicios y Atención Personalizada -->
+    <section id="servicios" class="py-20 bg-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-primary font-bold uppercase tracking-wider text-sm block mb-2">Nuestros Servicios</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Programas de Entrenamiento y Nutrición en Castellón</h2>
+                <p class="text-slate-400 text-base">Diseñados a medida para cumplir tus metas de forma eficiente, saludable y guiada paso a paso.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Servicio 1 -->
+                <div class="bg-darkCard rounded-3xl p-8 border border-slate-700/80 flex flex-col justify-between hover:border-primary/60 transition shadow-xl">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-primary flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-dumbbell"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Entrenamiento Personalizado 1 a 1</h3>
+                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                            Sesiones presenciales adaptadas a tu nivel físico actual, ya sea para ganar masa muscular, tonificar o aumentar tu fuerza general de forma progresiva.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-700/60 flex items-center justify-between">
+                        <span class="text-xs text-primary font-semibold uppercase tracking-wider">Plan Integral</span>
+                        <a href="https://wa.me/34692530490" class="inline-flex items-center gap-1.5 text-sm font-bold text-white hover:text-primary transition">
+                            <span>Contactar Ahora</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="bg-darkCard rounded-3xl p-8 border border-slate-700/80 flex flex-col justify-between hover:border-primary/60 transition shadow-xl">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-primary flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-carrot"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Asesoramiento Nutricional</h3>
+                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                            Planes de alimentación adaptados a tus gustos, estilo de vida y objetivos específicos (pérdida de grasa, ganancia muscular o cuidado general).
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-700/60 flex items-center justify-between">
+                        <span class="text-xs text-primary font-semibold uppercase tracking-wider">Nutrición & Dieta</span>
+                        <a href="https://wa.me/34692530490" class="inline-flex items-center gap-1.5 text-sm font-bold text-white hover:text-primary transition">
+                            <span>Contactar Ahora</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="bg-darkCard rounded-3xl p-8 border border-slate-700/80 flex flex-col justify-between hover:border-primary/60 transition shadow-xl">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-primary flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-baby-carriage"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Embarazo y Postparto Activo</h3>
+                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                            Acompañamiento especializado durante todas las semanas de gestación de forma segura y pautas de recuperación física tras el parto (cesárea o natural).
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-700/60 flex items-center justify-between">
+                        <span class="text-xs text-primary font-semibold uppercase tracking-wider">Salud Especializada</span>
+                        <a href="https://wa.me/34692530490" class="inline-flex items-center gap-1.5 text-sm font-bold text-white hover:text-primary transition">
+                            <span>Contactar Ahora</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 4 -->
+                <div class="bg-darkCard rounded-3xl p-8 border border-slate-700/80 flex flex-col justify-between hover:border-primary/60 transition shadow-xl">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-primary flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Seguimiento de Objetivos</h3>
+                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                            Control periódico de evolución, medición de fuerza, peso y adaptación continua del plan para asegurar que alcanzas tu meta de forma eficaz.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-700/60 flex items-center justify-between">
+                        <span class="text-xs text-primary font-semibold uppercase tracking-wider">Control Constante</span>
+                        <a href="https://wa.me/34692530490" class="inline-flex items-center gap-1.5 text-sm font-bold text-white hover:text-primary transition">
+                            <span>Contactar Ahora</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 5 -->
+                <div class="bg-darkCard rounded-3xl p-8 border border-slate-700/80 flex flex-col justify-between hover:border-primary/60 transition shadow-xl">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-primary flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Ganancia de Fuerza y Rendimiento</h3>
+                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                            Programas enfocados en incrementar la fuerza muscular, mejorar la postura corporal y potenciar tu energía desde las primeras semanas.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-700/60 flex items-center justify-between">
+                        <span class="text-xs text-primary font-semibold uppercase tracking-wider">Alto Rendimiento</span>
+                        <a href="https://wa.me/34692530490" class="inline-flex items-center gap-1.5 text-sm font-bold text-white hover:text-primary transition">
+                            <span>Contactar Ahora</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 6 -->
+                <div class="bg-darkCard rounded-3xl p-8 border border-slate-700/80 flex flex-col justify-between hover:border-primary/60 transition shadow-xl">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-primary flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Salud y Bienestar General</h3>
+                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                            Mejora tu calidad de vida, olvídate de dolores posturales y gana vitalidad para tu día a dia de la mano de un gran profesional.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-700/60 flex items-center justify-between">
+                        <span class="text-xs text-primary font-semibold uppercase tracking-wider">Bienestar 360º</span>
+                        <a href="https://wa.me/34692530490" class="inline-flex items-center gap-1.5 text-sm font-bold text-white hover:text-primary transition">
+                            <span>Contactar Ahora</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre el Entrenador (Jesús) -->
+    <section id="sobre-mi" class="py-20 bg-slate-900 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <div class="relative rounded-3xl overflow-hidden border border-slate-700 shadow-2xl aspect-[4/3] bg-slate-800">
+                        <img src="https://static.xx.fbcdn.net/rsrc.php/yb/r/HpEiFYDux5j.webp" 
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80';" 
+                             referrerpolicy="no-referrer" 
+                             alt="Jesús Entrenador Personal Castellón" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 bg-primary text-dark p-6 rounded-2xl font-extrabold shadow-xl hidden sm:block">
+                        <p class="text-3xl">+5 Años</p>
+                        <p class="text-xs uppercase tracking-wider">Cuidando de ti</p>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <span class="text-primary font-bold uppercase tracking-wider text-sm">Tu Entrenador de Confianza</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Comprometido al 100% con tus metas y tu salud</h2>
+                    <p class="text-slate-300 text-base leading-relaxed">
+                        "Llevo entrenando con Jesús desde hace años (2019) y siempre he tenido mejoras con él. He pasado también con otros entrenadores, pero al final siempre he vuelto a él porque la dedicación que tiene con sus clientes no la he visto en otro sitio."
+                    </p>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Mi objetivo en <strong>LET'S WALK TOGETHER</strong> es ofrecerte un espacio profesional, cercano y motivador en Castellón de la Plana. Ya sea que busques recuperarte tras un embarazo, aumentar tu fuerza, perder grasa o mantenerte saludable, caminaremos juntos hasta lograrlo.
+                    </p>
+
+                    <div class="pt-4 flex flex-wrap gap-4">
+                        <div class="bg-darkCard px-4 py-3 rounded-xl border border-slate-700 text-sm font-medium text-slate-200">
+                            <i class="fa-solid fa-check text-primary mr-2"></i> Trato cercano y humano
+                        </div>
+                        <div class="bg-darkCard px-4 py-3 rounded-xl border border-slate-700 text-sm font-medium text-slate-200">
+                            <i class="fa-solid fa-check text-primary mr-2"></i> Planes 100% a medida
+                        </div>
+                        <div class="bg-darkCard px-4 py-3 rounded-xl border border-slate-700 text-sm font-medium text-slate-200">
+                            <i class="fa-solid fa-check text-primary mr-2"></i> Resultados reales
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="https://wa.me/34692530490" class="inline-flex items-center gap-2 bg-primary hover:bg-emerald-600 text-dark font-extrabold px-8 py-4 rounded-xl transition duration-300 shadow-lg shadow-primary/20">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <span>Contactar con Jesús</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería / Instalaciones -->
+    <section id="instalaciones" class="py-20 bg-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-primary font-bold uppercase tracking-wider text-sm block mb-2">Instalaciones y Trabajos</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Un entorno optimizado para tu entrenamiento</h2>
+                <p class="text-slate-400 text-base">Equipamiento completo y un espacio privado en Castellón diseñado para tu máxima comodidad y rendimiento.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="relative rounded-3xl overflow-hidden aspect-[4/3] bg-slate-800 border border-slate-700 shadow-xl group">
+                    <img src="https://static.xx.fbcdn.net/rsrc.php/yb/r/HpEiFYDux5j.webp" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=1200&q=80';" 
+                         referrerpolicy="no-referrer" 
+                         alt="Instalaciones Entrenador Personal Castellón" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-transparent to-transparent flex items-end p-6">
+                        <span class="text-white font-bold text-sm bg-slate-900/80 px-3.5 py-1.5 rounded-lg border border-slate-700">Espacio de Entrenamiento Personal</span>
+                    </div>
+                </div>
+
+                <div class="relative rounded-3xl overflow-hidden aspect-[4/3] bg-slate-800 border border-slate-700 shadow-xl group">
+                    <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1200&q=80" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80';" 
+                         referrerpolicy="no-referrer" 
+                         alt="Entrenamiento de fuerza Castellón" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-transparent to-transparent flex items-end p-6">
+                        <span class="text-white font-bold text-sm bg-slate-900/80 px-3.5 py-1.5 rounded-lg border border-slate-700">Equipamiento Profesional</span>
+                    </div>
+                </div>
+
+                <div class="relative rounded-3xl overflow-hidden aspect-[4/3] bg-slate-800 border border-slate-700 shadow-xl group sm:col-span-2 lg:col-span-1">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1200&q=80" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=1200&q=80';" 
+                         referrerpolicy="no-referrer" 
+                         alt="Sesiones personalizadas Let's Walk Together" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-transparent to-transparent flex items-end p-6">
+                        <span class="text-white font-bold text-sm bg-slate-900/80 px-3.5 py-1.5 rounded-lg border border-slate-700">Atención Individual</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reseñas Reales Verificadas -->
+    <section id="opiniones" class="py-20 bg-slate-900 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-primary font-bold uppercase tracking-wider text-sm block mb-2">Opiniones Reales Verificadas</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Lo que dicen quienes ya entrenan con nosotros</h2>
+                <div class="flex items-center justify-center gap-1 text-accent text-lg">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <span class="text-white font-bold ml-2">5.0 / 5.0 en Google Maps</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Reseña 1 -->
+                <div class="bg-darkCard p-8 rounded-3xl border border-slate-700/80 shadow-xl flex flex-col justify-between relative">
+                    <div class="absolute top-6 right-6 text-primary/20 text-3xl">
+                        <i class="fa-solid fa-quote-right"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-1 text-accent text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6 italic">
+                            "Estoy súper contenta con el resultado obtenido con Jesús. Fui al 5 mes del embarazo para que me cuidara la alimentación y me siguiera el entrenamiento para ponerme en forma. Cogí 7 kg al final... Di a luz en septiembre y en noviembre volví. Gracias al cuidado de entrenamientos y alimentación personalizada he conseguido llegar a mi objetivo."
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-700/60 flex items-center justify-between">
+                        <span class="font-bold text-white text-sm">Cecilia Asquino</span>
+                        <span class="text-xs text-primary font-medium">Cliente Verificada</span>
+                    </div>
+                </div>
+
+                <!-- Reseña 2 -->
+                <div class="bg-darkCard p-8 rounded-3xl border border-slate-700/80 shadow-xl flex flex-col justify-between relative">
+                    <div class="absolute top-6 right-6 text-primary/20 text-3xl">
+                        <i class="fa-solid fa-quote-right"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-1 text-accent text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6 italic">
+                            "Da buenas sensaciones, se te ve buen profesional y persona. En dos semanas he notado aumento de fuerza que es desde que Jesús me manda su plan de nutrición y entreno. Muy contento y más motivado."
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-700/60 flex items-center justify-between">
+                        <span class="font-bold text-white text-sm">Francisco Azorin</span>
+                        <span class="text-xs text-primary font-medium">Cliente Verificado</span>
+                    </div>
+                </div>
+
+                <!-- Reseña 3 -->
+                <div class="bg-darkCard p-8 rounded-3xl border border-slate-700/80 shadow-xl flex flex-col justify-between relative">
+                    <div class="absolute top-6 right-6 text-primary/20 text-3xl">
+                        <i class="fa-solid fa-quote-right"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-1 text-accent text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6 italic">
+                            "Llevo entrenando con Jesús desde años (2019) y siempre he tenido mejoras con él. He pasado también con otros entrenadores y he visto cambios, pero al final siempre he vuelto a él porque la dedicación que tiene con sus clientes no la he visto…"
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-700/60 flex items-center justify-between">
+                        <span class="font-bold text-white text-sm">Adrian Castillo</span>
+                        <span class="text-xs text-primary font-medium">Cliente Verificado</span>
+                    </div>
+                </div>
+
+                <!-- Reseña 4 -->
+                <div class="bg-darkCard p-8 rounded-3xl border border-slate-700/80 shadow-xl flex flex-col justify-between relative">
+                    <div class="absolute top-6 right-6 text-primary/20 text-3xl">
+                        <i class="fa-solid fa-quote-right"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-1 text-accent text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6 italic">
+                            "Un gran profesional, muy eficiente para ponerse en forma y estar saludable, siempre puedes contar con él y se lo toma muy en serio."
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-700/60 flex items-center justify-between">
+                        <span class="font-bold text-white text-sm">Eleazar Ramos Cortés</span>
+                        <span class="text-xs text-primary font-medium">Cliente Verificado</span>
+                    </div>
+                </div>
+
+                <!-- Reseña 5 -->
+                <div class="bg-darkCard p-8 rounded-3xl border border-slate-700/80 shadow-xl flex flex-col justify-between relative md:col-span-2 lg:col-span-2">
+                    <div class="absolute top-6 right-6 text-primary/20 text-3xl">
+                        <i class="fa-solid fa-quote-right"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-1 text-accent text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6 italic">
+                            "Llevo dos años entrenando con Jesús y no puedo estar más contenta. Me ha acompañado durante todo mi embarazo, adaptando cada sesión para que pudiera seguir activa hasta el último momento de forma segura. Gracias a su seguimiento y dedicación..."
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-700/60 flex items-center justify-between">
+                        <span class="font-bold text-white text-sm">Mireia Soler Fernández</span>
+                        <span class="text-xs text-primary font-medium">Cliente Verificado</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto y Ubicación -->
+    <section id="contacto" class="py-20 bg-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-primary font-bold uppercase tracking-wider text-sm block mb-2">Visítanos o Escríbenos</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">¿Listo para empezar tu cambio?</h2>
+                <p class="text-slate-400 text-base">Pide tu cita previa o consúltanos cualquier duda directamente por WhatsApp.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <!-- Info de contacto -->
+                <div class="bg-darkCard p-8 sm:p-10 rounded-3xl border border-slate-700 shadow-xl space-y-8">
+                    <h3 class="text-2xl font-bold text-white">Información de Contacto</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center text-xl flex-shrink-0 mt-1">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">Dirección</h4>
+                                <p class="text-slate-400 text-sm mt-1">Carrer de Barranco de Fraga, 31, 12005 Castelló de la Plana, Castelló, España</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center text-xl flex-shrink-0 mt-1">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">Teléfono / WhatsApp</h4>
+                                <p class="text-slate-400 text-sm mt-1">692 53 04 90</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center text-xl flex-shrink-0 mt-1">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">Horario</h4>
+                                <p class="text-slate-400 text-sm mt-1">Lunes a Sábado: Cita previa concertada</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-700">
+                        <a href="https://wa.me/34692530490" class="w-full inline-flex items-center justify-center gap-3 bg-primary hover:bg-emerald-600 text-dark font-extrabold px-8 py-4 rounded-xl transition duration-300 shadow-xl shadow-primary/20 text-base">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i>
+                            <span>Contactar Ahora por WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mapa Interactivo Real -->
+                <div class="bg-darkCard p-4 sm:p-6 rounded-3xl border border-slate-700 shadow-xl">
+                    <div class="w-full overflow-hidden rounded-2xl">
+                        <iframe src="https://www.google.com/maps?q=Entrenador%20Personal%20Castell%C3%B3n%20LET'S%20WALK%20TOGETHER%20Carrer%20de%20Barranco%20de%20Fraga%2C%2031%2C%2012005%20Castell%C3%B3%20de%20la%20Plana%2C%20Castell%C3%B3%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-800 py-12 px-4 sm:px-6 lg:px-8 text-slate-400 text-sm">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+            <div>
+                <a href="#" class="text-white font-extrabold text-lg block tracking-tight">LET'S WALK TOGETHER</a>
+                <p class="text-xs text-slate-500 mt-1">Entrenador Personal en Castellón de la Plana © 2024. Todos los derechos reservados.</p>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="#inicio" class="hover:text-primary transition">Inicio</a>
+                <a href="#servicios" class="hover:text-primary transition">Servicios</a>
+                <a href="#sobre-mi" class="hover:text-primary transition">Jesús</a>
+                <a href="#contacto" class="hover:text-primary transition">Contacto</a>
+            </div>
+            <div>
+                <a href="https://wa.me/34692530490" class="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-primary font-semibold px-4 py-2 rounded-xl border border-slate-800 transition">
+                    <i class="fa-brands fa-whatsapp"></i> 692 53 04 90
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script Menu Mobile Toggle -->
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Ocultar menú al hacer click en un enlace
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
