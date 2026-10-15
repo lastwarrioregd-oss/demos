@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Els Aubals | Restaurante en Móra la Nova, Tarragona</title>
+    <meta name="description" content="Descubre Els Aubals en Móra la Nova. Excelente trato, profesionalidad y cocina de calidad en un ambiente acogedor. ¡Reserva tu mesa hoy!">
+    
+    <!-- Tailwind CSS v3 via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gourmet: {
+                            dark: '#121212',
+                            card: '#1A1A1A',
+                            terracota: '#9E3B2B',
+                            light: '#F4EFEA',
+                            gold: '#D4AF37',
+                            cream: '#EFECE6'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gourmet-dark text-gourmet-light font-sans antialiased selection:bg-gourmet-terracota selection:text-white">
+
+    <!-- Header / Barra de Navegación -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-gourmet-dark/95 backdrop-blur-md border-b border-gourmet-light/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2 group">
+                <span class="font-serif text-2xl sm:text-3xl font-bold tracking-wider text-gourmet-cream group-hover:text-gourmet-gold transition-colors">
+                    ELS AUBALS
+                </span>
+            </a>
+
+            <!-- Navegación Escritorio -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm tracking-wide">
+                <a href="#inicio" class="hover:text-gourmet-gold transition-colors">Inicio</a>
+                <a href="#carta" class="hover:text-gourmet-gold transition-colors">Nuestra Carta</a>
+                <a href="#instalaciones" class="hover:text-gourmet-gold transition-colors">Instalaciones</a>
+                <a href="#opiniones" class="hover:text-gourmet-gold transition-colors">Opiniones</a>
+                <a href="#contacto" class="hover:text-gourmet-gold transition-colors">Ubicación</a>
+            </nav>
+
+            <!-- CTA Botón -->
+            <div class="hidden sm:flex items-center gap-4">
+                <a href="tel:636622299" class="bg-gourmet-terracota hover:bg-opacity-90 text-white px-6 py-3 rounded-full font-semibold text-sm tracking-wide transition-all shadow-lg hover:scale-105 flex items-center gap-2">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Reservar Mesa</span>
+                </a>
+            </div>
+
+            <!-- Botón Menú Móvil -->
+            <button id="menu-btn" class="md:hidden text-gourmet-light text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gourmet-card border-b border-gourmet-light/10 px-6 py-6 space-y-4">
+            <a href="#inicio" class="block text-lg hover:text-gourmet-gold transition-colors">Inicio</a>
+            <a href="#carta" class="block text-lg hover:text-gourmet-gold transition-colors">Nuestra Carta</a>
+            <a href="#instalaciones" class="block text-lg hover:text-gourmet-gold transition-colors">Instalaciones</a>
+            <a href="#opiniones" class="block text-lg hover:text-gourmet-gold transition-colors">Opiniones</a>
+            <a href="#contacto" class="block text-lg hover:text-gourmet-gold transition-colors">Ubicación</a>
+            <div class="pt-4">
+                <a href="tel:636622299" class="w-full bg-gourmet-terracota text-white py-3 rounded-full font-semibold text-center block shadow-lg">
+                    <i class="fa-solid fa-phone mr-2"></i> Reservar Mesa
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <!-- Imagen de Fondo con Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1920&q=80" 
+                 referrerpolicy="no-referrer" 
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                 alt="Els Aubals Restaurante Móra la Nova" 
+                 class="w-full h-full object-cover object-center filter brightness-50 scale-105 animate-pulse duration-1000">
+            <div class="absolute inset-0 bg-gradient-to-t from-gourmet-dark via-gourmet-dark/60 to-transparent"></div>
+        </div>
+
+        <!-- Contenido Hero -->
+        <div class="relative z-10 max-w-5xl mx-auto px-4 text-center py-24 sm:py-32">
+            <span class="inline-block text-gourmet-gold font-medium tracking-widest uppercase text-sm sm:text-base mb-4 bg-gourmet-gold/10 px-4 py-1.5 rounded-full border border-gourmet-gold/20">
+                Restaurante en Móra la Nova, Tarragona
+            </span>
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-gourmet-cream mb-6 leading-tight">
+                Tradición, Sabor y <span class="text-gourmet-terracota italic">Excelencia</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-gourmet-light/80 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+                Disfruta de una experiencia gastronómica única en Els Aubals. Excelente trato, profesionalidad y calidad inigualable en cada plato.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="tel:636622299" class="w-full sm:w-auto bg-gourmet-terracota hover:bg-opacity-90 text-white px-8 py-4 rounded-full font-bold text-base transition-all shadow-xl hover:scale-105 flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-phone text-lg"></i>
+                    <span>Reservar Mesa</span>
+                </a>
+                <a href="#carta" class="w-full sm:w-auto bg-transparent hover:bg-white/15 text-gourmet-light border border-gourmet-light/30 px-8 py-4 rounded-full font-medium text-base transition-all backdrop-blur-sm flex items-center justify-center gap-2">
+                    <span>Ver Nuestra Carta</span>
+                    <i class="fa-solid fa-arrow-down text-sm"></i>
+                </a>
+            </div>
+
+            <!-- Insignias de confianza rápidas -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-3 gap-6 pt-10 border-t border-gourmet-light/10 max-w-3xl mx-auto text-left">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gourmet-terracota/20 flex items-center justify-center text-gourmet-gold flex-shrink-0">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div>
+                        <p class="font-bold text-sm text-gourmet-cream">Excelente Trato</p>
+                        <p class="text-xs text-gourmet-light/60">Atención cercana</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gourmet-terracota/20 flex items-center justify-center text-gourmet-gold flex-shrink-0">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <div>
+                        <p class="font-bold text-sm text-gourmet-cream">Profesionalidad</p>
+                        <p class="text-xs text-gourmet-light/60">Equipo experto</p>
+                    </div>
+                </div>
+                <div class="col-span-2 md:col-span-1 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gourmet-terracota/20 flex items-center justify-center text-gourmet-gold flex-shrink-0">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <div>
+                        <p class="font-bold text-sm text-gourmet-cream">Alta Calidad</p>
+                        <p class="text-xs text-gourmet-light/60">Productos seleccionados</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Nuestra Carta, Platos Estrella y Especialidades -->
+    <section id="carta" class="py-24 bg-gourmet-card relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gourmet-gold font-semibold uppercase tracking-widest text-sm block mb-3">Gastronomía de Altura</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-gourmet-cream mb-4">Nuestra Carta y Especialidades</h2>
+                <p class="text-gourmet-light/70 text-base sm:text-lg">Elaboraciones cuidadas con mimo, tradición y los mejores ingredientes para ofrecerte una experiencia inolvidable.</p>
+            </div>
+
+            <!-- Grid de Categorías y Platos -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Tarjeta Menú 1 -->
+                <div class="bg-gourmet-dark rounded-2xl p-6 border border-gourmet-light/10 hover:border-gourmet-terracota transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48 rounded-xl overflow-hidden mb-6">
+                            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" 
+                                 referrerpolicy="no-referrer" 
+                                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                                 alt="Carnes a la Brasa" 
+                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-3 right-3 bg-gourmet-dark/80 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-gourmet-gold">
+                                Especialidad
+                            </div>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-gourmet-cream mb-2">Carnes Seleccionadas a la Brasa</h3>
+                        <p class="text-gourmet-light/70 text-sm mb-4">Cortes selectos cocinados al punto exacto con carbón vegetal, potenciando todo su sabor y jugosidad.</p>
+                    </div>
+                    <div class="pt-4 border-t border-gourmet-light/10 flex items-center justify-between">
+                        <span class="text-xs text-gourmet-gold font-medium uppercase tracking-wider">Recomendado del Chef</span>
+                        <a href="tel:636622299" class="text-gourmet-terracota hover:text-white text-sm font-semibold flex items-center gap-1 transition-colors">
+                            Reservar <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tarjeta Menú 2 -->
+                <div class="bg-gourmet-dark rounded-2xl p-6 border border-gourmet-light/10 hover:border-gourmet-terracota transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48 rounded-xl overflow-hidden mb-6">
+                            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80" 
+                                 referrerpolicy="no-referrer" 
+                                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                                 alt="Tapas y Entrantes" 
+                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-3 right-3 bg-gourmet-dark/80 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-gourmet-gold">
+                                Para Compartir
+                            </div>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-gourmet-cream mb-2">Entrantes y Tapas Caseras</h3>
+                        <p class="text-gourmet-light/70 text-sm mb-4">Una cuidada selección de raciones tradicionales elaboradas con productos de proximidad y máxima frescura.</p>
+                    </div>
+                    <div class="pt-4 border-t border-gourmet-light/10 flex items-center justify-between">
+                        <span class="text-xs text-gourmet-gold font-medium uppercase tracking-wider">Tradición & Calidad</span>
+                        <a href="tel:636622299" class="text-gourmet-terracota hover:text-white text-sm font-semibold flex items-center gap-1 transition-colors">
+                            Reservar <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tarjeta Menú 3 -->
+                <div class="bg-gourmet-dark rounded-2xl p-6 border border-gourmet-light/10 hover:border-gourmet-terracota transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48 rounded-xl overflow-hidden mb-6">
+                            <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&q=80" 
+                                 referrerpolicy="no-referrer" 
+                                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                                 alt="Postres Caseros" 
+                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-3 right-3 bg-gourmet-dark/80 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-gourmet-gold">
+                                Repostería Propia
+                            </div>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-gourmet-cream mb-2">Postres Caseros Artesanales</h3>
+                        <p class="text-gourmet-light/70 text-sm mb-4">El dulce broche final para tu comida. Recetas de toda la vida elaboradas diariamente en nuestra cocina.</p>
+                    </div>
+                    <div class="pt-4 border-t border-gourmet-light/10 flex items-center justify-between">
+                        <span class="text-xs text-gourmet-gold font-medium uppercase tracking-wider">Toque Dulce</span>
+                        <a href="tel:636622299" class="text-gourmet-terracota hover:text-white text-sm font-semibold flex items-center gap-1 transition-colors">
+                            Reservar <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Banner CTA Carta -->
+            <div class="mt-16 bg-gradient-to-r from-gourmet-terracota/20 via-gourmet-dark to-gourmet-terracota/20 rounded-3xl p-8 sm:p-12 border border-gourmet-terracota/30 text-center flex flex-col sm:flex-row items-center justify-between gap-6">
+                <div class="text-left">
+                    <h3 class="font-serif text-2xl font-bold text-gourmet-cream mb-2">¿Listo para saborear nuestra propuesta?</h3>
+                    <p class="text-gourmet-light/80 text-sm">Reserva tu mesa ahora en Els Aubals y vive una gran experiencia culinaria en Móra la Nova.</p>
+                </div>
+                <a href="tel:636622299" class="bg-gourmet-terracota hover:bg-opacity-90 text-white px-8 py-4 rounded-full font-bold text-sm tracking-wide transition-all shadow-lg hover:scale-105 whitespace-nowrap flex items-center gap-2">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Reservar Mesa</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Nuestras Instalaciones y Trabajos (Galería) -->
+    <section id="instalaciones" class="py-24 bg-gourmet-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gourmet-gold font-semibold uppercase tracking-widest text-sm block mb-3">Ambiente Acogedor</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-gourmet-cream mb-4">Nuestras Instalaciones</h2>
+                <p class="text-gourmet-light/70 text-base sm:text-lg">Un espacio diseñado para ofrecerte comodidad, elegancia y un ambiente inmejorable para disfrutar con familiares y amigos.</p>
+            </div>
+
+            <!-- Grid Galería -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="relative h-72 rounded-2xl overflow-hidden group shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=800&q=80" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                         alt="Salón interior Els Aubals" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet-dark/90 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <p class="text-xs text-gourmet-gold font-semibold uppercase tracking-wider">Espacios</p>
+                            <h4 class="font-serif text-lg font-bold text-gourmet-cream">Salón Principal</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative h-72 rounded-2xl overflow-hidden group shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=80" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                         alt="Bar y zona de barra" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet-dark/90 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <p class="text-xs text-gourmet-gold font-semibold uppercase tracking-wider">Ambiente</p>
+                            <h4 class="font-serif text-lg font-bold text-gourmet-cream">Bar y Bodega</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative h-72 rounded-2xl overflow-hidden group shadow-lg sm:col-span-2 lg:col-span-1">
+                    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=800&q=80" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                         alt="Detalle culinario Els Aubals" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet-dark/90 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <p class="text-xs text-gourmet-gold font-semibold uppercase tracking-wider">Detalles</p>
+                            <h4 class="font-serif text-lg font-bold text-gourmet-cream">Pasión por el detalle</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Opiniones Reales Verificadas -->
+    <section id="opiniones" class="py-24 bg-gourmet-card relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gourmet-gold font-semibold uppercase tracking-widest text-sm block mb-3">Testimonios Reales</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-gourmet-cream mb-4">Lo que opinan nuestros clientes</h2>
+                <p class="text-gourmet-light/70 text-base sm:text-lg">La satisfacción de quienes nos visitan es nuestro mayor aval y motivación diaria.</p>
+            </div>
+
+            <!-- Tarjeta de Reseña Única / Destacada -->
+            <div class="max-w-2xl mx-auto bg-gourmet-dark rounded-3xl p-8 sm:p-12 border border-gourmet-gold/30 shadow-2xl relative">
+                <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-gourmet-terracota text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg">
+                    <i class="fa-solid fa-quote-left text-xl"></i>
+                </div>
+                
+                <div class="flex justify-center gap-1 text-gourmet-gold mb-6 mt-4">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+
+                <blockquote class="text-center font-serif text-xl sm:text-2xl text-gourmet-cream italic mb-8 leading-relaxed">
+                    "Excelente trato, profesionalidad y calidad."
+                </blockquote>
+
+                <div class="text-center border-t border-gourmet-light/10 pt-6">
+                    <p class="font-bold text-base text-gourmet-cream">Cliente Verificado de Google Maps</p>
+                    <p class="text-xs text-gourmet-gold mt-1 uppercase tracking-wider">Reseña Oficial</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Mapa Interactivo y Ubicación / Contacto -->
+    <section id="contacto" class="py-24 bg-gourmet-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gourmet-gold font-semibold uppercase tracking-widest text-sm block mb-3">Encuéntranos</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-gourmet-cream mb-4">Visítanos en Móra la Nova</h2>
+                <p class="text-gourmet-light/70 text-base sm:text-lg">Estamos a tu entera disposición. Ven a conocernos o reserva tu mesa por teléfono.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Información de Contacto -->
+                <div class="bg-gourmet-card p-8 sm:p-10 rounded-3xl border border-gourmet-light/10 space-y-8">
+                    <h3 class="font-serif text-2xl sm:text-3xl font-bold text-gourmet-cream">Els Aubals</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-gourmet-terracota/20 text-gourmet-gold flex items-center justify-center flex-shrink-0 text-lg">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-gourmet-cream uppercase tracking-wider mb-1">Dirección</h4>
+                                <p class="text-gourmet-light/80 text-sm leading-relaxed">Polígono Ind Aubals, Carrer Romaní, 18,<br>43770 Móra la Nova, Tarragona, España</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-gourmet-terracota/20 text-gourmet-gold flex items-center justify-center flex-shrink-0 text-lg">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-gourmet-cream uppercase tracking-wider mb-1">Teléfono de Reservas</h4>
+                                <a href="tel:636622299" class="text-gourmet-gold hover:underline text-lg font-bold">636 62 22 99</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-gourmet-terracota/20 text-gourmet-gold flex items-center justify-center flex-shrink-0 text-lg">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-gourmet-cream uppercase tracking-wider mb-1">Correo Electrónico</h4>
+                                <a href="mailto:error-lite+84f2@duckduckgo.com" class="text-gourmet-light/80 hover:text-gourmet-gold text-sm break-all">error-lite+84f2@duckduckgo.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-6 border-t border-gourmet-light/10">
+                        <a href="tel:636622299" class="w-full bg-gourmet-terracota hover:bg-opacity-90 text-white py-4 rounded-full font-bold text-sm tracking-wide transition-all shadow-lg flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>Reservar Mesa Ahora</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mapa Interactivo Real -->
+                <div class="bg-gourmet-card p-4 rounded-3xl border border-gourmet-light/10 shadow-xl overflow-hidden">
+                    <iframe src="https://www.google.com/maps?q=Els%20Aubals%20Pol%C3%ADgono%20Ind%20Aubals%2C%20Carrer%20Roman%C3%AD%2C%2018%2C%2043770%20M%C3%B3ra%20la%20Nova%2C%20Tarragona%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-gourmet-light/10 text-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+            <span class="font-serif text-2xl font-bold tracking-wider text-gourmet-cream">
+                ELS AUBALS
+            </span>
+            <p class="text-sm text-gourmet-light/60 max-w-md mx-auto">
+                Restaurante en Móra la Nova, Tarragona. Excelente trato, profesionalidad y calidad en cada servicio.
+            </p>
+            <div class="flex justify-center space-x-6">
+                <a href="tel:636622299" class="text-gourmet-light/60 hover:text-gourmet-gold transition-colors text-lg">
+                    <i class="fa-solid fa-phone"></i>
+                </a>
+                <a href="mailto:error-lite+84f2@duckduckgo.com" class="text-gourmet-light/60 hover:text-gourmet-gold transition-colors text-lg">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+            <div class="pt-6 border-t border-gourmet-light/10 text-xs text-gourmet-light/40">
+                &copy; <script>document.write(new Date().getFullYear());</script> Els Aubals. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script para el menú móvil -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú móvil al hacer clic en un enlace
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
