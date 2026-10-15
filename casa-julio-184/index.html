@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa Julio | Restaurante Asturiano en Cudillero</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        terracota: {
+                            50: '#fdf8f6',
+                            100: '#fbe8e3',
+                            600: '#c55a3d',
+                            700: '#a3452b',
+                            800: '#843823',
+                            900: '#6d301f',
+                        },
+                        gourmet: {
+                            dark: '#1a1818',
+                            card: '#242121',
+                            cream: '#fcfbfa',
+                            sand: '#f3efe6',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .font-serif { font-family: 'Playfair Display', serif; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fcfbfa; color: #1a1818; }
+    </style>
+</head>
+<body class="bg-gourmet-cream text-gourmet-dark antialiased selection:bg-terracota-600 selection:text-white">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-gourmet-dark/95 backdrop-blur-md text-white border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full bg-terracota-600 flex items-center justify-center text-white font-serif text-xl font-bold shadow-md group-hover:bg-terracota-700 transition-colors">
+                    C
+                </div>
+                <div>
+                    <span class="font-serif text-2xl font-bold tracking-wide">Casa Julio</span>
+                    <span class="block text-xs uppercase tracking-widest text-terracota-100/70 font-sans">Cudillero • Asturias</span>
+                </div>
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm tracking-wide">
+                <a href="#carta" class="hover:text-terracota-600 transition-colors">Nuestra Carta</a>
+                <a href="#experiencia" class="hover:text-terracota-600 transition-colors">La Experiencia</a>
+                <a href="#galeria" class="hover:text-terracota-600 transition-colors">Instalaciones</a>
+                <a href="#opiniones" class="hover:text-terracota-600 transition-colors">Opiniones</a>
+                <a href="#contacto" class="hover:text-terracota-600 transition-colors">Ubicación</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="tel:617438254" class="hidden sm:inline-flex items-center gap-2 bg-terracota-600 hover:bg-terracota-700 text-white px-5 py-2.5 rounded-full font-semibold text-sm shadow-lg shadow-terracota-600/20 transition-all transform hover:-translate-y-0.5">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Reservar Mesa</span>
+                </a>
+                <button id="menu-btn" class="md:hidden text-white text-2xl focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gourmet-dark border-t border-white/10 px-4 pt-4 pb-6 space-y-4">
+            <a href="#carta" class="block text-lg hover:text-terracota-600 transition-colors">Nuestra Carta</a>
+            <a href="#experiencia" class="block text-lg hover:text-terracota-600 transition-colors">La Experiencia</a>
+            <a href="#galeria" class="block text-lg hover:text-terracota-600 transition-colors">Instalaciones</a>
+            <a href="#opiniones" class="block text-lg hover:text-terracota-600 transition-colors">Opiniones</a>
+            <a href="#contacto" class="block text-lg hover:text-terracota-600 transition-colors">Ubicación</a>
+            <div class="pt-2">
+                <a href="tel:617438254" class="flex items-center justify-center gap-2 bg-terracota-600 text-white px-5 py-3 rounded-xl font-semibold w-full shadow-md">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Reservar Mesa</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[90vh] flex items-center justify-center pt-20 overflow-hidden bg-gourmet-dark">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';" alt="Casa Julio Restaurante Asturiano" class="w-full h-full object-cover object-center opacity-40 scale-105 animate-pulse duration-[10000ms]">
+            <div class="absolute inset-0 bg-gradient-to-t from-gourmet-dark via-gourmet-dark/60 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 text-center py-20">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-terracota-600/30 border border-terracota-600/50 text-terracota-100 text-sm font-medium mb-6 backdrop-blur-sm">
+                <i class="fa-solid fa-utensils text-terracota-600"></i>
+                <span>Auténtica Cocina Asturiana en el corazón de Cudillero</span>
+            </div>
+            
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold text-white tracking-tight mb-6 leading-tight">
+                Tradición Marinera y <br><span class="italic text-terracota-600 font-normal">Sabor Asturiano</span>
+            </h1>
+            
+            <p class="text-lg sm:text-xl text-gourmet-sand/80 max-w-2xl mx-auto font-light mb-10 leading-relaxed">
+                Disfruta de la mejor gastronomía asturiana en la emblemática Plaza de la Marina. Excelente trato, profesionalidad y calidad inigualable en un ambiente acogedor.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="tel:617438254" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-terracota-600 hover:bg-terracota-700 text-white px-8 py-4 rounded-full font-bold text-base shadow-xl shadow-terracota-600/30 transition-all transform hover:-translate-y-1">
+                    <i class="fa-solid fa-phone text-lg"></i>
+                    <span>Reservar Mesa</span>
+                </a>
+                <a href="#carta" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-full font-semibold text-base backdrop-blur-md transition-all">
+                    <span>Ver Nuestra Carta</span>
+                    <i class="fa-solid fa-arrow-down text-sm"></i>
+                </a>
+            </div>
+
+            <!-- Features Bar -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-16 pt-12 border-t border-white/10 max-w-3xl mx-auto text-left">
+                <div class="flex items-center gap-4 text-white">
+                    <div class="w-12 h-12 rounded-2xl bg-terracota-600/20 border border-terracota-600/40 flex items-center justify-center text-terracota-600 shrink-0">
+                        <i class="fa-solid fa-fish text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm">Producto Fresco</h4>
+                        <p class="text-xs text-gray-400">Del Cantábrico a tu mesa</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4 text-white">
+                    <div class="w-12 h-12 rounded-2xl bg-terracota-600/20 border border-terracota-600/40 flex items-center justify-center text-terracota-600 shrink-0">
+                        <i class="fa-solid fa-wine-glass text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm">Sidra Asturiana</h4>
+                        <p class="text-xs text-gray-400">Escanciada al momento</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4 text-white">
+                    <div class="w-12 h-12 rounded-2xl bg-terracota-600/20 border border-terracota-600/40 flex items-center justify-center text-terracota-600 shrink-0">
+                        <i class="fa-solid fa-heart text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm">Trato Familiar</h4>
+                        <p class="text-xs text-gray-400">Excelente profesionalidad</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- La Experiencia / Introduction -->
+    <section id="experiencia" class="py-24 bg-gourmet-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div class="inline-flex items-center gap-2 text-terracota-600 font-semibold text-sm uppercase tracking-wider">
+                        <span class="w-8 h-[2px] bg-terracota-600"></span>
+                        Tradición y Sabor
+                    </div>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-gourmet-dark leading-tight">
+                        Un rincón único en la Marina de Cudillero
+                    </h2>
+                    <p class="text-gray-600 leading-relaxed text-lg">
+                        Ubicados en pleno corazón marinero, en <strong class="text-gourmet-dark">Casa Julio</strong> fusionamos el respeto por la cocina tradicional asturiana con la mejor materia prima de la costa y la montaña. Nuestro compromiso es ofrecerte una experiencia inolvidable.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Tal como destacan nuestros clientes, la combinación de un trato excelente, la máxima profesionalidad y la altísima calidad de nuestros platos hacen que cada visita a nuestra casa sea especial.
+                    </p>
+                    <div class="pt-4 flex items-center gap-6">
+                        <div>
+                            <span class="block font-serif text-4xl font-bold text-terracota-600">100%</span>
+                            <span class="text-sm text-gray-500 font-medium">Producto Local</span>
+                        </div>
+                        <div class="w-px h-12 bg-gray-300"></div>
+                        <div>
+                            <span class="block font-serif text-4xl font-bold text-terracota-600">5★</span>
+                            <span class="text-sm text-gray-500 font-medium">Valoración Clientes</span>
+                        </div>
+                        <div class="w-px h-12 bg-gray-300"></div>
+                        <div>
+                            <span class="block font-serif text-4xl font-bold text-terracota-600">Plaza</span>
+                            <span class="text-sm text-gray-500 font-medium">De la Marina</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+                        <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80';" alt="Restaurante Casa Julio Cudillero" class="w-full h-[450px] object-cover">
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 w-72 h-72 bg-terracota-100 rounded-3xl -z-0 hidden sm:block"></div>
+                    <div class="absolute -top-6 -right-6 w-48 h-48 bg-gourmet-sand rounded-full -z-0 hidden sm:block"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nuestra Carta y Especialidades -->
+    <section id="carta" class="py-24 bg-gourmet-sand/50 border-y border-gourmet-sand">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-terracota-600 font-semibold text-sm uppercase tracking-wider block mb-2">Gastronomía Asturiana</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-gourmet-dark mb-4">Nuestra Carta y Especialidades</h2>
+                <p class="text-gray-600 text-lg">Sabores auténticos preparados con mimo, respetando las recetas tradicionales de la abuela y el producto del mar y la tierra.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Plato 1 -->
+                <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow border border-gourmet-sand flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="px-3 py-1 bg-terracota-50 text-terracota-700 text-xs font-bold rounded-full uppercase tracking-wider">Pescados del Cantábrico</span>
+                            <i class="fa-solid fa-fish text-terracota-600"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-gourmet-dark mb-2">Pescado Fresco del Día</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">Capturas locales de la ría y mar abierto cocinadas a la espalda o a la sidra, según la tradición marinera de Cudillero.</p>
+                    </div>
+                    <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
+                        <span class="text-xs text-gray-400 italic">Recomendación del chef</span>
+                        <a href="tel:617438254" class="text-terracota-600 font-semibold text-sm hover:underline flex items-center gap-1">Reservar <i class="fa-solid fa-chevron-right text-xs"></i></a>
+                    </div>
+                </div>
+
+                <!-- Plato 2 -->
+                <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow border border-gourmet-sand flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="px-3 py-1 bg-terracota-50 text-terracota-700 text-xs font-bold rounded-full uppercase tracking-wider">Cuchara Asturiana</span>
+                            <i class="fa-solid fa-bowl-food text-terracota-600"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-gourmet-dark mb-2">Fabada Asturiana Tradicional</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">El plato estrella de nuestra tierra. Fabes de gran calidad con su compango tradicional (chorizo, morcilla y tocino de artesanía).</p>
+                    </div>
+                    <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
+                        <span class="text-xs text-gray-400 italic">Imprescindible</span>
+                        <a href="tel:617438254" class="text-terracota-600 font-semibold text-sm hover:underline flex items-center gap-1">Reservar <i class="fa-solid fa-chevron-right text-xs"></i></a>
+                    </div>
+                </div>
+
+                <!-- Plato 3 -->
+                <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow border border-gourmet-sand flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="px-3 py-1 bg-terracota-50 text-terracota-700 text-xs font-bold rounded-full uppercase tracking-wider">Marisco y Tapas</span>
+                            <i class="fa-solid fa-shrimp text-terracota-600"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-gourmet-dark mb-2">Mariscos y Tapas Marineras</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">Disfruta de mariscos de temporada, andariques, quisquilla y tapas variadas perfectas para acompañar con un buen culín de sidra.</p>
+                    </div>
+                    <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
+                        <span class="text-xs text-gray-400 italic">Frescura garantizada</span>
+                        <a href="tel:617438254" class="text-terracota-600 font-semibold text-sm hover:underline flex items-center gap-1">Reservar <i class="fa-solid fa-chevron-right text-xs"></i></a>
+                    </div>
+                </div>
+
+                <!-- Plato 4 -->
+                <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow border border-gourmet-sand flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="px-3 py-1 bg-terracota-50 text-terracota-700 text-xs font-bold rounded-full uppercase tracking-wider">Carnes de la Tierrina</span>
+                            <i class="fa-solid fa-utensils text-terracota-600"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-gourmet-dark mb-2">Cachopo Asturiano</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">Crujiente por fuera, tierno por dentro. Dos filetes de ternera asturiana rellenos de jamón serrano y queso, acompañados de patatas fritas y pimientos.</p>
+                    </div>
+                    <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
+                        <span class="text-xs text-gray-400 italic">Para compartir</span>
+                        <a href="tel:617438254" class="text-terracota-600 font-semibold text-sm hover:underline flex items-center gap-1">Reservar <i class="fa-solid fa-chevron-right text-xs"></i></a>
+                    </div>
+                </div>
+
+                <!-- Plato 5 -->
+                <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow border border-gourmet-sand flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="px-3 py-1 bg-terracota-50 text-terracota-700 text-xs font-bold rounded-full uppercase tracking-wider">Bodega Local</span>
+                            <i class="fa-solid fa-wine-bottle text-terracota-600"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-gourmet-dark mb-2">Sidra D.O.P. Asturiana</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">Escanciada al estilo tradicional por nuestros profesionales. El maridaje perfecto que realza todos los sabores de nuestra gastronomía.</p>
+                    </div>
+                    <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
+                        <span class="text-xs text-gray-400 italic">Tradición pura</span>
+                        <a href="tel:617438254" class="text-terracota-600 font-semibold text-sm hover:underline flex items-center gap-1">Reservar <i class="fa-solid fa-chevron-right text-xs"></i></a>
+                    </div>
+                </div>
+
+                <!-- Plato 6 -->
+                <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow border border-gourmet-sand flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="px-3 py-1 bg-terracota-50 text-terracota-700 text-xs font-bold rounded-full uppercase tracking-wider">Postres Caseros</span>
+                            <i class="fa-solid fa-cake-candles text-terracota-600"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-gourmet-dark mb-2">Arroz con Leche Quemado</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">El broche de oro perfecto. Cremoso, con su toque justo de limón, canela y una fina capa de azúcar tostado al fuego.</p>
+                    </div>
+                    <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
+                        <span class="text-xs text-gray-400 italic">Elaboración propia</span>
+                        <a href="tel:617438254" class="text-terracota-600 font-semibold text-sm hover:underline flex items-center gap-1">Reservar <i class="fa-solid fa-chevron-right text-xs"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <a href="tel:617438254" class="inline-flex items-center gap-3 bg-terracota-600 hover:bg-terracota-700 text-white px-8 py-4 rounded-full font-bold text-base shadow-xl shadow-terracota-600/30 transition-all transform hover:-translate-y-0.5">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Reservar Mesa y Consultar Menú Diario</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería / Instalaciones -->
+    <section id="galeria" class="py-24 bg-gourmet-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-terracota-600 font-semibold text-sm uppercase tracking-wider block mb-2">Nuestras Instalaciones y Trabajos</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-gourmet-dark mb-4">Un Espacio Acogedor en Cudillero</h2>
+                <p class="text-gray-600 text-lg">Descubre nuestro salón y la ubicación privilegiada en la Plaza de la Marina.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="relative rounded-2xl overflow-hidden shadow-lg group h-80">
+                    <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';" alt="Salón interior Casa Julio" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white font-serif font-bold text-lg">Ambiente Acogedor y Familiar</span>
+                    </div>
+                </div>
+
+                <div class="relative rounded-2xl overflow-hidden shadow-lg group h-80">
+                    <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80';" alt="Platos asturianos Casa Julio" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white font-serif font-bold text-lg">Platos Elaborados con Dedicación</span>
+                    </div>
+                </div>
+
+                <div class="relative rounded-2xl overflow-hidden shadow-lg group h-80">
+                    <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80';" alt="Plaza de la Marina Cudillero" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white font-serif font-bold text-lg">Ubicación Inmejorable</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reseñas Verificadas -->
+    <section id="opiniones" class="py-24 bg-gourmet-sand/50 border-t border-gourmet-sand">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-terracota-600 font-semibold text-sm uppercase tracking-wider block mb-2">Opiniones Reales Verificadas</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-gourmet-dark mb-4">Lo que dicen nuestros clientes</h2>
+                <p class="text-gray-600 text-lg">La satisfacción de quienes nos visitan es nuestro mayor aval.</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto">
+                <div class="bg-white rounded-3xl p-8 sm:p-10 shadow-xl border border-gourmet-sand relative">
+                    <div class="absolute -top-5 left-10 w-10 h-10 bg-terracota-600 text-white rounded-full flex items-center justify-center shadow-md">
+                        <i class="fa-solid fa-quote-left text-lg"></i>
+                    </div>
+                    
+                    <div class="flex items-center gap-1 text-amber-400 mb-6 mt-2">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    <blockquote class="font-serif text-xl sm:text-2xl text-gourmet-dark italic leading-relaxed mb-6">
+                        "Excelente trato, profesionalidad y calidad."
+                    </blockquote>
+
+                    <div class="flex items-center justify-between pt-6 border-t border-gray-100">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-full bg-terracota-100 text-terracota-700 font-bold font-serif flex items-center justify-center text-lg">
+                                G
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gourmet-dark">Cliente Verificado</h4>
+                                <span class="text-xs text-gray-500">Reseña de Google Maps</span>
+                            </div>
+                        </div>
+                        <div class="text-terracota-600 flex items-center gap-1 text-xs font-semibold bg-terracota-50 px-3 py-1.5 rounded-full">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>Verificada</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa e Información de Contacto -->
+    <section id="contacto" class="py-24 bg-gourmet-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-terracota-600 font-semibold text-sm uppercase tracking-wider block mb-2">Visítanos</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-gourmet-dark mb-4">¿Dónde Estamos?</h2>
+                <p class="text-gray-600 text-lg">Te esperamos en Cudillero para ofrecerte lo mejor de nuestra cocina.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Información -->
+                <div class="space-y-8 bg-white p-8 sm:p-10 rounded-3xl shadow-lg border border-gourmet-sand">
+                    <h3 class="font-serif text-2xl font-bold text-gourmet-dark">Casa Julio Asturies</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-terracota-50 text-terracota-600 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-location-dot text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gourmet-dark text-sm">Dirección</h4>
+                                <p class="text-gray-600 text-sm mt-0.5">Plaza de la Marina, Pl. de la Marina, 7, 33150 Cudillero, Asturias, España</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-terracota-50 text-terracota-600 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-phone text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gourmet-dark text-sm">Teléfono de Reservas</h4>
+                                <a href="tel:617438254" class="text-terracota-600 font-bold hover:underline text-base mt-0.5 block">617 43 82 54</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-terracota-50 text-terracota-600 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gourmet-dark text-sm">Correo Electrónico</h4>
+                                <a href="mailto:error-lite+84f2@duckduckgo.com" class="text-gray-600 hover:text-terracota-600 text-sm mt-0.5 block">error-lite+84f2@duckduckgo.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-6 border-t border-gray-100">
+                        <a href="tel:617438254" class="w-full flex items-center justify-center gap-3 bg-terracota-600 hover:bg-terracota-700 text-white px-8 py-4 rounded-full font-bold text-base shadow-lg shadow-terracota-600/20 transition-all">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>Reservar Mesa Ahora</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mapa -->
+                <div class="rounded-3xl overflow-hidden shadow-xl border-4 border-white bg-white h-[420px]">
+                    <iframe src="https://www.google.com/maps?q=Casa%20Julio%20Plaza%20de%20la%20Marina%2C%20Pl.%20de%20la%20Marina%2C%207%2C%2033150%20Cudillero%2C%20Asturias%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gourmet-dark text-white pt-16 pb-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                <div class="md:col-span-2 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-terracota-600 flex items-center justify-center text-white font-serif text-xl font-bold">
+                            C
+                        </div>
+                        <span class="font-serif text-2xl font-bold tracking-wide">Casa Julio</span>
+                    </div>
+                    <p class="text-gray-400 text-sm max-w-sm leading-relaxed">
+                        Restaurante asturiano de referencia en Cudillero. Tradición, producto fresco del Cantábrico y un trato inmejorable en la Plaza de la Marina.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-serif font-bold text-base mb-4 text-terracota-100">Enlaces Rápidos</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#carta" class="hover:text-terracota-600 transition-colors">Nuestra Carta</a></li>
+                        <li><a href="#experiencia" class="hover:text-terracota-600 transition-colors">La Experiencia</a></li>
+                        <li><a href="#galeria" class="hover:text-terracota-600 transition-colors">Instalaciones</a></li>
+                        <li><a href="#opiniones" class="hover:text-terracota-600 transition-colors">Opiniones</a></li>
+                        <li><a href="#contacto" class="hover:text-terracota-600 transition-colors">Ubicación</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-serif font-bold text-base mb-4 text-terracota-100">Reservas y Contacto</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><i class="fa-solid fa-phone text-terracota-600 mr-2"></i> <a href="tel:617438254" class="hover:text-white transition-colors font-semibold">617 43 82 54</a></li>
+                        <li><i class="fa-solid fa-envelope text-terracota-600 mr-2"></i> <a href="mailto:error-lite+84f2@duckduckgo.com" class="hover:text-white transition-colors">error-lite+84f2@duckduckgo.com</a></li>
+                        <li class="pt-2">
+                            <a href="tel:617438254" class="inline-flex items-center gap-2 bg-terracota-600 hover:bg-terracota-700 text-white px-4 py-2 rounded-xl text-xs font-bold transition-all shadow-md">
+                                <i class="fa-solid fa-phone"></i> Reservar Mesa
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500">
+                <p>&copy; <span id="year"></span> Casa Julio (Cudillero, Asturias). Todos los derechos reservados.</p>
+                <div class="flex gap-6 mt-4 sm:mt-0">
+                    <a href="#" class="hover:text-gray-400">Política de Privacidad</a>
+                    <a href="#" class="hover:text-gray-400">Aviso Legal</a>
+                    <a href="#" class="hover:text-gray-400">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script to toggle mobile menu & current year -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on click a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
