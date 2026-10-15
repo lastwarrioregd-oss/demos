@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veca Café | Tu Cafetería en el Centro de Córdoba</title>
+    <meta name="description" content="Descubre Veca Café en C. Claudio Marcelo, 9, Córdoba. Las mejores tostadas generosas, dulces y tartas caseras en un ambiente acogedor y cercano. ¡Reserva tu mesa!">
+    
+    <!-- TailwindCSS v3 CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        veca: {
+                            50: '#fcf8f5',
+                            100: '#f7eee5',
+                            200: '#edd8c6',
+                            300: '#dfbc9e',
+                            400: '#ce976e',
+                            500: '#c27e4d',
+                            600: '#b46d3e',
+                            700: '#965731',
+                            800: '#7a4729',
+                            900: '#643d23',
+                            950: '#361e11',
+                            cream: '#FDFBF7',
+                            terracota: '#B46D3E',
+                            dark: '#1F1A17'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #FDFBF7;
+            color: #1F1A17;
+        }
+        h1, h2, h3, h4, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="bg-veca-cream antialiased selection:bg-veca-400 selection:text-white">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-veca-cream/90 backdrop-blur-md border-b border-veca-200 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2">
+                <span class="text-2xl sm:text-3xl font-serif font-bold text-veca-800 tracking-wide">Veca Café</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm lg:text-base text-veca-900">
+                <a href="#inicio" class="hover:text-veca-600 transition-colors">Inicio</a>
+                <a href="#carta" class="hover:text-veca-600 transition-colors">Nuestra Carta</a>
+                <a href="#experiencia" class="hover:text-veca-600 transition-colors">El Local</a>
+                <a href="#opiniones" class="hover:text-veca-600 transition-colors">Opiniones</a>
+                <a href="#contacto" class="hover:text-veca-600 transition-colors">Ubicación</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="tel:957391221" class="hidden sm:inline-flex items-center gap-2 bg-veca-700 hover:bg-veca-800 text-white px-5 py-2.5 rounded-full font-semibold text-sm transition-all shadow-md hover:shadow-lg">
+                    <i class="fa-solid fa-phone text-xs"></i>
+                    <span>957 39 12 21</span>
+                </a>
+                
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" class="md:hidden text-veca-800 focus:outline-none p-2" aria-label="Menú móvil">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-veca-cream border-b border-veca-200 shadow-xl py-6 px-6 transition-all">
+            <nav class="flex flex-col gap-4 text-center font-medium text-lg text-veca-900">
+                <a href="#inicio" class="mobile-link hover:text-veca-600">Inicio</a>
+                <a href="#carta" class="mobile-link hover:text-veca-600">Nuestra Carta</a>
+                <a href="#experiencia" class="mobile-link hover:text-veca-600">El Local</a>
+                <a href="#opiniones" class="mobile-link hover:text-veca-600">Opiniones</a>
+                <a href="#contacto" class="mobile-link hover:text-veca-600">Ubicación</a>
+                <a href="tel:957391221" class="mt-2 bg-veca-700 text-white py-3 rounded-xl font-semibold flex items-center justify-center gap-2 shadow">
+                    <i class="fa-solid fa-phone"></i> Reservar Mesa (957391221)
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden bg-gradient-to-b from-veca-100/50 to-veca-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Text -->
+                <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+                    <div class="inline-flex items-center gap-2 bg-veca-200/70 border border-veca-300 px-4 py-1.5 rounded-full text-veca-800 text-xs sm:text-sm font-semibold tracking-wide uppercase">
+                        <i class="fa-solid fa-mug-hot text-veca-600"></i> Tu rincón favorito en el centro de Córdoba
+                    </div>
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-bold font-serif text-veca-950 leading-tight">
+                        Desayunos generosos y <span class="italic text-veca-600 font-normal">dulces caseros</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl text-veca-800 max-w-2xl mx-auto lg:mx-0 font-light">
+                        Ubicados en C. Claudio Marcelo, 9. Disfruta de un ambiente cálido, tostadas inigualables tanto dulces como saladas, y repostería artesanal elaborada con mimo.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="tel:957391221" class="w-full sm:w-auto bg-veca-700 hover:bg-veca-800 text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all text-center flex items-center justify-center gap-3 text-base">
+                            <i class="fa-solid fa-calendar-check"></i> Reservar Mesa
+                        </a>
+                        <a href="#carta" class="w-full sm:w-auto bg-white hover:bg-veca-50 text-veca-900 border border-veca-300 font-semibold px-8 py-4 rounded-full transition-all text-center flex items-center justify-center gap-3 text-base shadow-sm">
+                            <i class="fa-solid fa-utensils text-veca-600">></i> Ver Carta y Especialidades
+                        </a>
+                    </div>
+                    
+                    <!-- Trust Badges -->
+                    <div class="pt-6 border-t border-veca-200/80 flex items-center justify-center lg:justify-start gap-8 text-veca-800 text-sm">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-star text-amber-500"></i>
+                            <span class="font-semibold">Excelentes Reseñas</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-wheat-awn text-amber-700"></i>
+                            <span class="font-semibold">Opciones para celíacos</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Images Grid -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="absolute -top-4 -left-4 w-72 h-72 bg-veca-300 rounded-full filter blur-3xl opacity-30 animate-pulse"></div>
+                        <div class="grid grid-cols-2 gap-4 relative z-10">
+                            <div class="space-y-4">
+                                <img src="https://scontent.flpa4-1.fna.fbcdn.net/v/t39.30808-1/299973479_499374342188320_5726699343849711590_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx958x960&amp;ctp=s720x720&amp;_nc_cat=109&amp;_nc_map=urlgen_bucketless&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=BcbyxRuCCT4Q7kNvwEI2Fba&amp;_nc_oc=AdqsKIGj0iuMiSSkqFXovxIt1z9c-6rLq6zGMo0WbJV9f4ohkx7IyqnMOOFOKxG3dXQ&amp;_nc_zt=24&amp;_nc_ht=scontent.flpa4-1.fna&amp;_nc_gid=_ikKXmgDKy1IMoYXGsKRyw&amp;_nc_ss=7a289&amp;oh=00_AQPiu-kBNv7nsQ0PMcp9sgzNeY1a8ktjj-luL3P0ZMHtZg&amp;oe=6AD5E090" 
+                                     alt="Veca Café Córdoba - Ambiente" 
+                                     class="w-full h-48 sm:h-64 object-cover rounded-2xl shadow-lg border border-veca-200 transform -rotate-2 hover:rotate-0 transition-transform duration-300"
+                                     referrerpolicy="no-referrer" 
+                                     onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+                            </div>
+                            <div class="space-y-4 pt-8">
+                                <img src="https://scontent.flpa4-1.fna.fbcdn.net/v/t51.82787-15/768442191_18329673673258914_3884199863053731776_n.jpg?stp=dst-jpg_tt6&cstp=mx1405x1873&ctp=p526x296&_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=DYDiBcbfsVkQ7kNvwGZ0WOl&_nc_oc=AdoMMQdBSuD4HXAgg3pybRG2DohU_Y1Tbe_YxA-OxlS7w0_C05PIT_2uqSOdxl1BfeM&_nc_zt=23&_nc_ht=scontent.flpa4-1.fna&_nc_gid=sYl2EGS0lVFgYvI4HKW_Jg&_nc_ss=7a289&oh=00_AQNJBEnb4pjiV2ESbHjGF1m-zJjo0hpTFtD5M1hAUfy02Q&oe=6AD5CE04" 
+                                     alt="Veca Café Córdoba - Especialidades" 
+                                     class="w-full h-48 sm:h-64 object-cover rounded-2xl shadow-lg border border-veca-200 transform rotate-2 hover:rotate-0 transition-transform duration-300"
+                                     referrerpolicy="no-referrer" 
+                                     onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=80';">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlights / Why Choose Us -->
+    <section class="py-16 bg-veca-100/60 border-y border-veca-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div class="bg-white/80 backdrop-blur p-8 rounded-2xl border border-veca-200 shadow-sm text-center space-y-4">
+                    <div class="w-16 h-16 bg-veca-200 text-veca-800 rounded-2xl mx-auto flex items-center justify-center text-2xl shadow-inner">
+                        <i class="fa-solid fa-bread-slice"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-serif text-veca-900">Tostadas Generosas</h3>
+                    <p class="text-veca-700 text-sm leading-relaxed">
+                        De muy buena calidad y con excelentes opciones tanto dulces como saladas para empezar el día con la mejor energía.
+                    </p>
+                </div>
+
+                <div class="bg-white/80 backdrop-blur p-8 rounded-2xl border border-veca-200 shadow-sm text-center space-y-4">
+                    <div class="w-16 h-16 bg-veca-200 text-veca-800 rounded-2xl mx-auto flex items-center justify-center text-2xl shadow-inner">
+                        <i class="fa-solid fa-cake-candles"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-serif text-veca-900">Tartas y Dulces Caseros</h3>
+                    <p class="text-veca-700 text-sm leading-relaxed">
+                        Grandes porciones de repostería casera y pasteles espectaculares que enamoran a todo el que nos visita.
+                    </p>
+                </div>
+
+                <div class="bg-white/80 backdrop-blur p-8 rounded-2xl border border-veca-200 shadow-sm text-center space-y-4">
+                    <div class="w-16 h-16 bg-veca-200 text-veca-800 rounded-2xl mx-auto flex items-center justify-center text-2xl shadow-inner">
+                        <i class="fa-solid fa-face-smile-beam"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-serif text-veca-900">Ambiente Cercano</h3>
+                    <p class="text-veca-700 text-sm leading-relaxed">
+                        Un personal muy joven, atento y amable que hace que la experiencia sea sumamente cálida y acogedora.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Nuestra Carta y Especialidades Section -->
+    <section id="carta" class="py-24 bg-veca-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-veca-600 font-semibold text-sm tracking-widest uppercase">Sabores que conquistan</span>
+                <h2 class="text-3xl sm:text-5xl font-serif font-bold text-veca-950">Nuestra Carta y Especialidades</h2>
+                <p class="text-veca-800 text-base sm:text-lg">
+                    Elaboraciones sencillas pero de máxima calidad pensadas para todos los gustos y necesidades, incluyendo opciones adaptadas.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                
+                <!-- Categoría 1: Tostadas y Desayunos -->
+                <div class="bg-white p-8 rounded-3xl border border-veca-200 shadow-sm space-y-6">
+                    <div class="flex items-center gap-4 border-b border-veca-200 pb-4">
+                        <div class="w-12 h-12 rounded-xl bg-veca-100 text-veca-800 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-mug-saucer"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-serif font-bold text-veca-900">Desayunos & Tostadas</h3>
+                            <p class="text-veca-600 text-sm">El alma de nuestras mañanas en Córdoba</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex justify-between items-start border-b border-dashed border-veca-200 pb-4">
+                            <div>
+                                <h4 class="font-bold text-veca-900 text-lg">Tostadas Saladas Generosas</h4>
+                                <p class="text-veca-700 text-sm mt-1">Variedad de ingredientes de primera calidad sobre pan crujiente y tierno.</p>
+                            </div>
+                            <span class="font-bold text-veca-700 text-lg">⭐ Estrella</span>
+                        </div>
+
+                        <div class="flex justify-between items-start border-b border-dashed border-veca-200 pb-4">
+                            <div>
+                                <h4 class="font-bold text-veca-900 text-lg">Tostadas Dulces</h4>
+                                <p class="text-veca-700 text-sm mt-1">Opciones irresistibles para los amantes del contraste y el buen desayuno.</p>
+                            </div>
+                            <span class="font-bold text-veca-700 text-lg">Recomendado</span>
+                        </div>
+
+                        <div class="flex justify-between items-start pb-2">
+                            <div>
+                                <h4 class="font-bold text-veca-900 text-lg">Opciones para Celíacos</h4>
+                                <p class="text-veca-700 text-sm mt-1">Disponemos de alternativas seguras para intolerancias.</p>
+                            </div>
+                            <span class="font-bold text-emerald-700 text-sm bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">Sin Gluten</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Categoría 2: Repostería y Tartas Caseras -->
+                <div class="bg-white p-8 rounded-3xl border border-veca-200 shadow-sm space-y-6">
+                    <div class="flex items-center gap-4 border-b border-veca-200 pb-4">
+                        <div class="w-12 h-12 rounded-xl bg-veca-100 text-veca-800 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-cake-candles"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-serif font-bold text-veca-900">Tartas y Pasteles Caseros</h3>
+                            <p class="text-veca-600 text-sm">Grandes porciones para degustar a cualquier hora</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex justify-between items-start border-b border-dashed border-veca-200 pb-4">
+                            <div>
+                                <h4 class="font-bold text-veca-900 text-lg">Tartas Caseras Espectaculares</h4>
+                                <p class="text-veca-700 text-sm mt-1">Porciones generosas de repostería casera con un sabor inconfundible.</p>
+                            </div>
+                            <span class="font-bold text-veca-700 text-lg">Favorito</span>
+                        </div>
+
+                        <div class="flex justify-between items-start border-b border-dashed border-veca-200 pb-4">
+                            <div>
+                                <h4 class="font-bold text-veca-900 text-lg">Pasteles Variados</h4>
+                                <p class="text-veca-700 text-sm mt-1">Selección diaria para acompañar tu café o infusión favorita.</p>
+                            </div>
+                            <span class="font-bold text-veca-700 text-lg">Artesanal</span>
+                        </div>
+
+                        <div class="flex justify-between items-start pb-2">
+                            <div>
+                                <h4 class="font-bold text-veca-900 text-lg">Café y Bebidas</h4>
+                                <p class="text-veca-700 text-sm mt-1">Café preparado con esmero para acompañar tus momentos de pausa.</p>
+                            </div>
+                            <span class="font-bold text-veca-700 text-lg">Excelente precio</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Call to action block inside menu -->
+            <div class="mt-12 bg-veca-800 text-veca-cream rounded-3xl p-8 sm:p-12 text-center relative overflow-hidden shadow-xl">
+                <div class="absolute -right-10 -bottom-10 w-60 h-60 bg-veca-700 rounded-full opacity-55 filter blur-2xl"></div>
+                <div class="relative z-10 max-w-2xl mx-auto space-y-4">
+                    <h3 class="text-2xl sm:text-4xl font-serif font-bold">¿Listo para visitarnos en el Centro de Córdoba?</h3>
+                    <p class="text-veca-200 font-light text-sm sm:text-base">
+                        Ven a disfrutar de un gran ambiente y el mejor trato por parte de nuestro equipo. ¡Te esperamos!
+                    </p>
+                    <div class="pt-4">
+                        <a href="tel:957391221" class="inline-flex items-center gap-3 bg-white text-veca-900 font-bold px-8 py-4 rounded-full shadow-lg hover:bg-veca-50 transition-all text-base">
+                            <i class="fa-solid fa-phone text-veca-700"></i> Reservar Mesa (957391221)
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Galería / Instalaciones -->
+    <section id="experiencia" class="py-20 bg-veca-100/50 border-t border-veca-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+                <span class="text-veca-600 font-semibold text-sm tracking-widest uppercase">Nuestras Instalaciones y Trabajos</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-veca-950">Un espacio sencillo, agradable y cálido</h2>
+                <p class="text-veca-800 text-base">Un sitio donde apetece volver por su buen ambiente y atención cercana.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="overflow-hidden rounded-3xl shadow-lg border border-veca-200 group">
+                    <img src="https://scontent.flpa4-1.fna.fbcdn.net/v/t39.30808-1/299973479_499374342188320_5726699343849711590_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx958x960&amp;ctp=s720x720&amp;_nc_cat=109&amp;_nc_map=urlgen_bucketless&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=BcbyxRuCCT4Q7kNvwEI2Fba&amp;_nc_oc=AdqsKIGj0iuMiSSkqFXovxIt1z9c-6rLq6zGMo0WbJV9f4ohkx7IyqnMOOFOKxG3dXQ&amp;_nc_zt=24&amp;_nc_ht=scontent.flpa4-1.fna&amp;_nc_gid=_ikKXmgDKy1IMoYXGsKRyw&amp;_nc_ss=7a289&amp;oh=00_AQPiu-kBNv7nsQ0PMcp9sgzNeY1a8ktjj-luL3P0ZMHtZg&amp;oe=6AD5E090" 
+                         alt="Veca Café Córdoba Interior" 
+                         class="w-full h-80 sm:h-96 object-cover group-hover:scale-105 transition-transform duration-500"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+                </div>
+                <div class="overflow-hidden rounded-3xl shadow-lg border border-veca-200 group">
+                    <img src="https://scontent.flpa4-1.fna.fbcdn.net/v/t51.82787-15/768442191_18329673673258914_3884199863053731776_n.jpg?stp=dst-jpg_tt6&cstp=mx1405x1873&ctp=p526x296&_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=DYDiBcbfsVkQ7kNvwGZ0WOl&_nc_oc=AdoMMQdBSuD4HXAgg3pybRG2DohU_Y1Tbe_YxA-OxlS7w0_C05PIT_2uqSOdxl1BfeM&_nc_zt=23&_nc_ht=scontent.flpa4-1.fna&_nc_gid=sYl2EGS0lVFgYvI4HKW_Jg&_nc_ss=7a289&oh=00_AQNJBEnb4pjiV2ESbHjGF1m-zJjo0hpTFtD5M1hAUfy02Q&oe=6AD5CE04" 
+                         alt="Veca Café Córdoba Platos y Tartas" 
+                         class="w-full h-80 sm:h-96 object-cover group-hover:scale-105 transition-transform duration-500"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=80';">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Opiniones Reales Verificadas -->
+    <section id="opiniones" class="py-24 bg-veca-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-veca-600 font-semibold text-sm tracking-widest uppercase">Lo que dicen de nosotros</span>
+                <h2 class="text-3xl sm:text-5xl font-serif font-bold text-veca-950">Reseñas de Clientes</h2>
+                <p class="text-veca-800 text-base sm:text-lg">
+                    Transparencia y opiniones reales extraídas de Google Maps y portales especializados.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Reseña 1 -->
+                <div class="bg-white p-8 rounded-3xl border border-veca-200 shadow-sm flex flex-col justify-between space-y-6">
+                    <div class="space-y-4">
+                        <div class="flex text-amber-500 gap-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-veca-900 italic text-sm leading-relaxed">
+                            "Aunque a simple vista no es una cafetería especialmente llamativa, lo compensa con creces con sus tostadas: generosas, de buena calidad y con opciones dulces y saladas igual de buenas. El personal es muy joven, cercano y atento, lo que hace que la experiencia sea agradable, cálida y con buen ambiente. Un sitio sencillo al que apetece volver."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-veca-100">
+                        <div class="w-10 h-10 rounded-full bg-veca-200 font-bold font-serif text-veca-800 flex items-center justify-center">S</div>
+                        <div>
+                            <h4 class="font-bold text-veca-900 text-sm">Santander76</h4>
+                            <span class="text-xs text-veca-600">Cliente Verificado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 2 -->
+                <div class="bg-white p-8 rounded-3xl border border-veca-200 shadow-sm flex flex-col justify-between space-y-6">
+                    <div class="space-y-4">
+                        <div class="flex text-amber-500 gap-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+                        <p class="text-veca-900 italic text-sm leading-relaxed">
+                            "Buenísimo y excelente precio! Fuimos tres veces a desayunar en nuestro viaje! Lo recomiendo!"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-veca-100">
+                        <div class="w-10 h-10 rounded-full bg-veca-200 font-bold font-serif text-veca-800 flex items-center justify-center">A</div>
+                        <div>
+                            <h4 class="font-bold text-veca-900 text-sm">Ana</h4>
+                            <span class="text-xs text-veca-600">Cliente Verificado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 3 -->
+                <div class="bg-white p-8 rounded-3xl border border-veca-200 shadow-sm flex flex-col justify-between space-y-6">
+                    <div class="space-y-4">
+                        <div class="flex text-amber-500 gap-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-veca-900 italic text-sm leading-relaxed">
+                            "Viernes y sábado nos atendieron muy bien! A pesar de que había mucha gente fueron muy amables. Y hay opciones para celíacos."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-veca-100">
+                        <div class="w-10 h-10 rounded-full bg-veca-200 font-bold font-serif text-veca-800 flex items-center justify-center">R</div>
+                        <div>
+                            <h4 class="font-bold text-veca-900 text-sm">Romina Infantino</h4>
+                            <span class="text-xs text-veca-600">Cliente Verificado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 4 -->
+                <div class="bg-white p-8 rounded-3xl border border-veca-200 shadow-sm flex flex-col justify-between space-y-6 md:col-span-2 lg:col-span-3">
+                    <div class="max-w-3xl mx-auto text-center space-y-4">
+                        <div class="flex justify-center text-amber-500 gap-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-veca-900 italic text-base leading-relaxed">
+                            "Fuimos una familia de vacaciones y descubrimos esta espectacular cafetería con unos dulces y tartas caseras espectaculares. Un personal muy amable y grandes porciones para degustar. Totalmente recomendable y obligatoria parada."
+                        </p>
+                        <div class="pt-2">
+                            <h4 class="font-bold text-veca-900 text-base">David “Wallace”</h4>
+                            <span class="text-xs text-veca-600">Cliente Verificado</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa Interactivo y Contacto -->
+    <section id="contacto" class="py-24 bg-veca-100/60 border-t border-veca-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-veca-600 font-semibold text-sm tracking-widest uppercase">Encuéntranos fácilmente</span>
+                <h2 class="text-3xl sm:text-5xl font-serif font-bold text-veca-950">Visítanos en Córdoba</h2>
+                <p class="text-veca-800 text-base sm:text-lg">
+                    Estamos en pleno centro de la ciudad. Pásate a disfrutar o reserva tu mesa por teléfono.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Info Contacto -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div class="bg-white p-8 rounded-3xl border border-veca-200 shadow-sm space-y-6">
+                        <h3 class="text-2xl font-serif font-bold text-veca-900">Información del Local</h3>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-veca-100 text-veca-800 flex items-center justify-center shrink-0 text-lg mt-1">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-veca-900">Dirección</h4>
+                                <p class="text-veca-700 text-sm mt-0.5">C. Claudio Marcelo, 9, Centro, 14002 Córdoba</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-veca-100 text-veca-800 flex items-center justify-center shrink-0 text-lg mt-1">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-veca-900">Teléfono de Reservas</h4>
+                                <p class="text-veca-700 text-sm mt-0.5">957 39 12 21</p>
+                            </div>
+                        </div>
+
+                        <div class="pt-4">
+                            <a href="tel:957391221" class="w-full bg-veca-700 hover:bg-veca-800 text-white py-4 rounded-2xl font-semibold flex items-center justify-center gap-2 shadow transition-all text-center">
+                                <i class="fa-solid fa-phone"></i> Reservar Mesa Ahora
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mapa Interactivo -->
+                <div class="lg:col-span-7">
+                    <div class="bg-white p-4 rounded-3xl border border-veca-200 shadow-lg">
+                        <iframe src="https://www.google.com/maps?q=Veca%20Caf%C3%A9%20C.%20Claudio%20Marcelo%2C%209%2C%20Centro%2C%2014002%20C%C3%B3rdoba&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-veca-950 text-veca-cream py-16 border-t border-veca-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 items-center justify-between border-b border-veca-900 pb-12">
+                
+                <div class="space-y-3">
+                    <span class="text-3xl font-serif font-bold text-white">Veca Café</span>
+                    <p class="text-veca-300 text-sm max-w-sm">
+                        Cafetería acogedora en el corazón de Córdoba. Tostadas generosas, dulces y tartas caseras con un trato cercano.
+                    </p>
+                </div>
+
+                <div class="space-y-2 text-sm text-veca-300">
+                    <p><strong class="text-white">Dirección:</strong> C. Claudio Marcelo, 9, Centro, 14002 Córdoba</p>
+                    <p><strong class="text-white">Teléfono:</strong> <a href="tel:957391221" class="hover:text-white underline">957 39 12 21</a></p>
+                </div>
+
+                <div class="flex flex-col items-start md:items-end space-y-4">
+                    <a href="tel:957391221" class="bg-veca-600 hover:bg-veca-500 text-white px-6 py-3 rounded-full font-semibold text-sm transition-all shadow">
+                        <i class="fa-solid fa-phone mr-2"></i> Reservar Mesa
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-veca-400 gap-4">
+                <p>&copy; <span id="current-year"></span> Veca Café Córdoba. Todos los derechos reservados.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-white transition-colors">Aviso Legal</a>
+                    <a href="#" class="hover:text-white transition-colors">Política de Privacidad</a>
+                    <a href="#" class="hover:text-white transition-colors">Política de Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script para menú móvil y año -->
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
