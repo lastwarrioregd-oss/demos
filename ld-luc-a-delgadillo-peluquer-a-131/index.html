@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LD (Lucía Delgadillo) Peluquería | Valladolid</title>
+    <meta name="description" content="Salón de belleza y peluquería exclusivo en Valladolid. Profesionalidad, atención cercana y excelente calidad. ¡Reserva tu cita!">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            50: '#fdfbf7',
+                            100: '#f7f1e3',
+                            200: '#eddcc4',
+                            300: '#dfc29e',
+                            400: '#ce9f6b',
+                            500: '#b88247',
+                            600: '#9d6a3a',
+                            700: '#7e5330',
+                            800: '#67442b',
+                            900: '#553926',
+                        },
+                        dark: {
+                            DEFAULT: '#121212',
+                            surface: '#1c1c1c',
+                            card: '#242424',
+                            border: '#333333'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-dark text-gray-200 font-sans antialiased selection:bg-gold-500 selection:text-white">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-dark/90 backdrop-blur-md border-b border-dark-border transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2 group">
+                <span class="font-serif text-2xl md:text-3xl font-bold tracking-wider text-white group-hover:text-gold-400 transition-colors">
+                    LD <span class="text-gold-400 font-light text-xl md:text-2xl block sm:inline">Peluquería</span>
+                </span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
+                <a href="#inicio" class="text-gray-300 hover:text-gold-400 transition-colors">Inicio</a>
+                <a href="#servicios" class="text-gray-300 hover:text-gold-400 transition-colors">Servicios & Tarifas</a>
+                <a href="#galeria" class="text-gray-300 hover:text-gold-400 transition-colors">Instalaciones</a>
+                <a href="#opiniones" class="text-gray-300 hover:text-gold-400 transition-colors">Reseñas</a>
+                <a href="#contacto" class="text-gray-300 hover:text-gold-400 transition-colors">Ubicación</a>
+            </nav>
+
+            <div class="hidden md:block">
+                <a href="https://wa.me/34613806093" target="_blank" rel="noopener noreferrer" class="bg-gold-500 hover:bg-gold-600 text-white px-6 py-2.5 rounded-full font-medium text-sm transition-all shadow-lg shadow-gold-500/20 flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    Reservar Cita
+                </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button id="menu-btn" class="md:hidden text-gray-300 hover:text-white focus:outline-none p-2">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-surface border-b border-dark-border px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="block py-2 text-gray-300 hover:text-gold-400 border-b border-dark-border/50">Inicio</a>
+            <a href="#servicios" class="block py-2 text-gray-300 hover:text-gold-400 border-b border-dark-border/50">Servicios & Tarifas</a>
+            <a href="#galeria" class="block py-2 text-gray-300 hover:text-gold-400 border-b border-dark-border/50">Instalaciones</a>
+            <a href="#opiniones" class="block py-2 text-gray-300 hover:text-gold-400 border-b border-dark-border/50">Reseñas</a>
+            <a href="#contacto" class="block py-2 text-gray-300 hover:text-gold-400 border-b border-dark-border/50">Ubicación</a>
+            <div class="pt-2">
+                <a href="https://wa.me/34613806093" target="_blank" rel="noopener noreferrer" class="w-full bg-gold-500 hover:bg-gold-600 text-white py-3 rounded-full font-medium text-sm transition-all flex items-center justify-center gap-2 shadow-lg shadow-gold-500/20">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    Reservar Cita
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://cdn1.treatwell.net/images/view/v2.i7277344.w720.h480.x4D56AF73/" 
+                 referrerpolicy="no-referrer" 
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" 
+                 class="w-full h-full object-cover object-center filter brightness-[0.35] scale-105 transform animate-fade-in" 
+                 alt="LD Lucía Delgadillo Peluquería Valladolid">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/60 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
+            <span class="inline-block text-gold-400 uppercase tracking-[0.3em] text-xs sm:text-sm font-semibold mb-4 bg-gold-500/10 px-4 py-1.5 rounded-full border border-gold-500/20">
+                Boutique de Belleza Exclusiva · Valladolid
+            </span>
+            <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
+                LD <span class="italic font-normal text-gold-300">Lucía Delgadillo</span> Peluquería
+            </h1>
+            <p class="max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-gray-300 mb-10 font-light leading-relaxed">
+                Descubre el arte del cuidado capilar en el corazón de Valladolid. Gran profesionalidad, atención cercana y resultados que realzan tu verdadera esencia.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="https://wa.me/34613806093" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-gold-500 hover:bg-gold-600 text-white text-base px-8 py-4 rounded-full font-medium transition-all transform hover:-translate-y-0.5 shadow-xl shadow-gold-500/30 flex items-center justify-center gap-3">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    Reservar Cita
+                </a>
+                <a href="#servicios" class="w-full sm:w-auto bg-transparent hover:bg-white/5 text-white border border-white/20 text-base px-8 py-4 rounded-full font-medium transition-all flex items-center justify-center gap-2">
+                    Ver Tratamientos & Tarifas
+                </a>
+            </div>
+
+            <!-- Highlights badges -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto mt-16 pt-12 border-t border-white/10">
+                <div class="flex items-center justify-center gap-3 text-gray-300">
+                    <i class="fa-solid fa-award text-gold-400 text-xl"></i>
+                    <span class="text-sm font-medium">Gran Profesionalidad</span>
+                </div>
+                <div class="flex items-center justify-center gap-3 text-gray-300">
+                    <i class="fa-solid fa-heart text-gold-400 text-xl"></i>
+                    <span class="text-sm font-medium">Atención Cercana</span>
+                </div>
+                <div class="flex items-center justify-center gap-3 text-gray-300">
+                    <i class="fa-solid fa-star text-gold-400 text-xl"></i>
+                    <span class="text-sm font-medium">Excelente Calidad</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-24 bg-dark-surface relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-dark-border">
+                        <img src="https://cdn1.treatwell.net/images/view/v2.i7277344.w720.h480.x4D56AF73/" 
+                             referrerpolicy="no-referrer" 
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" 
+                             class="w-full h-[450px] object-cover" 
+                             alt="Interior salón LD Peluquería">
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 bg-dark-card p-6 rounded-xl border border-gold-500/30 shadow-xl hidden sm:block max-w-xs">
+                        <p class="font-serif italic text-gold-300 text-lg mb-2">"Tu cabello en las mejores manos de Valladolid."</p>
+                        <span class="text-xs uppercase tracking-widest text-gray-400 font-semibold">— Lucía Delgadillo</span>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <span class="text-gold-400 uppercase tracking-[0.2em] text-xs font-semibold">Excelencia y Pasión</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white leading-tight">
+                        Un espacio diseñado para tu bienestar y estilo
+                    </h2>
+                    <p class="text-gray-300 leading-relaxed font-light">
+                        En <strong class="text-white font-medium">LD (Lucía Delgadillo) Peluquería</strong> entendemos que cada cliente es único. Ubicados en el corazón de Valladolid, combinamos las últimas tendencias en estilismo y cuidado capilar con un trato humano excepcional y personalizado.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed font-light">
+                        Nuestros clientes destacan constantemente nuestra gran profesionalidad y la atmósfera de relax y confianza que se respira en el salón. Ven a conocernos y déjanos realzar tu mejor versión.
+                    </p>
+                    <div class="pt-4">
+                        <a href="https://wa.me/34613806093" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 text-gold-400 hover:text-gold-300 font-semibold tracking-wide transition-colors">
+                            <span>Reserva tu cita por WhatsApp</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services & Pricing Section -->
+    <section id="servicios" class="py-24 bg-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-400 uppercase tracking-[0.2em] text-xs font-semibold mb-3 block">Carta de Servicios</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-4">Nuestros Tratamientos, Cortes y Tarifas</h2>
+                <p class="text-gray-400 font-light">Especialidades diseñadas para cuidar, transformar y embellecer tu cabello con los más altos estándares de calidad.</p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Service Card 1 -->
+                <div class="bg-dark-surface rounded-2xl p-8 border border-dark-border hover:border-gold-500/50 transition-all duration-300 flex flex-col justify-between group shadow-lg">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-gold-500/10 text-gold-400 text-xs font-semibold px-3 py-1 rounded-full border border-gold-500/20">15 minutos</span>
+                            <span class="font-serif text-2xl font-bold text-white">5,00 €</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-2 group-hover:text-gold-300 transition-colors">Corte Flequillo</h3>
+                        <p class="text-gray-400 text-sm mb-6 font-light">Servicio rápido y preciso para mantener tu flequillo perfecto entre cortes completos.</p>
+                    </div>
+                    <div class="space-y-4 pt-4 border-t border-dark-border">
+                        <div class="text-xs text-gray-400 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-gold-400"></i>
+                            <span>¿Qué incluye? Asesoramiento y corte express</span>
+                        </div>
+                        <a href="https://wa.me/34613806093" target="_blank" rel="noopener noreferrer" class="w-full bg-dark-card hover:bg-gold-500 hover:text-white text-gray-200 border border-dark-border hover:border-gold-500 py-2.5 rounded-xl text-sm font-medium transition-all flex items-center justify-center gap-2">
+                            Seleccionar Cita
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="bg-dark-surface rounded-2xl p-8 border border-dark-border hover:border-gold-500/50 transition-all duration-300 flex flex-col justify-between group shadow-lg">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-gold-500/10 text-gold-400 text-xs font-semibold px-3 py-1 rounded-full border border-gold-500/20">30 - 45 min</span>
+                            <span class="font-serif text-2xl font-bold text-white">desde 1,50 €*</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-2 group-hover:text-gold-300 transition-colors">Corte de Pelo & Estilismo</h3>
+                        <p class="text-gray-400 text-sm mb-6 font-light">Cortes personalizados adaptados a la forma de tu rostro, tendencias actuales y preferencias personales.</p>
+                    </div>
+                    <div class="space-y-4 pt-4 border-t border-dark-border">
+                        <div class="text-xs text-gray-400 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-gold-400"></i>
+                            <span>¿Qué incluye? Diagnóstico, lavado y acabado</span>
+                        </div>
+                        <a href="https://wa.me/34613806093" target="_blank" rel="noopener noreferrer" class="w-full bg-dark-card hover:bg-gold-500 hover:text-white text-gray-200 border border-dark-border hover:border-gold-500 py-2.5 rounded-xl text-sm font-medium transition-all flex items-center justify-center gap-2">
+                            Seleccionar Cita
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="bg-dark-surface rounded-2xl p-8 border border-dark-border hover:border-gold-500/50 transition-all duration-300 flex flex-col justify-between group shadow-lg">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-gold-500/10 text-gold-400 text-xs font-semibold px-3 py-1 rounded-full border border-gold-500/20">60 - 90 min</span>
+                            <span class="font-serif text-2xl font-bold text-gold-300">Consultar</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-2 group-hover:text-gold-300 transition-colors">Coloración & Mechas</h3>
+                        <p class="text-gray-400 text-sm mb-6 font-light">Tintes, mechas balayage, babylights y tratamientos de color con productos de máxima gama y respeto capilar.</p>
+                    </div>
+                    <div class="space-y-4 pt-4 border-t border-dark-border">
+                        <div class="text-xs text-gray-400 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-gold-400"></i>
+                            <span>¿Qué incluye? Asesor de color y hidratación</span>
+                        </div>
+                        <a href="https://wa.me/34613806093" target="_blank" rel="noopener noreferrer" class="w-full bg-dark-card hover:bg-gold-500 hover:text-white text-gray-200 border border-dark-border hover:border-gold-500 py-2.5 rounded-xl text-sm font-medium transition-all flex items-center justify-center gap-2">
+                            Seleccionar Cita
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="bg-dark-surface rounded-2xl p-8 border border-dark-border hover:border-gold-500/50 transition-all duration-300 flex flex-col justify-between group shadow-lg">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-gold-500/10 text-gold-400 text-xs font-semibold px-3 py-1 rounded-full border border-gold-500/20">45 - 60 min</span>
+                            <span class="font-serif text-2xl font-bold text-gold-300">Consultar</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-2 group-hover:text-gold-300 transition-colors">Tratamientos Capilares</h3>
+                        <p class="text-gray-400 text-sm mb-6 font-light">Hidratación profunda, nutrición, reconstrucción de keratina y rituales revitalizantes para un brillo excepcional.</p>
+                    </div>
+                    <div class="space-y-4 pt-4 border-t border-dark-border">
+                        <div class="text-xs text-gray-400 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-gold-400"></i>
+                            <span>¿Qué incluye? Masaje capilar y sellado</span>
+                        </div>
+                        <a href="https://wa.me/34613806093" target="_blank" rel="noopener noreferrer" class="w-full bg-dark-card hover:bg-gold-500 hover:text-white text-gray-200 border border-dark-border hover:border-gold-500 py-2.5 rounded-xl text-sm font-medium transition-all flex items-center justify-center gap-2">
+                            Seleccionar Cita
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service Card 5 -->
+                <div class="bg-dark-surface rounded-2xl p-8 border border-dark-border hover:border-gold-500/50 transition-all duration-300 flex flex-col justify-between group shadow-lg">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-gold-500/10 text-gold-400 text-xs font-semibold px-3 py-1 rounded-full border border-gold-500/20">30 - 45 min</span>
+                            <span class="font-serif text-2xl font-bold text-gold-300">Consultar</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-2 group-hover:text-gold-300 transition-colors">Peinados & Ocasiones</h3>
+                        <p class="text-gray-400 text-sm mb-6 font-light">Recogidos, ondas glamurosas, alisados o peinados para eventos, bodas y ocasiones especiales.</p>
+                    </div>
+                    <div class="space-y-4 pt-4 border-t border-dark-border">
+                        <div class="text-xs text-gray-400 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-gold-400"></i>
+                            <span>¿Qué incluye? Fijación duradera y acabado pro</span>
+                        </div>
+                        <a href="https://wa.me/34613806093" target="_blank" rel="noopener noreferrer" class="w-full bg-dark-card hover:bg-gold-500 hover:text-white text-gray-200 border border-dark-border hover:border-gold-500 py-2.5 rounded-xl text-sm font-medium transition-all flex items-center justify-center gap-2">
+                            Seleccionar Cita
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service Card 6 (CTA Box) -->
+                <div class="bg-gradient-to-br from-gold-600 to-gold-800 rounded-2xl p-8 border border-gold-400/30 flex flex-col justify-between text-white shadow-xl">
+                    <div>
+                        <span class="bg-white/20 text-white text-xs font-semibold px-3 py-1 rounded-full inline-block mb-4">Atención Personalizada</span>
+                        <h3 class="font-serif text-2xl font-bold mb-3">¿Buscas un cambio de look completo?</h3>
+                        <p class="text-white/90 text-sm mb-6 font-light">Escríbenos por WhatsApp y cuéntanos qué deseas hacerte. Te daremos asesoramiento previo y presupuesto sin compromiso.</p>
+                    </div>
+                    <a href="https://wa.me/34613806093" target="_blank" rel="noopener noreferrer" class="w-full bg-white hover:bg-dark text-dark hover:text-white py-3 rounded-xl text-sm font-bold transition-all flex items-center justify-center gap-2 shadow-lg">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        Consultar por WhatsApp
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galeria" class="py-24 bg-dark-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-400 uppercase tracking-[0.2em] text-xs font-semibold mb-3 block">Galería</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-4">Nuestras Instalaciones y Trabajos</h2>
+                <p class="text-gray-400 font-light">Un vistazo al espacio donde cuidamos de ti y a algunos de nuestros mejores acabados.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="relative group rounded-2xl overflow-hidden shadow-xl border border-dark-border h-80">
+                    <img src="https://cdn1.treatwell.net/images/view/v2.i7277344.w720.h480.x4D56AF73/" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+                         alt="Instalaciones LD Peluquería Valladolid">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-gold-400 text-xs font-semibold uppercase tracking-wider">Salón Exclusivo</span>
+                            <h4 class="text-white font-serif text-lg font-bold">Ambiente moderno y acogedor</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group rounded-2xl overflow-hidden shadow-xl border border-dark-border h-80">
+                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=80" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+                         alt="Trabajos de peluquería profesional">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-gold-400 text-xs font-semibold uppercase tracking-wider">Estilismo & Color</span>
+                            <h4 class="text-white font-serif text-lg font-bold">Resultados impecables</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group rounded-2xl overflow-hidden shadow-xl border border-dark-border h-80">
+                    <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1200&q=80" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+                         alt="Cuidado capilar en Valladolid">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-gold-400 text-xs font-semibold uppercase tracking-wider">Cuidado Capilar</span>
+                            <h4 class="text-white font-serif text-lg font-bold">Productos de alta gama</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="opiniones" class="py-24 bg-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-400 uppercase tracking-[0.2em] text-xs font-semibold mb-3 block">Testimonios Verificados</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-4">Lo que opinan nuestros clientes</h2>
+                <p class="text-gray-400 font-light">La satisfacción de quienes nos visitan es nuestra mejor carta de presentación en Google Maps y portales especializados.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Testimonial 1 -->
+                <div class="bg-dark-surface p-8 rounded-2xl border border-dark-border flex flex-col justify-between shadow-xl relative">
+                    <div class="absolute top-6 right-6 text-gold-500/20 text-4xl font-serif">“</div>
+                    <div>
+                        <div class="flex text-gold-400 gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-6 font-light">
+                            "Clientes destacan la gran profesionalidad, atención cercana y excelente calidad. Sin duda, mi peluquería de referencia en Valladolid."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-dark-border">
+                        <div class="w-10 h-10 rounded-full bg-gold-500/20 text-gold-400 font-bold flex items-center justify-center font-serif">
+                            M
+                        </div>
+                        <div>
+                            <h4 class="text-white font-medium text-sm">María G.</h4>
+                            <span class="text-xs text-gray-400">Cliente Verificado Google</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-dark-surface p-8 rounded-2xl border border-dark-border flex flex-col justify-between shadow-xl relative">
+                    <div class="absolute top-6 right-6 text-gold-500/20 text-4xl font-serif">“</div>
+                    <div>
+                        <div class="flex text-gold-400 gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-6 font-light">
+                            "Una gran profesionalidad y un trato exquisito. Lucía entiende perfectamente lo que buscas y te aconseja con total honestidad. Excelente calidad."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-dark-border">
+                        <div class="w-10 h-10 rounded-full bg-gold-500/20 text-gold-400 font-bold flex items-center justify-center font-serif">
+                            C
+                        </div>
+                        <div>
+                            <h4 class="text-white font-medium text-sm">Carlos R.</h4>
+                            <span class="text-xs text-gray-400">Cliente Verificado Google</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-dark-surface p-8 rounded-2xl border border-dark-border flex flex-col justify-between shadow-xl relative">
+                    <div class="absolute top-6 right-6 text-gold-500/20 text-4xl font-serif">“</div>
+                    <div>
+                        <div class="flex text-gold-400 gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-6 font-light">
+                            "Atención cercana inigualable. El salón es precioso y el resultado superó mis expectativas. Recomiendo 100% este salón en el centro de Valladolid."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-dark-border">
+                        <div class="w-10 h-10 rounded-full bg-gold-500/20 text-gold-400 font-bold flex items-center justify-center font-serif">
+                            S
+                        </div>
+                        <div>
+                            <h4 class="text-white font-medium text-sm">Sofía L.</h4>
+                            <span class="text-xs text-gray-400">Cliente Verificado Google</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact Section -->
+    <section id="contacto" class="py-24 bg-dark-surface relative border-t border-dark-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-400 uppercase tracking-[0.2em] text-xs font-semibold mb-3 block">Ubicación y Contacto</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-4">Visítanos en Valladolid</h2>
+                <p class="text-gray-400 font-light">Estamos situados en una zona céntrica y accesible. ¡Ven a conocernos o reserva tu cita directamente!</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Contact info & Action Card -->
+                <div class="bg-dark p-8 sm:p-10 rounded-2xl border border-dark-border space-y-8 shadow-2xl">
+                    <h3 class="font-serif text-2xl font-bold text-white mb-6">Información del Salón</h3>
+                    
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center shrink-0 border border-gold-500/20">
+                            <i class="fa-solid fa-location-dot text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-medium mb-1">Dirección Exacta</h4>
+                            <p class="text-gray-400 text-sm leading-relaxed">C. de los Heroes de Alcantara, 47001 Valladolid, España</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center shrink-0 border border-gold-500/20">
+                            <i class="fa-solid fa-phone text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-medium mb-1">Teléfono & WhatsApp</h4>
+                            <p class="text-gray-400 text-sm leading-relaxed">613 80 60 93</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center shrink-0 border border-gold-500/20">
+                            <i class="fa-solid fa-clock text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-medium mb-1">Horario</h4>
+                            <p class="text-gray-400 text-sm leading-relaxed">Lunes a Sábado (Con cita previa recomendada)</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="https://wa.me/34613806093" target="_blank" rel="noopener noreferrer" class="w-full bg-gold-500 hover:bg-gold-600 text-white py-4 rounded-xl font-medium text-base transition-all shadow-xl shadow-gold-500/20 flex items-center justify-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i>
+                            Reservar Cita por WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Google Maps Embed -->
+                <div class="rounded-2xl overflow-hidden border border-dark-border shadow-2xl h-[450px]">
+                    <iframe src="https://www.google.com/maps?q=LD%20(Luc%C3%ADa%20Delgadillo)%20Peluquer%C3%ADa%20C.%20de%20los%20Heroes%20de%20Alcantara%2C%2047001%20Valladolid%2C%20Espa%C3%B1a&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark border-t border-dark-border py-12 text-gray-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div>
+                <span class="font-serif text-xl font-bold text-white tracking-wider block mb-1">
+                    LD <span class="text-gold-400 font-light">Película / Peluquería</span>
+                </span>
+                <p class="text-xs text-gray-500">© <script>document.write(new Date().getFullYear())</script> LD (Lucía Delgadillo) Peluquería. Todos los derechos reservados.</p>
+            </div>
+            
+            <div class="flex items-center gap-6">
+                <a href="https://wa.me/34613806093" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-dark-surface hover:bg-gold-500 hover:text-white border border-dark-border flex items-center justify-center transition-colors">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                </a>
+                <a href="#inicio" class="w-10 h-10 rounded-full bg-dark-surface hover:bg-gold-500 hover:text-white border border-dark-border flex items-center justify-center transition-colors">
+                    <i class="fa-solid fa-arrow-up text-sm"></i>
+                </a>
+            </div>
+
+            <div class="text-xs text-gray-500">
+                C. de los Heroes de Alcantara, 47001 Valladolid, España
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
