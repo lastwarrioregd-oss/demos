@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique del Pan Feliseda | Panadería Artesana y Exclusiva en Rascafría</title>
+    <meta name="description" content="Descubre la Boutique del Pan Feliseda en Rascafría. Pan artesanal de masa madre, repostería fina y una experiencia gourmet única en la sierra de Madrid.">
+    
+    <!-- TailwindCSS v3 CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        matte: '#121212',
+                        darksurface: '#1A1A1A',
+                        cardbg: '#242424',
+                        gold: {
+                            light: '#E6C594',
+                            DEFAULT: '#D4AF37',
+                            dark: '#AA8C2C'
+                        },
+                        sand: '#F5F2EB'
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-matte text-sand font-sans antialiased selection:bg-gold selection:text-matte">
+
+    <!-- Top Bar -->
+    <div class="bg-darksurface border-b border-gold/20 py-2 px-4 text-xs text-gold-light/80">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <span><i class="fa-solid fa-location-dot text-gold mr-1"></i> C. de la Corrala, 4, 28740 Rascafría, Madrid</span>
+                <span class="hidden md:inline"><i class="fa-solid fa-clock text-gold mr-1"></i> Mar - Dom: 8:30 - 15:00</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="tel:919957000" class="hover:text-gold transition-colors"><i class="fa-solid fa-phone text-gold mr-1"></i> 919 95 70 00</a>
+                <a href="mailto:error-lite+84f2@duckduckgo.com" class="hover:text-gold transition-colors"><i class="fa-solid fa-envelope text-gold mr-1"></i> Contacto</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-matte/95 backdrop-blur-md border-b border-gold/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full border border-gold flex items-center justify-center bg-darksurface">
+                    <i class="fa-solid fa-wheat-awn text-gold text-lg"></i>
+                </div>
+                <div>
+                    <span class="font-serif text-xl sm:text-2xl font-bold tracking-wider text-sand">FELISEDA</span>
+                    <span class="block text-[10px] tracking-widest text-gold uppercase">Boutique del Pan</span>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
+                <a href="#inicio" class="text-gold transition-colors">Inicio</a>
+                <a href="#experiencia" class="hover:text-gold transition-colors">La Boutique</a>
+                <a href="#carta" class="hover:text-gold transition-colors">Especialidades</a>
+                <a href="#galeria" class="hover:text-gold transition-colors">Instalaciones</a>
+                <a href="#opiniones" class="hover:text-gold transition-colors">Reseñas</a>
+                <a href="#contacto" class="hover:text-gold transition-colors">Ubicación</a>
+            </nav>
+
+            <div class="hidden lg:block">
+                <a href="tel:919957000" class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-gold-dark via-gold to-gold-light text-matte font-semibold text-sm hover:opacity-95 transition-all shadow-lg shadow-gold/20">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    Reservar Cita
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-gold text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-darksurface border-b border-gold/20 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="block text-gold py-2">Inicio</a>
+            <a href="#experiencia" class="block hover:text-gold py-2">La Boutique</a>
+            <a href="#carta" class="block hover:text-gold py-2">Especialidades</a>
+            <a href="#galeria" class="block hover:text-gold py-2">Instalaciones</a>
+            <a href="#opiniones" class="block hover:text-gold py-2">Reseñas</a>
+            <a href="#contacto" class="block hover:text-gold py-2">Ubicación</a>
+            <div class="pt-2">
+                <a href="tel:919957000" class="block text-center w-full py-3 rounded-full bg-gold text-matte font-semibold text-sm">
+                    Reservar Cita
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-20">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1920&q=80';" alt="Boutique del Pan Feliseda" class="w-full h-full object-cover object-center filter brightness-50">
+            <div class="absolute inset-0 bg-gradient-to-t from-matte via-matte/70 to-matte/30"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-darksurface/80 border border-gold/30 text-gold-light text-xs font-medium tracking-widest uppercase mb-6 backdrop-blur-sm">
+                <i class="fa-solid fa-star text-gold text-[10px]"></i> Alta Panadería Artesana en Rascafría
+            </div>
+            
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-sand mb-6">
+                El Arte de la <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-light via-gold to-gold-dark italic">Masa Madre</span>
+            </h1>
+            
+            <p class="max-w-2xl mx-auto text-base sm:text-lg text-sand/80 font-light mb-10 leading-relaxed">
+                Bienvenido a Feliseda. Un concepto exclusivo donde la tradición panadera se une al lujo minimalista en el corazón de la sierra madrileña. Calidad suprema y dedicación en cada pieza.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="tel:919957000" class="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-gold-dark via-gold to-gold-light text-matte font-bold text-base hover:scale-105 transition-all shadow-xl shadow-gold/20 flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-calendar-check text-lg"></i>
+                    Reservar Cita
+                </a>
+                <a href="#carta" class="w-full sm:w-auto px-8 py-4 rounded-full bg-darksurface/80 border border-gold/40 text-sand font-medium text-base hover:bg-gold/10 transition-all backdrop-blur-sm flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-book-open text-gold"></i>
+                    Ver Especialidades
+                </a>
+            </div>
+
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-3 gap-6 max-w-3xl mx-auto pt-8 border-t border-gold/10 text-center">
+                <div>
+                    <span class="block font-serif text-3xl font-bold text-gold">100%</span>
+                    <span class="text-xs tracking-wider text-sand/60 uppercase">Artesanal y Natural</span>
+                </div>
+                <div>
+                    <span class="block font-serif text-3xl font-bold text-gold">5.0</span>
+                    <span class="text-xs tracking-wider text-sand/60 uppercase">Excelencia Valorada</span>
+                </div>
+                <div class="col-span-2 md:col-span-1">
+                    <span class="block font-serif text-3xl font-bold text-gold">Rascafría</span>
+                    <span class="text-xs tracking-wider text-sand/60 uppercase">Madrid, España</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience / About Section -->
+    <section id="experiencia" class="py-24 bg-darksurface relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div class="relative">
+                    <div class="relative z-10 rounded-2xl overflow-hidden border border-gold/30 shadow-2xl">
+                        <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=1000&q=80';" alt="Interior Boutique Feliseda" class="w-full h-[450px] object-cover">
+                    </div>
+                    <!-- Decorative element -->
+                    <div class="absolute -bottom-6 -right-6 w-48 h-48 bg-gold/10 rounded-2xl -z-0 border border-gold/20 hidden sm:block"></div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="inline-flex items-center gap-2 text-gold text-xs font-semibold tracking-widest uppercase">
+                        <i class="fa-solid fa-gem"></i> Experiencia Exclusiva
+                    </div>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-sand leading-tight">
+                        Un santuario del buen hacer y la exquisitez en Rascafría
+                    </h2>
+                    <p class="text-sand/80 font-light leading-relaxed">
+                        En <strong class="text-gold font-medium">Boutique del Pan Feliseda</strong> entendemos la panadería como una alta disciplina artística. Cuidamos cada detalle, desde la selección de harinas de molino de piedra hasta el reposo exacto de nuestras masas madre.
+                    </p>
+                    <p class="text-sand/80 font-light leading-relaxed">
+                        Nuestros clientes destacan nuestro excelente trato, profesionalidad y calidad inigualable. Cada visita se convierte en un ritual de aromas, texturas y sabores diseñados para los paladares más exigentes.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4 pt-4">
+                        <div class="p-4 rounded-xl bg-cardbg border border-gold/10">
+                            <i class="fa-solid fa-wheat-awn text-gold text-xl mb-2"></i>
+                            <h4 class="font-bold text-sand text-sm mb-1">Masas Madre Vivas</h4>
+                            <p class="text-xs text-sand/60">Larga fermentación para una digestión perfecta.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-cardbg border border-gold/10">
+                            <i class="fa-solid fa-award text-gold text-xl mb-2"></i>
+                            <h4 class="font-bold text-sand text-sm mb-1">Atención Boutique</h4>
+                            <p class="text-xs text-sand/60">Asesoramiento personalizado y trato exquisito.</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="tel:919957000" class="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-gold text-matte font-bold text-sm hover:bg-gold-light transition-all shadow-md shadow-gold/20">
+                            <i class="fa-solid fa-calendar-check"></i> Reservar Cita / Encargo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu / Services Section -->
+    <section id="carta" class="py-24 bg-matte relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold text-xs font-semibold tracking-widest uppercase block mb-3">
+                    <i class="fa-solid fa-utensils"></i> Alta Panadería y Repostería
+                </span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-sand mb-4">
+                    Nuestras Especialidades y Tarifas
+                </h2>
+                <p class="text-sand/70 font-light text-sm sm:text-base">
+                    Una cuidada selección elaborada cada madrugada en nuestro obrador de Rascafría con ingredientes 100% naturales.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Item 1 -->
+                <div class="bg-darksurface rounded-2xl p-6 border border-gold/20 hover:border-gold transition-all group flex flex-col justify-between shadow-xl">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-cardbg border border-gold/30 flex items-center justify-center text-gold group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-bread-slice text-xl"></i>
+                            </div>
+                            <span class="font-serif text-lg font-bold text-gold">4,50 €</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-sand mb-2">Pan de Masa Madre Feliseda</h3>
+                        <p class="text-xs text-sand/70 font-light leading-relaxed mb-6">
+                            Nuestra pieza insignia. Harina de trigo ecológica, larga fermentación de 24 horas, corteza crujiente y miga alveolada.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-gold/10 flex items-center justify-between">
+                        <span class="text-[11px] text-gold-light uppercase tracking-wider"><i class="fa-solid fa-circle-check text-gold mr-1"></i> Disponible diario</span>
+                        <a href="tel:919957000" class="text-xs font-semibold text-gold hover:underline flex items-center gap-1">Reservar <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="bg-darksurface rounded-2xl p-6 border border-gold/20 hover:border-gold transition-all group flex flex-col justify-between shadow-xl">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-cardbg border border-gold/30 flex items-center justify-center text-gold group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-seedling text-xl"></i>
+                            </div>
+                            <span class="font-serif text-lg font-bold text-gold">5,20 €</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-sand mb-2">Hogaza de Espelta Integral</h3>
+                        <p class="text-xs text-sand/70 font-light leading-relaxed mb-6">
+                            100% espelta integral de grano entero. Alto valor nutricional, sabor rústico inconfundible y textura densa y tierna.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-gold/10 flex items-center justify-between">
+                        <span class="text-[11px] text-gold-light uppercase tracking-wider"><i class="fa-solid fa-circle-check text-gold mr-1"></i> Alta demanda</span>
+                        <a href="tel:919957000" class="text-xs font-semibold text-gold hover:underline flex items-center gap-1">Reservar <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="bg-darksurface rounded-2xl p-6 border border-gold/20 hover:border-gold transition-all group flex flex-col justify-between shadow-xl">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-cardbg border border-gold/30 flex items-center justify-center text-gold group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-cookie-bite text-xl"></i>
+                            </div>
+                            <span class="font-serif text-lg font-bold text-gold">2,80 €</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-sand mb-2">Croissant de Mantequilla</h3>
+                        <p class="text-xs text-sand/70 font-light leading-relaxed mb-6">
+                            Elaborado con auténtica mantequilla artesana con denominación de origen. Hojaldre fino, crujiente y de alveolado perfecto.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-gold/10 flex items-center justify-between">
+                        <span class="text-[11px] text-gold-light uppercase tracking-wider"><i class="fa-solid fa-circle-check text-gold mr-1"></i> Recién horneado</span>
+                        <a href="tel:919957000" class="text-xs font-semibold text-gold hover:underline flex items-center gap-1">Reservar <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="bg-darksurface rounded-2xl p-6 border border-gold/20 hover:border-gold transition-all group flex flex-col justify-between shadow-xl">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-cardbg border border-gold/30 flex items-center justify-center text-gold group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-cake-candles text-xl"></i>
+                            </div>
+                            <span class="font-serif text-lg font-bold text-gold">24,00 €</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-sand mb-2">Tarta de Manzana Artesana</h3>
+                        <p class="text-xs text-sand/70 font-light leading-relaxed mb-6">
+                            Base de masa quebrada crujiente, crema pastelera suave de vainilla natural y finas láminas de manzana de sierra caramelizadas.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-gold/10 flex items-center justify-between">
+                        <span class="text-[11px] text-gold-light uppercase tracking-wider"><i class="fa-solid fa-circle-check text-gold mr-1"></i> Por encargo</span>
+                        <a href="tel:919957000" class="text-xs font-semibold text-gold hover:underline flex items-center gap-1">Reservar <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="bg-darksurface rounded-2xl p-6 border border-gold/20 hover:border-gold transition-all group flex flex-col justify-between shadow-xl">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-cardbg border border-gold/30 flex items-center justify-center text-gold group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-mug-hot text-xl"></i>
+                            </div>
+                            <span class="font-serif text-lg font-bold text-gold">3,50 €</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-sand mb-2">Brioche de Aove y Azahar</h3>
+                        <p class="text-xs text-sand/70 font-light leading-relaxed mb-6">
+                            Esponjoso brioche elaborado con aceite de oliva virgen extra y sutil toque de agua de azahar. Una delicia aromática única.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-gold/10 flex items-center justify-between">
+                        <span class="text-[11px] text-gold-light uppercase tracking-wider"><i class="fa-solid fa-circle-check text-gold mr-1"></i> Edición limitada</span>
+                        <a href="tel:919957000" class="text-xs font-semibold text-gold hover:underline flex items-center gap-1">Reservar <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="bg-darksurface rounded-2xl p-6 border border-gold/20 hover:border-gold transition-all group flex flex-col justify-between shadow-xl">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-cardbg border border-gold/30 flex items-center justify-center text-gold group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-basket-shopping text-xl"></i>
+                            </div>
+                            <span class="font-serif text-lg font-bold text-gold">18,50 €</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-sand mb-2">Cesta Degustación Sierra</h3>
+                        <p class="text-xs text-sand/70 font-light leading-relaxed mb-6">
+                            Selección gourmet que incluye pan de masa madre, hogaza de centeno, dos piezas de bollería fina y mermelada artesana local.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-gold/10 flex items-center justify-between">
+                        <span class="text-[11px] text-gold-light uppercase tracking-wider"><i class="fa-solid fa-circle-check text-gold mr-1"></i> Ideal regalo</span>
+                        <a href="tel:919957000" class="text-xs font-semibold text-gold hover:underline flex items-center gap-1">Reservar <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to action inside menu -->
+            <div class="mt-16 text-center">
+                <a href="tel:919957000" class="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-gradient-to-r from-gold-dark via-gold to-gold-light text-matte font-bold text-base hover:scale-105 transition-all shadow-xl shadow-gold/20">
+                    <i class="fa-solid fa-calendar-check text-lg"></i>
+                    Reservar Cita y Pedidos por Teléfono
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galeria" class="py-24 bg-darksurface relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold text-xs font-semibold tracking-widest uppercase block mb-3">
+                    <i class="fa-solid fa-camera"></i> Galería Visual
+                </span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-sand mb-4">
+                    Nuestras Instalaciones y Trabajos
+                </h2>
+                <p class="text-sand/70 font-light text-sm sm:text-base">
+                    Un vistazo al interior de nuestra boutique en Rascafría y al cuidado proceso artesanal de nuestros productos.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group relative rounded-2xl overflow-hidden border border-gold/20 h-80 shadow-xl">
+                    <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=800&q=80';" alt="Obrador Feliseda" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-matte via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <span class="text-xs text-gold font-semibold uppercase tracking-wider">Obrador Artesano</span>
+                        <h4 class="font-serif text-lg font-bold text-sand">Horneado Diario con Pasión</h4>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-2xl overflow-hidden border border-gold/20 h-80 shadow-xl">
+                    <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1586444248902-2f64eddc13df?auto=format&fit=crop&w=800&q=80';" alt="Exhibición Boutique" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-matte via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <span class="text-xs text-gold font-semibold uppercase tracking-wider">Boutique Rascafría</span>
+                        <h4 class="font-serif text-lg font-bold text-sand">Espacio Exclusivo y Acogedor</h4>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-2xl overflow-hidden border border-gold/20 h-80 shadow-xl md:col-span-2 lg:col-span-1">
+                    <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&w=800&q=80';" alt="Detalle de Masas" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-matte via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <span class="text-xs text-gold font-semibold uppercase tracking-wider">Materia Prima</span>
+                        <h4 class="font-serif text-lg font-bold text-sand">Ingredientes Seleccionados</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="opiniones" class="py-24 bg-matte relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold text-xs font-semibold tracking-widest uppercase block mb-3">
+                    <i class="fa-solid fa-star"></i> Testimonios Reales
+                </span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-sand mb-4">
+                    Lo que opinan nuestros clientes
+                </h2>
+                <p class="text-sand/70 font-light text-sm sm:text-base">
+                    La satisfacción de quienes nos visitan es nuestro mayor aval y motivación diaria.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-1 gap-8 max-w-2xl mx-auto">
+                <!-- Single Featured Real Review Card -->
+                <div class="bg-darksurface rounded-2xl p-8 border border-gold/30 shadow-2xl relative">
+                    <div class="absolute -top-4 right-8 w-10 h-10 rounded-full bg-gold text-matte flex items-center justify-center font-bold text-lg shadow-lg">
+                        <i class="fa-solid fa-quote-right"></i>
+                    </div>
+                    <div class="flex items-center gap-1 text-gold mb-4 text-lg">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="font-serif italic text-lg sm:text-xl text-sand/90 mb-6 leading-relaxed">
+                        "Excelente trato, profesionalidad y calidad."
+                    </p>
+                    <div class="flex items-center gap-4 pt-4 border-t border-gold/10">
+                        <div class="w-12 h-12 rounded-full bg-cardbg border border-gold/50 flex items-center justify-center text-gold font-bold font-serif">
+                            <span>GM</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sand">Cliente Verificado Google Maps</h4>
+                            <span class="text-xs text-gold-light">Reseña Oficial</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact Section -->
+    <section id="contacto" class="py-24 bg-darksurface relative border-t border-gold/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold text-xs font-semibold tracking-widest uppercase block mb-3">
+                    <i class="fa-solid fa-map-location-dot"></i> Visítanos
+                </span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-sand mb-4">
+                    Ubicación y Contacto
+                </h2>
+                <p class="text-sand/70 font-light text-sm sm:text-base">
+                    Te esperamos en nuestro establecimiento en Rascafría para ofrecerte una experiencia inolvidable.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Info & Details -->
+                <div class="space-y-8 bg-matte p-8 sm:p-10 rounded-2xl border border-gold/20 shadow-2xl">
+                    <h3 class="font-serif text-2xl font-bold text-sand border-b border-gold/10 pb-4">
+                        Boutique del Pan Feliseda
+                    </h3>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-darksurface border border-gold/30 flex items-center justify-center text-gold shrink-0 mt-1">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sand text-sm mb-1">Dirección</h4>
+                                <p class="text-xs sm:text-sm text-sand/70">C. de la Corrala, 4, 28740 Rascafría, Madrid, España</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-darksurface border border-gold/30 flex items-center justify-center text-gold shrink-0 mt-1">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sand text-sm mb-1">Teléfono de Reservas y Pedidos</h4>
+                                <a href="tel:919957000" class="text-xs sm:text-sm text-gold hover:underline font-semibold">91 995 70 00</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-darksurface border border-gold/30 flex items-center justify-center text-gold shrink-0 mt-1">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sand text-sm mb-1">Correo Electrónico</h4>
+                                <a href="mailto:error-lite+84f2@duckduckgo.com" class="text-xs sm:text-sm text-gold hover:underline font-semibold">error-lite+84f2@duckduckgo.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-darksurface border border-gold/30 flex items-center justify-center text-gold shrink-0 mt-1">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sand text-sm mb-1">Horario de Apertura</h4>
+                                <p class="text-xs sm:text-sm text-sand/70">Martes a Domingo: 8:30 - 15:00<br>Lunes: Descanso del obrador</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="tel:919957000" class="block text-center w-full py-4 rounded-full bg-gradient-to-r from-gold-dark via-gold to-gold-light text-matte font-bold text-sm hover:scale-[1.02] transition-all shadow-lg shadow-gold/20">
+                            <i class="fa-solid fa-calendar-check mr-2"></i> Reservar Cita / Pedido Directo
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Interactive Map -->
+                <div class="rounded-2xl overflow-hidden border border-gold/30 shadow-2xl bg-matte p-2">
+                    <iframe src="https://www.google.com/maps?q=Boutique%20del%20Pan%20Feliseda%20C.%20de%20la%20Corrala%2C%204%2C%2028740%20Rascafr%C3%ADa%2C%20Madrid%2C%20Espa%C3%1A&output=embed" width="100%" height="450" style="border:0; border-radius: 0.75rem;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-matte border-t border-gold/20 py-12 text-sand/60 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full border border-gold flex items-center justify-center bg-darksurface">
+                    <i class="fa-solid fa-wheat-awn text-gold text-xs"></i>
+                </div>
+                <span class="font-serif text-sand font-bold tracking-wider">BOUTIQUE DEL PAN FELISEDA</span>
+            </div>
+
+            <p class="text-center md:text-left">
+                &copy; <script>document.write(new Date().getFullYear());</script> Boutique del Pan Feliseda. Todos los derechos reservados. Rascafría, Madrid.
+            </p>
+
+            <div class="flex items-center gap-4 text-gold">
+                <a href="tel:919957000" class="hover:text-gold-light transition-colors" title="Teléfono"><i class="fa-solid fa-phone text-sm"></i></a>
+                <a href="mailto:error-lite+84f2@duckduckgo.com" class="hover:text-gold-light transition-colors" title="Email"><i class="fa-solid fa-envelope text-sm"></i></a>
+                <a href="#inicio" class="hover:text-gold-light transition-colors" title="Subir"><i class="fa-solid fa-arrow-up text-sm"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
