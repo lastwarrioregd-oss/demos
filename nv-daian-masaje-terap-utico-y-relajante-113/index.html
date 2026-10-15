@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NV DAIAN MASAJE TERAPÉUTICO Y RELAJANTE | Spa en León, Gto.</title>
+    
+    <!-- Tailwind CSS v3 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            50: '#fdfbf7',
+                            100: '#f7f0e3',
+                            200: '#ede0c5',
+                            300: '#dfca9d',
+                            400: '#cda96d',
+                            500: '#b89047',
+                            600: '#9d7539',
+                            700: '#7d5b30',
+                            800: '#674a2b',
+                            900: '#563e26',
+                        },
+                        dark: {
+                            DEFAULT: '#0f0f0f',
+                            surface: '#181818',
+                            card: '#222222',
+                            border: '#333333'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Cormorant Garamond', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome para Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .font-serif { font-family: 'Cormorant Garamond', serif; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0f0f0f; color: #f3f4f6; }
+        .gold-gradient {
+            background: linear-gradient(135deg, #dfca9d 0%, #b89047 50%, #9d7539 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-bg-gradient {
+            background: linear-gradient(135deg, #dfca9d 0%, #b89047 100%);
+        }
+    </style>
+</head>
+<body class="bg-dark text-gray-100 antialiased selection:bg-gold-500 selection:text-black">
+
+    <!-- HEADER / NAVEGACIÓN -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-dark/90 backdrop-blur-md border-b border-dark-border transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center space-x-2">
+                <span class="font-serif text-2xl sm:text-3xl font-bold tracking-wider text-gold-300">NV DAIAN</span>
+                <span class="hidden sm:inline-block text-xs uppercase tracking-widest text-gray-400 border-l border-dark-border pl-2">Masaje Terapéutico</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
+                <a href="#inicio" class="text-gray-300 hover:text-gold-300 transition-colors">Inicio</a>
+                <a href="#nosotros" class="text-gray-300 hover:text-gold-300 transition-colors">Filosofía</a>
+                <a href="#servicios" class="text-gray-300 hover:text-gold-300 transition-colors">Tratamientos</a>
+                <a href="#galeria" class="text-gray-300 hover:text-gold-300 transition-colors">Instalaciones</a>
+                <a href="#testimonios" class="text-gray-300 hover:text-gold-300 transition-colors">Reseñas</a>
+                <a href="#contacto" class="text-gray-300 hover:text-gold-300 transition-colors">Ubicación</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="flex items-center space-x-4">
+                <a href="tel:524774167058" class="gold-bg-gradient text-black font-semibold px-5 py-2.5 rounded-full text-sm tracking-wider uppercase shadow-lg shadow-gold-500/10 hover:opacity-90 transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Reservar Cita</span>
+                </a>
+                
+                <!-- Mobile menu button -->
+                <button id="menu-btn" class="md:hidden text-gold-300 focus:outline-none p-2">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-surface border-b border-dark-border px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="block py-2 text-gray-300 hover:text-gold-300">Inicio</a>
+            <a href="#nosotros" class="block py-2 text-gray-300 hover:text-gold-300">Filosofía</a>
+            <a href="#servicios" class="block py-2 text-gray-300 hover:text-gold-300">Tratamientos</a>
+            <a href="#galeria" class="block py-2 text-gray-300 hover:text-gold-300">Instalaciones</a>
+            <a href="#testimonios" class="block py-2 text-gray-300 hover:text-gold-300">Reseñas</a>
+            <a href="#contacto" class="block py-2 text-gray-300 hover:text-gold-300">Ubicación</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <!-- Background Overlay Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://scontent-dfw6-1.xx.fbcdn.net/v/t39.30808-6/611170524_1501745851956032_5925172389356537942_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x1024&ctp=s960x960&_nc_cat=101&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=kwuN9t_xH28Q7kNvwFVcoza&_nc_oc=Adoo_8t7pxfwnuOXLgZJJTQBb0fTfBpTO2Fqc4mVIB5FLxH2ANR4wCr2UlJlMVpKiv0&_nc_zt=23&_nc_ht=scontent-dfw6-1.xx&_nc_gid=7ne2xiWTdaNkwf3d-60e2Q&_nc_ss=7b289&oh=00_AQM7q7lER_FJxtgWFWZxBIHYqiH570AG9sUOsiJSVLuLbQ&oe=6AD66683" 
+                 alt="Spa de masajes en León" 
+                 class="w-full h-full object-cover object-center opacity-30 scale-105 animate-pulse duration-10000"
+                 referrerpolicy="no-referrer" 
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/70 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-24">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-dark-card border border-dark-border mb-6">
+                <span class="w-2 h-2 rounded-full bg-gold-400 animate-ping"></span>
+                <span class="text-xs uppercase tracking-widest text-gold-300 font-medium">Spa de masajes profesional en León</span>
+            </div>
+
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-tight">
+                Desconecta del estrés, <br>
+                <span class="gold-gradient">renueva tu energía vital</span>
+            </h1>
+
+            <p class="max-w-2xl mx-auto text-base sm:text-lg text-gray-300 mb-10 font-light leading-relaxed">
+                Sumérgete en un oasis de paz absoluta en León. Masajes terapéuticos de cuerpo completo, reflexología y técnicas profesionales diseñadas para liberar cada ápice de tensión de tu cuerpo.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="tel:524774167058" class="w-full sm:w-auto gold-bg-gradient text-black font-semibold px-8 py-4 rounded-full text-sm tracking-wider uppercase shadow-xl shadow-gold-500/20 hover:scale-105 transition-all flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-calendar-check text-lg"></i>
+                    <span>Reservar Cita Ahora</span>
+                </a>
+                <a href="#servicios" class="w-full sm:w-auto bg-dark-card border border-dark-border text-gray-200 hover:border-gold-500/50 font-semibold px-8 py-4 rounded-full text-sm tracking-wider uppercase transition-all flex items-center justify-center gap-2">
+                    <span>Ver Tratamientos</span>
+                </a>
+            </div>
+
+            <!-- Highlights badges -->
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-16 pt-12 border-t border-dark-border max-w-3xl mx-auto text-left">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gold-500/10 flex items-center justify-center text-gold-400 flex-shrink-0">
+                        <i class="fa-solid fa-spa"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-semibold text-gray-200">Cuerpo Completo</h4>
+                        <p class="text-xs text-gray-400">Atención integral garantizada</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gold-500/10 flex items-center justify-center text-gold-400 flex-shrink-0">
+                        <i class="fa-solid fa-hands-bubbles"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-semibold text-gray-200">Ambiente Higiénico</h4>
+                        <p class="text-xs text-gray-400">Espacios impecables y seguros</p>
+                    </div>
+                </div>
+                <div class="col-span-2 md:col-span-1 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gold-500/10 flex items-center justify-center text-gold-400 flex-shrink-0">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-semibold text-gray-200">Alta Experiencia</h4>
+                        <p class="text-xs text-gray-400">Terapeuta profesional</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN NOSOTROS / FILOSOFÍA -->
+    <section id="nosotros" class="py-24 bg-dark-surface relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-gradient-to-r from-gold-500/20 to-transparent rounded-2xl blur-xl"></div>
+                    <div class="relative rounded-2xl overflow-hidden border border-dark-border aspect-[4/5]">
+                        <img src="https://scontent-dfw5-1.xx.fbcdn.net/v/t39.30808-6/698347174_1616893840441232_4498940076339577928_n.jpg?stp=dst-jpg_tt6&cstp=mx916x1717&ctp=s590x590&_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_ohc=n7FuXHrqqksQ7kNvwEpxd_j&_nc_oc=AdrmK0SyKLPewPYjEVbnCQz0GWgMjO74BkVoRF1MA1pHWxG4NSjtlQ86QuOK2jU2DIA&_nc_zt=23&_nc_ht=scontent-dfw5-1.xx&_nc_gid=cm_LtYizFos-36Gl-voguw&_nc_ss=7b289&oh=00_AQMdWBuM-BtgDvLcMtg_jTYzgOon1SuHke-KTyoz2gbaSA&oe=6AD68A64" 
+                             alt="NV Daian Masaje Terapéutico y Relajante" 
+                             class="w-full h-full object-cover"
+                             referrerpolicy="no-referrer"
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80';">
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <span class="text-gold-400 font-medium tracking-widest text-xs uppercase">Filosofía de Bienestar</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold tracking-tight leading-tight">
+                        Un espacio creado para sanar tu <span class="gold-gradient">cuerpo y mente</span>
+                    </h2>
+                    <p class="text-gray-300 font-light leading-relaxed">
+                        En <strong class="text-gold-300 font-medium">NV DAIAN Masaje Terapéutico y Relajante</strong> entendemos que el estrés diario deja huella profunda en tus músculos y energía. Por ello, cada sesión está meticulosamente adaptada a lo que tu cuerpo necesita en el momento.
+                    </p>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Nuestra atención personalizada, sumada a un ambiente impecable, cálido y seguro, garantiza que cada visita sea una experiencia transformadora. Descubre el verdadero significado de un masaje de cuerpo completo profesional en León, Gto.
+                    </p>
+
+                    <div class="pt-4 grid grid-cols-2 gap-6">
+                        <div class="border-l-2 border-gold-500 pl-4">
+                            <span class="block font-serif text-3xl font-bold text-gold-300">100%</span>
+                            <span class="text-xs text-gray-400 uppercase tracking-wider">Cuerpo Completo</span>
+                        </div>
+                        <div class="border-l-2 border-gold-500 pl-4">
+                            <span class="block font-serif text-3xl font-bold text-gold-300">5 Estrellas</span>
+                            <span class="text-xs text-gray-400 uppercase tracking-wider">Calificación en Reseñas</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="tel:524774167058" class="inline-flex items-center gap-2 text-gold-400 font-semibold hover:text-gold-300 transition-colors">
+                            <span>Reserva tu momento de desconexión</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN TRATAMIENTOS Y SERVICIOS -->
+    <section id="servicios" class="py-24 bg-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-400 font-medium tracking-widest text-xs uppercase">Menú de Especialidades</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold tracking-tight mt-2 mb-4">
+                    Nuestros <span class="gold-gradient">Tratamientos Terapéuticos</span>
+                </h2>
+                <p class="text-gray-300 text-sm sm:text-base font-light">
+                    Terapias enfocadas en disolver tensiones profundas, devolver la ligereza a tus extremidades y brindarte una paz incomparable.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Servicio 1 -->
+                <div class="bg-dark-card border border-dark-border rounded-2xl p-8 hover:border-gold-500/40 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 flex items-center justify-center text-gold-400 mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-hands text-xl"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-white mb-3">Masaje Relajante Integral</h3>
+                        <p class="text-gray-400 text-sm font-light leading-relaxed mb-6">
+                            Sesión envolvente y fluida diseñada para llevarte a un estado de calma profunda. Alivia el estrés acumulado y relaja cada músculo de tu anatomía.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-dark-border flex items-center justify-between">
+                        <span class="text-xs uppercase tracking-widest text-gold-300 font-semibold">Cuerpo Completo</span>
+                        <a href="tel:524774167058" class="text-xs font-bold uppercase tracking-wider bg-gold-500/10 text-gold-400 px-4 py-2 rounded-full hover:bg-gold-500 hover:text-black transition-all">Reservar Cita</a>
+                    </div>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="bg-dark-card border border-dark-border rounded-2xl p-8 hover:border-gold-500/40 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 flex items-center justify-center text-gold-400 mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-feather text-xl"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-white mb-3">Masaje con Reflexología Podal</h3>
+                        <p class="text-gray-400 text-sm font-light leading-relaxed mb-6">
+                            Combinación perfecta que trabaja puntos reflejos en los pies para estimular el bienestar de todo el organismo, generando alivio, ligereza y una paz increíble.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-dark-border flex items-center justify-between">
+                        <span class="text-xs uppercase tracking-widest text-gold-300 font-semibold">Especialidad</span>
+                        <a href="tel:524774167058" class="text-xs font-bold uppercase tracking-wider bg-gold-500/10 text-gold-400 px-4 py-2 rounded-full hover:bg-gold-500 hover:text-black transition-all">Reservar Cita</a>
+                    </div>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="bg-dark-card border border-dark-border rounded-2xl p-8 hover:border-gold-500/40 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 flex items-center justify-center text-gold-400 mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-heart-pulse text-xl"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-white mb-3">Masaje Terapéutico Descontracturante</h3>
+                        <p class="text-gray-400 text-sm font-light leading-relaxed mb-6">
+                            Enfocado en liberar nudos y tensiones severas en espalda, cuello y extremidades. Atención experta orientada a lo que tu cuerpo necesita para recuperar su movilidad.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-dark-border flex items-center justify-between">
+                        <span class="text-xs uppercase tracking-widest text-gold-300 font-semibold">Terapia Profunda</span>
+                        <a href="tel:524774167058" class="text-xs font-bold uppercase tracking-wider bg-gold-500/10 text-gold-400 px-4 py-2 rounded-full hover:bg-gold-500 hover:text-black transition-all">Reservar Cita</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Banner CTA secundario -->
+            <div class="mt-16 bg-gradient-to-r from-dark-surface to-dark-card border border-gold-500/30 rounded-2xl p-8 sm:p-12 text-center relative overflow-hidden">
+                <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-gold-500/5 rounded-full blur-3xl pointer-events-none"></div>
+                <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white mb-4">¿Listo para regalarle a tu cuerpo el descanso que merece?</h3>
+                <p class="text-gray-300 text-sm sm:text-base max-w-xl mx-auto mb-8 font-light">
+                    Atención profesional y personalizada en León, Gto. Agenda tu espacio hoy mismo vía telefónica.
+                </p>
+                <a href="tel:524774167058" class="inline-flex items-center gap-3 gold-bg-gradient text-black font-semibold px-8 py-4 rounded-full text-sm tracking-wider uppercase shadow-lg shadow-gold-500/10 hover:opacity-90 transition-all">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Llamar y Reservar Cita (52 477 416 7058)</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERÍA / INSTALACIONES -->
+    <section id="galeria" class="py-24 bg-dark-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-400 font-medium tracking-widest text-xs uppercase">Nuestras Instalaciones y Trabajos</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold tracking-tight mt-2 mb-4">
+                    Un ambiente diseñado para <span class="gold-gradient">tu paz</span>
+                </h2>
+                <p class="text-gray-300 text-sm sm:text-base font-light">
+                    Conoce el espacio limpio, estético y acogedor que tenemos preparado para ti en León de los Aldama.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Foto 1 -->
+                <div class="rounded-xl overflow-hidden border border-dark-border aspect-square group relative">
+                    <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.30808-1/461176355_1104756991654922_8620480618653015730_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx960x960&amp;ctp=s720x720&amp;_nc_cat=100&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=_vJ-eI8FLGwQ7kNvwEEYYYB&amp;_nc_oc=AdqmfWIA6bKbsEwaj6fd6w3siltEKlb7M-bSRgm4VbS1sSDgHTAqpCUzL1bLT3m61c4&amp;_nc_zt=24&amp;_nc_ht=scontent-dfw5-2.xx&amp;_nc_gid=c75bkPpp0PjqLIP-ItxQ0Q&amp;_nc_ss=7b289&amp;oh=00_AQOlGv3ZJ47h1cd453NZpmVXUVjl8Kp7iqU9BashPsettg&amp;oe=6AD69354" 
+                         alt="Instalaciones NV Daian" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-sm font-medium text-gold-300">Ambiente profesional y limpio</span>
+                    </div>
+                </div>
+
+                <!-- Foto 2 -->
+                <div class="rounded-xl overflow-hidden border border-dark-border aspect-square group relative">
+                    <img src="https://scontent-dfw6-1.xx.fbcdn.net/v/t39.30808-6/611170524_1501745851956032_5925172389356537942_n.jpg?stp=dst-jpg_fb50_s320x320_tt6&_nc_cat=101&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=kwuN9t_xH28Q7kNvwFVcoza&_nc_oc=Adoo_8t7pxfwnuOXLgZJJTQBb0fTfBpTO2Fqc4mVIB5FLxH2ANR4wCr2UlJlMVpKiv0&_nc_zt=23&_nc_ht=scontent-dfw6-1.xx&_nc_gid=7ne2xiWTdaNkwf3d-60e2Q&_nc_ss=7b289&oh=00_AQOsDttiym4i2QZlanvuXHsdqzajOpxiBYj8a0RN3b4AeQ&oe=6AD66683" 
+                         alt="Espacio de relajación NV Daian" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-sm font-medium text-gold-300">Cabina de masajes adaptada para tu confort</span>
+                    </div>
+                </div>
+
+                <!-- Foto 3 -->
+                <div class="rounded-xl overflow-hidden border border-dark-border aspect-square group relative">
+                    <img src="https://scontent-dfw6-1.xx.fbcdn.net/v/t39.30808-6/611170524_1501745851956032_5925172389356537942_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x1024&ctp=s960x960&_nc_cat=101&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=kwuN9t_xH28Q7kNvwFVcoza&_nc_oc=Adoo_8t7pxfwnuOXLgZJJTQBb0fTfBpTO2Fqc4mVIB5FLxH2ANR4wCr2UlJlMVpKiv0&_nc_zt=23&_nc_ht=scontent-dfw6-1.xx&_nc_gid=7ne2xiWTdaNkwf3d-60e2Q&_nc_ss=7b289&oh=00_AQM7q7lER_FJxtgWFWZxBIHYqiH570AG9sUOsiJSVLuLbQ&oe=6AD66683" 
+                         alt="Detalles del Spa" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1519823551788-b86c9164cf15?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-sm font-medium text-gold-300">Atención profesional y dedicada</span>
+                    </div>
+                </div>
+
+                <!-- Foto 4 -->
+                <div class="rounded-xl overflow-hidden border border-dark-border aspect-square group relative">
+                    <img src="https://scontent-dfw5-1.xx.fbcdn.net/v/t39.30808-6/698347174_1616893840441232_4498940076339577928_n.jpg?stp=dst-jpg_tt6&cstp=mx916x1717&ctp=s590x590&_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_ohc=n7FuXHrqqksQ7kNvwEpxd_j&_nc_oc=AdrmK0SyKLPewPYjEVbnCQz0GWgMjO74BkVoRF1MA1pHWxG4NSjtlQ86QuOK2jU2DIA&_nc_zt=23&_nc_ht=scontent-dfw5-1.xx&_nc_gid=cm_LtYizFos-36Gl-voguw&_nc_ss=7b289&oh=00_AQMdWBuM-BtgDvLcMtg_jTYzgOon1SuHke-KTyoz2gbaSA&oe=6AD68A64" 
+                         alt="Instalaciones NV Daian León" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-sm font-medium text-gold-300">Instalaciones bellas y cuidadas</span>
+                    </div>
+                </div>
+
+                <!-- Foto 5 -->
+                <div class="rounded-xl overflow-hidden border border-dark-border aspect-square group relative sm:col-span-2 lg:col-span-2">
+                    <img src="https://scontent-dfw6-2.xx.fbcdn.net/v/t39.30808-6/689486318_1616893877107895_156020779668831866_n.jpg?stp=dst-jpg_tt6&cstp=mx941x1672&ctp=s590x590&_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_ohc=y3Bg1mPiA-MQ7kNvwFAAuAO&_nc_oc=AdqS0iIi5wDOEC6EaYlmtYxEn-96PFJSvjMwgPJ-UJYc1Ve0QGrpHDVllgZRykq3Mh8&_nc_zt=23&_nc_ht=scontent-dfw6-2.xx&_nc_gid=cm_LtYizFos-36Gl-voguw&_nc_ss=7b289&oh=00_AQMQ7FosFIPFHdJjBdEey2iMWNJzXzZXkU1MWUKJxuJWkg&oe=6AD6792D" 
+                         alt="Spa en Valle de León" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1512290900722-9a70f8a82d39?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-sm font-medium text-gold-300">Tu espacio ideal para dejar el estrés atrás</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OPINIONES REALES VERIFICADAS -->
+    <section id="testimonios" class="py-24 bg-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-400 font-medium tracking-widest text-xs uppercase">Opiniones Verificadas</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold tracking-tight mt-2 mb-4">
+                    Lo que dicen <span class="gold-gradient">nuestros clientes</span>
+                </h2>
+                <p class="text-gray-300 text-sm sm:text-base font-light">
+                    Experiencias reales compartidas por quienes ya confiaron en nuestras manos expertas.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Reseña 1 -->
+                <div class="bg-dark-card border border-dark-border p-8 rounded-2xl flex flex-col justify-between relative">
+                    <div>
+                        <div class="flex text-gold-400 space-x-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm font-light leading-relaxed italic mb-6">
+                            "Tomé el masaje relajante con reflexología podal y fue una experiencia simplemente hermosa. Desde que comenzó, sentí cómo mi cuerpo empezó a soltarse poco a poco... Salí completamente renovada, ligera, con una paz increíble. Definitivamente es un servicio que vale totalmente la pena."
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-dark-border flex items-center justify-between">
+                        <span class="font-serif font-bold text-white">Eduardo Baruch Chávez Fuerte</span>
+                        <span class="text-xs text-gray-500 uppercase tracking-widest">Google Maps</span>
+                    </div>
+                </div>
+
+                <!-- Reseña 2 -->
+                <div class="bg-dark-card border border-dark-border p-8 rounded-2xl flex flex-col justify-between relative">
+                    <div>
+                        <div class="flex text-gold-400 space-x-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm font-light leading-relaxed italic mb-6">
+                            "El masaje que recibí fue excelente. Se nota el profesionalismo y la experiencia desde el primer momento.…"
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-dark-border flex items-center justify-between">
+                        <span class="font-serif font-bold text-white">Yazmin Leon</span>
+                        <span class="text-xs text-gray-500 uppercase tracking-widest">Google Maps</span>
+                    </div>
+                </div>
+
+                <!-- Reseña 3 -->
+                <div class="bg-dark-card border border-dark-border p-8 rounded-2xl flex flex-col justify-between relative">
+                    <div>
+                        <div class="flex text-gold-400 space-x-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm font-light leading-relaxed italic mb-6">
+                            "Excelente servicio de principio a fin. Es un lugar muy profesional, limpio y con un ambiente muy agradable. El masaje superó mis expectativas; lograron quitarme mucha tensión y terminé completamente relajado. La atención fue muy respetuosa..."
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-dark-border flex items-center justify-between">
+                        <span class="font-serif font-bold text-white">EL AFRUS</span>
+                        <span class="text-xs text-gray-500 uppercase tracking-widest">Google Maps</span>
+                    </div>
+                </div>
+
+                <!-- Reseña 4 -->
+                <div class="bg-dark-card border border-dark-border p-8 rounded-2xl flex flex-col justify-between relative">
+                    <div>
+                        <div class="flex text-gold-400 space-x-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm font-light leading-relaxed italic mb-6">
+                            "Tenía tiempo buscando un lugar donde realmente ofrecieran un masaje profesional y por fin lo encontré. Me sorprendió la atención al detalle y la dedicación durante toda la sesión. No fue un masaje apresurado..."
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-dark-border flex items-center justify-between">
+                        <span class="font-serif font-bold text-white">Donovan Morales</span>
+                        <span class="text-xs text-gray-500 uppercase tracking-widest">Google Maps</span>
+                    </div>
+                </div>
+
+                <!-- Reseña 5 -->
+                <div class="bg-dark-card border border-dark-border p-8 rounded-2xl flex flex-col justify-between relative md:col-span-2 lg:col-span-2">
+                    <div>
+                        <div class="flex text-gold-400 space-x-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm sm:text-base font-light leading-relaxed italic mb-6">
+                            "Un excelente lugar para relajarse y dejar el estrés y la tensión de las actividades diarias, súper limpio y bonito y la atención que recibí de Dayana incomparable, súper profesional, un masaje increíble, siempre atenta a lo que tu cuerpo necesita y lo que a ti te gusta, además de destacar que es masaje de cuerpo completo, increíble plus que no todos tienen. ¡Definitivamente 100% recomendado!"
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-dark-border flex items-center justify-between">
+                        <span class="font-serif font-bold text-white">Villa Soria Viviana Monserrat</span>
+                        <span class="text-xs text-gray-500 uppercase tracking-widest">Google Maps</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAPA INTERACTIVO Y UBICACIÓN -->
+    <section id="contacto" class="py-24 bg-dark-surface border-t border-dark-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-400 font-medium tracking-widest text-xs uppercase">Encuéntranos en León</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold tracking-tight mt-2 mb-4">
+                    Visita nuestro <span class="gold-gradient">Spa</span>
+                </h2>
+                <p class="text-gray-300 text-sm sm:text-base font-light">
+                    Te esperamos con cita previa para brindarte una atención exclusiva y sin interrupciones.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+                <!-- Info de Contacto -->
+                <div class="bg-dark-card border border-dark-border p-8 rounded-2xl flex flex-col justify-between space-y-8">
+                    <div>
+                        <h3 class="font-serif text-2xl font-bold text-white mb-6">Información de Contacto</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-gold-500/10 flex items-center justify-center text-gold-400 flex-shrink-0 mt-1">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-1">Dirección Exacta</h4>
+                                    <p class="text-gray-200 text-sm">Tabachin 802, Valle de Leon, 37140 León de los Aldama, Gto., México</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-gold-500/10 flex items-center justify-center text-gold-400 flex-shrink-0 mt-1">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-1">Teléfono / Reservas</h4>
+                                    <a href="tel:524774167058" class="text-gold-300 hover:underline text-sm font-medium">+52 477 416 7058</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-gold-500/10 flex items-center justify-center text-gold-400 flex-shrink-0 mt-1">
+                                    <i class="fa-solid fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-1">Horario</h4>
+                                    <p class="text-gray-200 text-sm">Atención previa cita</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <a href="tel:524774167058" class="w-full gold-bg-gradient text-black font-semibold py-3.5 px-6 rounded-xl text-sm tracking-wider uppercase shadow-lg shadow-gold-500/10 hover:opacity-90 transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-calendar-check"></i>
+                            <span>Reservar Cita</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mapa interactivo -->
+                <div class="lg:col-span-2 bg-dark-card border border-dark-border p-4 rounded-2xl flex items-center justify-center">
+                    <div class="w-full h-full min-h-[380px] rounded-xl overflow-hidden">
+                        <iframe src="https://www.google.com/maps?q=NV%20DAIAN%20MASAJE%20TERAP%C3%89UTICO%20Y%20RELAJANTE%20Tabachin%20802%2C%20Valle%20de%20Leon%2C%2037140%20Le%C3%B3n%20de%20los%20Aldama%2C%20Gto.%2C%20M%C3%A9xico&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark py-12 border-t border-dark-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div>
+                <span class="font-serif text-2xl font-bold tracking-wider text-gold-300">NV DAIAN</span>
+                <p class="text-xs text-gray-400 mt-1">Masaje Terapéutico y Relajante • León, Gto.</p>
+            </div>
+
+            <div class="text-xs text-gray-500">
+                &copy; <span id="year"></span> NV Daian. Todos los derechos reservados. Tabachin 802, Valle de Leon.
+            </div>
+
+            <div>
+                <a href="tel:524774167058" class="text-gold-400 hover:text-gold-300 text-sm font-semibold flex items-center gap-2">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>+52 477 416 7058</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script Simple para Menú Móvil y Año -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú al hacer clic en un enlace del menú móvil
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
