@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OvieDog | Peluquería Canina Boutique en Oviedo (La Florida)</title>
+    <meta name="description" content="Peluquería canina exclusiva en Oviedo. Trato excepcional, paciencia con perritos nerviosos y mayores, baños y cortes de alta calidad en La Florida. ¡Reserva cita!">
+    <!-- Tailwind CSS v3 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#121212',
+                            card: '#1A1A1A',
+                            gold: '#D4AF37',
+                            'gold-light': '#F3E5AB',
+                            sand: '#F7F4EF',
+                            cream: '#EFECE6'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 50%, #AA7C11 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-gradient-bg {
+            background: linear-gradient(135deg, #D4AF37 0%, #AA7C11 100%);
+        }
+        .gold-border {
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-brand-sand font-sans antialiased selection:bg-brand-gold selection:text-brand-dark">
+
+    <!-- Top Bar -->
+    <div class="bg-black text-xs sm:text-sm py-2 px-4 border-b border-white/10 text-center sm:text-left">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4 text-brand-sand/80">
+                <span><i class="fa-solid fa-location-dot text-brand-gold mr-1.5"></i> P. de la Florida, 5, 33012 Oviedo, Asturias</span>
+                <span class="hidden md:inline">|</span>
+                <span class="hidden md:inline"><i class="fa-solid fa-clock text-brand-gold mr-1.5"></i> Lunes a Sábado con cita previa</span>
+            </div>
+            <a href="https://wa.me/34634722584" target="_blank" rel="noopener noreferrer" class="hover:text-brand-gold transition-colors flex items-center gap-1.5 font-medium">
+                <i class="fa-solid fa-phone text-brand-gold"></i> 634 72 25 84
+            </a>
+        </div>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-brand-dark/95 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full gold-gradient-bg flex items-center justify-center text-brand-dark font-serif font-bold text-xl shadow-lg">
+                    O
+                </div>
+                <div>
+                    <span class="text-2xl font-serif font-bold tracking-wider text-white">Ovie<span class="text-brand-gold">Dog</span></span>
+                    <span class="block text-[10px] tracking-widest text-brand-gold uppercase -mt-1 font-medium">Boutique Canina</span>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
+                <a href="#servicios" class="hover:text-brand-gold transition-colors">Servicios & Tarifas</a>
+                <a href="#instalaciones" class="hover:text-brand-gold transition-colors">Instalaciones</a>
+                <a href="#opiniones" class="hover:text-brand-gold transition-colors">Opiniones Reales</a>
+                <a href="#ubicacion" class="hover:text-brand-gold transition-colors">Ubicación</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="https://wa.me/34634722584" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 px-6 py-3 rounded-full gold-gradient-bg text-brand-dark font-bold text-sm tracking-wide shadow-lg hover:opacity-95 transition-all transform hover:-translate-y-0.5">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    Reservar Cita
+                </a>
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" class="md:hidden text-white p-2 focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Nav Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-card border-b border-white/10 px-6 py-6 space-y-4">
+            <a href="#servicios" class="block text-lg hover:text-brand-gold transition-colors">Servicios & Tarifas</a>
+            <a href="#instalaciones" class="block text-lg hover:text-brand-gold transition-colors">Instalaciones</a>
+            <a href="#opiniones" class="block text-lg hover:text-brand-gold transition-colors">Opiniones Reales</a>
+            <a href="#ubicacion" class="block text-lg hover:text-brand-gold transition-colors">Ubicación</a>
+            <div class="pt-2">
+                <a href="https://wa.me/34634722584" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-full gold-gradient-bg text-brand-dark font-bold text-sm tracking-wide shadow-lg">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    Reservar Cita
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-20 px-4">
+        <!-- Background Overlay Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=1920&q=80" 
+                 referrerpolicy="no-referrer" 
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                 alt="Peluquería canina OvieDog" 
+                 class="w-full h-full object-cover object-center opacity-25 scale-105 animate-pulse duration-[10000ms]">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto text-center space-y-8">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-gold/10 border gold-border text-brand-gold text-xs sm:text-sm font-semibold tracking-wider uppercase">
+                <i class="fa-solid fa-award"></i> La Mejor Peluquería Canina en La Florida, Oviedo
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-serif font-bold tracking-tight text-white leading-tight">
+                El salón de belleza exclusivo para <span class="gold-gradient-text italic">tu mejor amigo</span>
+            </h1>
+
+            <p class="max-w-2xl mx-auto text-lg sm:text-xl text-brand-sand/80 font-light leading-relaxed">
+                Trato maravilloso, instalaciones modernas y un amor incondicional por las mascotas. Especialistas en perritos nerviosos, cachorros y abuelitos en Oviedo.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                <a href="https://wa.me/34634722584" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 py-4 rounded-full gold-gradient-bg text-brand-dark font-bold text-base tracking-wide shadow-2xl hover:scale-105 transition-all flex items-center justify-center gap-3">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    Reservar Cita por WhatsApp
+                </a>
+                <a href="#servicios" class="w-full sm:w-auto px-8 py-4 rounded-full bg-white/5 border border-white/10 hover:border-brand-gold text-white font-medium text-base tracking-wide transition-all flex items-center justify-center gap-2">
+                    Ver Tratamientos <i class="fa-solid fa-arrow-down text-brand-gold text-xs"></i>
+                </a>
+            </div>
+
+            <!-- Trust Badges -->
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6 pt-12 border-t border-white/10 max-w-3xl mx-auto text-center">
+                <div class="space-y-1">
+                    <div class="text-2xl sm:text-3xl font-serif font-bold text-brand-gold">100%</div>
+                    <div class="text-xs text-brand-sand/70">Recomendado por dueños</div>
+                </div>
+                <div class="space-y-1">
+                    <div class="text-2xl sm:text-3xl font-serif font-bold text-brand-gold">Especial</div>
+                    <div class="text-xs text-brand-sand/70">Paciencia con mayores y nerviosos</div>
+                </div>
+                <div class="col-span-2 md:col-span-1 space-y-1">
+                    <div class="text-2xl sm:text-3xl font-serif font-bold text-brand-gold">Oviedo</div>
+                    <div class="text-xs text-brand-sand/70">Ubicado en La Florida</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-20 bg-brand-card/50 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-xs uppercase tracking-widest text-brand-gold font-bold">Por qué nos eligen</h2>
+                <h3 class="text-3xl sm:text-4xl font-serif font-bold text-white">Experiencia, cariño y profesionalidad</h3>
+                <p class="text-brand-sand/70">Cada perro es único y en OvieDog nos adaptamos a sus necesidades emocionales y físicas para que disfruten de la experiencia.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-brand-card p-8 rounded-2xl border gold-border relative group hover:border-brand-gold transition-all">
+                    <div class="w-14 h-14 rounded-xl gold-gradient-bg flex items-center justify-center text-brand-dark text-2xl mb-6 shadow-md">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <h4 class="text-xl font-serif font-bold text-white mb-3">Trato Cariñoso y Cercano</h4>
+                    <p class="text-brand-sand/70 text-sm leading-relaxed">
+                        Cuidamos de cada mascota como si fuera nuestra. Excelente comunicación con los dueños para entender exactamente lo que buscáis.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-brand-card p-8 rounded-2xl border gold-border relative group hover:border-brand-gold transition-all">
+                    <div class="w-14 h-14 rounded-xl gold-gradient-bg flex items-center justify-center text-brand-dark text-2xl mb-6 shadow-md">
+                        <i class="fa-solid fa-shield-dog"></i>
+                    </div>
+                    <h4 class="text-xl font-serif font-bold text-white mb-3">Especialistas en Senior y Nerviosos</h4>
+                    <p class="text-brand-sand/70 text-sm leading-relaxed">
+                        Tenemos paciencia infinita con perritos de edad avanzada (como abuelitos de 15 años) y mascotas sensibles al baño o la manipulación.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-brand-card p-8 rounded-2xl border gold-border relative group hover:border-brand-gold transition-all">
+                    <div class="w-14 h-14 rounded-xl gold-gradient-bg flex items-center justify-center text-brand-dark text-2xl mb-6 shadow-md">
+                        <i class="fa-solid fa-sparkles"></i>
+                    </div>
+                    <h4 class="text-xl font-serif font-bold text-white mb-3">Instalaciones Modernas</h4>
+                    <p class="text-brand-sand/70 text-sm leading-relaxed">
+                        Un espacio súper bonito, limpio y equipado con todo lo necesario para garantizar la seguridad y el confort de tu peludo.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Treatments & Pricing -->
+    <section id="servicios" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+            <h2 class="text-xs uppercase tracking-widest text-brand-gold font-bold">Nuestros Tratamientos y Cortes</h2>
+            <h3 class="text-3xl sm:text-5xl font-serif font-bold text-white">Servicios de Belleza Canina</h3>
+            <p class="text-brand-sand/70">Cortes personalizados por raza, baños relajantes y estética adaptada con productos de gama alta.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Service Category 1 -->
+            <div class="bg-brand-card p-8 rounded-3xl border gold-border space-y-6">
+                <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg gold-gradient-bg flex items-center justify-center text-brand-dark font-bold">
+                            <i class="fa-solid fa-bath"></i>
+                        </div>
+                        <h4 class="text-2xl font-serif font-bold text-white">Baño & Higiene</h4>
+                    </div>
+                    <span class="text-brand-gold font-serif italic text-sm">Esencial</span>
+                </div>
+
+                <ul class="space-y-4">
+                    <li class="flex justify-between items-start gap-4">
+                        <div>
+                            <span class="font-semibold text-white block">Baño Completo Adaptado</span>
+                            <span class="text-xs text-brand-sand/70">Incluye champú específico según tipo de pelo/piel, secado profesional a mano y cepillado profundo. Ideal para perritos nerviosos.</span>
+                        </div>
+                        <span class="text-brand-gold font-bold whitespace-nowrap">Consultar</span>
+                    </li>
+                    <li class="flex justify-between items-start gap-4 pt-3 border-t border-white/5">
+                        <div>
+                            <span class="font-semibold text-white block">Higiene y Mantenimiento de Oídos y Uñas</span>
+                            <span class="text-xs text-brand-sand/70">Corte de uñas seguro y limpieza cuidadosa de conducto auditivo.</span>
+                        </div>
+                        <span class="text-brand-gold font-bold whitespace-nowrap">Incluido</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Service Category 2 -->
+            <div class="bg-brand-card p-8 rounded-3xl border gold-border space-y-6">
+                <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg gold-gradient-bg flex items-center justify-center text-brand-dark font-bold">
+                            <i class="fa-solid fa-scissors"></i>
+                        </div>
+                        <h4 class="text-2xl font-serif font-bold text-white">Corte y Estilismo</h4>
+                    </div>
+                    <span class="text-brand-gold font-serif italic text-sm">Boutique</span>
+                </div>
+
+                <ul class="space-y-4">
+                    <li class="flex justify-between items-start gap-4">
+                        <div>
+                            <span class="font-semibold text-white block">Corte a Tijera y Máquina por Raza</span>
+                            <span class="text-xs text-brand-sand/70">Especialistas en razas como Bichón Frisé, Maltés, Schnauzer, Pomerania y cortes comerciales o de mantenimiento.</span>
+                        </div>
+                        <span class="text-brand-gold font-bold whitespace-nowrap">Personalizado</span>
+                    </li>
+                    <li class="flex justify-between items-start gap-4 pt-3 border-t border-white/5">
+                        <div>
+                            <span class="font-semibold text-white block">Stripping (Corte por arrancado)</span>
+                            <span class="text-xs text-brand-sand/70">Técnica especializada para perros de pelo duro manteniendo la textura y color original.</span>
+                        </div>
+                        <span class="text-brand-gold font-bold whitespace-nowrap">Consultar</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- CTA Box inside Services -->
+        <div class="mt-12 bg-gradient-to-r from-brand-card via-black to-brand-card p-8 sm:p-12 rounded-3xl border gold-border text-center space-y-6">
+            <h4 class="text-2xl sm:text-3xl font-serif font-bold text-white">¿Quieres saber qué corte le sienta mejor a tu peludo?</h4>
+            <p class="text-brand-sand/70 max-w-xl mx-auto text-sm">Escríbenos por WhatsApp y te asesoramos encantados sobre tarifas y disponibilidad para tu mascota en Oviedo.</p>
+            <a href="https://wa.me/34634722584" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-8 py-4 rounded-full gold-gradient-bg text-brand-dark font-bold text-base shadow-xl hover:scale-105 transition-all">
+                <i class="fa-brands fa-whatsapp text-xl"></i> Reservar Cita Ahora
+            </a>
+        </div>
+    </section>
+
+    <!-- Gallery / Instalaciones -->
+    <section id="instalaciones" class="py-20 bg-brand-card/50 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-xs uppercase tracking-widest text-brand-gold font-bold">Nuestras Instalaciones y Trabajos</h2>
+                <h3 class="text-3xl sm:text-4xl font-serif font-bold text-white">Un espacio pensado para su bienestar</h3>
+                <p class="text-brand-sand/70">Descubre nuestro salón en La Florida, limpio, moderno y dotado con la última tecnología para una experiencia libre de estrés.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery Item 1 -->
+                <div class="group relative overflow-hidden rounded-2xl aspect-square border gold-border">
+                    <img src="https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?auto=format&fit=crop&w=800&q=80" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                         alt="Instalaciones OvieDog Oviedo" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <p class="text-white font-serif font-medium">Instalaciones modernas y cuidadas</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="group relative overflow-hidden rounded-2xl aspect-square border gold-border">
+                    <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=800&q=80" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                         alt="Peluquería canina OvieDog" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <p class="text-white font-serif font-medium">Cortes profesionales personalizados</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="group relative overflow-hidden rounded-2xl aspect-square border gold-border">
+                    <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                         alt="Mascota feliz en OvieDog" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <p class="text-white font-serif font-medium">Trato amoroso y paciente</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials / Opiniones Reales -->
+    <section id="opiniones" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+            <h2 class="text-xs uppercase tracking-widest text-brand-gold font-bold">Opiniones Reales Verificadas</h2>
+            <h3 class="text-3xl sm:text-5xl font-serif font-bold text-white">Lo que dicen nuestros clientes</h3>
+            <p class="text-brand-sand/70">La felicidad de nuestros peludos y la tranquilidad de sus dueños es nuestra mejor carta de presentación en Oviedo.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Review 1 -->
+            <div class="bg-brand-card p-8 rounded-3xl border gold-border flex flex-col justify-between space-y-6">
+                <div class="space-y-4">
+                    <div class="flex text-brand-gold gap-1 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-brand-sand/90 text-sm leading-relaxed italic">
+                        "La mejor peluquería canina en Oviedo la Florida ,primera vez para mi lunina quedamos encantados por el trato y que le dieron a ella y a mí , el corte maravilloso ❤️🐾🐕‍🦺🐩…"
+                    </p>
+                </div>
+                <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                    <div class="w-10 h-10 rounded-full gold-gradient-bg flex items-center justify-center font-bold text-brand-dark text-sm">
+                        CC
+                    </div>
+                    <div>
+                        <span class="font-semibold text-white block text-sm">Carolina Cabrera</span>
+                        <span class="text-xs text-brand-gold">Google Maps</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="bg-brand-card p-8 rounded-3xl border gold-border flex flex-col justify-between space-y-6">
+                <div class="space-y-4">
+                    <div class="flex text-brand-gold gap-1 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-brand-sand/90 text-sm leading-relaxed italic">
+                        "Muy amables y cariñosos buena comunicación con los dueños y amorosos con la mascotas quedé encantada volveremos con mi peque 🐕‍🦺🐾❤️…"
+                    </p>
+                </div>
+                <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                    <div class="w-10 h-10 rounded-full gold-gradient-bg flex items-center justify-center font-bold text-brand-dark text-sm">
+                        SB
+                    </div>
+                    <div>
+                        <span class="font-semibold text-white block text-sm">Sharon banegas</span>
+                        <span class="text-xs text-brand-gold">Google Maps</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="bg-brand-card p-8 rounded-3xl border gold-border flex flex-col justify-between space-y-6">
+                <div class="space-y-4">
+                    <div class="flex text-brand-gold gap-1 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-brand-sand/90 text-sm leading-relaxed italic">
+                        "Primera vez de peluquería con kinder y encantada con la experiencia. Encantadores con el y conmigo. Sin duda será su peluquería. Gracias por todo"
+                    </p>
+                </div>
+                <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                    <div class="w-10 h-10 rounded-full gold-gradient-bg flex items-center justify-center font-bold text-brand-dark text-sm">
+                        GN
+                    </div>
+                    <div>
+                        <span class="font-semibold text-white block text-sm">geli nava</span>
+                        <span class="text-xs text-brand-gold">Google Maps</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 4 -->
+            <div class="bg-brand-card p-8 rounded-3xl border gold-border flex flex-col justify-between space-y-6">
+                <div class="space-y-4">
+                    <div class="flex text-brand-gold gap-1 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-brand-sand/90 text-sm leading-relaxed italic">
+                        "Maravilloso, muy recomendable, he llevado a mi bichon por primera vez, y sin duda va a ser su peluquería! Son muy amables, y muy profesionales!"
+                    </p>
+                </div>
+                <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                    <div class="w-10 h-10 rounded-full gold-gradient-bg flex items-center justify-center font-bold text-brand-dark text-sm">
+                        ED
+                    </div>
+                    <div>
+                        <span class="font-semibold text-white block text-sm">Eli Difer</span>
+                        <span class="text-xs text-brand-gold">Google Maps</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 5 -->
+            <div class="bg-brand-card p-8 rounded-3xl border gold-border flex flex-col justify-between space-y-6 md:col-span-2 lg:col-span-2">
+                <div class="space-y-4">
+                    <div class="flex text-brand-gold gap-1 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-brand-sand/90 text-sm leading-relaxed italic">
+                        "He llevado a mi perrita que tiene 15 años de edad, y es un poco nerviosa a la hora del baño, pues me siento súper contento de haber coincidido con este sitio, ya no tanto que las instalaciones son súper bonitas y cuentan con todo, sino he de resaltar el trato maravilloso y de calidad que hemos recibido mi perrita y yo ! 100% recomendado"
+                    </p>
+                </div>
+                <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                    <div class="w-10 h-10 rounded-full gold-gradient-bg flex items-center justify-center font-bold text-brand-dark text-sm">
+                        CS
+                    </div>
+                    <div>
+                        <span class="font-semibold text-white block text-sm">Carlos Sánchez</span>
+                        <span class="text-xs text-brand-gold">Google Maps</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact Section -->
+    <section id="ubicacion" class="py-20 bg-brand-card/50 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="space-y-4">
+                        <h2 class="text-xs uppercase tracking-widest text-brand-gold font-bold">Dónde Encontrarnos</h2>
+                        <h3 class="text-3xl sm:text-4xl font-serif font-bold text-white">Visítanos en Oviedo</h3>
+                        <p class="text-brand-sand/70">Estamos situados en el corazón de La Florida, con fácil acceso y un entorno inmejorable para tu mascota.</p>
+                    </div>
+
+                    <div class="space-y-4 text-brand-sand/90">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg gold-gradient-bg flex items-center justify-center text-brand-dark shrink-0 mt-1">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <strong class="block text-white">Dirección Exacta:</strong>
+                                <span>P. de la Florida, 5, 33012 Oviedo, Asturias, España</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg gold-gradient-bg flex items-center justify-center text-brand-dark shrink-0 mt-1">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <strong class="block text-white">Teléfono / WhatsApp:</strong>
+                                <a href="https://wa.me/34634722584" target="_blank" rel="noopener noreferrer" class="text-brand-gold hover:underline">634 72 25 84</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg gold-gradient-bg flex items-center justify-center text-brand-dark shrink-0 mt-1">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <strong class="block text-white">Horario:</strong>
+                                <span>Lunes a Sábado (Atención con Cita Previa)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
+                        <a href="https://wa.me/34634722584" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-8 py-4 rounded-full gold-gradient-bg text-brand-dark font-bold text-base shadow-xl hover:scale-105 transition-all">
+                            <i class="fa-brands fa-whatsapp text-xl"></i> Reservar Cita Ahora
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Google Map Embed -->
+                <div class="bg-brand-card p-3 rounded-3xl border gold-border shadow-2xl">
+                    <iframe src="https://www.google.com/maps?q=OvieDog%20P.%20de%20la%20Florida%2C%205%2C%2033012%20Oviedo%2C%20Asturias%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-white/10 text-brand-sand/60 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full gold-gradient-bg flex items-center justify-center text-brand-dark font-serif font-bold text-lg">
+                    O
+                </div>
+                <span class="text-xl font-serif font-bold tracking-wider text-white">Ovie<span class="text-brand-gold">Dog</span></span>
+            </div>
+
+            <p class="text-center md:text-left">
+                &copy; <span id="current-year"></span> OvieDog - Peluquería Canina en Oviedo. Todos los derechos reservados.
+            </p>
+
+            <div class="flex items-center gap-4">
+                <a href="https://wa.me/34634722584" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-brand-card border gold-border flex items-center justify-center text-brand-gold hover:bg-brand-gold hover:text-brand-dark transition-all">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script to toggle mobile menu and current year -->
+    <script>
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
