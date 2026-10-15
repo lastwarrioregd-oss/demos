@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cal Veterinaria | Clínica Veterinaria en Caldes de Montbui</title>
+    <meta name="description" content="Clínica veterinaria en Caldes de Montbui, Barcelona. Excelente trato, profesionalidad y calidad para tu mascota. ¡Pide cita previa!">
+    
+    <!-- Tailwind CSS v3 CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        medical: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#14b8a6', // Turquesa principal
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            900: '#134e4a',
+                        },
+                        softblue: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            600: '#0284c7',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased selection:bg-medical-500 selection:text-white">
+
+    <!-- Top Bar de Contacto Rápido -->
+    <div class="bg-medical-900 text-white text-sm py-2 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-6">
+                <a href="tel:938627529" class="flex items-center gap-2 hover:text-medical-100 transition">
+                    <i class="fa-solid fa-phone text-medical-500"></i>
+                    <span class="font-semibold">938 627 529</span>
+                </a>
+                <a href="mailto:error-lite+84f2@duckduckgo.com" class="hidden md:flex items-center gap-2 hover:text-medical-100 transition">
+                    <i class="fa-solid fa-envelope text-medical-500"></i>
+                    <span>error-lite+84f2@duckduckgo.com</span>
+                </a>
+            </div>
+            <div class="flex items-center gap-2 text-xs md:text-sm text-gray-200">
+                <i class="fa-solid fa-location-dot text-medical-500"></i>
+                <span>Carrer de Lloren Artigas, 15, Caldes de Montbui, Barcelona</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header / Navegación Principal -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 rounded-xl bg-medical-500 flex items-center justify-center text-white text-2xl shadow-md group-hover:bg-medical-600 transition">
+                    <i class="fa-solid fa-paw"></i>
+                </div>
+                <div>
+                    <span class="text-2xl font-bold tracking-tight text-gray-900">Cal <span class="text-medical-500">Veterinaria</span></span>
+                    <p class="text-xs text-gray-500 font-medium">Clínica Veterinaria · Caldes de Montbui</p>
+                </div>
+            </a>
+
+            <!-- Menú Desktop -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-gray-600">
+                <a href="#inicio" class="hover:text-medical-500 transition">Inicio</a>
+                <a href="#nosotros" class="hover:text-medical-500 transition">Sobre Nosotros</a>
+                <a href="#servicios" class="hover:text-medical-500 transition">Especialidades</a>
+                <a href="#instalaciones" class="hover:text-medical-500 transition">Instalaciones</a>
+                <a href="#opiniones" class="hover:text-medical-500 transition">Opiniones</a>
+                <a href="#contacto" class="hover:text-medical-500 transition">Ubicación</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="hidden sm:block">
+                <a href="tel:938627529" class="bg-medical-500 hover:bg-medical-600 text-white font-semibold px-5 py-3 rounded-xl shadow-lg shadow-medical-500/20 transition flex items-center gap-2">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span>Pedir Cita Previa</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="menu-btn" class="md:hidden text-gray-700 text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="block py-2 text-gray-700 font-medium hover:text-medical-500">Inicio</a>
+            <a href="#nosotros" class="block py-2 text-gray-700 font-medium hover:text-medical-500">Sobre Nosotros</a>
+            <a href="#servicios" class="block py-2 text-gray-700 font-medium hover:text-medical-500">Especialidades</a>
+            <a href="#instalaciones" class="block py-2 text-gray-700 font-medium hover:text-medical-500">Instalaciones</a>
+            <a href="#opiniones" class="block py-2 text-gray-700 font-medium hover:text-medical-500">Opiniones</a>
+            <a href="#contacto" class="block py-2 text-gray-700 font-medium hover:text-medical-500">Ubicación</a>
+            <div class="pt-2">
+                <a href="tel:938627529" class="w-full bg-medical-500 hover:bg-medical-600 text-white font-semibold px-5 py-3 rounded-xl text-center shadow-md flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span>Pedir Cita Previa</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative bg-gradient-to-b from-medical-50/50 to-white py-16 md:py-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Contenido Texto -->
+                <div class="space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-medical-100 text-medical-700 px-4 py-1.5 rounded-full text-sm font-semibold">
+                        <i class="fa-solid fa-shield-heart"></i> Tu clínica de confianza en Caldes de Montbui
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight leading-tight">
+                        Cuidado veterinario excepcional para <span class="text-medical-500">tu mejor amigo</span>
+                    </h1>
+                    <p class="text-lg text-gray-600 max-w-xl mx-auto lg:mx-0">
+                        Brindamos atención integral, profesionalidad y un trato humano inigualable. La salud y felicidad de tus mascotas son nuestra razón de ser.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="tel:938627529" class="w-full sm:w-auto bg-medical-500 hover:bg-medical-600 text-white font-bold px-8 py-4 rounded-xl shadow-xl shadow-medical-500/30 transition text-center flex items-center justify-center gap-3 text-lg">
+                            <i class="fa-solid fa-phone-volume text-xl"></i>
+                            <span>Pedir Cita Previa</span>
+                        </a>
+                        <a href="#servicios" class="w-full sm:w-auto bg-white hover:bg-gray-50 text-gray-700 font-semibold px-6 py-4 rounded-xl border border-gray-200 transition text-center flex items-center justify-center gap-2">
+                            <span>Ver Servicios</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                    <!-- Badges de confianza -->
+                    <div class="pt-6 border-t border-gray-200 flex items-center justify-center lg:justify-start gap-8 text-sm text-gray-500">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-medical-500 text-lg"></i>
+                            <span class="font-medium text-gray-700">Trato Excelente</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-medical-500 text-lg"></i>
+                            <span class="font-medium text-gray-700">Máxima Calidad</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Imagen Real Destacada con Respaldo -->
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-medical-500/10 rounded-3xl transform -rotate-1"></div>
+                    <div class="relative bg-white p-3 rounded-2xl shadow-2xl border border-gray-100">
+                        <img src="https://scontent-iad3-1.xx.fbcdn.net/v/t39.30808-1/305579489_541939601066371_6574041633822329338_n.png?stp=dst-png&amp;cstp=mx740x740&amp;ctp=s720x720&amp;_nc_cat=101&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=kvdRgW3smYEQ7kNvwHh31XR&amp;_nc_oc=AdrV9IGg1gE2JrBPn94lCmxloVGh7kgWLfSkFnTfZaInKG1SKyHNUp0tZmlhCGYDeH4&amp;_nc_zt=24&amp;_nc_ht=scontent-iad3-1.xx&amp;_nc_gid=tCpTzpvpemZLP65Rq4GEWA&amp;_nc_ss=7f289&amp;oh=00_AQOBnn68ZRctWdwbY7CpzkCWDLNDEDLcKweDtl33ioSDXw&amp;oe=6AD70F4E" 
+                             alt="Cal Veterinaria - Caldes de Montbui" 
+                             class="rounded-xl w-full h-[380px] sm:h-[450px] object-cover"
+                             referrerpolicy="no-referrer"
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80';">
+                        <div class="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md p-4 rounded-xl shadow-lg border border-white/20 flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-medical-500 text-white flex items-center justify-center font-bold">
+                                    <i class="fa-solid fa-star text-amber-300"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-500">Valoración en Google</p>
+                                    <p class="text-sm font-bold text-gray-900">Excelente Profesionalidad</p>
+                                </div>
+                            </div>
+                            <span class="bg-medical-100 text-medical-800 text-xs font-semibold px-2.5 py-1 rounded-md">5.0 ★</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Sobre Nosotros / Compromiso -->
+    <section id="nosotros" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-xs uppercase tracking-widest text-medical-600 font-bold">Compromiso y Pasión</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-gray-900">Cuidamos de tu familia con vocación y experiencia</h3>
+                <p class="text-gray-600 text-lg">
+                    Ubicados en el corazón de Caldes de Montbui, en <span class="font-medium text-gray-800">Cal Veterinaria</span> nos esforzamos cada día por ofrecer un entorno seguro, limpio y tecnológicamente preparado para el bienestar animal.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-medical-50/50 p-8 rounded-2xl border border-medical-100/60 hover:shadow-lg transition">
+                    <div class="w-14 h-14 bg-medical-500 text-white rounded-xl flex items-center justify-center text-2xl mb-6 shadow-md shadow-medical-500/20">
+                        <i class="fa-solid fa-stethoscope"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Medicina Preventiva</h4>
+                    <p class="text-gray-600 leading-relaxed">
+                        Planes de salud personalizados, vacunaciones, desparasitaciones y revisiones periódicas para anticiparnos a cualquier problema.
+                    </p>
+                </div>
+
+                <div class="bg-medical-50/50 p-8 rounded-2xl border border-medical-100/60 hover:shadow-lg transition">
+                    <div class="w-14 h-14 bg-medical-500 text-white rounded-xl flex items-center justify-center text-2xl mb-6 shadow-md shadow-medical-500/20">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Atención Integral y Cariñosa</h4>
+                    <p class="text-gray-600 leading-relaxed">
+                        Como bien destacan nuestros clientes: excelente trato y profesionalidad en cada consulta, reduciendo el estrés de tu mascota.
+                    </p>
+                </div>
+
+                <div class="bg-medical-50/50 p-8 rounded-2xl border border-medical-100/60 hover:shadow-lg transition">
+                    <div class="w-14 h-14 bg-medical-500 text-white rounded-xl flex items-center justify-center text-2xl mb-6 shadow-md shadow-medical-500/20">
+                        <i class="fa-solid fa-kit-medical"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Diagnóstico y Tratamiento</h4>
+                    <p class="text-gray-600 leading-relaxed">
+                        Equipamiento adecuado para diagnósticos precisos, cirugías seguras y tratamientos eficaces para perros, gatos y exóticos.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Especialidades y Servicios -->
+    <section id="servicios" class="py-20 bg-gray-50 border-y border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-xs uppercase tracking-widest text-medical-600 font-bold">Nuestros Servicios</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-gray-900">Especialidades y Tratamientos Profesionales</h3>
+                <p class="text-gray-600 text-lg">
+                    Soluciones veterinarias completas adaptadas a las necesidades específicas de cada etapa de la vida de tu mascota.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Servicio 1 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition group">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-softblue-50 text-softblue-600 flex items-center justify-center text-xl group-hover:bg-medical-500 group-hover:text-white transition">
+                            <i class="fa-solid fa-syringe"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900">Vacunación y Desparasitación</h4>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Calendarios de inmunización actualizados y control antiparasitario externo e interno adaptado al estilo de vida del animal.
+                    </p>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition group">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-softblue-50 text-softblue-600 flex items-center justify-center text-xl group-hover:bg-medical-500 group-hover:text-white transition">
+                            <i class="fa-solid fa-microscope"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900">Diagnóstico Clínico y Lab</h4>
+                        </div>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Análisis clínicos rápidos y precisos para detectar patologías de forma temprana y aplicar el tratamiento adecuado.
+                    </p>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition group">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-softblue-50 text-softblue-600 flex items-center justify-center text-xl group-hover:bg-medical-500 group-hover:text-white transition">
+                            <i class="fa-solid fa-scissors"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900">Cirugía de Tejidos Blandos</h4>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Protocolos quirúrgicos seguros con monitorización anestésica avanzada y un riguroso cuidado postoperatorio.
+                    </p>
+                </div>
+
+                <!-- Servicio 4 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition group">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-softblue-50 text-softblue-600 flex items-center justify-center text-xl group-hover:bg-medical-500 group-hover:text-white transition">
+                            <i class="fa-solid fa-tooth"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900">Salud Bucodental</h4>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Limpiezas dentales por ultrasonidos, extracción de sarro y prevención de enfermedades periodontales graves.
+                    </p>
+                </div>
+
+                <!-- Servicio 5 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition group">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-softblue-50 text-softblue-600 flex items-center justify-center text-xl group-hover:bg-medical-500 group-hover:text-white transition">
+                            <i class="fa-solid fa-book-medical"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900">Medicina General y Consultas</h4>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Evaluaciones físicas completas, resolución de dudas sobre comportamiento, nutrición y cuidados diarios.
+                    </p>
+                </div>
+
+                <!-- Servicio 6 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition group">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-softblue-50 text-softblue-600 flex items-center justify-center text-xl group-hover:bg-medical-500 group-hover:text-white transition">
+                            <i class="fa-solid fa-passport"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900">Identificación y Pasaportes</h4>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Implantación de microchip homologado, tramitación de cartillas sanitarias oficiales y pasaportes europeos para viajar.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Llamado a la acción inferior en servicios -->
+            <div class="mt-12 bg-medical-500 text-white rounded-2xl p-8 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="space-y-2 text-center md:text-left">
+                    <h4 class="text-2xl font-bold">¿Necesitas una consulta o asesoramiento para tu mascota?</h4>
+                    <p class="text-medical-100">Llámanos ahora y agenda tu cita previa en Caldes de Montbui.</p>
+                </div>
+                <a href="tel:938627529" class="bg-white text-medical-700 hover:bg-gray-100 font-bold px-8 py-4 rounded-xl shadow-lg transition flex items-center gap-2 whitespace-nowrap">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Pedir Cita Previa</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Galería: Nuestras Instalaciones y Trabajos -->
+    <section id="instalaciones" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-xs uppercase tracking-widest text-medical-600 font-bold">Instalaciones</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-gray-900">Nuestras Instalaciones y Trabajos</h3>
+                <p class="text-gray-600 text-lg">
+                    Espacios diseñados para garantizar la tranquilidad, higiene y la mejor atención clínica a los pacientes que nos visitan.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Foto 1 (Real del negocio) -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-md bg-gray-100 aspect-[4/3]">
+                    <img src="https://scontent-iad3-1.xx.fbcdn.net/v/t39.30808-1/305579489_541939601066371_6574041633822329338_n.png?stp=dst-png&amp;cstp=mx740x740&amp;ctp=s720x720&amp;_nc_cat=101&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=kvdRgW3smYEQ7kNvwHh31XR&amp;_nc_oc=AdrV9IGg1gE2JrBPn94lCmxloVGh7kgWLfSkFnTfZaInKG1SKyHNUp0tZmlhCGYDeH4&amp;_nc_zt=24&amp;_nc_ht=scontent-iad3-1.xx&amp;_nc_gid=tCpTzpvpemZLP65Rq4GEWA&amp;_nc_ss=7f289&amp;oh=00_AQOBnn68ZRctWdwbY7CpzkCWDLNDEDLcKweDtl33ioSDXw&amp;oe=6AD70F4E" 
+                         alt="Cal Veterinaria Instalaciones" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <p class="text-white font-medium text-sm">Clínica Cal Veterinaria · Caldes de Montbui</p>
+                    </div>
+                </div>
+
+                <!-- Foto 2 (Respaldada por Unsplash clínica veterinaria) -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-md bg-gray-100 aspect-[4/3]">
+                    <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=1200&q=80" 
+                         alt="Sala de Consulta Veterinaria" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <p class="text-white font-medium text-sm">Área de Consulta y Exploración</p>
+                    </div>
+                </div>
+
+                <!-- Foto 3 (Respaldada por Unsplash equipo veterinario) -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-md bg-gray-100 aspect-[4/3]">
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80" 
+                         alt="Atención veterinaria profesional" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <p class="text-white font-medium text-sm">Profesionalidad y Dedicación</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Opiniones Reales Verificadas -->
+    <section id="opiniones" class="py-20 bg-medical-50/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-xs uppercase tracking-widest text-medical-600 font-bold">Testimonios</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-gray-900">Lo que opinan nuestros clientes</h3>
+                <p class="text-gray-600 text-lg">
+                    La satisfacción de quienes confían en nosotros es nuestro mayor aval en Caldes de Montbui.
+                </p>
+            </div>
+
+            <div class="max-w-2xl mx-auto">
+                <!-- Reseña Real Verificada -->
+                <div class="bg-white p-8 rounded-3xl shadow-lg border border-medical-100/85 relative">
+                    <div class="absolute top-6 right-8 text-medical-200 text-5xl font-serif">“</div>
+                    <div class="flex items-center gap-1 text-amber-400 mb-4 text-lg">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 text-xl font-medium italic mb-6 leading-relaxed">
+                        "Excelente trato, profesionalidad y calidad."
+                    </p>
+                    <div class="flex items-center justify-between border-t border-gray-100 pt-4">
+                        <div>
+                            <h4 class="font-bold text-gray-900">Diana García</h4>
+                            <p class="text-xs text-gray-500">Reseña verificada en Caldes de Montbui</p>
+                        </div>
+                        <span class="bg-medical-100 text-medical-800 text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1">
+                            <i class="fa-brands fa-google text-medical-600"><span>Google Maps</span></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Ubicación y Contacto / Mapa -->
+    <section id="contacto" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-xs uppercase tracking-widest text-medical-600 font-bold">Encuéntranos</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-gray-900">Visítanos en Caldes de Montbui</h3>
+                <p class="text-gray-600 text-lg">
+                    Estamos a tu disposición para cualquier consulta médica o urgencia programada.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                
+                <!-- Datos de contacto -->
+                <div class="lg:col-span-1 bg-medical-50/60 p-8 rounded-3xl border border-medical-100 space-y-6">
+                    <h4 class="text-xl font-bold text-gray-900 mb-2">Información de Contacto</h4>
+                    
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-medical-500 text-white flex items-center justify-center shrink-0 mt-1">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-500 font-semibold uppercase">Dirección</p>
+                            <p class="text-gray-800 font-medium">Carrer de Lloren Artigas, 15, BAJOLOCAL, 08140 Caldes de Montbui, Barcelona, España</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-medical-500 text-white flex items-center justify-center shrink-0 mt-1">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-500 font-semibold uppercase">Teléfono</p>
+                            <a href="tel:938627529" class="text-medical-600 font-bold text-lg hover:underline">938 627 529</a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-medical-500 text-white flex items-center justify-center shrink-0 mt-1">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-500 font-semibold uppercase">Correo Electrónico</p>
+                            <a href="mailto:error-lite+84f2@duckduckgo.com" class="text-gray-700 font-medium hover:text-medical-600 text-sm break-all">error-lite+84f2@duckduckgo.com</a>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-medical-200">
+                        <a href="tel:938627529" class="w-full bg-medical-500 hover:bg-medical-600 text-white font-bold py-3.5 rounded-xl shadow-md transition text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-calendar-check"></i>
+                            <span>Pedir Cita Previa</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mapa Interactivo Real -->
+                <div class="lg:col-span-2 bg-gray-100 p-3 rounded-3xl border border-gray-200 shadow-sm">
+                    <iframe src="https://www.google.com/maps?q=Cal%20Veterinaria%20Carrer%20de%20Lloren%20Artigas%2C%2015%2C%20BAJOLOCAL%2C%2008140%20Caldes%20de%20Montbui%2C%20Barcelona%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <!-- Col 1 -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-medical-500 flex items-center justify-center text-white text-xl">
+                            <i class="fa-solid fa-paw"></i>
+                        </div>
+                        <span class="text-xl font-bold tracking-tight">Cal <span class="text-medical-400">Veterinaria</span></span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Clínica veterinaria dedicada a ofrecer el máximo bienestar, salud y calidad de vida para tus animales de compañía en Caldes de Montbui.
+                    </p>
+                </div>
+
+                <!-- Col 2 -->
+                <div class="space-y-4">
+                    <h4 class="text-lg font-semibold text-gray-200">Enlaces Rápidos</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#inicio" class="hover:text-medical-400 transition">Inicio</a></li>
+                        <li><a href="#nosotros" class="hover:text-medical-400 transition">Sobre Nosotros</a></li>
+                        <li><a href="#servicios" class="hover:text-medical-400 transition">Especialidades</a></li>
+                        <li><a href="#instalaciones" class="hover:text-medical-400 transition">Instalaciones</a></li>
+                        <li><a href="#opiniones" class="hover:text-medical-400 transition">Opiniones</a></li>
+                        <li><a href="#contacto" class="hover:text-medical-400 transition">Ubicación y Contacto</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div class="space-y-4">
+                    <h4 class="text-lg font-semibold text-gray-200">Atención Urgente / Citas</h4>
+                    <p class="text-sm text-gray-400">Llámanos directamente para coordinar tu cita previa o resolver dudas sobre tu mascota.</p>
+                    <a href="tel:938627529" class="inline-flex items-center gap-2 bg-medical-500 hover:bg-medical-600 text-white font-bold px-5 py-3 rounded-xl transition shadow-lg shadow-medical-500/20">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>938 627 529</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+                <p>&copy; <span id="year"></span> Cal Veterinaria. Todos los derechos reservados.</p>
+                <p>Clínica Veterinaria en Carrer de Lloren Artigas, 15, Caldes de Montbui, Barcelona.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script para año dinámico y menú móvil -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú móvil al hacer clic en un enlace
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
