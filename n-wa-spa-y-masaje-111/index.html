@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NüwA SPA y Masaje | Spa de Masajes en León, Gto.</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#121212',
+                            card: '#1a1a1a',
+                            gold: '#d4af37',
+                            'gold-light': '#f3e5ab',
+                            sand: '#f5f2eb',
+                            muted: '#a3a3a3'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Cormorant Garamond', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa820a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-gradient-bg {
+            background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa820a 100%);
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-brand-sand font-sans antialiased selection:bg-brand-gold selection:text-brand-dark">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-brand-dark/90 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2 group">
+                <span class="font-serif text-2xl sm:text-3xl tracking-wider font-bold gold-gradient-text">NüwA SPA</span>
+                <span class="text-xs uppercase tracking-widest text-brand-muted hidden sm:inline-block border-l border-white/20 pl-2">León Moderno</span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
+                <a href="#inicio" class="hover:text-brand-gold transition-colors">Inicio</a>
+                <a href="#nosotros" class="hover:text-brand-gold transition-colors">Experiencia</a>
+                <a href="#tratamientos" class="hover:text-brand-gold transition-colors">Tratamientos</a>
+                <a href="#galeria" class="hover:text-brand-gold transition-colors">Instalaciones</a>
+                <a href="#testimonios" class="hover:text-brand-gold transition-colors">Opiniones</a>
+                <a href="#contacto" class="hover:text-brand-gold transition-colors">Ubicación</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="tel:524776883211" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full gold-gradient-bg text-brand-dark font-semibold text-sm hover:opacity-95 transition shadow-lg shadow-brand-gold/20">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Reservar Cita</span>
+                </a>
+                <button id="menu-btn" class="md:hidden text-brand-sand text-xl focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-card border-b border-white/10 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="block py-2 text-brand-sand hover:text-brand-gold">Inicio</a>
+            <a href="#nosotros" class="block py-2 text-brand-sand hover:text-brand-gold">Experiencia</a>
+            <a href="#tratamientos" class="block py-2 text-brand-sand hover:text-brand-gold">Tratamientos</a>
+            <a href="#galeria" class="block py-2 text-brand-sand hover:text-brand-gold">Instalaciones</a>
+            <a href="#testimonios" class="block py-2 text-brand-sand hover:text-brand-gold">Opiniones</a>
+            <a href="#contacto" class="block py-2 text-brand-sand hover:text-brand-gold">Ubicación</a>
+            <a href="tel:524776883211" class="w-full mt-2 flex items-center justify-center gap-2 px-5 py-3 rounded-full gold-gradient-bg text-brand-dark font-semibold text-sm">
+                <i class="fa-solid fa-phone"></i> Reservar Cita
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://scontent-dfw6-1.xx.fbcdn.net/v/t39.30808-6/686917000_1435220211950842_7710064886757040052_n.jpg?stp=dst-jpg_tt6&cstp=mx1920x716&ctp=s960x960&_nc_cat=103&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=LQRM8MZf4C4Q7kNvwFmPDNZ&_nc_oc=AdrJB9m9SLolz-LFLOfTAQVyD2dYx8wCH21bj3Ze8nb42ioPctSvzbEIxuPzBySoJaM&_nc_zt=23&_nc_ht=scontent-dfw6-1.xx&_nc_gid=77LjX-8T90--NGUkoqZaxw&_nc_ss=79289&oh=00_AQMBhAP3g3hAIQjhojW3jGC8q7KlxGc86E97WHh6Yof7SA&oe=6AD69009" 
+                 alt="NüwA SPA y Masaje León" 
+                 class="w-full h-full object-cover opacity-35 scale-105 animate-pulse duration-[10000ms]"
+                 referrerpolicy="no-referrer" 
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/70 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 text-center py-20">
+            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-brand-gold/30 text-brand-gold text-xs sm:text-sm tracking-widest uppercase mb-6 backdrop-blur-sm">
+                <i class="fa-solid fa-spa"></i> Santuario de Paz y Bienestar en León
+            </span>
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 text-white leading-tight">
+                Desconecta del estrés diario en <span class="gold-gradient-text">NüwA SPA</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-base sm:text-lg text-brand-muted mb-10 font-light">
+                Sumérgete en una experiencia multisensorial diseñada para renovar tu cuerpo y tu mente. Masajes profesionales, atención personalizada y un espacio hecho para tu máximo descanso en León Moderno.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="tel:524776883211" class="w-full sm:w-auto px-8 py-4 rounded-full gold-gradient-bg text-brand-dark font-bold text-base hover:opacity-95 transition shadow-xl shadow-brand-gold/20 flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-phone text-lg"></i>
+                    <span>Reservar Cita Ahora</span>
+                </a>
+                <a href="#tratamientos" class="w-full sm:w-auto px-8 py-4 rounded-full bg-white/5 hover:bg-white/10 border border-white/20 text-white font-medium text-base transition flex items-center justify-center gap-2">
+                    <span>Ver Tratamientos</span>
+                    <i class="fa-solid fa-arrow-down text-xs"></i>
+                </a>
+            </div>
+
+            <!-- Trust badges -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-3 gap-6 pt-10 border-t border-white/10 max-w-3xl mx-auto text-left">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold shrink-0">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div>
+                        <p class="font-bold text-sm text-white">5 Estrellas</p>
+                        <p class="text-xs text-brand-muted">Excelente atención</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold shrink-0">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <div>
+                        <p class="font-bold text-sm text-white">Trato Humilde</p>
+                        <p class="text-xs text-brand-muted">Cercano y profesional</p>
+                    </div>
+                </div>
+                <div class="col-span-2 md:col-span-1 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold shrink-0">
+                        <i class="fa-solid fa-sparkles"></i>
+                    </div>
+                    <div>
+                        <p class="font-bold text-sm text-white">100% Limpio</p>
+                        <p class="text-xs text-brand-muted">Ambiente impecable</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiencia / Sobre Nosotros -->
+    <section id="nosotros" class="py-24 bg-brand-card relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div class="relative">
+                    <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+                        <img src="https://scontent-dfw6-1.xx.fbcdn.net/v/t39.30808-1/686315054_1435219395284257_4417668050687700631_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx1200x1200&amp;ctp=s720x720&amp;_nc_cat=103&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=6nvcFgqImxwQ7kNvwHadt4Y&amp;_nc_oc=Adp_ooRfg71jnTawYDEq0Etr6BW8LlkFMgA8pX7HbMacAbpzOYNiQjgGIGNrK8q73qQ&amp;_nc_zt=24&amp;_nc_ht=scontent-dfw6-1.xx&amp;_nc_gid=rbo0VKtFd_7frzb6fWxbcw&amp;_nc_ss=79289&amp;oh=00_AQMfvgfSVbPjn05xEOAggncOOz9Z0KUz2afO2PwxwlcEsg&amp;oe=6AD69429" 
+                             alt="NüwA SPA Interior" 
+                             class="w-full h-[450px] object-cover"
+                             referrerpolicy="no-referrer" 
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 w-72 h-72 bg-brand-gold/10 rounded-full blur-3xl -z-0"></div>
+                </div>
+
+                <div>
+                    <span class="text-brand-gold uppercase tracking-widest text-xs font-semibold block mb-3">Nuestra Filosofía</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold mb-6 text-white leading-tight">
+                        Un espacio diseñado para tu <span class="gold-gradient-text">bienestar absoluto</span>
+                    </h2>
+                    <p class="text-brand-muted mb-6 font-light leading-relaxed">
+                        En <strong class="text-white font-medium">NüwA SPA y Masaje</strong> nos especializamos en devolverle la armonía a tu cuerpo. Ubicados en León Moderno, cada rincón está pensado para ofrecerte una experiencia inolvidable de desconexión, con terapeutas altamente capacitadas que cuidan hasta el más mínimo detalle.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-brand-gold mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-white text-sm">Atención Personalizada</h4>
+                                <p class="text-xs text-brand-muted">Cercana, amable y muy profesional.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-brand-gold mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-white text-sm">Instalaciones Impecables</h4>
+                                <p class="text-xs text-brand-muted">Limpieza rigurosa y ambiente de paz.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="tel:524776883211" class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-dark transition font-semibold text-sm">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>Agenda tu Experiencia</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tratamientos y Servicios -->
+    <section id="tratamientos" class="py-24 bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-gold uppercase tracking-widest text-xs font-semibold block mb-2">Carta de Servicios</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold mb-4 text-white">Nuestros Tratamientos y Masajes</h2>
+                <p class="text-brand-muted font-light">Disfruta de nuestros masajes relajantes, experiencias en pareja y rituales diseñados para consentirte de pies a cabeza.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Tarjeta 1 -->
+                <div class="bg-brand-card rounded-2xl p-8 border border-white/10 hover:border-brand-gold/50 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-brand-gold/10 flex items-center justify-center text-brand-gold text-2xl mb-6 group-hover:scale-110 transition">
+                            <i class="fa-solid fa-hands-bubbles"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-white mb-3">Masaje Relajante Profesional</h3>
+                        <p class="text-brand-muted text-sm mb-6 leading-relaxed">
+                            Diseñado para liberar tensiones acumuladas, calmar la mente y restaurar el flujo natural de energía de tu cuerpo con técnicas suaves y detallistas.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-white/10 flex items-center justify-between">
+                        <span class="text-xs uppercase tracking-wider text-brand-gold font-semibold">Ideal para desconectar</span>
+                        <a href="tel:524776883211" class="px-4 py-2 rounded-full bg-brand-gold/10 hover:bg-brand-gold hover:text-brand-dark text-brand-gold text-xs font-bold transition flex items-center gap-1.5">
+                            <i class="fa-solid fa-phone"></i> Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2 -->
+                <div class="bg-brand-card rounded-2xl p-8 border border-white/10 hover:border-brand-gold/50 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-brand-gold/10 flex items-center justify-center text-brand-gold text-2xl mb-6 group-hover:scale-110 transition">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-white mb-3">Experiencia Spa en Pareja</h3>
+                        <p class="text-brand-muted text-sm mb-6 leading-relaxed">
+                            Vive un momento inolvidable junto a esa persona especial con nuestro ritual en pareja. Atención exclusiva, aromaterapia y masajes de 10.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-white/10 flex items-center justify-between">
+                        <span class="text-xs uppercase tracking-wider text-brand-gold font-semibold">Muy solicitado</span>
+                        <a href="tel:524776883211" class="px-4 py-2 rounded-full bg-brand-gold/10 hover:bg-brand-gold hover:text-brand-dark text-brand-gold text-xs font-bold transition flex items-center gap-1.5">
+                            <i class="fa-solid fa-phone"></i> Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 3 -->
+                <div class="bg-brand-card rounded-2xl p-8 border border-white/10 hover:border-brand-gold/50 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-brand-gold/10 flex items-center justify-center text-brand-gold text-2xl mb-6 group-hover:scale-110 transition">
+                            <i class="fa-solid fa-spa"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-white mb-3">Rituales de Bienestar NüwA</h3>
+                        <p class="text-brand-muted text-sm mb-6 leading-relaxed">
+                            Tratamientos integrales orientados al cuidado profundo, la armonización y el confort total para hacerte sentir renovado como nunca antes.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-white/10 flex items-center justify-between">
+                        <span class="text-xs uppercase tracking-wider text-brand-gold font-semibold">Costos Justos</span>
+                        <a href="tel:524776883211" class="px-4 py-2 rounded-full bg-brand-gold/10 hover:bg-brand-gold hover:text-brand-dark text-brand-gold text-xs font-bold transition flex items-center gap-1.5">
+                            <i class="fa-solid fa-phone"></i> Reservar Cita
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería / Instalaciones -->
+    <section id="galeria" class="py-24 bg-brand-card">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-gold uppercase tracking-widest text-xs font-semibold block mb-2">Galería Visual</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold mb-4 text-white">Nuestras Instalaciones</h2>
+                <p class="text-brand-muted font-light">Un vistazo al ambiente limpio, tranquilo y acogedor que tenemos preparado para ti en León Moderno.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="relative group rounded-2xl overflow-hidden h-72 border border-white/10">
+                    <img src="https://scontent-dfw6-1.xx.fbcdn.net/v/t39.30808-1/686315054_1435219395284257_4417668050687700631_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx1200x1200&amp;ctp=s720x720&amp;_nc_cat=103&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=6nvcFgqImxwQ7kNvwHadt4Y&amp;_nc_oc=Adp_ooRfg71jnTawYDEq0Etr6BW8LlkFMgA8pX7HbMacAbpzOYNiQjgGIGNrK8q73qQ&amp;_nc_zt=24&amp;_nc_ht=scontent-dfw6-1.xx&amp;_nc_gid=rbo0VKtFd_7frzb6fWxbcw&amp;_nc_ss=79289&amp;oh=00_AQMfvgfSVbPjn05xEOAggncOOz9Z0KUz2afO2PwxwlcEsg&amp;oe=6AD69429" 
+                         alt="Instalación NüwA SPA 1" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <span class="text-white font-medium text-sm">Ambiente de relajación</span>
+                    </div>
+                </div>
+
+                <div class="relative group rounded-2xl overflow-hidden h-72 border border-white/10">
+                    <img src="https://scontent-dfw6-1.xx.fbcdn.net/v/t39.30808-6/686917000_1435220211950842_7710064886757040052_n.jpg?stp=dst-jpg_fb50_s320x320_tt6&_nc_cat=103&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=LQRM8MZf4C4Q7kNvwFmPDNZ&_nc_oc=AdrJB9m9SLolz-LFLOfTAQVyD2dYx8wCH21bj3Ze8nb42ioPctSvzbEIxuPzBySoJaM&_nc_zt=23&_nc_ht=scontent-dfw6-1.xx&_nc_gid=77LjX-8T90--NGUkoqZaxw&_nc_ss=79289&oh=00_AQOWnpPu_HSZU7VUmE38pbZTJ7QQebzuQKWSRXWJ-DI70g&oe=6AD69009" 
+                         alt="Instalación NüwA SPA 2" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <span class="text-white font-medium text-sm">Cabinas impecables</span>
+                    </div>
+                </div>
+
+                <div class="relative group rounded-2xl overflow-hidden h-72 border border-white/10">
+                    <img src="https://scontent-dfw6-1.xx.fbcdn.net/v/t39.30808-6/686917000_1435220211950842_7710064886757040052_n.jpg?stp=dst-jpg_tt6&cstp=mx1920x716&ctp=s960x960&_nc_cat=103&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=LQRM8MZf4C4Q7kNvwFmPDNZ&_nc_oc=AdrJB9m9SLolz-LFLOfTAQVyD2dYx8wCH21bj3Ze8nb42ioPctSvzbEIxuPzBySoJaM&_nc_zt=23&_nc_ht=scontent-dfw6-1.xx&_nc_gid=77LjX-8T90--NGUkoqZaxw&_nc_ss=79289&oh=00_AQMBhAP3g3hAIQjhojW3jGC8q7KlxGc86E97WHh6Yof7SA&oe=6AD69009" 
+                         alt="Instalación NüwA SPA 3" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <span class="text-white font-medium text-sm">Espacios de paz</span>
+                    </div>
+                </div>
+
+                <div class="relative group rounded-2xl overflow-hidden h-72 border border-white/10">
+                    <img src="https://scontent-dfw6-2.xx.fbcdn.net/v/t51.82787-10/838403659_17962289706233397_5394759000092467184_n.jpg?stp=dst-jpg_tt6&cstp=mx720x1280&ctp=s960x960&_nc_cat=108&ccb=1-7&_nc_sid=5fad0e&_nc_ohc=ywAoJmWTr5MQ7kNvwGObqrc&_nc_oc=Adr1p68m8gG8ntY4cEMn0hj2EWoGTVTlcp_IoDmDWj_eCDp1bKRogehUoptWp6cK6WU&_nc_zt=23&_nc_ht=scontent-dfw6-2.xx&_nc_gid=MKf6FLaQhyKaLUMAg_-hgg&_nc_ss=79289&oh=00_AQOdhwTob_oavZ7udpZzvZHrVvBN-HVxffhuHBS2IAqUrQ&oe=6AD69429" 
+                         alt="Instalación NüwA SPA 4" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <span class="text-white font-medium text-sm">Detalles que enamoran</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Opiniones Verificadas -->
+    <section id="testimonios" class="py-24 bg-brand-dark relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-gold uppercase tracking-widest text-xs font-semibold block mb-2">Testimonios Reales</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold mb-4 text-white">Lo que dicen nuestros clientes</h2>
+                <p class="text-brand-muted font-light">Reseñas genuinas extraídas directamente de Google Maps sobre su experiencia en NüwA SPA.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Reseña 1 -->
+                <div class="bg-brand-card p-8 rounded-2xl border border-white/10 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-brand-gold gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-brand-sand/90 text-sm italic leading-relaxed mb-6">
+                            "He tenido el placer de hacerme un masaje hoy en este centro con Mary y la verdad que ha sido una de las mejores experiencias que he tenido 🤍 la recomiendo al 100%, cercana, humilde, profesional con todo lujo de detalles, ha sido tan dulce conmigo que me hecho sentir como un bebé, volveré a repetir sin la menos duda 🥰 GRACIAS GRACIAS GRACIAS MARY🙏🙏🙏"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                        <div class="w-10 h-10 rounded-full gold-gradient-bg flex items-center justify-center text-brand-dark font-bold text-sm">
+                            BC
+                        </div>
+                        <div>
+                            <p class="font-bold text-white text-sm">Begoña Cabrera</p>
+                            <p class="text-xs text-brand-muted">Google Maps</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 2 -->
+                <div class="bg-brand-card p-8 rounded-2xl border border-white/10 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-brand-gold gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-brand-sand/90 text-sm italic leading-relaxed mb-6">
+                            "Hoy día 20 he tenido el spa Miconos plus con mi pareja, y ha sido espectacular. Una mención muy especial a Mari una Gran Profesional, muy atenta, muy amable y simpática. Atenta a cada detalle y el masaje de 10, una Gran Profesional…"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                        <div class="w-10 h-10 rounded-full gold-gradient-bg flex items-center justify-center text-brand-dark font-bold text-sm">
+                            AA
+                        </div>
+                        <div>
+                            <p class="font-bold text-white text-sm">Almudena Alonso</p>
+                            <p class="text-xs text-brand-muted">Google Maps</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 3 -->
+                <div class="bg-brand-card p-8 rounded-2xl border border-white/10 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-brand-gold gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-brand-sand/90 text-sm italic leading-relaxed mb-6">
+                            "100% recomendable. Lugar para desconectar del día a día. Trato excelente, gracias."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                        <div class="w-10 h-10 rounded-full gold-gradient-bg flex items-center justify-center text-brand-dark font-bold text-sm">
+                            YM
+                        </div>
+                        <div>
+                            <p class="font-bold text-white text-sm">Yesica Marrero</p>
+                            <p class="text-xs text-brand-muted">Google Maps</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 4 -->
+                <div class="bg-brand-card p-8 rounded-2xl border border-white/10 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-brand-gold gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-brand-sand/90 text-sm italic leading-relaxed mb-6">
+                            "Excelente servicio, muy limpio, costos justos. No tienen estacionamiento."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                        <div class="w-10 h-10 rounded-full gold-gradient-bg flex items-center justify-center text-brand-dark font-bold text-sm">
+                            KS
+                        </div>
+                        <div>
+                            <p class="font-bold text-white text-sm">Karin Segura</p>
+                            <p class="text-xs text-brand-muted">Google Maps</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 5 -->
+                <div class="bg-brand-card p-8 rounded-2xl border border-white/10 flex flex-col justify-between md:col-span-2 lg:col-span-2">
+                    <div>
+                        <div class="flex text-brand-gold gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-brand-sand/90 text-sm italic leading-relaxed mb-6">
+                            "Excelente experiencia para relajación, buena atención desde la entrada"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                        <div class="w-10 h-10 rounded-full gold-gradient-bg flex items-center justify-center text-brand-dark font-bold text-sm">
+                            AM
+                        </div>
+                        <div>
+                            <p class="font-bold text-white text-sm">Alondra Jazmín Aviña Márquez</p>
+                            <p class="text-xs text-brand-muted">Google Maps</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Ubicación y Contacto -->
+    <section id="contacto" class="py-24 bg-brand-card border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-brand-gold uppercase tracking-widest text-xs font-semibold block mb-2">Encuéntranos</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold mb-6 text-white">Visítanos en León</h2>
+                    <p class="text-brand-muted font-light mb-8">
+                        Reserva tu cita con anticipación para brindarte la atención exclusiva que mereces. Te esperamos en nuestro santuario de bienestar.
+                    </p>
+
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-gold/10 flex items-center justify-center text-brand-gold shrink-0 text-lg">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white">Dirección Exacta</h4>
+                                <p class="text-sm text-brand-muted">C. Rossini 119, León Moderno, 37480 León de los Aldama, Gto., México</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-gold/10 flex items-center justify-center text-brand-gold shrink-0 text-lg">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white">Teléfono de Reservaciones</h4>
+                                <p class="text-sm text-brand-muted">+52 477 688 3211</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="tel:524776883211" class="inline-flex items-center gap-3 px-8 py-4 rounded-full gold-gradient-bg text-brand-dark font-bold text-base hover:opacity-95 transition shadow-lg shadow-brand-gold/20">
+                        <i class="fa-solid fa-phone text-lg"></i>
+                        <span>Reservar Cita Ahora</span>
+                    </a>
+                </div>
+
+                <div class="rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-brand-dark p-2">
+                    <iframe src="https://www.google.com/maps?q=N%C3%BCwA%20SPA%20y%20Masaje%20C.%20Rossini%20119%2C%20Le%C3%B3n%20Moderno%2C%2037480%20Le%C3%B3n%20de%20los%20Aldama%2C%20Gto.%2C%20M%C3%A9xico&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark py-12 border-t border-white/10 text-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <span class="font-serif text-3xl font-bold gold-gradient-text tracking-wider block mb-4">NüwA SPA y Masaje</span>
+            <p class="text-brand-muted text-sm max-w-md mx-auto mb-6">
+                Tu oasis de relajación y masajes profesionales en León Moderno, Guanajuato.
+            </p>
+            <div class="flex justify-center gap-6 mb-8 text-lg">
+                <a href="tel:524776883211" class="text-brand-sand hover:text-brand-gold transition"><i class="fa-solid fa-phone"></i></a>
+                <a href="#contacto" class="text-brand-sand hover:text-brand-gold transition"><i class="fa-solid fa-location-dot"></i></a>
+            </div>
+            <p class="text-xs text-brand-muted/60">
+                &copy; <script>document.write(new Date().getFullYear());</script> NüwA SPA y Masaje. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking links
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
