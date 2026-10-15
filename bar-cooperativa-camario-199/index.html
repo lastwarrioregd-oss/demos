@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bar Cooperativa CaMario | Benimarfull</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        terracota: {
+                            DEFAULT: '#b45309',
+                            dark: '#92400e',
+                            light: '#d97706',
+                        },
+                        gourmet: {
+                            dark: '#1c1917',
+                            card: '#292524',
+                            cream: '#fef3c7',
+                            sand: '#fefae0',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gourmet-dark text-stone-100 font-sans antialiased selection:bg-terracota selection:text-white">
+
+    <!-- Header & Navegación -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-gourmet-dark/90 backdrop-blur-md border-b border-stone-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2 group">
+                <span class="text-2xl sm:text-3xl font-serif font-bold tracking-wider text-stone-100 group-hover:text-terracota-light transition-colors">
+                    CaMario <span class="text-terracota text-sm block font-sans font-normal tracking-widest uppercase">Bar Cooperativa</span>
+                </span>
+            </a>
+
+            <!-- Navegación Escritorio -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm tracking-wide">
+                <a href="#carta" class="hover:text-terracota-light transition-colors">Nuestra Carta</a>
+                <a href="#instalaciones" class="hover:text-terracota-light transition-colors">El Bar</a>
+                <a href="#opiniones" class="hover:text-terracota-light transition-colors">Opiniones</a>
+                <a href="#contacto" class="hover:text-terracota-light transition-colors">Ubicación</a>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-4">
+                <a href="tel:966516907" class="bg-terracota hover:bg-terracota-dark text-white font-medium px-6 py-2.5 rounded-full shadow-lg shadow-terracota/20 transition-all duration-300 transform hover:-translate-y-0.5 flex items-center gap-2">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Reservar Mesa</span>
+                </a>
+            </div>
+
+            <!-- Botón Menú Móvil -->
+            <button id="menu-btn" class="md:hidden text-stone-100 focus:outline-none text-2xl p-2">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Menú Móvil desplegable -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gourmet-card border-b border-stone-800 px-4 pt-2 pb-6 space-y-4">
+            <a href="#carta" class="block py-2 text-stone-200 hover:text-terracota-light">Nuestra Carta</a>
+            <a href="#instalaciones" class="block py-2 text-stone-200 hover:text-terracota-light">El Bar</a>
+            <a href="#opiniones" class="block py-2 text-stone-200 hover:text-terracota-light">Opiniones</a>
+            <a href="#contacto" class="block py-2 text-stone-200 hover:text-terracota-light">Ubicación</a>
+            <a href="tel:966516907" class="w-full text-center block bg-terracota hover:bg-terracota-dark text-white font-medium px-6 py-3 rounded-xl shadow-md">
+                <i class="fa-solid fa-phone mr-2"></i> Reservar Mesa
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <!-- Imagen de fondo con respaldo infalible -->
+        <div class="absolute inset-0 z-0">
+            <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';" alt="Bar Cooperativa CaMario Interior" class="w-full h-full object-cover object-center filter brightness-50 scale-105 animate-pulse duration-1000">
+            <div class="absolute inset-0 bg-gradient-to-t from-gourmet-dark via-gourmet-dark/60 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 text-center py-20">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-terracota/20 border border-terracota/30 text-terracota-light mb-6 text-sm font-medium tracking-wide">
+                <i class="fa-solid fa-location-dot"></i> Benimarfull, Alicante
+            </div>
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-serif font-bold text-stone-100 mb-6 leading-tight">
+                Tradición, Sabor y <span class="text-transparent bg-clip-text bg-gradient-to-r from-terracota-light to-amber-200">Excelente Trato</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-stone-300 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+                Bienvenidos al <strong class="text-stone-100 font-semibold">Bar Cooperativa CaMario</strong>. Tu punto de encuentro en el corazón de Benimarfull para disfrutar de la auténtica gastronomía local en un ambiente cálido y familiar.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="tel:966516907" class="w-full sm:w-auto bg-terracota hover:bg-terracota-dark text-white font-medium px-8 py-4 rounded-full shadow-xl shadow-terracota/25 transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-3 text-base">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <span>Reservar Mesa</span>
+                </a>
+                <a href="#carta" class="w-full sm:w-auto bg-stone-800/80 hover:bg-stone-700 text-stone-200 font-medium px-8 py-4 rounded-full backdrop-blur-sm border border-stone-700 transition-all duration-300 flex items-center justify-center gap-2 text-base">
+                    <i class="fa-solid fa-utensils"></i>
+                    <span>Ver Carta y Especialidades</span>
+                </a>
+            </div>
+
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-3 gap-6 max-w-3xl mx-auto border-t border-stone-800 pt-8 text-stone-400 text-sm">
+                <div class="flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-award text-terracota-light text-lg"></i>
+                    <span>Excelente Trato</span>
+                </div>
+                <div class="flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-star text-terracota-light text-lg"></i>
+                    <span>Máxima Calidad</span>
+                </div>
+                <div class="col-span-2 md:col-span-1 flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-heart text-terracota-light text-lg"></i>
+                    <span>Ambiente Acogedor</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Nuestra Carta y Especialidades -->
+    <section id="carta" class="py-24 bg-stone-900/50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-terracota-light uppercase tracking-widest text-sm font-semibold mb-2 block">Gastronomía Auténtica</span>
+                <h2 class="text-3xl sm:text-5xl font-serif font-bold text-stone-100 mb-4">Nuestra Carta y Especialidades</h2>
+                <div class="w-24 h-1 bg-terracota mx-auto rounded-full mb-6"></div>
+                <p class="text-stone-400 text-base sm:text-lg font-light">
+                    Preparado con esmero y productos locales de primera calidad. Descubre los sabores que enamoran a quienes nos visitan.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Categoría 1 -->
+                <div class="bg-gourmet-card border border-stone-800 rounded-2xl p-8 hover:border-terracota/50 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-xl bg-terracota/10 border border-terracota/20 flex items-center justify-center text-terracota-light text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-plate-wheat"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-stone-100 mb-3">Tapas y Entrantes</h3>
+                    <p class="text-stone-400 text-sm mb-6 leading-relaxed">
+                        Variedad de tapas caseras tradicionales, embutidos de la comarca y raciones ideales para compartir con los tuyos.
+                    </p>
+                    <ul class="space-y-3 text-sm text-stone-300 border-t border-stone-800 pt-6">
+                        <li class="flex justify-between items-center">
+                            <span>Montaditos y Salazones</span>
+                            <span class="text-terracota-light font-medium">Casero</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>Patatas Bravas & Alioli</span>
+                            <span class="text-terracota-light font-medium">Tradicional</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>Croquetas de la Abuela</span>
+                            <span class="text-terracota-light font-medium">Estrella</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Categoría 2 -->
+                <div class="bg-gourmet-card border border-stone-800 rounded-2xl p-8 hover:border-terracota/50 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-xl bg-terracota/10 border border-terracota/20 flex items-center justify-center text-terracota-light text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-fire-burner"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-stone-100 mb-3">Platos Principales</h3>
+                    <p class="text-stone-400 text-sm mb-6 leading-relaxed">
+                        Platos contundentes, carnes seleccionadas y recetas de cuchara que reconfortan el alma y celebran la gastronomía alicantina.
+                    </p>
+                    <ul class="space-y-3 text-sm text-stone-300 border-t border-stone-800 pt-6">
+                        <li class="flex justify-between items-center">
+                            <span>Carnes a la Brasa</span>
+                            <span class="text-terracota-light font-medium">Jugosas</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>Especialidades del Día</span>
+                            <span class="text-terracota-light font-medium">Mercado</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>Opciones de Temporada</span>
+                            <span class="text-terracota-light font-medium">Frescas</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Categoría 3 -->
+                <div class="bg-gourmet-card border border-stone-800 rounded-2xl p-8 hover:border-terracota/50 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-xl bg-terracota/10 border border-terracota/20 flex items-center justify-center text-terracota-light text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-wine-glass"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-stone-100 mb-3">Bebidas y Vinos</h3>
+                    <p class="text-stone-400 text-sm mb-6 leading-relaxed">
+                        Bodega seleccionada con vinos de la tierra, cervezas bien frías y vermuts artesanales para el aperitivo perfecto.
+                    </p>
+                    <ul class="space-y-3 text-sm text-stone-300 border-t border-stone-800 pt-6">
+                        <li class="flex justify-between items-center">
+                            <span>Vinos D.O. Alicante</span>
+                            <span class="text-terracota-light font-medium">Selección</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>Cerveza de Grifo y Artesana</span>
+                            <span class="text-terracota-light font-medium">Bien fría</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>Vermut de la Casa</span>
+                            <span class="text-terracota-light font-medium">Clásico</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <a href="tel:966516907" class="inline-flex items-center gap-3 bg-terracota hover:bg-terracota-dark text-white font-medium px-8 py-3.5 rounded-full shadow-lg transition-all duration-300">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Llama al 966 51 69 07 para Consultar Menú Diario</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Nuestras Instalaciones y Trabajos (Galería) -->
+    <section id="instalaciones" class="py-24 bg-gourmet-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-terracota-light uppercase tracking-widest text-sm font-semibold mb-2 block">UnEspacio Acogedor</span>
+                <h2 class="text-3xl sm:text-5xl font-serif font-bold text-stone-100 mb-4">Nuestras Instalaciones</h2>
+                <div class="w-24 h-1 bg-terracota mx-auto rounded-full mb-6"></div>
+                <p class="text-stone-400 text-base sm:text-lg font-light">
+                    Un ambiente diseñado para que te sientas como en casa, ya sea para un café matutino, unas cañas con amigos o una comida inolvidable.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="relative overflow-hidden rounded-2xl group h-80 border border-stone-800">
+                    <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80';" alt="Salón Principal CaMario" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet-dark via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <h3 class="text-lg font-serif font-bold text-white">Salón Principal</h3>
+                        <p class="text-xs text-stone-300">Ambiente cálido y acogedor</p>
+                    </div>
+                </div>
+
+                <div class="relative overflow-hidden rounded-2xl group h-80 border border-stone-800">
+                    <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=800&q=80';" alt="Barra Bar Cooperativa CaMario" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet-dark via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <h3 class="text-lg font-serif font-bold text-white">Nuestra Barra</h3>
+                        <p class="text-xs text-stone-300">El alma del bar y el buen aperitivo</p>
+                    </div>
+                </div>
+
+                <div class="relative overflow-hidden rounded-2xl group h-80 border border-stone-800 md:col-span-2 lg:col-span-1">
+                    <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=80';" alt="Ambiente y Detalles" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet-dark via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <h3 class="text-lg font-serif font-bold text-white">Detalles y Buen Ambiente</h3>
+                        <p class="text-xs text-stone-300">Profesionalidad y calidad</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Opiniones Reales Verificadas -->
+    <section id="opiniones" class="py-24 bg-stone-900/50 relative border-t border-stone-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-terracota-light uppercase tracking-widest text-sm font-semibold mb-2 block">Testimonios de Clientes</span>
+                <h2 class="text-3xl sm:text-5xl font-serif font-bold text-stone-100 mb-4">Lo que opinan de nosotros</h2>
+                <div class="w-24 h-1 bg-terracota mx-auto rounded-full mb-6"></div>
+                <p class="text-stone-400 text-base sm:text-lg font-light">
+                    La satisfacción de quienes nos visitan es nuestro mayor aval y motivación diaria.
+                </p>
+            </div>
+
+            <div class="max-w-2xl mx-auto">
+                <div class="bg-gourmet-card border border-stone-800 rounded-3xl p-8 sm:p-10 shadow-2xl relative">
+                    <div class="absolute -top-5 right-10 w-10 h-10 bg-terracota rounded-full flex items-center justify-center text-white text-lg shadow-lg">
+                        <i class="fa-solid fa-quote-right"></i>
+                    </div>
+                    <div class="flex items-center gap-1 text-amber-400 mb-6 text-lg">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-stone-200 text-lg sm:text-xl font-serif italic mb-8 leading-relaxed">
+                        "Excelente trato, profesionalidad y calidad."
+                    </p>
+                    <div class="flex items-center gap-4 border-t border-stone-800 pt-6">
+                        <div class="w-12 h-12 rounded-full bg-terracota/20 border border-terracota/40 flex items-center justify-center text-terracota-light font-serif font-bold text-lg">
+                            G
+                        </div>
+                        <div>
+                            <h4 class="text-stone-100 font-semibold">Cliente Verificado</h4>
+                            <p class="text-xs text-stone-400">Reseña de Google Maps</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Ubicación, Mapa y Contacto -->
+    <section id="contacto" class="py-24 bg-gourmet-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-terracota-light uppercase tracking-widest text-sm font-semibold mb-2 block">Encuéntranos</span>
+                <h2 class="text-3xl sm:text-5xl font-serif font-bold text-stone-100 mb-4">Visítanos en Benimarfull</h2>
+                <div class="w-24 h-1 bg-terracota mx-auto rounded-full mb-6"></div>
+                <p class="text-stone-400 text-base sm:text-lg font-light">
+                    Estamos situados en una ubicación privilegiada. Ven a conocernos o reserva tu mesa por teléfono.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <!-- Información de contacto -->
+                <div class="lg:col-span-5 bg-gourmet-card border border-stone-800 rounded-3xl p-8 sm:p-10 space-y-8">
+                    <h3 class="text-2xl font-serif font-bold text-stone-100">Información de Contacto</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-terracota/10 border border-terracota/20 flex items-center justify-center text-terracota-light shrink-0 text-xl">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-stone-200 font-semibold mb-1">Dirección</h4>
+                                <p class="text-stone-400 text-sm leading-relaxed">C. Sant Jaume, 13, 03827 Benimarfull, Alicante, España</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-terracota/10 border border-terracota/20 flex items-center justify-center text-terracota-light shrink-0 text-xl">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-stone-200 font-semibold mb-1">Teléfono de Reservas</h4>
+                                <a href="tel:966516907" class="text-stone-300 hover:text-terracota-light text-sm transition-colors font-medium">966 51 69 07</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-terracota/10 border border-terracota/20 flex items-center justify-center text-terracota-light shrink-0 text-xl">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-stone-200 font-semibold mb-1">Correo Electrónico</h4>
+                                <a href="mailto:error-lite+84f2@duckduckgo.com" class="text-stone-300 hover:text-terracota-light text-sm transition-colors break-all">error-lite+84f2@duckduckgo.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-6 border-t border-stone-800">
+                        <a href="tel:966516907" class="w-full bg-terracota hover:bg-terracota-dark text-white font-medium py-4 rounded-xl shadow-lg shadow-terracota/20 transition-all duration-300 flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-phone-volume"></i>
+                            <span>Reservar Mesa Ahora</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mapa interactivo real solicitado -->
+                <div class="lg:col-span-7 bg-gourmet-card border border-stone-800 rounded-3xl p-4 sm:p-6 shadow-2xl">
+                    <div class="overflow-hidden rounded-2xl">
+                        <iframe src="https://www.google.com/maps?q=Bar%20Cooperativa%20CaMario%20C.%20Sant%20Jaume%2C%2013%2C%2003827%20Benimarfull%2C%20Alicante%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-stone-950 border-t border-stone-800 py-12 text-stone-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-center md:text-left">
+                <span class="text-xl font-serif font-bold text-stone-100 tracking-wider block mb-1">Bar Cooperativa CaMario</span>
+                <p class="text-xs text-stone-500">C. Sant Jaume, 13, 03827 Benimarfull, Alicante, España</p>
+            </div>
+
+            <div class="flex items-center gap-6">
+                <a href="#carta" class="hover:text-terracota-light transition-colors">Carta</a>
+                <a href="#instalaciones" class="hover:text-terracota-light transition-colors">El Bar</a>
+                <a href="#opiniones" class="hover:text-terracota-light transition-colors">Opiniones</a>
+                <a href="#contacto" class="hover:text-terracota-light transition-colors">Ubicación</a>
+            </div>
+
+            <div class="text-center md:text-right text-xs text-stone-500">
+                <p>&copy; <script>document.write(new Date().getFullYear());</script> Bar Cooperativa CaMario. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script para menú móvil interactivo -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú móvil al hacer click en un enlace
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
