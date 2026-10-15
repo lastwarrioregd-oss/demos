@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rose Style Peluquería y Estética Canina en Huelva | Boutique para Mascotas</title>
+    <meta name="description" content="Peluquería y estética canina boutique en Huelva. Trato dulce, paciente y profesional para tu mascota. Cortes de raza, baños spa y atención personalizada por Rosi.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#121110',      // Negro mate suave
+                            surface: '#1A1817',   // Negro mate secundario
+                            gold: '#D4AF37',      // Dorado boutique elegante
+                            goldHover: '#C59B27',
+                            rose: '#E2B8A0',      // Rosa terroso / champán
+                            sand: '#F7F4EF',      // Beige arena para fondos claros
+                            sandDark: '#EAE4DC',
+                            muted: '#A19B95'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 50%, #AA7C11 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border-gradient {
+            border-image: linear-gradient(to right, #D4AF37, #E2B8A0, #D4AF37) 1;
+        }
+        .bg-pattern {
+            background-color: #121110;
+            background-image: radial-gradient(#262321 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="font-sans bg-brand-sand text-brand-dark selection:bg-brand-gold selection:text-brand-dark antialiased">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-50 bg-brand-dark/95 backdrop-blur-md border-b border-brand-gold/20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-brand-gold via-brand-rose to-amber-200 p-[1px] flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
+                        <div class="w-full h-full bg-brand-dark rounded-full flex items-center justify-center">
+                            <i class="fa-solid fa-paw text-brand-gold text-lg"></i>
+                        </div>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-serif text-xl sm:text-2xl font-bold tracking-wide text-white group-hover:text-brand-gold transition-colors">
+                            Rose Style
+                        </span>
+                        <span class="text-[10px] tracking-widest uppercase text-brand-rose font-medium">Peluquería & Estética Canina</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#inicio" class="text-sm font-medium text-gray-300 hover:text-brand-gold transition-colors">Inicio</a>
+                    <a href="#nosotros" class="text-sm font-medium text-gray-300 hover:text-brand-gold transition-colors">Sobre Rosi</a>
+                    <a href="#servicios" class="text-sm font-medium text-gray-300 hover:text-brand-gold transition-colors">Tratamientos y Tarifas</a>
+                    <a href="#galeria" class="text-sm font-medium text-gray-300 hover:text-brand-gold transition-colors">Galería</a>
+                    <a href="#opiniones" class="text-sm font-medium text-gray-300 hover:text-brand-gold transition-colors">Opiniones</a>
+                    <a href="#contacto" class="text-sm font-medium text-gray-300 hover:text-brand-gold transition-colors">Ubicación</a>
+                </nav>
+
+                <!-- Header CTA Button -->
+                <div class="hidden sm:flex items-center">
+                    <a href="https://wa.me/34640778407" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-brand-gold to-amber-600 text-brand-dark font-semibold text-sm shadow-md hover:shadow-brand-gold/20 hover:scale-105 transition-all duration-300">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Reservar Cita</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" type="button" class="text-gray-300 hover:text-white focus:outline-none p-2" aria-label="Abrir Menú">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-surface border-b border-brand-gold/20 px-4 pt-3 pb-6 space-y-3">
+            <a href="#inicio" class="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-brand-gold hover:bg-brand-dark">Inicio</a>
+            <a href="#nosotros" class="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-brand-gold hover:bg-brand-dark">Sobre Rosi</a>
+            <a href="#servicios" class="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-brand-gold hover:bg-brand-dark">Tratamientos y Tarifas</a>
+            <a href="#galeria" class="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-brand-gold hover:bg-brand-dark">Galería</a>
+            <a href="#opiniones" class="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-brand-gold hover:bg-brand-dark">Opiniones</a>
+            <a href="#contacto" class="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-brand-gold hover:bg-brand-dark">Ubicación</a>
+            <a href="https://wa.me/34640778407" target="_blank" rel="noopener" class="w-full text-center mt-4 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-gradient-to-r from-brand-gold to-amber-600 text-brand-dark font-bold text-base shadow-lg">
+                <i class="fa-brands fa-whatsapp text-xl"></i>
+                <span>Reservar Cita</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="relative bg-pattern min-h-[88vh] flex items-center overflow-hidden py-16 lg:py-24 border-b border-brand-gold/10">
+        <!-- Ambient Glow -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-gold/10 blur-[140px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-surface border border-brand-gold/30 text-brand-rose text-xs sm:text-sm font-medium">
+                        <i class="fa-solid fa-crown text-brand-gold"></i>
+                        <span>Boutique de Belleza y Salud Canina en Huelva</span>
+                    </div>
+
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
+                        El arte del cuidado estilístico con <span class="gold-gradient-text italic">amor y dulzura</span> para tu mascota.
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                        En <strong class="text-white font-semibold">Rose Style</strong> transformamos el momento del arreglo en una experiencia relajante y libre de estrés. Especialistas en cortes de raza (Perro de Agua, Yorkshire, Caniche), cachorros y perros desconfiados.
+                    </p>
+
+                    <!-- Feature Badges -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 text-xs sm:text-sm text-gray-300">
+                        <div class="flex items-center justify-center lg:justify-start gap-2 bg-brand-surface/60 p-2.5 rounded-lg border border-white/5">
+                            <i class="fa-solid fa-heart text-brand-gold"></i>
+                            <span>Trato paciente y dulce</span>
+                        </div>
+                        <div class="flex items-center justify-center lg:justify-start gap-2 bg-brand-surface/60 p-2.5 rounded-lg border border-white/5">
+                            <i class="fa-solid fa-pump-soap text-brand-gold"></i>
+                            <span>Cosmética de alta gama</span>
+                        </div>
+                        <div class="flex items-center justify-center lg:justify-start gap-2 bg-brand-surface/60 p-2.5 rounded-lg border border-white/5 col-span-2 sm:col-span-1">
+                            <i class="fa-solid fa-stethoscope text-brand-gold"></i>
+                            <span>Revisión higiénica y salud</span>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="https://wa.me/34640778407" target="_blank" rel="noopener" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-brand-gold via-amber-400 to-amber-600 text-brand-dark font-bold text-base shadow-xl shadow-amber-900/20 hover:scale-105 transition-all">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <span>Reservar Cita</span>
+                        </a>
+                        <a href="#servicios" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-brand-surface hover:bg-brand-dark text-white border border-brand-gold/40 font-medium text-base transition-all">
+                            <span>Ver Servicios y Tarifas</span>
+                            <i class="fa-solid fa-arrow-down text-brand-gold text-xs"></i>
+                        </a>
+                    </div>
+
+                    <!-- Quick Location/Rating Bar -->
+                    <div class="pt-6 border-t border-white/10 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-gray-400">
+                        <div class="flex items-center gap-1.5">
+                            <i class="fa-solid fa-star text-amber-400"></i>
+                            <i class="fa-solid fa-star text-amber-400"></i>
+                            <i class="fa-solid fa-star text-amber-400"></i>
+                            <i class="fa-solid fa-star text-amber-400"></i>
+                            <i class="fa-solid fa-star text-amber-400"></i>
+                            <span class="text-white font-semibold ml-1">5.0 / 5.0</span> en Google Maps
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                            <i class="fa-solid fa-location-dot text-brand-rose"></i>
+                            <span>C. San Ramón, 1, Huelva</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right Image Frame -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Frame Gold Accent -->
+                        <div class="absolute -inset-2 rounded-3xl bg-gradient-to-r from-brand-gold via-brand-rose to-amber-700 opacity-30 blur-lg"></div>
+                        
+                        <div class="relative bg-brand-surface rounded-2xl overflow-hidden border border-brand-gold/30 shadow-2xl">
+                            <img src="https://static.xx.fbcdn.net/rsrc.php/yB/r/83zWJdc6PJI.webp" 
+                                 referrerpolicy="no-referrer"
+                                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" 
+                                 alt="Rose Style Peluquería Canina Huelva" 
+                                 class="w-full h-[420px] sm:h-[480px] object-cover object-center hover:scale-105 transition-transform duration-700">
+                            
+                            <!-- Floating Badge on Image -->
+                            <div class="absolute bottom-4 left-4 right-4 bg-brand-dark/90 backdrop-blur-md p-4 rounded-xl border border-brand-gold/30 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-gold">
+                                        <i class="fa-solid fa-scissors text-lg"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs text-brand-rose font-medium uppercase tracking-wider">Atención Profesional</p>
+                                        <p class="text-sm font-serif font-bold text-white">Dirigido por Rosi</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs px-3 py-1 bg-brand-gold/20 text-brand-gold rounded-full font-medium">Huelva</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE ROSI & VALORES (SOBRE NOSOTROS) -->
+    <section id="nosotros" class="py-20 bg-brand-sand relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Image Composition -->
+                <div class="lg:col-span-5 order-2 lg:order-1">
+                    <div class="relative">
+                        <div class="rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+                            <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=800&q=80" 
+                                 referrerpolicy="no-referrer"
+                                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                                 alt="Peluquería Canina con Amor en Huelva" 
+                                 class="w-full h-96 object-cover">
+                        </div>
+                        <!-- Experience Card Overlay -->
+                        <div class="absolute -bottom-6 -right-2 sm:-right-6 bg-brand-dark text-white p-6 rounded-2xl shadow-xl max-w-xs border border-brand-gold/30">
+                            <p class="text-2xl font-serif font-bold text-brand-gold">100% Pasión</p>
+                            <p class="text-xs text-gray-300 mt-1">"Se nota que ama su trabajo y a los animales, cuida cada detalle con dulzura extrema."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Description Content -->
+                <div class="lg:col-span-7 order-1 lg:order-2 space-y-6">
+                    <div class="inline-block px-3 py-1 rounded-full bg-brand-gold/10 text-brand-gold text-xs font-semibold uppercase tracking-wider">
+                        Filosofía Rose Style
+                    </div>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-dark leading-tight">
+                        Mucho más que un corte de pelo: un trato dulce, paciente y de máxima confianza.
+                    </h2>
+                    <p class="text-gray-700 leading-relaxed font-light">
+                        En <strong class="text-brand-dark font-semibold">Rose Style Peluquería y Estética Canina</strong>, sabemos que tu peludo es un miembro fundamental de tu familia. Por eso, el pilar central de nuestro trabajo llevado a cabo por <strong class="text-brand-dark font-semibold">Rosi</strong> es el amor genuino, el respeto al ritmo de cada perro y el cuidado del detalle.
+                    </p>
+
+                    <p class="text-gray-700 leading-relaxed font-light">
+                        Ya sea un cachorro en su primera experiencia estilística, un perro de agua con manto exigente o una mascota desconfiada, nos tomamos el tiempo necesario para ganar su confianza, logrando que salgan guapos, tranquilos y luciendo un aspecto divino.
+                    </p>
+
+                    <!-- Key Strengths Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div class="flex items-start gap-3 p-4 rounded-xl bg-white border border-brand-sandDark shadow-sm">
+                            <div class="w-10 h-10 rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold shrink-0">
+                                <i class="fa-solid fa-shield-heart"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-brand-dark text-sm">Empatía y Calma</h3>
+                                <p class="text-xs text-gray-600 mt-1">Atención cariñosa para mascotas nerviosas o temerosas.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3 p-4 rounded-xl bg-white border border-brand-sandDark shadow-sm">
+                            <div class="w-10 h-10 rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold shrink-0">
+                                <i class="fa-solid fa-kit-medical"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-brand-dark text-sm">Detección de Salud</h3>
+                                <p class="text-xs text-gray-600 mt-1">Revisión profunda de piel, manto y oídos (identificación temprana de otitis).</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
+                        <a href="https://wa.me/34640778407" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-brand-dark hover:bg-brand-surface text-brand-gold font-semibold text-sm transition-all shadow-md">
+                            <span>Reservar Cita por WhatsApp</span>
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS / CARTA DE TRATAMIENTOS Y TARIFAS -->
+    <section id="servicios" class="py-20 bg-brand-dark text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-brand-rose text-xs font-semibold uppercase tracking-widest px-3 py-1 bg-brand-surface border border-brand-gold/20 rounded-full">
+                    Servicios Exclusivos
+                </span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold tracking-tight">
+                    Nuestros Tratamientos, Cortes y Tarifas
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-transparent via-brand-gold to-transparent mx-auto"></div>
+                <p class="text-gray-300 font-light text-sm sm:text-base">
+                    Utilizamos productos cosméticos de alta gama adaptados al pH y tipo de pelaje de cada mascota, ofreciendo precios ajustados y competitivos.
+                </p>
+            </div>
+
+            <!-- Grid of Categories -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Service Card 1 -->
+                <div class="bg-brand-surface rounded-2xl p-8 border border-brand-gold/20 hover:border-brand-gold/60 transition-all duration-300 group flex flex-col justify-between shadow-xl">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-brand-gold/20 to-amber-500/10 flex items-center justify-center text-brand-gold mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-scissors text-2xl"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-white mb-3">Cortes de Raza y Estilismo</h3>
+                        <p class="text-xs text-brand-rose mb-4 font-medium uppercase tracking-wider">Perro de Agua | Yorkshire | Caniche | Razas Varias</p>
+                        <ul class="space-y-3 text-sm text-gray-300 font-light mb-6">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-gold text-xs mt-1"></i>
+                                <span><strong>Perro de Agua:</strong> Corte respetando el bucle natural y técnica adecuada para su manto.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-gold text-xs mt-1"></i>
+                                <span><strong>Yorkshire y Caniche:</strong> Arreglo a tijera, perfilado facial, caras y patitas impecables.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-gold text-xs mt-1"></i>
+                                <span>Cortes comerciales modernos y mantenimientos de mantos largos.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pt-6 border-t border-white/10 flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-gray-400 block">Tarifa</span>
+                            <span class="text-lg font-serif font-bold text-brand-gold">Económico y de calidad</span>
+                        </div>
+                        <a href="https://wa.me/34640778407" target="_blank" rel="noopener" class="px-4 py-2 rounded-full bg-brand-gold/10 hover:bg-brand-gold hover:text-brand-dark text-brand-gold font-semibold text-xs transition-colors">
+                            Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="bg-brand-surface rounded-2xl p-8 border border-brand-gold/20 hover:border-brand-gold/60 transition-all duration-300 group flex flex-col justify-between shadow-xl">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-brand-gold/20 to-amber-500/10 flex items-center justify-center text-brand-gold mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-shower text-2xl"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-white mb-3">Baño Spa e Hidratación</h3>
+                        <p class="text-xs text-brand-rose mb-4 font-medium uppercase tracking-wider">Cosmética de Calidad Premium</p>
+                        <ul class="space-y-3 text-sm text-gray-300 font-light mb-6">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-gold text-xs mt-1"></i>
+                                <span>Baño terapéutico con champús hidratantes y mascarillas nutritivas.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-gold text-xs mt-1"></i>
+                                <span>Deslanado profesional y expulsión de pelo muerto.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-gold text-xs mt-1"></i>
+                                <span>Secado a mano sin estrés con expulsadores silenciosos.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pt-6 border-t border-white/10 flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-gray-400 block">Tarifa</span>
+                            <span class="text-lg font-serif font-bold text-brand-gold">Según tamaño / pelaje</span>
+                        </div>
+                        <a href="https://wa.me/34640778407" target="_blank" rel="noopener" class="px-4 py-2 rounded-full bg-brand-gold/10 hover:bg-brand-gold hover:text-brand-dark text-brand-gold font-semibold text-xs transition-colors">
+                            Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="bg-brand-surface rounded-2xl p-8 border border-brand-gold/20 hover:border-brand-gold/60 transition-all duration-300 group flex flex-col justify-between shadow-xl">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-brand-gold/20 to-amber-500/10 flex items-center justify-center text-brand-gold mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-sparkles text-2xl"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-white mb-3">Higiene Completa y Salud</h3>
+                        <p class="text-xs text-brand-rose mb-4 font-medium uppercase tracking-wider">Cuidado Integral en cada sesión</p>
+                        <ul class="space-y-3 text-sm text-gray-300 font-light mb-6">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-gold text-xs mt-1"></i>
+                                <span>Corte y limado de uñas, vaciado de alhohadillas plantares.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-gold text-xs mt-1"></i>
+                                <span>Limpieza de oídos minuciosa (detección preventiva de otitis).</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-brand-gold text-xs mt-1"></i>
+                                <span>Arreglo higiénico anal y de zonas delicadas.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pt-6 border-t border-white/10 flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-gray-400 block">Servicio</span>
+                            <span class="text-lg font-serif font-bold text-brand-gold">Incluido en Sesión</span>
+                        </div>
+                        <a href="https://wa.me/34640778407" target="_blank" rel="noopener" class="px-4 py-2 rounded-full bg-brand-gold/10 hover:bg-brand-gold hover:text-brand-dark text-brand-gold font-semibold text-xs transition-colors">
+                            Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service Card 4 (Cachorros / Primera Vez) -->
+                <div class="bg-brand-surface rounded-2xl p-8 border border-brand-gold/20 hover:border-brand-gold/60 transition-all duration-300 group flex flex-col justify-between shadow-xl lg:col-span-3">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+                        <div class="md:col-span-2">
+                            <span class="px-3 py-1 rounded-full bg-brand-gold/20 text-brand-gold text-xs font-bold uppercase tracking-wider">Atención Especializada</span>
+                            <h3 class="font-serif text-3xl font-bold text-white mt-2 mb-3">Sesión Especial Cachorros & Perros Miedosos</h3>
+                            <p class="text-gray-300 text-sm font-light leading-relaxed">
+                                Tu mascota tendrá una adaptación progresiva con premios, caricias y refuerzo positivo para que su experiencia en la peluquería sea un momento feliz. Ideal para su primera cita.
+                            </p>
+                        </div>
+                        <div class="text-left md:text-right">
+                            <a href="https://wa.me/34640778407" target="_blank" rel="noopener" class="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-brand-gold to-amber-600 text-brand-dark font-bold text-sm shadow-xl hover:scale-105 transition-all">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                                <span>Reservar Cita para mi Cachorro</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Banner Callout -->
+            <div class="mt-12 p-6 rounded-2xl bg-gradient-to-r from-brand-surface via-brand-dark to-brand-surface border border-brand-gold/30 text-center">
+                <p class="text-sm text-gray-300">
+                    <i class="fa-solid fa-circle-info text-brand-gold mr-2"></i>
+                    ¿Tienes dudas sobre qué corte le conviene al tipo de pelaje de tu mascota? <a href="https://wa.me/34640778407" target="_blank" rel="noopener" class="text-brand-gold underline font-semibold hover:text-white">Consulta directamente con Rosi por WhatsApp.</a>
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- GALERÍA / TRABAJOS E INSTALACIONES -->
+    <section id="galeria" class="py-20 bg-brand-sand">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-brand-gold text-xs font-bold uppercase tracking-wider">Resultados Reales</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-dark mt-1">Nuestras Instalaciones y Trabajos</h2>
+                <p class="text-gray-600 text-sm mt-2 font-light">Muestras del cuidado, delicadeza y acabado impecable que logramos en cada sesión.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Image 1 (Real Business Photo) -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-lg border border-brand-sandDark bg-brand-dark aspect-square">
+                    <img src="https://static.xx.fbcdn.net/rsrc.php/yB/r/83zWJdc6PJI.webp" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" 
+                         alt="Peluquería Canina Rose Style Huelva" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white font-serif text-lg font-bold">Instalaciones Rose Style</span>
+                    </div>
+                </div>
+
+                <!-- Image 2 -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-lg border border-brand-sandDark bg-brand-dark aspect-square">
+                    <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=800&q=80" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" 
+                         alt="Arreglo de Caniche y Yorkshire Huelva" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white font-serif text-lg font-bold">Estilismo y Corte a Tijera</span>
+                    </div>
+                </div>
+
+                <!-- Image 3 -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-lg border border-brand-sandDark bg-brand-dark aspect-square">
+                    <img src="https://images.unsplash.com/photo-1535294435445-d7249524ef2e?auto=format&fit=crop&w=800&q=80" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" 
+                         alt="Perro de Agua corte boutique" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white font-serif text-lg font-bold">Corte Especializado Perro de Agua</span>
+                    </div>
+                </div>
+
+                <!-- Image 4 -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-lg border border-brand-sandDark bg-brand-dark aspect-square">
+                    <img src="https://images.unsplash.com/photo-1541599540903-216a46ca1dc0?auto=format&fit=crop&w=800&q=80" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" 
+                         alt="Baño y Secado Relajante" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white font-serif text-lg font-bold">Baño Spa e Hidratación</span>
+                    </div>
+                </div>
+
+                <!-- Image 5 -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-lg border border-brand-sandDark bg-brand-dark aspect-square">
+                    <img src="https://images.unsplash.com/photo-1591946614720-90a587da4a36?auto=format&fit=crop&w=800&q=80" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" 
+                         alt="Trato cariñoso con cachorros" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white font-serif text-lg font-bold">Trato Cariñoso y Paciente</span>
+                    </div>
+                </div>
+
+                <!-- Image 6 -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-lg border border-brand-sandDark bg-brand-dark aspect-square">
+                    <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" 
+                         alt="Mascota feliz tras sesión de belleza" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white font-serif text-lg font-bold">Mascotas Felices en Rose Style</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-10">
+                <a href="https://wa.me/34640778407" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-brand-dark text-brand-gold font-bold text-sm hover:bg-brand-surface transition-all shadow-md">
+                    <span>Quiero que mi perro quede así de guapo — Reservar Cita</span>
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESEÑAS REALES DE CLIENTES -->
+    <section id="opiniones" class="py-20 bg-brand-surface text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <div class="flex justify-center items-center gap-1 text-amber-400 text-lg mb-2">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold">Opiniones Reales Verificadas</h2>
+                <p class="text-gray-400 text-sm mt-2 font-light">La satisfacción de nuestros clientes y el bienestar de sus peludos en Google Maps.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Review 1 -->
+                <div class="bg-brand-dark/80 p-6 rounded-2xl border border-brand-gold/20 flex flex-col justify-between shadow-lg">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex text-amber-400 text-xs gap-1">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <i class="fa-brands fa-google text-gray-500 text-sm"></i>
+                        </div>
+                        <p class="text-gray-300 text-xs sm:text-sm italic font-light leading-relaxed mb-6">
+                            "Llevo a mi perrita desde hace años allí y no la cambio por nada, la deja guapísima y se nota que cuida al detalle su trabajo. El trato es inmejorable, cercano y se nota que le encantan los animales."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                        <div class="w-9 h-9 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-gold font-bold text-xs">
+                            PB
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-semibold text-white">Paloma Bueno</h4>
+                            <p class="text-[10px] text-brand-rose">Cliente Fiel</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-brand-dark/80 p-6 rounded-2xl border border-brand-gold/20 flex flex-col justify-between shadow-lg">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex text-amber-400 text-xs gap-1">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <i class="fa-brands fa-google text-gray-500 text-sm"></i>
+                        </div>
+                        <p class="text-gray-300 text-xs sm:text-sm italic font-light leading-relaxed mb-6">
+                            "Muy buena experiencia,emos llevado nuestro yorkshire varias veces, la verda que super contento con Rosi i muy buen trabajo ,lo recomiendo 100x100."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                        <div class="w-9 h-9 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-gold font-bold text-xs">
+                            CG
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-semibold text-white">Crisanto Garcia Magro</h4>
+                            <p class="text-[10px] text-brand-rose">Dueño de Yorkshire</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-brand-dark/80 p-6 rounded-2xl border border-brand-gold/20 flex flex-col justify-between shadow-lg">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex text-amber-400 text-xs gap-1">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <i class="fa-brands fa-google text-gray-500 text-sm"></i>
+                        </div>
+                        <p class="text-gray-300 text-xs sm:text-sm italic font-light leading-relaxed mb-6">
+                            "Excelente trabajo hizo con nuestro cachorro perro de agua, un buen corte entendiendo nuestro deseo y el tipo de pelaje del perro. Muy buen trato del cachorro (ellos lo notan desde el principio), estaba a gusto y tranquilo y eso que fue su primera experiencia en una peluquería.Ademas, identificó una otitis y así pudimos llevarlo al veterinario. Altamente recomendable."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                        <div class="w-9 h-9 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-gold font-bold text-xs">
+                            MP
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-semibold text-white">Margarita Pesqueira</h4>
+                            <p class="text-[10px] text-brand-rose">Dueña de Perro de Agua</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="bg-brand-dark/80 p-6 rounded-2xl border border-brand-gold/20 flex flex-col justify-between shadow-lg">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex text-amber-400 text-xs gap-1">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <i class="fa-brands fa-google text-gray-500 text-sm"></i>
+                        </div>
+                        <p class="text-gray-300 text-xs sm:text-sm italic font-light leading-relaxed mb-6">
+                            "Económico, productos de calidad, nunca había llevado a mi perro a una peluquera que tratase con tanto amor a los animales, mi perro que es algo desconfiado la adora. Los deja preciosos y cuida cada detalle. Esta chica se nota que ama su trabajo y a los animales, lo recomiendo 100%."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                        <div class="w-9 h-9 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-gold font-bold text-xs">
+                            EG
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-semibold text-white">Elisabeth G.</h4>
+                            <p class="text-[10px] text-brand-rose">Cliente Satisfecha</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 5 -->
+                <div class="bg-brand-dark/80 p-6 rounded-2xl border border-brand-gold/20 flex flex-col justify-between shadow-lg md:col-span-2 lg:col-span-1">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex text-amber-400 text-xs gap-1">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <i class="fa-brands fa-google text-gray-500 text-sm"></i>
+                        </div>
+                        <p class="text-gray-300 text-xs sm:text-sm italic font-light leading-relaxed mb-6">
+                            "Es una peluquera espectacular, llevo años llevando a mis perritas, Yorkshire y caniche, las deja divinas 😍 aparte cariñosa, dulce, paciente con ellas. Me la recomendó un señor que llevaba a su perrito y mejor recomendación imposible, por eso os lo recomiendo yo ahora, los deja a todos preciosos y el trato de 10 “Os va a encantar”…"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                        <div class="w-9 h-9 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-gold font-bold text-xs">
+                            N
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-semibold text-white">Natalia</h4>
+                            <p class="text-[10px] text-brand-rose">Dueña de Yorkshire y Caniche</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- UBICACIÓN, MAPA Y CONTACTO -->
+    <section id="contacto" class="py-20 bg-brand-sand">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Contact Info Card -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-brand-gold text-xs font-bold uppercase tracking-wider">Visítanos en Huelva</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-dark mt-1">¿Dónde estamos?</h2>
+                        <p class="text-gray-600 text-sm mt-2 font-light">
+                            Te esperamos en nuestro salón boutique en Huelva capital. Contáctanos por WhatsApp para consultar disponibilidad y agendar tu cita.
+                        </p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- Direction -->
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-white border border-brand-sandDark shadow-sm">
+                            <div class="w-10 h-10 rounded-full bg-brand-dark text-brand-gold flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xs text-gray-500 uppercase tracking-wider font-semibold">Dirección Exacta</h3>
+                                <p class="text-sm font-bold text-brand-dark mt-0.5">C. San Ramón, 1, 21006 Huelva, España</p>
+                            </div>
+                        </div>
+
+                        <!-- Phone / WhatsApp -->
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-white border border-brand-sandDark shadow-sm">
+                            <div class="w-10 h-10 rounded-full bg-brand-dark text-brand-gold flex items-center justify-center shrink-0">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xs text-gray-500 uppercase tracking-wider font-semibold">Teléfono y Citas</h3>
+                                <a href="https://wa.me/34640778407" target="_blank" rel="noopener" class="text-sm font-bold text-brand-dark hover:text-brand-gold transition-colors mt-0.5 block">
+                                    +34 640 77 84 07
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Business Hours Badge -->
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-white border border-brand-sandDark shadow-sm">
+                            <div class="w-10 h-10 rounded-full bg-brand-dark text-brand-gold flex items-center justify-center shrink-0">
+                                <i class="fa-regular fa-clock"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xs text-gray-500 uppercase tracking-wider font-semibold">Atención con Cita Previa</h3>
+                                <p class="text-sm font-bold text-brand-dark mt-0.5">Atención personalizada y sin esperas para evitar estrés</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <a href="https://wa.me/34640778407" target="_blank" rel="noopener" class="w-full inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-brand-gold to-amber-600 text-brand-dark font-bold text-base shadow-lg hover:scale-[1.02] transition-transform">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <span>Reservar Cita por WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Google Map Embed -->
+                <div class="lg:col-span-7">
+                    <div class="bg-white p-3 rounded-2xl border border-brand-sandDark shadow-xl overflow-hidden">
+                        <iframe src="https://www.google.com/maps?q=Rose%20Style%20Peluquer%C3%ADa%20y%20est%C3%A9tica%20canina%20C.%20San%20Ram%C3%B3n%2C%201%2C%2021006%20Huelva%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-dark text-white border-t border-brand-gold/20 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                
+                <!-- Logo & Text -->
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full bg-brand-gold text-brand-dark flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-paw text-xs"></i>
+                    </div>
+                    <span class="font-serif text-lg font-bold text-white">Rose Style Peluquería y Estética Canina</span>
+                </div>
+
+                <!-- Quick Nav -->
+                <div class="flex flex-wrap justify-center gap-6 text-xs text-gray-400">
+                    <a href="#inicio" class="hover:text-brand-gold transition-colors">Inicio</a>
+                    <a href="#nosotros" class="hover:text-brand-gold transition-colors">Sobre Rosi</a>
+                    <a href="#servicios" class="hover:text-brand-gold transition-colors">Tratamientos</a>
+                    <a href="#galeria" class="hover:text-brand-gold transition-colors">Galería</a>
+                    <a href="#opiniones" class="hover:text-brand-gold transition-colors">Opiniones</a>
+                    <a href="#contacto" class="hover:text-brand-gold transition-colors">Ubicación</a>
+                </div>
+
+                <!-- Copyright -->
+                <div class="text-xs text-gray-500 text-center md:text-right">
+                    <p>&copy; <span id="year"></span> Rose Style. C. San Ramón, 1, Huelva.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP CTA BUTTON -->
+    <a href="https://wa.me/34640778407" target="_blank" rel="noopener" class="fixed bottom-6 right-6 z-50 inline-flex items-center gap-2 px-5 py-3.5 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm shadow-2xl hover:scale-110 transition-all duration-300 group" aria-label="Contacto WhatsApp">
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+        <span class="hidden sm:inline">Reservar Cita</span>
+    </a>
+
+    <!-- JAVASCRIPT FOR MOBILE MENU & DYNAMIC YEAR -->
+    <script>
+        // Set dynamic copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
