@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fisioterapia Vicente Bodi | Masajes y Terapia Manual en Corbera</title>
+    <meta name="description" content="Centro exclusivo de fisioterapia y masajes en Corbera, Valencia. Terapia manual, masajes descontracturantes y recuperación personalizada.">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        matte: '#121214',
+                        darkCharcoal: '#1A1A1E',
+                        goldSoft: '#C5A880',
+                        goldHover: '#B39366',
+                        sandBeige: '#F6F3EE',
+                        sandMuted: '#EAE5DC',
+                        cardDark: '#212126'
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #E6D2B5 0%, #C5A880 50%, #9E7D53 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border {
+            border-color: rgba(197, 168, 128, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-matte text-[#E2DFD9] font-sans antialiased selection:bg-goldSoft selection:text-matte">
+
+    <!-- Barra de Notificación / Contacto Superior -->
+    <div class="bg-darkCharcoal border-b border-white/5 py-2 px-4 text-xs tracking-wider uppercase">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-6">
+                <span><i class="fa-solid fa-location-dot text-goldSoft mr-2"></i>Av. de les Fontanelles, 13, Corbera</span>
+                <span class="hidden md:inline"><i class="fa-solid fa-clock text-goldSoft mr-2"></i>Atención con Cita Previa</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="tel:962561050" class="hover:text-goldSoft transition-colors flex items-center">
+                    <i class="fa-solid fa-phone text-goldSoft mr-1.5"></i> 962 56 10 50
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navegación Boutique -->
+    <header class="sticky top-0 z-50 bg-matte/95 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex flex-col">
+                <span class="font-serif text-2xl sm:text-3xl tracking-widest text-white uppercase font-semibold">Vicente Bodi</span>
+                <span class="text-[9px] uppercase tracking-[0.3em] text-goldSoft font-medium -mt-1">Fisioterapia & Masajes</span>
+            </a>
+
+            <!-- Menú Desktop -->
+            <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium tracking-wide">
+                <a href="#inicio" class="text-white hover:text-goldSoft transition-colors">Inicio</a>
+                <a href="#tratamientos" class="text-white/80 hover:text-goldSoft transition-colors">Tratamientos</a>
+                <a href="#sobre-nosotros" class="text-white/80 hover:text-goldSoft transition-colors">El Centro</a>
+                <a href="#instalaciones" class="text-white/80 hover:text-goldSoft transition-colors">Instalaciones</a>
+                <a href="#opiniones" class="text-white/80 hover:text-goldSoft transition-colors">Opiniones</a>
+                <a href="#contacto" class="text-white/80 hover:text-goldSoft transition-colors">Ubicación</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <a href="tel:962561050" class="inline-flex items-center justify-center px-6 py-2.5 text-xs font-semibold uppercase tracking-widest bg-goldSoft text-matte hover:bg-goldHover transition-all duration-300 shadow-lg shadow-goldSoft/10 rounded-sm">
+                    <i class="fa-solid fa-calendar-check mr-2"></i> Reservar Cita
+                </a>
+                <button id="menu-btn" class="lg:hidden text-white hover:text-goldSoft text-xl p-2 focus:outline-none" aria-label="Abrir menú">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-darkCharcoal border-b border-white/10 px-6 py-5">
+            <nav class="flex flex-col space-y-4 text-sm uppercase tracking-wider">
+                <a href="#inicio" class="text-white hover:text-goldSoft py-1">Inicio</a>
+                <a href="#tratamientos" class="text-white hover:text-goldSoft py-1">Tratamientos</a>
+                <a href="#sobre-nosotros" class="text-white hover:text-goldSoft py-1">El Centro</a>
+                <a href="#instalaciones" class="text-white hover:text-goldSoft py-1">Instalaciones</a>
+                <a href="#opiniones" class="text-white hover:text-goldSoft py-1">Opiniones</a>
+                <a href="#contacto" class="text-white hover:text-goldSoft py-1">Ubicación</a>
+                <a href="tel:962561050" class="inline-block text-center py-3 bg-goldSoft text-matte font-bold text-xs uppercase tracking-widest mt-2">Reservar Cita</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative min-h-[85vh] flex items-center justify-center bg-matte overflow-hidden">
+        <!-- Imagen de Fondo con Overlay Exclusivo -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1920&q=80" 
+                 alt="Sesión de Fisioterapia y Masaje Vicente Bodi" 
+                 class="w-full h-full object-cover opacity-25 filter grayscale contrast-125"
+                 referrerpolicy="no-referrer" 
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+            <div class="absolute inset-0 bg-gradient-to-t from-matte via-matte/80 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-goldSoft/30 bg-goldSoft/5 text-goldSoft text-xs tracking-widest uppercase mb-6">
+                <i class="fa-solid fa-spa text-[10px]"></i> Salud, Relajación y Alivio en Corbera
+            </div>
+            
+            <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-light text-white tracking-tight leading-tight sm:leading-none mb-6">
+                El arte del bienestar a través de la <span class="italic font-normal gold-gradient-text block mt-2">terapia manual</span>
+            </h1>
+
+            <p class="max-w-2xl mx-auto text-base sm:text-lg text-[#B5B0A8] font-light leading-relaxed mb-10">
+                En <strong>Fisioterapia Vicente Bodi</strong> combinamos técnica clínica avanzada, masajes terapéuticos de precisión y un trato exclusivo diseñado para restablecer tu equilibrio físico y vital.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+                <a href="tel:962561050" class="w-full sm:w-auto px-8 py-4 text-xs uppercase tracking-[0.2em] font-semibold bg-goldSoft text-matte hover:bg-goldHover transition-all duration-300 shadow-xl shadow-goldSoft/20 rounded-sm">
+                    <i class="fa-solid fa-phone mr-2"></i> Reservar Cita
+                </a>
+                <a href="#tratamientos" class="w-full sm:w-auto px-8 py-4 text-xs uppercase tracking-[0.2em] font-medium border border-white/20 text-white hover:border-goldSoft hover:text-goldSoft transition-all duration-300 rounded-sm">
+                    Ver Carta de Servicios
+                </a>
+            </div>
+
+            <!-- Badges de Confianza -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-16 border-t border-white/10 mt-16 max-w-3xl mx-auto text-left">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-full border border-goldSoft/30 flex items-center justify-center text-goldSoft shrink-0">
+                        <i class="fa-solid fa-hands"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-semibold uppercase tracking-wider text-white">Terapia Manual</h4>
+                        <p class="text-[11px] text-[#A09B92]">Trato cercano y personalizado</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-full border border-goldSoft/30 flex items-center justify-center text-goldSoft shrink-0">
+                        <i class="fa-solid fa-certificate"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-semibold uppercase tracking-wider text-white">Especialista</h4>
+                        <p class="text-[11px] text-[#A09B92]">Máxima profesionalidad</p>
+                    </div>
+                </div>
+                <div class="col-span-2 sm:col-span-1 flex items-center space-x-3 justify-center sm:justify-start">
+                    <div class="w-10 h-10 rounded-full border border-goldSoft/30 flex items-center justify-center text-goldSoft shrink-0">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-semibold uppercase tracking-wider text-white">5 Estrellas</h4>
+                        <p class="text-[11px] text-[#A09B92]">Garantía y excelencia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Sobre el Centro -->
+    <section id="sobre-nosotros" class="py-24 bg-darkCharcoal border-y border-white/5 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div class="relative">
+                    <div class="relative z-10 overflow-hidden rounded-sm border border-goldSoft/20 shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1000&q=80" 
+                             alt="Instalaciones terapéuticas Vicente Bodi" 
+                             class="w-full h-[450px] object-cover transition-transform duration-700 hover:scale-105"
+                             referrerpolicy="no-referrer" 
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 w-48 h-48 bg-goldSoft/10 rounded-sm -z-0 hidden sm:block border border-goldSoft/20"></div>
+                </div>
+
+                <div class="space-y-6">
+                    <span class="text-xs uppercase tracking-[0.25em] text-goldSoft font-semibold block">Compromiso y Cuidado</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl text-white font-normal leading-snug">
+                        Bienestar diseñado a tu medida en el corazón de Corbera
+                    </h2>
+                    <p class="text-sm sm:text-base text-[#B3AEA5] leading-relaxed">
+                        En la consulta de <strong>Vicente Bodi</strong> entendemos que cada persona y cada cuerpo requieren una respuesta específica. Nos alejamos de los protocolos estandarizados para ofrecer un diagnóstico preciso, masajes descontracturantes de alta profundidad y soluciones efectivas contra el dolor y la sobrecarga muscular.
+                    </p>
+                    <p class="text-sm sm:text-base text-[#B3AEA5] leading-relaxed">
+                        Ubicados convenientemente en la <span class="text-white font-medium">Av. de les Fontanelles, 13</span>, disponemos de un entorno íntimo, sosegado y equipado para que tu sesión se convierta en una experiencia renovadora.
+                    </p>
+
+                    <div class="pt-4 flex flex-col sm:flex-row gap-6 border-t border-white/10">
+                        <div>
+                            <span class="font-serif text-3xl text-goldSoft block">100%</span>
+                            <span class="text-xs uppercase tracking-wider text-[#A09B92]">Dedicación Individual</span>
+                        </div>
+                        <div>
+                            <span class="font-serif text-3xl text-goldSoft block">Integral</span>
+                            <span class="text-xs uppercase tracking-wider text-[#A09B92]">Evaluación & Masaje</span>
+                        </div>
+                        <div>
+                            <span class="font-serif text-3xl text-goldSoft block">Corbera</span>
+                            <span class="text-xs uppercase tracking-wider text-[#A09B92]">Céntrico y Accesible</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
+                        <a href="tel:962561050" class="inline-flex items-center text-xs uppercase tracking-widest font-semibold text-goldSoft hover:text-white transition-colors">
+                            Contactar directamente <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN OBLIGATORIA: Tratamientos, Cortes y Tarifas -->
+    <section id="tratamientos" class="py-24 bg-matte relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-[0.25em] text-goldSoft font-semibold block mb-2">Carta de Especialidades</span>
+                <h2 class="font-serif text-3xl sm:text-5xl text-white font-normal mb-4">Nuestros Tratamientos, Masajes y Tarifas</h2>
+                <div class="w-16 h-[1px] bg-goldSoft mx-auto mb-6"></div>
+                <p class="text-[#A59F94] text-sm sm:text-base leading-relaxed">
+                    Terapias manuales orientadas al alivio sintomático, la descompresión muscular y la recuperación de la movilidad funcional.
+                </p>
+            </div>
+
+            <!-- Grid de Tratamientos -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Categoría 1: Masajes Terapéuticos -->
+                <div class="bg-cardDark p-8 rounded-sm border border-white/5 hover:border-goldSoft/40 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 bg-matte rounded-sm border border-goldSoft/30 flex items-center justify-center text-goldSoft mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-hand-holding-heart text-xl"></i>
+                        </div>
+                        <span class="text-[10px] uppercase tracking-widest text-goldSoft font-bold block mb-1">Terapia Manual Intensa</span>
+                        <h3 class="font-serif text-2xl text-white font-medium mb-3">Masaje Descontracturante</h3>
+                        <p class="text-xs sm:text-sm text-[#A59F94] leading-relaxed mb-6">
+                            Focalizado en contracturas musculares profundas en cuello, trapecios, zona dorsal y lumbar. Alivia la tensión acumulada por estrés o sobrecarga postural.
+                        </p>
+                        <ul class="text-xs text-[#CCC7BD] space-y-2 mb-6">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-goldSoft text-[10px] mr-2"></i> Liberación miofascial profunda</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-goldSoft text-[10px] mr-2"></i> Disminución inmediata de la rigidez</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-goldSoft text-[10px] mr-2"></i> Duración personalizada por sesión</li>
+                        </ul>
+                    </div>
+                    <div class="pt-6 border-t border-white/10 flex items-center justify-between">
+                        <div>
+                            <span class="text-[11px] uppercase tracking-wider text-[#8A857B] block">Tarifa Consulta</span>
+                            <span class="font-serif text-xl text-white font-medium">Consultar</span>
+                        </div>
+                        <a href="tel:962561050" class="px-4 py-2 bg-goldSoft text-matte text-xs font-semibold uppercase tracking-wider hover:bg-goldHover transition-colors rounded-sm">
+                            Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Categoría 2: Fisioterapia & Rehabilitación -->
+                <div class="bg-cardDark p-8 rounded-sm border border-goldSoft/30 shadow-lg shadow-goldSoft/5 transition-all duration-300 flex flex-col justify-between group relative">
+                    <span class="absolute top-4 right-4 bg-goldSoft/20 text-goldSoft text-[9px] uppercase tracking-widest font-semibold px-2 py-0.5 rounded-sm border border-goldSoft/40">Recomendado</span>
+                    <div>
+                        <div class="w-12 h-12 bg-matte rounded-sm border border-goldSoft/30 flex items-center justify-center text-goldSoft mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-bone text-xl"></i>
+                        </div>
+                        <span class="text-[10px] uppercase tracking-widest text-goldSoft font-bold block mb-1">Clínica & Movilidad</span>
+                        <h3 class="font-serif text-2xl text-white font-medium mb-3">Fisioterapia Traumatológica</h3>
+                        <p class="text-xs sm:text-sm text-[#A59F94] leading-relaxed mb-6">
+                            Tratamiento especializado para esguinces, tendinopatías, cervicalgias, ciatalgias y procesos posquirúrgicos o de readaptación física.
+                        </p>
+                        <ul class="text-xs text-[#CCC7BD] space-y-2 mb-6">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-goldSoft text-[10px] mr-2"></i> Evaluación anatómica exhaustiva</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-goldSoft text-[10px] mr-2"></i> Técnicas articulares y musculares</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-goldSoft text-[10px] mr-2"></i> Plan de ejercicios de estabilización</li>
+                        </ul>
+                    </div>
+                    <div class="pt-6 border-t border-white/10 flex items-center justify-between">
+                        <div>
+                            <span class="text-[11px] uppercase tracking-wider text-[#8A857B] block">Tarifa Consulta</span>
+                            <span class="font-serif text-xl text-white font-medium">Consultar</span>
+                        </div>
+                        <a href="tel:962561050" class="px-4 py-2 bg-goldSoft text-matte text-xs font-semibold uppercase tracking-wider hover:bg-goldHover transition-colors rounded-sm">
+                            Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Categoría 3: Masaje Deportivo & Descarga -->
+                <div class="bg-cardDark p-8 rounded-sm border border-white/5 hover:border-goldSoft/40 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 bg-matte rounded-sm border border-goldSoft/30 flex items-center justify-center text-goldSoft mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-person-running text-xl"></i>
+                        </div>
+                        <span class="text-[10px] uppercase tracking-widest text-goldSoft font-bold block mb-1">Rendimiento & Deporte</span>
+                        <h3 class="font-serif text-2xl text-white font-medium mb-3">Descarga Muscular Deportiva</h3>
+                        <p class="text-xs sm:text-sm text-[#A59F94] leading-relaxed mb-6">
+                            Indicado antes o después de competiciones y entrenamientos exigentes. Favorece el retorno venoso, elimina metabolitos y previene roturas de fibras.
+                        </p>
+                        <ul class="text-xs text-[#CCC7BD] space-y-2 mb-6">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-goldSoft text-[10px] mr-2"></i> Descarga de tren inferior y superior</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-goldSoft text-[10px] mr-2"></i> Mejora de la elasticidad muscular</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-goldSoft text-[10px] mr-2"></i> Óptimo para ciclistas y corredores</li>
+                        </ul>
+                    </div>
+                    <div class="pt-6 border-t border-white/10 flex items-center justify-between">
+                        <div>
+                            <span class="text-[11px] uppercase tracking-wider text-[#8A857B] block">Tarifa Consulta</span>
+                            <span class="font-serif text-xl text-white font-medium">Consultar</span>
+                        </div>
+                        <a href="tel:962561050" class="px-4 py-2 bg-goldSoft text-matte text-xs font-semibold uppercase tracking-wider hover:bg-goldHover transition-colors rounded-sm">
+                            Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Categoría 4: Masaje Relajante & Circulatorio -->
+                <div class="bg-cardDark p-8 rounded-sm border border-white/5 hover:border-goldSoft/40 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 bg-matte rounded-sm border border-goldSoft/30 flex items-center justify-center text-goldSoft mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-feather-pointed text-xl"></i>
+                        </div>
+                        <span class="text-[10px] uppercase tracking-widest text-goldSoft font-bold block mb-1">Paz & Desconexión</span>
+                        <h3 class="font-serif text-2xl text-white font-medium mb-3">Masaje Sedativo y Antiestrés</h3>
+                        <p class="text-xs sm:text-sm text-[#A59F94] leading-relaxed mb-6">
+                            Maniobras suaves y fluidas combinadas con aceites de absorción óptima para armonizar el sistema nervioso, calmar la mente y liberar el cansancio acumulado.
+                        </p>
+                        <ul class="text-xs text-[#CCC7BD] space-y-2 mb-6">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-goldSoft text-[10px] mr-2"></i> Ambiente acústico y térmico cuidado</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-goldSoft text-[10px] mr-2"></i> Reducción de los niveles de cortisol</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-goldSoft text-[10px] mr-2"></i> Sensación profunda de ligereza</li>
+                        </ul>
+                    </div>
+                    <div class="pt-6 border-t border-white/10 flex items-center justify-between">
+                        <div>
+                            <span class="text-[11px] uppercase tracking-wider text-[#8A857B] block">Tarifa Consulta</span>
+                            <span class="font-serif text-xl text-white font-medium">Consultar</span>
+                        </div>
+                        <a href="tel:962561050" class="px-4 py-2 bg-goldSoft text-matte text-xs font-semibold uppercase tracking-wider hover:bg-goldHover transition-colors rounded-sm">
+                            Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Categoría 5: Drenaje Linfático Manual -->
+                <div class="bg-cardDark p-8 rounded-sm border border-white/5 hover:border-goldSoft/40 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 bg-matte rounded-sm border border-goldSoft/30 flex items-center justify-center text-goldSoft mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-water text-xl"></i>
+                        </div>
+                        <span class="text-[10px] uppercase tracking-widest text-goldSoft font-bold block mb-1">Drenaje & Retención</span>
+                        <h3 class="font-serif text-2xl text-white font-medium mb-3">Drenaje Linfático Especializado</h3>
+                        <p class="text-xs sm:text-sm text-[#A59F94] leading-relaxed mb-6">
+                            Técnica manual sutil orientada a estimular el flujo del sistema linfático, reduciendo edemas, pesadez en piernas y facilitando la depuración corporal.
+                        </p>
+                        <ul class="text-xs text-[#CCC7BD] space-y-2 mb-6">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-goldSoft text-[10px] mr-2"></i> Alivio de la pesadez circulatoria</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-goldSoft text-[10px] mr-2"></i> Especial posoperatorio o piernas cansadas</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-goldSoft text-[10px] mr-2"></i> Aplicación precisa y no invasiva</li>
+                        </ul>
+                    </div>
+                    <div class="pt-6 border-t border-white/10 flex items-center justify-between">
+                        <div>
+                            <span class="text-[11px] uppercase tracking-wider text-[#8A857B] block">Tarifa Consulta</span>
+                            <span class="font-serif text-xl text-white font-medium">Consultar</span>
+                        </div>
+                        <a href="tel:962561050" class="px-4 py-2 bg-goldSoft text-matte text-xs font-semibold uppercase tracking-wider hover:bg-goldHover transition-colors rounded-sm">
+                            Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Categoría 6: Mantenimiento Preventivo -->
+                <div class="bg-cardDark p-8 rounded-sm border border-white/5 hover:border-goldSoft/40 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 bg-matte rounded-sm border border-goldSoft/30 flex items-center justify-center text-goldSoft mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-shield-halved text-xl"></i>
+                        </div>
+                        <span class="text-[10px] uppercase tracking-widest text-goldSoft font-bold block mb-1">Prevención Periódica</span>
+                        <h3 class="font-serif text-2xl text-white font-medium mb-3">Sesión de Mantenimiento Integral</h3>
+                        <p class="text-xs sm:text-sm text-[#A59F94] leading-relaxed mb-6">
+                            Revisión osteomuscular y masaje periódico para personas con trabajos sedentarios o alta carga física, evitando la recaída de patologías crónicas.
+                        </p>
+                        <ul class="text-xs text-[#CCC7BD] space-y-2 mb-6">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-goldSoft text-[10px] mr-2"></i> Chequeo articular y postural</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-goldSoft text-[10px] mr-2"></i> Descarga muscular de zonas críticas</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-goldSoft text-[10px] mr-2"></i> Recomendaciones ergonómicas</li>
+                        </ul>
+                    </div>
+                    <div class="pt-6 border-t border-white/10 flex items-center justify-between">
+                        <div>
+                            <span class="text-[11px] uppercase tracking-wider text-[#8A857B] block">Tarifa Consulta</span>
+                            <span class="font-serif text-xl text-white font-medium">Consultar</span>
+                        </div>
+                        <a href="tel:962561050" class="px-4 py-2 bg-goldSoft text-matte text-xs font-semibold uppercase tracking-wider hover:bg-goldHover transition-colors rounded-sm">
+                            Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Banner Informativo -->
+            <div class="mt-12 bg-darkCharcoal border border-goldSoft/20 p-6 rounded-sm text-center">
+                <p class="text-xs sm:text-sm text-[#DDD8CE]">
+                    <i class="fa-solid fa-circle-info text-goldSoft mr-2"></i> ¿Dudas sobre qué tratamiento o masaje se adapta a tu situación concreta? Llámanos sin compromiso al <a href="tel:962561050" class="text-goldSoft underline font-semibold">962 56 10 50</a> y Vicente Bodi resolverá tus dudas.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería "Nuestras Instalaciones y Trabajos" -->
+    <section id="instalaciones" class="py-24 bg-darkCharcoal border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-[0.25em] text-goldSoft font-semibold block mb-2">Atmósfera de Tranquilidad</span>
+                <h2 class="font-serif text-3xl sm:text-5xl text-white font-normal mb-4">Nuestras Instalaciones y Trabajos</h2>
+                <div class="w-16 h-[1px] bg-goldSoft mx-auto mb-6"></div>
+                <p class="text-[#A59F94] text-sm sm:text-base leading-relaxed">
+                    Un espacio pensado para garantizar la máxima higiene, confort y privacidad durante cada tratamiento en Corbera.
+                </p>
+            </div>
+
+            <!-- Galería de fotos con atributos estrictos -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Foto 1 -->
+                <div class="group relative overflow-hidden rounded-sm bg-matte aspect-video sm:aspect-square">
+                    <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80" 
+                         alt="Cabina de masaje y relajación" 
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 filter brightness-95"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-matte via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-xs uppercase tracking-widest text-goldSoft font-medium">Cabina de Terapia Manual</span>
+                    </div>
+                </div>
+
+                <!-- Foto 2 -->
+                <div class="group relative overflow-hidden rounded-sm bg-matte aspect-video sm:aspect-square">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80" 
+                         alt="Evaluación y atención clínica profesional" 
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 filter brightness-95"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-matte via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-xs uppercase tracking-widest text-goldSoft font-medium">Atención y Diagnóstico Clínico</span>
+                    </div>
+                </div>
+
+                <!-- Foto 3 -->
+                <div class="group relative overflow-hidden rounded-sm bg-matte aspect-video sm:aspect-square">
+                    <img src="https://images.unsplash.com/photo-1519824145371-296894a0daa9?auto=format&fit=crop&w=800&q=80" 
+                         alt="Masaje descontracturante y relajante de espalda" 
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 filter brightness-95"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-matte via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-xs uppercase tracking-widest text-goldSoft font-medium">Técnicas de Presión y Descarga</span>
+                    </div>
+                </div>
+
+                <!-- Foto 4 -->
+                <div class="group relative overflow-hidden rounded-sm bg-matte aspect-video sm:aspect-square">
+                    <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=800&q=80" 
+                         alt="Detalle de elementos terapéuticos y aceites esenciales" 
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 filter brightness-95"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-matte via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-xs uppercase tracking-widest text-goldSoft font-medium">Confort y Cuidado en Cada Detalle</span>
+                    </div>
+                </div>
+
+                <!-- Foto 5 -->
+                <div class="group relative overflow-hidden rounded-sm bg-matte aspect-video sm:aspect-square">
+                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80" 
+                         alt="Armonía y relajación en Corbera" 
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 filter brightness-95"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-matte via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-xs uppercase tracking-widest text-goldSoft font-medium">Espacio de Salud y Calma</span>
+                    </div>
+                </div>
+
+                <!-- Foto 6 -->
+                <div class="group relative overflow-hidden rounded-sm bg-matte aspect-video sm:aspect-square">
+                    <img src="https://images.unsplash.com/photo-1512290900672-1f02f9e42be0?auto=format&fit=crop&w=800&q=80" 
+                         alt="Tratamiento muscular manual" 
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 filter brightness-95"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-matte via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-xs uppercase tracking-widest text-goldSoft font-medium">Recuperación Personalizada</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: Opiniones Reales Verificadas -->
+    <section id="opiniones" class="py-24 bg-matte relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-[0.25em] text-goldSoft font-semibold block mb-2">Satisfacción Comprobada</span>
+                <h2 class="font-serif text-3xl sm:text-5xl text-white font-normal mb-4">Opiniones Reales Verificadas</h2>
+                <div class="w-16 h-[1px] bg-goldSoft mx-auto mb-6"></div>
+                <p class="text-[#A59F94] text-sm sm:text-base leading-relaxed">
+                    La experiencia y confianza de nuestros pacientes son el mayor testimonio de nuestro compromiso profesional.
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <!-- Tarjeta Principal con Reseña Real Obligatoria -->
+                <div class="bg-cardDark border border-goldSoft/40 p-8 sm:p-12 rounded-sm shadow-2xl relative overflow-hidden text-center">
+                    <i class="fa-solid fa-quote-right absolute -bottom-6 -right-6 text-white/5 text-9xl pointer-events-none"></i>
+                    
+                    <div class="flex items-center justify-center space-x-1 text-goldSoft text-base sm:text-lg mb-6">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    <!-- Reseña Real Literal Extraída del Negocio -->
+                    <blockquote class="font-serif text-2xl sm:text-3xl italic text-white leading-relaxed mb-6">
+                        “Excelente trato, profesionalidad y calidad.”
+                    </blockquote>
+
+                    <div class="flex items-center justify-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-goldSoft/20 border border-goldSoft/40 flex items-center justify-center text-goldSoft font-semibold text-sm">
+                            <i class="fa-solid fa-user-check"></i>
+                        </div>
+                        <div class="text-left">
+                            <h4 class="text-xs uppercase tracking-widest font-bold text-white">Paciente Verificado</h4>
+                            <span class="text-[10px] text-goldSoft tracking-wider block">Reseña Real en Google Maps</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resumen de Valoraciones -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                    <div class="bg-darkCharcoal/60 p-6 rounded-sm border border-white/5 text-center">
+                        <i class="fa-solid fa-medal text-goldSoft text-2xl mb-3"></i>
+                        <h4 class="text-xs font-semibold uppercase tracking-wider text-white mb-1">Máxima Puntuación</h4>
+                        <p class="text-xs text-[#8A857B]">5.0 de 5 estrellas en satisfacción</p>
+                    </div>
+                    <div class="bg-darkCharcoal/60 p-6 rounded-sm border border-white/5 text-center">
+                        <i class="fa-solid fa-comments text-goldSoft text-2xl mb-3"></i>
+                        <h4 class="text-xs font-semibold uppercase tracking-wider text-white mb-1">Trato Humano</h4>
+                        <p class="text-xs text-[#8A857B]">Atención empática y cercana</p>
+                    </div>
+                    <div class="bg-darkCharcoal/60 p-6 rounded-sm border border-white/5 text-center">
+                        <i class="fa-solid fa-spa text-goldSoft text-2xl mb-3"></i>
+                        <h4 class="text-xs font-semibold uppercase tracking-wider text-white mb-1">Eficacia Terapéutica</h4>
+                        <p class="text-xs text-[#8A857B]">Alivio palpable desde la primera sesión</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Ubicación, Horarios y Contacto -->
+    <section id="contacto" class="py-24 bg-darkCharcoal border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-[0.25em] text-goldSoft font-semibold block mb-2">Visítanos en Corbera</span>
+                <h2 class="font-serif text-3xl sm:text-5xl text-white font-normal mb-4">Ubicación y Contacto Directo</h2>
+                <div class="w-16 h-[1px] bg-goldSoft mx-auto mb-6"></div>
+                <p class="text-[#A59F94] text-sm sm:text-base leading-relaxed">
+                    Facilidad de aparcamiento y acceso rápido desde cualquier punto de la comarca.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Tarjeta con Datos Oficiales -->
+                <div class="lg:col-span-5 bg-matte p-8 sm:p-10 rounded-sm border border-goldSoft/30 space-y-8">
+                    <div>
+                        <h3 class="font-serif text-2xl text-white font-normal mb-2">Fisioterapia Vicente Bodi</h3>
+                        <p class="text-xs uppercase tracking-widest text-goldSoft">Especialidad en Masajes & Fisioterapia</p>
+                    </div>
+
+                    <div class="space-y-6 text-sm text-[#CDC8BF]">
+                        <!-- Dirección -->
+                        <div class="flex items-start space-x-4">
+                            <div class="w-9 h-9 rounded-sm bg-darkCharcoal border border-goldSoft/30 flex items-center justify-center text-goldSoft shrink-0 mt-0.5">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <span class="text-[11px] uppercase tracking-wider text-[#8A857B] block font-semibold">Dirección Exacta</span>
+                                <span class="text-white font-medium">Av. de les Fontanelles, 13, 46612 Corbera, Valencia, España</span>
+                            </div>
+                        </div>
+
+                        <!-- Teléfono -->
+                        <div class="flex items-start space-x-4">
+                            <div class="w-9 h-9 rounded-sm bg-darkCharcoal border border-goldSoft/30 flex items-center justify-center text-goldSoft shrink-0 mt-0.5">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <span class="text-[11px] uppercase tracking-wider text-[#8A857B] block font-semibold">Teléfono de Reservas</span>
+                                <a href="tel:962561050" class="text-white hover:text-goldSoft font-medium transition-colors text-lg">962 56 10 50</a>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="flex items-start space-x-4">
+                            <div class="w-9 h-9 rounded-sm bg-darkCharcoal border border-goldSoft/30 flex items-center justify-center text-goldSoft shrink-0 mt-0.5">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <span class="text-[11px] uppercase tracking-wider text-[#8A857B] block font-semibold">Correo Electrónico</span>
+                                <a href="mailto:error-lite+84f2@duckduckgo.com" class="text-white hover:text-goldSoft transition-colors break-all">error-lite+84f2@duckduckgo.com</a>
+                            </div>
+                        </div>
+
+                        <!-- Horario -->
+                        <div class="flex items-start space-x-4">
+                            <div class="w-9 h-9 rounded-sm bg-darkCharcoal border border-goldSoft/30 flex items-center justify-center text-goldSoft shrink-0 mt-0.5">
+                                <i class="fa-solid fa-calendar-days"></i>
+                            </div>
+                            <div>
+                                <span class="text-[11px] uppercase tracking-wider text-[#8A857B] block font-semibold">Modalidad de Consulta</span>
+                                <span class="text-white">Cita previa para garantizar privacidad y puntualidad absoluta.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-white/10">
+                        <a href="tel:962561050" class="w-full inline-flex items-center justify-center py-4 px-6 bg-goldSoft text-matte font-semibold text-xs uppercase tracking-widest hover:bg-goldHover transition-colors rounded-sm shadow-lg shadow-goldSoft/10">
+                            <i class="fa-solid fa-calendar-check mr-2"></i> Reservar Cita Ahora
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mapa Interactivo Obligatorio -->
+                <div class="lg:col-span-7 bg-matte p-2 rounded-sm border border-white/10 overflow-hidden shadow-2xl">
+                    <iframe src="https://www.google.com/maps?q=Fisioterapia%20Vicente%20Bodi%20Av.%20de%20les%20Fontanelles%2C%2013%2C%2046612%20Corbera%2C%20Valencia%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                    <div class="p-3 text-center text-xs text-[#8A857B]">
+                        Localización en Corbera, Valencia &bull; Excelente comunicación y accesibilidad
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final Pre-Footer -->
+    <section class="py-16 bg-gradient-to-b from-darkCharcoal to-matte border-t border-white/5 text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <h3 class="font-serif text-3xl sm:text-4xl text-white font-normal mb-4">¿Preparado para recuperar tu bienestar?</h3>
+            <p class="text-sm text-[#A59F94] max-w-xl mx-auto mb-8">
+                Ponte en manos de un profesional con criterio clínico y vocación de servicio. Llámanos hoy y reserva tu cita.
+            </p>
+            <a href="tel:962561050" class="inline-flex items-center px-8 py-4 bg-goldSoft text-matte font-bold text-xs uppercase tracking-[0.2em] hover:bg-goldHover transition-all duration-300 rounded-sm shadow-xl shadow-goldSoft/10">
+                <i class="fa-solid fa-phone mr-2"></i> Reservar Cita: 962 56 10 50
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-matte border-t border-white/10 py-10 text-xs text-[#7A766F]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+                <span class="font-serif text-lg text-white tracking-widest uppercase">Vicente Bodi</span>
+                <p class="text-[11px] text-[#A59F94] mt-1">Fisioterapia y Masajes en Corbera (Valencia) &copy; 2025. Todos los derechos reservados.</p>
+            </div>
+
+            <div class="flex items-center space-x-6 text-[11px] uppercase tracking-wider text-[#A59F94]">
+                <a href="#inicio" class="hover:text-goldSoft transition-colors">Inicio</a>
+                <a href="#tratamientos" class="hover:text-goldSoft transition-colors">Tratamientos</a>
+                <a href="#contacto" class="hover:text-goldSoft transition-colors">Contacto</a>
+                <a href="tel:962561050" class="text-goldSoft font-semibold">962 56 10 50</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón Flotante para Móviles -->
+    <div class="fixed bottom-5 right-5 z-40 sm:hidden">
+        <a href="tel:962561050" class="w-14 h-14 bg-goldSoft text-matte rounded-full shadow-2xl flex items-center justify-center text-xl hover:scale-105 active:scale-95 transition-transform" aria-label="Reservar Cita">
+            <i class="fa-solid fa-phone"></i>
+        </a>
+    </div>
+
+    <!-- Script de Menú Mobile -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú al hacer clic en un enlace interno
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
