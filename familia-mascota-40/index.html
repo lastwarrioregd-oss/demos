@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Familia Mascota | Tienda de Productos y Peluquería Canina en Badajoz</title>
+    <meta name="description" content="Tu tienda de confianza para mascotas en Badajoz. Peluquería canina profesional con Israel, zona de lavado autoservicio, alimentación y el mejor trato experto. C. Francisco Luján, 10a.">
+    
+    <!-- TailwindCSS v3 CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            900: '#14532d',
+                            dark: '#0f291e'
+                        },
+                        warm: {
+                            50: '#fafaf9',
+                            100: '#f5f5f4',
+                            800: '#292524',
+                            900: '#1c1917'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-warm-50 text-warm-800 font-sans antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- TOP BAR -->
+    <div class="bg-brand-900 text-white text-xs sm:text-sm py-2 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <span><i class="fa-solid fa-location-dot text-brand-500 mr-1.5"></i> C. Francisco Luján, 10a, 06004 Badajoz</span>
+                <span class="hidden md:inline"><i class="fa-solid fa-clock text-brand-500 mr-1.5"></i> Lunes a Sábado: Horario comercial</span>
+            </div>
+            <a href="https://wa.me/34691978747" target="_blank" rel="noopener noreferrer" class="hover:text-brand-300 font-medium transition-colors flex items-center gap-1.5">
+                <i class="fa-brands fa-whatsapp text-brand-500 text-base"></i> 691 97 87 47 (Israel)
+            </a>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-warm-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-2xl bg-brand-500 flex items-center justify-center text-white text-xl shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-paw"></i>
+                </div>
+                <div>
+                    <span class="text-xl font-display font-bold text-warm-900 tracking-tight block leading-none">Familia Mascota</span>
+                    <span class="text-xs font-medium text-brand-600 tracking-wider uppercase mt-1 block">Badajoz</span>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-warm-800">
+                <a href="#servicios" class="hover:text-brand-600 transition-colors">Servicios & Tienda</a>
+                <a href="#instalaciones" class="hover:text-brand-600 transition-colors">Instalaciones</a>
+                <a href="#experiencias" class="hover:text-brand-600 transition-colors">Opiniones</a>
+                <a href="#contacto" class="hover:text-brand-600 transition-colors">Ubicación</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="https://wa.me/34691978747" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-semibold px-5 py-2.5 rounded-xl shadow-lg shadow-brand-600/25 transition-all hover:-translate-y-0.5 text-sm">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    Contactar Ahora
+                </a>
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" aria-label="Abrir menú" class="md:hidden text-warm-800 text-2xl p-1 focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-warm-100 px-4 pt-2 pb-6 space-y-3">
+            <a href="#servicios" class="block py-2 text-warm-800 font-medium hover:text-brand-600">Servicios & Tienda</a>
+            <a href="#instalaciones" class="block py-2 text-warm-800 font-medium hover:text-brand-600">Instalaciones</a>
+            <a href="#experiencias" class="block py-2 text-warm-800 font-medium hover:text-brand-600">Opiniones</a>
+            <a href="#contacto" class="block py-2 text-warm-800 font-medium hover:text-brand-600">Ubicación</a>
+            <a href="https://wa.me/34691978747" target="_blank" rel="noopener noreferrer" class="w-full mt-4 flex items-center justify-center gap-2 bg-brand-600 text-white font-semibold px-5 py-3 rounded-xl shadow-md text-sm">
+                <i class="fa-brands fa-whatsapp text-lg"></i> Contactar Ahora
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative bg-gradient-to-b from-brand-50/60 to-white py-16 lg:py-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-brand-100 text-brand-800 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+                        <i class="fa-solid fa-heart text-brand-600"></i> Cuidado experto y cercano en Badajoz
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold text-warm-900 tracking-tight leading-[1.1]">
+                        El paraíso para tu peludo en <span class="text-brand-600">Familia Mascota</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl text-warm-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Peluquería canina profesional de la mano de Israel, zona de lavado impecable, tienda especializada y el asesoramiento más honesto y cariñoso para tu mejor amigo.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="https://wa.me/34691978747" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-brand-600 hover:bg-brand-700 text-white font-bold px-8 py-4 rounded-2xl shadow-xl shadow-brand-600/30 transition-all hover:-translate-y-1 text-base">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i>
+                            Contactar Ahora
+                        </a>
+                        <a href="#servicios" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-warm-100 text-warm-800 font-semibold px-6 py-4 rounded-2xl border border-warm-200 transition-all text-base">
+                            <i class="fa-solid fa-arrow-down text-brand-600"></i> Ver Servicios
+                        </a>
+                    </div>
+                    
+                    <!-- Trust badges -->
+                    <div class="pt-6 grid grid-cols-3 gap-4 border-t border-warm-200/60 max-w-lg mx-auto lg:mx-0">
+                        <div>
+                            <p class="text-2xl font-display font-bold text-warm-900">100%</p>
+                            <p class="text-xs text-warm-600 mt-0.5">Trato Personalizado</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-display font-bold text-warm-900">5 Estrellas</p>
+                            <p class="text-xs text-warm-600 mt-0.5">Reseñas en Google</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-display font-bold text-warm-900">Económico</p>
+                            <p class="text-xs text-warm-600 mt-0.5">Y gran profesionalidad</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Image Grid -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="absolute -inset-4 bg-brand-500/10 rounded-3xl transform rotate-2"></div>
+                        <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=800&q=80';" alt="Tienda y Peluquería Familia Mascota Badajoz" class="relative rounded-2xl shadow-2xl w-full h-[420px] object-cover">
+                        
+                        <!-- Floating Badge -->
+                        <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-warm-100 flex items-center gap-3 max-w-xs">
+                            <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-600 flex items-center justify-center text-xl flex-shrink-0">
+                                <i class="fa-solid fa-scissors"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-warm-900">Peluquería con Israel</p>
+                                <p class="text-[11px] text-warm-600">Paciencia, cariño y grandes resultados</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HIGHLIGHTED FEATURES -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-3xl bg-warm-50 border border-warm-100 hover:border-brand-300 transition-all group">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-500 text-white flex items-center justify-center text-2xl mb-6 shadow-md shadow-brand-500/20 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-dog"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-bold text-warm-900 mb-3">Peluquería Profesional</h3>
+                    <p class="text-warm-600 text-sm leading-relaxed">
+                        Dejamos a tu perrito limpio, guapo, bien peinado y feliz. Cuidado especializado sin prisas y con todo el afecto que se merecen.
+                    </p>
+                </div>
+
+                <div class="p-8 rounded-3xl bg-warm-50 border border-warm-100 hover:border-brand-300 transition-all group">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-500 text-white flex items-center justify-center text-2xl mb-6 shadow-md shadow-brand-500/20 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-shower"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-bold text-warm-900 mb-3">Zona de Lavado Impecable</h3>
+                    <p class="text-warm-600 text-sm leading-relaxed">
+                        Espacio de autolavado de perros siempre limpio, equipado con todo lo necesario para bañar cómodamente a tu mascota.
+                    </p>
+                </div>
+
+                <div class="p-8 rounded-3xl bg-warm-50 border border-warm-100 hover:border-brand-300 transition-all group">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-500 text-white flex items-center justify-center text-2xl mb-6 shadow-md shadow-brand-500/20 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-store"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-bold text-warm-900 mb-3">Tienda & Asesoramiento</h3>
+                    <p class="text-warm-600 text-sm leading-relaxed">
+                        Gran variedad de productos y el mejor asesoramiento de Israel para resolver todas tus dudas sobre alimentación y cuidados.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS Y PRODUCTOS -->
+    <section id="servicios" class="py-20 bg-warm-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-600 font-bold text-sm tracking-wider uppercase bg-brand-100 px-3.5 py-1.5 rounded-full inline-block mb-3">Especialidades & Atención</span>
+                <h2 class="text-3xl sm:text-4xl font-display font-bold text-warm-900 tracking-tight">Nuestros Servicios y Atención Personalizada</h2>
+                <p class="text-warm-600 mt-4 text-base sm:text-lg">Todo lo que tu mascota necesita en un mismo lugar en Badajoz, con precios económicos y máxima calidad.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Servicio Peluquería -->
+                <div class="bg-white rounded-3xl p-8 shadow-sm border border-warm-100 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="bg-brand-50 text-brand-700 font-bold text-xs uppercase px-3 py-1 rounded-lg">Estética Canina</span>
+                            <i class="fa-solid fa-scissors text-2xl text-brand-500"></i>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold text-warm-900 mb-3">Peluquería y Aseo Profesional</h3>
+                        <p class="text-warm-600 text-sm leading-relaxed mb-6">
+                            Baños, cortes de pelo adaptados a cada raza, cepillado profundo y arreglo estético completo. Destacamos por trabajar sin prisas, tratando a cada perrito con paciencia y cariño para que estén tranquilos y felices.
+                        </p>
+                        <ul class="space-y-3 mb-8 text-sm text-warm-700">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-500"></i> Adecentado y corte según morfología</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-500"></i> Baños con productos específicos de alta gama</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-500"></i> Servicio económico y 100% recomendado</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/34691978747" target="_blank" rel="noopener noreferrer" class="w-full text-center bg-brand-600 hover:bg-brand-700 text-white font-semibold py-3.5 rounded-xl transition-all shadow-md text-sm">
+                        Contactar Ahora para Cita
+                    </a>
+                </div>
+
+                <!-- Zona Lavado y Tienda -->
+                <div class="bg-white rounded-3xl p-8 shadow-sm border border-warm-100 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="bg-brand-50 text-brand-700 font-bold text-xs uppercase px-3 py-1 rounded-lg">Autoservicio & Tienda</span>
+                            <i class="fa-solid fa-basket-shopping text-2xl text-brand-500"></i>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold text-warm-900 mb-3">Zona de Lavado y Asesoramiento</h3>
+                        <p class="text-warm-600 text-sm leading-relaxed mb-6">
+                            ¿Prefieres bañar tú mismo a tu mascota? Ponemos a tu disposición una zona de lavado perfectamente acondicionada y limpia. Además, encuentra los mejores consejos y productos en tienda.
+                        </p>
+                        <ul class="space-y-3 mb-8 text-sm text-warm-700">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-500"></i> Zona de lavado siempre impecable y equipada</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-500"></i> Asesoramiento experto de Israel ante cualquier duda</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-500"></i> Productos seleccionados para el bienestar animal</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/34691978747" target="_blank" rel="noopener noreferrer" class="w-full text-center bg-brand-600 hover:bg-brand-700 text-white font-semibold py-3.5 rounded-xl transition-all shadow-md text-sm">
+                        Contactar Ahora
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERÍA / INSTALACIONES -->
+    <section id="instalaciones" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-600 font-bold text-sm tracking-wider uppercase bg-brand-100 px-3.5 py-1.5 rounded-full inline-block mb-3">Galería Real</span>
+                <h2 class="text-3xl sm:text-4xl font-display font-bold text-warm-900 tracking-tight">Nuestras Instalaciones y Trabajos</h2>
+                <p class="text-warm-600 mt-4 text-base sm:text-lg">Un espacio pensado por y para los animales en C. Francisco Luján, Badajoz.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group relative overflow-hidden rounded-3xl h-72 shadow-md">
+                    <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?auto=format&fit=crop&w=800&q=80';" alt="Peluquería Canina Badajoz" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-warm-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <p class="text-white font-semibold text-sm">Peluquería y estética con mimo</p>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-3xl h-72 shadow-md">
+                    <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=800&q=80';" alt="Zona de Lavado de Perros" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-warm-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <p class="text-white font-semibold text-sm">Zona de lavado limpia y equipada</p>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-3xl h-72 shadow-md sm:col-span-2 lg:col-span-1">
+                    <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=800&q=80';" alt="Tienda de Mascotas Badajoz" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-warm-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <p class="text-white font-semibold text-sm">Atención experta y personalizada</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESEÑAS REALES -->
+    <section id="experiencias" class="py-20 bg-warm-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-600 font-bold text-sm tracking-wider uppercase bg-brand-100 px-3.5 py-1.5 rounded-full inline-block mb-3">Opiniones Verificadas</span>
+                <h2 class="text-3xl sm:text-4xl font-display font-bold text-warm-900 tracking-tight">Lo que dicen nuestros clientes</h2>
+                <p class="text-warm-600 mt-4 text-base sm:text-lg">La satisfacción de los dueños y la felicidad de sus mascotas es nuestra mayor recompensa.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Reseña 1 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-warm-100 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-warm-700 text-sm leading-relaxed italic mb-6">
+                            "Hemos llevado por primera vez a nuestra perrita para que la adecentaran y nos gustó mucho como la quedó Israel. Por otro lado ha cuidado de nuestra perrita en varias ocasiones y se nota el cariño con el que la trata. Recomendable tratar con Israel si no tienes prisa 😉…"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-warm-100">
+                        <div class="w-10 h-10 rounded-full bg-brand-100 text-brand-700 font-bold flex items-center justify-center text-sm">JC</div>
+                        <div>
+                            <p class="font-bold text-sm text-warm-900">Juan Carlos</p>
+                            <p class="text-xs text-warm-500">Cliente Google Maps</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 2 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-warm-100 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-warm-700 text-sm leading-relaxed italic mb-6">
+                            "Israel es un magnífico profesional. Mi perra siempre queda limpia, guapa y feliz. 100% recomendable y económico;) Por que no se pueden dar mas estrellas."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-warm-100">
+                        <div class="w-10 h-10 rounded-full bg-brand-100 text-brand-700 font-bold flex items-center justify-center text-sm">GR</div>
+                        <div>
+                            <p class="font-bold text-sm text-warm-900">Guadalupe Represa</p>
+                            <p class="text-xs text-warm-500">Cliente Google Maps</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 3 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-warm-100 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-warm-700 text-sm leading-relaxed italic mb-6">
+                            "Súper profesionales y un trato exquisito con los perros. Se nota cuando a alguien les gustan tanto los animales como a Israel. Buen precio y mejor trato. Recomendado 100%"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-warm-100">
+                        <div class="w-10 h-10 rounded-full bg-brand-100 text-brand-700 font-bold flex items-center justify-center text-sm">AJ</div>
+                        <div>
+                            <p class="font-bold text-sm text-warm-900">Agustin J.R.</p>
+                            <p class="text-xs text-warm-500">Cliente Google Maps</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 4 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-warm-100 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-warm-700 text-sm leading-relaxed italic mb-6">
+                            "Un trato estupendo. Nos deja el perro siempre muy bien, muy limpio y bien peinado. Brownie está encantado y nosotros también."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-warm-100">
+                        <div class="w-10 h-10 rounded-full bg-brand-100 text-brand-700 font-bold flex items-center justify-center text-sm">R</div>
+                        <div>
+                            <p class="font-bold text-sm text-warm-900">Rubén</p>
+                            <p class="text-xs text-warm-500">Cliente Google Maps</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 5 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-warm-100 flex flex-col justify-between md:col-span-2 lg:col-span-2">
+                    <div>
+                        <div class="flex text-amber-400 gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-warm-700 text-sm leading-relaxed italic mb-6">
+                            "Israel siempre está para resolver todas las dudas, y la zona de lavado de perros siempre está muy limpia. Gran tienda y grandes consejos de Israel. Enhorabuena."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-warm-100">
+                        <div class="w-10 h-10 rounded-full bg-brand-100 text-brand-700 font-bold flex items-center justify-center text-sm">JN</div>
+                        <div>
+                            <p class="font-bold text-sm text-warm-900">Javier Navarro de Sarraga</p>
+                            <p class="text-xs text-warm-500">Cliente Google Maps</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO Y MAPA -->
+    <section id="contacto" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-brand-600 font-bold text-sm tracking-wider uppercase bg-brand-100 px-3.5 py-1.5 rounded-full inline-block mb-3">Visítanos</span>
+                        <h2 class="text-3xl sm:text-4xl font-display font-bold text-warm-900 tracking-tight">¿Dónde estamos?</h2>
+                        <p class="text-warm-600 mt-3 text-base">Pásate a conocernos o ponte en contacto con Israel para cualquier consulta o cita previa.</p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-warm-50 border border-warm-100">
+                            <div class="w-12 h-12 rounded-xl bg-brand-500 text-white flex items-center justify-center text-lg flex-shrink-0 mt-0.5">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-warm-900">Dirección</h4>
+                                <p class="text-warm-600 text-sm mt-0.5">C. Francisco Luján, 10a, 06004 Badajoz</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-warm-50 border border-warm-100">
+                            <div class="w-12 h-12 rounded-xl bg-brand-500 text-white flex items-center justify-center text-lg flex-shrink-0 mt-0.5">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-warm-900">Teléfono / WhatsApp</h4>
+                                <p class="text-warm-600 text-sm mt-0.5">691 97 87 47</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <a href="https://wa.me/34691978747" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-3 bg-brand-600 hover:bg-brand-700 text-white font-bold px-8 py-4 rounded-2xl shadow-xl shadow-brand-600/25 transition-all text-base">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i>
+                            Contactar Ahora
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <div class="bg-warm-50 p-3 rounded-3xl border border-warm-100 shadow-sm">
+                        <iframe src="https://www.google.com/maps?q=Familia%20Mascota%20C.%20Francisco%20Luj%C3%A1n%2C%2010a%2C%2006004%20Badajoz&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-warm-900 text-warm-100 py-12 border-t border-warm-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 pb-8 border-b border-warm-800">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-brand-500 flex items-center justify-center text-white text-lg">
+                        <i class="fa-solid fa-paw"></i>
+                    </div>
+                    <div>
+                        <span class="text-lg font-display font-bold text-white tracking-tight block leading-none">Familia Mascota</span>
+                        <span class="text-xs text-brand-400 mt-1 block">Tienda y Peluquería Canina en Badajoz</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-6 text-sm">
+                    <a href="#servicios" class="hover:text-brand-400 transition-colors">Servicios</a>
+                    <a href="#instalaciones" class="hover:text-brand-400 transition-colors">Instalaciones</a>
+                    <a href="#experiencias" class="hover:text-brand-400 transition-colors">Opiniones</a>
+                    <a href="#contacto" class="hover:text-brand-400 transition-colors">Ubicación</a>
+                </div>
+            </div>
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-warm-400">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> Familia Mascota (Badajoz). Todos los derechos reservados.</p>
+                <p class="flex items-center gap-1">Diseñado con <i class="fa-solid fa-heart text-brand-500"></i> para mascotas y dueños exigentes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MOBILE MENU SCRIPT -->
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close menu when clicking a link
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
