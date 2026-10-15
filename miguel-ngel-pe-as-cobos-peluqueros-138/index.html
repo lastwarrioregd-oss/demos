@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miguel Cobos Peluqueros | Salón de Belleza en Valladolid</title>
+    
+    <!-- Tailwind CSS v3 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            light: '#E5C58F',
+                            DEFAULT: '#C5A059',
+                            dark: '#9A7B38',
+                        },
+                        dark: {
+                            900: '#0A0A0A',
+                            800: '#141414',
+                            700: '#1F1F1F',
+                            600: '#2A2A2A',
+                        },
+                        sand: {
+                            light: '#FDFBF7',
+                            DEFAULT: '#F5F0EB',
+                            dark: '#E2D7CC'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .font-sans { font-family: 'Montserrat', sans-serif; }
+    </style>
+</head>
+<body class="bg-dark-900 text-sand-light font-sans antialiased selection:bg-gold selection:text-dark-900">
+
+    <!-- HEADER & NAVBAR -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-dark-900/90 backdrop-blur-md border-b border-dark-700 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex flex-col">
+                <span class="font-serif text-xl sm:text-2xl font-bold tracking-wider text-sand-light">MIGUEL COBOS</span>
+                <span class="text-[10px] tracking-[0.25em] text-gold uppercase -mt-1">Peluqueros • Valladolid</span>
+            </a>
+
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
+                <a href="#experiencia" class="hover:text-gold transition-colors">El Salón</a>
+                <a href="#servicios" class="hover:text-gold transition-colors">Servicios & Tarifas</a>
+                <a href="#galeria" class="hover:text-gold transition-colors">Instalaciones</a>
+                <a href="#opiniones" class="hover:text-gold transition-colors">Opiniones</a>
+                <a href="#contacto" class="hover:text-gold transition-colors">Ubicación</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <a href="tel:983294165" class="hidden sm:inline-flex items-center justify-center bg-gold hover:bg-gold-light text-dark-950 font-semibold px-6 py-2.5 rounded-full text-sm transition-all shadow-lg hover:shadow-gold/20">
+                    <i class="fa-solid fa-phone mr-2"></i> Reservar Cita
+                </a>
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-btn" class="md:hidden text-sand-light focus:outline-none p-2">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-800 border-b border-dark-700 px-4 pt-2 pb-6 space-y-3">
+            <a href="#experiencia" class="block py-2 text-sand-light hover:text-gold transition-colors">El Salón</a>
+            <a href="#servicios" class="block py-2 text-sand-light hover:text-gold transition-colors">Servicios & Tarifas</a>
+            <a href="#galeria" class="block py-2 text-sand-light hover:text-gold transition-colors">Instalaciones</a>
+            <a href="#opiniones" class="block py-2 text-sand-light hover:text-gold transition-colors">Opiniones</a>
+            <a href="#contacto" class="block py-2 text-sand-light hover:text-gold transition-colors">Ubicación</a>
+            <div class="pt-2">
+                <a href="tel:983294165" class="w-full flex items-center justify-center bg-gold text-dark-950 font-semibold px-6 py-3 rounded-full text-sm">
+                    <i class="fa-solid fa-phone mr-2"></i> Reservar Cita (983 29 41 65)
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-dark-900">
+        <!-- Background Overlay Image -->
+        <div class="absolute inset-0 z-0 opacity-40">
+            <img src="https://static.xx.fbcdn.net/rsrc.php/yb/r/HpEiFYDux5j.webp" 
+                 referrerpolicy="no-referrer" 
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                 alt="Miguel Cobos Peluqueros Fondo" 
+                 class="w-full h-full object-cover object-center scale-105 transform animate-pulse duration-10000">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/60 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-24">
+            <div class="inline-flex items-center space-x-2 bg-dark-800/80 border border-gold/30 px-4 py-1.5 rounded-full mb-8 backdrop-blur-sm">
+                <span class="flex h-2 w-2 rounded-full bg-gold animate-ping"></span>
+                <span class="text-xs uppercase tracking-widest text-gold font-medium">Local de referencia en Valladolid</span>
+            </div>
+
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-sand-light mb-6 leading-tight">
+                El Arte de Cuidar <br><span class="italic text-gold font-normal">Tu Imagen y Tu Cabello</span>
+            </h1>
+
+            <p class="max-w-2xl mx-auto text-base sm:text-lg text-sand-dark mb-10 font-light leading-relaxed">
+                Un espacio acogedor con un toque moderno y exclusivo en pleno centro de Valladolid. Asesoramiento experto, tendencias en mechas, cortes personalizados y el trato cercano que mereces.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="tel:983294165" class="w-full sm:w-auto inline-flex items-center justify-center bg-gold hover:bg-gold-light text-dark-950 font-bold px-8 py-4 rounded-full text-base transition-all transform hover:-translate-y-0.5 shadow-xl shadow-gold/10">
+                    <i class="fa-solid fa-phone mr-3"></i> Reservar Cita
+                </a>
+                <a href="#servicios" class="w-full sm:w-auto inline-flex items-center justify-center bg-dark-800/80 hover:bg-dark-700 text-sand-light font-medium px-8 py-4 rounded-full text-base border border-dark-600 transition-all">
+                    Ver Servicios y Tarifas
+                </a>
+            </div>
+
+            <!-- Trust badges -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-3 gap-6 pt-10 border-t border-dark-800 text-left max-w-3xl mx-auto">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center text-gold shrink-0">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-sand-light">Profesionales</h4>
+                        <p class="text-xs text-sand-dark">Equipo experto y cercano</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center text-gold shrink-0">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-sand-light">Asesoramiento</h4>
+                        <p class="text-xs text-sand-dark">Diagnóstico personalizado</p>
+                    </div>
+                </div>
+                <div class="col-span-2 md:col-span-1 flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center text-gold shrink-0">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-sand-light">Excelencia</h4>
+                        <p class="text-xs text-sand-dark">Valoraciones 5 estrellas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE NOSOTROS / EXPERIENCIA -->
+    <section id="experiencia" class="py-24 bg-dark-800 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div class="relative">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-dark-700 aspect-[4/3]">
+                        <img src="https://static.xx.fbcdn.net/rsrc.php/yb/r/HpEiFYDux5j.webp" 
+                             referrerpolicy="no-referrer" 
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                             alt="Salón Miguel Cobos Peluqueros" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <!-- Floating Badge -->
+                    <div class="absolute -bottom-6 -right-6 bg-dark-900 border border-gold/40 p-6 rounded-xl shadow-2xl hidden sm:block max-w-xs">
+                        <p class="font-serif italic text-gold text-lg mb-1">"Miguel es un peluquero fuera de serie"</p>
+                        <span class="text-xs text-sand-dark uppercase tracking-wider">— Reseña Verificada Google Maps</span>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <span class="text-gold text-xs font-semibold uppercase tracking-[0.3em]">Boutique de Belleza Exclusiva</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-sand-light">
+                        Confianza, Tendencia y Cuidado Profesional en Valladolid
+                    </h2>
+                    <p class="text-sand-dark font-light leading-relaxed">
+                        Situados en pleno corazón de Valladolid (C. Regalado, 12), en Miguel Cobos Peluqueros combinamos la pasión por la peluquería de autor con las últimas tendencias en estilismo, coloración y tratamientos capilares.
+                    </p>
+                    <p class="text-sand-dark font-light leading-relaxed">
+                        Nuestro equipo —formado por grandes profesionales como Miguel, Lorena, Ana o Elena— destaca no solo por su alta cualificación técnica, sino por su empatía y capacidad para interpretar exactamente lo que tu cabello necesita y tú esperas.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-6 pt-4">
+                        <div class="border-l-2 border-gold pl-4">
+                            <h3 class="font-bold text-sand-light text-lg mb-1">Especialistas en Mechas</h3>
+                            <p class="text-xs text-sand-dark">Técnicas avanzadas para dar luz y movimiento natural a tu melena.</p>
+                        </div>
+                        <div class="border-l-2 border-gold pl-4">
+                            <h3 class="font-bold text-sand-light text-lg mb-1">Eventos y Bodas</h3>
+                            <p class="text-xs text-sand-dark">Peinados y maquillaje impecables sin sorpresas en precios.</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-6">
+                        <a href="tel:983294165" class="inline-flex items-center text-gold hover:text-gold-light font-semibold text-sm tracking-wider uppercase">
+                            Reserva tu diagnóstico personalizado <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS, CORTES Y TARIFAS -->
+    <section id="servicios" class="py-24 bg-dark-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold text-xs font-semibold uppercase tracking-[0.3em] block mb-3">Carta de Servicios</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-sand-light mb-4">Nuestros Tratamientos y Tarifas</h2>
+                <p class="text-sand-dark font-light">
+                    Soluciones a medida para cada tipo de cabello con una excelente relación calidad-precio y honestidad garantizada.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Servicio 1 -->
+                <div class="bg-dark-800 border border-dark-700 rounded-2xl p-8 hover:border-gold/50 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-dark-950 transition-colors">
+                                <i class="fa-solid fa-scissors text-xl"></i>
+                            </div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-gold bg-dark-700 px-3 py-1 rounded-full">Esencial</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-sand-light mb-3">Corte & Asesoramiento</h3>
+                        <p class="text-sand-dark text-sm font-light mb-6">
+                            Estudio morfológico y de cabello difícil. Diseñamos el corte perfecto que se adapta a tu estilo de vida y facciones.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-dark-700 flex items-center justify-between">
+                        <span class="text-xs text-sand-dark">Incluye lavado y peinado</span>
+                        <a href="tel:983294165" class="text-gold hover:text-gold-light font-semibold text-sm flex items-center">
+                            Reservar <i class="fa-solid fa-chevron-right ml-1 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="bg-dark-800 border border-dark-700 rounded-2xl p-8 hover:border-gold/50 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-dark-950 transition-colors">
+                                <i class="fa-solid fa-wand-magic text-xl"></i>
+                            </div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-gold bg-dark-700 px-3 py-1 rounded-full">Especialidad</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-sand-light mb-3">Mechas & Color Avanzado</h3>
+                        <p class="text-sand-dark text-sm font-light mb-6">
+                            Mechas preciosas, balayage y coloración de alta gama. Logramos el tono exacto que buscas cuidando la fibra capilar al máximo.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-dark-700 flex items-center justify-between">
+                        <span class="text-xs text-sand-dark">Asesoramiento personalizado</span>
+                        <a href="tel:983294165" class="text-gold hover:text-gold-light font-semibold text-sm flex items-center">
+                            Reservar <i class="fa-solid fa-chevron-right ml-1 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="bg-dark-800 border border-dark-700 rounded-2xl p-8 hover:border-gold/50 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-dark-950 transition-colors">
+                                <i class="fa-solid fa-spa text-xl"></i>
+                            </div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-gold bg-dark-700 px-3 py-1 rounded-full">Tratamientos</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-sand-light mb-3">Tratamientos Capilares</h3>
+                        <p class="text-sand-dark text-sm font-light mb-6">
+                            Hidratación profunda, nutrición y reconstrucción para cabellos difíciles o castigados. Devuelve la salud y el brillo natural a tu pelo.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-dark-700 flex items-center justify-between">
+                        <span class="text-xs text-sand-dark">Resultados visibles</span>
+                        <a href="tel:983294165" class="text-gold hover:text-gold-light font-semibold text-sm flex items-center">
+                            Reservar <i class="fa-solid fa-chevron-right ml-1 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 4 -->
+                <div class="bg-dark-800 border border-dark-700 rounded-2xl p-8 hover:border-gold/50 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-dark-950 transition-colors">
+                                <i class="fa-solid fa-heart text-xl"></i>
+                            </div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-gold bg-dark-700 px-3 py-1 rounded-full">Bodas y Eventos</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-sand-light mb-3">Peinados y Maquillaje</h3>
+                        <p class="text-sand-dark text-sm font-light mb-6">
+                            Ideal para bodas, comuniones y eventos especiales. Nos implicamos al máximo con tu tocado y estilismo. Sin recargos abusivos por bodas.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-dark-700 flex items-center justify-between">
+                        <span class="text-xs text-sand-dark">Honestidad en precios</span>
+                        <a href="tel:983294165" class="text-gold hover:text-gold-light font-semibold text-sm flex items-center">
+                            Reservar <i class="fa-solid fa-chevron-right ml-1 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 5 -->
+                <div class="bg-dark-800 border border-dark-700 rounded-2xl p-8 hover:border-gold/50 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-dark-950 transition-colors">
+                                <i class="fa-solid fa-child-reaching text-xl"></i>
+                            </div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-gold bg-dark-700 px-3 py-1 rounded-full">Estilismo</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-sand-light mb-3">Peinados y Brushing</h3>
+                        <p class="text-sand-dark text-sm font-light mb-6">
+                            Desde ondas deslumbrantes hasta un alisado perfecto o recogidos sofisticados para tu día a día o ocasiones especiales.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-dark-700 flex items-center justify-between">
+                        <span class="text-xs text-sand-dark">Durabilidad asegurada</span>
+                        <a href="tel:983294165" class="text-gold hover:text-gold-light font-semibold text-sm flex items-center">
+                            Reservar <i class="fa-solid fa-chevron-right ml-1 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 6 CTA Card -->
+                <div class="bg-gradient-to-br from-gold/20 via-dark-800 to-dark-800 border border-gold/40 rounded-2xl p-8 flex flex-col justify-between text-center">
+                    <div>
+                        <div class="w-14 h-14 rounded-full bg-gold text-dark-950 flex items-center justify-center mx-auto mb-6 shadow-lg shadow-gold/20">
+                            <i class="fa-solid fa-phone text-2xl"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-sand-light mb-3">¿Hablamos de tu cambio de look?</h3>
+                        <p class="text-sand-dark text-sm font-light mb-6">
+                            Llámanos directamente y te asesoraremos sin compromiso sobre el tratamiento ideal para ti.
+                        </p>
+                    </div>
+                    <div>
+                        <a href="tel:983294165" class="w-full inline-flex items-center justify-center bg-gold hover:bg-gold-light text-dark-950 font-bold px-6 py-3.5 rounded-full text-sm transition-all shadow-md">
+                            Llamar al 983 29 41 65
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERÍA / NUESTRAS INSTALACIONES -->
+    <section id="galeria" class="py-24 bg-dark-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold text-xs font-semibold uppercase tracking-[0.3em] block mb-3">Galería Visual</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-sand-light mb-4">Nuestras Instalaciones y Trabajos</h2>
+                <p class="text-sand-dark font-light">
+                    Un local acogedor, elegante y equipado para ofrecerte una experiencia de bienestar única en Valladolid.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-dark-700 group aspect-[4/3]">
+                    <img src="https://static.xx.fbcdn.net/rsrc.php/yb/r/HpEiFYDux5j.webp" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                         alt="Instalaciones Miguel Cobos Peluqueros 1" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-900/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-sand-light font-serif text-lg">Salón Principal</span>
+                    </div>
+                </div>
+
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-dark-700 group aspect-[4/3]">
+                    <img src="https://static.xx.fbcdn.net/rsrc.php/yb/r/HpEiFYDux5j.webp" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1200&q=80';"
+                         alt="Instalaciones Miguel Cobos Peluqueros 2" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-900/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-sand-light font-serif text-lg">Zona de Estilismo y Color</span>
+                    </div>
+                </div>
+
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-dark-700 group aspect-[4/3]">
+                    <img src="https://static.xx.fbcdn.net/rsrc.php/yb/r/HpEiFYDux5j.webp" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?auto=format&fit=crop&w=1200&q=80';"
+                         alt="Instalaciones Miguel Cobos Peluqueros 3" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-900/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-sand-light font-serif text-lg">Ambiente Exclusivo y Acogedor</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OPINIONES REALES VERIFICADAS -->
+    <section id="opiniones" class="py-24 bg-dark-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold text-xs font-semibold uppercase tracking-[0.3em] block mb-3">Testimonios Reales</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-sand-light mb-4">Lo que opinan nuestros clientes</h2>
+                <p class="text-sand-dark font-light">
+                    La satisfacción de quienes confían en nosotros es nuestra mejor carta de presentación en Google Maps y portales especializados.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Reseña 1 -->
+                <div class="bg-dark-800 border border-dark-700 rounded-2xl p-8 flex flex-col justify-between relative">
+                    <div class="absolute top-6 right-6 text-gold/30 text-3xl"><i class="fa-solid fa-quote-right"></i></div>
+                    <div>
+                        <div class="flex text-gold text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sand-dark text-sm font-light italic mb-6 leading-relaxed">
+                            "Llevo año y medio llendo a esta peluquería y estoy encantada. Venía de Madrid y una amiga me la recomendó y qué buen acierto. El trato es fantástico, te asesoran super bien. Mi pelo es bastante difícil, pero Miguel y Lorena han conseguido lo que yo quería. Recomiendo 100% esta peluquería y todo su equipo son excelentes profesionales. Confío plenamente en su criterio 👌. Gracias Miguel, Lorena guapa, Elena sois geniales tod@s."
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-dark-700">
+                        <h4 class="font-serif font-bold text-sand-light">Sandra Rodríguez</h4>
+                        <span class="text-xs text-sand-dark">Cliente Verificada en Google</span>
+                    </div>
+                </div>
+
+                <!-- Reseña 2 -->
+                <div class="bg-dark-800 border border-dark-700 rounded-2xl p-8 flex flex-col justify-between relative">
+                    <div class="absolute top-6 right-6 text-gold/30 text-3xl"><i class="fa-solid fa-quote-right"></i></div>
+                    <div>
+                        <div class="flex text-gold text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sand-dark text-sm font-light italic mb-6 leading-relaxed">
+                            "Mi madre y yo fuimos a esta peluquería sin conocerla previamente, ya que no somos de la ciudad. Aun así, decidimos confiar en ellos para maquillarnos y peinarnos… ¡y no pudimos haber tomado mejor decisión! Desde el primer momento nos…"
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-dark-700">
+                        <h4 class="font-serif font-bold text-sand-light">María Corral de Toro</h4>
+                        <span class="text-xs text-sand-dark">Cliente Verificada en Google</span>
+                    </div>
+                </div>
+
+                <!-- Reseña 3 -->
+                <div class="bg-dark-800 border border-dark-700 rounded-2xl p-8 flex flex-col justify-between relative">
+                    <div class="absolute top-6 right-6 text-gold/30 text-3xl"><i class="fa-solid fa-quote-right"></i></div>
+                    <div>
+                        <div class="flex text-gold text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sand-dark text-sm font-light italic mb-6 leading-relaxed">
+                            "Hoy he ido por primera vez a esta peluqueria, he salido encantada, unas mechas preciosas. Ana es un encanto y excelente profesional. Muchisimas gracias."
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-dark-700">
+                        <h4 class="font-serif font-bold text-sand-light">Natalia De Pablo</h4>
+                        <span class="text-xs text-sand-dark">Cliente Verificada en Google</span>
+                    </div>
+                </div>
+
+                <!-- Reseña 4 -->
+                <div class="bg-dark-800 border border-dark-700 rounded-2xl p-8 flex flex-col justify-between relative">
+                    <div class="absolute top-6 right-6 text-gold/30 text-3xl"><i class="fa-solid fa-quote-right"></i></div>
+                    <div>
+                        <div class="flex text-gold text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sand-dark text-sm font-light italic mb-6 leading-relaxed">
+                            "Estuve este sábado en la pelu porque tenia una boda llevé mi tocado y mi experiencia no pudo ser mejor a todos los niveles, me atendieron genial!! Me trataron con mucha educación y gentileza sin haber pedido cita previa!! Y se implicaron mucho en ver como quedaba mejor!! Tambien el tema del precio importante, un precio muy bueno y no se aprovecharon como hacen en otros muchos sitios que cuando dices boda ya te ponen un recargo importante!!! La recomiendo por su profesionalidad y honestidad!!! Todo un placer"
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-dark-700">
+                        <h4 class="font-serif font-bold text-sand-light">Salud Josa</h4>
+                        <span class="text-xs text-sand-dark">Cliente Verificada en Google</span>
+                    </div>
+                </div>
+
+                <!-- Reseña 5 -->
+                <div class="bg-dark-800 border border-dark-700 rounded-2xl p-8 flex flex-col justify-between relative md:col-span-2 lg:col-span-2">
+                    <div class="absolute top-6 right-6 text-gold/30 text-3xl"><i class="fa-solid fa-quote-right"></i></div>
+                    <div>
+                        <div class="flex text-gold text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sand-dark text-sm font-light italic mb-6 leading-relaxed">
+                            "Local de referencia en peluqueria de Valladolid. El local es acogedor, con un toque moderno que lo hace especial. Tod@s son muy profesionales, y Miguel es un peluquero fuera de serie, sabe dar al cliente lo que espera y necesita. Y a un precio más que razonable."
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-dark-700">
+                        <h4 class="font-serif font-bold text-sand-light">Jose Garcia</h4>
+                        <span class="text-xs text-sand-dark">Cliente Verificado en Google</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAPA INTERACTIVO Y UBICACIÓN -->
+    <section id="contacto" class="py-24 bg-dark-800 border-t border-dark-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div>
+                        <span class="text-gold text-xs font-semibold uppercase tracking-[0.3em] block mb-3">Encuéntranos</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-sand-light mb-4">Visita Nuestro Salón en Valladolid</h2>
+                        <p class="text-sand-dark font-light">
+                            Estamos situados en una de las zonas más emblemáticas y accesibles de la ciudad. Ven a conocernos o reserva tu cita por teléfono.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold shrink-0 mt-1">
+                                <i class="fa-solid fa-location-dot text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sand-light text-base mb-1">Dirección</h4>
+                                <p class="text-sand-dark text-sm font-light">C. Regalado, 12, 47002 Valladolid, España</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold shrink-0 mt-1">
+                                <i class="fa-solid fa-phone text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sand-light text-base mb-1">Teléfono de Reservas</h4>
+                                <a href="tel:983294165" class="text-gold hover:text-gold-light font-semibold text-base">983 29 41 65</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold shrink-0 mt-1">
+                                <i class="fa-solid fa-clock text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sand-light text-base mb-1">Horario</h4>
+                                <p class="text-sand-dark text-sm font-light">Lunes a Sábado (Consulta disponibilidad y cita previa)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="tel:983294165" class="inline-flex items-center justify-center bg-gold hover:bg-gold-light text-dark-950 font-bold px-8 py-4 rounded-full text-base transition-all shadow-lg">
+                            <i class="fa-solid fa-phone mr-3"></i> Reservar Cita Ahora
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mapa interactivo obligatorio -->
+                <div class="relative w-full h-[380px] rounded-2xl overflow-hidden border border-dark-700 shadow-2xl">
+                    <iframe src="https://www.google.com/maps?q=Miguel%20(%C3%81ngel%20Pe%C3%B1as)%20Cobos%20Peluqueros%20C.%20Regalado%2C%2012%2C%2047002%20Valladolid%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark-900 border-t border-dark-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-center md:text-left">
+                <span class="font-serif text-xl font-bold tracking-wider text-sand-light block">MIGUEL COBOS</span>
+                <span class="text-xs tracking-[0.2em] text-gold uppercase">Ángel Peñas Cobos Peluqueros • Valladolid</span>
+            </div>
+
+            <div class="text-xs text-sand-dark text-center md:text-right">
+                <p>&copy; <span id="current-year"></span> Miguel Cobos Peluqueros. Todos los derechos reservados.</p>
+                <p class="mt-1">C. Regalado, 12, 47002 Valladolid | Tel: <a href="tel:983294165" class="text-gold hover:underline">983 29 41 65</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript para interactividad básica -->
+    <script>
+        // Actualizar año en el footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Menú móvil toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú al hacer clic en un enlace del menú móvil
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
