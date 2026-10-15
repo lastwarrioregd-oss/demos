@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aullidog's | Peluquería Canina y Estética de Mascotas en Almería</title>
+    <meta name="description" content="Peluquería canina boutique en Almería. Cuidado profesional, amor por los animales y estética de alta gama. Reserva tu cita en Aullidog's.">
+    
+    <!-- TailwindCSS v3 CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#121212',
+                            card: '#1a1a1a',
+                            gold: '#d4af37',
+                            'gold-light': '#f3e5ab',
+                            sand: '#f9f6f0',
+                            accent: '#2a2a2a'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-brand-dark text-brand-sand font-sans antialiased selection:bg-brand-gold selection:text-brand-dark">
+
+    <!-- Header / Barra de Navegación -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-brand-dark/90 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-brand-gold to-brand-gold-light flex items-center justify-center text-brand-dark font-bold text-xl shadow-lg shadow-brand-gold/20 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-paw"></i>
+                </div>
+                <div>
+                    <span class="font-serif text-2xl font-bold tracking-wide text-white">Aullidog's</span>
+                    <span class="block text-[10px] tracking-widest uppercase text-brand-gold font-semibold">Pet Boutique & Spa Almería</span>
+                </div>
+            </a>
+
+            <!-- Navegación Desktop -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#inicio" class="text-white hover:text-brand-gold transition-colors">Inicio</a>
+                <a href="#servicios" class="text-white/80 hover:text-brand-gold transition-colors">Servicios & Tarifas</a>
+                <a href="#galeria" class="text-white/80 hover:text-brand-gold transition-colors">Instalaciones</a>
+                <a href="#opiniones" class="text-white/80 hover:text-brand-gold transition-colors">Reseñas</a>
+                <a href="#contacto" class="text-white/80 hover:text-brand-gold transition-colors">Ubicación</a>
+            </nav>
+
+            <div class="hidden lg:flex items-center gap-4">
+                <a href="https://wa.me/34641004571" target="_blank" rel="noopener noreferrer" class="bg-brand-gold hover:bg-brand-gold-light text-brand-dark font-semibold px-5 py-2.5 rounded-full transition-all shadow-md shadow-brand-gold/10 hover:shadow-brand-gold/30 flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Reservar Cita</span>
+                </a>
+            </div>
+
+            <!-- Botón Menú Móvil -->
+            <button id="menu-btn" class="md:hidden text-white text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Menú Desplegable Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-card border-b border-white/10 px-6 py-5 space-y-4">
+            <a href="#inicio" class="block text-white hover:text-brand-gold font-medium py-1">Inicio</a>
+            <a href="#servicios" class="block text-white/80 hover:text-brand-gold font-medium py-1">Servicios & Tarifas</a>
+            <a href="#galeria" class="block text-white/80 hover:text-brand-gold font-medium py-1">Instalaciones</a>
+            <a href="#opiniones" class="block text-white/80 hover:text-brand-gold font-medium py-1">Reseñas</a>
+            <a href="#contacto" class="block text-white/80 hover:text-brand-gold font-medium py-1">Ubicación</a>
+            <a href="https://wa.me/34641004571" target="_blank" rel="noopener noreferrer" class="w-full bg-brand-gold text-brand-dark font-bold py-3 rounded-xl text-center flex items-center justify-center gap-2 mt-2">
+                <i class="fa-brands fa-whatsapp text-xl"><span>Reservar Cita</span></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-20">
+            <img src="https://scontent-sjc6-1.xx.fbcdn.net/v/t39.30808-6/573652489_811954501580656_1716765637403791927_n.jpg?stp=dst-jpg_tt6&cstp=mx1440x1440&ctp=s590x590&_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_ohc=dOJ__IROu2oQ7kNvwGXKiSZ&_nc_oc=AdoT0jkT96KZEbRyzoRGZY2-uBeQYH-qaNXKhmpGKN1EnJT-Xw4XAKfEPo-LXboD2Dg&_nc_zt=23&_nc_ht=scontent-sjc6-1.xx&_nc_gid=a6yqnKU74pMBtyDDpsQAhw&_nc_ss=7b289&oh=00_AQPaftDyP8aj01hvqalgUTkAZx6mhI2T9ceOEuhTkT_3Jg&oe=6AD681F1" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" alt="Fondo Aullidog's" class="w-full h-full object-cover">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/90 to-transparent z-1"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 px-4 py-1.5 rounded-full text-brand-gold text-xs font-semibold tracking-wider uppercase">
+                    <i class="fa-solid fa-award"></i> Peluquería Canina Premium en Almería
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight">
+                    El arte de cuidar y embellecer a tu <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold to-brand-gold-light">mejor amigo</span>
+                </h1>
+                <p class="text-lg text-white/70 max-w-2xl mx-auto lg:mx-0 font-light">
+                    Trato especializado, paciencia infinita y productos de alta gama. Transformamos cada sesión de peluquería en una experiencia de bienestar única para perros nerviosos o exigentes en Almería.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                    <a href="https://wa.me/34641004571" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-brand-gold hover:bg-brand-gold-light text-brand-dark font-bold px-8 py-4 rounded-full text-center transition-all shadow-xl shadow-brand-gold/20 flex items-center justify-center gap-3 text-lg">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                        <span>Reservar Cita</span>
+                    </a>
+                    <a href="#servicios" class="w-full sm:w-auto bg-white/5 hover:bg-white/10 text-white border border-white/20 font-semibold px-8 py-4 rounded-full text-center transition-all">
+                        Ver Servicios & Tarifas
+                    </a>
+                </div>
+
+                <!-- Trust Badges -->
+                <div class="grid grid-cols-3 gap-4 pt-8 border-t border-white/10 max-w-lg mx-auto lg:mx-0">
+                    <div>
+                        <div class="text-2xl font-bold font-serif text-brand-gold">5.0 ★</div>
+                        <div class="text-xs text-white/60">Valoración Google</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold font-serif text-white">+100%</div>
+                        <div class="text-xs text-white/60">Amor Animal</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold font-serif text-brand-gold">Especial</div>
+                        <div class="text-xs text-white/60">Perros Nerviosos</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Image Preview -->
+            <div class="lg:col-span-5 relative">
+                <div class="relative mx-auto max-w-md lg:max-w-none">
+                    <div class="absolute -inset-2 bg-gradient-to-r from-brand-gold to-brand-gold-light rounded-2xl opacity-30 blur-lg"></div>
+                    <div class="relative bg-brand-card p-3 rounded-2xl border border-white/10 shadow-2xl">
+                        <img src="https://scontent-sjc6-1.xx.fbcdn.net/v/t39.30808-6/472014825_587974593849856_4859140792168730917_n.jpg?stp=dst-jpg_fb50_s320x320_tt6&_nc_cat=107&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=gY6W4VycxQQQ7kNvwEhrb3t&_nc_oc=Ado-iAQPB46vQDIjgJ_2YsZP36lzkV5Ra7pFNgmk0b2zxwvtFaS6L3ExTuEcPxV3x9o&_nc_zt=23&_nc_ht=scontent-sjc6-1.xx&_nc_gid=QKH-PrfF_5BScul_X3kV0A&_nc_ss=7b289&oh=00_AQObeWV-331n0e-PCPYwRNkRfQWaW8ncbZix7dnk4TtlUQ&oe=6AD68098" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" alt="Peluquería Canina Aullidog's" class="rounded-xl w-full h-[400px] object-cover">
+                        <div class="absolute bottom-6 left-6 right-6 bg-brand-dark/80 backdrop-blur-md p-4 rounded-xl border border-white/10 flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-brand-gold flex items-center justify-center text-brand-dark">
+                                <i class="fa-solid fa-heart text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Paciencia y Dedicación</h4>
+                                <p class="text-xs text-white/70">Expertas en relajar a mascotas sensibles.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Por Qué Elegirnos -->
+    <section class="py-20 bg-brand-card/50 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="text-brand-gold uppercase tracking-widest text-xs font-semibold">Nuestra Filosofía</h2>
+                <h3 class="text-3xl sm:text-4xl font-serif font-bold text-white">¿Por qué confían los dueños de mascotas en Aullidog's?</h3>
+                <p class="text-white/70">Nos diferenciamos por ofrecer un trato individualizado, sin prisas y basado en el respeto absoluto hacia cada animal.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-brand-card p-8 rounded-2xl border border-white/10 hover:border-brand-gold/50 transition-all group">
+                    <div class="w-14 h-14 rounded-xl bg-brand-gold/10 flex items-center justify-center text-brand-gold text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3 font-serif">Trato Empático y Cariñoso</h4>
+                    <p class="text-white/70 text-sm leading-relaxed">
+                        Incluso los perros más nerviosos o delicados con las patas encuentran aquí la calma gracias a nuestra paciencia y dedicación absoluta.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-brand-card p-8 rounded-2xl border border-white/10 hover:border-brand-gold/50 transition-all group">
+                    <div class="w-14 h-14 rounded-xl bg-brand-gold/10 flex items-center justify-center text-brand-gold text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-scissors"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3 font-serif">Estética Profesional</h4>
+                    <p class="text-white/70 text-sm leading-relaxed">
+                        Cortes adaptados a cada raza, stripping, baños específicos y arreglos personalizados que realzan la belleza natural de tu mascota.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-brand-card p-8 rounded-2xl border border-white/10 hover:border-brand-gold/50 transition-all group">
+                    <div class="w-14 h-14 rounded-xl bg-brand-gold/10 flex items-center justify-center text-brand-gold text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-spray-can-sparkles"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3 font-serif">Productos de Alta Gama</h4>
+                    <p class="text-white/70 text-sm leading-relaxed">
+                        Champús y tratamientos dermocosméticos de máxima calidad que cuidan la salud de su piel y aportan un brillo y suavidad excepcionales.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Nuestros Tratamientos, Cortes y Tarifas -->
+    <section id="servicios" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="text-brand-gold uppercase tracking-widest text-xs font-semibold">Carta de Servicios</h2>
+                <h3 class="text-3xl sm:text-4xl font-serif font-bold text-white">Nuestros Tratamientos y Cortes Especiales</h3>
+                <p class="text-white/70">Diseñados para garantizar la higiene, el confort y la estética impecable de tu compañero peludo.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Servicio 1 -->
+                <div class="bg-brand-card rounded-2xl p-6 border border-white/10 flex flex-col justify-between hover:border-brand-gold/40 transition-all">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs uppercase tracking-wider font-bold px-3 py-1 bg-brand-gold/10 text-brand-gold rounded-full">Esencial</span>
+                            <i class="fa-solid fa-bath text-brand-gold text-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-serif font-bold text-white mb-2">Baño e Higiene Completa</h4>
+                        <p class="text-white/70 text-sm mb-6">
+                            Lavado con champú específico según tipo de pelo, secado profesional, vaciado de glándulas, limpieza de oídos y corte de uñas.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                        <span class="text-xs text-white/50">Duración aprox. 1h</span>
+                        <a href="https://wa.me/34641004571" target="_blank" rel="noopener noreferrer" class="text-brand-gold hover:text-brand-gold-light text-sm font-semibold flex items-center gap-1">
+                            Reservar Cita <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="bg-brand-card rounded-2xl p-6 border border-white/10 flex flex-col justify-between hover:border-brand-gold/40 transition-all">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs uppercase tracking-wider font-bold px-3 py-1 bg-brand-gold/10 text-brand-gold rounded-full">Popular</span>
+                            <i class="fa-solid fa-scissors text-brand-gold text-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-serif font-bold text-white mb-2">Corte de Pelo & Estética a Raza</h4>
+                        <p class="text-white/70 text-sm mb-6">
+                            Corte a máquina o tijera adaptado al estándar de la raza o al gusto del cliente. Incluye baño completo, peinado y arreglos estéticos.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                        <span class="text-xs text-white/50">Servicio Completo</span>
+                        <a href="https://wa.me/34641004571" target="_blank" rel="noopener noreferrer" class="text-brand-gold hover:text-brand-gold-light text-sm font-semibold flex items-center gap-1">
+                            Reservar Cita <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="bg-brand-card rounded-2xl p-6 border border-white/10 flex flex-col justify-between hover:border-brand-gold/40 transition-all">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs uppercase tracking-wider font-bold px-3 py-1 bg-brand-gold/10 text-brand-gold rounded-full">Especial</span>
+                            <i class="fa-solid fa-hand-sparkles text-brand-gold text-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-serif font-bold text-white mb-2">Stripping (Pelo Duro)</h4>
+                        <p class="text-white/70 text-sm mb-6">
+                            Técnica especializada de arrancado manual para perros de pelo duro (Schnauzers, Westies, etc.), manteniendo la textura y color original del manto.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                        <span class="text-xs text-white/50">Técnica Profesional</span>
+                        <a href="https://wa.me/34641004571" target="_blank" rel="noopener noreferrer" class="text-brand-gold hover:text-brand-gold-light text-sm font-semibold flex items-center gap-1">
+                            Reservar Cita <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 4 -->
+                <div class="bg-brand-card rounded-2xl p-6 border border-white/10 flex flex-col justify-between hover:border-brand-gold/40 transition-all">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs uppercase tracking-wider font-bold px-3 py-1 bg-brand-gold/10 text-brand-gold rounded-full">Bienestar</span>
+                            <i class="fa-solid fa-heart-pulse text-brand-gold text-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-serif font-bold text-white mb-2">Deslanado & Control de Muda</h4>
+                        <p class="text-white/70 text-sm mb-6">
+                            Tratamiento intensivo para eliminar el pelo muerto acumulado en capas dobles, reduciendo notablemente la caída en casa.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                        <span class="text-xs text-white/50">Ideal épocas de muda</span>
+                        <a href="https://wa.me/34641004571" target="_blank" rel="noopener noreferrer" class="text-brand-gold hover:text-brand-gold-light text-sm font-semibold flex items-center gap-1">
+                            Reservar Cita <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 5 -->
+                <div class="bg-brand-card rounded-2xl p-6 border border-white/10 flex flex-col justify-between hover:border-brand-gold/40 transition-all">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs uppercase tracking-wider font-bold px-3 py-1 bg-brand-gold/10 text-brand-gold rounded-full">Piel Sensible</span>
+                            <i class="fa-solid fa-spa text-brand-gold text-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-serif font-bold text-white mb-2">Baños Dermatológicos</h4>
+                        <p class="text-white/70 text-sm mb-6">
+                            Aplicación de champús medicinales o hidratantes específicos para pieles con dermatitis, picores o alergias leves.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                        <span class="text-xs text-white/50">Cuidado especializado</span>
+                        <a href="https://wa.me/34641004571" target="_blank" rel="noopener noreferrer" class="text-brand-gold hover:text-brand-gold-light text-sm font-semibold flex items-center gap-1">
+                            Reservar Cita <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 6 -->
+                <div class="bg-brand-card rounded-2xl p-6 border border-white/10 flex flex-col justify-between hover:border-brand-gold/40 transition-all bg-gradient-to-br from-brand-card to-brand-gold/5">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs uppercase tracking-wider font-bold px-3 py-1 bg-brand-gold text-brand-dark rounded-full">Exclusivo</span>
+                            <i class="fa-solid fa-crown text-brand-gold text-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-serif font-bold text-white mb-2">Peluquería para Perros Nerviosos</h4>
+                        <p class="text-white/70 text-sm mb-6">
+                            Atención personalizada en un ambiente tranquilo y sin estrés. Ideal para cachorros en su primera experiencia o perritos con miedo.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                        <span class="text-xs text-brand-gold font-medium">Paciencia garantizada</span>
+                        <a href="https://wa.me/34641004571" target="_blank" rel="noopener noreferrer" class="text-brand-gold hover:text-brand-gold-light text-sm font-semibold flex items-center gap-1">
+                            Reservar Cita <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <a href="https://wa.me/34641004571" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-brand-gold hover:bg-brand-gold-light text-brand-dark font-bold px-8 py-4 rounded-full transition-all shadow-xl shadow-brand-gold/20 text-lg">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    <span>Consulta presupuesto para tu perro por WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería: Nuestras Instalaciones y Trabajos (Fotos Reales) -->
+    <section id="galeria" class="py-24 bg-brand-card/50 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="text-brand-gold uppercase tracking-widest text-xs font-semibold">Galería Real</h2>
+                <h3 class="text-3xl sm:text-4xl font-serif font-bold text-white">Nuestras Instalaciones y Trabajos</h3>
+                <p class="text-white/70">Un vistazo al cariño, la profesionalidad y los resultados que conseguimos cada día en Aullidog's.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Foto 1 -->
+                <div class="group relative overflow-hidden rounded-2xl aspect-square border border-white/10">
+                    <img src="https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/279196498_126728489974471_1575663850799762474_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx349x349&amp;ctp=s349x349&amp;_nc_cat=105&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=pUVzm7OtVtMQ7kNvwHWsZmy&amp;_nc_oc=AdrUGenpLBPnzRPNm1hnOaxxDSo5jG1gXPnEGLzBX2i9aWnvgREp-rs4SuE8bWZIVyg&amp;_nc_zt=24&amp;_nc_ht=scontent-sjc3-1.xx&amp;_nc_gid=HKm9ByLzRfTk5dmMUdgn_g&amp;_nc_ss=7b289&amp;oh=00_AQNgIIQmw8NdVLrk1mlek9-pFvNVs4e-1fRu7DXjMjLjMQ&amp;oe=6AD65903" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" alt="Trabajo Aullidog's 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white font-serif text-sm">Cliente feliz en Aullidog's Almería</span>
+                    </div>
+                </div>
+
+                <!-- Foto 2 -->
+                <div class="group relative overflow-hidden rounded-2xl aspect-square border border-white/10">
+                    <img src="https://scontent-sjc6-1.xx.fbcdn.net/v/t39.30808-6/472014825_587974593849856_4859140792168730917_n.jpg?stp=dst-jpg_tt6&cstp=mx1181x827&ctp=s960x960&_nc_cat=107&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=gY6W4VycxQQQ7kNvwEhrb3t&_nc_oc=Ado-iAQPB46vQDIjgJ_2YsZP36lzkV5Ra7pFNgmk0b2zxwvtFaS6L3ExTuEcPxV3x9o&_nc_zt=23&_nc_ht=scontent-sjc6-1.xx&_nc_gid=QKH-PrfF_5BScul_X3kV0A&_nc_ss=7b289&oh=00_AQObeWV-331n0e-PCPYwRNkRfQWaW8ncbZix7dnk4TtlUQ&oe=6AD68098" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" alt="Trabajo Aullidog's 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white font-serif text-sm">Corte profesional y cuidado estético</span>
+                    </div>
+                </div>
+
+                <!-- Foto 3 -->
+                <div class="group relative overflow-hidden rounded-2xl aspect-square border border-white/10">
+                    <img src="https://scontent-sjc6-1.xx.fbcdn.net/v/t39.30808-6/573652489_811954501580656_1716765637403791927_n.jpg?stp=dst-jpg_tt6&cstp=mx1440x1440&ctp=s590x590&_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_ohc=dOJ__IROu2oQ7kNvwGXKiSZ&_nc_oc=AdoT0jkT96KZEbRyzoRGZY2-uBeQYH-qaNXKhmpGKN1EnJT-Xw4XAKfEPo-LXboD2Dg&_nc_zt=23&_nc_ht=scontent-sjc6-1.xx&_nc_gid=a6yqnKU74pMBtyDDpsQAhw&_nc_ss=7b289&oh=00_AQPaftDyP8aj01hvqalgUTkAZx6mhI2T9ceOEuhTkT_3Jg&oe=6AD681F1" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" alt="Trabajo Aullidog's 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white font-serif text-sm">Atención experta y personalizada</span>
+                    </div>
+                </div>
+
+                <!-- Foto 4 -->
+                <div class="group relative overflow-hidden rounded-2xl aspect-square border border-white/10">
+                    <img src="https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-6/571343282_811954774913962_507840966223283365_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x2048&ctp=s590x590&_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_ohc=DT41-23EIH4Q7kNvwGXiCVh&_nc_oc=AdqOVEXzYVKPeiEIucRMJiWz6MCVVFt0LMwokoED2irWOpUSjs7HXfB5WQYV5ppf9cY&_nc_zt=23&_nc_ht=scontent-sjc3-1.xx&_nc_gid=a6yqnKU74pMBtyDDpsQAhw&_nc_ss=7b289&oh=00_AQMC6K3hoYzT0zoJ5rCM6noLtkcLqWnF6wdCBr36d0ze_w&oe=6AD66FF5" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" alt="Trabajo Aullidog's 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white font-serif text-sm">Ambiente seguro y acogedor</span>
+                    </div>
+                </div>
+
+                <!-- Foto 5 -->
+                <div class="group relative overflow-hidden rounded-2xl aspect-square border border-white/10">
+                    <img src="https://scontent-sjc6-1.xx.fbcdn.net/v/t39.30808-6/571749726_811954601580646_6714084177482767426_n.jpg?stp=dst-jpg_tt6&cstp=mx1440x1440&ctp=s590x590&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=7Oq20ABlNlIQ7kNvwFQORWd&_nc_oc=AdpzJtRn3iVXR4kF7xmPValn_Dkyb1VBxcli6yoTxZGdRb8L5d8V107JA0AhppfTnHI&_nc_zt=23&_nc_ht=scontent-sjc6-1.xx&_nc_gid=a6yqnKU74pMBtyDDpsQAhw&_nc_ss=7b289&oh=00_AQMsEr46YXn5MUysSsUWdqEdQg93BY3WjqRGKQP5UldDdg&oe=6AD6814C" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" alt="Trabajo Aullidog's 5" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white font-serif text-sm">Amor y respeto por los animales</span>
+                    </div>
+                </div>
+
+                <!-- Foto 6 -->
+                <div class="group relative overflow-hidden rounded-2xl aspect-square border border-white/10 flex items-center justify-center bg-gradient-to-br from-brand-card to-brand-gold/10 p-8 text-center">
+                    <div>
+                        <div class="w-12 h-12 rounded-full bg-brand-gold text-brand-dark flex items-center justify-center mx-auto mb-4 text-xl">
+                            <i class="fa-solid fa-camera"></i>
+                        </div>
+                        <h4 class="text-white font-serif font-bold text-lg mb-2">¿Quieres ver más?</h4>
+                        <p class="text-white/70 text-xs mb-6">Síguenos en nuestras redes o ven a visitarnos en Av. de los Ángeles.</p>
+                        <a href="https://wa.me/34641004571" target="_blank" rel="noopener noreferrer" class="inline-block bg-brand-gold text-brand-dark text-xs font-bold px-5 py-2.5 rounded-full hover:bg-brand-gold-light transition-all">
+                            Contactar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Opiniones Reales Verificadas -->
+    <section id="opiniones" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="text-brand-gold uppercase tracking-widest text-xs font-semibold">Testimonios</h2>
+                <h3 class="text-3xl sm:text-4xl font-serif font-bold text-white">Lo que opinan nuestros clientes en Google</h3>
+                <p class="text-white/70">La satisfacción de los dueños y la felicidad de sus mascotas son nuestro mayor orgullo.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Reseña 1 -->
+                <div class="bg-brand-card p-8 rounded-2xl border border-white/10 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-brand-gold gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-white/80 text-sm leading-relaxed italic mb-6">
+                            "Vanesa muy amable y profesional. Ha dejado a mi perrita muy bien. Lo recomiendo"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                        <div class="w-10 h-10 rounded-full bg-brand-gold/20 text-brand-gold font-bold flex items-center justify-center font-serif">
+                            TG
+                        </div>
+                        <div>
+                            <div class="text-white font-bold text-sm">Tomás Gómez Camarero</div>
+                            <div class="text-white/50 text-xs">Cliente Verificado Google</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 2 -->
+                <div class="bg-brand-card p-8 rounded-2xl border border-white/10 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-brand-gold gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-white/80 text-sm leading-relaxed italic mb-6">
+                            "El mejor lugar sin dudas de toda Almería. Yo vivo lejos y aún así venga a este sitio para pelar a mi perro. Son las mejores con los animales y sobre todo son muy simpáticas y agradables, no pienso dejar de venir a este sitio nunca.❤️❤️"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                        <div class="w-10 h-10 rounded-full bg-brand-gold/20 text-brand-gold font-bold flex items-center justify-center font-serif">
+                            IF
+                        </div>
+                        <div>
+                            <div class="text-white font-bold text-sm">Inma Fernandez</div>
+                            <div class="text-white/50 text-xs">Cliente Verificado Google</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 3 -->
+                <div class="bg-brand-card p-8 rounded-2xl border border-white/10 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-brand-gold gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-white/80 text-sm leading-relaxed italic mb-6">
+                            "Primera vez que los llevamos a pelar y no podíamos irnos más satisfechos, las chicas son muy atentas y dedicadas en su trabajo. Uno de nuestros perros es un poco nervioso y delicado cuando le tocan las patas y para nuestra sorpresa ellas han conseguido relajarlo y dejarlo espectacular. Repetiremos sin duda."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                        <div class="w-10 h-10 rounded-full bg-brand-gold/20 text-brand-gold font-bold flex items-center justify-center font-serif">
+                            FV
+                        </div>
+                        <div>
+                            <div class="text-white font-bold text-sm">Francisco Villa</div>
+                            <div class="text-white/50 text-xs">Cliente Verificado Google</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 4 -->
+                <div class="bg-brand-card p-8 rounded-2xl border border-white/10 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-brand-gold gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-white/80 text-sm leading-relaxed italic mb-6">
+                            "Trato genial! Mucho amor hacia los perros 🩷🩷🩷🩷…"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                        <div class="w-10 h-10 rounded-full bg-brand-gold/20 text-brand-gold font-bold flex items-center justify-center font-serif">
+                            RH
+                        </div>
+                        <div>
+                            <div class="text-white font-bold text-sm">Roberta Hutton Potter</div>
+                            <div class="text-white/50 text-xs">Cliente Verificado Google</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 5 -->
+                <div class="bg-brand-card p-8 rounded-2xl border border-white/10 flex flex-col justify-between md:col-span-2 lg:col-span-2">
+                    <div>
+                        <div class="flex text-brand-gold gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-white/80 text-sm leading-relaxed italic mb-6">
+                            "Buena experiencia. Se nota que aman a los animales. Siempre que llevo a mi perro quedo satisfecha con el resultado. Las chicas son super majas."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                        <div class="w-10 h-10 rounded-full bg-brand-gold/20 text-brand-gold font-bold flex items-center justify-center font-serif">
+                            LL
+                        </div>
+                        <div>
+                            <div class="text-white font-bold text-sm">Lorena Lucky</div>
+                            <div class="text-white/50 text-xs">Cliente Verificado Google</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa Interactivo y Ubicación -->
+    <section id="contacto" class="py-24 bg-brand-card/50 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="text-brand-gold uppercase tracking-widest text-xs font-semibold">¿Dónde Estamos?</h2>
+                <h3 class="text-3xl sm:text-4xl font-serif font-bold text-white">Visítanos en Almería</h3>
+                <p class="text-white/70">Ven a conocernos o ponte en contacto con nosotros directamente para reservar tu cita.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5 space-y-8">
+                    <div class="bg-brand-card p-8 rounded-2xl border border-white/10 space-y-6">
+                        <h4 class="text-2xl font-serif font-bold text-white">Aullidog's Almería</h4>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center text-xl shrink-0 mt-1">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h5 class="text-white font-semibold mb-1">Dirección</h5>
+                                <p class="text-white/70 text-sm">Av. de los Ángeles, 7, 04008 Almería, España</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center text-xl shrink-0 mt-1">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h5 class="text-white font-semibold mb-1">Teléfono / WhatsApp</h5>
+                                <p class="text-white/70 text-sm">641 00 45 71</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center text-xl shrink-0 mt-1">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h5 class="text-white font-semibold mb-1">Horario</h5>
+                                <p class="text-white/70 text-sm">Lunes a Viernes (Consultar disponibilidad mediante cita previa por WhatsApp).</p>
+                            </div>
+                        </div>
+
+                        <div class="pt-4">
+                            <a href="https://wa.me/34641004571" target="_blank" rel="noopener noreferrer" class="w-full bg-brand-gold hover:bg-brand-gold-light text-brand-dark font-bold px-6 py-3.5 rounded-full text-center transition-all shadow-lg shadow-brand-gold/20 flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-whatsapp text-xl"></i>
+                                <span>Reservar Cita Ahora</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <div class="bg-brand-card p-3 rounded-2xl border border-white/10 shadow-2xl overflow-hidden">
+                        <iframe src="https://www.google.com/maps?q=Aullidog's%20Av.%20de%20los%20%C3%81ngeles%2C%207%2C%2004008%20Almer%C3%ADa%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark border-t border-white/10 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-brand-gold to-brand-gold-light flex items-center justify-center text-brand-dark font-bold text-xl shadow-lg">
+                    <i class="fa-solid fa-paw"></i>
+                </div>
+                <div>
+                    <span class="font-serif text-xl font-bold tracking-wide text-white">Aullidog's</span>
+                    <span class="block text-[9px] tracking-widest uppercase text-brand-gold font-semibold">Peluquería Canina Almería</span>
+                </div>
+            </div>
+
+            <p class="text-white/50 text-xs">
+                © <span id="year"></span> Aullidog's. Todos los derechos reservados. Av. de los Ángeles, 7, Almería.
+            </p>
+
+            <div class="flex items-center gap-4">
+                <a href="https://wa.me/34641004571" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/5 hover:bg-brand-gold hover:text-brand-dark text-white flex items-center justify-center transition-all">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script de Interactividad (Menú móvil y Año automático) -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú móvil al hacer click en enlaces
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
