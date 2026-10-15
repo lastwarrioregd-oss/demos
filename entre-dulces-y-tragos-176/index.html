@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entre Dulces y Tragos | Cafetería en Rascafría, Madrid</title>
+    <meta name="description" content="Descubre Entre Dulces y Tragos en Rascafría. Disfruta de la mejor repostería, café de especialidad y ambiente acogedor en plena Plaza de España. ¡Reserva tu mesa!">
+    
+    <!-- TailwindCSS v3 CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        terracota: {
+                            50: '#fdf8f6',
+                            100: '#f9eee9',
+                            500: '#c86d51',
+                            600: '#b0573c',
+                            700: '#93442d',
+                            800: '#7a3927',
+                            900: '#643224',
+                        },
+                        crema: {
+                            50: '#fcfbfa',
+                            100: '#f5f2ed',
+                            200: '#ebe4dc',
+                            800: '#5c534a',
+                            900: '#3d3731'
+                        },
+                        gourmet: {
+                            dark: '#1c1917',
+                            card: '#292524'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-crema-50 text-crema-900 font-sans antialiased selection:bg-terracota-500 selection:text-white">
+
+    <!-- Header / Barra de Navegación -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-gourmet-dark/90 backdrop-blur-md border-b border-white/10 text-white transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full bg-terracota-500 flex items-center justify-center text-white font-serif font-bold text-xl shadow-lg group-hover:scale-105 transition-transform">
+                    E
+                </div>
+                <div>
+                    <span class="font-serif text-xl sm:text-2xl font-bold tracking-wide block leading-none">Entre Dulces y Tragos</span>
+                    <span class="text-xs text-terracota-500 tracking-widest uppercase font-medium mt-1 block">Rascafría, Madrid</span>
+                </div>
+            </a>
+
+            <!-- Navegación Escritorio -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
+                <a href="#inicio" class="hover:text-terracota-500 transition-colors">Inicio</a>
+                <a href="#carta" class="hover:text-terracota-500 transition-colors">Nuestra Carta</a>
+                <a href="#galeria" class="hover:text-terracota-500 transition-colors">Instalaciones</a>
+                <a href="#opiniones" class="hover:text-terracota-500 transition-colors">Opiniones</a>
+                <a href="#contacto" class="hover:text-terracota-500 transition-colors">Ubicación</a>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-4">
+                <a href="tel:615753886" class="flex items-center gap-2 text-sm font-semibold text-white/90 hover:text-white bg-white/10 px-4 py-2 rounded-full border border-white/10 hover:bg-terracota-500 hover:border-terracota-500 transition-all">
+                    <i class="fa-solid fa-phone text-terracota-500 group-hover:text-white"></i>
+                    <span>615 75 38 86</span>
+                </a>
+                <a href="tel:615753886" class="bg-terracota-500 hover:bg-terracota-600 text-white px-5 py-2.5 rounded-full font-semibold text-sm shadow-md hover:shadow-terracota-500/20 transition-all transform hover:-translate-y-0.5">
+                    Reservar Mesa
+                </a>
+            </div>
+
+            <!-- Botón Menú Móvil -->
+            <button id="menu-btn" class="md:hidden text-white text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gourmet-dark border-b border-white/10 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="block py-2 text-base font-medium hover:text-terracota-500">Inicio</a>
+            <a href="#carta" class="block py-2 text-base font-medium hover:text-terracota-500">Nuestra Carta</a>
+            <a href="#galeria" class="block py-2 text-base font-medium hover:text-terracota-500">Instalaciones</a>
+            <a href="#opiniones" class="block py-2 text-base font-medium hover:text-terracota-500">Opiniones</a>
+            <a href="#contacto" class="block py-2 text-base font-medium hover:text-terracota-500">Ubicación y Contacto</a>
+            <div class="pt-4 flex flex-col gap-3">
+                <a href="tel:615753886" class="flex items-center justify-center gap-2 text-base font-semibold bg-white/10 py-3 rounded-xl">
+                    <i class="fa-solid fa-phone text-terracota-500"></i> Llamar: 615 75 38 86
+                </a>
+                <a href="tel:615753886" class="bg-terracota-500 text-center text-white py-3 rounded-xl font-semibold shadow-md">
+                    Reservar Mesa
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-20 bg-gourmet-dark overflow-hidden">
+        <!-- Imagen de fondo con overlay oscuro -->
+        <div class="absolute inset-0 z-0">
+            <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1920&q=80';" alt="Cafetería Entre Dulces y Tragos Rascafría" class="w-full h-full object-cover opacity-40 scale-105 transform animate-pulse duration-[10000ms]">
+            <div class="absolute inset-0 bg-gradient-to-t from-gourmet-dark via-gourmet-dark/60 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
+            <div class="inline-flex items-center gap-2 bg-terracota-500/20 border border-terracota-500/40 text-terracota-500 px-4 py-1.5 rounded-full text-sm font-semibold mb-6 backdrop-blur-sm">
+                <i class="fa-solid fa-mug-hot"></i> El rincón más acogedor de Rascafría
+            </div>
+            
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-tight mb-6">
+                Entre Dulces <span class="text-terracota-500 italic">&amp;</span> Tragos
+            </h1>
+            
+            <p class="text-lg sm:text-xl text-crema-200 max-w-2xl mx-auto font-light leading-relaxed mb-10">
+                Disfruta de la mejor repostería artesanal, cafés de especialidad y una cuidada selección de bebidas en un entorno incomparable en plena Plaza de España, Rascafría.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="tel:615753886" class="w-full sm:w-auto bg-terracota-500 hover:bg-terracota-600 text-white px-8 py-4 rounded-full font-bold text-base shadow-xl shadow-terracota-500/20 hover:scale-105 transition-all text-center">
+                    Reservar Mesa
+                </a>
+                <a href="#carta" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-full font-semibold text-base backdrop-blur-sm transition-all text-center">
+                    Ver Nuestra Carta
+                </a>
+            </div>
+
+            <!-- Mini Banner de Confianza -->
+            <div class="mt-16 pt-10 border-t border-white/10 grid grid-cols-2 md:grid-cols-3 gap-6 text-white/80 text-sm">
+                <div class="flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-location-dot text-terracota-500 text-lg"></i>
+                    <span class="text-left">Pl. de España, 1, Rascafría</span>
+                </div>
+                <div class="flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-star text-amber-400 text-lg"></i>
+                    <span class="text-left">Excelente trato y calidad</span>
+                </div>
+                <div class="col-span-2 md:col-span-1 flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-mug-saucer text-terracota-500 text-lg"></i>
+                    <span class="text-left">Ambiente cálido y familiar</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Nuestra Carta, Platos Estrella y Especialidades -->
+    <section id="carta" class="py-24 bg-crema-100 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-terracota-600 font-semibold text-sm tracking-widest uppercase block mb-3">Sabores que enamoran</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-gourmet-dark mb-6">Nuestra Carta y Especialidades</h2>
+                <p class="text-crema-800 text-lg font-light leading-relaxed">
+                    Elaboraciones cuidadas al detalle para ofrecerte una experiencia única en Rascafría. Desde dulces tradicionales hasta tragos selectos.
+                </p>
+            </div>
+
+            <!-- Grid de Categorías / Especialidades -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Tarjeta 1: Cafetería & Desayunos -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-crema-200 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-terracota-100 text-terracota-600 flex items-center justify-center text-2xl mb-6">
+                            <i class="fa-solid fa-coffee"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-gourmet-dark mb-3">Café y Desayunos</h3>
+                        <p class="text-crema-800 text-sm mb-6 leading-relaxed">
+                            Empieza el día con energía disfrutando de cafés de alta calidad, infusiones aromáticas y tostadas con el mejor pan de pueblo.
+                        </p>
+                        <ul class="space-y-3 text-sm text-crema-800 mb-8 border-t border-crema-100 pt-6">
+                            <li class="flex items-center justify-between">
+                                <span class="font-medium">Café de Especialidad</span>
+                                <span class="text-terracota-600 font-bold">Artesanal</span>
+                            </li>
+                            <li class="flex items-center justify-between">
+                                <span class="font-medium">Tostadas de la Sierra</span>
+                                <span class="text-terracota-600 font-bold">Variadas</span>
+                            </li>
+                            <li class="flex items-center justify-between">
+                                <span class="font-medium">Zumos Naturales</span>
+                                <span class="text-terracota-600 font-bold">Del día</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="tel:615753886" class="w-full text-center bg-crema-100 hover:bg-terracota-500 hover:text-white text-gourmet-dark font-semibold py-3 rounded-xl transition-colors">
+                        Consultar Opciones
+                    </a>
+                </div>
+
+                <!-- Tarjeta 2: Dulces & Repostería (Plato Estrella) -->
+                <div class="bg-gourmet-dark text-white rounded-2xl p-8 shadow-xl border border-terracota-500/30 relative hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+                    <div class="absolute -top-4 right-6 bg-terracota-500 text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow">
+                        Favorito
+                    </div>
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-terracota-500/20 text-terracota-500 flex items-center justify-center text-2xl mb-6">
+                            <i class="fa-solid fa-cake-candles"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold mb-3">Dulces y Repostería</h3>
+                        <p class="text-crema-200 text-sm mb-6 leading-relaxed">
+                            Nuestra selección de repostería casera es el acompañamiento perfecto para cualquier tarde en la sierra de Madrid.
+                        </p>
+                        <ul class="space-y-3 text-sm text-crema-200 mb-8 border-t border-white/10 pt-6">
+                            <li class="flex items-center justify-between">
+                                <span class="font-medium">Tartas Caseras del Día</span>
+                                <span class="text-terracota-400 font-bold">Estrella</span>
+                            </li>
+                            <li class="flex items-center justify-between">
+                                <span class="font-medium">Bollería Horneada</span>
+                                <span class="text-terracota-400 font-bold">Fresca</span>
+                            </li>
+                            <li class="flex items-center justify-between">
+                                <span class="font-medium">Bizcochos Tradicionales</span>
+                                <span class="text-terracota-400 font-bold">Artesanos</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="tel:615753886" class="w-full text-center bg-terracota-500 hover:bg-terracota-600 text-white font-semibold py-3 rounded-xl transition-colors shadow-md">
+                        Reservar Mesa
+                    </a>
+                </div>
+
+                <!-- Tarjeta 3: Tragos & Aperitivos -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-crema-200 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-terracota-100 text-terracota-600 flex items-center justify-center text-2xl mb-6">
+                            <i class="fa-solid fa-wine-glass-empty"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-gourmet-dark mb-3">Tragos y Aperitivos</h3>
+                        <p class="text-crema-800 text-sm mb-6 leading-relaxed">
+                            Relájate con nuestra bodega seleccionada, vermuts, copas y aperitivos para disfrutar de un ambiente inmejorable.
+                        </p>
+                        <ul class="space-y-3 text-sm text-crema-800 mb-8 border-t border-crema-100 pt-6">
+                            <li class="flex items-center justify-between">
+                                <span class="font-medium">Vermut de Grifo</span>
+                                <span class="text-terracota-600 font-bold">Clásico</span>
+                            </li>
+                            <li class="flex items-center justify-between">
+                                <span class="font-medium">Vinos de la Tierra</span>
+                                <span class="text-terracota-600 font-bold">Selección</span>
+                            </li>
+                            <li class="flex items-center justify-between">
+                                <span class="font-medium">Copas y Combinados</span>
+                                <span class="text-terracota-600 font-bold">Premium</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="tel:615753886" class="w-full text-center bg-crema-100 hover:bg-terracota-500 hover:text-white text-gourmet-dark font-semibold py-3 rounded-xl transition-colors">
+                        Ver Bebidas
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Galería: Nuestras Instalaciones y Trabajos -->
+    <section id="galeria" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-terracota-600 font-semibold text-sm tracking-widest uppercase block mb-3">Ambiente Acogedor</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-gourmet-dark mb-6">Nuestras Instalaciones y Detalles</h2>
+                <p class="text-crema-800 text-lg font-light leading-relaxed">
+                    Un espacio diseñado para hacerte sentir como en casa, ubicado en pleno corazón de Rascafría.
+                </p>
+            </div>
+
+            <!-- Grid de Imágenes de la Galería -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="overflow-hidden rounded-2xl shadow-md group relative h-72">
+                    <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=80';" alt="Cafetería interior Rascafría" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <p class="text-white font-serif text-lg font-medium">Ambiente cálido y acogedor</p>
+                    </div>
+                </div>
+
+                <div class="overflow-hidden rounded-2xl shadow-md group relative h-72">
+                    <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80';" alt="Café de especialidad Entre Dulces y Tragos" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <p class="text-white font-serif text-lg font-medium">Café recién preparado</p>
+                    </div>
+                </div>
+
+                <div class="overflow-hidden rounded-2xl shadow-md group relative h-72 sm:col-span-2 lg:col-span-1">
+                    <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80';" alt="Repostería casera Rascafría" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <p class="text-white font-serif text-lg font-medium">Dulces artesanos diarios</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Opiniones Reales Verificadas -->
+    <section id="opiniones" class="py-24 bg-crema-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-terracota-600 font-semibold text-sm tracking-widest uppercase block mb-3">Confianza y Calidad</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-gourmet-dark mb-6">Lo que dicen nuestros clientes</h2>
+                <p class="text-crema-800 text-lg font-light leading-relaxed">
+                    La satisfacción de quienes nos visitan es nuestro mayor orgullo y motivación diaria.
+                </p>
+            </div>
+
+            <div class="max-w-2xl mx-auto">
+                <div class="bg-white rounded-3xl p-8 sm:p-10 shadow-xl border border-crema-200 relative">
+                    <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-terracota-500 text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg">
+                        <i class="fa-solid fa-quote-left"></i>
+                    </div>
+                    
+                    <div class="flex items-center justify-center gap-1 text-amber-400 mb-6 mt-2">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    <p class="font-serif text-xl sm:text-2xl text-gourmet-dark text-center italic leading-relaxed mb-8">
+                        "Excelente trato, profesionalidad y calidad."
+                    </p>
+
+                    <div class="text-center border-t border-crema-100 pt-6">
+                        <h4 class="font-bold text-gourmet-dark text-base">Cliente Verificado en Google Maps</h4>
+                        <span class="text-xs text-terracota-600 font-medium tracking-wide uppercase">Reseña Oficial</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Mapa Interactivo y Ubicación -->
+    <section id="contacto" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-terracota-600 font-semibold text-sm tracking-widest uppercase block mb-3">¿Dónde estamos?</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-gourmet-dark mb-6">Visítanos en Rascafría</h2>
+                <p class="text-crema-800 text-lg font-light leading-relaxed">
+                    Te esperamos en pleno centro histórico. Acércate a disfrutar de un momento inolvidable.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+                
+                <!-- Info de Contacto -->
+                <div class="lg:col-span-1 space-y-8 bg-crema-50 p-8 rounded-3xl border border-crema-200">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-terracota-100 text-terracota-600 flex items-center justify-center text-xl shrink-0 mt-1">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif font-bold text-lg text-gourmet-dark mb-1">Dirección</h3>
+                            <p class="text-crema-800 text-sm leading-relaxed">Pl. de España, 1, 28740 Rascafría, Madrid, España</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-terracota-100 text-terracota-600 flex items-center justify-center text-xl shrink-0 mt-1">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif font-bold text-lg text-gourmet-dark mb-1">Teléfono y Reservas</h3>
+                            <a href="tel:615753886" class="text-terracota-600 font-semibold text-sm hover:underline block">615 75 38 86</a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-terracota-100 text-terracota-600 flex items-center justify-center text-xl shrink-0 mt-1">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif font-bold text-lg text-gourmet-dark mb-1">Correo Electrónico</h3>
+                            <a href="mailto:error-lite+84f2@duckduckgo.com" class="text-crema-800 text-sm hover:text-terracota-600 transition-colors block break-all">error-lite+84f2@duckduckgo.com</a>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-crema-200">
+                        <a href="tel:615753886" class="w-full block text-center bg-terracota-500 hover:bg-terracota-600 text-white py-3.5 rounded-xl font-semibold shadow-md transition-colors">
+                            Reservar Mesa Ahora
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mapa Interactivo Real -->
+                <div class="lg:col-span-2 shadow-xl rounded-3xl overflow-hidden border border-crema-200 bg-white p-2">
+                    <iframe src="https://www.google.com/maps?q=Entre%20Dulces%20y%20Tragos%20Pl.%20de%20Espa%C3%B1a%2C%201%2C%2028740%20Rascafr%C3%ADa%2C%20Madrid%2C%20España&output=embed" width="100%" height="420" style="border:0; border-radius: 1.25rem;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gourmet-dark text-white pt-16 pb-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-8 rounded-full bg-terracota-500 flex items-center justify-center text-white font-serif font-bold text-lg">
+                            E
+                        </div>
+                        <span class="font-serif text-xl font-bold tracking-wide">Entre Dulces y Tragos</span>
+                    </div>
+                    <p class="text-crema-200 text-sm font-light leading-relaxed mb-6">
+                        Tu cafetería de confianza en Rascafría. Disfruta de la mejor compañía, dulces tradicionales y tragos selectos en la Plaza de España.
+                    </p>
+                    <div class="flex items-center gap-4 text-terracota-500 text-lg">
+                        <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="tel:615753886" class="hover:text-white transition-colors"><i class="fa-solid fa-phone"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-serif text-lg font-bold mb-4 text-white">Enlaces Rápidos</h4>
+                    <ul class="space-y-2 text-sm text-crema-200 font-light">
+                        <li><a href="#inicio" class="hover:text-terracota-500 transition-colors">Inicio</a></li>
+                        <li><a href="#carta" class="hover:text-terracota-500 transition-colors">Nuestra Carta y Especialidades</a></li>
+                        <li><a href="#galeria" class="hover:text-terracota-500 transition-colors">Instalaciones</a></li>
+                        <li><a href="#opiniones" class="hover:text-terracota-500 transition-colors">Opiniones Verificadas</a></li>
+                        <li><a href="#contacto" class="hover:text-terracota-500 transition-colors">Ubicación y Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-serif text-lg font-bold mb-4 text-white">Horarios y Reservas</h4>
+                    <p class="text-crema-200 text-sm font-light mb-4 leading-relaxed">
+                        Abierto todos los días para ofrecerte el mejor café, dulces y ambiente en Rascafría.
+                    </p>
+                    <a href="tel:615753886" class="inline-flex items-center gap-2 bg-terracota-500 hover:bg-terracota-600 text-white px-5 py-2.5 rounded-full font-semibold text-sm transition-all shadow-md">
+                        <i class="fa-solid fa-phone"></i> 615 75 38 86
+                    </a>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-white/10 text-center text-xs text-crema-200 font-light flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p>&copy; <span id="year"></span> Entre Dulces y Tragos. Todos los derechos reservados. Pl. de España, 1, 28740 Rascafría, Madrid.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-white transition-colors">Política de Privacidad</a>
+                    <a href="#" class="hover:text-white transition-colors">Aviso Legal</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script para menú móvil y año automático -->
+    <script>
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú móvil al hacer clic en un enlace
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
