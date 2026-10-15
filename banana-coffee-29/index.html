@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BANANA Coffee | Café de Especialidad & Brunch en Córdoba</title>
+    <meta name="description" content="Cafetería de especialidad en Córdoba. Tostador propio e invitado, desayunos gourmet, tostas de masa madre, tortitas y repostería artesana en Poniente Sur.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        terracotta: {
+                            50: '#FAF3F0',
+                            100: '#F5E6E0',
+                            500: '#C86446',
+                            600: '#B45235',
+                            700: '#943E26'
+                        },
+                        espresso: {
+                            800: '#2A1F1B',
+                            900: '#1A1412',
+                            950: '#120D0B'
+                        },
+                        cream: {
+                            50: '#FDFCF9',
+                            100: '#F8F5EE',
+                            200: '#EFE9DE',
+                            300: '#E2D8C7'
+                        },
+                        banana: {
+                            400: '#E6B847',
+                            500: '#D7A734'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Outfit"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-pattern {
+            background-color: #1A1412;
+            background-image: radial-gradient(rgba(200, 100, 70, 0.12) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-cream-50 text-espresso-900 font-sans antialiased selection:bg-terracotta-500 selection:text-white">
+
+    <!-- Top Notice Bar -->
+    <div class="bg-espresso-950 text-cream-200 text-xs sm:text-sm py-2 px-4 text-center border-b border-espresso-800 flex justify-center items-center gap-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-banana-400 animate-pulse"></span>
+        <span>Café de Especialidad con Tostador Propio & Tostador Invitado en Córdoba</span>
+        <span class="hidden md:inline text-cream-300">|</span>
+        <a href="https://wa.me/34676823204" class="hidden md:inline font-semibold text-banana-400 hover:underline">Take Away & Reservas por WhatsApp</a>
+    </div>
+
+    <!-- Navigation -->
+    <header class="sticky top-0 z-50 bg-cream-50/95 backdrop-blur-md border-b border-cream-200 transition-all duration-300 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-full bg-espresso-900 flex items-center justify-center text-banana-400 shadow-md group-hover:scale-105 transition-transform duration-300">
+                    <i class="fa-solid fa-mug-hot text-xl"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif text-2xl font-bold tracking-tight text-espresso-900 flex items-center gap-1">
+                        BANANA <span class="text-terracotta-500 font-light italic text-xl">Coffee</span>
+                    </span>
+                    <span class="text-[10px] tracking-widest uppercase text-terracotta-600 font-medium">Specialty Coffee • Córdoba</span>
+                </div>
+            </a>
+
+            <!-- Desktop Links -->
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-espresso-900">
+                <a href="#concepto" class="hover:text-terracotta-500 transition-colors">Filosofía</a>
+                <a href="#carta" class="hover:text-terracotta-500 transition-colors">Nuestra Carta</a>
+                <a href="#instalaciones" class="hover:text-terracotta-500 transition-colors">Instalaciones</a>
+                <a href="#opiniones" class="hover:text-terracotta-500 transition-colors">Experiencias</a>
+                <a href="#ubicacion" class="hover:text-terracotta-500 transition-colors">Ubicación</a>
+            </nav>
+
+            <!-- Action CTA -->
+            <div class="flex items-center gap-3">
+                <a href="https://wa.me/34676823204" class="hidden sm:inline-flex items-center gap-2 bg-terracotta-500 hover:bg-terracotta-600 text-white font-medium px-5 py-2.5 rounded-full text-sm transition-all shadow-md shadow-terracotta-500/20 hover:shadow-lg hover:-translate-y-0.5">
+                    <i class="fa-brands fa-whatsapp text-base"></i>
+                    <span>Reservar Mesa</span>
+                </a>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-espresso-900 hover:bg-cream-200 focus:outline-none" aria-label="Abrir menú">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-cream-50 border-b border-cream-200 px-6 py-5 space-y-4 shadow-lg">
+            <a href="#concepto" class="block text-espresso-900 font-medium hover:text-terracotta-500 py-1">Filosofía</a>
+            <a href="#carta" class="block text-espresso-900 font-medium hover:text-terracotta-500 py-1">Nuestra Carta</a>
+            <a href="#instalaciones" class="block text-espresso-900 font-medium hover:text-terracotta-500 py-1">Instalaciones</a>
+            <a href="#opiniones" class="block text-espresso-900 font-medium hover:text-terracotta-500 py-1">Opiniones de Clientes</a>
+            <a href="#ubicacion" class="block text-espresso-900 font-medium hover:text-terracotta-500 py-1">Contacto & Ubicación</a>
+            <div class="pt-2">
+                <a href="https://wa.me/34676823204" class="w-full flex justify-center items-center gap-2 bg-terracotta-500 hover:bg-terracotta-600 text-white font-medium py-3 rounded-full text-sm shadow-md">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Reservar Mesa</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative hero-pattern text-cream-50 py-20 lg:py-28 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-espresso-950/95 via-espresso-950/80 to-transparent z-0"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-7">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-terracotta-500/20 border border-terracotta-500/40 text-terracotta-100 text-xs sm:text-sm font-medium">
+                        <i class="fa-solid fa-award text-banana-400"></i>
+                        <span>El Templo del Café de Especialidad en Córdoba</span>
+                    </div>
+
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-cream-50 leading-[1.15]">
+                        Pasión por el buen café, brunch auténtico y repostería artesana.
+                    </h1>
+
+                    <p class="text-cream-200 text-base sm:text-lg leading-relaxed max-w-2xl font-light">
+                        Bienvenido a <strong class="text-white font-medium">BANANA Coffee</strong> en Poniente Sur. Tostador propio y orígenes rotativos seleccionados minuciosamente, tostas de masa madre, esponjosos pancakes y bebidas artesanales preparadas con esmero por baristas expertos.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                        <a href="https://wa.me/34676823204" class="inline-flex justify-center items-center gap-3 bg-terracotta-500 hover:bg-terracotta-600 text-white font-semibold px-8 py-4 rounded-full text-base transition-all duration-300 shadow-xl shadow-terracotta-500/30 hover:scale-[1.02]">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <span>Reservar Mesa</span>
+                        </a>
+                        <a href="#carta" class="inline-flex justify-center items-center gap-2 bg-cream-50/10 hover:bg-cream-50/20 text-cream-50 border border-cream-200/20 px-8 py-4 rounded-full text-base font-medium transition-all backdrop-blur-sm">
+                            <i class="fa-solid fa-book-open text-banana-400"></i>
+                            <span>Ver Nuestra Carta</span>
+                        </a>
+                    </div>
+
+                    <!-- Trust Points -->
+                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-cream-200/10 max-w-lg">
+                        <div class="flex flex-col">
+                            <span class="font-serif text-2xl font-bold text-banana-400">100%</span>
+                            <span class="text-xs text-cream-300">Café de Finca & Especialidad</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="font-serif text-2xl font-bold text-banana-400">Take Away</span>
+                            <span class="text-xs text-cream-300">Listo para llevar a tu ritmo</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="font-serif text-2xl font-bold text-banana-400">5.0 ★</span>
+                            <span class="text-xs text-cream-300">Excelencia en Google Maps</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="aspect-square rounded-3xl overflow-hidden shadow-2xl border-4 border-espresso-800 relative z-10 group">
+                            <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=80" 
+                                 alt="BANANA Coffee Café de Especialidad" 
+                                 referrerpolicy="no-referrer" 
+                                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-t from-espresso-950/80 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-5 left-5 right-5 p-4 rounded-2xl bg-espresso-900/90 backdrop-blur-md border border-cream-200/10 text-cream-100">
+                                <p class="text-xs uppercase tracking-wider text-banana-400 font-semibold mb-1">Experiencia Barista</p>
+                                <p class="text-sm font-light">"Se puede elegir entre su propio tostador y tostador invitado que cambia constantemente."</p>
+                            </div>
+                        </div>
+
+                        <!-- Accent decorative element -->
+                        <div class="absolute -top-6 -right-6 w-32 h-32 bg-terracotta-500/20 rounded-full blur-2xl z-0"></div>
+                        <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-banana-500/20 rounded-full blur-2xl z-0"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition / Concept -->
+    <section id="concepto" class="py-20 bg-cream-100 border-b border-cream-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-widest text-terracotta-600 font-bold">Un Espacio Acogedor & Vanguardista</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-espresso-900 mt-2">
+                    Mucho más que una cafetería: un rincón donde la pasión se siente en cada taza
+                </h2>
+                <div class="w-16 h-1 bg-terracotta-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-cream-50 p-8 rounded-2xl border border-cream-200/80 shadow-sm hover:shadow-md transition-all group">
+                    <div class="w-14 h-14 rounded-2xl bg-terracotta-50 flex items-center justify-center text-terracotta-500 text-2xl mb-6 group-hover:bg-terracotta-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-espresso-900 mb-3">Tostador Propio & Rotación Invitada</h3>
+                    <p class="text-espresso-800/80 text-sm leading-relaxed">
+                        Trabajamos cafés de origen único con notas trazables. Disfruta de nuestras partidas exclusivas o atrévete con los tostadores invitados nacionales e internacionales que seleccionamos mensualmente.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-cream-50 p-8 rounded-2xl border border-cream-200/80 shadow-sm hover:shadow-md transition-all group">
+                    <div class="w-14 h-14 rounded-2xl bg-terracotta-50 flex items-center justify-center text-terracotta-500 text-2xl mb-6 group-hover:bg-terracotta-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-wheat-awn"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-espresso-900 mb-3">Brunch, Pancakes & Tostas</h3>
+                    <p class="text-espresso-800/80 text-sm leading-relaxed">
+                        Desayunos y meriendas preparadas al momento: panes de hogaza artesanos, pancakes ultra esponjosos, bizcochos caseros horneados a diario y productos frescos de primera calidad.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-cream-50 p-8 rounded-2xl border border-cream-200/80 shadow-sm hover:shadow-md transition-all group">
+                    <div class="w-14 h-14 rounded-2xl bg-terracotta-50 flex items-center justify-center text-terracotta-500 text-2xl mb-6 group-hover:bg-terracotta-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-espresso-900 mb-3">Ambiente Cálido y Pulcro</h3>
+                    <p class="text-espresso-800/80 text-sm leading-relaxed">
+                        Decoración moderna, atmósfera tranquila para charlar o trabajar y un equipo de baristas que te atiende con genuina simpatía y dedicación en pleno Bulevar Hernán Ruiz.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: NUESTRA CARTA, PLATOS ESTRELLA Y ESPECIALIDADES -->
+    <section id="carta" class="py-24 bg-cream-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-widest text-terracotta-600 font-bold">Hecho con Esmero & Calidad</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-espresso-900 mt-2">
+                    Nuestra Carta, Platos Estrella y Especialidades de la Casa
+                </h2>
+                <p class="text-espresso-800/70 text-base mt-3">
+                    Desde el primer café de la mañana hasta tu merienda perfecta en Córdoba.
+                </p>
+                <div class="w-16 h-1 bg-terracotta-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Menu Grid organized by real customer feedback & specialty coffee concepts -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                
+                <!-- Category 1: Café de Especialidad -->
+                <div class="bg-cream-100/70 p-8 rounded-3xl border border-cream-200 shadow-sm space-y-6">
+                    <div class="flex items-center gap-3 border-b border-cream-300 pb-4">
+                        <div class="w-10 h-10 rounded-full bg-espresso-900 text-banana-400 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-fire-burner"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif text-2xl font-bold text-espresso-900">Café de Especialidad</h3>
+                            <p class="text-xs text-terracotta-600 font-medium">Tostador propio & Tostadores Invitados rotativos</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="font-medium text-espresso-950 font-serif text-lg">Espresso & Doble Origen</h4>
+                                <p class="text-xs text-espresso-800/70">Extracción controlada, perfil aromático intenso y notas florales o achocolatadas.</p>
+                            </div>
+                            <span class="text-terracotta-600 font-semibold text-sm">Especialidad</span>
+                        </div>
+
+                        <div class="flex justify-between items-start border-t border-cream-200 pt-3">
+                            <div>
+                                <h4 class="font-medium text-espresso-950 font-serif text-lg">Flat White & Café con Leche Texturizada</h4>
+                                <p class="text-xs text-espresso-800/70">Doble carga de café de especialidad y microespuma de leche sedosa o bebida vegetal.</p>
+                            </div>
+                            <span class="text-terracotta-600 font-semibold text-sm">Favorito</span>
+                        </div>
+
+                        <div class="flex justify-between items-start border-t border-cream-200 pt-3">
+                            <div>
+                                <h4 class="font-medium text-espresso-950 font-serif text-lg">Café Frío Especial & Cold Brew</h4>
+                                <p class="text-xs text-espresso-800/70">Ideal para los días cálidos en Córdoba. Extracción lenta en frío o Iced Latte infusionado.</p>
+                            </div>
+                            <span class="text-terracotta-600 font-semibold text-sm">Refrescante</span>
+                        </div>
+
+                        <div class="flex justify-between items-start border-t border-cream-200 pt-3">
+                            <div>
+                                <h4 class="font-medium text-espresso-950 font-serif text-lg">Filtro / Pour Over (V60 & Batch Brew)</h4>
+                                <p class="text-xs text-espresso-800/70">Para los amantes del café limpio y complejo. Pregunta por el grano de la semana.</p>
+                            </div>
+                            <span class="text-terracotta-600 font-semibold text-sm">Gourmet</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 2: Tostas & Desayunos Salados -->
+                <div class="bg-cream-100/70 p-8 rounded-3xl border border-cream-200 shadow-sm space-y-6">
+                    <div class="flex items-center gap-3 border-b border-cream-300 pb-4">
+                        <div class="w-10 h-10 rounded-full bg-espresso-900 text-banana-400 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-bread-slice"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif text-2xl font-bold text-espresso-900">Tostas Gourmet de Masa Madre</h3>
+                            <p class="text-xs text-terracotta-600 font-medium">Panes artesanales de fermentación lenta</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="font-medium text-espresso-950 font-serif text-lg">Tosta de Aguacate, Semillas & Huevo</h4>
+                                <p class="text-xs text-espresso-800/70">Aguacate fresco laminado, aceite de oliva virgen extra de la tierra, escamas de sal y huevo poché.</p>
+                            </div>
+                            <span class="text-terracotta-600 font-semibold text-sm">Plato Estrella</span>
+                        </div>
+
+                        <div class="flex justify-between items-start border-t border-cream-200 pt-3">
+                            <div>
+                                <h4 class="font-medium text-espresso-950 font-serif text-lg">Tosta Ibérica con Tomate Rallado Natural</h4>
+                                <p class="text-xs text-espresso-800/70">El clásico andaluz perfeccionado con jamón ibérico selecto y AOVE ecológico.</p>
+                            </div>
+                            <span class="text-terracotta-600 font-semibold text-sm">Tradición</span>
+                        </div>
+
+                        <div class="flex justify-between items-start border-t border-cream-200 pt-3">
+                            <div>
+                                <h4 class="font-medium text-espresso-950 font-serif text-lg">Tosta de Salmón Ahumado & Crema Fina</h4>
+                                <p class="text-xs text-espresso-800/70">Queso crema de hierbas, finas lonchas de salmón, alcaparras y toque de eneldo.</p>
+                            </div>
+                            <span class="text-terracotta-600 font-semibold text-sm">Brunch</span>
+                        </div>
+
+                        <div class="flex justify-between items-start border-t border-cream-200 pt-3">
+                            <div>
+                                <h4 class="font-medium text-espresso-950 font-serif text-lg">Tosta Dulce BANANA Special</h4>
+                                <p class="text-xs text-espresso-800/70">Crema de cacahuete artesanal 100%, plátano caramelizado o fresco, chía y miel de azahar.</p>
+                            </div>
+                            <span class="text-terracotta-600 font-semibold text-sm">Casa</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 3: Pancakes & Repostería Artesana -->
+                <div class="bg-cream-100/70 p-8 rounded-3xl border border-cream-200 shadow-sm space-y-6">
+                    <div class="flex items-center gap-3 border-b border-cream-300 pb-4">
+                        <div class="w-10 h-10 rounded-full bg-espresso-900 text-banana-400 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-cake-candles"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif text-2xl font-bold text-espresso-900">Pancakes, Tartas & Bizcochos</h3>
+                            <p class="text-xs text-terracotta-600 font-medium">Elaborados a mano cada mañana</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="font-medium text-espresso-950 font-serif text-lg">Fluffy Pancakes Artesanos Clásicos</h4>
+                                <p class="text-xs text-espresso-800/70">Tortitas recién hechas, mantequilla artesanal y auténtico sirope de arce con frutos rojos.</p>
+                            </div>
+                            <span class="text-terracotta-600 font-semibold text-sm">Imperdible</span>
+                        </div>
+
+                        <div class="flex justify-between items-start border-t border-cream-200 pt-3">
+                            <div>
+                                <h4 class="font-medium text-espresso-950 font-serif text-lg">Pancakes Banana Chocolate Supreme</h4>
+                                <p class="text-xs text-espresso-800/70">Torre de tortitas esponjosas con chocolate fundido, rodajas de plátano y nueces pecanas.</p>
+                            </div>
+                            <span class="text-terracotta-600 font-semibold text-sm">Dulce</span>
+                        </div>
+
+                        <div class="flex justify-between items-start border-t border-cream-200 pt-3">
+                            <div>
+                                <h4 class="font-medium text-espresso-950 font-serif text-lg">Variedad de Bizcochos Artesanos del Día</h4>
+                                <p class="text-xs text-espresso-800/70">Recetas tradicionales: limón y semillas de amapola, plátano especiado o zanahoria y canela.</p>
+                            </div>
+                            <span class="text-terracotta-600 font-semibold text-sm">Casero</span>
+                        </div>
+
+                        <div class="flex justify-between items-start border-t border-cream-200 pt-3">
+                            <div>
+                                <h4 class="font-medium text-espresso-950 font-serif text-lg">Tartas del Obrador Invitado</h4>
+                                <p class="text-xs text-espresso-800/70">Cheesecake cremosa horneada o carrot cake con frosting suave de mascarpone.</p>
+                            </div>
+                            <span class="text-terracotta-600 font-semibold text-sm">Meriendas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 4: Bebidas Alternativas & Smoothies -->
+                <div class="bg-cream-100/70 p-8 rounded-3xl border border-cream-200 shadow-sm space-y-6">
+                    <div class="flex items-center gap-3 border-b border-cream-300 pb-4">
+                        <div class="w-10 h-10 rounded-full bg-espresso-900 text-banana-400 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-blender"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif text-2xl font-bold text-espresso-900">Matcha & Smoothies de Plátano</h3>
+                            <p class="text-xs text-terracotta-600 font-medium">Bebidas naturales, saludables y energéticas</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="font-medium text-espresso-950 font-serif text-lg">Matcha Latte Ceremonial (Caliente o Iced)</h4>
+                                <p class="text-xs text-espresso-800/70">Matcha de grado ceremonial preparado con batidor chasen tradicional y leche a tu elección.</p>
+                            </div>
+                            <span class="text-terracotta-600 font-semibold text-sm">Trend</span>
+                        </div>
+
+                        <div class="flex justify-between items-start border-t border-cream-200 pt-3">
+                            <div>
+                                <h4 class="font-medium text-espresso-950 font-serif text-lg">Batidos de Plátano (Variedades Signature)</h4>
+                                <p class="text-xs text-espresso-800/70">Nuestra insignia: plátano maduro batido con avena, dátil y leche vegetal; o versión chocolate negro y crema de cacahuete.</p>
+                            </div>
+                            <span class="text-terracotta-600 font-semibold text-sm">Signature</span>
+                        </div>
+
+                        <div class="flex justify-between items-start border-t border-cream-200 pt-3">
+                            <div>
+                                <h4 class="font-medium text-espresso-950 font-serif text-lg">Chai Latte Especiado</h4>
+                                <p class="text-xs text-espresso-800/70">Té negro infusionado con canela, cardamomo, clavo, jengibre y leche espumada.</p>
+                            </div>
+                            <span class="text-terracotta-600 font-semibold text-sm">Aromático</span>
+                        </div>
+
+                        <div class="flex justify-between items-start border-t border-cream-200 pt-3">
+                            <div>
+                                <h4 class="font-medium text-espresso-950 font-serif text-lg">Zumos Naturales Prensados</h4>
+                                <p class="text-xs text-espresso-800/70">Naranja recién exprimida del valle cordobés o combinaciones de manzana, jengibre y zanahoria.</p>
+                            </div>
+                            <span class="text-terracotta-600 font-semibold text-sm">Natural</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CTA Under Menu -->
+            <div class="mt-12 text-center">
+                <a href="https://wa.me/34676823204" class="inline-flex items-center gap-3 bg-terracotta-500 hover:bg-terracotta-600 text-white font-medium px-8 py-3.5 rounded-full text-base transition-all shadow-lg hover:shadow-terracotta-500/20">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Reservar Mesa</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERÍA: NUESTRAS INSTALACIONES Y TRABAJOS -->
+    <section id="instalaciones" class="py-20 bg-cream-100 border-t border-b border-cream-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-xs uppercase tracking-widest text-terracotta-600 font-bold">Un Vistazo a Nuestro Espacio</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-espresso-900 mt-2">
+                        Nuestras Instalaciones y Trabajos
+                    </h2>
+                </div>
+                <p class="text-sm text-espresso-800/70 mt-3 md:mt-0 max-w-md">
+                    Diseño contemporáneo, ambiente pulcro, cuidada vajilla y el arte barista en cada extracción.
+                </p>
+            </div>
+
+            <!-- Gallery Grid with reliable fallbacks and referrerpolicy -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <div class="group relative rounded-2xl overflow-hidden shadow-sm aspect-[4/3] bg-espresso-950">
+                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80" 
+                         alt="Interior acogedor y moderno BANANA Coffee" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-espresso-950/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-5">
+                        <span class="text-white text-sm font-medium">Ambiente cálido y luminoso</span>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-2xl overflow-hidden shadow-sm aspect-[4/3] bg-espresso-950">
+                    <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80" 
+                         alt="Latte Art y café de especialidad" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-espresso-950/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-5">
+                        <span class="text-white text-sm font-medium">Latte Art elaborado con leche sedosa</span>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-2xl overflow-hidden shadow-sm aspect-[4/3] bg-espresso-950">
+                    <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=800&q=80" 
+                         alt="Pancakes recién hechos esponjosos" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-espresso-950/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-5">
+                        <span class="text-white text-sm font-medium">Tortitas y repostería recién horneada</span>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-2xl overflow-hidden shadow-sm aspect-[4/3] bg-espresso-950">
+                    <img src="https://images.unsplash.com/photo-1525610553991-2bede1a236e2?auto=format&fit=crop&w=800&q=80" 
+                         alt="Tosta de aguacate y brunch gourmet" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-espresso-950/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-5">
+                        <span class="text-white text-sm font-medium">Desayunos y tostas con pan de masa madre</span>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-2xl overflow-hidden shadow-sm aspect-[4/3] bg-espresso-950">
+                    <img src="https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=800&q=80" 
+                         alt="Matcha latte y smoothies" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-espresso-950/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-5">
+                        <span class="text-white text-sm font-medium">Matcha ceremonial y batidos saludables</span>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-2xl overflow-hidden shadow-sm aspect-[4/3] bg-espresso-950">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" 
+                         alt="Baristas y preparación en BANANA Coffee" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-espresso-950/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-5">
+                        <span class="text-white text-sm font-medium">La barra de especialidad en directo</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: OPINIONES REALES VERIFICADAS -->
+    <section id="opiniones" class="py-24 bg-cream-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-widest text-terracotta-600 font-bold">Reseñas Verificadas en Google Maps</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-espresso-900 mt-2">
+                    Lo que dicen quienes nos visitan
+                </h2>
+                <p class="text-espresso-800/70 text-base mt-3">
+                    La satisfacción y el cariño de nuestros clientes son nuestro mayor orgullo.
+                </p>
+                <div class="w-16 h-1 bg-terracotta-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Customer Reviews Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Review 1: Chico_Requena -->
+                <div class="bg-cream-100/60 p-7 rounded-2xl border border-cream-200 shadow-sm flex flex-col justify-between hover:border-terracotta-500/40 transition-colors">
+                    <div>
+                        <div class="flex items-center gap-1 text-banana-400 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-espresso-900 text-sm leading-relaxed italic mb-6">
+                            "Frecuentemente desayuno o tomo café aquí. Tienen un café de especialidad siempre excelente. Se puede elegir estre su propio tostador y tostador invitado (que cambia cada cierto tiempo). Tienen gran variedad de bizcochos artesanos, tostas y pancakes. También ofrecen otro tipo de bebidas alternativas como matcha y batidos de plátano en diferentes variedades. Ofrece opción take away"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-cream-200">
+                        <div class="w-10 h-10 rounded-full bg-terracotta-500 text-white font-bold flex items-center justify-center text-sm">
+                            C
+                        </div>
+                        <div>
+                            <p class="font-semibold text-espresso-900 text-sm">Chico_Requena</p>
+                            <span class="text-xs text-espresso-800/60 flex items-center gap-1">
+                                <i class="fa-brands fa-google text-terracotta-500 text-[10px]"></i> Reseña verificada
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2: Evelyn Santander Cuenca -->
+                <div class="bg-cream-100/60 p-7 rounded-2xl border border-cream-200 shadow-sm flex flex-col justify-between hover:border-terracotta-500/40 transition-colors">
+                    <div>
+                        <div class="flex items-center gap-1 text-banana-400 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-espresso-900 text-sm leading-relaxed italic mb-6">
+                            "Una experiencia estupendamente riquísima. Hoy tuve la oportunidad de probar este sitio y me ha encantado la comida, tanto las bebidas como la comida estaba riquísima. Es un local súper mono y cómodo para comer y charlar. Tienen variedad de platos y bebidas. Además que los camareros son muy amables y serviciales. Un trato estupendo!"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-cream-200">
+                        <div class="w-10 h-10 rounded-full bg-espresso-900 text-banana-400 font-bold flex items-center justify-center text-sm">
+                            E
+                        </div>
+                        <div>
+                            <p class="font-semibold text-espresso-900 text-sm">Evelyn Santander Cuenca</p>
+                            <span class="text-xs text-espresso-800/60 flex items-center gap-1">
+                                <i class="fa-brands fa-google text-terracotta-500 text-[10px]"></i> Reseña verificada
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3: Jose Villar -->
+                <div class="bg-cream-100/60 p-7 rounded-2xl border border-cream-200 shadow-sm flex flex-col justify-between hover:border-terracotta-500/40 transition-colors">
+                    <div>
+                        <div class="flex items-center gap-1 text-banana-400 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-espresso-900 text-sm leading-relaxed italic mb-6">
+                            "Muy buen lugar para merendar. Tienen una atención excelente y unos productos de 10. Hacen falta más lugares como este en Córdoba, donde se nota que la pasión y las ganas están por encima de todo. Volveremos sin dudarlo a seguir probando productos de su carta. Probamos sus tortitas y estaban muy buenas. Su café es espectacular."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-cream-200">
+                        <div class="w-10 h-10 rounded-full bg-terracotta-600 text-white font-bold flex items-center justify-center text-sm">
+                            J
+                        </div>
+                        <div>
+                            <p class="font-semibold text-espresso-900 text-sm">Jose Villar</p>
+                            <span class="text-xs text-espresso-800/60 flex items-center gap-1">
+                                <i class="fa-brands fa-google text-terracotta-500 text-[10px]"></i> Reseña verificada
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 4: Urgania -->
+                <div class="bg-cream-100/60 p-7 rounded-2xl border border-cream-200 shadow-sm flex flex-col justify-between hover:border-terracotta-500/40 transition-colors">
+                    <div>
+                        <div class="flex items-center gap-1 text-banana-400 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-espresso-900 text-sm leading-relaxed italic mb-6">
+                            "Un lugar, que si vas por Córdoba y quieres desayunar o brunch con buen café y tostadas o tartas.. Debes visitarlo. El local desde que lo ves por fuera, te invita a entrar. Está decorado que lo hace acogedor además de dar sensación de pulcro. Tiene una barista profesional que te hará disfrutar del café o matcha, en sus variedades. Tiene gran variedad de tostadas. La que pedimos estaba buenísima!"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-cream-200">
+                        <div class="w-10 h-10 rounded-full bg-banana-500 text-espresso-900 font-bold flex items-center justify-center text-sm">
+                            U
+                        </div>
+                        <div>
+                            <p class="font-semibold text-espresso-900 text-sm">Urgania</p>
+                            <span class="text-xs text-espresso-800/60 flex items-center gap-1">
+                                <i class="fa-brands fa-google text-terracotta-500 text-[10px]"></i> Reseña verificada
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 5: Nerea Hierro -->
+                <div class="bg-cream-100/60 p-7 rounded-2xl border border-cream-200 shadow-sm flex flex-col justify-between hover:border-terracotta-500/40 transition-colors">
+                    <div>
+                        <div class="flex items-center gap-1 text-banana-400 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-espresso-900 text-sm leading-relaxed italic mb-6">
+                            "Sitio con una decoración muy moderna y con gusto. Cafe de especialidad con muy buen sabor y hecho con esmero. Por el calor no probamos el café caliente por lo cual no puedo juzgar como hacen la leche, por ejemplo. Pero el café frío estaba muy bueno :)"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-cream-200">
+                        <div class="w-10 h-10 rounded-full bg-espresso-800 text-cream-100 font-bold flex items-center justify-center text-sm">
+                            N
+                        </div>
+                        <div>
+                            <p class="font-semibold text-espresso-900 text-sm">Nerea Hierro</p>
+                            <span class="text-xs text-espresso-800/60 flex items-center gap-1">
+                                <i class="fa-brands fa-google text-terracotta-500 text-[10px]"></i> Reseña verificada
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Summary Google Card -->
+                <div class="bg-gradient-to-br from-espresso-900 to-espresso-950 p-7 rounded-2xl text-cream-100 flex flex-col justify-between shadow-lg">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-terracotta-500/20 text-banana-400 flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-trophy"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-white mb-2">Pasión & Calidad Reconocida</h3>
+                        <p class="text-xs text-cream-200/80 leading-relaxed">
+                            En BANANA Coffee cada taza cuenta. Ven a disfrutar de una atmósfera relajada y sabores inigualables en Córdoba.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-espresso-800">
+                        <a href="https://wa.me/34676823204" class="w-full inline-flex justify-center items-center gap-2 bg-terracotta-500 hover:bg-terracotta-600 text-white font-medium py-3 rounded-full text-sm transition-all">
+                            <span>Reservar Mesa</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: MAPA INTERACTIVO Y UBICACIÓN -->
+    <section id="ubicacion" class="py-20 bg-cream-100 border-t border-cream-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                
+                <!-- Info Column -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-xs uppercase tracking-widest text-terracotta-600 font-bold">Ven a Visitarnos</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-espresso-900">
+                        Encuéntranos en Poniente Sur, Córdoba
+                    </h2>
+                    <p class="text-espresso-800/80 text-sm leading-relaxed">
+                        Ubicados en una de las zonas más dinámicas y cómodas de Córdoba. Un punto de encuentro perfecto para tus desayunos tranquilos, reuniones de trabajo con café de especialidad o meriendas con tortitas.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-3.5">
+                            <div class="w-10 h-10 rounded-full bg-cream-200 flex items-center justify-center text-terracotta-500 shrink-0 mt-0.5">
+                                <i class="fa-solid fa-location-dot text-base"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-bold text-espresso-900">Dirección Exacta</h3>
+                                <p class="text-xs text-espresso-800/80">C. Blvr. Hernán Ruiz, 9, Poniente Sur, 14005 Córdoba</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3.5">
+                            <div class="w-10 h-10 rounded-full bg-cream-200 flex items-center justify-center text-terracotta-500 shrink-0 mt-0.5">
+                                <i class="fa-solid fa-phone text-base"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-bold text-espresso-900">Teléfono & WhatsApp</h3>
+                                <a href="https://wa.me/34676823204" class="text-xs text-espresso-800/80 hover:text-terracotta-600 font-medium">676 82 32 04 (Atención Directa)</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3.5">
+                            <div class="w-10 h-10 rounded-full bg-cream-200 flex items-center justify-center text-terracotta-500 shrink-0 mt-0.5">
+                                <i class="fa-solid fa-bag-shopping text-base"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-bold text-espresso-900">Servicios Disponibles</h3>
+                                <p class="text-xs text-espresso-800/80">Consumo en local acogedor • Terraza • Servicio Take Away</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="https://wa.me/34676823204" class="inline-flex items-center gap-2 bg-terracotta-500 hover:bg-terracotta-600 text-white font-medium px-7 py-3.5 rounded-full text-sm transition-all shadow-md">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>Reservar Mesa</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Interactive Map Column -->
+                <div class="lg:col-span-7">
+                    <div class="p-3 bg-cream-50 rounded-2xl border border-cream-300 shadow-md">
+                        <!-- Real Interactive Map as requested -->
+                        <iframe src="https://www.google.com/maps?q=BANANA%20Coffee%20C.%20Blvr.%20Hern%C3%A1n%20Ruiz%2C%209%2C%20Poniente%20Sur%2C%2014005%20C%C3%B3rdoba&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-espresso-950 text-cream-200 py-16 border-t border-espresso-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                
+                <div class="md:col-span-2 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-banana-500 text-espresso-950 flex items-center justify-center">
+                            <i class="fa-solid fa-mug-hot text-lg"></i>
+                        </div>
+                        <span class="font-serif text-2xl font-bold tracking-tight text-white">
+                            BANANA <span class="text-terracotta-500 italic">Coffee</span>
+                        </span>
+                    </div>
+                    <p class="text-xs text-cream-300 max-w-sm leading-relaxed">
+                        Cafetería de especialidad en Córdoba. Tueste propio, granos invitados, brunch honesto y una atmósfera diseñada para conectar y saborear la autenticidad.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-serif text-sm font-semibold text-white uppercase tracking-wider mb-4">Navegación</h4>
+                    <ul class="space-y-2 text-xs text-cream-300">
+                        <li><a href="#concepto" class="hover:text-banana-400 transition-colors">Filosofía</a></li>
+                        <li><a href="#carta" class="hover:text-banana-400 transition-colors">Nuestra Carta</a></li>
+                        <li><a href="#instalaciones" class="hover:text-banana-400 transition-colors">Instalaciones</a></li>
+                        <li><a href="#opiniones" class="hover:text-banana-400 transition-colors">Opiniones Reales</a></li>
+                        <li><a href="#ubicacion" class="hover:text-banana-400 transition-colors">Ubicación & Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-serif text-sm font-semibold text-white uppercase tracking-wider mb-4">Contacto Directo</h4>
+                    <ul class="space-y-2 text-xs text-cream-300">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-location-dot text-terracotta-500"></i>
+                            <span>C. Blvr. Hernán Ruiz, 9, Córdoba</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-phone text-terracotta-500"></i>
+                            <a href="https://wa.me/34676823204" class="hover:text-banana-400">676 82 32 04</a>
+                        </li>
+                        <li class="pt-2">
+                            <a href="https://wa.me/34676823204" class="inline-block text-banana-400 hover:underline font-medium">
+                                Enviar WhatsApp para Reservar Mesa &rarr;
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t border-espresso-900 text-center text-xs text-cream-400/60 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p>&copy; 2025 BANANA Coffee Córdoba. Todos los derechos reservados.</p>
+                <p class="flex items-center gap-1">
+                    Hecho con pasión por el café de especialidad <i class="fa-solid fa-heart text-terracotta-500"></i>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
