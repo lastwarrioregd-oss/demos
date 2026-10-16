@@ -1,96 +1,400 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clínica de Podología y Fisioterapia Víctor Ramos | Sanlúcar de Barrameda</title>
+    <meta name="description" content="Clínica especializada en Podología y Fisioterapia en Sanlúcar de Barrameda, Cádiz. Excelente trato, profesionalidad y calidad. Pide tu cita previa.">
+    
+    <!-- TailwindCSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        medical: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            dark: '#0f172a',
+                            light: '#f8fafc',
+                            teal: '#0d9488',
+                            cyan: '#06b6d4'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-        .bg-medical { background-color: #f0f9ff; }
-        .text-medical { color: #0369a1; }
-    </style>
 </head>
-<body class="bg-white text-gray-800">
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-medical-500 selection:text-white">
 
-    <!-- Header -->
-    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 p-4">
-        <div class="container mx-auto flex justify-between items-center">
-            <span class="text-xl font-bold text-sky-700">Víctor Ramos</span>
-            <a href="tel:689025860" class="bg-sky-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-sky-700 transition">Pedir Cita Previa</a>
+    <!-- Top Bar -->
+    <div class="bg-medical-dark text-slate-300 text-sm py-2 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-6">
+                <span class="flex items-center gap-2">
+                    <i class="fa-solid fa-location-dot text-medical-cyan"></i> C. Cristóbal Colón, 20, Sanlúcar de Barrameda
+                </span>
+                <span class="hidden md:flex items-center gap-2">
+                    <i class="fa-solid fa-envelope text-medical-cyan"></i> error-lite+84f2@duckduckgo.com
+                </span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="tel:689025860" class="flex items-center gap-2 text-white font-semibold hover:text-medical-cyan transition-colors">
+                    <i class="fa-solid fa-phone text-medical-cyan"></i> 689 02 58 60
+                </a>
+            </div>
         </div>
-    </nav>
+    </div>
 
-    <!-- Hero -->
-    <header class="relative h-[500px] flex items-center justify-center text-center p-6">
-        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1600&q=80" 
-             referrerpolicy="no-referrer" 
-             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1600&q=80';"
-             class="absolute inset-0 w-full h-full object-cover opacity-20">
-        <div class="relative z-10 max-w-3xl">
-            <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">Salud y bienestar para tus pies y cuerpo</h1>
-            <p class="text-xl mb-8 text-gray-700">Clínica especializada en Podología y Fisioterapia en Sanlúcar de Barrameda.</p>
-            <a href="tel:689025860" class="bg-sky-600 text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-sky-700 shadow-lg">Pedir Cita Previa</a>
-        </div>
+    <!-- Navigation -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-medical-teal to-medical-500 flex items-center justify-center text-white shadow-md shadow-medical-500/20">
+                    <i class="fa-solid fa-user-doctor text-xl"></i>
+                </div>
+                <div>
+                    <span class="block font-bold text-slate-900 leading-tight">Víctor Ramos</span>
+                    <span class="text-xs text-medical-teal font-semibold tracking-wider uppercase">Podología y Fisioterapia</span>
+                </div>
+            </div>
+
+            <div class="hidden md:flex items-center gap-8 font-medium text-slate-600">
+                <a href="#inicio" class="hover:text-medical-teal transition-colors">Inicio</a>
+                <a href="#servicios" class="hover:text-medical-teal transition-colors">Tratamientos</a>
+                <a href="#instalaciones" class="hover:text-medical-teal transition-colors">Instalaciones</a>
+                <a href="#opiniones" class="hover:text-medical-teal transition-colors">Opiniones</a>
+                <a href="#contacto" class="hover:text-medical-teal transition-colors">Ubicación</a>
+            </div>
+
+            <div>
+                <a href="tel:689025860" class="inline-flex items-center gap-2 bg-medical-500 hover:bg-medical-600 text-white font-semibold px-5 py-2.5 rounded-xl shadow-lg shadow-medical-500/25 transition-all transform hover:-translate-y-0.5">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span>Pedir Cita Previa</span>
+                </a>
+            </div>
+        </nav>
     </header>
 
-    <!-- Servicios -->
-    <section class="py-20 container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center mb-16 text-sky-900">Nuestras Especialidades</h2>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="p-8 bg-white border border-sky-100 rounded-2xl shadow-sm hover:shadow-md transition">
-                <i class="fas fa-shoe-prints text-4xl text-sky-500 mb-4"></i>
-                <h3 class="text-xl font-bold mb-2">Podología Clínica</h3>
-                <p class="text-gray-600">Tratamiento integral del pie: quiropodología, estudios de la pisada y ortopedia a medida.</p>
-            </div>
-            <div class="p-8 bg-white border border-sky-100 rounded-2xl shadow-sm hover:shadow-md transition">
-                <i class="fas fa-stethoscope text-4xl text-sky-500 mb-4"></i>
-                <h3 class="text-xl font-bold mb-2">Fisioterapia Avanzada</h3>
-                <p class="text-gray-600">Recuperación funcional, terapias manuales y tratamiento de lesiones deportivas y crónicas.</p>
-            </div>
-            <div class="p-8 bg-white border border-sky-100 rounded-2xl shadow-sm hover:shadow-md transition">
-                <i class="fas fa-user-md text-4xl text-sky-500 mb-4"></i>
-                <h3 class="text-xl font-bold mb-2">Atención Personalizada</h3>
-                <p class="text-gray-600">Enfoque clínico profesional con un trato cercano para garantizar tu pronta recuperación.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Reseñas -->
-    <section class="py-20 bg-sky-50">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16">Lo que dicen nuestros pacientes</h2>
-            <div class="max-w-xl mx-auto bg-white p-8 rounded-2xl shadow-sm">
-                <div class="text-yellow-400 mb-4">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+    <!-- Hero Section -->
+    <section id="inicio" class="relative overflow-hidden py-20 lg:py-28 bg-gradient-to-b from-medical-50/50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+                <div class="space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-medical-100 text-medical-700 px-4 py-1.5 rounded-full text-sm font-semibold">
+                        <i class="fa-solid fa-shield-heart"></i> Tu salud en manos expertas
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                        Clínica de Podología y Fisioterapia <span class="text-medical-teal">Víctor Ramos</span>
+                    </h1>
+                    <p class="text-lg text-slate-600 max-w-xl mx-auto lg:mx-0">
+                        Soluciones profesionales para el cuidado integral de tus pies y tu cuerpo en Sanlúcar de Barrameda. Excelente trato, profesionalidad y calidad garantizada.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="tel:689025860" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-medical-500 hover:bg-medical-600 text-white font-bold px-8 py-4 rounded-xl shadow-xl shadow-medical-500/25 transition-all text-lg">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>Pedir Cita Previa</span>
+                        </a>
+                        <a href="#servicios" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 font-semibold px-6 py-4 rounded-xl transition-all">
+                            <span>Ver Tratamientos</span>
+                            <i class="fa-solid fa-arrow-down text-sm"></i>
+                        </a>
+                    </div>
+                    <!-- Trust badges -->
+                    <div class="pt-6 border-t border-slate-200 grid grid-cols-3 gap-4 text-center lg:text-left">
+                        <div>
+                            <p class="text-2xl font-bold text-slate-900">5.0</p>
+                            <div class="text-amber-400 text-xs my-1">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-xs text-slate-500">Reseñas en Google</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-slate-900">100%</p>
+                            <p class="text-xs text-slate-500 mt-1">Profesionalidad</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-slate-900">Sanlúcar</p>
+                            <p class="text-xs text-slate-500 mt-1">Cádiz, España</p>
+                        </div>
+                    </div>
                 </div>
-                <p class="text-lg italic text-gray-700 mb-6">"Excelente trato, profesionalidad y calidad."</p>
-                <p class="font-bold">- Paciente verificado en Google Maps</p>
+
+                <div class="relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="absolute -inset-2 bg-gradient-to-r from-medical-teal to-medical-cyan rounded-3xl blur-xl opacity-20 animate-pulse"></div>
+                        <img src="" alt="Clínica Víctor Ramos Podología y Fisioterapia" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80';" class="relative rounded-2xl shadow-2xl w-full h-[450px] object-cover border-4 border-white">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Ubicación -->
-    <section class="py-20 container mx-auto px-6">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-                <h2 class="text-3xl font-bold mb-6">Visítanos en Sanlúcar</h2>
-                <p class="mb-4 text-gray-600"><i class="fas fa-map-marker-alt mr-2 text-sky-600"></i> C. Cristóbal Colón, 20, 11540 Sanlúcar de Barrameda, Cádiz, España</p>
-                <p class="mb-4 text-gray-600"><i class="fas fa-phone mr-2 text-sky-600"></i> 689025860</p>
-                <p class="mb-8 text-gray-600"><i class="fas fa-envelope mr-2 text-sky-600"></i> error-lite+84f2@duckduckgo.com</p>
-                <a href="tel:689025860" class="bg-sky-600 text-white px-8 py-3 rounded-full font-bold hover:bg-sky-700">Pedir Cita Previa</a>
+    <!-- Services Section -->
+    <section id="servicios" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-medical-teal font-semibold text-sm uppercase tracking-wider">Especialidades Médicas</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-4">Nuestros Tratamientos</h2>
+                <p class="text-slate-600">Ofrecemos una atención clínica personalizada combinando las técnicas más avanzadas en podología y fisioterapia para garantizar tu bienestar.</p>
             </div>
-            <div class="w-full">
-                <iframe src="https://www.google.com/maps?q=Cl%C3%ADnica%20de%20Podolog%C3%ADa%20y%20Fisioterapia%20V%C3%ADctor%20Ramos%20C.%20Crist%C3%B3bal%20Col%C3%B3n%2C%2020%2C%2011540%20Sanl%C3%BAcar%20de%20Barrameda%2C%20C%C3%A1diz%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 hover:border-medical-500/50 transition-all hover:shadow-xl hover:shadow-medical-500/5 group">
+                    <div class="w-14 h-14 rounded-xl bg-medical-100 text-medical-teal flex items-center justify-center text-2xl mb-6 group-hover:bg-medical-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-shoe-prints"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Podología General</h3>
+                    <p class="text-slate-600 mb-6 text-sm leading-relaxed">Diagnóstico y tratamiento integral de las afecciones del pie: durezas, cayosidades, uñas encarnadas, papilomas y quiropodias.</p>
+                    <a href="tel:689025860" class="inline-flex items-center gap-2 text-medical-teal font-semibold text-sm group-hover:text-medical-600">
+                        <span>Pedir Cita Previa</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 hover:border-medical-500/50 transition-all hover:shadow-xl hover:shadow-medical-500/5 group">
+                    <div class="w-14 h-14 rounded-xl bg-medical-100 text-medical-teal flex items-center justify-center text-2xl mb-6 group-hover:bg-medical-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-stethoscope"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Estudio Biomecánico de la Pisada</h3>
+                    <p class="text-slate-600 mb-6 text-sm leading-relaxed">Análisis computarizado de la marcha y la pisada para prevenir lesiones deportivas y diseñar soportes plantares personalizados.</p>
+                    <a href="tel:689025860" class="inline-flex items-center gap-2 text-medical-teal font-semibold text-sm group-hover:text-medical-600">
+                        <span>Pedir Cita Previa</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 hover:border-medical-500/50 transition-all hover:shadow-xl hover:shadow-medical-500/5 group">
+                    <div class="w-14 h-14 rounded-xl bg-medical-100 text-medical-teal flex items-center justify-center text-2xl mb-6 group-hover:bg-medical-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-hand-holding-medical"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Fisioterapia Avanzada</h3>
+                    <p class="text-slate-600 mb-6 text-sm leading-relaxed">Rehabilitación de lesiones musculoesqueléticas, dolores de espalda, contracturas y fisioterapia traumatológica y deportiva.</p>
+                    <a href="tel:689025860" class="inline-flex items-center gap-2 text-medical-teal font-semibold text-sm group-hover:text-medical-600">
+                        <span>Pedir Cita Previa</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 hover:border-medical-500/50 transition-all hover:shadow-xl hover:shadow-medical-500/5 group">
+                    <div class="w-14 h-14 rounded-xl bg-medical-100 text-medical-teal flex items-center justify-center text-2xl mb-6 group-hover:bg-medical-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-person-walking"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Podología Deportiva</h3>
+                    <p class="text-slate-600 mb-6 text-sm leading-relaxed">Optimización del rendimiento del deportista, prevención de lesiones específicas de la carrera y tratamiento especializado del pie del atleta.</p>
+                    <a href="tel:689025860" class="inline-flex items-center gap-2 text-medical-teal font-semibold text-sm group-hover:text-medical-600">
+                        <span>Pedir Cita Previa</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 hover:border-medical-500/50 transition-all hover:shadow-xl hover:shadow-medical-500/5 group">
+                    <div class="w-14 h-14 rounded-xl bg-medical-100 text-medical-teal flex items-center justify-center text-2xl mb-6 group-hover:bg-medical-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-child"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Podología Infantil</h3>
+                    <p class="text-slate-600 mb-6 text-sm leading-relaxed">Exploración y seguimiento del desarrollo psicomotor y la pisada en los más pequeños para corregir alteraciones a tiempo.</p>
+                    <a href="tel:689025860" class="inline-flex items-center gap-2 text-medical-teal font-semibold text-sm group-hover:text-medical-600">
+                        <span>Pedir Cita Previa</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 hover:border-medical-500/50 transition-all hover:shadow-xl hover:shadow-medical-500/5 group">
+                    <div class="w-14 h-14 rounded-xl bg-medical-100 text-medical-teal flex items-center justify-center text-2xl mb-6 group-hover:bg-medical-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Pie Diabético</h3>
+                    <p class="text-slate-600 mb-6 text-sm leading-relaxed">Prevención, exploración neurológica y vascular, y cuidados específicos para pacientes con diabetes con el fin de evitar complicaciones.</p>
+                    <a href="tel:689025860" class="inline-flex items-center gap-2 text-medical-teal font-semibold text-sm group-hover:text-medical-600">
+                        <span>Pedir Cita Previa</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="instalaciones" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-medical-teal font-semibold text-sm uppercase tracking-wider">Espacios Clínicos</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-4">Nuestras Instalaciones y Trabajos</h2>
+                <p class="text-slate-600">Un entorno moderno, limpio y dotado de la tecnología más actual para garantizar tu comodidad y seguridad durante las consultas.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="relative overflow-hidden rounded-2xl shadow-md group h-72">
+                    <img src="" alt="Instalaciones Clínica Víctor Ramos" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=800&q=80';" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent flex items-end p-6">
+                        <p class="text-white font-semibold">Sala de Consulta y Diagnóstico</p>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-2xl shadow-md group h-72">
+                    <img src="" alt="Equipamiento de Podología" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80';" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent flex items-end p-6">
+                        <p class="text-white font-semibold">Tecnología de Vanguardia</p>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-2xl shadow-md group h-72">
+                    <img src="" alt="Sala de Fisioterapia" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80';" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent flex items-end p-6">
+                        <p class="text-white font-semibold">Área de Fisioterapia y Rehabilitación</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="opiniones" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-medical-teal font-semibold text-sm uppercase tracking-wider">Testimonios Reales</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-4">Lo que opinan nuestros pacientes</h2>
+                <p class="text-slate-600">La satisfacción de quienes confían en nosotros es nuestro mayor aval profesional.</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto">
+                <div class="bg-medical-50/50 rounded-3xl p-8 sm:p-10 border border-medical-100 shadow-lg shadow-medical-500/5 relative">
+                    <div class="absolute top-6 right-8 text-medical-teal/20 text-6xl font-serif">“</div>
+                    <div class="flex items-center gap-1 text-amber-400 mb-4">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-700 text-lg italic mb-6 leading-relaxed">
+                        "Excelente trato, profesionalidad y calidad."
+                    </p>
+                    <div class="flex items-center gap-4 pt-4 border-t border-slate-200/60">
+                        <div class="w-12 h-12 rounded-full bg-medical-teal text-white font-bold flex items-center justify-center text-lg">
+                            P
+                        </div>
+                        <div>
+                            <p class="font-bold text-slate-900">Paciente Verificado</p>
+                            <p class="text-xs text-slate-500">Reseña de Google Maps</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Banner -->
+    <section class="py-16 bg-gradient-to-r from-medical-teal to-medical-500 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">¿Necesitas cuidar de tus pies o tu salud muscular?</h2>
+            <p class="text-medical-50 max-w-2xl mx-auto text-lg">Reserva tu cita previa en la Clínica Víctor Ramos en Sanlúcar de Barrameda y ponte en manos de profesionales.</p>
+            <div>
+                <a href="tel:689025860" class="inline-flex items-center gap-3 bg-white text-medical-dark font-bold px-8 py-4 rounded-xl shadow-xl hover:bg-slate-100 transition-all text-lg">
+                    <i class="fa-solid fa-phone text-medical-teal"></i>
+                    <span>Pedir Cita Previa: 689 02 58 60</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact Section -->
+    <section id="contacto" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-medical-teal font-semibold text-sm uppercase tracking-wider">Dónde Encontrarnos</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-4">Ubicación y Contacto</h2>
+                <p class="text-slate-600">Visítanos en nuestra clínica situada en pleno corazón de Sanlúcar de Barrameda.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm space-y-6 lg:col-span-1">
+                    <h3 class="text-xl font-bold text-slate-900 pb-2 border-b border-slate-100">Información</h3>
+                    
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-medical-100 text-medical-teal flex items-center justify-center shrink-0 mt-1">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-slate-900">Dirección</p>
+                            <p class="text-slate-600 text-sm mt-0.5">C. Cristóbal Colón, 20, 11540 Sanlúcar de Barrameda, Cádiz, España</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-medical-100 text-medical-teal flex items-center justify-center shrink-0 mt-1">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-slate-900">Teléfono</p>
+                            <a href="tel:689025860" class="text-slate-600 hover:text-medical-teal text-sm mt-0.5 block font-medium">689 02 58 60</a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-medical-100 text-medical-teal flex items-center justify-center shrink-0 mt-1">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-slate-900">Correo Electrónico</p>
+                            <a href="mailto:error-lite+84f2@duckduckgo.com" class="text-slate-600 hover:text-medical-teal text-sm mt-0.5 block break-all">error-lite+84f2@duckduckgo.com</a>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="tel:689025860" class="w-full flex items-center justify-center gap-2 bg-medical-500 hover:bg-medical-600 text-white font-semibold py-3 px-4 rounded-xl shadow-md transition-all">
+                            <i class="fa-solid fa-calendar-check"></i>
+                            <span>Pedir Cita Previa</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white p-4 rounded-3xl border border-slate-100 shadow-sm lg:col-span-2">
+                    <iframe src="https://www.google.com/maps?q=Cl%C3%ADnica%20de%20Podolog%C3%ADa%20y%20Fisioterapia%20V%C3%ADctor%20Ramos%20C.%20Crist%C3%B3bal%20Col%C3%B3n%2C%2020%2C%2011540%20Sanl%C3%BAcar%20de%20Barrameda%2C%20C%C3%A1diz%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-10 text-center text-gray-500 border-t">
-        <p>&copy; 2024 Clínica de Podología y Fisioterapia Víctor Ramos. Todos los derechos reservados.</p>
+    <footer class="bg-medical-dark text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-medical-teal flex items-center justify-center text-white">
+                    <i class="fa-solid fa-user-doctor text-xl"></i>
+                </div>
+                <div>
+                    <span class="block font-bold text-white leading-tight">Clínica Víctor Ramos</span>
+                    <span class="text-xs text-medical-cyan">Podología y Fisioterapia</span>
+                </div>
+            </div>
+            
+            <div class="text-sm text-center md:text-right">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> Clínica de Podología y Fisioterapia Víctor Ramos. Todos los derechos reservados.</p>
+                <p class="text-xs text-slate-500 mt-1">C. Cristóbal Colón, 20, 11540 Sanlúcar de Barrameda, Cádiz, España</p>
+            </div>
+        </div>
     </footer>
 
 </body>
