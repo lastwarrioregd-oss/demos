@@ -3,381 +3,380 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ruben's Barber Shop | Peluquería y Barbería en La Puebla de Almoradiel</title>
-    <meta name="description" content="Estilo, precisión y cuidado experto en La Puebla de Almoradiel, Toledo. Cortes de pelo, arreglos de barba y afeitados profesionales. ¡Reserva tu cita!">
-    
-    <!-- TailwindCSS CDN -->
+    <title>Ruben's barber - shop | Peluquería y Barbería en La Puebla de Almoradiel</title>
+    <!-- Tailwind CSS v3 -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        dark: '#121212',
-                        darkcard: '#1a1a1a',
-                        gold: {
-                            light: '#e6c594',
-                            DEFAULT: '#c5a059',
-                            dark: '#997a3a',
-                        },
-                        sand: '#f4f1ea'
+                        brand: {
+                            dark: '#0a0a0a',
+                            card: '#141414',
+                            border: '#262626',
+                            gold: '#d4af37',
+                            'gold-light': '#f3e5ab',
+                            sand: '#e5d5bc'
+                        }
                     },
                     fontFamily: {
                         sans: ['Plus Jakarta Sans', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
+                        serif: ['Playfair Display', 'serif']
                     }
                 }
             }
         }
     </script>
-
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <style>
-        .gold-gradient-text {
-            background: linear-gradient(135deg, #f4f1ea 0%, #c5a059 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .gold-border {
-            border-color: rgba(197, 160, 89, 0.3);
-        }
-    </style>
 </head>
-<body class="bg-dark text-sand font-sans antialiased selection:bg-gold selection:text-dark">
+<body class="bg-brand-dark text-gray-100 font-sans antialiased selection:bg-brand-gold selection:text-black">
 
     <!-- Header / Navbar -->
-    <header class="fixed top-0 left-0 w-full z-50 bg-dark/90 backdrop-blur-md border-b gold-border">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-brand-dark/90 backdrop-blur-md border-b border-brand-border transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="#" class="flex items-center space-x-2">
-                <span class="font-serif text-2xl font-bold tracking-wider text-gold-light uppercase">Ruben's <span class="text-sand text-lg font-sans font-light">Barber Shop</span></span>
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full bg-brand-gold/10 border border-brand-gold flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-black transition-all">
+                    <i class="fa-solid fa-scissors"></i>
+                </div>
+                <div>
+                    <span class="font-serif font-bold text-xl tracking-wider text-white">RUBEN'S</span>
+                    <span class="block text-xs uppercase tracking-widest text-brand-gold font-medium">Barber Shop</span>
+                </div>
             </a>
-            
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
-                <a href="#servicios" class="hover:text-gold transition-colors">Servicios & Tarifas</a>
-                <a href="#galeria" class="hover:text-gold transition-colors">Instalaciones</a>
-                <a href="#opiniones" class="hover:text-gold transition-colors">Opiniones</a>
-                <a href="#contacto" class="hover:text-gold transition-colors">Ubicación</a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
+                <a href="#inicio" class="text-gray-300 hover:text-brand-gold transition-colors">Inicio</a>
+                <a href="#servicios" class="text-gray-300 hover:text-brand-gold transition-colors">Servicios & Tarifas</a>
+                <a href="#galeria" class="text-gray-300 hover:text-brand-gold transition-colors">Instalaciones</a>
+                <a href="#testimonios" class="text-gray-300 hover:text-brand-gold transition-colors">Opiniones</a>
+                <a href="#contacto" class="text-gray-300 hover:text-brand-gold transition-colors">Ubicación</a>
             </nav>
 
-            <div class="flex items-center space-x-4">
-                <a href="tel:637880732" class="bg-gold hover:bg-gold-dark text-dark font-semibold px-5 py-2.5 rounded-full text-sm transition-all shadow-lg shadow-gold/20 flex items-center space-x-2">
+            <div class="hidden md:flex items-center gap-4">
+                <a href="tel:637880732" class="bg-brand-gold hover:bg-brand-gold-light text-black font-semibold px-6 py-3 rounded-full text-sm transition-all shadow-lg shadow-brand-gold/10 flex items-center gap-2">
                     <i class="fa-solid fa-phone"></i>
                     <span>Reservar Cita</span>
                 </a>
             </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-gray-300 hover:text-brand-gold text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-card border-b border-brand-border px-4 pt-2 pb-6 space-y-4">
+            <a href="#inicio" class="block text-gray-300 hover:text-brand-gold py-2 font-medium">Inicio</a>
+            <a href="#servicios" class="block text-gray-300 hover:text-brand-gold py-2 font-medium">Servicios & Tarifas</a>
+            <a href="#galeria" class="block text-gray-300 hover:text-brand-gold py-2 font-medium">Instalaciones</a>
+            <a href="#testimonios" class="block text-gray-300 hover:text-brand-gold py-2 font-medium">Opiniones</a>
+            <a href="#contacto" class="block text-gray-300 hover:text-brand-gold py-2 font-medium">Ubicación</a>
+            <a href="tel:637880732" class="w-full bg-brand-gold text-black font-semibold py-3 rounded-xl text-center flex items-center justify-center gap-2 mt-4">
+                <i class="fa-solid fa-phone"></i>
+                <span>Reservar Cita</span>
+            </a>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-        <!-- Background Image with Overlay -->
+    <section id="inicio" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <!-- Background Overlay Image -->
         <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1920&q=80" 
-                 referrerpolicy="no-referrer" 
-                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
-                 alt="Ruben's Barber Shop Interior" 
-                 class="w-full h-full object-cover opacity-30 scale-105 transform duration-1000">
-            <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/60 to-dark/30"></div>
+            <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1920&q=80" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" alt="Ruben's barber - shop" class="w-full h-full object-cover object-center opacity-30">
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/80 to-transparent"></div>
         </div>
 
-        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-24">
-            <div class="inline-flex items-center space-x-2 bg-darkcard/80 border gold-border px-4 py-1.5 rounded-full mb-6 backdrop-blur-sm">
-                <span class="flex h-2 w-2 rounded-full bg-gold animate-pulse"></span>
-                <span class="text-xs font-medium tracking-widest uppercase text-gold-light">La Puebla de Almoradiel, Toledo</span>
-            </div>
-            
-            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-tight">
-                El arte del buen corte <br>y el <span class="gold-gradient-text">cuidado masculino</span>
-            </h1>
-            
-            <p class="text-lg sm:text-xl text-sand/80 max-w-2xl mx-auto font-light mb-10 leading-relaxed">
-                Rapidez, eficacia y estilo inconfundible. Descubre el espacio de referencia en cuidado capilar y afeitado clásico en La Puebla de Almoradiel.
-            </p>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20">
+            <div class="max-w-2xl">
+                <div class="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 px-4 py-2 rounded-full text-brand-gold text-xs font-semibold tracking-wider uppercase mb-6">
+                    <i class="fa-solid fa-star text-[10px]"></i> Barbería y Peluquería Exclusiva
+                </div>
+                <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
+                    Estilo, precisión y <span class="text-brand-gold italic">carácter</span>.
+                </h1>
+                <p class="text-gray-300 text-lg sm:text-xl mb-10 font-light leading-relaxed">
+                    Tu espacio de confianza en La Puebla de Almoradiel. Cortes impecables, afeitados tradicionales y un cuidado de barba superior con rapidez y eficacia.
+                </p>
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                    <a href="tel:637880732" class="bg-brand-gold hover:bg-brand-gold-light text-black font-bold px-8 py-4 rounded-full text-center transition-all shadow-xl shadow-brand-gold/20 flex items-center justify-center gap-3 text-base">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>Reservar Cita</span>
+                    </a>
+                    <a href="#servicios" class="border border-brand-border hover:border-brand-gold text-white font-medium px-8 py-4 rounded-full text-center transition-all hover:bg-white/5 flex items-center justify-center gap-2 text-base">
+                        <span>Ver Servicios</span>
+                        <i class="fa-solid fa-arrow-down text-xs"></i>
+                    </a>
+                </div>
 
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="tel:637880732" class="w-full sm:w-auto bg-gold hover:bg-gold-dark text-dark font-bold px-8 py-4 rounded-full text-base transition-all transform hover:-translate-y-0.5 shadow-xl shadow-gold/20 flex items-center justify-center space-x-3">
-                    <i class="fa-solid fa-calendar-check text-lg"></i>
-                    <span>Reservar Cita Ahora</span>
-                </a>
-                <a href="#servicios" class="w-full sm:w-auto bg-transparent hover:bg-white/5 border border-sand/30 hover:border-gold text-sand px-8 py-4 rounded-full text-base transition-all flex items-center justify-center space-x-2">
-                    <span>Ver Servicios</span>
-                    <i class="fa-solid fa-arrow-down text-xs"></i>
-                </a>
+                <!-- Quick info badges -->
+                <div class="grid grid-cols-3 gap-4 mt-16 pt-8 border-t border-brand-border/60">
+                    <div>
+                        <span class="block text-brand-gold font-serif text-2xl font-bold">100%</span>
+                        <span class="text-gray-400 text-xs uppercase tracking-wider">Profesionalidad</span>
+                    </div>
+                    <div>
+                        <span class="block text-brand-gold font-serif text-2xl font-bold">Top</span>
+                        <span class="text-gray-400 text-xs uppercase tracking-wider">Valorado</span>
+                    </div>
+                    <div>
+                        <span class="block text-brand-gold font-serif text-2xl font-bold">Rápido</span>
+                        <span class="text-gray-400 text-xs uppercase tracking-wider">Y Eficaz</span>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Trust Badges -->
-            <div class="mt-16 grid grid-cols-2 md:grid-cols-3 gap-6 pt-12 border-t gold-border/40 text-left max-w-3xl mx-auto">
-                <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center text-gold">
+    <!-- Trust Banner / Features -->
+    <section class="bg-brand-card border-y border-brand-border py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="flex items-start gap-4 p-4">
+                    <div class="w-12 h-12 rounded-xl bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold flex-shrink-0 text-xl">
                         <i class="fa-solid fa-bolt"></i>
                     </div>
                     <div>
-                        <h4 class="text-sm font-semibold">Rapidez y Eficacia</h4>
-                        <p class="text-xs text-sand/60">Sin esperas innecesarias</p>
+                        <h3 class="font-bold text-white text-lg mb-1">Rapidez y Eficacia</h3>
+                        <p class="text-gray-400 text-sm">Servicio optimizado para ofrecerte los mejores resultados sin esperas innecesarias.</p>
                     </div>
                 </div>
-                <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center text-gold">
-                        <i class="fa-solid fa-scissors"></i>
+
+                <div class="flex items-start gap-4 p-4">
+                    <div class="w-12 h-12 rounded-xl bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold flex-shrink-0 text-xl">
+                        <i class="fa-solid fa-medal"></i>
                     </div>
                     <div>
-                        <h4 class="text-sm font-semibold">Corte y Barba</h4>
-                        <p class="text-xs text-sand/60">Especialistas profesionales</p>
+                        <h3 class="font-bold text-white text-lg mb-1">Corte y Barba Experta</h3>
+                        <p class="text-gray-400 text-sm">Especialistas en tendencias actuales, clásicos impecables y arreglos de barba detallados.</p>
                     </div>
                 </div>
-                <div class="col-span-2 md:col-span-1 flex items-center space-x-3">
-                    <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center text-gold">
-                        <i class="fa-solid fa-star"></i>
+
+                <div class="flex items-start gap-4 p-4">
+                    <div class="w-12 h-12 rounded-xl bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold flex-shrink-0 text-xl">
+                        <i class="fa-solid fa-location-dot"></i>
                     </div>
                     <div>
-                        <h4 class="text-sm font-semibold">Clientes Felices</h4>
-                        <p class="text-xs text-sand/60">Valoraciones excelentes</p>
+                        <h3 class="font-bold text-white text-lg mb-1">Ubicación Céntrica</h3>
+                        <p class="text-gray-400 text-sm">Situados en Av. del Rey Juan Carlos I, listos para sacarte de cualquier apáño.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Servicios y Tarifas Section -->
-    <section id="servicios" class="py-24 bg-darkcard relative">
+    <!-- Services / Menu & Tariffs -->
+    <section id="servicios" class="py-24 bg-brand-dark relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-gold uppercase tracking-widest text-xs font-semibold mb-3">Nuestra Carta</h2>
-                <h3 class="font-serif text-3xl sm:text-4xl font-bold mb-4">Tratamientos, Cortes y Tarifas</h3>
-                <p class="text-sand/70">Diseñados para realzar tu imagen con precisión milimétrica y productos de alta gama.</p>
+                <span class="text-brand-gold text-xs font-semibold tracking-widest uppercase block mb-3">Nuestros Tratamientos y Tarifas</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-6">Excelencia en cada corte</h2>
+                <p class="text-gray-400 text-base sm:text-lg">Diseñado para hombres que cuidan su imagen al detalle. Descubre nuestros servicios estrella.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Servicio 1 -->
-                <div class="bg-dark p-8 rounded-2xl border gold-border hover:border-gold transition-all duration-300 flex flex-col justify-between group">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-gold text-2xl"><i class="fa-solid fa-scissors"></i></span>
-                            <span class="font-serif text-2xl font-bold text-gold-light">12€</span>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Categoria Cabello -->
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-8 shadow-xl relative overflow-hidden group hover:border-brand-gold/50 transition-all">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-gold/5 rounded-full blur-2xl group-hover:bg-brand-gold/10 transition-all"></div>
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold text-2xl">
+                            <i class="fa-solid fa-scissors"></i>
                         </div>
-                        <h4 class="font-serif text-xl font-bold mb-2 group-ref text-sand">Corte de Cabello Clásico / Moderno</h4>
-                        <p class="text-sm text-sand/60 mb-6">Corte adaptado a tu estilo, lavado incluido y peinado con productos de acabado profesional.</p>
+                        <div>
+                            <h3 class="font-serif text-2xl font-bold text-white">Corte de Cabello</h3>
+                            <p class="text-gray-400 text-sm">Estilos clásicos, modernos y degradados perfectos.</p>
+                        </div>
                     </div>
-                    <a href="tel:637880732" class="w-full bg-darkcard hover:bg-gold hover:text-dark text-gold border gold-border font-semibold py-2.5 rounded-xl text-sm transition-all text-center block">
-                        Reservar Cita
-                    </a>
+
+                    <div class="space-y-6">
+                        <div class="flex justify-between items-center border-b border-brand-border pb-4">
+                            <div>
+                                <h4 class="font-bold text-white text-lg">Corte Caballero Estándar / Moderno</h4>
+                                <p class="text-gray-400 text-xs">Incluye lavado, corte personalizado a tijera o máquina y peinado.</p>
+                            </div>
+                            <span class="text-brand-gold font-serif font-bold text-xl">Consultar</span>
+                        </div>
+                        <div class="flex justify-between items-center border-b border-brand-border pb-4">
+                            <div>
+                                <h4 class="font-bold text-white text-lg">Corte Juvenil / Infantil</h4>
+                                <p class="text-gray-400 text-xs">Cuidado y paciencia para los más jóvenes de la casa.</p>
+                            </div>
+                            <span class="text-brand-gold font-serif font-bold text-xl">Consultar</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 pt-4">
+                        <a href="tel:637880732" class="w-full bg-brand-dark hover:bg-brand-gold hover:text-black border border-brand-border text-white font-semibold py-3 rounded-xl transition-all flex items-center justify-center gap-2 text-sm">
+                            <i class="fa-solid fa-phone"></i> Reservar Corte
+                        </a>
+                    </div>
                 </div>
 
-                <!-- Servicio 2 -->
-                <div class="bg-dark p-8 rounded-2xl border gold-border hover:border-gold transition-all duration-300 flex flex-col justify-between group">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-gold text-2xl"><i class="fa-solid fa-face-grin"></i></span>
-                            <span class="font-serif text-2xl font-bold text-gold-light">10€</span>
+                <!-- Categoria Barba y Packs -->
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-8 shadow-xl relative overflow-hidden group hover:border-brand-gold/50 transition-all">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-gold/5 rounded-full blur-2xl group-hover:bg-brand-gold/10 transition-all"></div>
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold text-2xl">
+                            <i class="fa-solid fa-user-tie"></i>
                         </div>
-                        <h4 class="font-serif text-xl font-bold mb-2 group-ref text-sand">Arreglo y Perfilado de Barba</h4>
-                        <p class="text-sm text-sand/60 mb-6">Definición de contornos, rebaje con maquinilla/tijera, toalla caliente y aceite hidratante.</p>
+                        <div>
+                            <h3 class="font-serif text-2xl font-bold text-white">Barba y Afeitado</h3>
+                            <p class="text-gray-400 text-sm">Cuidado completo y rituales tradicionales.</p>
+                        </div>
                     </div>
-                    <a href="tel:637880732" class="w-full bg-darkcard hover:bg-gold hover:text-dark text-gold border gold-border font-semibold py-2.5 rounded-xl text-sm transition-all text-center block">
-                        Reservar Cita
-                    </a>
-                </div>
 
-                <!-- Servicio 3 -->
-                <div class="bg-dark p-8 rounded-2xl border gold-border hover:border-gold transition-all duration-300 flex flex-col justify-between group">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-gold text-2xl"><i class="fa-solid fa-user-tie"></i></span>
-                            <span class="font-serif text-2xl font-bold text-gold-light">20€</span>
+                    <div class="space-y-6">
+                        <div class="flex justify-between items-center border-b border-brand-border pb-4">
+                            <div>
+                                <h4 class="font-bold text-white text-lg">Arreglo y Diseño de Barba</h4>
+                                <p class="text-gray-400 text-xs">Perfilado, rebajado, toallas calientes y productos hidratantes.</p>
+                            </div>
+                            <span class="text-brand-gold font-serif font-bold text-xl">Consultar</span>
                         </div>
-                        <h4 class="font-serif text-xl font-bold mb-2 group-ref text-sand">Combo Completo (Corte + Barba)</h4>
-                        <p class="text-sm text-sand/60 mb-6">El servicio estrella. Servicio integral de peluquería y afeitado/arreglo de barba con máxima eficacia.</p>
+                        <div class="flex justify-between items-center border-b border-brand-border pb-4">
+                            <div>
+                                <h4 class="font-bold text-white text-lg">Combo Completo (Corte + Barba)</h4>
+                                <p class="text-gray-400 text-xs">Nuestro servicio estrella: corte de pelo y afeitado con máxima eficacia.</p>
+                            </div>
+                            <span class="text-brand-gold font-serif font-bold text-xl">Consultar</span>
+                        </div>
                     </div>
-                    <a href="tel:637880732" class="w-full bg-darkcard hover:bg-gold hover:text-dark text-gold border gold-border font-semibold py-2.5 rounded-xl text-sm transition-all text-center block">
-                        Reservar Cita
-                    </a>
-                </div>
 
-                <!-- Servicio 4 -->
-                <div class="bg-dark p-8 rounded-2xl border gold-border hover:border-gold transition-all duration-300 flex flex-col justify-between group">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-gold text-2xl"><i class="fa-solid fa-child"></i></span>
-                            <span class="font-serif text-2xl font-bold text-gold-light">10€</span>
-                        </div>
-                        <h4 class="font-serif text-xl font-bold mb-2 group-ref text-sand">Corte Infantil (Junior)</h4>
-                        <p class="text-sm text-sand/60 mb-6">Corte de pelo para los más pequeños de la casa con paciencia, buen trato y resultados impecables.</p>
+                    <div class="mt-8 pt-4">
+                        <a href="tel:637880732" class="w-full bg-brand-dark hover:bg-brand-gold hover:text-black border border-brand-border text-white font-semibold py-3 rounded-xl transition-all flex items-center justify-center gap-2 text-sm">
+                            <i class="fa-solid fa-phone"></i> Reservar Combo
+                        </a>
                     </div>
-                    <a href="tel:637880732" class="w-full bg-darkcard hover:bg-gold hover:text-dark text-gold border gold-border font-semibold py-2.5 rounded-xl text-sm transition-all text-center block">
-                        Reservar Cita
-                    </a>
                 </div>
+            </div>
 
-                <!-- Servicio 5 -->
-                <div class="bg-dark p-8 rounded-2xl border gold-border hover:border-gold transition-all duration-300 flex flex-col justify-between group">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-gold text-2xl"><i class="fa-solid fa-spray-can-sparkles"></i></span>
-                            <span class="font-serif text-2xl font-bold text-gold-light">8€</span>
-                        </div>
-                        <h4 class="font-serif text-xl font-bold mb-2 group-ref text-sand">Afeitado Clásico a Navaja</h4>
-                        <p class="text-sm text-sand/60 mb-6">Tradición en estado puro. Espuma densa, toallas calientes y afeitado apurado con navaja tradicional.</p>
-                    </div>
-                    <a href="tel:637880732" class="w-full bg-darkcard hover:bg-gold hover:text-dark text-gold border gold-border font-semibold py-2.5 rounded-xl text-sm transition-all text-center block">
-                        Reservar Cita
-                    </a>
-                </div>
-
-                <!-- Servicio 6 -->
-                <div class="bg-dark p-8 rounded-2xl border gold-border hover:border-gold transition-all duration-300 flex flex-col justify-between group">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-gold text-2xl"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
-                            <span class="font-serif text-2xl font-bold text-gold-light">Consultar</span>
-                        </div>
-                        <h4 class="font-serif text-xl font-bold mb-2 group-ref text-sand">Arreglos Rápidos & Apaños</h4>
-                        <p class="text-sm text-sand/60 mb-6">¿Te saca de un apaño de último momento? Ven a vernos o llámanos para resolver cualquier imprevisto de imagen.</p>
-                    </div>
-                    <a href="tel:637880732" class="w-full bg-darkcard hover:bg-gold hover:text-dark text-gold border gold-border font-semibold py-2.5 rounded-xl text-sm transition-all text-center block">
-                        Reservar Cita
-                    </a>
-                </div>
+            <!-- Callout urgent -->
+            <div class="mt-12 bg-gradient-to-r from-brand-card to-brand-border border border-brand-gold/30 rounded-2xl p-8 text-center max-w-4xl mx-auto">
+                <h3 class="font-serif text-2xl font-bold text-white mb-2">¿Necesitas un arreglo urgente?</h3>
+                <p class="text-gray-300 text-sm sm:text-base mb-6">"Te saca de un apaño" - Ven a visitarnos o llámanos directamente para asegurar tu hueco hoy mismo.</p>
+                <a href="tel:637880732" class="inline-flex items-center gap-2 bg-brand-gold hover:bg-brand-gold-light text-black font-bold px-8 py-3 rounded-full text-sm transition-all shadow-lg">
+                    <i class="fa-solid fa-phone"></i> Llamar al 637 88 07 32
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Galería / Instalaciones Section -->
-    <section id="galeria" class="py-24 bg-dark relative overflow-hidden">
+    <!-- Gallery / Instalaciones -->
+    <section id="galeria" class="py-24 bg-brand-card border-t border-brand-border">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-gold uppercase tracking-widest text-xs font-semibold mb-3">Estilo y Ambiente</h2>
-                <h3 class="font-serif text-3xl sm:text-4xl font-bold mb-4">Nuestras Instalaciones y Trabajos</h3>
-                <p class="text-sand/70">Un espacio pensado para tu comodidad, equipado con las mejores herramientas del sector.</p>
+                <span class="text-brand-gold text-xs font-semibold tracking-widest uppercase block mb-3">Nuestras Instalaciones y Trabajos</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-6">El espacio y el resultado</h2>
+                <p class="text-gray-400 text-base sm:text-lg">Un ambiente cómodo, moderno y preparado exclusivamente para tu bienestar y cuidado personal.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="relative group overflow-hidden rounded-2xl h-80 border gold-border">
-                    <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=800&q=80" 
-                         referrerpolicy="no-referrer" 
-                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
-                         alt="Barber Shop Interior" 
-                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                        <span class="text-sand font-serif text-lg">Ambiente exclusivo y cercano</span>
+                <div class="group relative rounded-2xl overflow-hidden aspect-[4/3] border border-brand-border">
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=80" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" alt="Ruben's barber shop interior" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white font-medium text-sm">Ambiente y Estilo</span>
                     </div>
                 </div>
 
-                <div class="relative group overflow-hidden rounded-2xl h-80 border gold-border">
-                    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=80" 
-                         referrerpolicy="no-referrer" 
-                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
-                         alt="Corte y Afeitado Profesional" 
-                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                        <span class="text-sand font-serif text-lg">Precisión en cada corte</span>
+                <div class="group relative rounded-2xl overflow-hidden aspect-[4/3] border border-brand-border">
+                    <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=800&q=80" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" alt="Corte de pelo y barba" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white font-medium text-sm">Corte y Afeitado Profesional</span>
                     </div>
                 </div>
 
-                <div class="relative group overflow-hidden rounded-2xl h-80 border gold-border">
-                    <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=800&q=80" 
-                         referrerpolicy="no-referrer" 
-                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
-                         alt="Herramientas de barbería" 
-                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                        <span class="text-sand font-serif text-lg">Cuidado experto de barba</span>
+                <div class="group relative rounded-2xl overflow-hidden aspect-[4/3] border border-brand-border">
+                    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=800&q=80" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" alt="Herramientas de barbería" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white font-medium text-sm">Detalle y Precisión</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Opiniones Section -->
-    <section id="opiniones" class="py-24 bg-darkcard relative border-t border-b gold-border/40">
+    <!-- Testimonios / Reseñas Reales -->
+    <section id="testimonios" class="py-24 bg-brand-dark relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-gold uppercase tracking-widest text-xs font-semibold mb-3">Testimonios</h2>
-                <h3 class="font-serif text-3xl sm:text-4xl font-bold mb-4">Lo que opinan nuestros clientes</h3>
-                <p class="text-sand/70">Reseñas reales verificadas de Google Maps de quienes confían en nuestro trabajo.</p>
+                <span class="text-brand-gold text-xs font-semibold tracking-widest uppercase block mb-3">Opiniones Verificadas</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-6">Lo que opinan nuestros clientes</h2>
+                <p class="text-gray-400 text-base sm:text-lg">La satisfacción de quienes confían en Ruben's barber - shop es nuestra mejor garantía.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Reseña 1 -->
-                <div class="bg-dark p-8 rounded-2xl border gold-border flex flex-col justify-between relative">
-                    <div class="absolute top-6 right-6 text-gold/20 text-4xl font-serif">“</div>
-                    <div>
-                        <div class="flex text-gold space-x-1 mb-4 text-sm">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-sand/80 italic mb-6 text-sm leading-relaxed">
-                            "Mi chico se corta el pelo y se arregla la barba allí. Le queda genial."
-                        </p>
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-8 flex flex-col justify-between shadow-lg relative">
+                    <div class="text-brand-gold text-sm flex gap-1 mb-4">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
                     </div>
-                    <div class="flex items-center space-x-3 pt-4 border-t gold-border/30">
-                        <div class="w-10 h-10 rounded-full bg-gold/20 text-gold flex items-center justify-center font-bold font-serif">
-                            IF
+                    <p class="text-gray-300 text-base italic mb-6 leading-relaxed">
+                        "Mi chico se corta el pelo y se arregla la barba allí. Le queda genial."
+                    </p>
+                    <div class="flex items-center gap-3 pt-4 border-t border-brand-border">
+                        <div class="w-10 h-10 rounded-full bg-brand-gold/20 text-brand-gold font-bold flex items-center justify-center font-serif">
+                            I
                         </div>
                         <div>
-                            <h4 class="font-semibold text-sm">Irene MF</h4>
-                            <span class="text-xs text-sand/50">Cliente Verificado (Google Maps)</span>
+                            <h4 class="font-bold text-white text-sm">Irene MF</h4>
+                            <span class="text-gray-500 text-xs">Google Maps</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Reseña 2 -->
-                <div class="bg-dark p-8 rounded-2xl border gold-border flex flex-col justify-between relative">
-                    <div class="absolute top-6 right-6 text-gold/20 text-4xl font-serif">“</div>
-                    <div>
-                        <div class="flex text-gold space-x-1 mb-4 text-sm">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-sand/80 italic mb-6 text-sm leading-relaxed">
-                            "Te saca de un apaño"
-                        </p>
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-8 flex flex-col justify-between shadow-lg relative">
+                    <div class="text-brand-gold text-sm flex gap-1 mb-4">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
                     </div>
-                    <div class="flex items-center space-x-3 pt-4 border-t gold-border/30">
-                        <div class="w-10 h-10 rounded-full bg-gold/20 text-gold flex items-center justify-center font-bold font-serif">
-                            AC
+                    <p class="text-gray-300 text-base italic mb-6 leading-relaxed">
+                        "Te saca de un apaño."
+                    </p>
+                    <div class="flex items-center gap-3 pt-4 border-t border-brand-border">
+                        <div class="w-10 h-10 rounded-full bg-brand-gold/20 text-brand-gold font-bold flex items-center justify-center font-serif">
+                            A
                         </div>
                         <div>
-                            <h4 class="font-semibold text-sm">Antonio Chiriac</h4>
-                            <span class="text-xs text-sand/50">Cliente Verificado (Google Maps)</span>
+                            <h4 class="font-bold text-white text-sm">Antonio Chiriac</h4>
+                            <span class="text-gray-500 text-xs">Google Maps</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Reseña 3 -->
-                <div class="bg-dark p-8 rounded-2xl border gold-border flex flex-col justify-between relative">
-                    <div class="absolute top-6 right-6 text-gold/20 text-4xl font-serif">“</div>
-                    <div>
-                        <div class="flex text-gold space-x-1 mb-4 text-sm">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-sand/80 italic mb-6 text-sm leading-relaxed">
-                            "Estupendo, corte de pelo y afeitado, rapidez y eficacia"
-                        </p>
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-8 flex flex-col justify-between shadow-lg relative">
+                    <div class="text-brand-gold text-sm flex gap-1 mb-4">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
                     </div>
-                    <div class="flex items-center space-x-3 pt-4 border-t gold-border/30">
-                        <div class="w-10 h-10 rounded-full bg-gold/20 text-gold flex items-center justify-center font-bold font-serif">
-                            JV
+                    <p class="text-gray-300 text-base italic mb-6 leading-relaxed">
+                        "Estupendo, corte de pelo y afeitado, rapidez y eficacia."
+                    </p>
+                    <div class="flex items-center gap-3 pt-4 border-t border-brand-border">
+                        <div class="w-10 h-10 rounded-full bg-brand-gold/20 text-brand-gold font-bold flex items-center justify-center font-serif">
+                            J
                         </div>
                         <div>
-                            <h4 class="font-semibold text-sm">Jose del Valle Caraballo</h4>
-                            <span class="text-xs text-sand/50">Cliente Verificado (Google Maps)</span>
+                            <h4 class="font-bold text-white text-sm">Jose del Valle Caraballo</h4>
+                            <span class="text-gray-500 text-xs">Google Maps</span>
                         </div>
                     </div>
                 </div>
@@ -385,60 +384,59 @@
         </div>
     </section>
 
-    <!-- Ubicación y Contacto Section -->
-    <section id="contacto" class="py-24 bg-dark relative">
+    <!-- Ubicación y Contacto -->
+    <section id="contacto" class="py-24 bg-brand-card border-t border-brand-border">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-gold uppercase tracking-widest text-xs font-semibold mb-3">Encuéntranos</h2>
-                <h3 class="font-serif text-3xl sm:text-4xl font-bold mb-4">Visita Nuestra Barbería</h3>
-                <p class="text-sand/70">Pásate por nuestro local en La Puebla de Almoradiel o reserva tu cita por teléfono.</p>
+                <span class="text-brand-gold text-xs font-semibold tracking-widest uppercase block mb-3">Encuéntranos</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-6">Visítanos en La Puebla de Almoradiel</h2>
+                <p class="text-gray-400 text-base sm:text-lg">Ven a conocer nuestro salón o reserva tu cita por teléfono.</p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <!-- Info Contacto -->
-                <div class="space-y-8 bg-darkcard p-8 sm:p-10 rounded-3xl border gold-border">
-                    <h4 class="font-serif text-2xl font-bold mb-6 text-gold-light">Información de Contacto</h4>
-                    
-                    <div class="flex items-start space-x-4">
-                        <div class="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center text-gold text-xl flex-shrink-0 mt-1">
+                <!-- Info contacto -->
+                <div class="space-y-8">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold flex-shrink-0 text-lg">
                             <i class="fa-solid fa-location-dot"></i>
                         </div>
                         <div>
-                            <h5 class="font-semibold text-sand mb-1">Dirección</h5>
-                            <p class="text-sm text-sand/70 leading-relaxed">Av. del Rey Juan Carlos I, 45840 La Puebla de Almoradiel, Toledo, España</p>
+                            <h3 class="font-bold text-white text-lg mb-1">Dirección</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">Av. del Rey Juan Carlos I, 45840 La Puebla de Almoradiel, Toledo, España</p>
                         </div>
                     </div>
 
-                    <div class="flex items-start space-x-4">
-                        <div class="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center text-gold text-xl flex-shrink-0 mt-1">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold flex-shrink-0 text-lg">
                             <i class="fa-solid fa-phone"></i>
                         </div>
                         <div>
-                            <h5 class="font-semibold text-sand mb-1">Teléfono de Reservas</h5>
-                            <a href="tel:637880732" class="text-sm text-gold hover:underline font-semibold">637 88 07 32</a>
+                            <h3 class="font-bold text-white text-lg mb-1">Teléfono de Reservas</h3>
+                            <p class="text-gray-400 text-sm mb-2">Llámanos para reservar tu cita previa de forma rápida.</p>
+                            <a href="tel:637880732" class="text-brand-gold font-bold text-lg hover:underline">637 88 07 32</a>
                         </div>
                     </div>
 
-                    <div class="flex items-start space-x-4">
-                        <div class="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center text-gold text-xl flex-shrink-0 mt-1">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold flex-shrink-0 text-lg">
                             <i class="fa-solid fa-envelope"></i>
                         </div>
                         <div>
-                            <h5 class="font-semibold text-sand mb-1">Correo Electrónico</h5>
-                            <a href="mailto:publiruben18@gmail.com" class="text-sm text-sand/70 hover:text-gold transition-colors">publiruben18@gmail.com</a>
+                            <h3 class="font-bold text-white text-lg mb-1">Correo Electrónico</h3>
+                            <a href="mailto:publiruben18@gmail.com" class="text-gray-400 text-sm hover:text-brand-gold transition-colors">publiruben18@gmail.com</a>
                         </div>
                     </div>
 
-                    <div class="pt-6 border-t gold-border/40">
-                        <a href="tel:637880732" class="w-full bg-gold hover:bg-gold-dark text-dark font-bold py-4 rounded-xl text-center block transition-all shadow-lg shadow-gold/20 flex items-center justify-center space-x-2">
-                            <i class="fa-solid fa-calendar-check"></i>
-                            <span>Reservar Cita Llamando Ahora</span>
+                    <div class="pt-4">
+                        <a href="tel:637880732" class="inline-flex items-center gap-3 bg-brand-gold hover:bg-brand-gold-light text-black font-bold px-8 py-4 rounded-full text-base transition-all shadow-xl shadow-brand-gold/20">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>Reservar Cita Ahora</span>
                         </a>
                     </div>
                 </div>
 
-                <!-- Mapa Interactivo -->
-                <div class="w-full h-full min-h-[400px] rounded-3xl overflow-hidden border gold-border shadow-2xl bg-darkcard p-2">
+                <!-- Mapa Interactivo Real -->
+                <div class="bg-brand-dark p-3 rounded-2xl border border-brand-border shadow-2xl">
                     <iframe src="https://www.google.com/maps?q=Ruben's%20barber%20-%20shop%20Av.%20del%20Rey%20Juan%20Carlos%20I%2C%2045840%20La%20Puebla%20de%20Almoradiel%2C%20Toledo%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
@@ -446,19 +444,48 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-darkcard border-t gold-border/40 py-12 text-sand/60 text-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div class="text-center md:text-left">
-                <span class="font-serif text-xl font-bold tracking-wider text-gold-light uppercase block mb-1">Ruben's Barber Shop</span>
-                <p class="text-xs text-sand/50">© <script>document.write(new Date().getFullYear())</script> Todos los derechos reservados. La Puebla de Almoradiel, Toledo.</p>
+    <footer class="bg-brand-dark border-t border-brand-border py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-brand-gold/10 border border-brand-gold flex items-center justify-center text-brand-gold text-xs">
+                    <i class="fa-solid fa-scissors"></i>
+                </div>
+                <div>
+                    <span class="font-serif font-bold text-lg tracking-wider text-white">RUBEN'S BARBER SHOP</span>
+                </div>
             </div>
-            
-            <div class="flex items-center space-x-6 text-lg">
-                <a href="tel:637880732" class="hover:text-gold transition-colors" title="Llámanos"><i class="fa-solid fa-phone"></i></a>
-                <a href="mailto:publiruben18@gmail.com" class="hover:text-gold transition-colors" title="Envíanos un email"><i class="fa-solid fa-envelope"></i></a>
+
+            <p class="text-gray-500 text-xs">
+                &copy; <script>document.write(new Date().getFullYear());</script> Ruben's barber - shop. Todos los derechos reservados. La Puebla de Almoradiel, Toledo.
+            </p>
+
+            <div class="flex items-center gap-4 text-gray-400">
+                <a href="tel:637880732" class="w-10 h-10 rounded-full bg-brand-card border border-brand-border flex items-center justify-center hover:text-brand-gold hover:border-brand-gold transition-all">
+                    <i class="fa-solid fa-phone"></i>
+                </a>
+                <a href="mailto:publiruben18@gmail.com" class="w-10 h-10 rounded-full bg-brand-card border border-brand-border flex items-center justify-center hover:text-brand-gold hover:border-brand-gold transition-all">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
             </div>
         </div>
     </footer>
 
+    <!-- Script Menu Mobile Toggle -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú al hacer click en enlace mobile
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
 </body>
 </html>
