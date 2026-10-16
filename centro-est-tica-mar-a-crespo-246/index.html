@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro Estética María Crespo | San Bartolomé de Tirajana</title>
+    <meta name="description" content="Centro de estética en San Fernando, San Bartolomé de Tirajana. Tratamientos de belleza avanzados, profesionalidad y calidad garantizada. Reserva tu cita.">
+    
+    <!-- TailwindCSS v3 CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        terracota: {
+                            50: '#fcf6f5',
+                            100: '#f7e8e6',
+                            200: '#ecd3d0',
+                            600: '#b85d53',
+                            700: '#9b4a41',
+                            800: '#813f38',
+                        },
+                        crema: {
+                            50: '#fcfbf9',
+                            100: '#f5f2ec',
+                            200: '#eae4d9',
+                            800: '#5c5548',
+                            900: '#38332b',
+                        },
+                        gourmet: {
+                            dark: '#1a1818',
+                            gold: '#c5a880',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-crema-50 text-crema-900 font-sans antialiased selection:bg-terracota-200 selection:text-terracota-800">
+
+    <!-- Barra Superior de Contacto -->
+    <div class="bg-gourmet-dark text-crema-100 py-2.5 px-4 text-xs md:text-sm border-b border-gourmet-gold/20">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-gourmet-gold"></i> Local 09, C/ alcalde, C. José Yánez Matos, San Fernando</span>
+                <span class="hidden md:inline-block text-gourmet-gold">•</span>
+                <span class="hidden md:flex items-center gap-1.5"><i class="fa-solid fa-clock text-gourmet-gold"></i> Lunes a Viernes: 9:00 - 20:00</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="mailto:esteticamariacrespo@gmail.com" class="hover:text-gourmet-gold transition-colors flex items-center gap-1.5">
+                    <i class="fa-solid fa-envelope text-gourmet-gold"></i> esteticamariacrespo@gmail.com
+                </a>
+                <a href="tel:928774238" class="bg-terracota-600 text-white px-3 py-1 rounded-full font-semibold hover:bg-terracota-700 transition-all flex items-center gap-1.5 shadow-sm">
+                    <i class="fa-solid fa-phone"></i> 928 77 42 38
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navegación Principal -->
+    <header class="sticky top-0 z-50 bg-crema-50/95 backdrop-blur-md border-b border-crema-200 shadow-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-terracota-700 text-white flex items-center justify-center font-serif font-bold text-xl shadow-md">MC</div>
+                <div>
+                    <span class="font-serif text-xl sm:text-2xl font-bold tracking-tight text-gourmet-dark block leading-none">María Crespo</span>
+                    <span class="text-xs uppercase tracking-widest text-terracota-700 font-semibold mt-1 block">Centro de Estética</span>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 font-medium text-crema-800">
+                <a href="#inicio" class="hover:text-terracota-700 transition-colors">Inicio</a>
+                <a href="#especialidades" class="hover:text-terracota-700 transition-colors">Tratamientos</a>
+                <a href="#instalaciones" class="hover:text-terracota-700 transition-colors">Instalaciones</a>
+                <a href="#opiniones" class="hover:text-terracota-700 transition-colors">Opiniones</a>
+                <a href="#contacto" class="hover:text-terracota-700 transition-colors">Ubicación</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <a href="tel:928774238" class="hidden sm:inline-flex items-center gap-2 bg-terracota-700 hover:bg-terracota-800 text-white px-5 py-2.5 rounded-full font-medium transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span>Reservar Mesa</span>
+                </a>
+                <!-- Botón Menú Móvil -->
+                <button id="menu-btn" class="md:hidden text-crema-900 p-2 focus:outline-none" aria-label="Abrir menú">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div id="mobile-menu" class="hidden md:hidden bg-crema-100 border-b border-crema-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="block py-2 text-crema-800 font-medium border-b border-crema-200/50">Inicio</a>
+            <a href="#especialidades" class="block py-2 text-crema-800 font-medium border-b border-crema-200/50">Tratamientos</a>
+            <a href="#instalaciones" class="block py-2 text-crema-800 font-medium border-b border-crema-200/50">Instalaciones</a>
+            <a href="#opiniones" class="block py-2 text-cremaina-800 font-medium border-b border-crema-200/50">Opiniones</a>
+            <a href="#contacto" class="block py-2 text-crema-800 font-medium border-b border-crema-200/50">Ubicación</a>
+            <div class="pt-2">
+                <a href="tel:928774238" class="w-full text-center block bg-terracota-700 text-white px-5 py-3 rounded-full font-semibold shadow">
+                    <i class="fa-solid fa-calendar-check mr-2"></i> Reservar Mesa
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección Hero -->
+    <section id="inicio" class="relative bg-crema-100 py-16 lg:py-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-terracota-100 text-terracota-800 px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide">
+                        <i class="fa-solid fa-spa text-terracota-600"></i> Tu santuario de bienestar en San Fernando
+                    </div>
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-gourmet-dark tracking-tight leading-tight">
+                        Belleza, Cuidado y <span class="text-terracota-700 italic">Elegancia</span> a tu medida
+                    </h1>
+                    <p class="text-lg text-crema-800 max-w-2xl mx-auto lg:mx-0">
+                        Sumérgete en una experiencia única de bienestar y estética avanzada en San Bartolomé de Tirajana. Excelente trato, profesionalidad y calidad garantizada para realzar tu belleza natural.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="tel:928774238" class="w-full sm:w-auto bg-terracota-700 hover:bg-terracota-800 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-3 transform hover:-translate-y-0.5">
+                            <i class="fa-solid fa-phone text-xl"></i>
+                            <span>Reservar Mesa</span>
+                        </a>
+                        <a href="#especialidades" class="w-full sm:w-auto bg-crema-200 hover:bg-crema-300 text-crema-900 px-8 py-4 rounded-full font-semibold text-lg transition-all border border-crema-300 flex items-center justify-center gap-2">
+                            <span>Ver Servicios</span>
+                            <i class="fa-solid fa-arrow-down text-sm"></i>
+                        </a>
+                    </div>
+                    <div class="pt-6 flex items-center justify-center lg:justify-start gap-6 text-sm text-crema-800 font-medium">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-star text-amber-500"></i>
+                            <span>5.0 Excelencia en Reseñas</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-terracota-600"></i>
+                            <span>Atención Personalizada</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="absolute -inset-4 bg-gradient-to-tr from-terracota-200 to-gourmet-gold/30 rounded-3xl transform rotate-3 filter blur-sm"></div>
+                        <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/5]">
+                            <img src="https://scontent-iad6-1.xx.fbcdn.net/v/t39.30808-1/238148372_255774496549932_6807674927626921399_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx270x270&amp;ctp=s270x270&amp;_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=QXCjml0YtUcQ7kNvwEo2IX0&amp;_nc_oc=AdqYswKzxvcOl982r3vuOmtVfUu5Qxzx07Kq1d0ikHyJE20JVtSs-QrNcdVxbaoVoWw&amp;_nc_zt=24&amp;_nc_ht=scontent-iad6-1.xx&amp;_nc_gid=r_1AxYtF6VCIhzAxhCPKew&amp;_nc_ss=7f289&amp;oh=00_AQMXQ88RnMMnQ3p81vvm1IA09d6I0ICvbzNVC0U36KvdVw&amp;oe=6AD71989" 
+                                 alt="Centro Estética María Crespo Instalaciones" 
+                                 class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                                 referrerpolicy="no-referrer" 
+                                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+                        </div>
+                        <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-crema-200 flex items-center gap-3 max-w-xs">
+                            <div class="w-12 h-12 bg-terracota-100 rounded-full flex items-center justify-center text-terracota-700 shrink-0">
+                                <i class="fa-solid fa-heart text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-crema-800 uppercase font-semibold">Cliente Satisfecho</p>
+                                <p class="text-sm font-bold text-gourmet-dark">"Excelente trato y profesionalidad"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Especialidades y Servicios ("Nuestra Carta...") -->
+    <section id="especialidades" class="py-20 bg-crema-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-terracota-700 font-semibold uppercase tracking-widest text-sm block">Nuestros Tratamientos y Especialidades</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-gourmet-dark">Carta de Servicios Exclusivos</h2>
+                <p class="text-crema-800">Diseñados meticulosamente para cuidar tu piel, relajar tu cuerpo y realzar tu belleza natural con la máxima calidad y profesionalidad.</p>
+                <div class="w-24 h-1 bg-terracota-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Categoría 1 -->
+                <div class="bg-white rounded-2xl p-6 shadow-md border border-crema-200 hover:shadow-xl transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-terracota-100 text-terracota-700 flex items-center justify-center text-xl group-hover:bg-terracota-700 group-hover:text-white transition-colors">
+                                <i class="fa-solid fa-face-smile"></i>
+                            </div>
+                            <span class="text-xs font-bold uppercase tracking-wider bg-crema-100 text-crema-800 px-3 py-1 rounded-full">Facial</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-gourmet-dark mb-2">Tratamientos Faciales Avanzados</h3>
+                        <p class="text-crema-800 text-sm mb-6">Limpiezas profundas, hidratación intensa, rejuvenecimiento y tratamientos adaptados a cada tipo de piel con productos de alta gama.</p>
+                    </div>
+                    <div class="pt-4 border-t border-crema-100 flex items-center justify-between">
+                        <span class="text-xs text-crema-800 italic">Consulta personalizada</span>
+                        <a href="tel:928774238" class="text-terracota-700 font-semibold text-sm hover:text-terracota-800 flex items-center gap-1">
+                            Reservar Mesa <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Categoría 2 -->
+                <div class="bg-white rounded-2xl p-6 shadow-md border border-crema-200 hover:shadow-xl transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-terracota-100 text-terracota-700 flex items-center justify-center text-xl group-hover:bg-terracota-700 group-hover:text-white transition-colors">
+                                <i class="fa-solid fa-hands-bubbles"></i>
+                            </div>
+                            <span class="text-xs font-bold uppercase tracking-wider bg-crema-100 text-crema-800 px-3 py-1 rounded-full">Corporal</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-gourmet-dark mb-2">Masajes y Bienestar Corporal</h3>
+                        <p class="text-crema-800 text-sm mb-6">Experiencias relajantes y remodeladoras diseñadas para liberar tensiones, mejorar la circulación y revitalizar tu energía vital.</p>
+                    </div>
+                    <div class="pt-4 border-t border-crema-100 flex items-center justify-between">
+                        <span class="text-xs text-crema-800 italic">Consulta personalizada</span>
+                        <a href="tel:928774238" class="text-terracota-700 font-semibold text-sm hover:text-terracota-800 flex items-center gap-1">
+                            Reservar Mesa <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Categoría 3 -->
+                <div class="bg-white rounded-2xl p-6 shadow-md border border-crema-200 hover:shadow-xl transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-terracota-100 text-terracota-700 flex items-center justify-center text-xl group-hover:bg-terracota-700 group-hover:text-white transition-colors">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            </div>
+                            <span class="text-xs font-bold uppercase tracking-wider bg-crema-100 text-crema-800 px-3 py-1 rounded-full">Especiales</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-gourmet-dark mb-2">Depilación y Estética Integral</h3>
+                        <p class="text-crema-800 text-sm mb-6">Servicios de depilación precisa, diseño de mirada, manicura y pedicura con acabados impecables y duraderos.</p>
+                    </div>
+                    <div class="pt-4 border-t border-crema-100 flex items-center justify-between">
+                        <span class="text-xs text-crema-800 italic">Consulta personalizada</span>
+                        <a href="tel:928774238" class="text-terracota-700 font-semibold text-sm hover:text-terracota-800 flex items-center gap-1">
+                            Reservar Mesa <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <a href="tel:928774238" class="inline-flex items-center gap-3 bg-terracota-700 hover:bg-terracota-800 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all shadow-md">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Reservar Mesa / Cita Previa</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Galería: Nuestras Instalaciones y Trabajos -->
+    <section id="instalaciones" class="py-20 bg-crema-100 border-y border-crema-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-terracota-700 font-semibold uppercase tracking-widest text-sm block">Galería Fotográfica</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-gourmet-dark">Nuestras Instalaciones y Trabajos</h2>
+                <p class="text-crema-800">Un espacio acogedor, limpio y diseñado exclusivamente para tu desconexión y cuidado personal en San Fernando.</p>
+                <div class="w-24 h-1 bg-terracota-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Imagen 1 (Real proporcionada) -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-lg aspect-[4/3] bg-crema-200">
+                    <img src="https://scontent-iad6-1.xx.fbcdn.net/v/t39.30808-1/238148372_255774496549932_6807674927626921399_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx270x270&amp;ctp=s270x270&amp;_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=QXCjml0YtUcQ7kNvwEo2IX0&amp;_nc_oc=AdqYswKzxvcOl982r3vuOmtVfUu5Qxzx07Kq1d0ikHyJE20JVtSs-QrNcdVxbaoVoWw&amp;_nc_zt=24&amp;_nc_ht=scontent-iad6-1.xx&amp;_nc_gid=r_1AxYtF6VCIhzAxhCPKew&amp;_nc_ss=7f289&amp;oh=00_AQMXQ88RnMMnQ3p81vvm1IA09d6I0ICvbzNVC0U36KvdVw&amp;oe=6AD71989" 
+                         alt="Centro Estética María Crespo Instalación 1" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet-dark/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <p class="text-white font-serif text-lg">Ambiente acogedor y profesional</p>
+                    </div>
+                </div>
+
+                <!-- Imagen 2 (Respaldo Infalible) -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-lg aspect-[4/3] bg-crema-200">
+                    <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80" 
+                         alt="Centro Estética María Crespo Instalación 2" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet-dark/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <p class="text-white font-serif text-lg">Cabinas equipadas y relajantes</p>
+                    </div>
+                </div>
+
+                <!-- Imagen 3 (Respaldo Infalible) -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-lg aspect-[4/3] bg-crema-200 sm:col-span-2 lg:col-span-1">
+                    <img src="https://images.unsplash.com/photo-1560750588-73f07b1fd58b?auto=format&fit=crop&w=1200&q=80" 
+                         alt="Centro Estética María Crespo Instalación 3" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet-dark/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <p class="text-white font-serif text-lg">Tratamientos personalizados</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Opiniones Reales Verificadas -->
+    <section id="opiniones" class="py-20 bg-crema-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-terracota-700 font-semibold uppercase tracking-widest text-sm block">Testimonios Reales</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-gourmet-dark">Lo que dicen nuestros clientes</h2>
+                <p class="text-crema-800">La satisfacción de quienes confían en nosotros es nuestra mejor carta de presentación.</p>
+                <div class="w-24 h-1 bg-terracota-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="max-w-2xl mx-auto">
+                <div class="bg-white rounded-3xl p-8 sm:p-10 shadow-lg border border-crema-200 relative">
+                    <div class="absolute -top-4 right-8 bg-terracota-700 text-white w-10 h-10 rounded-full flex items-center justify-center shadow-md">
+                        <i class="fa-solid fa-quote-right"></i>
+                    </div>
+                    <div class="flex items-center gap-1 text-amber-500 mb-6 text-xl">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="font-serif text-xl sm:text-2xl text-gourmet-dark italic mb-6 leading-relaxed">
+                        "Excelente trato, profesionalidad y calidad."
+                    </p>
+                    <div class="flex items-center justify-between border-t border-crema-100 pt-6">
+                        <div>
+                            <p class="font-bold text-gourmet-dark">Cliente Verificado de Google</p>
+                            <p class="text-xs text-crema-800">San Fernando, Las Palmas</p>
+                        </div>
+                        <div class="text-terracota-700 text-xs font-semibold bg-terracota-50 px-3 py-1 rounded-full border border-terracota-200">
+                            Reseña Oficial Google Maps
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Mapa Interactivo y Ubicación -->
+    <section id="contacto" class="py-20 bg-crema-100 border-t border-crema-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-terracota-700 font-semibold uppercase tracking-widest text-sm block">Visítanos</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-gourmet-dark">Ubicación y Contacto</h2>
+                <p class="text-crema-800">Encuéntranos en pleno corazón de San Fernando, San Bartolomé de Tirajana.</p>
+                <div class="w-24 h-1 bg-terracota-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Información de contacto -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="bg-white p-8 rounded-3xl shadow-lg border border-crema-200 space-y-6">
+                        <h3 class="font-serif text-2xl font-bold text-gourmet-dark border-b border-crema-100 pb-4">Centro Estética María Crespo</h3>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-terracota-100 text-terracota-700 flex items-center justify-center shrink-0 mt-1">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gourmet-dark text-sm uppercase">Dirección</h4>
+                                <p class="text-crema-800 text-sm mt-1">Local 09, C/ alcalde, C. José Yánez Matos, edificio don miguel, 35100 San Fernando, Las Palmas, España</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-terracota-100 text-terracota-700 flex items-center justify-center shrink-0 mt-1">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gourmet-dark text-sm uppercase">Teléfono</h4>
+                                <p class="text-crema-800 text-sm mt-1"><a href="tel:928774238" class="hover:text-terracota-700 font-semibold">928 77 42 38</a></p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-terracota-100 text-terracota-700 flex items-center justify-center shrink-0 mt-1">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gourmet-dark text-sm uppercase">Correo Electrónico</h4>
+                                <p class="text-crema-800 text-sm mt-1"><a href="mailto:esteticamariacrespo@gmail.com" class="hover:text-terracota-700 font-semibold">esteticamariacrespo@gmail.com</a></p>
+                            </div>
+                        </div>
+
+                        <div class="pt-4">
+                            <a href="tel:928774238" class="w-full bg-terracota-700 hover:bg-terracota-800 text-white py-3.5 rounded-xl font-semibold transition-all shadow-md flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-phone"></i>
+                                <span>Reservar Mesa</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mapa interactivo real -->
+                <div class="lg:col-span-7">
+                    <div class="bg-white p-3 rounded-3xl shadow-lg border border-crema-200">
+                        <iframe src="https://www.google.com/maps?q=Centro%20Est%C3%A9tica%20Mar%C3%ADa%20Crespo%20Local%2009%2C%20C%2F%20alcalde%2C%20C.%20Jos%C3%A9%20Y%C3%A1nez%20Matos%2C%20edificio%20don%20miguel%2C%2035100%20San%20Fernando%2C%20Las%20Palmas%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gourmet-dark text-crema-200 py-12 border-t border-gourmet-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center mb-8 pb-8 border-b border-crema-800">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-terracota-700 text-white flex items-center justify-center font-serif font-bold text-xl shadow-md">MC</div>
+                    <div>
+                        <span class="font-serif text-xl font-bold tracking-tight text-white block leading-none">Centro Estética María Crespo</span>
+                        <span class="text-xs uppercase tracking-widest text-gourmet-gold mt-1 block">San Fernando, Las Palmas</span>
+                    </div>
+                </div>
+                <div class="text-center text-sm text-crema-400">
+                    <p>Local 09, C/ alcalde, C. José Yánez Matos, edificio don miguel</p>
+                    <p class="mt-1">Teléfono: <a href="tel:928774238" class="text-white hover:text-gourmet-gold">928 77 42 38</a></p>
+                </div>
+                <div class="flex justify-md-end justify-center gap-4">
+                    <a href="tel:928774238" class="bg-terracota-600 hover:bg-terracota-700 text-white px-5 py-2.5 rounded-full font-semibold text-sm transition-all shadow flex items-center gap-2">
+                        <i class="fa-solid fa-phone"></i> Reservar Mesa
+                    </a>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row justify-between items-center text-xs text-crema-500 gap-4">
+                <p>&copy; <span id="year"></span> Centro Estética María Crespo. Todos los derechos reservados.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-gourmet-gold transition-colors">Aviso Legal</a>
+                    <a href="#" class="hover:text-gourmet-gold transition-colors">Política de Privacidad</a>
+                    <a href="#" class="hover:text-gourmet-gold transition-colors">Política de Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script para interactividad del menú móvil y año -->
+    <script>
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú al hacer clic en un enlace
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
