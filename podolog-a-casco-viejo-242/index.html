@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podología Casco Viejo | Clínica Podológica en Pamplona</title>
+    <meta name="description" content="Clínica podológica en el Casco Viejo de Pamplona. Cuidado integral del pie, quiropodias, estudios de la pisada y tratamientos profesionales con excelente trato y calidad.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        medical: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#14b8a6', // Turquesa / Verde agua médico
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            800: '#115e59',
+                            900: '#134e4a',
+                        },
+                        clinical: {
+                            blue: '#0284c7',
+                            light: '#f8fafc',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-clinical-light text-slate-700 font-sans antialiased selection:bg-medical-500 selection:text-white">
+
+    <!-- Top Bar de Contacto Rápido -->
+    <div class="bg-medical-900 text-white text-xs sm:text-sm py-2 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <span><i class="fa-solid fa-location-dot text-medical-500 mr-1.5"></i> C/ de San Francisco, 27, BAJO, 31001 Pamplona, Navarra</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="mailto:error-lite+84f2@duckduckgo.com" class="hover:text-medical-100 transition"><i class="fa-solid fa-envelope text-medical-500 mr-1.5"></i> error-lite+84f2@duckduckgo.com</a>
+                <a href="tel:948220510" class="hover:text-medical-100 transition font-semibold"><i class="fa-solid fa-phone text-medical-500 mr-1.5"></i> 948 22 05 10</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header / Navbar Principal -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-medical-500 flex items-center justify-center text-white text-xl shadow-md shadow-medical-500/20">
+                    <i class="fa-solid fa-notes-medical"></i>
+                </div>
+                <div>
+                    <span class="text-xl font-bold text-slate-800 tracking-tight block">Podología Casco Viejo</span>
+                    <span class="text-xs text-medical-700 font-medium tracking-wide">Clínica Podológica en Pamplona</span>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-600">
+                <a href="#inicio" class="hover:text-medical-600 transition">Inicio</a>
+                <a href="#tratamientos" class="hover:text-medical-600 transition">Tratamientos</a>
+                <a href="#instalaciones" class="hover:text-medical-600 transition">Instalaciones</a>
+                <a href="#opiniones" class="hover:text-medical-600 transition">Opiniones</a>
+                <a href="#contacto" class="hover:text-medical-600 transition">Ubicación</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="tel:948220510" class="hidden sm:inline-flex items-center justify-center bg-medical-500 hover:bg-medical-600 text-white font-medium text-sm px-5 py-2.5 rounded-xl shadow-lg shadow-medical-500/20 transition transform active:scale-95">
+                    <i class="fa-solid fa-phone-volume mr-2"></i> Pedir Cita Previa
+                </a>
+                <!-- Mobile menu button -->
+                <button id="menu-btn" class="md:hidden text-slate-700 focus:outline-none text-xl p-2">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 px-4 pt-2 pb-4 space-y-3">
+            <a href="#inicio" class="block py-2 text-slate-600 hover:text-medical-600 font-medium">Inicio</a>
+            <a href="#tratamientos" class="block py-2 text-slate-600 hover:text-medical-600 font-medium">Tratamientos</a>
+            <a href="#instalaciones" class="block py-2 text-slate-600 hover:text-medical-600 font-medium">Instalaciones</a>
+            <a href="#opiniones" class="block py-2 text-slate-600 hover:text-medical-600 font-medium">Opiniones</a>
+            <a href="#contacto" class="block py-2 text-slate-600 hover:text-medical-600 font-medium">Ubicación</a>
+            <a href="tel:948220510" class="w-full text-center block bg-medical-500 text-white font-medium py-3 rounded-xl shadow-md">
+                <i class="fa-solid fa-phone-volume mr-2"></i> Pedir Cita Previa
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative bg-gradient-to-b from-medical-50/50 to-white py-20 lg:py-28 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-medical-100 text-medical-800 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full">
+                        <i class="fa-solid fa-shield-heart text-medical-600"></i> Especialistas en la salud y cuidado de tus pies
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight leading-tight">
+                        Cuidamos cada paso de tu <span class="text-medical-600">bienestar</span>
+                    </h1>
+                    <p class="text-lg text-slate-600 max-w-xl mx-auto lg:mx-0">
+                        Ubicados en el corazón de Pamplona (Casco Viejo). Ofrecemos diagnóstico avanzado, atención profesional personalizada y soluciones eficaces para cualquier patología del pie.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="tel:948220510" class="w-full sm:w-auto inline-flex items-center justify-center bg-medical-500 hover:bg-medical-600 text-white font-semibold px-8 py-4 rounded-xl shadow-xl shadow-medical-500/25 transition transform hover:-translate-y-0.5">
+                            <i class="fa-solid fa-calendar-check mr-2.5 text-lg"></i> Pedir Cita Previa
+                        </a>
+                        <a href="#tratamientos" class="w-full sm:w-auto inline-flex items-center justify-center bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 font-semibold px-6 py-4 rounded-xl transition">
+                            Ver Tratamientos
+                        </a>
+                    </div>
+                    <div class="pt-6 border-t border-slate-200/80 flex items-center justify-center lg:justify-start gap-8 text-sm text-slate-500">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-star text-amber-400"></i>
+                            <span class="font-bold text-slate-700">Excelente</span> Trato y Calidad
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-medical-500"></i>
+                            <span class="font-bold text-slate-700">Profesionales</span> Cualificados
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="absolute -inset-2 bg-gradient-to-r from-medical-500 to-cyan-400 rounded-3xl blur-xl opacity-20 animate-pulse"></div>
+                        <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=1200&q=80" 
+                             alt="Clínica Podología Casco Viejo Pamplona" 
+                             class="relative rounded-2xl shadow-2xl w-full h-[420px] object-cover border-4 border-white"
+                             referrerpolicy="no-referrer" 
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80';">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Características / Por qué elegirnos -->
+    <section class="py-12 bg-white border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="flex items-start gap-4 p-4 rounded-2xl transition hover:bg-medical-50/50">
+                    <div class="w-12 h-12 rounded-xl bg-medical-100 text-medical-600 flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-user-doctor"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-800 text-lg mb-1">Máxima Profesionalidad</h3>
+                        <p class="text-sm text-slate-600">Especialistas con amplia trayectoria en el diagnóstico y tratamiento de afecciones del pie.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4 p-4 rounded-2xl transition hover:bg-medical-50/50">
+                    <div class="w-12 h-12 rounded-xl bg-medical-100 text-medical-600 flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-800 text-lg mb-1">Trato Cercano y Humano</h3>
+                        <p class="text-sm text-slate-600">Atención personalizada y orientada al confort del paciente desde el primer momento.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4 p-4 rounded-2xl transition hover:bg-medical-50/50">
+                    <div class="w-12 h-12 rounded-xl bg-medical-100 text-medical-600 flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-location-crosshairs"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-800 text-lg mb-1">Ubicación Céntrica</h3>
+                        <p class="text-sm text-slate-600">Situados en el Casco Viejo de Pamplona (C/ de San Francisco), de fácil acceso.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Tratamientos y Especialidades -->
+    <section id="tratamientos" class="py-20 bg-clinical-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-medical-600 font-semibold text-sm tracking-wider uppercase bg-medical-100 px-3 py-1 rounded-full">Nuestros Servicios</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-3 mb-4">Especialidades y Tratamientos Podológicos</h2>
+                <p class="text-slate-600">Cuidamos de tus pies de forma integral con tecnología avanzada y protocolos clínicos seguros.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Tarjeta 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-md transition group">
+                    <div class="w-14 h-14 rounded-2xl bg-medical-50 text-medical-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-medical-500 group-hover:text-white transition">
+                        <i class="fa-solid fa-hand-holding-medical"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Quiropodias</h3>
+                    <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                        Eliminación indolora de durezas, callosidades y hiperqueratosis. Corte y fresado terapéutico de uñas para garantizar la salud cutánea plantar.
+                    </p>
+                    <a href="tel:948220510" class="inline-flex items-center text-medical-600 font-semibold text-sm hover:text-medical-700">
+                        Pedir Cita Previa <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Tarjeta 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-md transition group">
+                    <div class="w-14 h-14 rounded-2xl bg-medical-50 text-medical-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-medical-500 group-hover:text-white transition">
+                        <i class="fa-solid fa-shoe-prints"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Estudio Biomecánico de la Pisada</h3>
+                    <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                        Análisis completo de la marcha y la postura para detectar anomalías y prevenir lesiones musculares, de rodilla o columna.
+                    </p>
+                    <a href="tel:948220510" class="inline-flex items-center text-medical-600 font-semibold text-sm hover:text-medical-700">
+                        Pedir Cita Previa <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Tarjeta 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-md transition group">
+                    <div class="w-14 h-14 rounded-2xl bg-medical-50 text-medical-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-medical-500 group-hover:text-white transition">
+                        <i class="fa-solid fa-bandage"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Ortopodología y Plantillas</h3>
+                    <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                        Diseño y fabricación de soportes plantares personalizados adaptados a las necesidades específicas de tu pie y calzado habitual.
+                    </p>
+                    <a href="tel:948220510" class="inline-flex items-center text-medical-600 font-semibold text-sm hover:text-medical-700">
+                        Pedir Cita Previa <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Tarjeta 4 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-md transition group">
+                    <div class="w-14 h-14 rounded-2xl bg-medical-50 text-medical-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-medical-500 group-hover:text-white transition">
+                        <i class="fa-solid fa-child"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Podología Infantil</h3>
+                    <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                        Revisión del desarrollo de la pisada en los más pequeños para corregir a tiempo posibles desviaciones y asegurar un crecimiento óptimo.
+                    </p>
+                    <a href="tel:948220510" class="inline-flex items-center text-medical-600 font-semibold text-sm hover:text-medical-700">
+                        Pedir Cita Previa <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Tarjeta 5 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-md transition group">
+                    <div class="w-14 h-14 rounded-2xl bg-medical-50 text-medical-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-medical-500 group-hover:text-white transition">
+                        <i class="fa-solid fa-user-nurse"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Pie Diabético</h3>
+                    <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                        Protocolos específicos de prevención, cura y seguimiento clínico para pacientes con diabetes, evitando complicaciones graves.
+                    </p>
+                    <a href="tel:948220510" class="inline-flex items-center text-medical-600 font-semibold text-sm hover:text-medical-700">
+                        Pedir Cita Previa <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Tarjeta 6 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-md transition group">
+                    <div class="w-14 h-14 rounded-2xl bg-medical-50 text-medical-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-medical-500 group-hover:text-white transition">
+                        <i class="fa-solid fa-hospital-user"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Cirugía Podológica</h3>
+                    <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                        Intervenciones menores ambulatorias para patologías como uñas encarnadas, papilomas o juanetes (cirugía mínima incisión).
+                    </p>
+                    <a href="tel:948220510" class="inline-flex items-center text-medical-600 font-semibold text-sm hover:text-medical-700">
+                        Pedir Cita Previa <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería / Nuestras Instalaciones y Trabajos -->
+    <section id="instalaciones" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-medical-600 font-semibold text-sm tracking-wider uppercase bg-medical-100 px-3 py-1 rounded-full">Espacio Clínico</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-3 mb-4">Nuestras Instalaciones y Clínica</h2>
+                <p class="text-slate-600">Un entorno moderno, esterilizado y diseñado para ofrecer la máxima comodidad y seguridad a nuestros pacientes.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="relative overflow-hidden rounded-2xl shadow-md group h-72">
+                    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80" 
+                         alt="Instalaciones Podología Casco Viejo" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent flex items-end p-6">
+                        <span class="text-white font-medium text-lg">Sala de Consulta</span>
+                    </div>
+                </div>
+
+                <div class="relative overflow-hidden rounded-2xl shadow-md group h-72">
+                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80" 
+                         alt="Equipamiento Podología" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent flex items-end p-6">
+                        <span class="text-white font-medium text-lg">Tecnología y Diagnóstico</span>
+                    </div>
+                </div>
+
+                <div class="relative overflow-hidden rounded-2xl shadow-md group h-72">
+                    <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80" 
+                         alt="Recepción Clínica Pamplona" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent flex items-end p-6">
+                        <span class="text-white font-medium text-lg">Área de Bienvenida</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Opiniones Reales Verificadas -->
+    <section id="opiniones" class="py-20 bg-medical-50/40 border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-medical-600 font-semibold text-sm tracking-wider uppercase bg-medical-100 px-3 py-1 rounded-full">Testimonios</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-3 mb-4">Lo que dicen nuestros pacientes</h2>
+                <p class="text-slate-600">La satisfacción de quienes confían en nosotros es nuestro mejor aval profesional.</p>
+            </div>
+
+            <div class="max-w-xl mx-auto">
+                <div class="bg-white rounded-3xl p-8 sm:p-10 shadow-lg border border-slate-100 relative">
+                    <div class="absolute top-6 right-8 text-medical-200 text-6{-}xl font-serif">
+                        <i class="fa-solid fa-quote-right opacity-40"></i>
+                    </div>
+                    <div class="flex items-center gap-1 text-amber-400 text-lg mb-4">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-700 text-lg italic mb-6 leading-relaxed">
+                        "Excelente trato, profesionalidad y calidad."
+                    </p>
+                    <div class="flex items-center gap-4 pt-4 border-t border-slate-100">
+                        <div class="w-12 h-12 rounded-full bg-medical-500 text-white font-bold flex items-center justify-center text-lg">
+                            P
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">Paciente Verificado</h4>
+                            <span class="text-xs text-slate-500">Google Maps Reviews</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Ubicación y Contacto -->
+    <section id="contacto" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-medical-600 font-semibold text-sm tracking-wider uppercase bg-medical-100 px-3 py-1 rounded-full">Encuéntranos</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-3 mb-4">Visita Nuestra Clínica en Pamplona</h2>
+                <p class="text-slate-600">Estamos a tu disposición en el Casco Viejo. Pide tu cita previa por teléfono para una atención rápida y sin esperas.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+                <!-- Información de contacto -->
+                <div class="bg-slate-900 text-white rounded-3xl p-8 space-y-8 shadow-xl">
+                    <h3 class="text-2xl font-bold">Información de Contacto</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-medical-500/20 text-medical-400 flex items-center justify-center text-lg shrink-0 mt-1">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-200">Dirección</h4>
+                                <p class="text-slate-400 text-sm mt-1">C/ de San Francisco, 27, BAJO<br>31001 Pamplona, Navarra, España</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-medical-500/20 text-medical-400 flex items-center justify-center text-lg shrink-0 mt-1">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-200">Teléfono</h4>
+                                <p class="text-slate-400 text-sm mt-1"><a href="tel:948220510" class="hover:text-medical-400 transition">948 22 05 10</a></p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-medical-500/20 text-medical-400 flex items-center justify-center text-lg shrink-0 mt-1">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-200">Correo Electrónico</h4>
+                                <p class="text-slate-400 text-sm mt-1"><a href="mailto:error-lite+84f2@duckduckgo.com" class="hover:text-medical-400 transition">error-lite+84f2@duckduckgo.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="tel:948220510" class="w-full inline-flex items-center justify-center bg-medical-500 hover:bg-medical-600 text-white font-semibold py-4 rounded-xl shadow-lg transition">
+                            <i class="fa-solid fa-phone-volume mr-2"></i> Pedir Cita Previa
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mapa Interactivo Real -->
+                <div class="lg:col-span-2 bg-slate-100 p-3 rounded-3xl shadow-sm border border-slate-200">
+                    <iframe src="https://www.google.com/maps?q=Podolog%C3%ADa%20Casco%20Viejo%20C%2F%20de%20San%20Francisco%2C%2027%2C%20BAJO%2C%2031001%20Pamplona%2C%20Navarra%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-medical-500 flex items-center justify-center text-white text-sm">
+                        <i class="fa-solid fa-notes-medical"></i>
+                    </div>
+                    <span class="text-white font-bold text-lg">Podología Casco Viejo</span>
+                </div>
+                <div class="text-sm text-center md:text-right">
+                    <p>&copy; <span id="current-year"></span> Podología Casco Viejo. Todos los derechos reservados.</p>
+                    <p class="text-xs text-slate-500 mt-1">Clínica Podológica autorizada en Pamplona, Navarra.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script de interactividad básica -->
+    <script>
+        // Actualizar año automáticamente
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Toggle menú móvil
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú al hacer click en enlaces
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
