@@ -1,262 +1,323 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audioptica Fuentes | Salud Visual y Auditiva en Cortes</title>
-    <meta name="description" content="Audioptica Fuentes - Boutique de salud visual y auditiva en Cortes, Navarra. Atención personalizada por Santiago Fuentes.">
+    <title>Audioptica Fuentes | Boutique de Salud Visual y Auditiva en Cortes</title>
+    <meta name="description" content="Audioptica Fuentes en Cortes, Navarra. Expertos en salud visual y auditiva con atención personalizada por Santiago. Reserva tu cita hoy.">
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'matte-black': '#1a1a1a',
-                        'gold-soft': '#c5a059',
-                        'gold-dark': '#a38445',
-                        'sand-beige': '#f5f5f0',
+                        matteBlack: '#121212',
+                        goldSoft: '#C5A059',
+                        goldDeep: '#A68948',
+                        sandBeige: '#F5F5F0',
                     },
                     fontFamily: {
-                        'serif': ['Playfair Display', 'serif'],
-                        'sans': ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
-        .gold-gradient {
-            background: linear-gradient(135deg, #c5a059 0%, #f5f5f0 50%, #a38445 100%);
-        }
-        .hero-overlay {
-            background: rgba(0, 0, 0, 0.4);
-        }
-        .card-hover:hover {
-            transform: translateY(-10px);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+        body { font-family: 'Montserrat', sans-serif; background-color: #FAF9F6; color: #121212; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        .gold-gradient { background: linear-gradient(135deg, #C5A059 0%, #A68948 100%); }
+        .hero-overlay { background: rgba(0, 0, 0, 0.6); }
+        .transition-boutique { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .card-hover:hover { transform: translateY(-10px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
     </style>
 </head>
-<body class="bg-white text-matte-black font-sans leading-relaxed">
+<body class="antialiased">
 
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-sand-beige">
+    <!-- Header -->
+    <header class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
+            <div class="flex justify-between items-center h-20">
                 <div class="flex-shrink-0 flex items-center">
-                    <span class="font-serif text-2xl font-bold tracking-tighter text-matte-black">
-                        AUDIOPTICA <span class="text-gold-soft italic">FUENTES</span>
+                    <span class="text-2xl font-serif font-bold tracking-tighter text-matteBlack">
+                        AUDIOPTICA <span class="text-goldSoft">FUENTES</span>
                     </span>
                 </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#inicio" class="hover:text-gold-soft transition-colors font-medium">Inicio</a>
-                        <a href="#servicios" class="hover:text-gold-soft transition-colors font-medium">Servicios</a>
-                        <a href="#galeria" class="hover:text-gold-soft transition-colors font-medium">Instalaciones</a>
-                        <a href="#opiniones" class="hover:text-gold-soft transition-colors font-medium">Opiniones</a>
-                        <a href="tel:948800725" class="bg-matte-black text-white px-6 py-2 rounded-full font-semibold hover:bg-gold-soft transition-all duration-300">Reservar Cita</a>
-                    </div>
-                </div>
-                <div class="md:hidden">
-                    <a href="tel:948800725" class="text-gold-soft text-2xl"><i class="fas fa-phone"></i></a>
+                <nav class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest">
+                    <a href="#inicio" class="hover:text-goldSoft transition-colors">Inicio</a>
+                    <a href="#servicios" class="hover:text-goldSoft transition-colors">Servicios</a>
+                    <a href="#nosotros" class="hover:text-goldSoft transition-colors">La Boutique</a>
+                    <a href="#contacto" class="hover:text-goldSoft transition-colors">Contacto</a>
+                </nav>
+                <div>
+                    <a href="tel:948800725" class="inline-flex items-center px-6 py-3 border border-transparent text-sm font-medium uppercase tracking-widest text-white bg-matteBlack hover:bg-goldDeep transition-boutique">
+                        Reservar Cita
+                    </a>
                 </div>
             </div>
         </div>
-    </nav>
+    </header>
 
     <!-- Hero Section -->
     <section id="inicio" class="relative h-screen flex items-center justify-center overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1511732351157-1865ef67b3f2?auto=format&fit=crop&w=1920&q=80" 
-             referrerpolicy="no-referrer" 
-             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" 
-             class="absolute w-full h-full object-cover" alt="Audioptica Fuentes Interior">
-        <div class="absolute inset-0 bg-black/40"></div>
+        <img src="https://images.unsplash.com/photo-1511732351157-187343e06f8b?auto=format&fit=crop&w=1920&q=80" 
+             alt="Audioptica Fuentes Hero" 
+             class="absolute inset-0 w-full h-full object-cover"
+             referrerpolicy="no-referrer"
+             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+        <div class="absolute inset-0 hero-overlay"></div>
         <div class="relative z-10 text-center px-4 max-w-4xl">
-            <h1 class="text-5xl md:text-7xl font-serif text-white mb-6">Excelencia en Salud <span class="italic text-gold-soft">Visual y Auditiva</span></h1>
-            <p class="text-xl text-white/90 mb-10 font-light tracking-wide">Boutique exclusiva en Cortes. Tecnología de vanguardia y atención personalizada para tus sentidos.</p>
+            <span class="text-goldSoft uppercase tracking-[0.3em] text-sm mb-4 block font-semibold">Excelencia Visual y Auditiva</span>
+            <h1 class="text-5xl md:text-7xl text-white font-bold mb-6 leading-tight">Cuidamos tu mirada, <br><span class="italic font-normal">atendemos tu silencio.</span></h1>
+            <p class="text-gray-200 text-lg md:text-xl mb-10 font-light max-w-2xl mx-auto">
+                Boutique exclusiva en Cortes. Tecnología de vanguardia y el asesoramiento experto de Santiago para tu bienestar.
+            </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="tel:948800725" class="bg-gold-soft hover:bg-gold-dark text-white px-10 py-4 rounded-full text-lg font-bold transition-all transform hover:scale-105 shadow-xl">
+                <a href="tel:948800725" class="px-10 py-4 gold-gradient text-white font-bold uppercase tracking-widest hover:scale-105 transition-boutique shadow-xl">
                     Reservar Cita
                 </a>
-                <a href="#servicios" class="bg-white/10 backdrop-blur-md border border-white/30 text-white px-10 py-4 rounded-full text-lg font-bold hover:bg-white/20 transition-all">
-                    Nuestros Servicios
+                <a href="#servicios" class="px-10 py-4 bg-white/10 backdrop-blur-md border border-white/30 text-white font-bold uppercase tracking-widest hover:bg-white hover:text-matteBlack transition-boutique">
+                    Ver Servicios
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="servicios" class="py-24 bg-sand-beige">
+    <!-- Stats/Intro -->
+    <section class="py-16 bg-sandBeige border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div>
+                <i class="fa-solid fa-eye text-3xl text-goldSoft mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Óptica de Precisión</h3>
+                <p class="text-gray-600 text-sm">Exámenes visuales completos con tecnología digital.</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-ear-listen text-3xl text-goldSoft mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Audiología Avanzada</h3>
+                <p class="text-gray-600 text-sm">Soluciones auditivas invisibles y personalizadas.</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-certificate text-3xl text-goldSoft mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Atención de Autor</h3>
+                <p class="text-gray-600 text-sm">El compromiso y disposición absoluta de Santiago.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios Section -->
+    <section id="servicios" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-serif mb-4">Servicios Especializados</h2>
-                <div class="w-24 h-1 bg-gold-soft mx-auto mb-6"></div>
-                <p class="text-gray-600 max-w-2xl mx-auto italic">"La atención y disposición de Santiago es absoluta para garantizar tu bienestar."</p>
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-bold text-matteBlack mb-4">Nuestras Especialidades</h2>
+                <div class="w-24 h-1 gold-gradient mx-auto mb-6"></div>
+                <p class="text-gray-500 max-w-2xl mx-auto uppercase tracking-widest text-xs">Servicios de salud boutique en Navarra</p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="bg-white p-10 rounded-2xl shadow-sm card-hover border border-gray-100">
-                    <div class="w-16 h-16 bg-sand-beige rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-eye text-gold-soft text-2xl"></i>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Servicio 1 -->
+                <div class="bg-sandBeige p-8 rounded-sm border border-gray-100 transition-boutique card-hover">
+                    <div class="w-12 h-12 bg-matteBlack text-white flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-glasses"></i>
                     </div>
-                    <h3 class="text-2xl font-serif mb-4">Optometría Avanzada</h3>
-                    <ul class="text-gray-600 space-y-2 mb-6">
-                        <li><i class="fas fa-check text-gold-soft mr-2"></i>Examen visual completo</li>
-                        <li><i class="fas fa-check text-gold-soft mr-2"></i>Tensión ocular</li>
-                        <li><i class="fas fa-check text-gold-soft mr-2"></i>Adaptación de lentes de contacto</li>
-                    </ul>
-                    <p class="font-bold text-gold-dark">Desde 0€ con tu compra</p>
+                    <h3 class="text-xl font-bold mb-4">Graduación de la Vista</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6">Estudio optométrico integral para detectar miopía, astigmatismo y presbicia con la máxima exactitud.</p>
+                    <span class="text-goldSoft font-bold italic">Desde 0€ con compra</span>
                 </div>
 
-                <!-- Service 2 -->
-                <div class="bg-matte-black p-10 rounded-2xl shadow-xl card-hover text-white">
-                    <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-ear-listen text-gold-soft text-2xl"></i>
+                <!-- Servicio 2 -->
+                <div class="bg-matteBlack p-8 rounded-sm text-white transition-boutique card-hover">
+                    <div class="w-12 h-12 bg-goldSoft text-matteBlack flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-ear-deaf"></i>
                     </div>
-                    <h3 class="text-2xl font-serif mb-4">Gabinete Audiológico</h3>
-                    <ul class="text-gray-300 space-y-2 mb-6">
-                        <li><i class="fas fa-check text-gold-soft mr-2"></i>Audiometrías digitales</li>
-                        <li><i class="fas fa-check text-gold-soft mr-2"></i>Audífonos de última generación</li>
-                        <li><i class="fas fa-check text-gold-soft mr-2"></i>Tapones a medida</li>
-                    </ul>
-                    <p class="font-bold text-gold-soft">Atención Profesional Paciente</p>
+                    <h3 class="text-xl font-bold mb-4">Audiología Digital</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-6">Audiometrías clínicas y adaptación de audífonos de última generación discretos y potentes.</p>
+                    <span class="text-goldSoft font-bold italic">Prueba gratuita</span>
                 </div>
 
-                <!-- Service 3 -->
-                <div class="bg-white p-10 rounded-2xl shadow-sm card-hover border border-gray-100">
-                    <div class="w-16 h-16 bg-sand-beige rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-glasses text-gold-soft text-2xl"></i>
+                <!-- Servicio 3 -->
+                <div class="bg-sandBeige p-8 rounded-sm border border-gray-100 transition-boutique card-hover">
+                    <div class="w-12 h-12 bg-matteBlack text-white flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-eye-dropper"></i>
                     </div>
-                    <h3 class="text-2xl font-serif mb-4">Moda y Estética</h3>
-                    <ul class="text-gray-600 space-y-2 mb-6">
-                        <li><i class="fas fa-check text-gold-soft mr-2"></i>Monturas de diseño exclusivo</li>
-                        <li><i class="fas fa-check text-gold-soft mr-2"></i>Asesoramiento de imagen</li>
-                        <li><i class="fas fa-check text-gold-soft mr-2"></i>Gafas de sol de alta gama</li>
-                    </ul>
-                    <p class="font-bold text-gold-dark">Calidad/Precio Excelente</p>
+                    <h3 class="text-xl font-bold mb-4">Contactología</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6">Adaptación de lentes de contacto diarias, mensuales y especiales para ojos sensibles.</p>
+                    <span class="text-goldSoft font-bold italic">Asesoramiento experto</span>
+                </div>
+
+                <!-- Servicio 4 -->
+                <div class="bg-sandBeige p-8 rounded-sm border border-gray-100 transition-boutique card-hover">
+                    <div class="w-12 h-12 bg-matteBlack text-white flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-gem"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Monturas de Diseño</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6">Selección exclusiva de marcas internacionales y diseños de vanguardia para tu rostro.</p>
+                    <span class="text-goldSoft font-bold italic">Calidad Premium</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section id="galeria" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-serif text-center mb-16">Nuestras Instalaciones y Trabajos</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="aspect-square overflow-hidden rounded-xl">
-                    <img src="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=600&q=80" 
-                         referrerpolicy="no-referrer" 
-                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" 
-                         class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" alt="Exposición de gafas">
-                </div>
-                <div class="aspect-square overflow-hidden rounded-xl">
-                    <img src="https://images.unsplash.com/photo-1516062423079-7ca13cdc7f5a?auto=format&fit=crop&w=600&q=80" 
-                         referrerpolicy="no-referrer" 
-                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" 
-                         class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" alt="Gabinete óptico">
-                </div>
-                <div class="aspect-square overflow-hidden rounded-xl">
-                    <img src="https://images.unsplash.com/photo-1582142839970-2b9e04b60f25?auto=format&fit=crop&w=600&q=80" 
-                         referrerpolicy="no-referrer" 
-                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" 
-                         class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" alt="Audífonos">
-                </div>
-                <div class="aspect-square overflow-hidden rounded-xl">
-                    <img src="https://images.unsplash.com/photo-1505410603994-c3ac6269711f?auto=format&fit=crop&w=600&q=80" 
-                         referrerpolicy="no-referrer" 
-                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" 
-                         class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" alt="Atención al cliente">
-                </div>
+    <!-- Galería "Nuestras Instalaciones" -->
+    <section id="nosotros" class="py-24 bg-matteBlack text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 mb-16 flex flex-col md:flex-row justify-between items-end">
+            <div>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Nuestras Instalaciones</h2>
+                <p class="text-goldSoft uppercase tracking-widest text-sm">Un espacio diseñado para tu bienestar en Cortes</p>
+            </div>
+            <a href="tel:948800725" class="mt-8 md:mt-0 text-white border-b-2 border-goldSoft pb-2 hover:text-goldSoft transition-colors uppercase tracking-widest text-sm font-bold">
+                Visítanos hoy mismo
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 px-4">
+            <div class="h-80 overflow-hidden group">
+                <img src="https://images.unsplash.com/photo-1505424297051-c3ad50b055ae?auto=format&fit=crop&w=800&q=80" 
+                     alt="Instalaciones 1" class="w-full h-full object-cover group-hover:scale-110 transition-duration-700 transition-boutique"
+                     referrerpolicy="no-referrer"
+                     onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+            </div>
+            <div class="h-80 overflow-hidden group">
+                <img src="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=800&q=80" 
+                     alt="Instalaciones 2" class="w-full h-full object-cover group-hover:scale-110 transition-duration-700 transition-boutique"
+                     referrerpolicy="no-referrer"
+                     onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+            </div>
+            <div class="h-80 overflow-hidden group">
+                <img src="https://images.unsplash.com/photo-1516062423079-7ca13cdc7f5a?auto=format&fit=crop&w=800&q=80" 
+                     alt="Instalaciones 3" class="w-full h-full object-cover group-hover:scale-110 transition-duration-700 transition-boutique"
+                     referrerpolicy="no-referrer"
+                     onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
             </div>
         </div>
     </section>
 
-    <!-- Reviews Section -->
-    <section id="opiniones" class="py-24 bg-matte-black text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-serif text-center mb-16 text-gold-soft">Opiniones Verificadas</h2>
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="bg-white/5 p-8 rounded-2xl border border-white/10 italic">
-                    <div class="flex text-gold-soft mb-4">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-lg mb-6 leading-relaxed">"Excelente calidad/precio. La atención y disposición de Santiago es absoluta."</p>
-                    <p class="font-sans font-bold text-gold-soft">— Gonzalo Garafulla</p>
-                </div>
-                <div class="bg-white/5 p-8 rounded-2xl border border-white/10 italic">
-                    <div class="flex text-gold-soft mb-4">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-lg mb-6 leading-relaxed">"Magnifico profesional. Atención paciente y amable."</p>
-                    <p class="font-sans font-bold text-gold-soft">— María Carabantes</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact & Map Section -->
+    <!-- Testimonios -->
     <section class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-16 items-center">
-                <div>
-                    <h2 class="text-4xl font-serif mb-8 text-matte-black">Dónde Encontrarnos</h2>
-                    <div class="space-y-6 mb-10">
-                        <div class="flex items-start">
-                            <div class="w-12 h-12 bg-sand-beige rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-location-dot text-gold-soft"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="font-bold">Dirección</h4>
-                                <p class="text-gray-600">C. Cervantes, 46, 31530 Cortes, Navarra, España</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="w-12 h-12 bg-sand-beige rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-phone text-gold-soft"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="font-bold">Teléfono</h4>
-                                <a href="tel:948800725" class="text-gray-600 hover:text-gold-soft transition-colors">948 800 725</a>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="w-12 h-12 bg-sand-beige rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-envelope text-gold-soft"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="font-bold">Email</h4>
-                                <a href="mailto:u0022@gmail.com" class="text-gray-600 hover:text-gold-soft transition-colors">u0022@gmail.com</a>
-                            </div>
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 italic">La confianza de nuestros clientes</h2>
+                <div class="flex justify-center text-goldSoft gap-1 mb-4">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Reseña 1 -->
+                <div class="bg-sandBeige p-10 relative">
+                    <i class="fa-solid fa-quote-left absolute top-6 left-6 text-goldSoft/20 text-5xl"></i>
+                    <p class="text-gray-700 text-lg italic mb-8 relative z-10">
+                        "Excelente calidad/precio. La atención y disposición de Santiago es absoluta."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-goldSoft rounded-full flex items-center justify-center text-white font-bold mr-4">G</div>
+                        <div>
+                            <h4 class="font-bold text-matteBlack">Gonzalo Garafulla</h4>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest">Cliente Verificado</p>
                         </div>
                     </div>
-                    <a href="tel:948800725" class="inline-block bg-matte-black text-white px-10 py-4 rounded-full text-lg font-bold hover:bg-gold-soft transition-all shadow-lg">
-                        Reservar Cita Ahora
-                    </a>
                 </div>
-                <div class="shadow-2xl rounded-2xl overflow-hidden border-8 border-sand-beige">
-                    <iframe src="https://www.google.com/maps?q=Audioptica%20Fuentes%20C.%20Cervantes%2C%2046%2C%2031530%20Cortes%2C%20Navarra%2C%20Espa%C3%B1a&output=embed" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+                <!-- Reseña 2 -->
+                <div class="bg-sandBeige p-10 relative">
+                    <i class="fa-solid fa-quote-left absolute top-6 left-6 text-goldSoft/20 text-5xl"></i>
+                    <p class="text-gray-700 text-lg italic mb-8 relative z-10">
+                        "Magnifico profesional. Atención paciente y amable."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-goldSoft rounded-full flex items-center justify-center text-white font-bold mr-4">M</div>
+                        <div>
+                            <h4 class="font-bold text-matteBlack">María Carabantes</h4>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest">Cliente Verificada</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto & Mapa -->
+    <section id="contacto" class="py-24 bg-sandBeige">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="bg-white shadow-2xl overflow-hidden rounded-sm">
+                <div class="grid grid-cols-1 lg:grid-cols-2">
+                    <div class="p-12 md:p-20">
+                        <h2 class="text-4xl font-bold mb-8">Contacto Directo</h2>
+                        <div class="space-y-8">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 text-goldSoft text-2xl mt-1">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div class="ml-6">
+                                    <h4 class="text-sm font-bold uppercase tracking-widest text-gray-400 mb-1">Ubicación</h4>
+                                    <p class="text-lg text-matteBlack">C. Cervantes, 46, 31530 Cortes, Navarra, España</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 text-goldSoft text-2xl mt-1">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div class="ml-6">
+                                    <h4 class="text-sm font-bold uppercase tracking-widest text-gray-400 mb-1">Teléfono</h4>
+                                    <a href="tel:948800725" class="text-2xl font-bold text-matteBlack hover:text-goldSoft transition-colors">948 800 725</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 text-goldSoft text-2xl mt-1">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div class="ml-6">
+                                    <h4 class="text-sm font-bold uppercase tracking-widest text-gray-400 mb-1">Email</h4>
+                                    <p class="text-lg text-matteBlack">u0022@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-12">
+                            <a href="tel:948800725" class="inline-block w-full text-center py-5 gold-gradient text-white font-bold uppercase tracking-[0.2em] hover:brightness-110 transition-boutique shadow-lg">
+                                Reservar Cita Ahora
+                            </a>
+                        </div>
+                    </div>
+                    <div class="h-[400px] lg:h-auto min-h-[500px]">
+                        <iframe src="https://www.google.com/maps?q=Audioptica%20Fuentes%20C.%20Cervantes%2C%2046%2C%2031530%20Cortes%2C%20Navarra%2C%20Espa%C3%B1a&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-sand-beige py-12 border-t border-gray-200">
+    <footer class="bg-matteBlack text-white py-12 border-t border-white/10">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <div class="font-serif text-2xl font-bold mb-6">
-                AUDIOPTICA <span class="text-gold-soft italic">FUENTES</span>
+            <div class="text-2xl font-serif font-bold tracking-tighter mb-6">
+                AUDIOPTICA <span class="text-goldSoft">FUENTES</span>
             </div>
-            <p class="text-gray-500 text-sm mb-8">© 2024 Audioptica Fuentes - Cortes, Navarra. Todos los derechos reservados.</p>
-            <div class="flex justify-center space-x-6 text-gray-400">
-                <a href="#" class="hover:text-gold-soft transition-colors"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="hover:text-gold-soft transition-colors"><i class="fab fa-facebook-f"></i></a>
+            <p class="text-gray-500 text-sm max-w-md mx-auto mb-8">
+                Excelencia en salud visual y auditiva. Atención personalizada en Cortes, Navarra.
+            </p>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" class="text-gray-400 hover:text-goldSoft"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="text-gray-400 hover:text-goldSoft"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <div class="border-t border-white/5 pt-8 text-xs text-gray-600 uppercase tracking-widest">
+                &copy; 2023 Audioptica Fuentes. Todos los derechos reservados. | <a href="#" class="hover:text-white">Aviso Legal</a>
             </div>
         </div>
     </footer>
+
+    <!-- Floating Action Button Mobile -->
+    <a href="tel:948800725" class="md:hidden fixed bottom-6 right-6 w-16 h-16 gold-gradient rounded-full flex items-center justify-center text-white shadow-2xl z-50 animate-bounce">
+        <i class="fa-solid fa-phone text-2xl"></i>
+    </a>
 
 </body>
 </html>
