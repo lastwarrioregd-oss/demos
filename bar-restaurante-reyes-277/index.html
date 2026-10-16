@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bar Restaurante Reyes | Moclinejo, Málaga</title>
-    <!-- TailwindCSS v3 CDN -->
+    
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -13,21 +14,22 @@
                     colors: {
                         terracota: {
                             50: '#fdf8f6',
-                            100: '#fbe8e1',
+                            100: '#fbe8e3',
                             500: '#c85a32',
                             600: '#b04a25',
-                            700: '#933c1d',
-                            900: '#5c230e',
+                            700: '#943c1d',
+                            900: '#73301a',
                         },
                         crema: {
-                            50: '#fefefe',
-                            100: '#fcfbfa',
-                            200: '#f7f4f0',
-                            300: '#eee7de',
+                            50: '#fffdf9',
+                            100: '#fcf7f0',
+                            200: '#f5ebe0',
+                            800: '#5c534a',
+                            900: '#2b2621',
                         },
                         gourmet: {
-                            dark: '#1a1818',
-                            card: '#242121'
+                            dark: '#1a1816',
+                            card: '#24211e'
                         }
                     },
                     fontFamily: {
@@ -38,342 +40,544 @@
             }
         }
     </script>
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        .hero-overlay {
-            background: linear-gradient(to bottom, rgba(26,24,24,0.7), rgba(26,24,24,0.9));
-        }
-    </style>
 </head>
-<body class="bg-gourmet-dark text-crema-200 font-sans antialiased selection:bg-terracota-500 selection:text-white">
+<body class="bg-crema-50 text-crema-900 font-sans antialiased selection:bg-terracota-500 selection:text-white">
 
-    <!-- Header / Navbar -->
-    <header class="fixed top-0 left-0 w-full z-50 bg-gourmet-dark/90 backdrop-blur-md border-b border-white/10">
+    <!-- Header & Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-gourmet-dark/90 backdrop-blur-md border-b border-white/15 text-white transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-terracota-500 flex items-center justify-center text-white font-serif font-bold text-xl">R</div>
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full bg-terracota-500 flex items-center justify-center text-white shadow-lg group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-utensils"></i>
+                </div>
                 <div>
-                    <span class="font-serif text-xl font-bold tracking-wider text-white block">RESTAURANTE REYES</span>
-                    <span class="text-xs text-terracota-500 tracking-widest uppercase">Moclinejo, Málaga</span>
+                    <span class="font-serif text-xl sm:text-2xl font-bold tracking-wide">Restaurante Reyes</span>
+                    <span class="block text-[10px] uppercase tracking-widest text-terracota-500 font-semibold">Moclinejo, Málaga</span>
                 </div>
             </a>
-            
+
             <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
                 <a href="#carta" class="hover:text-terracota-500 transition-colors">Nuestra Carta</a>
+                <a href="#especialidades" class="hover:text-terracota-500 transition-colors">Especialidades</a>
                 <a href="#instalaciones" class="hover:text-terracota-500 transition-colors">Instalaciones</a>
                 <a href="#opiniones" class="hover:text-terracota-500 transition-colors">Opiniones</a>
-                <a href="#contacto" class="hover:text-terracota-500 transition-colors">Ubicación y Contacto</a>
+                <a href="#contacto" class="hover:text-terracota-500 transition-colors">Contacto</a>
             </nav>
 
-            <div class="flex items-center gap-4">
-                <a href="tel:952400558" class="hidden sm:inline-flex items-center gap-2 bg-terracota-500 hover:bg-terracota-600 text-white px-5 py-2.5 rounded-full font-semibold text-sm transition-all shadow-lg shadow-terracota-500/20">
-                    <i class="fa-solid fa-phone"></i>
+            <div class="hidden lg:flex items-center gap-4">
+                <a href="tel:952400558" class="flex items-center gap-2 text-sm font-semibold hover:text-terracota-500 transition-colors">
+                    <i class="fa-solid fa-phone text-terracota-500"></i>
                     <span>952 40 05 58</span>
                 </a>
-                <a href="tel:952400558" class="bg-terracota-500 hover:bg-terracota-600 text-white px-4 py-2 rounded-full font-semibold text-xs uppercase tracking-wider md:hidden">
-                    Reservar
+                <a href="tel:952400558" class="bg-terracota-500 hover:bg-terracota-600 text-white px-5 py-2.5 rounded-full font-semibold text-sm shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+                    Reservar Mesa
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-white text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Overlay -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-gourmet-dark border-b border-white/10 px-6 py-6 flex flex-col gap-4 shadow-xl">
+            <a href="#carta" class="mobile-link text-lg font-medium hover:text-terracota-500">Nuestra Carta</a>
+            <a href="#especialidades" class="mobile-link text-lg font-medium hover:text-terracota-500">Especialidades</a>
+            <a href="#instalaciones" class="mobile-link text-lg font-medium hover:text-terracota-500">Instalaciones</a>
+            <a href="#opiniones" class="mobile-link text-lg font-medium hover:text-terracota-500">Opiniones</a>
+            <a href="#contacto" class="mobile-link text-lg font-medium hover:text-terracota-500">Contacto</a>
+            <div class="pt-4 border-t border-white/10 flex flex-col gap-3">
+                <a href="tel:952400558" class="flex items-center gap-2 text-base font-semibold text-terracota-500">
+                    <i class="fa-solid fa-phone"></i> 952 40 05 58
+                </a>
+                <a href="tel:952400558" class="bg-terracota-500 text-center text-white py-3 rounded-xl font-semibold shadow-md">
+                    Reservar Mesa
                 </a>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+    <section class="relative min-h-[90vh] flex items-center justify-center pt-20 overflow-hidden bg-gourmet-dark text-white">
+        <!-- Background Image with Gradient Overlay -->
         <div class="absolute inset-0 z-0">
-            <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';" alt="Bar Restaurante Reyes Moclinejo" class="w-full h-full object-cover object-center scale-105 animate-pulse duration-1000">
-            <div class="absolute inset-0 hero-overlay"></div>
+            <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';" alt="Bar Restaurante Reyes Interior" class="w-full h-full object-cover object-center opacity-40 scale-105 animate-pulse duration-[10000ms]">
+            <div class="absolute inset-0 bg-gradient-to-t from-gourmet-dark via-gourmet-dark/70 to-transparent"></div>
         </div>
 
-        <div class="relative z-10 max-w-5xl mx-auto px-4 text-center py-20">
-            <div class="inline-flex items-center gap-2 bg-terracota-500/20 border border-terracota-500/40 text-terracota-500 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest mb-6">
-                <i class="fa-solid fa-utensils"></i> Tradición y Sabor en la Axarquía
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
+            <div class="inline-flex items-center gap-2 bg-terracota-500/20 border border-terracota-500/30 px-4 py-2 rounded-full text-terracota-500 font-semibold text-sm mb-6 backdrop-blur-md">
+                <i class="fa-solid fa-star text-xs"></i> Cocina Tradicional en la Axarquía
             </div>
-            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-                Auténtica Cocina Casera en el Corazón de <span class="text-terracota-500 italic">Moclinejo</span>
+            
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-tight">
+                Bar Restaurante Reyes
             </h1>
-            <p class="text-lg sm:text-xl text-crema-300 max-w-2xl mx-auto mb-10 font-light">
-                Disfruta de un excelente trato, máxima profesionalidad y la mejor calidad en un ambiente acogedor y familiar.
+            
+            <p class="text-lg sm:text-xl text-crema-200 max-w-2xl mx-auto font-light mb-10 leading-relaxed">
+                Descubre el auténtico sabor malagueño en el corazón de Moclinejo. Calidad excepcional, producto local y un trato familiar inigualable.
             </p>
+
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="tel:952400558" class="w-full sm:w-auto bg-terracota-500 hover:bg-terracota-600 text-white px-8 py-4 rounded-full font-bold text-base transition-all shadow-xl shadow-terracota-500/30 flex items-center justify-center gap-3">
-                    <i class="fa-solid fa-calendar-check"></i>
-                    Reservar Mesa
+                <a href="tel:952400558" class="w-full sm:w-auto bg-terracota-500 hover:bg-terracota-600 text-white px-8 py-4 rounded-full font-bold text-base shadow-xl hover:shadow-terracota-500/30 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-calendar-check"></i> Reservar Mesa
                 </a>
-                <a href="#carta" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-full font-bold text-base transition-all flex items-center justify-center gap-3">
-                    <i class="fa-solid fa-book-open"></i>
-                    Ver Especialidades
+                <a href="#carta" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-full font-bold text-base backdrop-blur-md transition-all flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-book-open">></i> Ver Nuestra Carta
                 </a>
             </div>
 
-            <!-- Trust Badges -->
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mt-16 pt-12 border-t border-white/10 max-w-3xl mx-auto text-left">
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-full bg-terracota-500/20 flex items-center justify-center text-terracota-500 text-lg flex-shrink-0">
-                        <i class="fa-solid fa-star"></i>
+            <!-- Highlights Bar -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-16 pt-12 border-t border-white/10 max-w-3xl mx-auto text-left sm:text-center">
+                <div class="flex items-center sm:justify-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-terracota-500/20 flex items-center justify-center text-terracota-500 flex-shrink-0">
+                        <i class="fa-solid fa-award text-lg"></i>
                     </div>
                     <div>
-                        <p class="text-white font-bold text-sm">Excelente Trato</p>
-                        <p class="text-xs text-crema-300">Profesionalidad garantizada</p>
+                        <h4 class="font-bold text-sm text-white">Excelente Trato</h4>
+                        <p class="text-xs text-crema-200">Profesionalidad y cercanía</p>
                     </div>
                 </div>
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-full bg-terracota-500/20 flex items-center justify-center text-terracota-500 text-lg flex-shrink-0">
-                        <i class="fa-solid fa-plate-wheat"></i>
+                <div class="flex items-center sm:justify-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-terracota-500/20 flex items-center justify-center text-terracota-500 flex-shrink-0">
+                        <i class="fa-solid fa-utensils text-lg"></i>
                     </div>
                     <div>
-                        <p class="text-white font-bold text-sm">Calidad Superior</p>
-                        <p class="text-xs text-crema-300">Producto fresco y local</p>
+                        <h4 class="font-bold text-sm text-white">Alta Calidad</h4>
+                        <p class="text-xs text-crema-200">Ingredientes frescos</p>
                     </div>
                 </div>
-                <div class="flex items-center gap-3 col-span-2 md:col-span-1">
-                    <div class="w-10 h-10 rounded-full bg-terracota-500/20 flex items-center justify-center text-terracota-500 text-lg flex-shrink-0">
-                        <i class="fa-solid fa-location-dot"></i>
+                <div class="flex items-center sm:justify-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-terracota-500/20 flex items-center justify-center text-terracota-500 flex-shrink-0">
+                        <i class="fa-solid fa-location-dot text-lg"></i>
                     </div>
                     <div>
-                        <p class="text-white font-bold text-sm">Pl. España, 7</p>
-                        <p class="text-xs text-crema-300">Moclinejo, Málaga</p>
+                        <h4 class="font-bold text-sm text-white">Moclinejo, Málaga</h4>
+                        <p class="text-xs text-crema-200">Plaza de España, 7</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sección: Nuestra Carta y Especialidades -->
-    <section id="carta" class="py-24 bg-gourmet-card border-t border-white/5 relative">
+    <!-- Introduction / About Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="text-terracota-500 font-bold uppercase tracking-widest text-xs block mb-3">Tradición y Sabor</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-crema-900 mb-6 leading-tight">
+                    Un punto de encuentro gastronómico único en Moclinejo
+                </h2>
+                <p class="text-crema-800 text-base sm:text-lg mb-6 leading-relaxed">
+                    Situados en un enclave privilegiado de la Axarquía malagueña, en el <strong>Bar Restaurante Reyes</strong> nos enorgullecemos de ofrecer una experiencia culinaria auténtica donde la tradición y el buen hacer se unen en cada plato.
+                </p>
+                <p class="text-crema-800 text-base mb-8 leading-relaxed">
+                    Ya sea para disfrutar de unas tapas caseras, saborear nuestros platos principales o simplemente compartir un buen momento en familia o con amigos, nuestro equipo te garantiza un ambiente acogedor y una atención profesional excelente.
+                </p>
+                <div class="flex items-center gap-6">
+                    <a href="tel:952400558" class="bg-terracota-500 hover:bg-terracota-600 text-white px-7 py-3.5 rounded-full font-semibold text-sm shadow-md transition-all">
+                        Reservar Mesa
+                    </a>
+                    <div class="flex items-center gap-2 text-crema-900 font-semibold">
+                        <i class="fa-solid fa-phone text-terracota-500 text-lg"></i>
+                        <span>952 40 05 58</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="relative">
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+                    <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';" alt="Platos y ambiente Bar Restaurante Reyes" class="w-full h-[400px] sm:h-[480px] object-cover">
+                </div>
+                <!-- Decorative badge -->
+                <div class="absolute -bottom-6 -left-6 bg-gourmet-dark text-white p-6 rounded-2xl shadow-xl hidden sm:flex items-center gap-4 border border-white/10">
+                    <div class="text-terracota-500 text-3xl">
+                        <i class="fa-solid fa-quote-left"></i>
+                    </div>
+                    <div>
+                        <p class="font-serif italic text-sm text-crema-200">"Excelente trato, profesionalidad y calidad."</p>
+                        <span class="text-[11px] text-terracota-500 font-bold uppercase tracking-wider block mt-1">Reseña Verificada Google</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carta y Especialidades Section -->
+    <section id="carta" class="py-20 bg-crema-200/60 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-terracota-500 uppercase tracking-widest text-xs font-semibold block mb-2">Gastronomía Tradicional</span>
-                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-4">Nuestra Carta y Platos Estrella</h2>
-                <p class="text-crema-300 font-light">Sabores auténticos de la Axarquía malagueña elaborados con mimo, tradición y los mejores ingredientes de la tierra.</p>
+                <span class="text-terracota-500 font-bold uppercase tracking-widest text-xs block mb-3">Gastronomía Auténtica</span>
+                <h2 id="especialidades" class="font-serif text-3xl sm:text-5xl font-bold text-crema-900 mb-6">
+                    Nuestra Carta y Especialidades
+                </h2>
+                <p class="text-crema-800 text-base sm:text-lg">
+                    Elaboraciones cuidadas con mimo, productos locales de primera calidad y recetas que conquistan todos los paladares.
+                </p>
             </div>
 
+            <!-- Menu Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Plato 1 -->
-                <div class="bg-gourmet-dark rounded-2xl p-6 border border-white/5 hover:border-terracota-500/50 transition-all group">
-                    <div class="h-48 rounded-xl overflow-hidden mb-6 relative">
-                        <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80';" alt="Carnes a la Brasa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <span class="absolute top-3 right-3 bg-terracota-500 text-white text-xs font-bold px-3 py-1 rounded-full">Especialidad</span>
-                    </div>
-                    <h3 class="font-serif text-xl font-bold text-white mb-2">Carnes Seleccionadas a la Brasa</h3>
-                    <p class="text-crema-300 text-sm mb-4 font-light">Cortes seleccionados cocinados en su punto exacto, conservando todos sus jugos y un sabor inconfundible.</p>
-                    <div class="flex items-center justify-between pt-4 border-t border-white/5 text-sm">
-                        <span class="text-terracota-500 font-semibold">Recomendado de la Casa</span>
-                        <a href="tel:952400558" class="text-white hover:text-terracota-500 font-medium"><i class="fa-solid fa-phone-flip mr-1"></i> Pedir</a>
-                    </div>
-                </div>
-
-                <!-- Plato 2 -->
-                <div class="bg-gourmet-dark rounded-2xl p-6 border border-white/5 hover:border-terracota-500/50 transition-all group">
-                    <div class="h-48 rounded-xl overflow-hidden mb-6 relative">
-                        <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80';" alt="Tapas y raciones" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <span class="absolute top-3 right-3 bg-terracota-500 text-white text-xs font-bold px-3 py-1 rounded-full">Tradicional</span>
-                    </div>
-                    <h3 class="font-serif text-xl font-bold text-white mb-2">Tapas y Raciones Caseras</h3>
-                    <p class="text-crema-300 text-sm mb-4 font-light">Variedad de platos tradicionales para compartir, elaborados con recetas de toda la vida y producto local.</p>
-                    <div class="flex items-center justify-between pt-4 border-t border-white/5 text-sm">
-                        <span class="text-terracota-500 font-semibold">Ideal para compartir</span>
-                        <a href="tel:952400558" class="text-white hover:text-terracota-500 font-medium"><i class="fa-solid fa-phone-flip mr-1"></i> Pedir</a>
-                    </div>
-                </div>
-
-                <!-- Plato 3 -->
-                <div class="bg-gourmet-dark rounded-2xl p-6 border border-white/5 hover:border-terracota-500/50 transition-all group">
-                    <div class="h-48 rounded-xl overflow-hidden mb-6 relative">
-                        <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80';" alt="Vinos y Bodega" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <span class="absolute top-3 right-3 bg-terracota-500 text-white text-xs font-bold px-3 py-1 rounded-full">Maridaje</span>
-                    </div>
-                    <h3 class="font-serif text-xl font-bold text-white mb-2">Vinos de la Tierra y Cervezas</h3>
-                    <p class="text-crema-300 text-sm mb-4 font-light">Una cuidada selección de vinos locales de Moclinejo y la comarca, además de cervezas siempre en su temperatura óptima.</p>
-                    <div class="flex items-center justify-between pt-4 border-t border-white/5 text-sm">
-                        <span class="text-terracota-500 font-semibold">Denominación de Origen</span>
-                        <a href="tel:952400558" class="text-white hover:text-terracota-500 font-medium"><i class="fa-solid fa-phone-flip mr-1"></i> Pedir</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Call to action card inside menu -->
-            <div class="mt-12 bg-gradient-to-r from-terracota-900/60 to-gourmet-dark border border-terracota-500/30 rounded-3xl p-8 sm:p-12 text-center max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
-                <div class="text-left">
-                    <h4 class="font-serif text-2xl font-bold text-white mb-2">¿Quieres asegurar tu mesa para este fin de semana?</h4>
-                    <p class="text-crema-300 text-sm">Llámanos directamente y te atenderemos con la máxima profesionalidad.</p>
-                </div>
-                <a href="tel:952400558" class="bg-terracota-500 hover:bg-terracota-600 text-white font-bold px-8 py-3.5 rounded-full whitespace-nowrap transition-all shadow-lg flex items-center gap-2">
-                    <i class="fa-solid fa-phone"></i> Reservar Mesa
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección: Nuestras Instalaciones -->
-    <section id="instalaciones" class="py-24 bg-gourmet-dark">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-terracota-500 uppercase tracking-widest text-xs font-semibold block mb-2">Ambiente Acogedor</span>
-                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-4">Nuestras Instalaciones</h2>
-                <p class="text-crema-300 font-light">Un espacio cálido y diseñado para que disfrutes de una experiencia gastronómica inigualable en Moclinejo.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="h-80 rounded-2xl overflow-hidden relative group">
-                    <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=800&q=80';" alt="Salón interior Restaurante Reyes" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet-dark/80 via-transparent to-transparent opacity-80"></div>
-                    <div class="absolute bottom-6 left-6 right-6">
-                        <h3 class="font-serif text-xl font-bold text-white">Salón Principal</h3>
-                        <p class="text-crema-300 text-xs mt-1">Ambiente acogedor y climatizado</p>
-                    </div>
-                </div>
-
-                <div class="h-80 rounded-2xl overflow-hidden relative group">
-                    <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1537047902294-62a40c20a6ae?auto=format&fit=crop&w=800&q=80';" alt="Barra Bar Restaurante Reyes" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet-dark/80 via-transparent to-transparent opacity-80"></div>
-                    <div class="absolute bottom-6 left-6 right-6">
-                        <h3 class="font-serif text-xl font-bold text-white">Barra y Zona de Tapas</h3>
-                        <p class="text-crema-300 text-xs mt-1">Perfecta para el aperitivo y un buen trato</p>
-                    </div>
-                </div>
-
-                <div class="h-80 rounded-2xl overflow-hidden relative group md:col-span-2 lg:col-span-1">
-                    <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=800&q=80';" alt="Entorno Moclinejo Málaga" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet-dark/80 via-transparent to-transparent opacity-80"></div>
-                    <div class="absolute bottom-6 left-6 right-6">
-                        <h3 class="font-serif text-xl font-bold text-white">Entorno Único</h3>
-                        <p class="text-crema-300 text-xs mt-1">Enclave privilegiado en la Axarquía</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección: Opiniones Reales Verificadas -->
-    <section id="opiniones" class="py-24 bg-gourmet-card border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-terracota-500 uppercase tracking-widest text-xs font-semibold block mb-2">Confianza y Reputación</span>
-                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-4">Lo que opinan nuestros clientes</h2>
-                <p class="text-crema-300 font-light">La satisfacción de quienes nos visitan es nuestro mayor aval.</p>
-            </div>
-
-            <div class="max-w-xl mx-auto">
-                <!-- Reseña única literal -->
-                <div class="bg-gourmet-dark border border-white/10 rounded-3xl p-8 relative shadow-xl">
-                    <div class="flex text-amber-400 gap-1 text-lg mb-4">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="text-white font-serif text-xl italic mb-6 leading-relaxed">
-                        "Excelente trato, profesionalidad y calidad."
-                    </p>
-                    <div class="flex items-center justify-between pt-6 border-t border-white/10">
-                        <div class="flex items-center gap-3">
-                            <div class="w-12 h-12 rounded-full bg-terracota-500 text-white flex items-center justify-center font-bold font-serif text-lg">
-                                G
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white text-sm">Cliente Verificado</h4>
-                                <p class="text-xs text-crema-300">Google Maps</p>
-                            </div>
+                <!-- Category 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-crema-200 flex flex-col justify-between hover:shadow-xl transition-shadow">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-terracota-500/10 text-terracota-500 flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-plate-wheat"></i>
                         </div>
-                        <i class="fa-brands fa-google text-2xl text-white/20"></i>
+                        <h3 class="font-serif text-2xl font-bold text-crema-900 mb-4">Tapas y Entrantes</h3>
+                        <p class="text-crema-800 text-sm mb-6 leading-relaxed">
+                            Perfectos para abrir el apetito y disfrutar de la auténtica cultura del tapeo malagueño en nuestra barra o salón.
+                        </p>
+                        <ul class="space-y-3 text-sm border-t border-crema-200 pt-6">
+                            <li class="flex justify-between items-center">
+                                <span class="font-semibold text-crema-900">Embutidos y Quesos de la Tierra</span>
+                                <span class="text-terracota-500 font-bold">Casero</span>
+                            </li>
+                            <li class="flex justify-between items-center">
+                                <span class="font-semibold text-crema-900">Tapas Variadas Tradicionales</span>
+                                <span class="text-terracota-500 font-bold">Fresco</span>
+                            </li>
+                            <li class="flex justify-between items-center">
+                                <span class="font-semibold text-crema-900">Raciones para Compartir</span>
+                                <span class="text-terracota-500 font-bold">Abundante</span>
+                            </li>
+                        </ul>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección: Mapa Interactivo y Ubicación -->
-    <section id="contacto" class="py-24 bg-gourmet-dark border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                
-                <!-- Información de Contacto -->
-                <div>
-                    <span class="text-terracota-500 uppercase tracking-widest text-xs font-semibold block mb-2">Encuéntranos</span>
-                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-6">Visítanos en Moclinejo</h2>
-                    <p class="text-crema-300 mb-8 font-light">
-                        Ven a conocernos y disfruta de la auténtica gastronomía local en un ambiente inmejorable. Estamos situados en pleno centro.
-                    </p>
-
-                    <div class="space-y-6">
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 rounded-2xl bg-terracota-500/10 border border-terracota-500/20 flex items-center justify-center text-terracota-500 text-xl flex-shrink-0 mt-1">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-white text-base">Dirección</h3>
-                                <p class="text-crema-300 text-sm mt-1">Pl. España, 7, 29738 Moclinejo, Málaga, España</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 rounded-2xl bg-terracota-500/10 border border-terracota-500/20 flex items-center justify-center text-terracota-500 text-xl flex-shrink-0 mt-1">
-                                <i class="fa-solid fa-phone"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-white text-base">Teléfono de Reservas</h3>
-                                <a href="tel:952400558" class="text-crema-300 hover:text-terracota-500 text-sm mt-1 block font-medium">952 40 05 58</a>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 rounded-2xl bg-terracota-500/10 border border-terracota-500/20 flex items-center justify-center text-terracota-500 text-xl flex-shrink-0 mt-1">
-                                <i class="fa-solid fa-envelope"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-white text-base">Correo Electrónico</h3>
-                                <a href="mailto:error-lite+84f2@duckduckgo.com" class="text-crema-300 hover:text-terracota-500 text-sm mt-1 block font-medium">error-lite+84f2@duckduckgo.com</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mt-10">
-                        <a href="tel:952400558" class="inline-flex items-center gap-3 bg-terracota-500 hover:bg-terracota-600 text-white font-bold px-8 py-4 rounded-full transition-all shadow-lg shadow-terracota-500/20">
-                            <i class="fa-solid fa-phone"></i> Reservar Mesa Ahora
+                    <div class="mt-8 pt-6 border-t border-crema-200">
+                        <a href="tel:952400558" class="text-terracota-500 hover:text-terracota-600 font-bold text-sm flex items-center gap-2">
+                            <span>Consultar sugerencias del día</span> <i class="fa-solid fa-arrow-right text-xs"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- Mapa Interactivo -->
-                <div class="bg-gourmet-card p-4 rounded-3xl border border-white/10 shadow-2xl">
-                    <iframe src="https://www.google.com/maps?q=Bar%20Restaurante%20Reyes%20Pl.%20Espaa%2C%207%2C%2029738%20Moclinejo%2C%20M%C3%A1laga%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                <!-- Category 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-crema-200 flex flex-col justify-between hover:shadow-xl transition-shadow relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-terracota-500 text-white text-[10px] uppercase font-bold tracking-widest px-4 py-1.5 rounded-bl-xl">
+                        Estrella
+                    </div>
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-terracota-500/10 text-terracota-500 flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-fire-burner"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-crema-900 mb-4">Especialidades de la Casa</h3>
+                        <p class="text-crema-800 text-sm mb-6 leading-relaxed">
+                            Platos principales elaborados con recetas tradicionales transmitidas de generación en generación, destacando el sabor local.
+                        </p>
+                        <ul class="space-y-3 text-sm border-t border-crema-200 pt-6">
+                            <li class="flex justify-between items-center">
+                                <span class="font-semibold text-crema-900">Carnes Seleccionadas</span>
+                                <span class="text-terracota-500 font-bold">A la brasa</span>
+                            </li>
+                            <li class="flex justify-between items-center">
+                                <span class="font-semibold text-crema-900">Platos de Cuchara Tradicionales</span>
+                                <span class="text-terracota-500 font-bold">Casero</span>
+                            </li>
+                            <li class="flex justify-between items-center">
+                                <span class="font-semibold text-crema-900">Especialidades del Chef Reyes</span>
+                                <span class="text-terracota-500 font-bold">Exclusivo</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-crema-200">
+                        <a href="tel:952400558" class="text-terracota-500 hover:text-terracota-600 font-bold text-sm flex items-center gap-2">
+                            <span>Preguntar por platos fuera de carta</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
                 </div>
 
+                <!-- Category 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-crema-200 flex flex-col justify-between hover:shadow-xl transition-shadow">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-terracota-500/10 text-terracota-500 flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-wine-glass"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-crema-900 mb-4">Bebidas y Bodega</h3>
+                        <p class="text-crema-800 text-sm mb-6 leading-relaxed">
+                            Acompaña tu comida con nuestra selección de vinos de la tierra, cervezas bien frías y bebidas refrescantes.
+                        </p>
+                        <ul class="space-y-3 text-sm border-t border-crema-200 pt-6">
+                            <li class="flex justify-between items-center">
+                                <span class="font-semibold text-crema-900">Vinos de la Axarquía y Málaga</span>
+                                <span class="text-terracota-500 font-bold">Denominación</span>
+                            </li>
+                            <li class="flex justify-between items-center">
+                                <span class="font-semibold text-crema-900">Cervezas de Grifo y Botella</span>
+                                <span class="text-terracota-500 font-bold">Muy fría</span>
+                            </li>
+                            <li class="flex justify-between items-center">
+                                <span class="font-semibold text-crema-900">Refrescos y Aperitivos</span>
+                                <span class="text-terracota-500 font-bold">Variado</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-crema-200">
+                        <a href="tel:952400558" class="text-terracota-500 hover:text-terracota-600 font-bold text-sm flex items-center gap-2">
+                            <span>Reservar mesa ahora</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action Banner inside Carta -->
+            <div class="mt-16 bg-gourmet-dark text-white rounded-3xl p-8 sm:p-12 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8 border border-white/10">
+                <div>
+                    <h3 class="font-serif text-2xl sm:text-3xl font-bold mb-3">¿Quieres celebrar una comida especial?</h3>
+                    <p class="text-crema-200 text-sm sm:text-base max-w-xl">
+                        Atendemos reservas para grupos, familias y eventos. Llámanos y asegúrate tu mesa en Bar Restaurante Reyes.
+                    </p>
+                </div>
+                <a href="tel:952400558" class="bg-terracota-500 hover:bg-terracota-600 text-white px-8 py-4 rounded-full font-bold text-base shadow-lg hover:shadow-xl transition-all whitespace-nowrap flex items-center gap-3">
+                    <i class="fa-solid fa-phone"></i> Reservar Mesa (952 40 05 58)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery / Instalaciones Section -->
+    <section id="instalaciones" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-terracota-500 font-bold uppercase tracking-widest text-xs block mb-3">Nuestra Casa es Tu Casa</span>
+            <h2 class="font-serif text-3xl sm:text-5xl font-bold text-crema-900 mb-6">
+                Nuestras Instalaciones
+            </h2>
+            <p class="text-crema-800 text-base sm:text-lg">
+                Un espacio cómodo, limpio y acogedor diseñado para que te sientas como en casa mientras disfrutas de la gastronomía.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="relative group overflow-hidden rounded-2xl shadow-lg h-80">
+                <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80';" alt="Salón interior Bar Restaurante Reyes" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-gourmet-dark/80 via-transparent to-transparent opacity-90 flex items-end p-6">
+                    <div>
+                        <h3 class="font-serif text-xl font-bold text-white">Salón Comedor</h3>
+                        <p class="text-xs text-crema-200 mt-1">Ambiente cálido y climatizado</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative group overflow-hidden rounded-2xl shadow-lg h-80">
+                <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=800&q=80';" alt="Barra Bar Restaurante Reyes" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-gourmet-dark/80 via-transparent to-transparent opacity-90 flex items-end p-6">
+                    <div>
+                        <h3 class="font-serif text-xl font-bold text-white">Nuestra Barra</h3>
+                        <p class="text-xs text-crema-200 mt-1">Ideal para tapear y disfrutar del ambiente</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative group overflow-hidden rounded-2xl shadow-lg h-80">
+                <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80';" alt="Detalle gastronómico Bar Restaurante Reyes" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-gourmet-dark/80 via-transparent to-transparent opacity-90 flex items-end p-6">
+                    <div>
+                        <h3 class="font-serif text-xl font-bold text-white">Detalles Culinarios</h3>
+                        <p class="text-xs text-crema-200 mt-1">Pasión por el detalle y el buen servicio</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials / Opiniones Section -->
+    <section id="opiniones" class="py-20 bg-crema-200/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-terracota-500 font-bold uppercase tracking-widest text-xs block mb-3">Confianza y Reputación</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-crema-900 mb-6">
+                    Opiniones Reales Verificadas
+                </h2>
+                <p class="text-crema-800 text-base sm:text-lg">
+                    Lo que nuestros clientes opinan de nosotros en Google Maps y portales gastronómicos.
+                </p>
+            </div>
+
+            <div class="max-w-2xl mx-auto">
+                <div class="bg-white rounded-3xl p-8 sm:p-10 shadow-xl border border-crema-200 relative">
+                    <div class="absolute -top-5 left-10 w-10 h-10 rounded-full bg-terracota-500 text-white flex items-center justify-center text-lg shadow-md">
+                        <i class="fa-solid fa-quote-right"></i>
+                    </div>
+                    
+                    <div class="flex items-center gap-1 text-amber-500 mb-4 text-lg">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    <p class="font-serif text-xl sm:text-2xl text-crema-900 italic mb-6 leading-relaxed">
+                        "Excelente trato, profesionalidad y calidad."
+                    </p>
+
+                    <div class="flex items-center justify-between border-t border-crema-200 pt-6">
+                        <div>
+                            <h4 class="font-bold text-crema-900 text-base">Cliente Verificado</h4>
+                            <span class="text-xs text-crema-800">Google Maps Review</span>
+                        </div>
+                        <div class="w-8 h-8 rounded-full bg-terracota-500/10 text-terracota-500 flex items-center justify-center text-sm font-bold">
+                            <i class="fa-brands fa-google"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto y Mapa Section -->
+    <section id="contacto" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="text-terracota-500 font-bold uppercase tracking-widest text-xs block mb-3">¿Dónde Estamos?</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-crema-900 mb-6">
+                    Visítanos en Moclinejo
+                </h2>
+                <p class="text-crema-800 text-base sm:text-lg mb-8 leading-relaxed">
+                    Te esperamos con las puertas abiertas para ofrecerte lo mejor de nuestra cocina. Reserva tu mesa con antelación llamando directamente por teléfono.
+                </p>
+
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-terracota-500/10 text-terracota-500 flex items-center justify-center text-xl flex-shrink-0 mt-1">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-crema-900 text-base">Dirección</h4>
+                            <p class="text-crema-800 text-sm mt-1">Pl. España, 7, 29738 Moclinejo, Málaga, España</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-terracota-500/10 text-terracota-500 flex items-center justify-center text-xl flex-shrink-0 mt-1">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-crema-900 text-base">Teléfono de Reservas</h4>
+                            <a href="tel:952400558" class="text-terracota-500 font-bold text-base mt-1 inline-block hover:underline">952 40 05 58</a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-terracota-500/10 text-terracota-500 flex items-center justify-center text-xl flex-shrink-0 mt-1">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-crema-900 text-base">Correo Electrónico</h4>
+                            <a href="mailto:error-lite+84f2@duckduckgo.com" class="text-crema-800 text-sm mt-1 inline-block hover:text-terracota-500 transition-colors">error-lite+84f2@duckduckgo.com</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-10">
+                    <a href="tel:952400558" class="bg-terracota-500 hover:bg-terracota-600 text-white px-8 py-4 rounded-full font-bold text-base shadow-lg hover:shadow-xl transition-all inline-flex items-center gap-3">
+                        <i class="fa-solid fa-calendar-check"></i> Reservar Mesa
+                    </a>
+                </div>
+            </div>
+
+            <!-- Interactive Map -->
+            <div class="bg-white p-4 rounded-3xl shadow-xl border border-crema-200">
+                <iframe src="https://www.google.com/maps?q=Bar%20Restaurante%20Reyes%20Pl.%20Espaa%2C%207%2C%2029738%20Moclinejo%2C%20M%C3%A1laga%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gourmet-dark border-t border-white/10 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-terracota-500 flex items-center justify-center text-white font-serif font-bold text-xl">R</div>
+    <footer class="bg-gourmet-dark text-white pt-16 pb-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
                 <div>
-                    <span class="font-serif text-lg font-bold tracking-wider text-white block">BAR RESTAURANTE REYES</span>
-                    <span class="text-xs text-crema-300">Pl. España, 7, 29738 Moclinejo, Málaga</span>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-8 rounded-full bg-terracota-500 flex items-center justify-center text-white text-sm">
+                            <i class="fa-solid fa-utensils"></i>
+                        </div>
+                        <span class="font-serif text-lg font-bold">Restaurante Reyes</span>
+                    </div>
+                    <p class="text-crema-200 text-sm leading-relaxed mb-4">
+                        Bar restaurante tradicional en Moclinejo, Málaga. Calidad, buen ambiente y el mejor trato profesional.
+                    </p>
+                    <div class="flex items-center gap-3 text-terracota-500 text-lg">
+                        <a href="tel:952400558" class="w-9 h-9 rounded-full bg-white/10 hover:bg-terracota-500 hover:text-white flex items-center justify-center transition-colors">
+                            <i class="fa-solid fa-phone text-sm"></i>
+                        </a>
+                        <a href="mailto:error-lite+84f2@duckduckgo.com" class="w-9 h-9 rounded-full bg-white/10 hover:bg-terracota-500 hover:text-white flex items-center justify-center transition-colors">
+                            <i class="fa-solid fa-envelope text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-serif text-base font-bold mb-4 text-white">Enlaces Rápidos</h4>
+                    <ul class="space-y-2 text-sm text-crema-200">
+                        <li><a href="#carta" class="hover:text-terracota-500 transition-colors">Nuestra Carta</a></li>
+                        <li><a href="#especialidades" class="hover:text-terracota-500 transition-colors">Especialidades</a></li>
+                        <li><a href="#instalaciones" class="hover:text-terracota-500 transition-colors">Instalaciones</a></li>
+                        <li><a href="#opiniones" class="hover:text-terracota-500 transition-colors">Opiniones</a></li>
+                        <li><a href="#contacto" class="hover:text-terracota-500 transition-colors">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-serif text-base font-bold mb-4 text-white">Ubicación</h4>
+                    <p class="text-sm text-crema-200 leading-relaxed mb-2">
+                        Pl. España, 7<br>
+                        29738 Moclinejo, Málaga, España
+                    </p>
+                    <p class="text-sm text-terracota-500 font-semibold">
+                        Axarquía Malagueña
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-serif text-base font-bold mb-4 text-white">Reservas y Contacto</h4>
+                    <p class="text-sm text-crema-200 mb-4">
+                        Asegura tu mesa llamando directamente a nuestro número de teléfono.
+                    </p>
+                    <a href="tel:952400558" class="inline-block bg-terracota-500 hover:bg-terracota-600 text-white px-5 py-2.5 rounded-full font-bold text-sm shadow-md transition-all">
+                        <i class="fa-solid fa-phone mr-2"></i> 952 40 05 58
+                    </a>
                 </div>
             </div>
 
-            <p class="text-xs text-crema-300">
-                &copy; <script>document.write(new Date().getFullYear())</script> Bar Restaurante Reyes. Todos los derechos reservados.
-            </p>
-
-            <div class="flex items-center gap-4 text-crema-300">
-                <a href="tel:952400558" class="w-10 h-10 rounded-full bg-white/5 hover:bg-terracota-500 hover:text-white flex items-center justify-center transition-colors">
-                    <i class="fa-solid fa-phone"></i>
-                </a>
-                <a href="mailto:error-lite+84f2@duckduckgo.com" class="w-10 h-10 rounded-full bg-white/5 hover:bg-terracota-500 hover:text-white flex items-center justify-center transition-colors">
-                    <i class="fa-solid fa-envelope"></i>
-                </a>
+            <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-crema-200">
+                <p>&copy; <span id="current-year"></span> Bar Restaurante Reyes. Todos los derechos reservados.</p>
+                <p class="mt-4 sm:mt-0">Bar restaurante en Moclinejo, Málaga.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Floating Mobile Call Button -->
+    <div class="fixed bottom-6 right-6 z-40 md:hidden">
+        <a href="tel:952400558" class="w-14 h-14 bg-terracota-500 text-white rounded-full flex items-center justify-center shadow-2xl animate-bounce hover:bg-terracota-600">
+            <i class="fa-solid fa-phone text-xl"></i>
+        </a>
+    </div>
+
+    <!-- JavaScript for Mobile Menu & Year -->
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
 </body>
 </html>
