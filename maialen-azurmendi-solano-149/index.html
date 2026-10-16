@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maialen Azurmendi Solano | Clínica Podológica en Donostia / San Sebastián</title>
+    <meta name="description" content="Clínica podológica en Donostia / San Sebastián. Tratamientos profesionales para el cuidado de tus pies. Pide cita previa con Maialen Azurmendi Solano.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        medical: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            800: '#115e59',
+                            900: '#134e4a',
+                        },
+                        clinical: {
+                            light: '#f8fafc',
+                            blue: '#0284c7',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-clinical-light text-slate-700 font-sans antialiased selection:bg-medical-500 selection:text-white">
+
+    <!-- Top Bar de Contacto Rápido -->
+    <div class="bg-medical-900 text-white text-xs sm:text-sm py-2 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-6">
+                <span class="flex items-center gap-2">
+                    <i class="fa-solid fa-location-dot text-medical-500"></i> Hernani K., 4, 20004 Donostia / San Sebastián
+                </span>
+                <span class="hidden md:flex items-center gap-2">
+                    <i class="fa-solid fa-envelope text-medical-500"></i> claudia@cs.stayforlong.com
+                </span>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="flex items-center gap-2">
+                    <i class="fa-solid fa-clock text-medical-500"></i> Lunes a Viernes: Cita Previa
+                </span>
+                <a href="tel:943422998" class="bg-medical-500 hover:bg-medical-600 text-white font-semibold px-3 py-1 rounded-full transition shadow-sm flex items-center gap-1.5">
+                    <i class="fa-solid fa-phone"></i> 943 42 29 98
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header / Navbar Principal -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-medical-500 flex items-center justify-center text-white text-xl shadow-md shadow-medical-500/20">
+                    <i class="fa-solid fa-shoe-prints"></i>
+                </div>
+                <div>
+                    <span class="block font-bold text-slate-800 text-lg sm:text-xl leading-tight">Maialen Azurmendi</span>
+                    <span class="block text-xs font-medium text-medical-600 uppercase tracking-wider">Clínica Podológica • Donostia</span>
+                </div>
+            </a>
+
+            <nav class="hidden lg:flex items-center gap-8 font-medium text-sm text-slate-600">
+                <a href="#inicio" class="hover:text-medical-600 transition">Inicio</a>
+                <a href="#servicios" class="hover:text-medical-600 transition">Especialidades</a>
+                <a href="#sobre-mi" class="hover:text-medical-600 transition">Sobre Mí</a>
+                <a href="#instalaciones" class="hover:text-medical-600 transition">Instalaciones</a>
+                <a href="#opiniones" class="hover:text-medical-600 transition">Opiniones</a>
+                <a href="#contacto" class="hover:text-medical-600 transition">Contacto</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <a href="tel:943422998" class="hidden sm:inline-flex items-center justify-center bg-medical-500 hover:bg-medical-600 text-white font-semibold px-5 py-2.5 rounded-xl shadow-lg shadow-medical-500/20 transition-all hover:scale-[1.02] active:scale-[0.98]">
+                    <i class="fa-solid fa-calendar-check mr-2"></i> Pedir Cita Previa
+                </a>
+                <!-- Mobile menu button -->
+                <button id="menu-btn" class="lg:hidden text-slate-700 text-2xl p-2 focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-100 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="block py-2 text-slate-600 font-medium hover:text-medical-600">Inicio</a>
+            <a href="#servicios" class="block py-2 text-slate-600 font-medium hover:text-medical-600">Especialidades</a>
+            <a href="#sobre-mi" class="block py-2 text-slate-600 font-medium hover:text-medical-600">Sobre Mí</a>
+            <a href="#instalaciones" class="block py-2 text-slate-600 font-medium hover:text-medical-600">Instalaciones</a>
+            <a href="#opiniones" class="block py-2 text-slate-600 font-medium hover:text-medical-600">Opiniones</a>
+            <a href="#contacto" class="block py-2 text-slate-600 font-medium hover:text-medical-600">Contacto</a>
+            <div class="pt-2">
+                <a href="tel:943422998" class="w-full inline-flex items-center justify-center bg-medical-500 text-white font-semibold px-5 py-3 rounded-xl shadow-md">
+                    <i class="fa-solid fa-calendar-check mr-2"></i> Pedir Cita Previa
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative overflow-hidden bg-gradient-to-b from-medical-50/60 to-white py-16 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-medical-100 text-medical-800 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold tracking-wide">
+                        <i class="fa-solid fa-award text-medical-600"></i> Podología Profesional en Donostia (20017 / 20004)
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.1]">
+                        Salud y Bienestar para tus <span class="text-medical-600">Pies</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto lg:mx-0 font-normal">
+                        Atención especializada, rápida y cercana. Cuidamos de tu salud pisada a pisada con diagnóstico avanzado y tratamientos totalmente personalizados en el corazón de San Sebastián.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="tel:943422998" class="w-full sm:w-auto inline-flex items-center justify-center bg-medical-500 hover:bg-medical-600 text-white font-bold text-lg px-8 py-4 rounded-2xl shadow-xl shadow-medical-500/30 transition-all hover:scale-105">
+                            <i class="fa-solid fa-phone mr-3"></i> Pedir Cita Previa
+                        </a>
+                        <a href="#servicios" class="w-full sm:w-auto inline-flex items-center justify-center bg-white hover:bg-slate-50 text-slate-700 font-semibold text-lg px-8 py-4 rounded-2xl border border-slate-200 transition">
+                            Ver Tratamientos <i class="fa-solid fa-arrow-down ml-2 text-xs text-medical-500"></i>
+                        </a>
+                    </div>
+                    <!-- Trust badges -->
+                    <div class="pt-8 border-t border-slate-200/80 grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0">
+                        <div class="text-center lg:text-left">
+                            <p class="text-2xl font-bold text-slate-900">+15</p>
+                            <p class="text-xs text-slate-500 font-medium">Años de Experiencia</p>
+                        </div>
+                        <div class="text-center lg:text-left">
+                            <p class="text-2xl font-bold text-slate-900">100%</p>
+                            <p class="text-xs text-slate-500 font-medium">Trato Personalizado</p>
+                        </div>
+                        <div class="text-center lg:text-left">
+                            <p class="text-2xl font-bold text-slate-900">5★</p>
+                            <p class="text-xs text-slate-500 font-medium">Valoración Pacientes</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Decorative background glow -->
+                        <div class="absolute -inset-4 bg-gradient-to-r from-medical-500 to-clinical-blue rounded-3xl blur-2xl opacity-20 -z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=1200&q=80" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80';" alt="Clínica Podológica Maialen Azurmendi" class="rounded-3xl shadow-2xl w-full h-[420px] object-cover border-4 border-white">
+                        
+                        <!-- Floating card -->
+                        <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 hidden sm:flex items-center gap-3">
+                            <div class="w-12 h-12 bg-medical-100 rounded-xl flex items-center justify-center text-medical-600 text-xl">
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 font-semibold">Excelente Atención</p>
+                                <p class="text-sm font-bold text-slate-800">"Trabaja rápido y muy bien"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Especialidades y Tratamientos -->
+    <section id="servicios" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-medical-600 font-bold uppercase tracking-wider text-sm bg-medical-50 px-3 py-1 rounded-full">Especialidades Médicas</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 mb-4">Tratamientos Podológicos Integrales</h2>
+                <p class="text-slate-600 text-lg">Soluciones profesionales adaptadas a cada patología para garantizar tu movilidad y bienestar diario.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Servicio 1 -->
+                <div class="bg-clinical-light rounded-3xl p-8 border border-slate-100 hover:border-medical-500/50 transition-all duration-300 hover:shadow-xl group">
+                    <div class="w-14 h-14 bg-medical-100 group-hover:bg-medical-500 text-medical-600 group-hover:text-white rounded-2xl flex items-center justify-center text-2xl transition-colors mb-6 shadow-sm">
+                        <i class="fa-solid fa-stethoscope"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Quiropodias</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">Eliminación profesional de durezas, callosidades, hiperqueratosis y cuidado integral de las uñas para prevenir molestias al caminar.</p>
+                    <a href="tel:943422998" class="inline-flex items-center text-medical-600 font-semibold group-hover:text-medical-700">
+                        Pedir Cita Previa <i class="fa-solid fa-arrow-right ml-2 text-xs group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="bg-clinical-light rounded-3xl p-8 border border-slate-100 hover:border-medical-500/50 transition-all duration-300 hover:shadow-xl group">
+                    <div class="w-14 h-14 bg-medical-100 group-hover:bg-medical-500 text-medical-600 group-hover:text-white rounded-2xl flex items-center justify-center text-2xl transition-colors mb-6 shadow-sm">
+                        <i class="fa-solid fa-shoe-prints"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Estudio de la Pisada (Biomecánica)</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">Análisis completo de la marcha y pisada para detectar problemas posturales y diseñar plantillas ortopédicas personalizadas.</p>
+                    <a href="tel:943422998" class="inline-flex items-center text-medical-600 font-semibold group-hover:text-medical-700">
+                        Pedir Cita Previa <i class="fa-solid fa-arrow-right ml-2 text-xs group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="bg-clinical-light rounded-3xl p-8 border border-slate-100 hover:border-medical-500/50 transition-all duration-300 hover:shadow-xl group">
+                    <div class="w-14 h-14 bg-medical-100 group-hover:bg-medical-500 text-medical-600 group-hover:text-white rounded-2xl flex items-center justify-center text-2xl transition-colors mb-6 shadow-sm">
+                        <i class="fa-solid fa-hand-holding-medical"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Podología Deportiva</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">Prevención y tratamiento de lesiones en deportistas. Optimizamos tu rendimiento físico y protegemos tus articulaciones.</p>
+                    <a href="tel:943422998" class="inline-flex items-center text-medical-600 font-semibold group-hover:text-medical-700">
+                        Pedir Cita Previa <i class="fa-solid fa-arrow-right ml-2 text-xs group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Servicio 4 -->
+                <div class="bg-clinical-light rounded-3xl p-8 border border-slate-100 hover:border-medical-500/50 transition-all duration-300 hover:shadow-xl group">
+                    <div class="w-14 h-14 bg-medical-100 group-hover:bg-medical-500 text-medical-600 group-hover:text-white rounded-2xl flex items-center justify-center text-2xl transition-colors mb-6 shadow-sm">
+                        <i class="fa-solid fa-shield-heart"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Pie Diabético</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">Revisiones preventivas exhaustivas, educación y cuidados específicos para pacientes con diabetes, evitando complicaciones graves.</p>
+                    <a href="tel:943422998" class="inline-flex items-center text-medical-600 font-semibold group-hover:text-medical-700">
+                        Pedir Cita Previa <i class="fa-solid fa-arrow-right ml-2 text-xs group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Servicio 5 -->
+                <div class="bg-clinical-light rounded-3xl p-8 border border-slate-100 hover:border-medical-500/50 transition-all duration-300 hover:shadow-xl group">
+                    <div class="w-14 h-14 bg-medical-100 group-hover:bg-medical-500 text-medical-600 group-hover:text-white rounded-2xl flex items-center justify-center text-2xl transition-colors mb-6 shadow-sm">
+                        <i class="fa-solid fa-child"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Podología Infantil (Pediatría)</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">Evaluación temprana del desarrollo de la marcha en niños para corregir posibles anomalías a tiempo y asegurar un crecimiento sano.</p>
+                    <a href="tel:943422998" class="inline-flex items-center text-medical-600 font-semibold group-hover:text-medical-700">
+                        Pedir Cita Previa <i class="fa-solid fa-arrow-right ml-2 text-xs group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Servicio 6 -->
+                <div class="bg-clinical-light rounded-3xl p-8 border border-slate-100 hover:border-medical-500/50 transition-all duration-300 hover:shadow-xl group">
+                    <div class="w-14 h-14 bg-medical-100 group-hover:bg-medical-500 text-medical-600 group-hover:text-white rounded-2xl flex items-center justify-center text-2xl transition-colors mb-6 shadow-sm">
+                        <i class="fa-solid fa-bandage"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Cirugía Podológica Menor</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">Tratamiento quirúrgico ambulatorio para patologías ungulares (uñas encarnadas) y papilomas o verrugas plantares con total seguridad.</p>
+                    <a href="tel:943422998" class="inline-flex items-center text-medical-600 font-semibold group-hover:text-medical-700">
+                        Pedir Cita Previa <i class="fa-solid fa-arrow-right ml-2 text-xs group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Sobre Mí / Equipo -->
+    <section id="sobre-mi" class="py-20 bg-medical-50/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-medical-500 rounded-3xl blur-xl opacity-20 -z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1594824813593-94c65e4df5e4?auto=format&fit=crop&w=1200&q=80" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80';" alt="Maialen Azurmendi Solano Podóloga" class="rounded-3xl shadow-xl w-full h-[480px] object-cover border-4 border-white">
+                    </div>
+                </div>
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="text-medical-600 font-bold uppercase tracking-wider text-sm bg-white px-3 py-1 rounded-full shadow-sm">Profesionalidad y Cercanía</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Maialen Azurmendi Solano</h2>
+                    <p class="text-slate-700 text-lg leading-relaxed font-medium">
+                        Como profesional de la podología, mi principal objetivo es mejorar la calidad de vida de mis pacientes a través de una atención rigurosa, honesta y totalmente individualizada.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed">
+                        Ubicados en pleno centro de Donostia / San Sebastián (Hernani K., 4), ofrecemos un espacio clínico adaptado con la última tecnología y los más estrictos protocolos de esterilización y seguridad sanitaria. Los pacientes destacan nuestra rapidez, eficacia y sobre todo, el trato humano y agradable.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div class="flex items-start gap-3 bg-white p-4 rounded-2xl shadow-sm border border-slate-100">
+                            <div class="w-10 h-10 bg-medical-100 text-medical-600 rounded-xl flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Atención Eficaz</h4>
+                                <p class="text-sm text-slate-500">Trabajo rápido y resultados óptimos.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 bg-white p-4 rounded-2xl shadow-sm border border-slate-100">
+                            <div class="w-10 h-10 bg-medical-100 text-medical-600 rounded-xl flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Trato Humano</h4>
+                                <p class="text-sm text-slate-500">Cercanía y máxima empatía con el paciente.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="tel:943422998" class="inline-flex items-center justify-center bg-medical-500 hover:bg-medical-600 text-white font-bold px-8 py-4 rounded-2xl shadow-lg shadow-medical-500/20 transition">
+                            <i class="fa-solid fa-phone mr-3"></i> Reservar Tu Cita Previa
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería / Instalaciones -->
+    <section id="instalaciones" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-medical-600 font-bold uppercase tracking-wider text-sm bg-medical-50 px-3 py-1 rounded-full">Espacio Clínico</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 mb-4">Nuestras Instalaciones</h2>
+                <p class="text-slate-600 text-lg">Un entorno moderno, limpio y diseñado para ofrecerte el máximo confort durante tu tratamiento.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="overflow-hidden rounded-3xl shadow-md group">
+                    <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=800&q=80" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80';" alt="Consulta Podológica" class="w-full h-72 object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="overflow-hidden rounded-3xl shadow-md group">
+                    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80';" alt="Sala de Espera Clínica" class="w-full h-72 object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="overflow-hidden rounded-3xl shadow-md group sm:col-span-2 lg:col-span-1">
+                    <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=80" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80';" alt="Equipamiento Médico Podología" class="w-full h-72 object-cover group-hover:scale-105 transition duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Opiniones Reales Verificadas -->
+    <section id="opiniones" class="py-20 bg-clinical-light border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-medical-600 font-bold uppercase tracking-wider text-sm bg-medical-50 px-3 py-1 rounded-full">Testimonios Verificados</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 mb-4">Lo que dicen nuestros pacientes</h2>
+                <p class="text-slate-600 text-lg">La satisfacción de quienes confían en nosotros es nuestra mejor carta de presentación.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Reseña 1 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 flex flex-col justify-between relative">
+                    <div>
+                        <div class="flex text-amber-400 gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-700 italic mb-6 leading-relaxed">"Chavala estupenda trabaja rápido y bien he salido encantada"</p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+                        <div class="w-10 h-10 bg-medical-500 text-white font-bold rounded-full flex items-center justify-center">
+                            M
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm">Marian Narbaiza</h4>
+                            <p class="text-xs text-slate-500">Reseña de Google Maps</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 2 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 flex flex-col justify-between relative">
+                    <div>
+                        <div class="flex text-amber-400 gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-700 italic mb-6 leading-relaxed">"Muy bien, ella es muy agradable y trabaja bien."</p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+                        <div class="w-10 h-10 bg-medical-500 text-white font-bold rounded-full flex items-center justify-center">
+                            L
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm">Lis</h4>
+                            <p class="text-xs text-slate-500">Reseña de Google Maps</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 3 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 flex flex-col justify-between relative">
+                    <div>
+                        <div class="flex text-amber-400 gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-700 italic mb-6 leading-relaxed">"Muy buena profesional y la atención al paciente fenomenal"</p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+                        <div class="w-10 h-10 bg-medical-500 text-white font-bold rounded-full flex items-center justify-center">
+                            J
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm">Josemi Oreja Zarauz</h4>
+                            <p class="text-xs text-slate-500">Reseña de Google Maps</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección CTA Urgente / Banner -->
+    <section class="py-16 bg-medical-600 text-white relative overflow-hidden">
+        <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-medical-500 rounded-full blur-3xl opacity-50 -z-10"></div>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">¿Sufre de molestias en los pies o necesita una quiropodia?</h2>
+            <p class="text-medical-100 text-lg max-w-2xl mx-auto">No esperes a que el dolor empeore. Pide tu cita previa hoy mismo y ponte en manos de una experta podóloga.</p>
+            <div class="pt-2">
+                <a href="tel:943422998" class="inline-flex items-center justify-center bg-white hover:bg-medical-50 text-medical-800 font-bold text-lg px-8 py-4 rounded-2xl shadow-xl transition-all hover:scale-105">
+                    <i class="fa-solid fa-phone mr-3 text-medical-600"></i> Pedir Cita Previa (943 42 29 98)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Mapa y Contacto -->
+    <section id="contacto" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-medical-600 font-bold uppercase tracking-wider text-sm bg-medical-50 px-3 py-1 rounded-full">Ubicación y Contacto</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 mb-4">¿Dónde Encontrarnos?</h2>
+                <p class="text-slate-600 text-lg">Visítanos en nuestra clínica en San Sebastián o llámanos para reservar tu cita.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                <div class="lg:col-span-5 space-y-8 bg-clinical-light p-8 sm:p-10 rounded-3xl border border-slate-100">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-medical-100 text-medical-600 rounded-2xl flex items-center justify-center text-xl shrink-0 mt-1">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-lg">Dirección</h3>
+                            <p class="text-slate-600 mt-1">Hernani K., 4, 20004 Donostia / San Sebastián, Gipuzkoa, España</p>
+                            <span class="inline-block mt-1 text-xs font-semibold text-medical-600 bg-medical-50 px-2.5 py-0.5 rounded-full">Código Postal: 20017 / 20004</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-medical-100 text-medical-600 rounded-2xl flex items-center justify-center text-xl shrink-0 mt-1">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-lg">Teléfono de Cita Previa</h3>
+                            <p class="text-slate-600 mt-1">943 42 29 98</p>
+                            <a href="tel:943422998" class="inline-block mt-2 text-sm font-bold text-medical-600 hover:underline">Llamar ahora &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-medical-100 text-medical-600 rounded-2xl flex items-center justify-center text-xl shrink-0 mt-1">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-lg">Correo Electrónico</h3>
+                            <p class="text-slate-600 mt-1">claudia@cs.stayforlong.com</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-medical-100 text-medical-600 rounded-2xl flex items-center justify-center text-xl shrink-0 mt-1">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-lg">Horario</h3>
+                            <p class="text-slate-600 mt-1">Lunes a Viernes: Bajo Cita Previa</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-200">
+                        <a href="tel:943422998" class="w-full inline-flex items-center justify-center bg-medical-500 hover:bg-medical-600 text-white font-bold py-4 rounded-2xl shadow-lg shadow-medical-500/20 transition">
+                            <i class="fa-solid fa-calendar-check mr-2"></i> Pedir Cita Previa
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <div class="bg-white p-3 rounded-3xl shadow-md border border-slate-100">
+                        <iframe src="https://www.google.com/maps?q=Maialen%20Azurmendi%20Solano%20Hernani%20K.%2C%204%2C%2020004%20Donostia%20%2F%20San%20Sebasti%C3%A1n%2C%20Gipuzkoa%2C%20Espa%C3%B1a&output=embed" width="100%" height="450" style="border:0; border-radius: 1.2rem;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 pb-8 border-b border-slate-800">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-medical-500 flex items-center justify-center text-white text-xl">
+                        <i class="fa-solid fa-shoe-prints"></i>
+                    </div>
+                    <div>
+                        <span class="block font-bold text-white text-lg leading-tight">Maialen Azurmendi Solano</span>
+                        <span class="block text-xs font-medium text-medical-400 uppercase tracking-wider">Clínica Podológica</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-6 text-sm">
+                    <a href="#inicio" class="hover:text-white transition">Inicio</a>
+                    <a href="#servicios" class="hover:text-white transition">Especialidades</a>
+                    <a href="#sobre-mi" class="hover:text-white transition">Sobre Mí</a>
+                    <a href="#contacto" class="hover:text-white transition">Contacto</a>
+                </div>
+            </div>
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs gap-4">
+                <p>&copy; <span id="year"></span> Maialen Azurmendi Solano. Todos los derechos reservados. Hernani K., 4, 20004 Donostia / San Sebastián.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-white transition">Política de Privacidad</a>
+                    <a href="#" class="hover:text-white transition">Aviso Legal</a>
+                    <a href="#" class="hover:text-white transition">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script para menú móvil y año dinámico -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú al hacer clic en un enlace móvil
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
