@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Español | Cafetería en Santander (39002)</title>
+    <meta name="description" content="Descubre Café Español en C. Atilano Rodríguez, 5, 39002 Santander. Disfruta de raciones, menú dúo y el mejor ambiente. ¡Reserva tu mesa o pide a domicilio!">
+    
+    <!-- TailwindCSS v3 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gastro: {
+                            50: '#fcfbfa',
+                            100: '#f5f2ee',
+                            200: '#e8e2d8',
+                            300: '#d4cbba',
+                            400: '#b8a992',
+                            500: '#9e8c71',
+                            600: '#857259',
+                            700: '#6b5945',
+                            800: '#544738',
+                            900: '#42382e',
+                            950: '#241e18',
+                        },
+                        terracota: {
+                            DEFAULT: '#b85d39',
+                            dark: '#96482a',
+                            light: '#d67550'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gastro-50 text-gastro-900 font-sans antialiased selection:bg-terracota selection:text-white">
+
+    <!-- TOP BAR -->
+    <div class="bg-gastro-950 text-gastro-200 text-xs py-2 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <span><i class="fa-solid fa-location-dot text-terracota mr-1"></i> C. Atilano Rodríguez, 5, 39002 Santander, Cantabria</span>
+                <span class="hidden md:inline"><i class="fa-solid fa-clock text-terracota mr-1"></i> Abierto todos los días</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="tel:611024648" class="hover:text-white transition"><i class="fa-solid fa-phone text-terracota mr-1"></i> 611 02 46 48</a>
+                <a href="mailto:error-lite+84f2@duckduckgo.com" class="hover:text-white transition"><i class="fa-solid fa-envelope text-terracota mr-1"></i> Contacto</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-50 bg-gastro-900/95 backdrop-blur-md text-white shadow-lg border-b border-gastro-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full bg-terracota flex items-center justify-center text-white font-serif text-xl font-bold shadow-md group-hover:scale-105 transition">
+                    C
+                </div>
+                <div>
+                    <span class="font-serif text-2xl font-bold tracking-wide block leading-none">Café Español</span>
+                    <span class="text-xs text-gastry-300 text-gastro-300 tracking-widest uppercase mt-1 block">Santander 39002</span>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
+                <a href="#carta" class="hover:text-terracota transition">Carta y Menús</a>
+                <a href="#instalaciones" class="hover:text-terracota transition">El Local</a>
+                <a href="#delivery" class="hover:text-terracota transition">A Domicilio</a>
+                <a href="#opiniones" class="hover:text-terracota transition">Opiniones</a>
+                <a href="#contacto" class="hover:text-terracota transition">Ubicación</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <a href="tel:611024648" class="hidden sm:inline-flex items-center justify-center bg-terracota hover:bg-terracota-dark text-white font-semibold px-5 py-2.5 rounded-full text-sm shadow-md hover:shadow-lg transition transform hover:-translate-y-0.5">
+                    <i class="fa-solid fa-utensils mr-2"></i> Reservar Mesa
+                </a>
+                <button id="menu-btn" class="md:hidden text-white text-xl p-2 focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gastro-950 border-t border-gastro-800 px-4 py-6 space-y-4 text-center">
+            <a href="#carta" class="block text-lg hover:text-terracota transition">Carta y Menús</a>
+            <a href="#instalaciones" class="block text-lg hover:text-terracota transition">El Local</a>
+            <a href="#delivery" class="block text-lg hover:text-terracota transition">A Domicilio</a>
+            <a href="#opiniones" class="block text-lg hover:text-terracota transition">Opiniones</a>
+            <a href="#contacto" class="block text-lg hover:text-terracota transition">Ubicación</a>
+            <div class="pt-2">
+                <a href="tel:611024648" class="inline-block w-full bg-terracota hover:bg-terracota-dark text-white font-semibold px-6 py-3 rounded-full text-center shadow-md">
+                    Reservar Mesa
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-[85vh] flex items-center justify-center bg-gastro-950 text-white overflow-hidden">
+        <!-- Background image with overlay -->
+        <div class="absolute inset-0 z-0 opacity-40">
+            <img src="https://glovoapp.com/opengraph-image.png" 
+                 referrerpolicy="no-referrer" 
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';" 
+                 alt="Café Español Santander" 
+                 class="w-full h-full object-cover">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-gastro-950 via-gastro-950/60 to-transparent z-10"></div>
+
+        <div class="relative z-20 max-w-5xl mx-auto px-4 text-center py-20 space-y-8">
+            <div class="inline-flex items-center gap-2 bg-terracota/20 border border-terracota/40 px-4 py-2 rounded-full text-terracota-light text-sm font-medium backdrop-blur-sm animate-pulse">
+                <i class="fa-solid fa-star"></i> Tu cafetería de confianza en el 39002
+            </div>
+            
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
+                Tradición, Sabor y el Mejor <span class="text-terracota italic">Ambiente de Santander</span>
+            </h1>
+
+            <p class="text-lg sm:text-xl text-gastro-200 max-w-2xl mx-auto font-light">
+                Disfruta de nuestras raciones caseras, el exclusivo Menú Dúo y una cuidada selección de bebidas con y sin alcohol en el corazón de Cantabria.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                <a href="tel:611024648" class="w-full sm:w-auto bg-terracota hover:bg-terracota-dark text-white font-bold px-8 py-4 rounded-full text-lg shadow-xl hover:shadow-terracota/20 transition transform hover:-translate-y-1">
+                    <i class="fa-solid fa-phone-flip mr-2"></i> Reservar Mesa
+                </a>
+                <a href="#carta" class="w-full sm:w-auto bg-white/10 hover:bg-white/25 text-white font-semibold px-8 py-4 rounded-full text-lg backdrop-blur-md border border-white/20 transition">
+                    Ver Menú y Raciones
+                </a>
+            </div>
+
+            <!-- Quick badges -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-12 border-t border-white/10 text-left max-w-4xl mx-auto">
+                <div class="flex items-center gap-3 bg-white/5 p-4 rounded-xl backdrop-blur-sm">
+                    <div class="text-terracota text-2xl"><i class="fa-solid fa-utensils"></i></div>
+                    <div>
+                        <h4 class="font-bold text-sm">Menú Dúo</h4>
+                        <p class="text-xs text-gastro-300">Ideal para compartir</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 bg-white/5 p-4 rounded-xl backdrop-blur-sm">
+                    <div class="text-terracota text-2xl"><i class="fa-solid fa-plate-wheat"></i></div>
+                    <div>
+                        <h4 class="font-bold text-sm">Raciones Caseras</h4>
+                        <p class="text-xs text-gastro-300">Producto de calidad</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 bg-white/5 p-4 rounded-xl backdrop-blur-sm">
+                    <div class="text-terracota text-2xl"><i class="fa-solid fa-motorcycle"></i></div>
+                    <div>
+                        <h4 class="font-bold text-sm">A Domicilio</h4>
+                        <p class="text-xs text-gastro-300">Glovo y Prime</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 bg-white/5 p-4 rounded-xl backdrop-blur-sm">
+                    <div class="text-terracota text-2xl"><i class="fa-solid fa-award"></i></div>
+                    <div>
+                        <h4 class="font-bold text-sm">Trato Excelente</h4>
+                        <p class="text-xs text-gastro-300">Valoración 5 estrellas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CARTA Y ESPECIALIDADES -->
+    <section id="carta" class="py-20 px-4 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <span class="text-terracota font-semibold uppercase tracking-widest text-sm">Nuestra Propuesta Gastronómica</span>
+            <h2 class="font-serif text-3xl sm:text-5xl font-bold text-gastro-900">Nuestra Carta, Platos Estrella y Especialidades</h2>
+            <p class="text-gastro-600 text-lg">Descubre todo lo que puedes pedir en Café Español. Sabores auténticos preparados con dedicación en Santander.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Categoría 1 -->
+            <div class="bg-white rounded-2xl p-8 shadow-md border border-gastro-200 hover:shadow-xl transition flex flex-col justify-between">
+                <div>
+                    <div class="w-14 h-14 bg-gastro-100 rounded-2xl flex items-center justify-center text-terracota text-2xl mb-6">
+                        <i class="fa-solid fa-people-arrows"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold mb-3 text-gastro-900">Menú Duo</h3>
+                    <p class="text-gastro-600 mb-6">La opción perfecta diseñada para disfrutar en pareja o entre amigos. Una combinación equilibrada de nuestros mejores sabores al mejor precio.</p>
+                </div>
+                <div class="border-t border-gastro-100 pt-4 flex items-center justify-between text-sm font-semibold text-terracota">
+                    <span>Popular en el local</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </div>
+
+            <!-- Categoría 2 -->
+            <div class="bg-white rounded-2xl p-8 shadow-md border border-gastro-200 hover:shadow-xl transition flex flex-col justify-between">
+                <div>
+                    <div class="w-14 h-14 bg-gastro-100 rounded-2xl flex items-center justify-center text-terracota text-2xl mb-6">
+                        <i class="fa-solid fa-bowl-food"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold mb-3 text-gastro-900">Raciones Tradicionales</h3>
+                    <p class="text-gastro-600 mb-6">Raciones generosas elaboradas con ingredientes frescos y locales. Perfectas para acompañar con una buena bebida en cualquier momento del día.</p>
+                </div>
+                <div class="border-t border-gastro-100 pt-4 flex items-center justify-between text-sm font-semibold text-terracota">
+                    <span>100% Casero</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </div>
+
+            <!-- Categoría 3 -->
+            <div class="bg-white rounded-2xl p-8 shadow-md border border-gastro-200 hover:shadow-xl transition flex flex-col justify-between">
+                <div>
+                    <div class="w-14 h-14 bg-gastro-100 rounded-2xl flex items-center justify-center text-terracota text-2xl mb-6">
+                        <i class="fa-solid fa-wine-glass"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold mb-3 text-gastro-900">Bebidas Con y Sin Alcohol</h3>
+                    <p class="text-gastro-600 mb-6">Amplia selección de cervezas, vinos de la tierra, refrescos, zumos naturales y cafés de especialidad para todos los gustos.</p>
+                </div>
+                <div class="border-t border-gastro-100 pt-4 flex items-center justify-between text-sm font-semibold text-terracota">
+                    <span>Gran bodega</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Banner de llamada a la acción en carta -->
+        <div class="mt-12 bg-gastro-900 text-white rounded-3xl p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
+            <div class="space-y-3 text-center md:text-left">
+                <span class="text-terracota font-semibold uppercase tracking-wider text-xs">¿Tienes alguna duda con la carta?</span>
+                <h3 class="font-serif text-2xl sm:text-3xl font-bold">Llámanos y te asesoramos al momento</h3>
+                <p class="text-gastro-300 text-sm max-w-xl">Consúltanos alergias, sugerencias del día o disponibilidad para grandes grupos.</p>
+            </div>
+            <a href="tel:611024648" class="bg-terracota hover:bg-terracota-dark text-white font-bold px-8 py-4 rounded-full shadow-lg transition whitespace-nowrap">
+                <i class="fa-solid fa-phone mr-2"></i> 611 02 46 48
+            </a>
+        </div>
+    </section>
+
+    <!-- SECCIÓN INSTALACIONES Y FOTOS -->
+    <section id="instalaciones" class="py-20 bg-gastro-100">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-terracota font-semibold uppercase tracking-widest text-sm">Ambiente Acogedor</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-gastro-900">Nuestras Instalaciones</h2>
+                <p class="text-gastro-600 text-lg">Un espacio diseñado para que te sientas como en casa, ubicado en C. Atilano Rodríguez, 5, Santander.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="overflow-hidden rounded-2xl shadow-md group relative h-72">
+                    <img src="https://glovoapp.com/opengraph-image.png" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';" 
+                         alt="Café Español Interior" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gastro-950/80 via-transparent to-transparent flex items-end p-6">
+                        <span class="text-white font-serif text-xl font-bold">Salón Principal</span>
+                    </div>
+                </div>
+                <div class="overflow-hidden rounded-2xl shadow-md group relative h-72">
+                    <img src="https://glovoapp.com/opengraph-image.png" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1200&q=80';" 
+                         alt="Café Español Terraza y Bar" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gastro-950/80 via-transparent to-transparent flex items-end p-6">
+                        <span class="text-white font-serif text-xl font-bold">Barra y Raciones</span>
+                    </div>
+                </div>
+                <div class="overflow-hidden rounded-2xl shadow-md group relative h-72 md:col-span-2 lg:col-span-1">
+                    <img src="https://glovoapp.com/opengraph-image.png" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=80';" 
+                         alt="Café Español Ambiente" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gastro-950/80 via-transparent to-transparent flex items-end p-6">
+                        <span class="text-white font-serif text-xl font-bold">Ambiente Único</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DELIVERY Y PREGUNTAS FRECUENTES (FAQ) -->
+    <section id="delivery" class="py-20 px-4 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <span class="text-terracota font-semibold uppercase tracking-widest text-sm">Servicio a Domicilio</span>
+            <h2 class="font-serif text-3xl sm:text-5xl font-bold text-gastro-900">¿Qué puedo pedir y cómo funciona?</h2>
+            <p class="text-gastro-600 text-lg">Resolvemos tus dudas sobre nuestros pedidos online, plataformas de reparto y disponibilidad en Santander.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <!-- FAQ Item 1 -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gastro-200">
+                <h3 class="font-serif font-bold text-lg text-gastro-900 mb-2 flex items-center gap-3">
+                    <i class="fa-solid fa-circle-question text-terracota"></i> ¿Qué puedo pedir en Español en Santander?
+                </h3>
+                <p class="text-gastro-600 text-sm pl-7">Puedes pedir nuestra variada selección de raciones, el Menú Dúo y todo tipo de bebidas con y sin alcohol cómodamente desde casa.</p>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gastro-200">
+                <h3 class="font-serif font-bold text-lg text-gastro-900 mb-2 flex items-center gap-3">
+                    <i class="fa-solid fa-circle-question text-terracota"></i> ¿Hay promociones de Español en Glovo?
+                </h3>
+                <p class="text-gastro-600 text-sm pl-7">Sí, solemos lanzar ofertas especiales y promociones en la plataforma Glovo para que disfrutes de nuestros platos al mejor precio.</p>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gastro-200">
+                <h3 class="font-serif font-bold text-lg text-gastro-900 mb-2 flex items-center gap-3">
+                    <i class="fa-solid fa-circle-question text-terracota"></i> ¿Está Español disponible en Prime?
+                </h3>
+                <p class="text-gastro-600 text-sm pl-7">Consulta nuestra disponibilidad en las principales apps de reparto de Santander para recibir tus pedidos de forma rápida.</p>
+            </div>
+
+            <!-- FAQ Item 4 -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gastro-200">
+                <h3 class="font-serif font-bold text-lg text-gastro-900 mb-2 flex items-center gap-3">
+                    <i class="fa-solid fa-circle-question text-terracota"></i> ¿Cuándo puedo pedir Español a domicilio?
+                </h3>
+                <p class="text-gastro-600 text-sm pl-7">Durante nuestro horario habitual de apertura al público. ¡Llámanos o consulta las apps de delivery para verificar el estado en directo!</p>
+            </div>
+
+            <!-- FAQ Item 5 -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gastro-200 md:col-span-2">
+                <h3 class="font-serif font-bold text-lg text-gastro-900 mb-2 flex items-center gap-3">
+                    <i class="fa-solid fa-circle-question text-terracota"></i> ¿Hay un valor mínimo de pedido para Español?
+                </h3>
+                <p class="text-gastro-600 text-sm pl-7">Dependiendo de la plataforma de reparto (Glovo, etc.) se establece un importe mínimo que se indica claramente antes de finalizar tu pago online.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- OPINIONES REALES -->
+    <section id="opiniones" class="py-20 bg-gastro-900 text-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-terracota font-semibold uppercase tracking-widest text-sm">Reseñas Verificadas</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold">Lo que opinan nuestros clientes</h2>
+                <p class="text-gastro-300 text-lg">La satisfacción de quienes nos visitan es nuestro mayor orgullo en Santander.</p>
+            </div>
+
+            <div class="max-w-xl mx-auto">
+                <div class="bg-gastro-950 p-8 sm:p-10 rounded-3xl border border-gastro-800 shadow-2xl relative">
+                    <div class="absolute -top-5 right-8 bg-terracota text-white w-12 h-12 rounded-full flex items-center justify-center text-xl shadow-lg">
+                        <i class="fa-solid fa-quote-right"></i>
+                    </div>
+                    <div class="flex text-yellow-400 gap-1 text-lg mb-6">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <blockquote class="font-serif text-xl sm:text-2xl italic text-gastro-100 mb-6 leading-relaxed">
+                        "Excelente trato, profesionalidad y calidad."
+                    </blockquote>
+                    <div class="flex items-center gap-4 border-t border-gastro-800 pt-6">
+                        <div class="w-12 h-12 bg-terracota/20 text-terracota font-bold rounded-full flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white">Cliente Verificado de Google Maps</h4>
+                            <p class="text-xs text-gastro-400">Santander, Cantabria</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN UBICACIÓN Y CONTACTO -->
+    <section id="contacto" class="py-20 px-4 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <span class="text-terracota font-semibold uppercase tracking-widest text-sm">Visítanos</span>
+            <h2 class="font-serif text-3xl sm:text-5xl font-bold text-gastro-900">¿Dónde Estamos?</h2>
+            <p class="text-gastro-600 text-lg">Ven a conocernos o ponte en contacto con nosotros directamente.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- Info Contacto -->
+            <div class="space-y-8 bg-white p-8 sm:p-10 rounded-3xl shadow-md border border-gastro-200">
+                <h3 class="font-serif text-2xl font-bold text-gastro-900 border-b border-gastro-100 pb-4">Café Español</h3>
+                
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gastro-100 text-terracota flex items-center justify-center text-xl shrink-0 mt-1">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gastro-900 text-lg">Dirección Exacta</h4>
+                            <p class="text-gastro-600">C. Atilano Rodríguez, 5, 39002 Santander, Cantabria, España</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gastro-100 text-terracota flex items-center justify-center text-xl shrink-0 mt-1">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gastro-900 text-lg">Teléfono de Reservas</h4>
+                            <a href="tel:611024648" class="text-terracota font-semibold hover:underline">611 02 46 48</a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gastro-100 text-terracota flex items-center justify-center text-xl shrink-0 mt-1">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gastro-900 text-lg">Correo Electrónico</h4>
+                            <a href="mailto:error-lite+84f2@duckduckgo.com" class="text-gastro-600 hover:text-terracota transition">error-lite+84f2@duckduckgo.com</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-4">
+                    <a href="tel:611024648" class="block w-full text-center bg-terracota hover:bg-terracota-dark text-white font-bold py-4 rounded-full shadow-lg transition">
+                        <i class="fa-solid fa-utensils mr-2"></i> Reservar Mesa Ahora
+                    </a>
+                </div>
+            </div>
+
+            <!-- Mapa Interactivo -->
+            <div class="bg-white p-3 rounded-3xl shadow-lg border border-gastro-200 overflow-hidden">
+                <iframe src="https://www.google.com/maps?q=Caf%C3%A9%20Espa%C3%B1ol%20C.%20Atilano%20Rodr%C3%ADguez%2C%205%2C%2039002%20Santander%2C%20Cantabria%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gastro-950 text-gastro-300 py-12 border-t border-gastro-900">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div>
+                <span class="font-serif text-2xl font-bold text-white block">Café Español</span>
+                <p class="text-sm text-gastro-400 mt-1">C. Atilano Rodríguez, 5, 39002 Santander, Cantabria, España</p>
+            </div>
+
+            <div class="text-sm text-gastro-400">
+                &copy; <script>document.write(new Date().getFullYear());</script> Café Español. Todos los derechos reservados.
+            </div>
+
+            <div class="flex items-center gap-4 text-xl">
+                <a href="tel:611024648" class="w-10 h-10 rounded-full bg-gastro-900 hover:bg-terracota hover:text-white flex items-center justify-center transition" aria-label="Teléfono">
+                    <i class="fa-solid fa-phone"></i>
+                </a>
+                <a href="mailto:error-lite+84f2@duckduckgo.com" class="w-10 h-10 rounded-full bg-gastro-900 hover:bg-terracota hover:text-white flex items-center justify-center transition" aria-label="Email">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script to toggle mobile menu -->
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
