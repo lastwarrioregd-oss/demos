@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PodoEstética | Podología Avanzada y Cuidado del Pie en Zaragoza</title>
+    <meta name="description" content="Clínica de podología en Zaragoza. Especialistas en salud y estética del pie. Tratamientos profesionales, quiropodias y cuidado integral. ¡Pide cita previa!">
+    
+    <!-- Tailwind CSS v3 CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        medical: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            800: '#115e59',
+                            900: '#134e4a',
+                        },
+                        clinical: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-medical-500 selection:text-white">
+
+    <!-- Top Bar de Contacto -->
+    <div class="bg-medical-900 text-white text-xs sm:text-sm py-2 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <span><i class="fa-solid fa-location-dot text-medical-400 mr-1.5"></i> Av. de Valdefierro, 37, 50012 Zaragoza</span>
+                <span class="hidden md:inline"><i class="fa-regular fa-clock text-medical-400 mr-1.5"></span> L-V: 9:00 - 20:00</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="mailto:error-lite+84f2@duckduckgo.com" class="hover:text-medical-300 transition"><i class="fa-regular fa-envelope text-medical-400 mr-1.5"></i> error-lite+84f2@duckduckgo.com</a>
+                <a href="tel:633662260" class="bg-medical-600 hover:bg-medical-500 text-white px-3 py-1 rounded-full font-semibold transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-phone text-xs"></i> 633 66 22 60
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-medical-500 flex items-center justify-center text-white shadow-md shadow-medical-500/20 group-hover:bg-medical-600 transition">
+                    <i class="fa-solid fa-shoe-prints text-lg"></i>
+                </div>
+                <div>
+                    <span class="text-xl font-bold tracking-tight text-slate-900 block leading-none">Podo<span class="text-medical-600">Estética</span></span>
+                    <span class="text-xs text-slate-500 font-medium tracking-wide">Clínica Podológica</span>
+                </div>
+            </a>
+
+            <!-- Menú Desktop -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-slate-600 text-sm">
+                <a href="#inicio" class="hover:text-medical-600 transition">Inicio</a>
+                <a href="#servicios" class="hover:text-medical-600 transition">Tratamientos</a>
+                <a href="#nosotros" class="hover:text-medical-600 transition">Instalaciones</a>
+                <a href="#opiniones" class="hover:text-medical-600 transition">Opiniones</a>
+                <a href="#contacto" class="hover:text-medical-600 transition">Contacto</a>
+            </nav>
+
+            <div class="hidden md:block">
+                <a href="tel:633662260" class="bg-medical-600 hover:bg-medical-700 text-white px-5 py-2.5 rounded-xl font-semibold shadow-lg shadow-medical-600/20 transition duration-200 flex items-center gap-2 text-sm">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    Pedir Cita Previa
+                </a>
+            </div>
+
+            <!-- Botón Menú Móvil -->
+            <button id="menu-btn" class="md:hidden text-slate-700 focus:outline-none p-2">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="block py-2 text-slate-600 hover:text-medical-600 font-medium">Inicio</a>
+            <a href="#servicios" class="block py-2 text-slate-600 hover:text-medical-600 font-medium">Tratamientos</a>
+            <a href="#nosotros" class="block py-2 text-slate-600 hover:text-medical-600 font-medium">Instalaciones</a>
+            <a href="#opiniones" class="block py-2 text-slate-600 hover:text-medical-600 font-medium">Opiniones</a>
+            <a href="#contacto" class="block py-2 text-slate-600 hover:text-medical-600 font-medium">Contacto</a>
+            <div class="pt-2">
+                <a href="tel:633662260" class="w-full bg-medical-600 hover:bg-medical-700 text-white px-5 py-3 rounded-xl font-semibold shadow-md transition flex items-center justify-center gap-2 text-center">
+                    <i class="fa-solid fa-calendar-check"></i> Pedir Cita Previa
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative overflow-hidden py-16 lg:py-24 bg-gradient-to-b from-medical-50/50 via-white to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Textos Hero -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-medical-100 text-medical-800 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide">
+                        <i class="fa-solid fa-shield-heart text-medical-600"></i> Especialistas en Salud y Estética del Pie
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight leading-[1.1]">
+                        Cuidamos de cada paso que das con <span class="text-medical-600">máxima profesionalidad</span>
+                    </h1>
+                    
+                    <p class="text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        En <strong class="text-slate-900">PodoEstética</strong> combinamos la ciencia podológica más avanzada con un trato cercano, humano y excelente. Diagnóstico preciso y bienestar garantizado en Zaragoza.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="tel:633662260" class="w-full sm:w-auto bg-medical-600 hover:bg-medical-700 text-white px-8 py-4 rounded-xl font-bold shadow-xl shadow-medical-600/25 transition duration-200 flex items-center justify-center gap-3 text-base">
+                            <i class="fa-solid fa-phone"></i>
+                            Pedir Cita Previa
+                        </a>
+                        <a href="#servicios" class="w-full sm:w-auto bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 px-6 py-4 rounded-xl font-semibold transition duration-200 flex items-center justify-center gap-2 text-base">
+                            <i class="fa-solid fa-notes-medical text-medical-600"></i>
+                            Ver Tratamientos
+                        </a>
+                    </div>
+
+                    <div class="pt-6 border-t border-slate-100 grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0">
+                        <div>
+                            <p class="text-2xl font-bold text-slate-900">100%</p>
+                            <p class="text-xs text-slate-500 font-medium">Profesionalidad</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-slate-900">5★</p>
+                            <p class="text-xs text-slate-500 font-medium">Reseñas Reales</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-slate-900">Zaragoza</p>
+                            <p class="text-xs text-slate-500 font-medium">Ubicación Céntrica</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Imagen Hero Real -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="absolute -inset-4 bg-gradient-to-tr from-medical-500/20 to-medical-100 rounded-3xl filter blur-xl opacity-70"></div>
+                        <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-white">
+                            <img src="https://scontent-iad3-2.xx.fbcdn.net/v/t39.30808-1/586925869_1438926668236561_7557375462818727310_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx500x500&amp;ctp=s500x500&amp;_nc_cat=103&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=Xr_YXy0NeuwQ7kNvwGqrh9Z&amp;_nc_oc=AdqMlx0duHShXxorN3lSy5XGHxMYSLUiv4MT4vNEAmqFdExKCrPi1SJitlit8Mb2TOo&amp;_nc_zt=24&amp;_nc_ht=scontent-iad3-2.xx&amp;_nc_gid=IJJ3Vi_aq-Uaybo0i1spLA&amp;_nc_ss=7f289&amp;oh=00_AQOYe2wGihuZIlwyR3qf8ca-ifiNoLU9JiYNdEtn2Gh2Bw&amp;oe=6AD6FE8A" 
+                                 alt="PodoEstética Clínica Podológica" 
+                                 class="w-full h-[400px] object-cover object-center transform hover:scale-105 transition duration-500"
+                                 referrerpolicy="no-referrer"
+                                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80';">
+                        </div>
+                        
+                        <!-- Floating Badge -->
+                        <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-xl bg-medical-500/10 flex items-center justify-center text-medical-600 text-xl">
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 font-medium">Valoración de clientes</p>
+                                <p class="text-sm font-bold text-slate-900">Excelente Trato y Calidad</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Servicios y Tratamientos -->
+    <section id="servicios" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="text-sm font-bold tracking-widest text-medical-600 uppercase">Especialidades & Tratamientos</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Soluciones integrales para la salud de tus pies</h3>
+                <p class="text-slate-600 text-base">En PodoEstética ofrecemos una atención personalizada utilizando técnicas clínicas de vanguardia combinadas con un cuidado estético impecable.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Tarjeta Servicio 1 -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 hover:shadow-xl hover:bg-white transition duration-300 group">
+                    <div class="w-14 h-14 rounded-xl bg-medical-500/10 text-medical-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-medical-600 group-hover:text-white transition">
+                        <i class="fa-solid fa-hand-holding-medical"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Quiropodia Profesional</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        Eliminación indolora de durezas, callosidades y cuidado especializado de uñas para mantener tus pies sanos, ligeros y perfectamente cuidados.
+                    </p>
+                    <a href="tel:633662260" class="inline-flex items-center gap-2 text-medical-600 font-semibold text-sm group-hover:text-medical-700">
+                        Pedir Cita Previa <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+                    </a>
+                </div>
+
+                <!-- Tarjeta Servicio 2 -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 hover:shadow-xl hover:bg-white transition duration-300 group">
+                    <div class="w-14 h-14 rounded-xl bg-medical-500/10 text-medical-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-medical-600 group-hover:text-white transition">
+                        <i class="fa-solid fa-stethoscope"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Estudio Biomecánico de la Pisada</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        Análisis completo de la marcha y la postura para prevenir lesiones, corregir anomalías y mejorar tu rendimiento diario o deportivo.
+                    </p>
+                    <a href="tel:633662260" class="inline-flex items-center gap-2 text-medical-600 font-semibold text-sm group-hover:text-medical-700">
+                        Pedir Cita Previa <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+                    </a>
+                </div>
+
+                <!-- Tarjeta Servicio 3 -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 hover:shadow-xl hover:bg-white transition duration-300 group">
+                    <div class="w-14 h-14 rounded-xl bg-medical-500/10 text-medical-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-medical-600 group-hover:text-white transition">
+                        <i class="fa-solid fa-spa"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Podología Estética y Cuidado</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        Tratamientos estéticos avanzados para el pie. Unimos la salud podológica con un aspecto impecable, suave y estético en cada sesión.
+                    </p>
+                    <a href="tel:633662260" class="inline-flex items-center gap-2 text-medical-600 font-semibold text-sm group-hover:text-medical-700">
+                        Pedir Cita Previa <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+                    </a>
+                </div>
+
+                <!-- Tarjeta Servicio 4 -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 hover:shadow-xl hover:bg-white transition duration-300 group">
+                    <div class="w-14 h-14 rounded-xl bg-medical-500/10 text-medical-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-medical-600 group-hover:text-white transition">
+                        <i class="fa-solid fa-user-doctor"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Pie Diabético</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        Revisiones preventivas, curas y educación para el cuidado especializado del paciente con diabetes, evitando complicaciones graves.
+                    </p>
+                    <a href="tel:633662260" class="inline-flex items-center gap-2 text-medical-600 font-semibold text-sm group-hover:text-medical-700">
+                        Pedir Cita Previa <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+                    </a>
+                </div>
+
+                <!-- Tarjeta Servicio 5 -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 hover:shadow-xl hover:bg-white transition duration-300 group">
+                    <div class="w-14 h-14 rounded-xl bg-medical-500/10 text-medical-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-medical-600 group-hover:text-white transition">
+                        <i class="fa-solid fa-bandage"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Ortopodología y Plantillas</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        Diseño y fabricación de soportes plantares personalizados adaptados a las necesidades específicas de tu pie y calzado habitual.
+                    </p>
+                    <a href="tel:633662260" class="inline-flex items-center gap-2 text-medical-600 font-semibold text-sm group-hover:text-medical-700">
+                        Pedir Cita Previa <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+                    </a>
+                </div>
+
+                <!-- Tarjeta Servicio 6 -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 hover:shadow-xl hover:bg-white transition duration-300 group">
+                    <div class="w-14 h-14 rounded-xl bg-medical-500/10 text-medical-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-medical-600 group-hover:text-white transition">
+                        <i class="fa-solid fa-child"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Podología Infantil</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        Revisiones tempranas del desarrollo de la pisada en los más pequeños para corregir problemas antes de la edad adulta.
+                    </p>
+                    <a href="tel:633662260" class="inline-flex items-center gap-2 text-medical-600 font-semibold text-sm group-hover:text-medical-700">
+                        Pedir Cita Previa <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Galería: Instalaciones y Trabajos -->
+    <section id="nosotros" class="py-20 bg-medical-50/30 border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div class="inline-flex items-center gap-2 bg-medical-100 text-medical-800 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide">
+                        <i class="fa-solid fa-hospital text-medical-600"></i> Nuestras Instalaciones
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+                        Un espacio moderno, clínico y diseñado para tu confort
+                    </h2>
+                    <p class="text-slate-600 leading-relaxed">
+                        En <strong class="text-slate-900">PodoEstética</strong> disponemos de tecnología puntera y un entorno totalmente esterilizado, limpio y acogedor. Queremos que cada visita sea una experiencia de bienestar desde el primer instante en que cruzas nuestra puerta.
+                    </p>
+                    <ul class="space-y-3 text-slate-700 font-medium">
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-medical-600"></i> Aparatología de última generación en podología
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-medical-600"></i> Estrictos protocolos de esterilización y asepsia
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-medical-600"></i> Trato cercano, profesional y totalmente personalizado
+                        </li>
+                    </ul>
+                    <div class="pt-4">
+                        <a href="tel:633662260" class="inline-flex items-center gap-2 bg-medical-600 hover:bg-medical-700 text-white px-6 py-3.5 rounded-xl font-bold shadow-lg shadow-medical-600/20 transition">
+                            <i class="fa-solid fa-phone"></i> Pedir Cita Previa
+                        </a>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-white">
+                        <img src="https://scontent-iad3-2.xx.fbcdn.net/v/t39.30808-1/586925869_1438926668236561_7557375462818727310_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx500x500&amp;ctp=s500x500&amp;_nc_cat=103&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=Xr_YXy0NeuwQ7kNvwGqrh9Z&amp;_nc_oc=AdqMlx0duHShXxorN3lSy5XGHxMYSLUiv4MT4vNEAmqFdExKCrPi1SJitlit8Mb2TOo&amp;_nc_zt=24&amp;_nc_ht=scontent-iad3-2.xx&amp;_nc_gid=IJJ3Vi_aq-Uaybo0i1spLA&amp;_nc_ss=7f289&amp;oh=00_AQOYe2wGihuZIlwyR3qf8ca-ifiNoLU9JiYNdEtn2Gh2Bw&amp;oe=6AD6FE8A" 
+                             alt="Instalaciones PodoEstética Zaragoza" 
+                             class="w-full h-[450px] object-cover object-center"
+                             referrerpolicy="no-referrer"
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80';">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Opiniones Reales Verificadas -->
+    <section id="opiniones" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+                <h2 class="text-sm font-bold tracking-widest text-medical-600 uppercase">Opiniones Verificadas</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Lo que opinan nuestros pacientes</h3>
+                <p class="text-slate-600">La satisfacción de quienes confían en nosotros es nuestro mayor aval profesional.</p>
+            </div>
+
+            <div class="max-w-xl mx-auto">
+                <!-- Reseña Real -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 shadow-sm relative">
+                    <div class="flex text-amber-400 gap-1 mb-4 text-lg">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-700 italic text-lg mb-6 leading-relaxed">
+                        "Excelente trato, profesionalidad y calidad."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-medical-500 text-white font-bold flex items-center justify-center text-sm">
+                            G
+                        </div>
+                        <div>
+                            <p class="font-bold text-slate-900 text-sm">Paciente Verificado</p>
+                            <p class="text-xs text-slate-500">Google Maps</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Ubicación y Contacto / Mapa -->
+    <section id="contacto" class="py-20 bg-slate-50 border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+                <h2 class="text-sm font-bold tracking-widest text-medical-600 uppercase">¿Dónde Estamos?</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Visítanos en Zaragoza</h3>
+                <p class="text-slate-600">Pide tu cita previa por teléfono o acércate a nuestra clínica. Estaremos encantados de atenderte.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                
+                <!-- Info de contacto -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm space-y-6">
+                        <h4 class="text-xl font-bold text-slate-900">Información de Contacto</h4>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-medical-50 text-medical-600 flex items-center justify-center shrink-0 mt-1">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Dirección</p>
+                                <p class="text-slate-800 font-medium">Av. de Valdefierro, 37, 50012 Zaragoza, España</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-medical-50 text-medical-600 flex items-center justify-center shrink-0 mt-1">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Teléfono de Citas</p>
+                                <a href="tel:633662260" class="text-medical-600 font-bold hover:underline text-lg">633 66 22 60</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-medical-50 text-medical-600 flex items-center justify-center shrink-0 mt-1">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Correo Electrónico</p>
+                                <a href="mailto:error-lite+84f2@duckduckgo.com" class="text-slate-800 font-medium hover:text-medical-600 break-all">error-lite+84f2@duckduckgo.com</a>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t border-slate-100">
+                            <a href="tel:633662260" class="w-full bg-medical-600 hover:bg-medical-700 text-white py-3.5 px-6 rounded-xl font-bold shadow-lg shadow-medical-600/20 transition flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-calendar-check"></i> Pedir Cita Previa
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mapa Interactivo -->
+                <div class="lg:col-span-7">
+                    <div class="bg-white p-3 rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+                        <iframe src="https://www.google.com/maps?q=PodoEst%C3%A9tica%20Av.%20de%20Valdefierro%2C%2037%2C%2050012%20Zaragoza%2C%20Espa%C3%1A%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-medical-900 text-white pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-medical-500 flex items-center justify-center text-white font-bold">
+                            <i class="fa-solid fa-shoe-prints"></i>
+                        </div>
+                        <span class="text-xl font-bold tracking-tight text-white">Podo<span class="text-medical-400">Estética</span></span>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Clínica podológica en Zaragoza dedicada a la salud, cuidado y estética integral del pie con máxima profesionalidad.
+                    </p>
+                </div>
+
+                <div>
+                    <h5 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Enlaces Rápidos</h5>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li><a href="#inicio" class="hover:text-medical-400 transition">Inicio</a></li>
+                        <li><a href="#servicios" class="hover:text-medical-400 transition">Tratamientos</a></li>
+                        <li><a href="#nosotros" class="hover:text-medical-400 transition">Instalaciones</a></li>
+                        <li><a href="#opiniones" class="hover:text-medical-400 transition">Opiniones</a></li>
+                        <li><a href="#contacto" class="hover:text-medical-400 transition">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Tratamientos</h5>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li><a href="#servicios" class="hover:text-medical-400 transition">Quiropodias</a></li>
+                        <li><a href="#servicios" class="hover:text-medical-400 transition">Estudio Biomecánico</a></li>
+                        <li><a href="#servicios" class="hover:text-medical-400 transition">Podología Estética</a></li>
+                        <li><a href="#servicios" class="hover:text-medical-400 transition">Pie Diabético</a></li>
+                        <li><a href="#servicios" class="hover:text-medical-400 transition">Plantillas Personalizadas</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Cita Previa</h5>
+                    <p class="text-slate-300 text-sm mb-4">Llámanos ahora para reservar tu cita en nuestra clínica de Zaragoza.</p>
+                    <a href="tel:633662260" class="inline-flex items-center gap-2 bg-medical-600 hover:bg-medical-550 text-white px-5 py-3 rounded-xl font-bold text-sm transition shadow-md">
+                        <i class="fa-solid fa-phone"></i> 633 66 22 60
+                    </a>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-medical-800 text-center text-xs text-slate-400 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p>&copy; 2025 PodoEstética. Todos los derechos reservados.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-medical-400 transition">Política de Privacidad</a>
+                    <a href="#" class="hover:text-medical-400 transition">Aviso Legal</a>
+                    <a href="#" class="hover:text-medical-400 transition">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script sencillo para menú móvil -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú al hacer click en enlaces del menú móvil
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
