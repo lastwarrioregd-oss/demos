@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fisical Sevilla | Clínica de Fisioterapia en Sevilla</title>
+    <!-- Tailwind CSS v3 -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Pro/Free -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6, .font-heading {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-teal-500 selection:text-white">
+
+    <!-- Top Notification Bar -->
+    <div class="bg-teal-700 text-white text-xs md:text-sm py-2 px-4 text-center font-medium">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <span class="flex items-center gap-2">
+                <i class="fa-solid fa-location-dot"></i> C. Castillo de Aroche, 1, 41013 Sevilla
+            </span>
+            <span class="flex items-center gap-4">
+                <a href="tel:955116600" class="hover:underline flex items-center gap-1"><i class="fa-solid fa-phone"></i> 955 11 66 00</a>
+                <span class="hidden md:inline">|</span>
+                <a href="mailto:error-lite+84f2@duckduckgo.com" class="hover:underline hidden md:flex items-center gap-1"><i class="fa-solid fa-envelope"></i> Contacto rápido</a>
+            </span>
+        </div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-teal-600 flex items-center justify-center text-white text-xl font-bold shadow-md shadow-teal-600/20 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl font-extrabold tracking-tight text-slate-900 font-heading">Fisical <span class="text-teal-600">Sevilla</span></span>
+                    <span class="text-[10px] tracking-widest uppercase font-semibold text-slate-400">Clínica de Fisioterapia</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
+                <a href="#inicio" class="hover:text-teal-600 transition-colors">Inicio</a>
+                <a href="#especialidades" class="hover:text-teal-600 transition-colors">Tratamientos</a>
+                <a href="#instalaciones" class="hover:text-teal-600 transition-colors">Instalaciones</a>
+                <a href="#opiniones" class="hover:text-teal-600 transition-colors">Opiniones</a>
+                <a href="#contacto" class="hover:text-teal-600 transition-colors">Ubicación</a>
+            </nav>
+
+            <!-- CTA Header Button -->
+            <div class="flex items-center gap-4">
+                <a href="tel:955116600" class="hidden sm:inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white px-5 py-2.5 rounded-xl font-semibold text-sm shadow-lg shadow-teal-600/25 transition-all transform hover:-translate-y-0.5 active:translate-y-0">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span>Pedir Cita Previa</span>
+                </a>
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" class="md:hidden text-slate-700 text-2xl focus:outline-none p-2" aria-label="Abrir menú">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full bg-white border-b border-slate-200 shadow-xl py-6 px-6 flex flex-col gap-4 text-base font-medium text-slate-700">
+            <a href="#inicio" class="mobile-link hover:text-teal-600 py-1">Inicio</a>
+            <a href="#especialidades" class="mobile-link hover:text-teal-600 py-1">Tratamientos</a>
+            <a href="#instalaciones" class="mobile-link hover:text-teal-600 py-1">Instalaciones</a>
+            <a href="#opiniones" class="mobile-link hover:text-teal-600 py-1">Opiniones</a>
+            <a href="#contacto" class="mobile-link hover:text-teal-600 py-1">Ubicación</a>
+            <div class="pt-4 border-t border-slate-100 flex flex-col gap-3">
+                <a href="tel:955116600" class="flex items-center justify-center gap-2 bg-teal-600 text-white py-3 rounded-xl font-semibold text-center shadow-md">
+                    <i class="fa-solid fa-calendar-check"></i> Pedir Cita Previa
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden bg-gradient-to-b from-teal-50/60 via-white to-white">
+        <!-- Decorative Glow Elements -->
+        <div class="absolute top-0 right-0 -z-10 w-96 h-96 bg-teal-100 rounded-full blur-3xl opacity-60 translate-x-1/3 -translate-y-1/3"></div>
+        <div class="absolute bottom-0 left-0 -z-10 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-75 -translate-x-1/3 translate-y-1/3"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Column: Copy & CTAs -->
+                <div class="lg:col-span-7 flex flex-col items-start text-left">
+                    <div class="inline-flex items-center gap-2 bg-teal-100 text-teal-800 px-3.5 py-1.5 rounded-full text-xs md:text-sm font-semibold mb-6">
+                        <i class="fa-solid fa-shield-heart text-teal-600"></i> Clínica de Fisioterapia de Referencia en Sevilla
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-6">
+                        Recupera tu bienestar y <span class="text-teal-600 underline decoration-teal-300 decoration-wavy decoration-1">vuelve a moverte sin dolor</span>
+                    </h1>
+                    
+                    <p class="text-lg text-slate-600 mb-8 max-w-2xl leading-relaxed">
+                        En <strong class="text-slate-800">Fisical Sevilla</strong> combinamos tecnología avanzada, técnicas manuales especializadas y un trato humano excepcional para garantizar tu plena recuperación física en el corazón de Sevilla (C. Castillo de Aroche, 1).
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto mb-10">
+                        <a href="tel:955116600" class="inline-flex items-center justify-center gap-3 bg-teal-600 hover:bg-teal-700 text-white px-8 py-4 rounded-xl font-bold text-base shadow-xl shadow-teal-600/25 transition-all transform hover:-translate-y-0.5">
+                            <i class="fa-solid fa-calendar-check text-lg"></i>
+                            <span>Pedir Cita Previa</span>
+                        </a>
+                        <a href="tel:955116600" class="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 px-6 py-4 rounded-xl font-semibold text-base transition-all">
+                            <i class="fa-solid fa-phone text-teal-600"></i>
+                            <span>Llamar al 955 11 66 00</span>
+                        </a>
+                    </div>
+
+                    <!-- Trust Indicators Grid -->
+                    <div class="grid grid-cols-3 gap-6 pt-6 border-t border-slate-100 w-full">
+                        <div class="flex flex-col">
+                            <span class="text-2xl font-bold text-slate-900 font-heading">5.0</span>
+                            <span class="text-amber-500 text-xs flex items-center gap-1 my-0.5">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </span>
+                            <span class="text-xs text-slate-500">Valoración en Google</span>
+                        </div>
+                        <div class="flex flex-col border-x border-slate-100 px-4">
+                            <span class="text-2xl font-bold text-slate-900 font-heading">+100%</span>
+                            <span class="text-xs font-semibold text-teal-600 mt-0.5">Profesionalidad</span>
+                            <span class="text-xs text-slate-500">Trato excelente</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-2xl font-bold text-slate-900 font-heading">Sevilla</span>
+                            <span class="text-xs font-semibold text-slate-700 mt-0.5">Zona Nervión/San Pablo</span>
+                            <span class="text-xs text-slate-500">C. Castillo de Aroche</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Featured Image with Badges -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Main Image Frame -->
+                        <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/5] bg-slate-100">
+                            <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80';" alt="Clínica de Fisioterapia Fisical Sevilla" class="w-full h-full object-cover object-center">
+                            <!-- Overlay Gradient -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent"></div>
+                        </div>
+
+                        <!-- Floating Card: Patient satisfaction -->
+                        <div class="absolute -bottom-6 -left-6 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3.5 max-w-xs animate-bounce duration-1000">
+                            <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-600 flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-thumbs-up"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 font-medium">Opinión Verificada</p>
+                                <p class="text-sm font-bold text-slate-900 font-heading">"Excelente trato y calidad"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition Banner -->
+    <section class="bg-teal-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left items-center">
+                <div class="flex items-center justify-center md:justify-start gap-4">
+                    <div class="w-14 h-14 rounded-2xl bg-teal-800/80 border border-teal-700 flex items-center justify-center text-teal-300 text-2xl shrink-0">
+                        <i class="fa-solid fa-user-doctor"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg font-heading">Fisioterapia Avanzada</h3>
+                        <p class="text-teal-200 text-sm">Diagnóstico clínico personalizado</p>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center md:justify-start gap-4 border-y md:border-y-0 md:border-x border-teal-800 py-6 md:py-0 md:px-6">
+                    <div class="w-14 h-14 rounded-2xl bg-teal-800/80 border border-teal-700 flex items-center justify-center text-teal-300 text-2xl shrink-0">
+                        <i class="fa-solid fa-hand-holding-medical"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg font-heading">Terapia Manual y Activa</h3>
+                        <p class="text-teal-200 text-sm">Soluciones efectivas para el dolor</p>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center md:justify-start gap-4">
+                    <div class="w-14 h-14 rounded-2xl bg-teal-800/80 border border-teal-700 flex items-center justify-center text-teal-300 text-2xl shrink-0">
+                        <i class="fa-solid fa-location-crosshairs"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg font-heading">Ubicación Céntrica (41013)</h3>
+                        <p class="text-teal-200 text-sm">Fácil acceso en Sevilla</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Treatments Section -->
+    <section id="especialidades" class="py-20 md:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-teal-600 font-bold text-sm tracking-wider uppercase bg-teal-50 px-3.5 py-1.5 rounded-full">Nuestros Tratamientos</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-4 mb-4 font-heading">Especialidades fisioterápicas para tu salud</h2>
+                <p class="text-slate-600 text-base sm:text-lg">Abordamos cada lesión desde su origen para ofrecerte una recuperación integral, duradera y basada en la evidencia científica.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Treatment Card 1 -->
+                <div class="bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:border-teal-200 transition-all hover:shadow-xl hover:-translate-y-1 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-teal-100 text-teal-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-teal-600 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-bone"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 font-heading">Fisioterapia Traumatológica</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Tratamiento especializado para lesiones articulares, musculares, tendinopatías, esguinces y recuperación postquirúrgica en Sevilla.
+                        </p>
+                    </div>
+                    <a href="tel:955116600" class="inline-flex items-center gap-2 text-teal-600 font-semibold text-sm group-hover:translate-x-1 transition-transform">
+                        <span>Pedir Cita Previa</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Treatment Card 2 -->
+                <div class="bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:border-teal-200 transition-all hover:shadow-xl hover:-translate-y-1 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-teal-100 text-teal-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-teal-600 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-child-reaching"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 font-heading">Fisioterapia Deportiva</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Optimización del rendimiento, prevención de lesiones y readaptación físico-deportiva para deportistas amateurs y profesionales.
+                        </p>
+                    </div>
+                    <a href="tel:955116600" class="inline-flex items-center gap-2 text-teal-600 font-semibold text-sm group-hover:translate-x-1 transition-transform">
+                        <span>Pedir Cita Previa</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Treatment Card 3 -->
+                <div class="bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:border-teal-200 transition-all hover:shadow-xl hover:-translate-y-1 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-teal-100 text-teal-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-teal-600 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-spa"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 font-heading">Terapia Manual y Osteopatía</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Alivio eficaz de dolores cervicales, contracturas, lumbalgias y cefaleas tensionales mediante técnicas manuales avanzadas y precisas.
+                        </p>
+                    </div>
+                    <a href="tel:955116600" class="inline-flex items-center gap-2 text-teal-600 font-semibold text-sm group-hover:translate-x-1 transition-transform">
+                        <span>Pedir Cita Previa</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Treatment Card 4 -->
+                <div class="bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:border-teal-200 transition-all hover:shadow-xl hover:-translate-y-1 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-teal-100 text-teal-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-teal-600 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 font-heading">Electrolisis y Neuromodulación</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Tecnología puntera para el tratamiento de tendinopatías crónicas y dolores neuropáticos con resultados rápidos y científicamente probados.
+                        </p>
+                    </div>
+                    <a href="tel:955116600" class="inline-flex items-center gap-2 text-teal-600 font-semibold text-sm group-hover:translate-x-1 transition-transform">
+                        <span>Pedir Cita Previa</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Treatment Card 5 -->
+                <div class="bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:border-teal-200 transition-all hover:shadow-xl hover:-translate-y-1 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-teal-100 text-teal-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-teal-600 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-person-walking"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 font-heading">Fisioterapia Geriátrica</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Mejora de la movilidad, equilibrio, fuerza y autonomía en personas mayores, reduciendo dolores crónicos y previniendo caídas.
+                        </p>
+                    </div>
+                    <a href="tel:955116600" class="inline-flex items-center gap-2 text-teal-600 font-semibold text-sm group-hover:translate-x-1 transition-transform">
+                        <span>Pedir Cita Previa</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Treatment Card 6 -->
+                <div class="bg-teal-600 rounded-3xl p-8 text-white flex flex-col justify-between shadow-xl shadow-teal-600/20">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-white/20 text-white flex items-center justify-center text-2xl mb-6">
+                            <i class="fa-solid fa-stethoscope"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 font-heading">¿No sabes qué lesión tienes?</h3>
+                        <p class="text-teal-100 text-sm leading-relaxed mb-6">
+                            Ven a nuestra clínica en C. Castillo de Aroche, 1, Sevilla. Realizamos una valoración diagnóstica personalizada para diseñar tu tratamiento a medida.
+                        </p>
+                    </div>
+                    <a href="tel:955116600" class="inline-flex items-center justify-center gap-2 bg-white text-teal-700 py-3 px-6 rounded-xl font-bold text-sm shadow-md hover:bg-teal-50 transition-colors">
+                        <i class="fa-solid fa-phone"></i> Llamar al 955 11 66 00
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Facilities / Gallery Section -->
+    <section id="instalaciones" class="py-20 md:py-28 bg-slate-50 border-y border-slate-200/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+                <div class="max-w-xl">
+                    <span class="text-teal-600 font-bold text-sm tracking-wider uppercase bg-teal-100 px-3.5 py-1.5 rounded-full">Nuestras Instalaciones</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-4 mb-4 font-heading">Espacios modernos pensados para tu confort</h2>
+                    <p class="text-slate-600 text-base">Un entorno clínico impecable, equipado con tecnología de vanguardia y gabinetes privados diseñados para garantizar tu tranquilidad y privacidad durante la sesión.</p>
+                </div>
+                <div class="mt-6 md:mt-0">
+                    <a href="tel:955116600" class="inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded-xl font-bold text-sm shadow-md transition-all">
+                        <i class="fa-solid fa-calendar-check"></i> Pedir Cita Previa
+                    </a>
+                </div>
+            </div>
+
+            <!-- Image Grid Gallery -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="relative group rounded-3xl overflow-hidden shadow-md aspect-[4/3] bg-slate-200">
+                    <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80';" alt="Instalaciones Fisical Sevilla - Sala de Fisioterapia" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white font-semibold text-sm">Gabinetes de fisioterapia totalmente equipados</span>
+                    </div>
+                </div>
+
+                <div class="relative group rounded-3xl overflow-hidden shadow-md aspect-[4/3] bg-slate-200">
+                    <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=1200&q=80';" alt="Equipamiento avanzado Fisical Sevilla" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white font-semibold text-sm">Tecnología punta para tratamientos efectivos</span>
+                    </div>
+                </div>
+
+                <div class="relative group rounded-3xl overflow-hidden shadow-md aspect-[4/3] bg-slate-200">
+                    <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=1200&q=80';" alt="Clínica limpia y moderna en Sevilla" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white font-semibold text-sm">Ambiente clínico limpio, luminoso y acogedor</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Real Reviews Section -->
+    <section id="opiniones" class="py-20 md:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-teal-600 font-bold text-sm tracking-wider uppercase bg-teal-50 px-3.5 py-1.5 rounded-full">Opiniones Verificadas</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-4 mb-4 font-heading">Lo que nuestros pacientes opinan</h2>
+                <p class="text-slate-600 text-base sm:text-lg">La satisfacción de quienes confían en nosotros es nuestro mayor aval diario en Sevilla.</p>
+            </div>
+
+            <!-- Single Featured Review Card based on real feedback -->
+            <div class="max-w-2xl mx-auto">
+                <div class="bg-gradient-to-br from-teal-50 to-white rounded-3xl p-8 sm:p-12 border border-teal-100 shadow-xl relative">
+                    <!-- Quote Icon Background -->
+                    <div class="absolute top-6 right-8 text-teal-200 text-6{-px} -z-0 opacity-40">
+                        <i class="fa-solid fa-quote-right text-6xl"></i>
+                    </div>
+
+                    <div class="flex items-center gap-1 text-amber-400 mb-6 text-xl">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    <blockquote class="text-xl sm:text-2xl font-medium text-slate-800 mb-8 leading-relaxed font-heading relative z-10">
+                        "Excelente trato, profesionalidad y calidad."
+                    </blockquote>
+
+                    <div class="flex items-center gap-4 relative z-10">
+                        <div class="w-12 h-12 rounded-full bg-teal-600 text-white font-bold flex items-center justify-center text-lg shadow-md">
+                            FS
+                        </div>
+                        <div>
+                            <div class="font-bold text-slate-900 font-heading">Paciente Verificado de Google Maps</div>
+                            <div class="text-xs text-teal-700 font-medium flex items-center gap-1 mt-0.5">
+                                <i class="fa-solid fa-circle-check"></i> Reseña real en Google
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Location & Contact Section -->
+    <section id="contacto" class="py-20 md:py-28 bg-slate-50 border-t border-slate-200/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left: Info & Contact Details -->
+                <div class="lg:col-span-5 flex flex-col">
+                    <span class="text-teal-600 font-bold text-sm tracking-wider uppercase bg-teal-100 px-3.5 py-1.5 rounded-full w-max mb-4">Ubicación y Contacto</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-6 font-heading">Visítanos en Sevilla</h2>
+                    <p class="text-slate-600 mb-8 leading-relaxed">
+                        Estamos situados en una zona accesible de Sevilla. Pide tu cita previa por teléfono o visítanos directamente en nuestra clínica.
+                    </p>
+
+                    <div class="space-y-6 mb-8">
+                        <!-- Address -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center text-xl shrink-0 mt-1">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-900 font-heading">Dirección Exacta</h3>
+                                <p class="text-slate-600 text-sm mt-0.5">C. Castillo de Aroche, 1, 41013 Sevilla, España</p>
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center text-xl shrink-0 mt-1">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-900 font-heading">Teléfono de Citas</h3>
+                                <p class="text-slate-600 text-sm mt-0.5"><a href="tel:955116600" class="hover:text-teal-600 font-semibold">955 11 66 00</a></p>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center text-xl shrink-0 mt-1">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-900 font-heading">Correo Electrónico</h3>
+                                <p class="text-slate-600 text-sm mt-0.5"><a href="mailto:error-lite+84f2@duckduckgo.com" class="hover:text-teal-600 font-semibold">error-lite+84f2@duckduckgo.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <a href="tel:955116600" class="inline-flex items-center justify-center gap-2 bg-teal-600 hover:bg-teal-700 text-white w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-base shadow-lg shadow-teal-600/25 transition-all">
+                            <i class="fa-solid fa-calendar-check"></i> Pedir Cita Previa Ahora
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Interactive Google Map -->
+                <div class="lg:col-span-7">
+                    <div class="bg-white p-3 rounded-3xl shadow-xl border border-slate-200">
+                        <iframe src="https://www.google.com/maps?q=Fisical%20Sevilla%20C.%20Castillo%20de%20Aroche%2C%201%2C%2041013%20Sevilla%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-16 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                
+                <div class="md:col-span-2">
+                    <a href="#" class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-teal-600 flex items-center justify-center text-white text-xl font-bold">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                        </div>
+                        <span class="text-xl font-extrabold tracking-tight text-white font-heading">Fisical <span class="text-teal-400">Sevilla</span></span>
+                    </a>
+                    <p class="text-sm text-slate-400 max-w-sm mb-6 leading-relaxed">
+                        Clínica de fisioterapia profesional en Sevilla. Expertos en salud, recuperación funcional y bienestar físico con atención personalizada.
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <a href="tel:955116600" class="w-10 h-10 rounded-full bg-slate-800 hover:bg-teal-600 text-white flex items-center justify-center transition-colors"><i class="fa-solid fa-phone"></i></a>
+                        <a href="mailto:error-lite+84f2@duckduckgo.com" class="w-10 h-10 rounded-full bg-slate-800 hover:bg-teal-600 text-white flex items-center justify-center transition-colors"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-base mb-4 font-heading">Enlaces Rápidos</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="#inicio" class="hover:text-teal-400 transition-colors">Inicio</a></li>
+                        <li><a href="#especialidades" class="hover:text-teal-400 transition-colors">Tratamientos</a></li>
+                        <li><a href="#instalaciones" class="hover:text-teal-400 transition-colors">Instalaciones</a></li>
+                        <li><a href="#opiniones" class="hover:text-teal-400 transition-colors">Opiniones</a></li>
+                        <li><a href="#contacto" class="hover:text-teal-400 transition-colors">Ubicación y Citas</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-base mb-4 font-heading">Contacto Directo</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-location-dot text-teal-400 mt-1"></i>
+                            <span>C. Castillo de Aroche, 1, 41013 Sevilla, España</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-phone text-teal-400"></i>
+                            <a href="tel:955116600" class="hover:text-white font-semibold">955 11 66 00</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-envelope text-teal-400"></i>
+                            <a href="mailto:error-lite+84f2@duckduckgo.com" class="hover:text-white truncate">error-lite+84f2@duckduckgo.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+                <p>&copy; <span id="year"></span> Fisical Sevilla. Todos los derechos reservados.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-slate-400">Política de Privacidad</a>
+                    <a href="#" class="hover:text-slate-400">Aviso Legal</a>
+                    <a href="#" class="hover:text-slate-400">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script to toggle mobile menu and current year -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
