@@ -4,343 +4,356 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caña Flamenca | Bar en Moclinejo, Málaga</title>
-    <meta name="description" content="Descubre Caña Flamenca en Moclinejo, Málaga. Excelente trato, profesionalidad y calidad en un ambiente gastronómico único y acogedor. ¡Reserva tu mesa!">
-    
-    <!-- TailwindCSS v3 CDN -->
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        terracota: {
-                            50: '#fdf8f6',
-                            100: '#fbe8e3',
-                            500: '#c85a32',
-                            600: '#ad4824',
-                            700: '#8f3a1c',
-                            900: '#5c220f',
+                        terracotta: {
+                            DEFAULT: '#C85A32',
+                            dark: '#9A4221',
+                            light: '#E28C6D'
                         },
-                        gourmet: {
-                            dark: '#1a1818',
-                            card: '#242121',
-                            cream: '#f9f6f0',
-                        }
+                        cream: '#FDFBF7',
+                        gourmet: '#1A1818',
+                        warmgold: '#D4AF37'
                     },
                     fontFamily: {
                         serif: ['Playfair Display', 'serif'],
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
                     }
                 }
             }
         }
     </script>
-
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-gourmet-dark text-gourmet-cream font-sans antialiased selection:bg-terracota-500 selection:text-white">
+<body class="bg-cream text-gourmet font-sans antialiased selection:bg-terracotta selection:text-white">
 
-    <!-- Header & Navigation -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-gourmet-dark/90 backdrop-blur-md border-b border-white/10">
+    <!-- Header / Barra de Navegación -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-gourmet/95 backdrop-blur-md text-cream border-b border-white/10 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-full bg-terracota-500 flex items-center justify-center text-white font-serif text-xl font-bold shadow-lg shadow-terracota-500/30 group-hover:scale-105 transition-transform">
-                    CF
-                </div>
-                <div class="flex flex-col">
-                    <span class="font-serif text-xl font-bold tracking-wider text-white">Caña Flamenca</span>
-                    <span class="text-xs text-terracota-100 tracking-widest uppercase">Bar & Tradición</span>
-                </div>
+            <a href="#" class="font-serif text-2xl md:text-3xl font-bold tracking-wider text-warmgold flex items-center gap-2">
+                <i class="fa-solid fa-wine-glass-alt text-terracotta"></i> Caña Flamenca
             </a>
-
-            <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
-                <a href="#experiencia" class="hover:text-terracota-500 transition-colors">Experiencia</a>
-                <a href="#carta" class="hover:text-terracota-500 transition-colors">Nuestra Carta</a>
-                <a href="#instalaciones" class="hover:text-terracota-500 transition-colors">Instalaciones</a>
-                <a href="#opiniones" class="hover:text-terracota-500 transition-colors">Opiniones</a>
-                <a href="#contacto" class="hover:text-terracota-500 transition-colors">Ubicación</a>
+            
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm tracking-wide">
+                <a href="#inicio" class="hover:text-terracotta transition-colors">Inicio</a>
+                <a href="#carta" class="hover:text-terracotta transition-colors">Nuestra Carta</a>
+                <a href="#galeria" class="hover:text-terracotta transition-colors">Instalaciones</a>
+                <a href="#experiencia" class="hover:text-terracotta transition-colors">El Rincón</a>
+                <a href="#opiniones" class="hover:text-terracotta transition-colors">Opiniones</a>
+                <a href="#contacto" class="hover:text-terracotta transition-colors">Ubicación</a>
             </nav>
 
-            <div class="flex items-center gap-4">
-                <a href="tel:744678107" class="hidden sm:inline-flex items-center gap-2 bg-terracota-500 hover:bg-terracota-600 text-white px-5 py-2.5 rounded-full font-semibold text-sm transition-all shadow-lg shadow-terracota-500/25 hover:scale-105">
-                    <i class="fa-solid fa-phone"></i>
-                    <span>Reservar Mesa</span>
+            <div class="hidden lg:flex items-center gap-4">
+                <a href="tel:744678107" class="bg-terracotta hover:bg-terracotta-dark text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 shadow-lg shadow-terracotta/20 flex items-center gap-2 text-sm">
+                    <i class="fa-solid fa-phone"></i> Reservar Mesa
+                </a>
+            </div>
+
+            <!-- Botón Menú Móvil -->
+            <button id="menu-btn" class="md:hidden text-cream text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gourmet border-b border-white/10 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="block py-2 hover:text-terracotta transition-colors">Inicio</a>
+            <a href="#carta" class="block py-2 hover:text-terracotta transition-colors">Nuestra Carta</a>
+            <a href="#galeria" class="block py-2 hover:text-terracotta transition-colors">Instalaciones</a>
+            <a href="#experiencia" class="block py-2 hover:text-terracotta transition-colors">El Rincón</a>
+            <a href="#opiniones" class="block py-2 hover:text-terracotta transition-colors">Opiniones</a>
+            <a href="#contacto" class="block py-2 hover:text-terracotta transition-colors">Ubicación</a>
+            <div class="pt-2">
+                <a href="tel:744678107" class="w-full bg-terracotta text-white text-center font-semibold py-3 rounded-full block shadow-lg shadow-terracotta/20">
+                    <i class="fa-solid fa-phone mr-2"></i> Reservar Mesa
                 </a>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-        <!-- Background with Overlay -->
-        <div class="absolute inset-0 z-0">
-            <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';" alt="Caña Flamenca Bar Moclinejo" class="w-full h-full object-cover object-center filter brightness-[0.4] scale-105 animate-pulse duration-[10000ms]">
-            <div class="absolute inset-0 bg-gradient-to-t from-gourmet-dark via-gourmet-dark/50 to-transparent"></div>
+    <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-gourmet">
+        <!-- Imagen de Fondo con Overlay -->
+        <div class="absolute inset-0 z-0 opacity-40">
+            <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';" alt="Caña Flamenca Bar Moclinejo" class="w-full h-full object-cover">
         </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-gourmet via-gourmet/60 to-transparent z-0"></div>
 
-        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
-            <span class="inline-flex items-center gap-2 py-1 px-4 rounded-full bg-terracota-500/20 border border-terracota-500/30 text-terracota-100 text-sm font-medium mb-6 backdrop-blur-sm">
-                <i class="fa-solid fa-location-dot text-terracota-500"></i> Moclinejo, Málaga
+        <div class="relative z-10 max-w-5xl mx-auto px-4 text-center py-24">
+            <span class="inline-block text-warmgold font-medium uppercase tracking-widest text-sm mb-4 bg-warmgold/10 px-4 py-1.5 rounded-full border border-warmgold/20">
+                <i class="fa-solid fa-location-dot mr-2"></i> Moclinejo, Málaga
             </span>
-            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
-                El Arte del Buen Comer en el Corazón de <span class="text-terracota-500 italic">Moclinejo</span>
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold text-cream mb-6 leading-tight">
+                Tradición, Sabor y Arte en el <span class="text-terracotta italic">Corazón de la Axarquía</span>
             </h1>
-            <p class="max-w-2xl mx-auto text-lg sm:text-xl text-gourmet-cream/80 mb-10 font-light">
-                Disfruta de una experiencia gastronómica inigualable. Excelente trato, profesionalidad y calidad inconfundible en cada plato.
+            <p class="text-lg sm:text-xl text-cream/80 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+                Descubre el auténtico punto de encuentro en Moclinejo. Excelente trato, profesionalidad y calidad inigualable en cada plato y cada copa.
             </p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="tel:744678107" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-terracota-500 hover:bg-terracota-600 text-white px-8 py-4 rounded-full font-bold text-base transition-all shadow-xl shadow-terracota-500/30 hover:scale-105">
-                    <i class="fa-solid fa-calendar-check"></i>
-                    <span>Reservar Mesa</span>
+                <a href="tel:744678107" class="w-full sm:w-auto bg-terracotta hover:bg-terracotta-dark text-white font-bold px-8 py-4 rounded-full transition-all duration-300 shadow-xl shadow-terracotta/30 text-lg flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-phone"></i> Reservar Mesa
                 </a>
-                <a href="#carta" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white/10 hover:bg-white/25 text-white px-8 py-4 rounded-full font-bold text-base backdrop-blur-md transition-all border border-white/10">
-                    <i class="fa-solid fa-utensils"></i>
-                    <span>Ver Carta y Especialidades</span>
+                <a href="#carta" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-cream border border-white/20 font-semibold px-8 py-4 rounded-full transition-all duration-300 text-lg flex items-center justify-center gap-3 backdrop-blur-sm">
+                    <i class="fa-solid fa-utensils"></i> Ver Nuestra Carta
                 </a>
             </div>
 
-            <!-- Trust Badges -->
-            <div class="mt-16 grid grid-cols-2 md:grid-cols-3 gap-6 pt-10 border-t border-white/10 text-center">
-                <div class="flex flex-col items-center">
-                    <span class="font-serif text-2xl font-bold text-white">5.0 ★</span>
-                    <span class="text-xs text-gourmet-cream/60 uppercase tracking-wider mt-1">Calidad Garantizada</span>
-                </div>
-                <div class="flex flex-col items-center">
-                    <span class="font-serif text-2xl font-bold text-white">100%</span>
-                    <span class="text-xs text-gourmet-cream/60 uppercase tracking-wider mt-1">Trato Profesional</span>
-                </div>
-                <div class="col-span-2 md:col-span-1 flex flex-col items-center">
-                    <span class="font-serif text-2xl font-bold text-white">Moclinejo</span>
-                    <span class="text-xs text-gourmet-cream/60 uppercase tracking-wider mt-1">Ambiente Único</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience / About Section -->
-    <section id="experiencia" class="py-24 bg-gourmet-card relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div class="relative">
-                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 aspect-[4/3]">
-                        <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80';" alt="Interior Caña Flamenca" class="w-full h-full object-cover">
-                    </div>
-                    <div class="absolute -bottom-6 -right-6 bg-terracota-500 text-white p-6 rounded-2xl shadow-xl hidden sm:block max-w-xs border border-terracota-600">
-                        <p class="font-serif italic text-lg mb-2">"Excelente trato, profesionalidad y calidad."</p>
-                        <span class="text-xs uppercase tracking-widest font-semibold opacity-90">— Opinión Verificada Google</span>
+            <!-- Destacados rápidos -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20 pt-12 border-t border-white/10 text-left">
+                <div class="flex items-start gap-4 bg-white/5 p-4 rounded-xl backdrop-blur-sm border border-white/5">
+                    <div class="text-warmgold text-2xl mt-1"><i class="fa-solid fa-star"></i></div>
+                    <div>
+                        <h3 class="text-cream font-semibold">Excelente Trato</h3>
+                        <p class="text-cream/70 text-sm">Profesionalidad y cercanía en un ambiente familiar.</p>
                     </div>
                 </div>
-                <div class="space-y-6">
-                    <span class="text-terracota-500 font-semibold tracking-widest uppercase text-sm">Nuestra Esencia</span>
-                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white leading-tight">
-                        Un rincón acogedor donde la buena mesa es protagonista
-                    </h2>
-                    <p class="text-gourmet-cream/80 leading-relaxed font-light">
-                        Ubicados en el pintoresco municipio de Moclinejo, en Málaga, en <strong class="text-white font-semibold">Caña Flamenca</strong> combinamos la tradición de los bares de toda la vida con una atención esmerada y cercana. Nos apasiona ofrecer momentos memorables alrededor de una buena mesa.
-                    </p>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-                        <div class="flex items-start gap-4 p-4 rounded-xl bg-gourmet-dark/50 border border-white/5">
-                            <div class="w-10 h-10 rounded-lg bg-terracota-500/20 text-terracota-500 flex items-center justify-center shrink-0">
-                                <i class="fa-solid fa-heart"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-semibold text-white mb-1">Trato Excepcional</h3>
-                                <p class="text-xs text-gourmet-cream/70">Cercanía y profesionalidad en cada servicio.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4 p-4 rounded-xl bg-gourmet-dark/50 border border-white/5">
-                            <div class="w-10 h-10 rounded-lg bg-terracota-500/20 text-terracota-500 flex items-center justify-center shrink-0">
-                                <i class="fa-solid fa-award"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-semibold text-white mb-1">Máxima Calidad</h3>
-                                <p class="text-xs text-gourmet-cream/70">Selección cuidada en cada uno de nuestros platos.</p>
-                            </div>
-                        </div>
+                <div class="flex items-start gap-4 bg-white/5 p-4 rounded-xl backdrop-blur-sm border border-white/5">
+                    <div class="text-warmgold text-2xl mt-1"><i class="fa-solid fa-plate-wheat"></i></div>
+                    <div>
+                        <h3 class="text-cream font-semibold">Calidad Superior</h3>
+                        <p class="text-cream/70 text-sm">Productos selectos de la tierra y tapas artesanales.</p>
                     </div>
-                    <div class="pt-4">
-                        <a href="tel:744678107" class="inline-flex items-center gap-2 text-terracota-500 hover:text-terracota-400 font-bold transition-colors">
-                            <span>Reserva tu experiencia hoy mismo</span>
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
+                </div>
+                <div class="flex items-start gap-4 bg-white/5 p-4 rounded-xl backdrop-blur-sm border border-white/5">
+                    <div class="text-warmgold text-2xl mt-1"><i class="fa-solid fa-wine-glass"></i></div>
+                    <div>
+                        <h3 class="text-cream font-semibold">Vinos y Cañas</h3>
+                        <p class="text-cream/70 text-sm">Servidas en su punto exacto para acompañar tu momento.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Menu / Carta Section -->
-    <section id="carta" class="py-24 bg-gourmet-dark relative">
+    <!-- Nuestra Carta y Especialidades -->
+    <section id="carta" class="py-24 bg-cream text-gourmet">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-terracota-500 font-semibold tracking-widest uppercase text-sm">Gastronomía y Sabor</span>
-                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mt-2 mb-4">
-                    Nuestra Carta y Especialidades
-                </h2>
-                <p class="text-gourmet-cream/70 font-light">
-                    Platos elaborados con mimo, tapas tradicionales y especialidades de la casa pensadas para el disfrute de todos los paladares.
+                <span class="text-terracotta font-semibold uppercase tracking-widest text-sm block mb-2">Gastronomía Auténtica</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold mb-4">Nuestra Carta y Especialidades</h2>
+                <div class="w-24 h-1 bg-terracotta mx-auto mb-6"></div>
+                <p class="text-gourmet/80 text-lg">
+                    Elaboraciones cuidadas con mimo, tradición malagueña y los mejores ingredientes para ofrecerte una experiencia inolvidable.
                 </p>
             </div>
 
+            <!-- Grid de Categorías de la Carta -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Category 1 -->
-                <div class="bg-gourmet-card rounded-2xl p-6 border border-white/10 hover:border-terracota-500/50 transition-all duration-300 group">
-                    <div class="flex items-center justify-between mb-4 pb-4 border-b border-white/10">
-                        <h3 class="font-serif text-xl font-bold text-white group-hover:text-terracota-500 transition-colors">Tapas y Entrantes</h3>
-                        <i class="fa-solid fa-plate-wheat text-terracota-500"></i>
+                
+                <!-- Categoría 1: Tapas y Raciones -->
+                <div class="bg-white p-8 rounded-2xl shadow-xl shadow-gourmet/5 border border-gourmet/5 hover:border-terracotta/30 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-terracotta/10 text-terracotta rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-terracotta group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-bowl-food"></i>
                     </div>
-                    <ul class="space-y-4">
-                        <li class="flex justify-between items-start">
-                            <div>
-                                <span class="font-medium text-white block">Especialidades de la Casa</span>
-                                <span class="text-xs text-gourmet-cream/60">El sabor auténtico de Moclinejo en cada tapa.</span>
-                            </div>
+                    <h3 class="font-serif text-2xl font-bold mb-3">Tapas y Raciones</h3>
+                    <p class="text-gourmet/70 text-sm mb-6">La esencia del bar tradicional andaluz con un toque de autor y calidad suprema.</p>
+                    <ul class="space-y-4 border-t border-gourmet/10 pt-6 text-sm">
+                        <li class="flex justify-between items-center">
+                            <span class="font-medium">Croquetas Caseras de la Abuela</span>
+                            <span class="text-terracotta font-bold">Recomendado</span>
                         </li>
-                        <li class="flex justify-between items-start">
-                            <div>
-                                <span class="font-medium text-white block">Embutidos y Quesos Selectos</span>
-                                <span class="text-xs text-gourmet-cream/60">Cortados al momento para acompañar tu caña.</span>
-                            </div>
+                        <li class="flex justify-between items-center">
+                            <span class="font-medium">Embutidos Ibéricos de la Sierra</span>
+                            <span class="text-terracotta font-bold">Selección</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span class="font-medium">Montaditos Especiales Caña Flamenca</span>
+                            <span class="text-terracotta font-bold">Favorito</span>
                         </li>
                     </ul>
                 </div>
 
-                <!-- Category 2 -->
-                <div class="bg-gourmet-card rounded-2xl p-6 border border-white/10 hover:border-terracota-500/50 transition-all duration-300 group">
-                    <div class="flex items-center justify-between mb-4 pb-4 border-b border-white/10">
-                        <h3 class="font-serif text-xl font-bold text-white group-hover:text-terracota-500 transition-colors">Platos Estrella</h3>
-                        <i class="fa-solid fa-utensils text-terracota-500"></i>
+                <!-- Categoría 2: Especialidades de la Casa -->
+                <div class="bg-white p-8 rounded-2xl shadow-xl shadow-gourmet/5 border border-gourmet/5 hover:border-terracotta/30 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-terracotta/10 text-terracotta rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-terracotta group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-fire-burner"></i>
                     </div>
-                    <ul class="space-y-4">
-                        <li class="flex justify-between items-start">
-                            <div>
-                                <span class="font-medium text-white block">Carnes y Guisos Tradicionales</span>
-                                <span class="text-xs text-gourmet-cream/60">Recetas caseras con el toque inconfundible del chef.</span>
-                            </div>
+                    <h3 class="font-serif text-2xl font-bold mb-3">Especialidades del Chef</h3>
+                    <p class="text-gourmet/70 text-sm mb-6">Platos fuertes cargados de sabor local, perfectos para disfrutar en buena compañía.</p>
+                    <ul class="space-y-4 border-t border-gourmet/10 pt-6 text-sm">
+                        <li class="flex justify-between items-center">
+                            <span class="font-medium">Carnes a la Brasa / Plancha</span>
+                            <span class="text-terracotta font-bold">Jugosas</span>
                         </li>
-                        <li class="flex justify-between items-start">
-                            <div>
-                                <span class="font-medium text-white block">Sugerencias del Día</span>
-                                <span class="text-xs text-gourmet-cream/60">Productos frescos de temporada y mercado.</span>
-                            </div>
+                        <li class="flex justify-between items-center">
+                            <span class="font-medium">Sugerencias del Día con Producto Local</span>
+                            <span class="text-terracotta font-bold">Fresco</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span class="font-medium">Platos de Cuchara Tradicionales</span>
+                            <span class="text-terracotta font-bold">Casero</span>
                         </li>
                     </ul>
                 </div>
 
-                <!-- Category 3 -->
-                <div class="bg-gourmet-card rounded-2xl p-6 border border-white/10 hover:border-terracota-500/50 transition-all duration-300 group">
-                    <div class="flex items-center justify-between mb-4 pb-4 border-b border-white/10">
-                        <h3 class="font-serif text-xl font-bold text-white group-hover:text-terracota-500 transition-colors">Bebidas y Bodega</h3>
-                        <i class="fa-solid fa-wine-glass text-terracota-500"></i>
+                <!-- Categoría 3: Bodega y Bebidas -->
+                <div class="bg-white p-8 rounded-2xl shadow-xl shadow-gourmet/5 border border-gourmet/5 hover:border-terracotta/30 transition-all duration-300 group md:col-span-2 lg:col-span-1">
+                    <div class="w-14 h-14 bg-terracotta/10 text-terracotta rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-terracotta group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-wine-bottle"></i>
                     </div>
-                    <ul class="space-y-4">
-                        <li class="flex justify-between items-start">
-                            <div>
-                                <span class="font-medium text-white block">Cañas Bien Tiradas</span>
-                                <span class="text-xs text-gourmet-cream/60">Siempre en su punto exacto de temperatura y espuma.</span>
-                            </div>
+                    <h3 class="font-serif text-2xl font-bold mb-3">Bodega y Cañas</h3>
+                    <p class="text-gourmet/70 text-sm mb-6">Cervezas siempre frías en su punto óptimo y selección de vinos de Moclinejo y Málaga.</p>
+                    <ul class="space-y-4 border-t border-gourmet/10 pt-6 text-sm">
+                        <li class="flex justify-between items-center">
+                            <span class="font-medium">Cañas Bien Tiradas y Frías</span>
+                            <span class="text-terracotta font-bold">Imprescindible</span>
                         </li>
-                        <li class="flex justify-between items-start">
-                            <div>
-                                <span class="font-medium text-white block">Vinos de la Tierra y Selección</span>
-                                <span class="text-xs text-gourmet-cream/60">Caldos ideales para maridar nuestra gastronomía.</span>
-                            </div>
+                        <li class="flex justify-between items-center">
+                            <span class="font-medium">Vinos Dulces y Secos de la Axarquía</span>
+                            <span class="text-terracotta font-bold">Denominación</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span class="font-medium">Vermuts y Aperitivos Caseros</span>
+                            <span class="text-terracotta font-bold">Clásico</span>
                         </li>
                     </ul>
                 </div>
+
             </div>
 
-            <!-- Call to Action Banner inside Carta -->
-            <div class="mt-16 bg-gradient-to-r from-terracota-700 to-terracota-500 rounded-3xl p-8 sm:p-12 text-center text-white shadow-2xl relative overflow-hidden">
-                <div class="relative z-10 max-w-2xl mx-auto">
-                    <h3 class="font-serif text-2xl sm:text-3xl font-bold mb-4">¿Listo para probar nuestras especialidades?</h3>
-                    <p class="text-white/90 mb-8 font-light">Reserva tu mesa ahora y asegura tu sitio en Caña Flamenca. ¡Te esperamos con los brazos abiertos!</p>
-                    <a href="tel:744678107" class="inline-flex items-center gap-2 bg-white text-terracota-700 hover:bg-gourmet-cream px-8 py-4 rounded-full font-bold text-base transition-all shadow-lg hover:scale-105">
-                        <i class="fa-solid fa-phone"></i>
-                        <span>Reservar Mesa: 744 67 81 07</span>
+            <!-- Llamado a la acción de reserva en la carta -->
+            <div class="mt-16 text-center bg-gourmet text-cream p-10 rounded-3xl relative overflow-hidden shadow-2xl">
+                <div class="absolute -right-10 -bottom-10 opacity-10 text-9xl text-warmgold">
+                    <i class="fa-solid fa-utensils"></i>
+                </div>
+                <h3 class="font-serif text-3xl font-bold mb-4">¿Te apetece probar nuestra cocina?</h3>
+                <p class="text-cream/80 max-w-xl mx-auto mb-8 font-light">Reserva tu mesa ahora y asegura tu sitio en el mejor ambiente de Moclinejo. ¡Te esperamos con la mejor sonrisa!</p>
+                <a href="tel:744678107" class="inline-flex items-center gap-3 bg-terracotta hover:bg-terracotta-dark text-white font-bold px-8 py-4 rounded-full transition-all duration-300 shadow-lg text-lg">
+                    <i class="fa-solid fa-phone"></i> Reservar Mesa: 744 67 81 07
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería de Instalaciones y Trabajos -->
+    <section id="galeria" class="py-24 bg-gourmet text-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-warmgold font-semibold uppercase tracking-widest text-sm block mb-2">Ambiente Acogedor</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold mb-4">Nuestras Instalaciones y Trabajos</h2>
+                <div class="w-24 h-1 bg-warmgold mx-auto mb-6"></div>
+                <p class="text-cream/80 text-lg">
+                    Un espacio diseñado para el disfrute, donde el encanto tradicional se une al confort moderno.
+                </p>
+            </div>
+
+            <!-- Grid de Fotos -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="relative overflow-hidden rounded-2xl group h-80 border border-white/10 shadow-lg">
+                    <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';" alt="Interior Bar Caña Flamenca" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet/90 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                        <span class="text-warmgold text-xs font-semibold uppercase tracking-wider">Salón Principal</span>
+                        <h4 class="font-serif text-xl font-bold text-cream mt-1">Ambiente cálido y acogedor</h4>
+                    </div>
+                </div>
+
+                <div class="relative overflow-hidden rounded-2xl group h-80 border border-white/10 shadow-lg">
+                    <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80';" alt="Platos y Tapas Caña Flamenca" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet/90 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                        <span class="text-warmgold text-xs font-semibold uppercase tracking-wider">Gastronomía</span>
+                        <h4 class="font-serif text-xl font-bold text-cream mt-1">Elaboraciones cuidadas al detalle</h4>
+                    </div>
+                </div>
+
+                <div class="relative overflow-hidden rounded-2xl group h-80 border border-white/10 shadow-lg md:col-span-2 lg:col-span-1">
+                    <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=1200&q=80';" alt="Barra y Vinos Caña Flamenca" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet/90 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                        <span class="text-warmgold text-xs font-semibold uppercase tracking-wider">La Barra</span>
+                        <h4 class="font-serif text-xl font-bold text-cream mt-1">Cañas perfectas y buen ambiente</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Experiencia / El Rincón -->
+    <section id="experiencia" class="py-24 bg-cream text-gourmet overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-terracotta font-semibold uppercase tracking-widest text-sm block mb-2">Nuestra Identidad</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold mb-6">Un rincón único en Moclinejo para sentir el arte y el sabor</h2>
+                    <p class="text-gourmet/80 text-lg mb-6 leading-relaxed">
+                        En <strong class="text-terracotta">Caña Flamenca</strong> nos esforzamos cada día para ofrecer mucho más que un lugar donde comer o beber. Creamos un punto de encuentro donde la profesionalidad, el buen trato y la calidad humana se combinan con la excelencia culinaria.
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-terracotta text-lg"></i>
+                            <span class="font-medium text-gourmet/90">Trato cercano, familiar y estrictamente profesional.</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-terracotta text-lg"></i>
+                            <span class="font-medium text-gourmet/90">Ubicación privilegiada en C. Calvario, Moclinejo.</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-terracotta text-lg"></i>
+                            <span class="font-medium text-gourmet/90">Ideal para disfrutar con amigos, pareja o familia.</span>
+                        </li>
+                    </ul>
+                    <a href="tel:744678107" class="inline-flex items-center gap-3 bg-terracotta hover:bg-terracotta-dark text-white font-bold px-8 py-4 rounded-full transition-all duration-300 shadow-xl shadow-terracotta/20 text-lg">
+                        <i class="fa-solid fa-phone"></i> Reservar Mesa
                     </a>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery / Instalaciones Section -->
-    <section id="instalaciones" class="py-24 bg-gourmet-card relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-terracota-500 font-semibold tracking-widest uppercase text-sm">Nuestro Espacio</span>
-                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mt-2 mb-4">
-                    Nuestras Instalaciones y Ambiente
-                </h2>
-                <p class="text-gourmet-cream/70 font-light">
-                    Un vistazo a nuestro local, diseñado para ofrecerte comodidad, calidez y un ambiente acogedor.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="group relative rounded-2xl overflow-hidden aspect-[4/3] border border-white/10 shadow-lg">
-                    <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';" alt="Salón Caña Flamenca" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                        <span class="text-white font-serif text-lg">Ambiente Acogedor</span>
-                    </div>
-                </div>
-                <div class="group relative rounded-2xl overflow-hidden aspect-[4/3] border border-white/10 shadow-lg">
-                    <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1200&q=80';" alt="Barra Caña Flamenca" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                        <span class="text-white font-serif text-lg">Nuestra Barra</span>
-                    </div>
-                </div>
-                <div class="group relative rounded-2xl overflow-hidden aspect-[4/3] border border-white/10 shadow-lg sm:col-span-2 lg:col-span-1">
-                    <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=1200&q=80';" alt="Detalles Caña Flamenca" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                        <span class="text-white font-serif text-lg">Tradición y Calidad</span>
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-terracotta/10 rounded-3xl transform rotate-3"></div>
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-gourmet/10 h-[450px]">
+                        <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=80';" alt="Experiencia Caña Flamenca" class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials / Opiniones Section -->
-    <section id="opiniones" class="py-24 bg-gourmet-dark relative">
+    <!-- Reseñas / Opiniones Reales Verificadas -->
+    <section id="opiniones" class="py-24 bg-gourmet text-cream relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-terracota-500 font-semibold tracking-widest uppercase text-sm">Reseñas Verificadas</span>
-                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mt-2 mb-4">
-                    Lo que opinan nuestros clientes
-                </h2>
-                <p class="text-gourmet-cream/70 font-light">
-                    La satisfacción de quienes nos visitan es nuestra mejor carta de presentación.
+                <span class="text-warmgold font-semibold uppercase tracking-widest text-sm block mb-2">Confianza Verificada</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold mb-4">Lo que dicen nuestros clientes</h2>
+                <div class="w-24 h-1 bg-warmgold mx-auto mb-6"></div>
+                <p class="text-cream/80 text-lg">
+                    La satisfacción de quienes nos visitan es nuestro mayor aval y motivación diaria.
                 </p>
             </div>
 
+            <!-- Tarjeta de Reseña Real -->
             <div class="max-w-2xl mx-auto">
-                <div class="bg-gourmet-card rounded-3xl p-8 sm:p-10 border border-white/10 shadow-2xl relative">
-                    <div class="absolute -top-4 right-10 bg-terracota-500 text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg">
+                <div class="bg-white/5 border border-white/10 p-8 sm:p-10 rounded-3xl backdrop-blur-md shadow-2xl relative">
+                    <div class="absolute top-6 right-8 text-warmgold text-4xl opacity-30">
                         <i class="fa-solid fa-quote-right"></i>
                     </div>
-                    <div class="flex items-center gap-1 text-amber-400 mb-6 text-lg">
+                    <div class="flex items-center gap-1 text-warmgold text-lg mb-6">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                     </div>
-                    <p class="font-serif text-xl sm:text-2xl text-white italic mb-6 leading-relaxed">
+                    <p class="font-serif text-xl sm:text-2xl italic text-cream/90 mb-8 leading-relaxed">
                         "Excelente trato, profesionalidad y calidad."
                     </p>
-                    <div class="flex items-center gap-4 pt-6 border-t border-white/10">
-                        <div class="w-12 h-12 rounded-full bg-terracota-500/20 text-terracota-500 font-serif font-bold flex items-center justify-center text-lg">
-                            <i class="fa-solid fa-user"></i>
+                    <div class="flex items-center gap-4 border-t border-white/10 pt-6">
+                        <div class="w-12 h-12 bg-terracotta text-white rounded-full flex items-center justify-center font-bold text-lg font-serif">
+                            G
                         </div>
                         <div>
-                            <h4 class="font-semibold text-white">Cliente Verificado de Google Maps</h4>
-                            <span class="text-xs text-gourmet-cream/60">Reseña Oficial</span>
+                            <h4 class="font-semibold text-cream">Cliente Verificado</h4>
+                            <p class="text-cream/60 text-sm flex items-center gap-1">
+                                <i class="fa-brands fa-google text-warmgold"></i> Reseña de Google Maps
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -348,97 +361,123 @@
         </div>
     </section>
 
-    <!-- Location & Contact Section -->
-    <section id="contacto" class="py-24 bg-gourmet-card relative">
+    <!-- Sección de Ubicación y Contacto -->
+    <section id="contacto" class="py-24 bg-cream text-gourmet">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-terracota-500 font-semibold tracking-widest uppercase text-sm">Encuéntranos</span>
-                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mt-2 mb-4">
-                    Visítanos en Moclinejo
-                </h2>
-                <p class="text-gourmet-cream/70 font-light">
-                    Ven a conocernos o reserva tu mesa directamente por teléfono. ¡Te esperamos!
+                <span class="text-terracotta font-semibold uppercase tracking-widest text-sm block mb-2">Encuéntranos</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold mb-4">Visítanos en Moclinejo</h2>
+                <div class="w-24 h-1 bg-terracotta mx-auto mb-6"></div>
+                <p class="text-gourmet/80 text-lg">
+                    Ven a disfrutar de un ambiente inmejorable. Estamos esperándote con las puertas abiertas.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <!-- Info cards -->
-                <div class="space-y-6">
-                    <div class="bg-gourmet-dark p-6 rounded-2xl border border-white/10 flex items-start gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-terracota-500/20 text-terracota-500 flex items-center justify-center shrink-0 text-xl">
-                            <i class="fa-solid fa-location-dot"></i>
+                <!-- Información de Contacto -->
+                <div class="bg-white p-8 sm:p-12 rounded-3xl shadow-xl border border-gourmet/5 space-y-8">
+                    <h3 class="font-serif text-3xl font-bold">Caña Flamenca</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-terracotta/10 text-terracotta rounded-xl flex items-center justify-center text-xl shrink-0 mt-1">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg text-gourmet">Dirección</h4>
+                                <p class="text-gourmet/70">C. Calvario, 29738 Moclinejo, Málaga, España</p>
+                            </div>
                         </div>
-                        <div>
-                            <h3 class="font-semibold text-white text-lg mb-1">Dirección</h3>
-                            <p class="text-gourmet-cream/70 text-sm leading-relaxed">C. Calvario, 29738 Moclinejo, Málaga, España</p>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-terracotta/10 text-terracotta rounded-xl flex items-center justify-center text-xl shrink-0 mt-1">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg text-gourmet">Teléfono de Reservas</h4>
+                                <a href="tel:744678107" class="text-terracotta font-bold hover:underline text-lg">744 67 81 07</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-terracotta/10 text-terracotta rounded-xl flex items-center justify-center text-xl shrink-0 mt-1">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg text-gourmet">Correo Electrónico</h4>
+                                <a href="mailto:error-lite+84f2@duckduckgo.com" class="text-gourmet/70 hover:text-terracotta transition-colors">error-lite+84f2@duckduckgo.com</a>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="bg-gourmet-dark p-6 rounded-2xl border border-white/10 flex items-start gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-terracota-500/20 text-terracota-500 flex items-center justify-center shrink-0 text-xl">
-                            <i class="fa-solid fa-phone"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold text-white text-lg mb-1">Teléfono de Reservas</h3>
-                            <p class="text-gourmet-cream/70 text-sm mb-2">Llámanos para reservar tu mesa o consultar cualquier duda.</p>
-                            <a href="tel:744678107" class="text-terracota-500 font-bold hover:underline">744 67 81 07</a>
-                        </div>
-                    </div>
-
-                    <div class="bg-gourmet-dark p-6 rounded-2xl border border-white/10 flex items-start gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-terracota-500/20 text-terracota-500 flex items-center justify-center shrink-0 text-xl">
-                            <i class="fa-solid fa-envelope"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold text-white text-lg mb-1">Correo Electrónico</h3>
-                            <p class="text-gourmet-cream/70 text-sm mb-2">Escríbenos para consultas especiales.</p>
-                            <a href="mailto:error-lite+84f2@duckduckgo.com" class="text-terracota-500 font-bold hover:underline break-all">error-lite+84f2@duckduckgo.com</a>
-                        </div>
-                    </div>
-
-                    <div class="pt-2">
-                        <a href="tel:744678107" class="w-full inline-flex items-center justify-center gap-3 bg-terracota-500 hover:bg-terracota-600 text-white px-8 py-4 rounded-full font-bold text-base transition-all shadow-xl shadow-terracota-500/30 hover:scale-105">
-                            <i class="fa-solid fa-calendar-check"></i>
-                            <span>Reservar Mesa Ahora</span>
+                    <div class="pt-6 border-t border-gourmet/10">
+                        <a href="tel:744678107" class="w-full bg-terracotta hover:bg-terracotta-dark text-white font-bold py-4 rounded-full transition-all duration-300 shadow-lg shadow-terracotta/20 text-center block text-lg">
+                            <i class="fa-solid fa-phone mr-2"></i> Reservar Mesa Ahora
                         </a>
                     </div>
                 </div>
 
-                <!-- Interactive Map -->
-                <div class="rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-gourmet-dark p-2">
-                    <iframe src="https://www.google.com/maps?q=Ca%C3%B1a%20Flamenca%20C.%20Calvario%2C%2029738%20Moclinejo%2C%20M%C3%A1laga%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                <!-- Mapa Interactivo Real -->
+                <div class="bg-white p-4 rounded-3xl shadow-xl border border-gourmet/5 overflow-hidden">
+                    <iframe src="https://www.google.com/maps?q=Ca%C3%B1a%20Flamenca%20C.%20Calvario%2C%2029738%20Moclinejo%2C%20M%C3%A1laga%2C%20Espa%C3%A1&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gourmet-dark border-t border-white/10 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-terracota-500 flex items-center justify-center text-white font-serif text-xl font-bold shadow-lg shadow-terracota-500/30">
-                    CF
+    <footer class="bg-gourmet text-cream py-16 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-center pb-12 border-b border-white/10">
+                <div>
+                    <a href="#" class="font-serif text-2xl font-bold tracking-wider text-warmgold flex items-center gap-2 mb-4">
+                        <i class="fa-solid fa-wine-glass-alt text-terracotta"></i> Caña Flamenca
+                    </a>
+                    <p class="text-cream/70 text-sm leading-relaxed">
+                        Tu bar de confianza en Moclinejo, Málaga. Calidad, buen trato y momentos inolvidables en la Axarquía.
+                    </p>
                 </div>
-                <div class="flex flex-col">
-                    <span class="font-serif text-lg font-bold tracking-wider text-white">Caña Flamenca</span>
-                    <span class="text-xs text-terracota-100 tracking-widest uppercase">Moclinejo, Málaga</span>
+                <div class="flex flex-col md:items-center">
+                    <h4 class="font-serif font-semibold text-lg mb-4 text-warmgold">Enlaces Rápidos</h4>
+                    <div class="flex flex-wrap gap-6 text-sm text-cream/80">
+                        <a href="#inicio" class="hover:text-terracotta transition-colors">Inicio</a>
+                        <a href="#carta" class="hover:text-terracotta transition-colors">Carta</a>
+                        <a href="#galeria" class="hover:text-terracotta transition-colors">Instalaciones</a>
+                        <a href="#opiniones" class="hover:text-terracotta transition-colors">Opiniones</a>
+                        <a href="#contacto" class="hover:text-terracotta transition-colors">Ubicación</a>
+                    </div>
+                </div>
+                <div class="flex flex-col md:items-end">
+                    <h4 class="font-serif font-semibold text-lg mb-4 text-warmgold">Contacto Directo</h4>
+                    <a href="tel:744678107" class="bg-terracotta hover:bg-terracotta-dark text-white font-bold px-6 py-3 rounded-full transition-all duration-300 shadow-lg text-sm flex items-center gap-2 mb-2">
+                        <i class="fa-solid fa-phone"></i> 744 67 81 07
+                    </a>
+                    <span class="text-cream/60 text-xs">C. Calvario, 29738 Moclinejo, Málaga</span>
                 </div>
             </div>
-
-            <div class="text-xs text-gourmet-cream/60">
-                &copy; <script>document.write(new Date().getFullYear())</script> Caña Flamenca. Todos los derechos reservados.
-            </div>
-
-            <div class="flex items-center gap-4">
-                <a href="tel:744678107" class="w-10 h-10 rounded-full bg-white/5 hover:bg-terracota-500 text-white flex items-center justify-center transition-colors border border-white/10" aria-label="Teléfono">
-                    <i class="fa-solid fa-phone"></i>
-                </a>
-                <a href="mailto:error-lite+84f2@duckduckgo.com" class="w-10 h-10 rounded-full bg-white/5 hover:bg-terracota-500 text-white flex items-center justify-center transition-colors border border-white/10" aria-label="Email">
-                    <i class="fa-solid fa-envelope"></i>
-                </a>
+            <div class="pt-8 text-center text-cream/50 text-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p>&copy; <span id="current-year"></span> Caña Flamenca. Todos los derechos reservados.</p>
+                <p class="text-xs">Diseño web orientado a la excelencia gastronómica.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Script para menú móvil y año -->
+    <script>
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú móvil al hacer click en un enlace
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Actualizar año actual en el footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
