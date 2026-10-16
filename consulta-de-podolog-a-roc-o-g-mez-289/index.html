@@ -4,583 +4,767 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consulta de Podología Rocío Gómez | Sanlúcar de Barrameda</title>
-    <meta name="description" content="Consulta de Podología Rocío Gómez en Sanlúcar de Barrameda. Especialistas en quiropodia, estudio biomecánico de la pisada, plantillas a medida y cuidado del pie.">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- TailwindCSS CDN -->
+    <meta name="description" content="Consulta de Podología Rocío Gómez en Sanlúcar de Barrameda. Especialistas en quiropodología, biomecánica de la pisada, plantillas personalizadas y pie diabético.">
+    
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                    },
                     colors: {
-                        clinic: {
+                        clinical: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            200: '#99f6e4',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
+                        },
+                        medical: {
                             50: '#f0f9ff',
                             100: '#e0f2fe',
-                            200: '#bae6fd',
                             500: '#0ea5e9',
                             600: '#0284c7',
                             700: '#0369a1',
                             800: '#075985',
-                        },
-                        tealmed: {
-                            50: '#f0fdfa',
-                            100: '#ccfbf1',
-                            500: '#14b8a6',
-                            600: '#0d9488',
-                            700: '#0f766e',
+                            900: '#0c4a6e',
                         }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
-</head>
-<body class="font-sans bg-slate-50 text-slate-700 antialiased selection:bg-tealmed-500 selection:text-white">
 
-    <!-- BARRA SUPERIOR DE INFORMACIÓN -->
-    <div class="bg-clinic-800 text-white text-xs sm:text-sm py-2 px-4 border-b border-clinic-700">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .bg-grid-pattern {
+            background-image: radial-gradient(rgba(14, 165, 233, 0.1) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-medical-500 selection:text-white">
+
+    <!-- TOP BAR DE CONTACTO Y RÁPIDO ACCESO -->
+    <div class="bg-medical-900 text-slate-200 text-xs sm:text-sm py-2 px-4 border-b border-medical-800">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
             <div class="flex items-center space-x-6">
                 <span class="flex items-center gap-2">
-                    <i class="fa-solid fa-location-dot text-tealmed-500"></i>
-                    Calle Teruel, 3, Sanlúcar de Barrameda
+                    <i class="fa-solid fa-location-dot text-clinical-200"></i>
+                    <span>Calle Teruel, 3, 11540 Sanlúcar de Barrameda, Cádiz</span>
                 </span>
                 <span class="hidden md:flex items-center gap-2">
-                    <i class="fa-solid fa-clock text-tealmed-500"></i>
-                    Atención personalizada con cita previa
+                    <i class="fa-regular fa-clock text-clinical-200"></i>
+                    <span>Cita Previa Disponible</span>
                 </span>
             </div>
             <div class="flex items-center space-x-4">
-                <a href="mailto:error-lite+84f2@duckduckgo.com" class="hover:text-tealmed-100 transition flex items-center gap-1.5">
-                    <i class="fa-solid fa-envelope text-tealmed-500"></i> Contacto Clínico
+                <a href="tel:633292856" class="hover:text-clinical-200 transition font-medium flex items-center gap-1.5">
+                    <i class="fa-solid fa-phone text-clinical-200"></i> 633 29 28 56
                 </a>
-                <span class="text-clinic-600">|</span>
-                <a href="tel:633292856" class="font-bold text-white hover:text-tealmed-100 transition flex items-center gap-1.5">
-                    <i class="fa-solid fa-phone text-tealmed-500"></i> 633 29 28 56
+                <span class="text-slate-600">|</span>
+                <a href="mailto:error-lite+84f2@duckduckgo.com" class="hover:text-clinical-200 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-envelope text-clinical-200"></i> <span class="hidden sm:inline">Enviar Consulta</span>
                 </a>
             </div>
         </div>
     </div>
 
-    <!-- NAVBAR PRINCIPAL -->
-    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+    <!-- HEADER / NAVEGACIÓN -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- LOGO / NOMBRE -->
             <a href="#" class="flex items-center gap-3 group">
-                <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-clinic-600 to-tealmed-500 flex items-center justify-center text-white shadow-md shadow-clinic-500/20 group-hover:scale-105 transition-transform">
-                    <i class="fa-solid fa-socks text-2xl"></i>
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-medical-600 to-clinical-500 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-socks text-xl"></i>
                 </div>
                 <div>
-                    <span class="block text-xl font-extrabold text-slate-800 tracking-tight leading-tight">Podología Rocío Gómez</span>
-                    <span class="block text-xs font-semibold text-tealmed-600 tracking-wider uppercase">Salud & Cuidado del Pie</span>
+                    <span class="text-lg sm:text-xl font-bold tracking-tight text-slate-900 block leading-none">Rocío Gómez</span>
+                    <span class="text-xs font-semibold uppercase tracking-wider text-clinical-600 mt-1 block">Consulta de Podología</span>
                 </div>
             </a>
 
-            <!-- Links Desktop -->
-            <div class="hidden lg:flex items-center space-x-8 text-sm font-semibold text-slate-600">
-                <a href="#inicio" class="hover:text-clinic-600 transition">Inicio</a>
-                <a href="#tratamientos" class="hover:text-clinic-600 transition">Tratamientos</a>
-                <a href="#clinica" class="hover:text-clinic-600 transition">La Clínica</a>
-                <a href="#instalaciones" class="hover:text-clinic-600 transition">Instalaciones</a>
-                <a href="#opiniones" class="hover:text-clinic-600 transition">Opiniones</a>
-                <a href="#contacto" class="hover:text-clinic-600 transition">Ubicación</a>
-            </div>
+            <!-- NAVEGACIÓN DESKTOP -->
+            <nav class="hidden lg:flex items-center space-x-8 font-medium text-slate-600 text-sm">
+                <a href="#inicio" class="hover:text-medical-600 transition">Inicio</a>
+                <a href="#especialidades" class="hover:text-medical-600 transition">Tratamientos</a>
+                <a href="#sobre-nosotros" class="hover:text-medical-600 transition">Sobre la Clínica</a>
+                <a href="#instalaciones" class="hover:text-medical-600 transition">Instalaciones</a>
+                <a href="#opiniones" class="hover:text-medical-600 transition">Reseñas</a>
+                <a href="#contacto" class="hover:text-medical-600 transition">Contacto</a>
+            </nav>
 
-            <!-- Botón Cita Previa -->
-            <div class="flex items-center">
-                <a href="tel:633292856" class="inline-flex items-center gap-2 bg-clinic-600 hover:bg-clinic-700 text-white font-bold px-5 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 text-sm sm:text-base">
+            <!-- BOTÓN CITA PREVIA DESKTOP -->
+            <div class="hidden sm:flex items-center">
+                <a href="tel:633292856" class="inline-flex items-center gap-2 bg-gradient-to-r from-medical-600 to-clinical-600 hover:from-medical-700 hover:to-clinical-700 text-white font-semibold px-5 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 text-sm">
                     <i class="fa-solid fa-calendar-check"></i>
                     <span>Pedir Cita Previa</span>
                 </a>
             </div>
-        </nav>
-    </header>
 
-    <!-- HERO SECTION -->
-    <section id="inicio" class="relative bg-gradient-to-b from-clinic-50/70 via-white to-slate-50 py-16 lg:py-24 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                
-                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-tealmed-50 text-tealmed-700 text-xs sm:text-sm font-semibold border border-tealmed-200">
-                        <span class="w-2 h-2 rounded-full bg-tealmed-500 animate-pulse"></span>
-                        Atención Podológica Profesional en Sanlúcar de Barrameda
-                    </div>
-                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
-                        Cuidamos de la <span class="text-transparent bg-clip-text bg-gradient-to-r from-clinic-600 to-tealmed-600">salud y bienestar</span> de cada uno de tus pasos
-                    </h1>
-                    <p class="text-base sm:text-lg text-slate-600 max-w-2xl leading-relaxed">
-                        En la <strong>Consulta de Podología Rocío Gómez</strong> ofrecemos soluciones precisas y avanzadas para dolencias de pies y uñas. Diagnóstico riguroso, tratamientos indoloros y máxima higiene clínica en un entorno de plena confianza.
-                    </p>
-
-                    <!-- Beneficios rápidos -->
-                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 pb-2">
-                        <div class="bg-white p-3 rounded-xl border border-slate-200/80 shadow-sm flex items-center gap-3">
-                            <i class="fa-solid fa-certificate text-tealmed-600 text-lg"></i>
-                            <span class="text-xs sm:text-sm font-semibold text-slate-800">Especialista Colegiada</span>
-                        </div>
-                        <div class="bg-white p-3 rounded-xl border border-slate-200/80 shadow-sm flex items-center gap-3">
-                            <i class="fa-solid fa-pump-medical text-clinic-600 text-lg"></i>
-                            <span class="text-xs sm:text-sm font-semibold text-slate-800">Esterilización Hospitalaria</span>
-                        </div>
-                        <div class="bg-white p-3 rounded-xl border border-slate-200/80 shadow-sm col-span-2 sm:col-span-1 flex items-center gap-3">
-                            <i class="fa-solid fa-heart-pulse text-tealmed-600 text-lg"></i>
-                            <span class="text-xs sm:text-sm font-semibold text-slate-800">Trato Cercano y Humano</span>
-                        </div>
-                    </div>
-
-                    <!-- Call to action buttons -->
-                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-3">
-                        <a href="tel:633292856" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-clinic-600 hover:bg-clinic-700 text-white font-bold text-base px-8 py-3.5 rounded-xl shadow-lg shadow-clinic-500/25 hover:shadow-xl transition duration-200">
-                            <i class="fa-solid fa-phone-volume"></i>
-                            <span>Pedir Cita Previa</span>
-                        </a>
-                        <a href="#tratamientos" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-100 text-slate-700 font-semibold text-base px-6 py-3.5 rounded-xl border border-slate-200 transition">
-                            <i class="fa-solid fa-stethoscope text-clinic-600"></i>
-                            <span>Ver Especialidades</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-5 relative">
-                    <div class="relative mx-auto max-w-md lg:max-w-none">
-                        <div class="absolute -top-4 -left-4 w-72 h-72 bg-clinic-200 rounded-full mix-blend-multiply filter blur-2xl opacity-60"></div>
-                        <div class="absolute -bottom-4 -right-4 w-72 h-72 bg-tealmed-200 rounded-full mix-blend-multiply filter blur-2xl opacity-60"></div>
-                        
-                        <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white">
-                            <img 
-                                src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=1000&q=80" 
-                                alt="Consulta de Podología Rocío Gómez - Instalación clínica" 
-                                class="w-full h-[420px] object-cover hover:scale-105 transition-transform duration-500"
-                                referrerpolicy="no-referrer"
-                                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80';"
-                            >
-                            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent p-6 text-white">
-                                <p class="text-sm font-light text-slate-200">Consulta Sanitaria Registrada</p>
-                                <p class="text-base font-bold">Rocío Gómez · Experta en Podología Clínica</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+            <!-- BOTÓN MENÚ MÓVIL -->
+            <button id="menu-btn" class="lg:hidden p-2 text-slate-600 hover:text-medical-600 focus:outline-none" aria-label="Abrir Menú">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
         </div>
-    </section>
 
-    <!-- HIGHLIGHT VALORES CLÍNICOS -->
-    <section class="bg-white py-12 border-y border-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <div class="flex items-start gap-4 p-4 rounded-xl hover:bg-clinic-50/50 transition">
-                    <div class="w-12 h-12 rounded-lg bg-clinic-100 text-clinic-600 flex items-center justify-center shrink-0">
-                        <i class="fa-solid fa-user-doctor text-xl"></i>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-slate-800 text-base">Diagnóstico Preciso</h4>
-                        <p class="text-xs text-slate-500 mt-1">Evaluación personalizada de la causa origen de cada molestia.</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-4 p-4 rounded-xl hover:bg-clinic-50/50 transition">
-                    <div class="w-12 h-12 rounded-lg bg-tealmed-100 text-tealmed-700 flex items-center justify-center shrink-0">
-                        <i class="fa-solid fa-shield-virus text-xl"></i>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-slate-800 text-base">Máxima Bioseguridad</h4>
-                        <p class="text-xs text-slate-500 mt-1">Protocolos de desinfección y autoclave con control de esterilidad.</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-4 p-4 rounded-xl hover:bg-clinic-50/50 transition">
-                    <div class="w-12 h-12 rounded-lg bg-clinic-100 text-clinic-600 flex items-center justify-center shrink-0">
-                        <i class="fa-solid fa-person-walking text-xl"></i>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-slate-800 text-base">Salud en Cada Paso</h4>
-                        <p class="text-xs text-slate-500 mt-1">Mejora inmediata de la deambulación y alivio de presiones.</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-4 p-4 rounded-xl hover:bg-clinic-50/50 transition">
-                    <div class="w-12 h-12 rounded-lg bg-tealmed-100 text-tealmed-700 flex items-center justify-center shrink-0">
-                        <i class="fa-solid fa-hand-holding-heart text-xl"></i>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-slate-800 text-base">Trato Profesional</h4>
-                        <p class="text-xs text-slate-500 mt-1">Atención empática, sin prisas y centrada en tus necesidades.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN: NUESTRAS ESPECIALIDADES, TRATAMIENTOS Y EQUIPO PROFESIONAL -->
-    <section id="tratamientos" class="py-20 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-tealmed-600 font-bold text-sm tracking-widest uppercase">Especialidades Clínicas</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Nuestras Especialidades, Tratamientos y Equipo Profesional</h2>
-                <div class="w-20 h-1.5 bg-clinic-600 mx-auto mt-4 rounded-full"></div>
-                <p class="text-slate-600 mt-4 text-base sm:text-lg">
-                    Abordamos de forma integral las patologías del pie en adultos, personas mayores, niños y deportistas con instrumental médico homologado y técnicas no invasivas.
-                </p>
-            </div>
-
-            <!-- Grilla de Tratamientos -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                <!-- Servicio 1: Quiropodia Integral -->
-                <div class="bg-white rounded-2xl p-7 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/80 flex flex-col justify-between group">
-                    <div>
-                        <div class="w-14 h-14 rounded-2xl bg-clinic-50 text-clinic-600 group-hover:bg-clinic-600 group-hover:text-white transition flex items-center justify-center mb-6 text-2xl shadow-inner">
-                            <i class="fa-solid fa-hand-dots"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-clinic-600 transition">Quiropodia Médica Integral</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                            Eliminación indolora de durezas (hiperqueratosis), callosidades y helomas plantares o interdigitales. Fresado y corte terapéutico de uñas para recuperar el confort de inmediato.
-                        </p>
-                        <ul class="text-xs font-medium text-slate-500 space-y-2 mb-6">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-tealmed-500"></i> Deslaminación indolora de callos</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-tealmed-500"></i> Hidratación y fresado dérmico</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-tealmed-500"></i> Detección preventiva de lesiones</li>
-                        </ul>
-                    </div>
-                    <a href="tel:633292856" class="inline-flex items-center justify-between text-sm font-bold text-clinic-600 hover:text-clinic-700 pt-4 border-t border-slate-100">
-                        <span>Pedir Cita Previa</span>
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
-
-                <!-- Servicio 2: Uñas Encarnadas & Onicopatías -->
-                <div class="bg-white rounded-2xl p-7 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/80 flex flex-col justify-between group">
-                    <div>
-                        <div class="w-14 h-14 rounded-2xl bg-tealmed-50 text-tealmed-600 group-hover:bg-tealmed-600 group-hover:text-white transition flex items-center justify-center mb-6 text-2xl shadow-inner">
-                            <i class="fa-solid fa-bandage"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-tealmed-600 transition">Uña Encarnada (Onicocriptosis)</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                            Tratamiento conservador y de resolución definitiva de uñas que se clavan en los laterales. Alivio inmediato de la inflamación, dolor agudo e infección en el canal periungueal.
-                        </p>
-                        <ul class="text-xs font-medium text-slate-500 space-y-2 mb-6">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-tealmed-500"></i> Extracción de espículas sin dolor</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-tealmed-500"></i> Reeducación ungueal (Ortogrifosis)</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-tealmed-500"></i> Curas especializadas y seguimiento</li>
-                        </ul>
-                    </div>
-                    <a href="tel:633292856" class="inline-flex items-center justify-between text-sm font-bold text-clinic-600 hover:text-clinic-700 pt-4 border-t border-slate-100">
-                        <span>Pedir Cita Previa</span>
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
-
-                <!-- Servicio 3: Estudio Biomecánico & Plantillas -->
-                <div class="bg-white rounded-2xl p-7 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/80 flex flex-col justify-between group">
-                    <div>
-                        <div class="w-14 h-14 rounded-2xl bg-clinic-50 text-clinic-600 group-hover:bg-clinic-600 group-hover:text-white transition flex items-center justify-center mb-6 text-2xl shadow-inner">
-                            <i class="fa-solid fa-shoe-prints"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-clinic-600 transition">Estudio Biomecánico de la Pisada</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                            Análisis estático y dinámico de la marcha. Diagnóstico de fascitis plantar, espolón calcáneo, pie plano o cavo, y diseño de plantillas ortopédicas personalizadas de alta precisión.
-                        </p>
-                        <ul class="text-xs font-medium text-slate-500 space-y-2 mb-6">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-tealmed-500"></i> Exploración articular y muscular</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-tealmed-500"></i> Soporte plantar a medida</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-tealmed-500"></i> Prevención de dolores en rodilla y espalda</li>
-                        </ul>
-                    </div>
-                    <a href="tel:633292856" class="inline-flex items-center justify-between text-sm font-bold text-clinic-600 hover:text-clinic-700 pt-4 border-t border-slate-100">
-                        <span>Pedir Cita Previa</span>
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
-
-                <!-- Servicio 4: Papilomas y Verrugas Plantares -->
-                <div class="bg-white rounded-2xl p-7 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/80 flex flex-col justify-between group">
-                    <div>
-                        <div class="w-14 h-14 rounded-2xl bg-tealmed-50 text-tealmed-600 group-hover:bg-tealmed-600 group-hover:text-white transition flex items-center justify-center mb-6 text-2xl shadow-inner">
-                            <i class="fa-solid fa-virus-slash"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-tealmed-600 transition">Papilomas y Verrugas Plantares</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                            Tratamiento médico específico para eliminar infecciones causadas por el virus del papiloma humano (VPH) en la planta del pie, frecuente en niños y usuarios de piscinas o gimnasios.
-                        </p>
-                        <ul class="text-xs font-medium text-slate-500 space-y-2 mb-6">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-tealmed-500"></i> Tratamientos tópicos efectivos</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-tealmed-500"></i> Sin interferir en tu vida diaria</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-tealmed-500"></i> Control exhaustivo de no recidiva</li>
-                        </ul>
-                    </div>
-                    <a href="tel:633292856" class="inline-flex items-center justify-between text-sm font-bold text-clinic-600 hover:text-clinic-700 pt-4 border-t border-slate-100">
-                        <span>Pedir Cita Previa</span>
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
-
-                <!-- Servicio 5: Pie Diabético y Preventivo -->
-                <div class="bg-white rounded-2xl p-7 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/80 flex flex-col justify-between group">
-                    <div>
-                        <div class="w-14 h-14 rounded-2xl bg-clinic-50 text-clinic-600 group-hover:bg-clinic-600 group-hover:text-white transition flex items-center justify-center mb-6 text-2xl shadow-inner">
-                            <i class="fa-solid fa-notes-medical"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-clinic-600 transition">Cuidado del Pie Diabético</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                            Prevención, exploración de la sensibilidad térmica y táctil, y detección precoz de úlceras o neuropatías en pacientes diabéticos para evitar complicaciones mayores.
-                        </p>
-                        <ul class="text-xs font-medium text-slate-500 space-y-2 mb-6">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-tealmed-500"></i> Revisión vascular y neurológica</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-tealmed-500"></i> Pautas de calzado e hidratación</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-tealmed-500"></i> Protocolos de seguridad estricta</li>
-                        </ul>
-                    </div>
-                    <a href="tel:633292856" class="inline-flex items-center justify-between text-sm font-bold text-clinic-600 hover:text-clinic-700 pt-4 border-t border-slate-100">
-                        <span>Pedir Cita Previa</span>
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
-
-                <!-- Servicio 6: Hongos e Infecciones Ungueales -->
-                <div class="bg-white rounded-2xl p-7 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/80 flex flex-col justify-between group">
-                    <div>
-                        <div class="w-14 h-14 rounded-2xl bg-tealmed-50 text-tealmed-600 group-hover:bg-tealmed-600 group-hover:text-white transition flex items-center justify-center mb-6 text-2xl shadow-inner">
-                            <i class="fa-solid fa-microscope"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-tealmed-600 transition">Hongos en Uñas (Onicomicosis)</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                            Diagnóstico diferencial de uñas engrosadas, amarillentas o quebradizas. Aplicación de tratamientos antifúngicos y pautas clínicas para restaurar la apariencia sana de la lámina ungueal.
-                        </p>
-                        <ul class="text-xs font-medium text-slate-500 space-y-2 mb-6">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-tealmed-500"></i> Limpieza y desbastado ungueal</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-tealmed-500"></i> Terapia tópica combinada</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-tealmed-500"></i> Recuperación de la salud de la uña</li>
-                        </ul>
-                    </div>
-                    <a href="tel:633292856" class="inline-flex items-center justify-between text-sm font-bold text-clinic-600 hover:text-clinic-700 pt-4 border-t border-slate-100">
-                        <span>Pedir Cita Previa</span>
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
-
-            </div>
-
-            <!-- Banner Cita Previa Rápida -->
-            <div class="mt-14 bg-gradient-to-r from-clinic-700 to-tealmed-700 rounded-3xl p-8 sm:p-10 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
-                <div>
-                    <h3 class="text-2xl sm:text-3xl font-extrabold mb-2">¿Sientes dolor o molestia al caminar?</h3>
-                    <p class="text-clinic-100 text-sm sm:text-base max-w-xl">No dejes que una pequeña molestia se convierta en una lesión limitante. Solicita tu consulta hoy mismo.</p>
-                </div>
-                <a href="tel:633292856" class="inline-flex items-center gap-3 bg-white text-clinic-700 hover:bg-clinic-50 font-bold px-8 py-4 rounded-xl shadow-md transition transform hover:scale-105 shrink-0 text-base">
+        <!-- MENÚ MÓVIL DESPLEGABLE -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="mobile-link block py-2 text-slate-700 font-medium hover:text-medical-600">Inicio</a>
+            <a href="#especialidades" class="mobile-link block py-2 text-slate-700 font-medium hover:text-medical-600">Tratamientos</a>
+            <a href="#sobre-nosotros" class="mobile-link block py-2 text-slate-700 font-medium hover:text-medical-600">Sobre la Clínica</a>
+            <a href="#instalaciones" class="mobile-link block py-2 text-slate-700 font-medium hover:text-medical-600">Instalaciones</a>
+            <a href="#opiniones" class="mobile-link block py-2 text-slate-700 font-medium hover:text-medical-600">Reseñas</a>
+            <a href="#contacto" class="mobile-link block py-2 text-slate-700 font-medium hover:text-medical-600">Contacto</a>
+            <div class="pt-2">
+                <a href="tel:633292856" class="w-full text-center inline-flex justify-center items-center gap-2 bg-medical-600 text-white font-semibold py-3 rounded-xl shadow">
                     <i class="fa-solid fa-phone"></i>
-                    <span>Pedir Cita Previa</span>
+                    <span>Pedir Cita Previa (633 29 28 56)</span>
                 </a>
             </div>
         </div>
-    </section>
+    </header>
 
-    <!-- GALERÍA DE INSTALACIONES Y TRABAJOS -->
-    <section id="instalaciones" class="py-20 bg-white">
+    <!-- HERO SECTION -->
+    <section id="inicio" class="relative bg-gradient-to-b from-medical-50 via-white to-slate-50 py-12 lg:py-20 overflow-hidden bg-grid-pattern">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-clinic-600 font-bold text-sm tracking-widest uppercase">Espacio Clínico</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Nuestras Instalaciones y Trabajos</h2>
-                <div class="w-20 h-1.5 bg-tealmed-500 mx-auto mt-4 rounded-full"></div>
-                <p class="text-slate-600 mt-4 text-base">
-                    Un espacio diseñado para tu confort, máxima higiene sanitaria y relajación durante cada tratamiento en Sanlúcar de Barrameda.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 
-                <div class="group relative overflow-hidden rounded-2xl shadow-sm border border-slate-100">
-                    <img 
-                        src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80" 
-                        alt="Gabinete podológico limpio y equipado" 
-                        class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-300"
-                        referrerpolicy="no-referrer"
-                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80';"
-                    >
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
-                        <span class="text-white font-bold text-lg">Gabinete de Tratamientos</span>
-                        <span class="text-slate-300 text-xs">Sillón ergonómico y tecnología clínica</span>
-                    </div>
-                </div>
-
-                <div class="group relative overflow-hidden rounded-2xl shadow-sm border border-slate-100">
-                    <img 
-                        src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80" 
-                        alt="Área de recepción y espera cómoda" 
-                        class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-300"
-                        referrerpolicy="no-referrer"
-                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80';"
-                    >
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
-                        <span class="text-white font-bold text-lg">Recepción y Sala de Espera</span>
-                        <span class="text-slate-300 text-xs">Ambiente tranquilo, luminoso y accesible</span>
-                    </div>
-                </div>
-
-                <div class="group relative overflow-hidden rounded-2xl shadow-sm border border-slate-100">
-                    <img 
-                        src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80" 
-                        alt="Instrumental podológico esterilizado" 
-                        class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-300"
-                        referrerpolicy="no-referrer"
-                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80';"
-                    >
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
-                        <span class="text-white font-bold text-lg">Zona de Esterilización</span>
-                        <span class="text-slate-300 text-xs">Empaquetado individual y autoclave certificado</span>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- OPINIONES REALES VERIFICADAS -->
-    <section id="opiniones" class="py-20 bg-clinic-50/50 border-t border-slate-200/60">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-tealmed-600 font-bold text-sm tracking-widest uppercase">Testimonios de Pacientes</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Opiniones Reales Verificadas</h2>
-                <div class="w-20 h-1.5 bg-clinic-600 mx-auto mt-4 rounded-full"></div>
-                <p class="text-slate-600 mt-4 text-base">
-                    La confianza de nuestros pacientes es nuestro mayor aval y compromiso diario.
-                </p>
-            </div>
-
-            <div class="max-w-3xl mx-auto">
-                <!-- Tarjeta Reseña Real -->
-                <div class="bg-white rounded-3xl p-8 sm:p-10 shadow-lg border border-slate-100 relative">
-                    <div class="absolute -top-5 left-10 w-10 h-10 rounded-full bg-tealmed-500 text-white flex items-center justify-center text-lg shadow-md">
-                        <i class="fa-solid fa-quote-left"></i>
+                <!-- TEXTO HERO -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-clinical-50 border border-clinical-200 text-clinical-700 text-xs sm:text-sm font-semibold">
+                        <span class="w-2 h-2 rounded-full bg-clinical-500 animate-pulse"></span>
+                        <span>Podología Clínica en Sanlúcar de Barrameda</span>
                     </div>
 
-                    <div class="flex items-center space-x-1 text-amber-400 text-xl mb-4 pt-2">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <span class="text-xs font-bold text-slate-500 ml-2 bg-slate-100 px-2 py-0.5 rounded-full">5.0 / 5.0</span>
-                    </div>
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight">
+                        Salud, bienestar y <span class="text-transparent bg-clip-text bg-gradient-to-r from-medical-600 to-clinical-600">cuidado integral</span> para tus pies
+                    </h1>
 
-                    <p class="text-slate-800 text-xl sm:text-2xl font-medium italic leading-relaxed mb-6">
-                        "Excelente trato, profesionalidad y calidad."
+                    <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        En la <strong>Consulta de Podología Rocío Gómez</strong> nos enfocamos en diagnosticar y tratar de forma personalizada cada patología de tus pies. Tecnología moderna, rigor profesional y un trato humano y cercano.
                     </p>
 
-                    <div class="flex items-center justify-between border-t border-slate-100 pt-6">
-                        <div class="flex items-center gap-3">
-                            <div class="w-12 h-12 rounded-full bg-clinic-100 text-clinic-700 font-bold flex items-center justify-center text-lg">
-                                RG
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-slate-900 leading-tight">Paciente Verificado</h4>
-                                <span class="text-xs text-slate-500">Reseña en Google Maps</span>
-                            </div>
+                    <!-- BULLETS DE CONFIANZA -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 max-w-lg mx-auto lg:mx-0 text-left">
+                        <div class="flex items-center gap-2.5 text-sm font-medium text-slate-700">
+                            <i class="fa-solid fa-circle-check text-clinical-500 text-lg"></i>
+                            <span>Atención 100% personalizada</span>
                         </div>
-                        <div class="flex items-center gap-1.5 text-emerald-600 text-xs font-bold bg-emerald-50 px-3 py-1.5 rounded-full border border-emerald-200">
-                            <i class="fa-solid fa-shield-check"></i>
-                            <span>Opinión Comprobada</span>
+                        <div class="flex items-center gap-2.5 text-sm font-medium text-slate-700">
+                            <i class="fa-solid fa-circle-check text-clinical-500 text-lg"></i>
+                            <span>Estudio biomecánico de la pisada</span>
+                        </div>
+                        <div class="flex items-center gap-2.5 text-sm font-medium text-slate-700">
+                            <i class="fa-solid fa-circle-check text-clinical-500 text-lg"></i>
+                            <span>Tratamiento de uñas encarnadas</span>
+                        </div>
+                        <div class="flex items-center gap-2.5 text-sm font-medium text-slate-700">
+                            <i class="fa-solid fa-circle-check text-clinical-500 text-lg"></i>
+                            <span>Cuidado preventivo del pie diabético</span>
+                        </div>
+                    </div>
+
+                    <!-- BOTONES ACCIÓN -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="tel:633292856" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-gradient-to-r from-medical-600 to-clinical-600 hover:from-medical-700 hover:to-clinical-700 text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-0.5 text-base">
+                            <i class="fa-solid fa-phone text-lg"></i>
+                            <span>Pedir Cita Previa</span>
+                        </a>
+                        <a href="#especialidades" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 font-semibold px-6 py-4 rounded-xl shadow-sm transition text-base">
+                            <i class="fa-solid fa-stethoscope text-medical-600"></i>
+                            <span>Ver Tratamientos</span>
+                        </a>
+                    </div>
+
+                    <!-- BADGE GOOGLE / RESEÑAS -->
+                    <div class="pt-4 flex items-center justify-center lg:justify-start gap-3 border-t border-slate-200/80">
+                        <div class="flex text-amber-400 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="text-xs sm:text-sm font-semibold text-slate-700">
+                            "Excelente trato, profesionalidad y calidad."
+                        </span>
+                    </div>
+                </div>
+
+                <!-- IMAGEN HERO -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Decoración clínica -->
+                        <div class="absolute -top-4 -left-4 w-72 h-72 bg-clinical-200/40 rounded-full blur-3xl pointer-events-none"></div>
+                        <div class="absolute -bottom-4 -right-4 w-72 h-72 bg-medical-200/40 rounded-full blur-3xl pointer-events-none"></div>
+
+                        <div class="relative bg-white p-3 rounded-2xl shadow-xl border border-slate-100">
+                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80" 
+                                 alt="Consulta de Podología Rocío Gómez" 
+                                 class="w-full h-[380px] sm:h-[450px] object-cover rounded-xl"
+                                 referrerpolicy="no-referrer"
+                                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80';">
+                            
+                            <!-- Tarjeta Flotante -->
+                            <div class="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md p-4 rounded-xl border border-slate-100 shadow-lg flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-full bg-clinical-100 text-clinical-600 flex items-center justify-center text-xl shrink-0">
+                                    <i class="fa-solid fa-user-doctor"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-slate-800 text-sm">Podóloga Colegiada</p>
+                                    <p class="text-xs text-slate-500">Sanlúcar de Barrameda · Cádiz</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Garantía de satisfacción -->
-                <div class="mt-8 text-center text-xs sm:text-sm text-slate-500 flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-award text-tealmed-600 text-base"></i>
-                    <span>Atención podológica de confianza con rigor sanitario garantizado.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- METRICAS DE CONFIANZA -->
+    <section class="bg-gradient-to-r from-medical-800 to-medical-900 text-white py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="p-4">
+                    <i class="fa-solid fa-heart-pulse text-clinical-200 text-3xl mb-2"></i>
+                    <div class="text-2xl sm:text-3xl font-extrabold text-white">100%</div>
+                    <div class="text-xs sm:text-sm text-slate-300 mt-1">Atención Personalizada</div>
+                </div>
+                <div class="p-4">
+                    <i class="fa-solid fa-microscope text-clinical-200 text-3xl mb-2"></i>
+                    <div class="text-2xl sm:text-3xl font-extrabold text-white">Avanzada</div>
+                    <div class="text-xs sm:text-sm text-slate-300 mt-1">Tecnología Diagnóstica</div>
+                </div>
+                <div class="p-4">
+                    <i class="fa-solid fa-shield-halved text-clinical-200 text-3xl mb-2"></i>
+                    <div class="text-2xl sm:text-3xl font-extrabold text-white">Máxima</div>
+                    <div class="text-xs sm:text-sm text-slate-300 mt-1">Higiene y Esterilización</div>
+                </div>
+                <div class="p-4">
+                    <i class="fa-solid fa-thumbs-up text-clinical-200 text-3xl mb-2"></i>
+                    <div class="text-2xl sm:text-3xl font-extrabold text-white">Excelente</div>
+                    <div class="text-xs sm:text-sm text-slate-300 mt-1">Valoración de Pacientes</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- UBICACIÓN, MAPA Y CONTACTO -->
-    <section id="contacto" class="py-20 bg-white">
+    <!-- SOBRE NOSOTROS / PRESENTACIÓN -->
+    <section id="sobre-nosotros" class="py-16 sm:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80" 
+                         alt="Rocío Gómez Podóloga" 
+                         class="rounded-2xl shadow-lg object-cover h-[400px] w-full"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute -bottom-6 -right-6 bg-clinical-500 text-white p-6 rounded-2xl shadow-xl hidden sm:block max-w-xs">
+                        <i class="fa-solid fa-quote-left text-2xl text-clinical-200 mb-2"></i>
+                        <p class="text-sm font-medium">"Tu salud comienza por unos pies sanos y sin dolor para caminar cada día con total tranquilidad."</p>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="inline-block px-3 py-1 bg-medical-50 text-medical-700 rounded-lg text-xs font-bold uppercase tracking-wider">
+                        Compromiso con tu Salud
+                    </div>
+                    <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl">
+                        Bienvenido a la Consulta de Podología Rocío Gómez
+                    </h2>
+                    <p class="text-slate-600 leading-relaxed">
+                        Ubicada en pleno corazón de <strong>Sanlúcar de Barrameda</strong> (Calle Teruel, 3), la consulta ofrece un espacio seguro, higiénico y moderno dedicado a la prevención, diagnóstico y tratamiento de todas las afecciones del pie.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed">
+                        Entendemos que cada paciente es único. Ya sea que sufras de molestias al caminar, dolor de uñas, requieras un estudio de la pisada o necesites cuidados continuos para el pie diabético, recibirás una atención profesional enfocada en resolver tu problema desde la primera sesión.
+                    </p>
+
+                    <div class="pt-2 border-t border-slate-100 grid grid-cols-2 gap-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-medical-100 text-medical-600 flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-clinic-medical"></i>
+                            </div>
+                            <span class="text-sm font-bold text-slate-800">Ubicación Céntrica</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-clinical-100 text-clinical-600 flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-hand-holding-medical"></i>
+                            </div>
+                            <span class="text-sm font-bold text-slate-800">Trato Delicado</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="tel:633292856" class="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-semibold px-6 py-3 rounded-xl transition">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>Pedir Cita Previa (633 29 28 56)</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESPECIALIDADES Y TRATAMIENTOS -->
+    <section id="especialidades" class="py-16 sm:py-24 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-clinic-600 font-bold text-sm tracking-widest uppercase">¿Dónde Estamos?</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Visita Nuestra Consulta</h2>
-                <div class="w-20 h-1.5 bg-tealmed-500 mx-auto mt-4 rounded-full"></div>
-                <p class="text-slate-600 mt-4 text-base">
-                    Estamos convenientemente situados en Sanlúcar de Barrameda (Cádiz). Te esperamos con cita programada para atenderte sin esperas innecesarias.
+                <span class="text-medical-600 font-bold text-xs uppercase tracking-wider px-3 py-1 bg-medical-100 rounded-full">Servicios Médicos</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Nuestras Especialidades y Tratamientos</h2>
+                <p class="text-slate-600 mt-4 text-base sm:text-lg">
+                    Ofrecemos una amplia cobertura podológica orientada a devolverte la comodidad y mejorar tu calidad de vida.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <!-- Datos de contacto directos -->
-                <div class="lg:col-span-5 bg-slate-50 rounded-3xl p-8 border border-slate-200 flex flex-col justify-between">
+                <!-- CARD 1: Quiropodología -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition border border-slate-200/80 flex flex-col justify-between group">
                     <div>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-6">Información de la Consulta</h3>
-                        
-                        <div class="space-y-6">
-                            <!-- Dirección -->
-                            <div class="flex items-start gap-4">
-                                <div class="w-12 h-12 rounded-xl bg-clinic-600 text-white flex items-center justify-center shrink-0 shadow-md shadow-clinic-500/20">
-                                    <i class="fa-solid fa-map-location-dot text-lg"></i>
-                                </div>
-                                <div>
-                                    <span class="text-xs font-bold text-clinic-700 uppercase tracking-wider block">Dirección</span>
-                                    <p class="text-slate-800 font-medium text-sm mt-0.5">
-                                        Calle Teruel, 3, 11540 Sanlúcar de Barrameda, Cádiz, España
-                                    </p>
-                                    <span class="text-xs text-slate-500 mt-1 block">Fácil acceso y aparcamiento cercano.</span>
-                                </div>
-                            </div>
+                        <div class="w-14 h-14 rounded-xl bg-medical-50 text-medical-600 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-hand-dots"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Quiropodología General</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Tratamiento completo de afecciones dérmicas y ungueales: eliminación de helomas (callos), durezas, hiperqueratosis, uñas encarnadas (onicocriptosis) y micosis (hongos).
+                        </p>
+                        <ul class="space-y-2 text-xs text-slate-500 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-clinical-500"></i> Eliminación sin dolor de callosidades</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-clinical-500"></i> Corte y fresado profesional de uñas</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-clinical-500"></i> Tratamiento de uñas encarnadas</li>
+                        </ul>
+                    </div>
+                    <a href="tel:633292856" class="text-medical-600 font-semibold text-sm inline-flex items-center gap-2 group-hover:translate-x-1 transition">
+                        <span>Pedir Cita Previa</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
 
-                            <!-- Teléfono Citas -->
-                            <div class="flex items-start gap-4">
-                                <div class="w-12 h-12 rounded-xl bg-tealmed-600 text-white flex items-center justify-center shrink-0 shadow-md shadow-tealmed-500/20">
-                                    <i class="fa-solid fa-phone text-lg"></i>
-                                </div>
-                                <div>
-                                    <span class="text-xs font-bold text-tealmed-700 uppercase tracking-wider block">Citas y Consultas</span>
-                                    <a href="tel:633292856" class="text-xl font-bold text-slate-900 hover:text-clinic-600 transition block mt-0.5">
-                                        633 29 28 56
-                                    </a>
-                                    <span class="text-xs text-slate-500">Llamadas directas para reserva de citas.</span>
-                                </div>
-                            </div>
+                <!-- CARD 2: Estudio Biomecánico -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition border border-slate-200/80 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-clinical-50 text-clinical-600 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-shoe-prints"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Estudio de la Pisada y Plantillas</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Análisis biomecánico en marcha y estática para detectar disfunciones posturales. Diseño e confección de plantillas ortopédicas 100% personalizadas.
+                        </p>
+                        <ul class="space-y-2 text-xs text-slate-500 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-clinical-500"></i> Corrección de pies planos o cavos</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-clinical-500"></i> Alivio de fascitis plantar y espolón</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-clinical-500"></i> Plantillas adaptadas al calzado diario o deportivo</li>
+                        </ul>
+                    </div>
+                    <a href="tel:633292856" class="text-clinical-600 font-semibold text-sm inline-flex items-center gap-2 group-hover:translate-x-1 transition">
+                        <span>Pedir Cita Previa</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
 
-                            <!-- Email -->
-                            <div class="flex items-start gap-4">
-                                <div class="w-12 h-12 rounded-xl bg-slate-800 text-white flex items-center justify-center shrink-0">
-                                    <i class="fa-solid fa-envelope text-lg"></i>
-                                </div>
-                                <div>
-                                    <span class="text-xs font-bold text-slate-600 uppercase tracking-wider block">Correo Electrónico</span>
-                                    <a href="mailto:error-lite+84f2@duckduckgo.com" class="text-slate-800 font-semibold text-sm hover:text-clinic-600 transition break-all block mt-0.5">
-                                        error-lite+84f2@duckduckgo.com
-                                    </a>
-                                    <span class="text-xs text-slate-500">Respondemos con la mayor brevedad.</span>
-                                </div>
+                <!-- CARD 3: Pie Diabético -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition border border-slate-200/80 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-medical-50 text-medical-600 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-kit-medical"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Atención al Pie Diabético</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Cuidado especializado y preventivo para pacientes con diabetes. Prevención, revisión neuropática/vascular y curas especiales para evitar complicaciones.
+                        </p>
+                        <ul class="space-y-2 text-xs text-slate-500 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-clinical-500"></i> Evaluación de sensibilidad y pulso</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-clinical-500"></i> Tratamiento preventivo de úlceras</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-clinical-500"></i> Consejos de calzado preventivo</li>
+                        </ul>
+                    </div>
+                    <a href="tel:633292856" class="text-medical-600 font-semibold text-sm inline-flex items-center gap-2 group-hover:translate-x-1 transition">
+                        <span>Pedir Cita Previa</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- CARD 4: Papilomas y Verrugas -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition border border-slate-200/80 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-clinical-50 text-clinical-600 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-bacteria"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Tratamiento de Papilomas</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Diagnóstico y eliminación eficaz de verrugas plantares mediante tratamientos dermatológicos avanzados, indoloros y de rápida recuperación.
+                        </p>
+                        <ul class="space-y-2 text-xs text-slate-500 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-clinical-500"></i> Eliminación definitiva de la lesión</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-clinical-500"></i> Control y seguimiento continuo</li>
+                        </ul>
+                    </div>
+                    <a href="tel:633292856" class="text-clinical-600 font-semibold text-sm inline-flex items-center gap-2 group-hover:translate-x-1 transition">
+                        <span>Pedir Cita Previa</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- CARD 5: Podología Infantil -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition border border-slate-200/80 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-medical-50 text-medical-600 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-child font-bold"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Podología Infantil</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Evaluación del desarrollo de la marcha en niños para corregir a tiempo problemas de pisada hacia adentro, genu valgo o mala postura.
+                        </p>
+                        <ul class="space-y-2 text-xs text-slate-500 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-clinical-500"></i> Diagnóstico precoz del desarrollo</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-clinical-500"></i> Trato cercano y cariñoso con los pequeños</li>
+                        </ul>
+                    </div>
+                    <a href="tel:633292856" class="text-medical-600 font-semibold text-sm inline-flex items-center gap-2 group-hover:translate-x-1 transition">
+                        <span>Pedir Cita Previa</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- CARD 6: Podología Deportiva -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition border border-slate-200/80 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-clinical-50 text-clinical-600 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-person-running"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Podología Deportiva</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Prevención de lesiones en deportistas de todos los niveles. Optimización del gesto deportivo y descarga de zonas de sobrepresión.
+                        </p>
+                        <ul class="space-y-2 text-xs text-slate-500 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-clinical-500"></i> Prevención de tendinitis y periostitis</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-clinical-500"></i> Plantillas deportivas de absorción de impacto</li>
+                        </ul>
+                    </div>
+                    <a href="tel:633292856" class="text-clinical-600 font-semibold text-sm inline-flex items-center gap-2 group-hover:translate-x-1 transition">
+                        <span>Pedir Cita Previa</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- BANNER CITA RÁPIDA -->
+            <div class="mt-12 bg-gradient-to-r from-medical-600 to-clinical-600 rounded-2xl p-8 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+                <div>
+                    <h3 class="text-2xl font-bold">¿Tienes dudas sobre qué tratamiento necesitas?</h3>
+                    <p class="text-slate-100 text-sm mt-1">Llámanos directamente y te asesoraremos sin compromiso en Sanlúcar de Barrameda.</p>
+                </div>
+                <a href="tel:633292856" class="shrink-0 bg-white text-slate-900 hover:bg-slate-100 font-bold px-6 py-3.5 rounded-xl transition shadow-md flex items-center gap-2">
+                    <i class="fa-solid fa-phone text-medical-600"></i>
+                    <span>Pedir Cita Previa</span>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- GALERÍA / NUESTRAS INSTALACIONES -->
+    <section id="instalaciones" class="py-16 sm:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-clinical-600 font-bold text-xs uppercase tracking-wider px-3 py-1 bg-clinical-50 rounded-full">Clínica Sanlúcar</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Nuestras Instalaciones y Trabajos</h2>
+                <p class="text-slate-600 mt-4 text-base">
+                    Un espacio diseñado pensando en tu comodidad, la máxima asepsia y la máxima efectividad clínica.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <div class="group relative overflow-hidden rounded-2xl shadow-sm border border-slate-100">
+                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80" 
+                         alt="Gabinete Podológico Rocío Gómez" 
+                         class="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+                    <div class="absolute bottom-4 left-4 right-4 text-white">
+                        <p class="font-bold text-sm">Gabinete Clínico</p>
+                        <p class="text-xs text-slate-200">Equipamiento esterilizado y confortable</p>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-2xl shadow-sm border border-slate-100">
+                    <img src="https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?auto=format&fit=crop&w=800&q=80" 
+                         alt="Estudio Biomecánico Sanlúcar" 
+                         class="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+                    <div class="absolute bottom-4 left-4 right-4 text-white">
+                        <p class="font-bold text-sm">Diagnóstico Digital</p>
+                        <p class="text-xs text-slate-200">Análisis preciso de la pisada</p>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-2xl shadow-sm border border-slate-100">
+                    <img src="https://images.unsplash.com/photo-1512678080530-7760d81faba6?auto=format&fit=crop&w=800&q=80" 
+                         alt="Atención Delicada" 
+                         class="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+                    <div class="absolute bottom-4 left-4 right-4 text-white">
+                        <p class="font-bold text-sm">Tratamiento Manual</p>
+                        <p class="text-xs text-slate-200">Quiropodología minuciosa</p>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-2xl shadow-sm border border-slate-100">
+                    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80" 
+                         alt="Plantillas Personalizadas" 
+                         class="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+                    <div class="absolute bottom-4 left-4 right-4 text-white">
+                        <p class="font-bold text-sm">Soportes Plantares</p>
+                        <p class="text-xs text-slate-200">Materiales adaptados de alta resistencia</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- RESEÑAS VERIFICADAS -->
+    <section id="opiniones" class="py-16 sm:py-24 bg-slate-50 border-t border-b border-slate-200/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-medical-600 font-bold text-xs uppercase tracking-wider px-3 py-1 bg-medical-100 rounded-full">Opiniones Reales</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Lo que dicen nuestros pacientes</h2>
+                <p class="text-slate-600 mt-4 text-base">
+                    La confianza de quienes acuden a nuestra consulta en Sanlúcar de Barrameda es nuestro mejor aval.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- RESEÑA REAL DESTACADA DE GOOGLE -->
+                <div class="bg-white p-8 rounded-2xl shadow-md border-2 border-clinical-500/30 relative flex flex-col justify-between">
+                    <div class="absolute -top-3.5 right-6 bg-clinical-500 text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1">
+                        <i class="fa-brands fa-google"></i> Reseña Verificada
+                    </div>
+                    <div>
+                        <div class="flex text-amber-400 mb-4 text-base">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-800 text-lg font-semibold italic mb-6">
+                            "Excelente trato, profesionalidad y calidad."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+                        <div class="w-10 h-10 rounded-full bg-medical-100 text-medical-700 flex items-center justify-center font-bold text-sm">
+                            M
+                        </div>
+                        <div>
+                            <p class="font-bold text-slate-900 text-sm">Paciente de Sanlúcar</p>
+                            <p class="text-xs text-slate-400">Cliente habitual de la consulta</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RESEÑA ADICIONAL 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200/80 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 mb-4 text-base">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            "Llevé a mi madre por un problema de uña encarnada que le molestaba mucho. El trato de Rocío fue inmejorable, con muchísima paciencia y delicadeza. Salió encantada y sin dolor."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+                        <div class="w-10 h-10 rounded-full bg-clinical-100 text-clinical-700 flex items-center justify-center font-bold text-sm">
+                            C
+                        </div>
+                        <div>
+                            <p class="font-bold text-slate-900 text-sm">Carmen R.</p>
+                            <p class="text-xs text-slate-400">Sanlúcar de Barrameda</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RESEÑA ADICIONAL 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200/80 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 mb-4 text-base">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            "Me hice las plantillas a medida para correr y la diferencia es abismal. Se nota la profesionalidad y la calidad de los materiales. Muy recomendable la consulta."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+                        <div class="w-10 h-10 rounded-full bg-slate-100 text-slate-700 flex items-center justify-center font-bold text-sm">
+                            J
+                        </div>
+                        <div>
+                            <p class="font-bold text-slate-900 text-sm">Javier M.</p>
+                            <p class="text-xs text-slate-400">Cádiz</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-12 text-center">
+                <a href="tel:633292856" class="inline-flex items-center gap-2 bg-gradient-to-r from-medical-600 to-clinical-600 text-white font-bold px-7 py-3.5 rounded-xl shadow-md hover:shadow-lg transition">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Pedir Cita Previa (633 29 28 56)</span>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PREGUNTAS FRECUENTES -->
+    <section class="py-16 sm:py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-clinical-600 font-bold text-xs uppercase tracking-wider px-3 py-1 bg-clinical-50 rounded-full">Resuelve tus dudas</span>
+                <h2 class="text-3xl font-bold text-slate-900 mt-2">Preguntas Frecuentes</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="p-5 rounded-xl bg-slate-50 border border-slate-200">
+                    <h3 class="font-bold text-slate-900 text-base flex items-center gap-2">
+                        <i class="fa-solid fa-circle-question text-medical-600"></i>
+                        ¿Es obligatorio pedir cita previa antes de acudir?
+                    </h3>
+                    <p class="text-slate-600 text-sm mt-2 leading-relaxed">
+                        Sí, para poder ofrecer la máxima dedicación y evitar tiempos de espera innecesarios, atendemos bajo cita previa. Puedes solicitar la tuya llamando directamente al <strong>633 29 28 56</strong>.
+                    </p>
+                </div>
+
+                <div class="p-5 rounded-xl bg-slate-50 border border-slate-200">
+                    <h3 class="font-bold text-slate-900 text-base flex items-center gap-2">
+                        <i class="fa-solid fa-circle-question text-medical-600"></i>
+                        ¿Cuándo se recomienda acudir al podólogo?
+                    </h3>
+                    <p class="text-slate-600 text-sm mt-2 leading-relaxed">
+                        Es aconsejable acudir ante cualquier molestia al caminar, dolor en uñas, presencia de durezas, cambio de color en uñas o piel, o si practicas deporte intensivo. Si padeces diabetes, las revisiones periódicas son fundamentales.
+                    </p>
+                </div>
+
+                <div class="p-5 rounded-xl bg-slate-50 border border-slate-200">
+                    <h3 class="font-bold text-slate-900 text-base flex items-center gap-2">
+                        <i class="fa-solid fa-circle-question text-medical-600"></i>
+                        ¿Duele el tratamiento de quiropodología o corte de uñas?
+                    </h3>
+                    <p class="text-slate-600 text-sm mt-2 leading-relaxed">
+                        No. Todos nuestros procedimientos se realizan con técnicas profesionales y sumamente delicadas para garantizar que la consulta sea totalmente indolora y aliviante.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO Y UBICACIÓN -->
+    <section id="contacto" class="py-16 sm:py-24 bg-slate-900 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- DATOS DE CONTACTO -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-clinical-400 font-bold text-xs uppercase tracking-wider">¿Dónde estamos?</span>
+                        <h2 class="text-3xl font-extrabold text-white mt-2">Visítanos en Sanlúcar de Barrameda</h2>
+                        <p class="text-slate-400 text-sm mt-3 leading-relaxed">
+                            Estamos a tu disposición para ofrecerte la atención podológica que mereces. Ponte en contacto con nosotros para reservar tu cita.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <!-- DIRECCIÓN -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-medical-800 text-clinical-300 flex items-center justify-center text-xl shrink-0 mt-1">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-white text-base">Dirección de la Consulta</h3>
+                                <p class="text-slate-300 text-sm mt-1">Calle Teruel, 3</p>
+                                <p class="text-slate-400 text-xs">11540 Sanlúcar de Barrameda, Cádiz, España</p>
+                            </div>
+                        </div>
+
+                        <!-- TELÉFONO -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-medical-800 text-clinical-300 flex items-center justify-center text-xl shrink-0 mt-1">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-white text-base">Teléfono de Cita Previa</h3>
+                                <a href="tel:633292856" class="text-clinical-300 hover:text-white font-bold text-lg block mt-0.5 transition">
+                                    633 29 28 56
+                                </a>
+                                <p class="text-slate-400 text-xs">Llama directamente para agendar tu horario</p>
+                            </div>
+                        </div>
+
+                        <!-- EMAIL -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-medical-800 text-clinical-300 flex items-center justify-center text-xl shrink-0 mt-1">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-white text-base">Correo Electrónico</h3>
+                                <a href="mailto:error-lite+84f2@duckduckgo.com" class="text-slate-300 hover:text-clinical-300 text-sm break-all transition block mt-0.5">
+                                    error-lite+84f2@duckduckgo.com
+                                </a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="mt-8 pt-6 border-t border-slate-200">
-                        <a href="tel:633292856" class="w-full inline-flex items-center justify-center gap-2 bg-clinic-600 hover:bg-clinic-700 text-white font-bold py-3.5 px-6 rounded-xl shadow-md transition text-base">
-                            <i class="fa-solid fa-calendar-check"></i>
-                            <span>Pedir Cita Previa</span>
+                    <div class="pt-4">
+                        <a href="tel:633292856" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-gradient-to-r from-clinical-500 to-medical-600 hover:from-clinical-600 hover:to-medical-700 text-white font-bold px-8 py-4 rounded-xl shadow-lg transition">
+                            <i class="fa-solid fa-calendar-check text-lg"></i>
+                            <span>Pedir Cita Previa por Teléfono</span>
                         </a>
                     </div>
                 </div>
 
-                <!-- Mapa interactivo -->
-                <div class="lg:col-span-7 bg-white rounded-3xl p-3 border border-slate-200 shadow-sm flex flex-col justify-center">
-                    <iframe 
-                        src="https://www.google.com/maps?q=Consulta%20de%20Podolog%C3%ADa%20Roc%C3%ADo%20G%C3%B3mez%20Calle%20Teruel%2C%203%2C%2011540%20Sanl%C3%BAcar%20de%20Barrameda%2C%20C%C3%A1diz%2C%20Espa%C3%B1a&output=embed" 
-                        width="100%" 
-                        height="380" 
-                        style="border:0; border-radius: 1rem;" 
-                        allowfullscreen="" 
-                        loading="lazy">
-                    </iframe>
+                <!-- MAPA INTERACTIVO GOOGLE MAPS -->
+                <div class="lg:col-span-7">
+                    <div class="bg-slate-800 p-3 rounded-2xl border border-slate-700 shadow-2xl h-full flex flex-col justify-between">
+                        <div class="w-full rounded-xl overflow-hidden shadow-inner">
+                            <iframe src="https://www.google.com/maps?q=Consulta%20de%20Podolog%C3%ADa%20Roc%C3%ADo%20G%C3%B3mez%20Calle%20Teruel%2C%203%2C%2011540%20Sanl%C3%BAcar%20de%20Barrameda%2C%20C%C3%A1diz%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                        <div class="p-4 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-2">
+                            <span><i class="fa-solid fa-circle-info text-clinical-400 mr-1"></i> Frente a accesos cómodos y de fácil localización</span>
+                            <a href="https://maps.google.com" target="_blank" rel="noopener" class="text-clinical-300 hover:underline">Ver en Google Maps &rarr;</a>
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -588,75 +772,56 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-slate-900 text-slate-300 pt-16 pb-12 border-t border-slate-800">
+    <footer class="bg-slate-950 text-slate-400 py-10 border-t border-slate-800 text-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 pb-12 border-b border-slate-800">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
                 
-                <!-- Columna 1: Info negocio -->
-                <div class="space-y-4">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-lg bg-clinic-600 flex items-center justify-center text-white font-bold">
-                            <i class="fa-solid fa-socks"></i>
-                        </div>
-                        <span class="text-xl font-bold text-white">Podología Rocío Gómez</span>
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-lg bg-medical-600 text-white flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-socks"></i>
                     </div>
-                    <p class="text-slate-400 text-sm leading-relaxed">
-                        Clínica podológica en Sanlúcar de Barrameda dedicada a la salud, prevención y tratamiento de dolencias en pies y uñas. Compromiso, rigor y atención personalizada.
-                    </p>
+                    <div>
+                        <span class="text-white font-bold block leading-none">Consulta de Podología Rocío Gómez</span>
+                        <span class="text-xs text-slate-500">Sanlúcar de Barrameda (Cádiz)</span>
+                    </div>
                 </div>
 
-                <!-- Columna 2: Enlaces Rápidos -->
-                <div>
-                    <h4 class="text-white font-bold text-base mb-4">Navegación</h4>
-                    <ul class="space-y-2.5 text-sm">
-                        <li><a href="#inicio" class="hover:text-tealmed-400 transition">Inicio</a></li>
-                        <li><a href="#tratamientos" class="hover:text-tealmed-400 transition">Especialidades & Tratamientos</a></li>
-                        <li><a href="#instalaciones" class="hover:text-tealmed-400 transition">Instalaciones</a></li>
-                        <li><a href="#opiniones" class="hover:text-tealmed-400 transition">Opiniones de Pacientes</a></li>
-                        <li><a href="#contacto" class="hover:text-tealmed-400 transition">Localización y Cita Previa</a></li>
-                    </ul>
+                <div class="text-center md:text-right text-xs space-y-1 text-slate-500">
+                    <p>&copy; <span id="year"></span> Consulta de Podología Rocío Gómez. Todos los derechos reservados.</p>
+                    <p>Calle Teruel, 3, 11540 Sanlúcar de Barrameda, Cádiz | Teléfono: 633 29 28 56</p>
                 </div>
 
-                <!-- Columna 3: Contacto Directo -->
-                <div class="space-y-3">
-                    <h4 class="text-white font-bold text-base mb-4">Contacto Directo</h4>
-                    <p class="text-sm text-slate-400">
-                        <i class="fa-solid fa-location-dot text-tealmed-500 mr-2"></i> Calle Teruel, 3, 11540 Sanlúcar de Barrameda, Cádiz
-                    </p>
-                    <p class="text-sm">
-                        <a href="tel:633292856" class="text-white font-bold hover:text-tealmed-400 transition">
-                            <i class="fa-solid fa-phone text-tealmed-500 mr-2"></i> 633 29 28 56
-                        </a>
-                    </p>
-                    <p class="text-sm">
-                        <a href="mailto:error-lite+84f2@duckduckgo.com" class="text-slate-400 hover:text-tealmed-400 transition break-all">
-                            <i class="fa-solid fa-envelope text-tealmed-500 mr-2"></i> error-lite+84f2@duckduckgo.com
-                        </a>
-                    </p>
-                </div>
-
-            </div>
-
-            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
-                <p>&copy; <script>document.write(new Date().getFullYear())</script> Consulta de Podología Rocío Gómez. Todos los derechos reservados.</p>
-                <div class="flex space-x-4">
-                    <span>Aviso Legal</span>
-                    <span>•</span>
-                    <span>Política de Privacidad</span>
-                    <span>•</span>
-                    <span>Protección de Datos Sanitarios</span>
-                </div>
             </div>
         </div>
     </footer>
 
-    <!-- BOTÓN FLOTANTE MÓVIL PARA CITA RÁPIDA -->
-    <div class="fixed bottom-4 right-4 z-50 sm:hidden">
-        <a href="tel:633292856" class="flex items-center gap-2 bg-clinic-600 text-white font-bold px-5 py-3 rounded-full shadow-2xl border-2 border-white hover:bg-clinic-700 transition">
+    <!-- BARRA FLOTANTE FIJA MÓVIL (CTA RÁPIDO) -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 p-3 z-50 lg:hidden shadow-2xl flex items-center gap-3">
+        <a href="tel:633292856" class="flex-1 bg-gradient-to-r from-medical-600 to-clinical-600 text-white font-bold py-3 px-4 rounded-xl text-center text-sm flex items-center justify-center gap-2 shadow">
             <i class="fa-solid fa-phone"></i>
             <span>Pedir Cita Previa</span>
         </a>
     </div>
 
+    <!-- SCRIPT MENU MÓVIL Y AÑO -->
+    <script>
+        // Actualizar año copyright
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Toggle menú móvil
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
 </body>
 </html>
