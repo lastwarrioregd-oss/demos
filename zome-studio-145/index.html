@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zome Studio | Salón de Manicura y Pedicura en Valencia</title>
+    <meta name="description" content="Salón de manicura y pedicura exclusivo en Poblats Marítims, Valencia. Esmaltado permanente, uñas acrílicas, acrygel y diseño de uñas. Reserva tu cita.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            DEFAULT: '#C5A059',
+                            light: '#D4B87C',
+                            dark: '#A3813F'
+                        },
+                        dark: {
+                            DEFAULT: '#121212',
+                            card: '#1A1A1A',
+                            soft: '#242424'
+                        },
+                        sand: '#F9F8F6'
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Cormorant Garamond', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .font-serif { font-family: 'Cormorant Garamond', serif; }
+        .font-sans { font-family: 'Montserrat', sans-serif; }
+    </style>
+</head>
+<body class="bg-dark text-gray-200 font-sans antialiased selection:bg-gold selection:text-white">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-dark/90 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2">
+                <span class="font-serif text-2xl sm:text-3xl tracking-widest text-gold font-bold">ZOME STUDIO</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 text-sm uppercase tracking-wider font-medium">
+                <a href="#servicios" class="hover:text-gold transition-colors">Servicios</a>
+                <a href="#galeria" class="hover:text-gold transition-colors">Instalaciones</a>
+                <a href="#opiniones" class="hover:text-gold transition-colors">Opiniones</a>
+                <a href="#contacto" class="hover:text-gold transition-colors">Ubicación</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="hidden sm:block">
+                <a href="tel:654980329" class="bg-gold hover:bg-gold-light text-dark font-semibold px-6 py-3 rounded-full text-sm uppercase tracking-wider transition-all shadow-lg hover:shadow-gold/20 flex items-center gap-2">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Reservar Cita</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-2xl text-gold focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-card border-b border-white/10 px-4 pt-2 pb-6 space-y-3">
+            <a href="#servicios" class="block py-2 text-sm uppercase tracking-wider hover:text-gold">Servicios</a>
+            <a href="#galeria" class="block py-2 text-sm uppercase tracking-wider hover:text-gold">Instalaciones</a>
+            <a href="#opiniones" class="block py-2 text-sm uppercase tracking-wider hover:text-gold">Opiniones</a>
+            <a href="#contacto" class="block py-2 text-sm uppercase tracking-wider hover:text-gold">Ubicación</a>
+            <div class="pt-2">
+                <a href="tel:654980329" class="w-full bg-gold text-dark font-semibold py-3 rounded-full text-sm uppercase tracking-wider flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Reservar Cita</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://cdn1.treatwell.net/images/view/v2.i9078210.w720.h480.xC66B006A/" 
+                 referrerpolicy="no-referrer" 
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                 alt="Zome Studio Manicura Valencia" 
+                 class="w-full h-full object-cover object-center filter brightness-50 scale-105 animate-pulse duration-1000">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/60 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 text-center py-20">
+            <span class="inline-block text-gold text-sm sm:text-base uppercase tracking-[0.3em] font-semibold mb-4 bg-dark/60 px-4 py-1.5 rounded-full border border-gold/30">
+                Salón de Manicura y Pedicura Exclusivo
+            </span>
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-wide text-white mb-6 leading-tight">
+                El Arte del Cuidado <br><span class="text-gold italic">en tus Manos</span>
+            </h1>
+            <p class="text-gray-300 text-lg sm:text-xl max-w-2xl mx-auto mb-10 font-light">
+                Descubre un espacio boutique dedicado a la estética, salud y belleza de tus uñas en Poblats Marítims, Valencia. Profesionalidad y calidad garantizada.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="tel:654980329" class="w-full sm:w-auto bg-gold hover:bg-gold-light text-dark font-bold px-8 py-4 rounded-full uppercase tracking-wider text-sm transition-all transform hover:-translate-y-0.5 shadow-xl flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-calendar-check text-lg"></i>
+                    <span>Reservar Cita Ahora</span>
+                </a>
+                <a href="#servicios" class="w-full sm:w-auto bg-transparent hover:bg-white/10 text-white border border-white/30 font-semibold px-8 py-4 rounded-full uppercase tracking-wider text-sm transition-all flex items-center justify-center gap-3">
+                    <span>Ver Carta de Precios</span>
+                </a>
+            </div>
+
+            <!-- Highlights badges -->
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mt-16 pt-12 border-t border-white/10 text-left max-w-3xl mx-auto">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center text-gold">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold text-sm">Máxima Calidad</h4>
+                        <p class="text-gray-400 text-xs">Productos premium</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center text-gold">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold text-sm">Profesionales</h4>
+                        <p class="text-gray-400 text-xs">Trato excelente</p>
+                    </div>
+                </div>
+                <div class="col-span-2 md:col-span-1 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center text-gold">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold text-sm">Valencia (27081)</h4>
+                        <p class="text-gray-400 text-xs">Poblats Marítims</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services & Pricing Section -->
+    <section id="servicios" class="py-24 bg-dark-card relative">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold text-xs uppercase tracking-[0.25em] font-bold block mb-2">Carta de Tratamientos</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-4">Nuestros Servicios y Tarifas</h2>
+                <div class="w-20 h-0.5 bg-gold mx-auto mb-6"></div>
+                <p class="text-gray-400 text-sm sm:text-base">
+                    Técnicas avanzadas y acabados impecables diseñados para realzar la elegancia natural de tus manos y pies.
+                </p>
+            </div>
+
+            <!-- Pricing Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                
+                <!-- Item 1 -->
+                <div class="bg-dark p-6 rounded-2xl border border-white/5 hover:border-gold/40 transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-serif text-xl font-bold text-white group-hover:text-gold transition-colors">Esmaltado Permanente con Refuerzo</h3>
+                            <span class="text-gold font-bold text-xl">23 €</span>
+                        </div>
+                        <p class="text-gray-400 text-xs uppercase tracking-wider mb-4"><i class="fa-regular fa-clock mr-1"></i> 30 - 45 minutos</p>
+                        <p class="text-gray-300 text-sm mb-4">Incluye preparación de la uña, manicura cuidadosa y refuerzo estructurado para mayor durabilidad con brillo impecable.</p>
+                    </div>
+                    <div class="pt-4 border-t border-white/5 flex items-center justify-between">
+                        <span class="text-xs text-gray-500">Disponible con Thali u otro equipo</span>
+                        <a href="tel:654980329" class="text-xs uppercase tracking-wider font-bold text-gold hover:underline flex items-center gap-1">
+                            Seleccionar <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="bg-dark p-6 rounded-2xl border border-white/5 hover:border-gold/40 transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-serif text-xl font-bold text-white group-hover:text-gold transition-colors">Uñas Acrílicas</h3>
+                            <span class="text-gold font-bold text-xl">39 €</span>
+                        </div>
+                        <p class="text-gray-400 text-xs uppercase tracking-wider mb-4"><i class="fa-regular fa-clock mr-1"></i> 1 hora</p>
+                        <p class="text-gray-300 text-sm mb-4">Construcción y extensión de alta calidad con acrílico, adaptadas a la forma y longitud deseada para un look sofisticado.</p>
+                    </div>
+                    <div class="pt-4 border-t border-white/5 flex items-center justify-between">
+                        <span class="text-xs text-gray-500">¿Qué incluye? Preparación y diseño base</span>
+                        <a href="tel:654980329" class="text-xs uppercase tracking-wider font-bold text-gold hover:underline flex items-center gap-1">
+                            Seleccionar <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="bg-dark p-6 rounded-2xl border border-white/5 hover:border-gold/40 transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-serif text-xl font-bold text-white group-hover:text-gold transition-colors">Uñas Acrílicas XL</h3>
+                            <span class="text-gold font-bold text-xl">45 €</span>
+                        </div>
+                        <p class="text-gray-400 text-xs uppercase tracking-wider mb-4"><i class="fa-regular fa-clock mr-1"></i> 1 hora 30 minutos</p>
+                        <p class="text-gray-300 text-sm mb-4">Para quienes buscan máxima longitud y un impacto visual rompedor con la máxima resistencia del mercado.</p>
+                    </div>
+                    <div class="pt-4 border-t border-white/5 flex items-center justify-between">
+                        <span class="text-xs text-gray-500">¿Qué incluye? Extensión extra larga profesional</span>
+                        <a href="tel:654980329" class="text-xs uppercase tracking-wider font-bold text-gold hover:underline flex items-center gap-1">
+                            Seleccionar <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="bg-dark p-6 rounded-2xl border border-white/5 hover:border-gold/40 transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-serif text-xl font-bold text-white group-hover:text-gold transition-colors">Relleno de Uñas Acrílicas</h3>
+                            <span class="text-gold font-bold text-xl">33 €</span>
+                        </div>
+                        <p class="text-gray-400 text-xs uppercase tracking-wider mb-4"><i class="fa-regular fa-clock mr-1"></i> 1 hora</p>
+                        <p class="text-gray-300 text-sm mb-4">Mantenimiento periódico para rellenar el crecimiento natural y devolver la perfección estructural a tus uñas.</p>
+                    </div>
+                    <div class="pt-4 border-t border-white/5 flex items-center justify-between">
+                        <span class="text-xs text-gray-500">¿Qué incluye? Nivelación y nuevo color</span>
+                        <a href="tel:654980329" class="text-xs uppercase tracking-wider font-bold text-gold hover:underline flex items-center gap-1">
+                            Seleccionar <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="bg-dark p-6 rounded-2xl border border-white/5 hover:border-gold/40 transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-serif text-xl font-bold text-white group-hover:text-gold transition-colors">Puesto de Acrygel</h3>
+                            <span class="text-gold font-bold text-xl">40 €</span>
+                        </div>
+                        <p class="text-gray-400 text-xs uppercase tracking-wider mb-4"><i class="fa-regular fa-clock mr-1"></i> 1 hora</p>
+                        <p class="text-gray-300 text-sm mb-4">La combinación perfecta entre la resistencia del acrílico y la flexibilidad del gel para un acabado natural y ligero.</p>
+                    </div>
+                    <div class="pt-4 border-t border-white/5 flex items-center justify-between">
+                        <span class="text-xs text-gray-500">¿Qué incluye? Modelado y acabado profesional</span>
+                        <a href="tel:654980329" class="text-xs uppercase tracking-wider font-bold text-gold hover:underline flex items-center gap-1">
+                            Seleccionar <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="bg-dark p-6 rounded-2xl border border-white/5 hover:border-gold/40 transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-serif text-xl font-bold text-white group-hover:text-gold transition-colors">Relleno de Acrygel</h3>
+                            <span class="text-gold font-bold text-xl">34 €</span>
+                        </div>
+                        <p class="text-gray-400 text-xs uppercase tracking-wider mb-4"><i class="fa-regular fa-clock mr-1"></i> 1 hora</p>
+                        <p class="text-gray-300 text-sm mb-4">Mantenimiento especializado para uñas de acrygel, asegurando que mantengan su dureza y estética impecable.</p>
+                    </div>
+                    <div class="pt-4 border-t border-white/5 flex items-center justify-between">
+                        <span class="text-xs text-gray-500">¿Qué incluye? Limpieza y reconstrucción</span>
+                        <a href="tel:654980329" class="text-xs uppercase tracking-wider font-bold text-gold hover:underline flex items-center gap-1">
+                            Seleccionar <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Item 7 -->
+                <div class="bg-dark p-6 rounded-2xl border border-white/5 hover:border-gold/40 transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-serif text-xl font-bold text-white group-hover:text-gold transition-colors">Babyboomer de Color</h3>
+                            <span class="text-gold font-bold text-xl">39 €</span>
+                        </div>
+                        <p class="text-gray-400 text-xs uppercase tracking-wider mb-4"><i class="fa-regular fa-clock mr-1"></i> 1 hora</p>
+                        <p class="text-gray-300 text-sm mb-4">El degradado elegante por excelencia, fusionando tonos sutiles o de color para un diseño moderno y atemporal.</p>
+                    </div>
+                    <div class="pt-4 border-t border-white/5 flex items-center justify-between">
+                        <span class="text-xs text-gray-500">¿Qué incluye? Difuminado perfecto</span>
+                        <a href="tel:654980329" class="text-xs uppercase tracking-wider font-bold text-gold hover:underline flex items-center gap-1">
+                            Seleccionar <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Item 8 -->
+                <div class="bg-dark p-6 rounded-2xl border border-white/5 hover:border-gold/40 transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-serif text-xl font-bold text-white group-hover:text-gold transition-colors">Decoración Básica & Retirada</h3>
+                            <span class="text-gold font-bold text-xl">Desde 8 €</span>
+                        </div>
+                        <p class="text-gray-400 text-xs uppercase tracking-wider mb-4"><i class="fa-regular fa-clock mr-1"></i> 15 minutos</p>
+                        <p class="text-gray-300 text-sm mb-4">Complementos de nail art básico (10€) o retirada segura de esmalte permanente sin dañar tu uña natural (8€).</p>
+                    </div>
+                    <div class="pt-4 border-t border-white/5 flex items-center justify-between">
+                        <span class="text-xs text-gray-500">Cuidado y protección garantizada</span>
+                        <a href="tel:654980329" class="text-xs uppercase tracking-wider font-bold text-gold hover:underline flex items-center gap-1">
+                            Seleccionar <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-12 text-center">
+                <a href="tel:654980329" class="inline-flex items-center gap-3 bg-gold hover:bg-gold-light text-dark font-bold px-8 py-4 rounded-full uppercase tracking-wider text-sm transition-all shadow-lg">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Reservar Tu Cita Llamando al 654 98 03 29</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galeria" class="py-24 bg-dark">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold text-xs uppercase tracking-[0.25em] font-bold block mb-2">Nuestras Instalaciones y Trabajos</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-4">Galería Zome Studio</h2>
+                <div class="w-20 h-0.5 bg-gold mx-auto mb-6"></div>
+                <p class="text-gray-400 text-sm sm:text-base">
+                    Un vistazo a nuestro espacio diseñado para tu bienestar y algunos de nuestros diseños realizados con pasión.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="relative overflow-hidden rounded-2xl group h-80 border border-white/5">
+                    <img src="https://cdn1.treatwell.net/images/view/v2.i9078210.w720.h480.xC66B006A/" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=800&q=80';"
+                         alt="Zome Studio Instalaciones" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <div>
+                            <span class="text-gold text-xs uppercase tracking-widest font-semibold">Exclusivo</span>
+                            <h4 class="text-white font-serif text-xl">Ambiente Boutique</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative overflow-hidden rounded-2xl group h-80 border border-white/5">
+                    <img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=800&q=80" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=800&q=80';"
+                         alt="Manicura Profesional Zome Studio" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <div>
+                            <span class="text-gold text-xs uppercase tracking-widest font-semibold">Detalle</span>
+                            <h4 class="text-white font-serif text-xl">Manicura Perfecta</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative overflow-hidden rounded-2xl group h-80 border border-white/5 sm:col-span-2 lg:col-span-1">
+                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=800&q=80';"
+                         alt="Nail Art Zome Studio" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <div>
+                            <span class="text-gold text-xs uppercase tracking-widest font-semibold">Arte y Diseño</span>
+                            <h4 class="text-white font-serif text-xl">Acabados a Medida</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="opiniones" class="py-24 bg-dark-card border-t border-b border-white/5">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold text-xs uppercase tracking-[0.25em] font-bold block mb-2">Opiniones Verificadas</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-4">Lo que dicen nuestros clientes</h2>
+                <div class="w-20 h-0.5 bg-gold mx-auto mb-6"></div>
+                <p class="text-gray-400 text-sm sm:text-base">
+                    La satisfacción de quienes confían en nosotros es nuestro mejor aval en Google Maps y portales especializados.
+                </p>
+            </div>
+
+            <div class="bg-dark p-8 sm:p-12 rounded-3xl border border-gold/20 relative shadow-2xl">
+                <div class="absolute -top-5 left-10 bg-gold text-dark w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg shadow-md">
+                    <i class="fa-solid fa-quote-left"></i>
+                </div>
+                <div class="flex items-center gap-1 text-gold mb-6 text-lg">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <p class="font-serif text-2xl sm:text-3xl text-gray-200 italic mb-8 leading-relaxed">
+                    "Excelente trato, profesionalidad y calidad."
+                </p>
+                <div class="flex items-center gap-4 pt-6 border-t border-white/10">
+                    <div class="w-12 h-12 rounded-full bg-gold/20 text-gold flex items-center justify-center font-bold text-lg font-serif">
+                        ZS
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white">Cliente Verificado</h4>
+                        <p class="text-xs text-gold uppercase tracking-wider">Google Maps Review</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Map Section -->
+    <section id="contacto" class="py-24 bg-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold text-xs uppercase tracking-[0.25em] font-bold block mb-2">Visítanos en Valencia</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-4">Ubicación y Contacto</h2>
+                <div class="w-20 h-0.5 bg-gold mx-auto mb-6"></div>
+                <p class="text-gray-400 text-sm sm:text-base">
+                    Te esperamos en nuestro salón en Poblats Marítims. Pide tu cita previa por teléfono o escríbenos.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Info Column -->
+                <div class="bg-dark-card p-8 sm:p-10 rounded-3xl border border-white/5 space-y-8">
+                    <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white">Zome Studio</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-gold/10 text-gold flex items-center justify-center flex-shrink-0 text-xl">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold uppercase tracking-wider text-gray-400 mb-1">Dirección</h4>
+                                <p class="text-white text-base">Av. de la Malva-Rosa, 29, Poblats Marítims, 46011 València, Valencia, España</p>
+                                <span class="inline-block mt-1 text-xs text-gold">Código Postal: 27081</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-gold/10 text-gold flex items-center justify-center flex-shrink-0 text-xl">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold uppercase tracking-wider text-gray-400 mb-1">Teléfono de Reservas</h4>
+                                <a href="tel:654980329" class="text-white text-lg font-bold hover:text-gold transition-colors">654 98 03 29</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-gold/10 text-gold flex items-center justify-center flex-shrink-0 text-xl">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold uppercase tracking-wider text-gray-400 mb-1">Correo Electrónico</h4>
+                                <a href="mailto:zomenails@gmail.com" class="text-white text-base hover:text-gold transition-colors">zomenails@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="tel:654980329" class="w-full bg-gold hover:bg-gold-light text-dark font-bold py-4 rounded-full uppercase tracking-wider text-sm transition-all shadow-lg flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>Llamar y Reservar Cita</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Map Column -->
+                <div class="w-full h-full min-h-[380px] rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+                    <iframe src="https://www.google.com/maps?q=Zome%20Studio%20Av.de%20la%20Malva-Rosa%2C%2029%2C%20Poblats%20Mar%C3%ADtims%2C%2046011%20Valncia%2C%20Valencia%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-card border-t border-white/10 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div>
+                <span class="font-serif text-2xl tracking-widest text-gold font-bold block mb-1">ZOME STUDIO</span>
+                <p class="text-gray-400 text-xs">Salón de manicura y pedicura exclusivo en Valencia.</p>
+            </div>
+            
+            <div class="text-xs text-gray-500">
+                &copy; <script>document.write(new Date().getFullYear());</script> Zome Studio. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script Mobile Menu Toggle -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
