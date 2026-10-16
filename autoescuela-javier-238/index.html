@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autoescuela Javier | Trobajo del Camino & Cimanes de la Vega</title>
+    <!-- Tailwind CSS (v3 via CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            DEFAULT: '#D4AF37',
+                            light: '#F3E5AB',
+                            dark: '#AA8C2C',
+                        },
+                        dark: {
+                            DEFAULT: '#0A0A0A',
+                            card: '#141414',
+                            border: '#262626',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Cinzel', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-dark text-gray-200 font-sans antialiased selection:bg-gold selection:text-black">
+
+    <!-- Header & Navigation -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-dark/90 backdrop-blur-md border-b border-dark-border transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-full border border-gold flex items-center justify-center bg-dark-card group-hover:bg-gold transition-colors duration-300">
+                    <i class="fa-solid fa-car text-gold group-hover:text-black transition-colors"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif text-xl tracking-wider text-white font-bold">AUTOESCUELA</span>
+                    <span class="text-xs uppercase tracking-widest text-gold font-semibold">Javier</span>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
+                <a href="#inicio" class="text-gray-300 hover:text-gold transition-colors">Inicio</a>
+                <a href="#servicios" class="text-gray-300 hover:text-gold transition-colors">Permisos y Clases</a>
+                <a href="#instalaciones" class="text-gray-300 hover:text-gold transition-colors">Instalaciones</a>
+                <a href="#testimonios" class="text-gray-300 hover:text-gold transition-colors">Opiniones</a>
+                <a href="#contacto" class="text-gray-300 hover:text-gold transition-colors">Ubicación</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <a href="tel:987801362" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-full border border-gold text-gold font-semibold text-sm tracking-wider uppercase hover:bg-gold hover:text-black transition-all duration-300 shadow-lg shadow-gold/10">
+                    <i class="fa-solid fa-phone mr-2"></i> Reservar Cita
+                </a>
+                <button id="menu-btn" class="md:hidden text-gold text-2xl focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-card border-b border-dark-border px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="block py-2 text-gray-300 hover:text-gold font-medium">Inicio</a>
+            <a href="#servicios" class="block py-2 text-gray-300 hover:text-gold font-medium">Permisos y Clases</a>
+            <a href="#instalaciones" class="block py-2 text-gray-300 hover:text-gold font-medium">Instalaciones</a>
+            <a href="#testimonios" class="block py-2 text-gray-300 hover:text-gold font-medium">Opiniones</a>
+            <a href="#contacto" class="block py-2 text-gray-300 hover:text-gold font-medium">Ubicación</a>
+            <div class="pt-2">
+                <a href="tel:987801362" class="w-full flex items-center justify-center px-5 py-3 rounded-full bg-gold text-black font-semibold text-sm tracking-wider uppercase">
+                    <i class="fa-solid fa-phone mr-2"></i> Reservar Cita
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-gradient-to-b from-dark via-dark-card to-dark">
+        <!-- Background Glow Effects -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gold/10 rounded-full blur-[120px] pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Text Content -->
+                <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-gold/10 border border-gold/30 text-gold text-xs uppercase tracking-widest font-semibold">
+                        <i class="fa-solid fa-award"></i>
+                        <span>Autoescuela Boutique & Profesional</span>
+                    </div>
+                    
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight">
+                        Tu carné de conducir con <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold via-gold-light to-gold">excelencia y profesionalidad</span>
+                    </h1>
+                    
+                    <p class="text-gray-400 text-lg sm:text-xl font-light max-w-2xl mx-auto lg:mx-0">
+                        En Autoescuela Javier te ofrecemos un trato personalizado, métodos modernos y el mejor ambiente de aprendizaje en León, Trobajo del Camino y Cimanes de la Vega.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="tel:987801362" class="w-full sm:w-auto px-8 py-4 rounded-full bg-gold text-black font-bold text-sm tracking-widest uppercase hover:bg-gold-light transition-all duration-300 shadow-xl shadow-gold/20 flex items-center justify-center space-x-3">
+                            <i class="fa-solid fa-calendar-check text-lg"></i>
+                            <span>Reservar Cita</span>
+                        </a>
+                        <a href="#servicios" class="w-full sm:w-auto px-8 py-4 rounded-full border border-dark-border bg-dark-card/50 text-white font-semibold text-sm tracking-widest uppercase hover:border-gold hover:text-gold transition-all duration-300 flex items-center justify-center space-x-3">
+                            <i class="fa-solid fa-car text-gold"></i>
+                            <span>Ver Permisos</span>
+                        </a>
+                    </div>
+
+                    <!-- Trust indicators -->
+                    <div class="pt-8 border-t border-dark-border grid grid-cols-3 gap-4 text-center lg:text-left">
+                        <div>
+                            <p class="font-serif text-2xl font-bold text-gold">100%</p>
+                            <p class="text-xs text-gray-400 uppercase tracking-wider">Compromiso</p>
+                        </div>
+                        <div>
+                            <p class="font-serif text-2xl font-bold text-gold">5 Estrellas</p>
+                            <p class="text-xs text-gray-400 uppercase tracking-wider">Valoración Real</p>
+                        </div>
+                        <div>
+                            <p class="font-serif text-2xl font-bold text-gold">Personal</p>
+                            <p class="text-xs text-gray-400 uppercase tracking-wider">Trato Exclusivo</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Image -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-gold to-dark-border opacity-30 blur-lg"></div>
+                        <div class="relative rounded-2xl overflow-hidden border border-gold/30 bg-dark-card shadow-2xl">
+                            <img src="https://scontent-iad6-1.xx.fbcdn.net/v/t39.30808-1/277784188_382055523930492_8010536420676375891_n.png?stp=dst-png&amp;cstp=mx511x511&amp;ctp=s511x511&amp;_nc_cat=109&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=7VjRkMhkD78Q7kNvwEr3gdM&amp;_nc_oc=Adox8KA1HVTUAzSs6Z6o-n6SQGvZCBKCGtIJFa6nF1VwwlFiCVZP1i3UsrQqaWrzD5U&amp;_nc_zt=24&amp;_nc_ht=scontent-iad6-1.xx&amp;_nc_gid=YiYzTFIJ5ZOe5c9zH08lMg&amp;_nc_ss=7f289&amp;oh=00_AQOyGcPtetbkGOWdiQ1hnxGS8a2QgyMIF8o1HlwxxYPQMQ&amp;oe=6AD6E1E0" 
+                                 alt="Autoescuela Javier" 
+                                 referrerpolicy="no-referrer" 
+                                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                                 class="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Formación y Tarifas Section -->
+    <section id="servicios" class="py-24 bg-dark-card/50 relative border-t border-dark-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-xs uppercase tracking-widest text-gold font-semibold px-3 py-1 rounded-full bg-gold/10 border border-gold/30">Nuestros Servicios</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white tracking-tight">Formación Vial Integral y de Calidad</h2>
+                <p class="text-gray-400 font-light">Diseñamos planes adaptados a tus necesidades para garantizar un aprendizaje seguro, eficaz y con la máxima tasa de aprobados.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Card 1 -->
+                <div class="bg-dark border border-dark-border rounded-2xl p-8 hover:border-gold/50 transition-all duration-300 flex flex-col justify-between group shadow-xl">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-2xl mb-6 group-hover:bg-gold group-hover:text-black transition-all duration-300">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-3">Permiso B - Teórica</h3>
+                        <p class="text-gray-400 text-sm font-light mb-6">Clases teóricas presenciales y online con test actualizados de última generación para aprobar a la primera.</p>
+                        <ul class="space-y-2 text-sm text-gray-300 mb-8">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2 text-xs"></i> Profesores expertos</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2 text-xs"></i> Plataforma digital 24/7</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2 text-xs"></i> Tutorías personalizadas</li>
+                        </ul>
+                    </div>
+                    <a href="tel:987801362" class="w-full py-3 rounded-xl border border-gold text-gold text-center font-semibold text-xs tracking-wider uppercase hover:bg-gold hover:text-black transition-all duration-300">
+                        Reservar Cita
+                    </a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-dark border border-gold/40 rounded-2xl p-8 hover:border-gold transition-all duration-300 flex flex-col justify-between group shadow-2xl relative">
+                    <div class="absolute -top-3 right-6 bg-gold text-black text-[10px] font-extrabold uppercase px-3 py-1 rounded-full tracking-wider">Más Solicitado</div>
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-2xl mb-6 group-hover:bg-gold group-hover:text-black transition-all duration-300">
+                            <i class="fa-solid fa-car-side"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-3">Clases Prácticas de Conducción</h3>
+                        <p class="text-gray-400 text-sm font-light mb-6">Aprende a conducir con total confianza en vehículos modernos y con instructores dotados de excelente trato y profesionalidad.</p>
+                        <ul class="space-y-2 text-sm text-gray-300 mb-8">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2 text-xs"></i> Vehículos modernos y seguros</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2 text-xs"></i> Recorridos de examen reales</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2 text-xs"></i> Horarios flexibles</li>
+                        </ul>
+                    </div>
+                    <a href="tel:987801362" class="w-full py-3 rounded-xl bg-gold text-black text-center font-bold text-xs tracking-wider uppercase hover:bg-gold-light transition-all duration-300 shadow-md">
+                        Reservar Cita
+                    </a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-dark border border-dark-border rounded-2xl p-8 hover:border-gold/50 transition-all duration-300 flex flex-col justify-between group shadow-xl">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-2xl mb-6 group-hover:bg-gold group-hover:text-black transition-all duration-300">
+                            <i class="fa-solid fa-id-card"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-3">Otros Permisos y Gestión</h3>
+                        <p class="text-gray-400 text-sm font-light mb-6">Tramitación integral de expedientes, exámenes psicotécnicos y asesoramiento personalizado para cualquier tipo de licencia.</p>
+                        <ul class="space-y-2 text-sm text-gray-300 mb-8">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2 text-xs"></i> Gestión de tráfico rápida</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2 text-xs"></i> Asesoramiento completo</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2 text-xs"></i> Tarifas competitivas</li>
+                        </ul>
+                    </div>
+                    <a href="tel:987801362" class="w-full py-3 rounded-xl border border-gold text-gold text-center font-semibold text-xs tracking-wider uppercase hover:bg-gold hover:text-black transition-all duration-300">
+                        Reservar Cita
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery / Instalaciones Section -->
+    <section id="instalaciones" class="py-24 bg-dark relative border-t border-dark-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-xs uppercase tracking-widest text-gold font-semibold px-3 py-1 rounded-full bg-gold/10 border border-gold/30">Galería</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white tracking-tight">Nuestras Instalaciones y Trabajos</h2>
+                <p class="text-gray-400 font-light">Espacios diseñados para tu comodidad y un aprendizaje óptimo en Trobajo del Camino.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="rounded-2xl overflow-hidden border border-gold/30 bg-dark-card shadow-2xl">
+                    <img src="https://scontent-iad6-1.xx.fbcdn.net/v/t39.30808-1/277784188_382055523930492_8010536420676375891_n.png?stp=dst-png&amp;cstp=mx511x511&amp;ctp=s511x511&amp;_nc_cat=109&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=7VjRkMhkD78Q7kNvwEr3gdM&amp;_nc_oc=Adox8KA1HVTUAzSs6Z6o-n6SQGvZCBKCGtIJFa6nF1VwwlFiCVZP1i3UsrQqaWrzD5U&amp;_nc_zt=24&amp;_nc_ht=scontent-iad6-1.xx&amp;_nc_gid=YiYzTFIJ5ZOe5c9zH08lMg&amp;_nc_ss=7f289&amp;oh=00_AQOyGcPtetbkGOWdiQ1hnxGS8a2QgyMIF8o1HlwxxYPQMQ&amp;oe=6AD6E1E0" 
+                         alt="Autoescuela Javier Instalaciones" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                         class="w-full h-80 object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="space-y-6">
+                    <h3 class="font-serif text-2xl font-bold text-white">Un entorno profesional y cercano</h3>
+                    <p class="text-gray-400 font-light leading-relaxed">
+                        En Autoescuela Javier nos tomamos muy en serio tu formación. Contamos con aulas equipadas con la última tecnología interactiva y vehículos de última generación para que tus prácticas sean cómodas, seguras y efectivas.
+                    </p>
+                    <div class="flex items-center space-x-4">
+                        <a href="tel:987801362" class="px-6 py-3 rounded-full bg-gold text-black font-bold text-xs tracking-widest uppercase hover:bg-gold-light transition-all duration-300 shadow-md">
+                            Reservar Cita
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials / Reseñas Section -->
+    <section id="testimonios" class="py-24 bg-dark-card/50 relative border-t border-dark-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-xs uppercase tracking-widest text-gold font-semibold px-3 py-1 rounded-full bg-gold/10 border border-gold/30">Opiniones Verificadas</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white tracking-tight">Lo que opinan nuestros alumnos</h2>
+                <p class="text-gray-400 font-light">La satisfacción de quienes ya han conseguido su permiso es nuestra mejor carta de presentación.</p>
+            </div>
+
+            <div class="max-w-xl mx-auto">
+                <!-- Single Testimonial Card based on real review -->
+                <div class="bg-dark border border-gold/30 rounded-2xl p-8 shadow-2xl relative">
+                    <div class="absolute -top-4 right-8 bg-gold text-black w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm shadow">
+                        <i class="fa-solid fa-quote-right"></i>
+                    </div>
+                    <div class="flex items-center space-x-1 text-gold mb-4 text-sm">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 italic mb-6 text-lg font-light">
+                        "Excelente trato, profesionalidad y calidad."
+                    </p>
+                    <div class="flex items-center justify-between border-t border-dark-border pt-4">
+                        <div>
+                            <p class="font-serif font-bold text-white text-sm">Alumno Verificado</p>
+                            <p class="text-xs text-gray-500">Google Maps</p>
+                        </div>
+                        <span class="text-xs text-gold uppercase tracking-wider font-semibold">5.0 ★★★★★</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map & Contact Section -->
+    <section id="contacto" class="py-24 bg-dark relative border-t border-dark-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-xs uppercase tracking-widest text-gold font-semibold px-3 py-1 rounded-full bg-gold/10 border border-gold/30">Ubicación y Contacto</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white tracking-tight">Visítanos o Llámanos</h2>
+                <p class="text-gray-400 font-light">Estamos a tu entera disposición para resolver cualquier duda y comenzar tu formación.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                
+                <!-- Contact Info Cards -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="bg-dark-card border border-dark-border rounded-2xl p-6 flex items-start space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-xl flex-shrink-0">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif font-bold text-white mb-1">Dirección</h3>
+                            <p class="text-gray-400 text-sm font-light">Av. Constitución, 246, 24010 Trobajo del Camino, León, España</p>
+                            <span class="inline-block mt-2 text-xs text-gold font-semibold">Zona Cimanes de la Vega / León</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-dark-card border border-dark-border rounded-2xl p-6 flex items-start space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-xl flex-shrink-0">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif font-bold text-white mb-1">Teléfono</h3>
+                            <p class="text-gray-400 text-sm font-light">987 80 13 62</p>
+                            <a href="tel:987801362" class="inline-block mt-2 text-xs text-gold font-semibold hover:underline">Llamar ahora →</a>
+                        </div>
+                    </div>
+
+                    <div class="bg-dark-card border border-dark-border rounded-2xl p-6 flex items-start space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-xl flex-shrink-0">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif font-bold text-white mb-1">Correo Electrónico</h3>
+                            <p class="text-gray-400 text-sm font-light break-all">error-lite+84f2@duckduckgo.com</p>
+                            <a href="mailto:error-lite+84f2@duckduckgo.com" class="inline-block mt-2 text-xs text-gold font-semibold hover:underline">Enviar email →</a>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="tel:987801362" class="w-full py-4 rounded-full bg-gold text-black font-bold text-xs tracking-widest uppercase hover:bg-gold-light transition-all duration-300 shadow-lg flex items-center justify-center space-x-3">
+                            <i class="fa-solid fa-calendar-check text-base"></i>
+                            <span>Reservar Cita</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Interactive Map -->
+                <div class="lg:col-span-7">
+                    <div class="bg-dark-card border border-dark-border rounded-2xl p-3 shadow-2xl">
+                        <iframe src="https://www.google.com/maps?q=Autoescuela%20Javier%20Av.%20Constituci%C3%B3n%2C%20246%2C%2024010%20Trobajo%20del%20Camino%2C%20Le%C3%B3n%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark border-t border-dark-border py-12 text-gray-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 rounded-full border border-gold flex items-center justify-center bg-dark-card">
+                    <i class="fa-solid fa-car text-gold text-xs"></i>
+                </div>
+                <span class="font-serif text-white font-bold tracking-wider">AUTOESCUELA JAVIER</span>
+            </div>
+            
+            <p class="text-xs text-gray-500 text-center md:text-left">
+                &copy; <span id="year"></span> Autoescuela Javier (Cimanes de la Vega / Trobajo del Camino, León). Todos los derechos reservados.
+            </p>
+
+            <div class="flex space-x-4 text-gold">
+                <a href="tel:987801362" class="w-9 h-9 rounded-full border border-dark-border bg-dark-card flex items-center justify-center hover:border-gold transition-colors">
+                    <i class="fa-solid fa-phone"></i>
+                </a>
+                <a href="mailto:error-lite+84f2@duckduckgo.com" class="w-9 h-9 rounded-full border border-dark-border bg-dark-card flex items-center justify-center hover:border-gold transition-colors">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Set current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on click
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
