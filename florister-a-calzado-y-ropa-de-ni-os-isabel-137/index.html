@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floristería, calzado y ropa de niños Isabel | Alcubillas y La Solana</title>
+    <meta name="description" content="Boutique exclusiva en La Solana y Alcubillas. Especialistas en floristería floral, calzado y moda infantil de alta calidad. Atención cercana y profesional.">
+    
+    <!-- Tailwind CSS (vía CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configuración de Tailwind para Estilo Boutique Exclusivo (Negro Mate, Dorado Suave, Arena) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        boutique: {
+                            dark: '#111111',
+                            card: '#1a1a1a',
+                            gold: '#d4af37',
+                            goldLight: '#f3e5ab',
+                            sand: '#f5f2eb',
+                            sandDark: '#e6dfd1',
+                            muted: '#888888'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome para Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #111111;
+            color: #f5f2eb;
+        }
+        h1, h2, h3, h4, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="bg-boutique-dark text-boutique-sand antialiased selection:bg-boutique-gold selection:text-black">
+
+    <!-- BARRA SUPERIOR DE ANUNCIO -->
+    <div class="bg-boutique-card border-b border-boutique-gold/20 py-2.5 px-4 text-center text-xs md:text-sm tracking-wider uppercase text-boutique-goldLight">
+        <span class="font-semibold"><i class="fas fa-gem mr-2"></i>Boutique Exclusiva</span> &bull; Floristería, Moda Infantil y Calzado en La Solana y Alcubillas
+    </div>
+
+    <!-- NAVEGACIÓN PRINCIPAL -->
+    <header class="sticky top-0 z-50 bg-boutique-dark/95 backdrop-blur-md border-b border-boutique-gold/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full bg-boutique-gold/10 border border-boutique-gold flex items-center justify-center text-boutique-gold group-hover:bg-boutique-gold group-hover:text-black transition-all duration-300">
+                    <i class="fas fa-seedling text-lg"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif text-lg md:text-xl font-bold tracking-wide text-boutique-sand">Isabel</span>
+                    <span class="text-[10px] uppercase tracking-widest text-boutique-gold">Floristería & Moda Infantil</span>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 text-sm tracking-widest uppercase">
+                <a href="#inicio" class="text-boutique-sand hover:text-boutique-gold transition-colors">Inicio</a>
+                <a href="#servicios" class="text-boutique-sand hover:text-boutique-gold transition-colors">Especialidades</a>
+                <a href="#galeria" class="text-boutique-sand hover:text-boutique-gold transition-colors">Galería</a>
+                <a href="#opiniones" class="text-boutique-sand hover:text-boutique-gold transition-colors">Reseñas</a>
+                <a href="#contacto" class="text-boutique-sand hover:text-boutique-gold transition-colors">Ubicación</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="tel:926631151" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-boutique-gold text-boutique-gold hover:bg-boutique-gold hover:text-black transition-all duration-300 text-xs uppercase tracking-wider font-semibold">
+                    <i class="fas fa-phone-alt"></i> Reservar Cita
+                </a>
+                <button id="menu-btn" class="md:hidden text-boutique-gold text-2xl focus:outline-none">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menú móvil desplegable -->
+        <div id="mobile-menu" class="hidden md:hidden bg-boutique-card border-b border-boutique-gold/20 px-6 py-6 space-y-4">
+            <a href="#inicio" class="block text-sm uppercase tracking-wider text-boutique-sand hover:text-boutique-gold">Inicio</a>
+            <a href="#servicios" class="block text-sm uppercase tracking-wider text-boutique-sand hover:text-boutique-gold">Especialidades</a>
+            <a href="#galeria" class="block text-sm uppercase tracking-wider text-boutique-sand hover:text-boutique-gold">Galería</a>
+            <a href="#opiniones" class="block text-sm uppercase tracking-wider text-boutique-sand hover:text-boutique-gold">Reseñas</a>
+            <a href="#contacto" class="block text-sm uppercase tracking-wider text-boutique-sand hover:text-boutique-gold">Ubicación</a>
+            <div class="pt-4 border-t border-white/10">
+                <a href="tel:926631151" class="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-boutique-gold text-black uppercase tracking-wider text-xs font-bold">
+                    <i class="fas fa-phone-alt"></i> Reservar Cita (926 63 11 51)
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECCIÓN HERO -->
+    <section id="inicio" class="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-20 px-4">
+        <!-- Fondo con gradiente y efecto oscuro de lujo -->
+        <div class="absolute inset-0 z-0 opacity-25">
+            <img src="https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-1/268801892_3086685111655432_1826981377178614557_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx742x735&amp;ctp=s720x720&amp;_nc_cat=106&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=t4jbckwNjhcQ7kNvwEzjPsD&amp;_nc_oc=Adqpw9pSlumDG6WcHrGeQozDcKo4v7JpdPqZ3SxeE42taQC7qcaw07gSre9HeaZ8-I8&amp;_nc_zt=24&amp;_nc_ht=scontent-ord5-1.xx&amp;_nc_gid=FnN7viRzz-byXEJ8WU366A&amp;_nc_ss=7b289&amp;oh=00_AQN8DeHlGpJQgS4shvd7ccRg6tTm-7pMWXFftQ7Kru8JBQ&amp;oe=6AD7C19D" 
+                 alt="Floristería, calzado y ropa de niños Isabel" 
+                 class="w-full h-full object-cover filter brightness-50"
+                 referrerpolicy="no-referrer" 
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-boutique-dark via-boutique-dark/80 to-transparent z-0"></div>
+
+        <div class="relative z-10 max-w-4xl mx-auto text-center space-y-8">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-boutique-gold/40 bg-boutique-gold/10 text-boutique-gold text-xs uppercase tracking-widest">
+                <i class="fas fa-map-marker-alt"></i> Alcubillas & La Solana, Ciudad Real
+            </div>
+            
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-boutique-sand leading-tight">
+                Floristería, Calzado y Ropa de Niños <span class="text-boutique-gold italic">Isabel</span>
+            </h1>
+            
+            <p class="text-lg sm:text-xl text-boutique-muted max-w-2xl mx-auto font-light leading-relaxed">
+                Su destino de confianza para arreglos florales delicados, ofrendas cuidadas al detalle, y la mejor selección en moda infantil y calzado de calidad.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                <a href="tel:926631151" class="w-full sm:w-auto px-8 py-4 rounded-full bg-boutique-gold text-black font-semibold text-sm uppercase tracking-widest hover:bg-boutique-goldLight transition-all duration-300 shadow-lg shadow-boutique-gold/20 flex items-center justify-center gap-3">
+                    <i class="fas fa-phone-alt"></i> Reservar Cita
+                </a>
+                <a href="#servicios" class="w-full sm:w-auto px-8 py-4 rounded-full border border-boutique-sand/30 text-boutique-sand font-semibold text-sm uppercase tracking-widest hover:border-boutique-gold hover:text-boutique-gold transition-all duration-300 flex items-center justify-center gap-2">
+                    Ver Especialidades <i class="fas fa-arrow-down text-xs"></i>
+                </a>
+            </div>
+
+            <div class="pt-12 grid grid-cols-2 md:grid-cols-3 gap-6 border-t border-white/10 max-w-3xl mx-auto text-left">
+                <div class="flex items-center gap-3">
+                    <div class="text-boutique-gold text-xl"><i class="fas fa-seedling"></i></div>
+                    <div>
+                        <h4 class="text-sm font-bold uppercase tracking-wider">Floristería</h4>
+                        <p class="text-xs text-boutique-muted">Ofrendas y arreglos</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="text-boutique-gold text-xl"><i class="fas fa-child"></i></div>
+                    <div>
+                        <h4 class="text-sm font-bold uppercase tracking-wider">Moda Infantil</h4>
+                        <p class="text-xs text-boutique-muted">Ropa exclusiva</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 col-span-2 md:col-span-1 justify-center md:justify-start">
+                    <div class="text-boutique-gold text-xl"><i class="fas fa-shoe-prints"></i></div>
+                    <div>
+                        <h4 class="text-sm font-bold uppercase tracking-wider">Calzado</h4>
+                        <p class="text-xs text-boutique-muted">Comodidad y estilo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: NUESTROS TRATAMIENTOS, CORTES Y TARIFAS (Especialidades) -->
+    <section id="servicios" class="py-24 px-4 bg-boutique-card/50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-boutique-gold text-xs uppercase tracking-widest font-semibold block">Nuestras Especialidades</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-boutique-sand">Compromiso, Belleza y Calidad</h2>
+                <div class="w-16 h-0.5 bg-boutique-gold mx-auto"></div>
+                <p class="text-boutique-muted text-sm sm:text-base">
+                    Ofrecemos una atención personalizada y soluciones profesionales adaptadas a cada ocasión especial de su familia.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Categoría 1 -->
+                <div class="bg-boutique-card rounded-2xl p-8 border border-boutique-gold/10 hover:border-boutique-gold/40 transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-boutique-gold/10 flex items-center justify-center text-boutique-gold text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-spa"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold mb-3 text-boutique-sand">Floristería & Ofrendas</h3>
+                        <p class="text-boutique-muted text-sm leading-relaxed mb-6">
+                            Diseños florales para todo tipo de eventos, celebraciones y momentos solemnes. Cuidamos cada detalle y facilitamos la entrega de ofrendas con dedicación absoluta.
+                        </p>
+                        <ul class="space-y-2 text-xs text-boutique-sand/80 uppercase tracking-wider mb-8">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-boutique-gold"></i> Arreglos florales personalizados</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-boutique-gold"></i> Ofrendas para ceremonias</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-boutique-gold"></i> Atención especial y cercana</li>
+                        </ul>
+                    </div>
+                    <a href="tel:926631151" class="w-full py-3 rounded-xl border border-boutique-gold/50 text-boutique-gold hover:bg-boutique-gold hover:text-black font-semibold text-xs uppercase tracking-widest text-center transition-all duration-300 flex items-center justify-center gap-2">
+                        <i class="fas fa-phone-alt"></i> Reservar Cita
+                    </a>
+                </div>
+
+                <!-- Categoría 2 -->
+                <div class="bg-boutique-card rounded-2xl p-8 border border-boutique-gold/10 hover:border-boutique-gold/40 transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-boutique-gold/10 flex items-center justify-center text-boutique-gold text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-tshirt"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold mb-3 text-boutique-sand">Ropa Infantil</h3>
+                        <p class="text-boutique-muted text-sm leading-relaxed mb-6">
+                            Moda infantil seleccionada con mimo. Prendas cómodas, elegantes y actuales para vestir a los más pequeños en su día a día y en ocasiones especiales.
+                        </p>
+                        <ul class="space-y-2 text-xs text-boutique-sand/80 uppercase tracking-wider mb-8">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-boutique-gold"></i> Moda para bebés y niños</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-boutique-gold"></i> Tejidos de alta calidad</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-boutique-gold"></i> Estilos modernos y clásicos</li>
+                        </ul>
+                    </div>
+                    <a href="tel:926631151" class="w-full py-3 rounded-xl border border-boutique-gold/50 text-boutique-gold hover:bg-boutique-gold hover:text-black font-semibold text-xs uppercase tracking-widest text-center transition-all duration-300 flex items-center justify-center gap-2">
+                        <i class="fas fa-phone-alt"></i> Reservar Cita
+                    </a>
+                </div>
+
+                <!-- Categoría 3 -->
+                <div class="bg-boutique-card rounded-2xl p-8 border border-boutique-gold/10 hover:border-boutique-gold/40 transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-boutique-gold/10 flex items-center justify-center text-boutique-gold text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-shoe-prints"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold mb-3 text-boutique-sand">Calzado Infantil</h3>
+                        <p class="text-boutique-muted text-sm leading-relaxed mb-6">
+                            Calzado ergonómico y resistente que cuida el correcto desarrollo de los piececitos infantiles sin renunciar a las últimas tendencias en diseño.
+                        </p>
+                        <ul class="space-y-2 text-xs text-boutique-sand/80 uppercase tracking-wider mb-8">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-boutique-gold"></i> Primeros pasos y calzado escolar</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-boutique-gold"></i> Marcas de confianza</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-boutique-gold"></i> Asesoramiento en tallas</li>
+                        </ul>
+                    </div>
+                    <a href="tel:926631151" class="w-full py-3 rounded-xl border border-boutique-gold/50 text-boutique-gold hover:bg-boutique-gold hover:text-black font-semibold text-xs uppercase tracking-widest text-center transition-all duration-300 flex items-center justify-center gap-2">
+                        <i class="fas fa-phone-alt"></i> Reservar Cita
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: NUESTRAS INSTALACIONES Y TRABAJOS (GALERÍA) -->
+    <section id="galeria" class="py-24 px-4 bg-boutique-dark">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-boutique-gold text-xs uppercase tracking-widest font-semibold block">Galería Visual</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-boutique-sand">Nuestras Instalaciones y Trabajos</h2>
+                <div class="w-16 h-0.5 bg-boutique-gold mx-auto"></div>
+                <p class="text-boutique-muted text-sm sm:text-base">
+                    Un vistazo a nuestro establecimiento en La Solana y Alcubillas y muestras de nuestra dedicación diaria.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Imagen 1 (Foto Real del Negocio) -->
+                <div class="relative group overflow-hidden rounded-2xl h-80 border border-boutique-gold/20">
+                    <img src="https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-1/268801892_3086685111655432_1826981377178614557_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx742x735&amp;ctp=s720x720&amp;_nc_cat=106&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=t4jbckwNjhcQ7kNvwEzjPsD&amp;_nc_oc=Adqpw9pSlumDG6WcHrGeQozDcKo4v7JpdPqZ3SxeE42taQC7qcaw07gSre9HeaZ8-I8&amp;_nc_zt=24&amp;_nc_ht=scontent-ord5-1.xx&amp;_nc_gid=FnN7viRzz-byXEJ8WU366A&amp;_nc_ss=7b289&amp;oh=00_AQN8DeHlGpJQgS4shvd7ccRg6tTm-7pMWXFftQ7Kru8JBQ&amp;oe=6AD7C19D" 
+                         alt="Floristería, calzado y ropa de niños Isabel" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-boutique-dark/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-xs uppercase tracking-widest text-boutique-gold font-semibold">Establecimiento</span>
+                            <h4 class="font-serif text-lg font-bold text-boutique-sand">Floristería y Moda Isabel</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Imagen 2 (Unsplash Boutique / Floristería Respaldo) -->
+                <div class="relative group overflow-hidden rounded-2xl h-80 border border-boutique-gold/20">
+                    <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80" 
+                         alt="Arreglos florales profesionales" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-boutique-dark/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-xs uppercase tracking-widest text-boutique-gold font-semibold">Floral</span>
+                            <h4 class="font-serif text-lg font-bold text-boutique-sand">Diseños y Ofrendas</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Imagen 3 (Unsplash Calzado y Ropa infantil) -->
+                <div class="relative group overflow-hidden rounded-2xl h-80 border border-boutique-gold/20 sm:col-span-2 lg:col-span-1">
+                    <img src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=1200&q=80" 
+                         alt="Ropa y calzado infantil" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-boutique-dark/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-xs uppercase tracking-widest text-boutique-gold font-semibold">Infantil</span>
+                            <h4 class="font-serif text-lg font-bold text-boutique-sand">Moda y Calzado Exclusivo</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: OPINIONES REALES VERIFICADAS -->
+    <section id="opiniones" class="py-24 px-4 bg-boutique-card/50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-boutique-gold text-xs uppercase tracking-widest font-semibold block">Testimonios Reales</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-boutique-sand">Lo que opinan nuestros clientes</h2>
+                <div class="w-16 h-0.5 bg-boutique-gold mx-auto"></div>
+                <p class="text-boutique-muted text-sm sm:text-base">
+                    La satisfacción y confianza de quienes nos visitan avalan nuestro trabajo diario.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Reseña 1 -->
+                <div class="bg-boutique-card rounded-2xl p-8 border border-boutique-gold/10 flex flex-col justify-between relative">
+                    <div class="absolute top-6 right-6 text-boutique-gold/20 text-4xl font-serif">“</div>
+                    <div class="space-y-4">
+                        <div class="flex text-boutique-gold gap-1 text-sm">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-boutique-sand/90 text-sm italic leading-relaxed">
+                            "Muy amables las personas que nos atendieron así como nos solucionaron el poder llevar nuestra ofrenda a la iglesia a pesar de estar cerrada Gracias"
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-white/10 flex items-center justify-between">
+                        <span class="font-serif font-bold text-sm text-boutique-gold">santiago simon pacheco</span>
+                        <span class="text-[10px] uppercase tracking-widest text-boutique-muted">Google Maps</span>
+                    </div>
+                </div>
+
+                <!-- Reseña 2 -->
+                <div class="bg-boutique-card rounded-2xl p-8 border border-boutique-gold/10 flex flex-col justify-between relative">
+                    <div class="absolute top-6 right-6 text-boutique-gold/20 text-4xl font-serif">“</div>
+                    <div class="space-y-4">
+                        <div class="flex text-boutique-gold gap-1 text-sm">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-boutique-sand/90 text-sm italic leading-relaxed">
+                            "No tiene casi plantas y las veces que he ido nunca hay nadie."
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-white/10 flex items-center justify-between">
+                        <span class="font-serif font-bold text-sm text-boutique-gold">Manuel Sanchez-Bermejo Ramos</span>
+                        <span class="text-[10px] uppercase tracking-widest text-boutique-muted">Google Maps</span>
+                    </div>
+                </div>
+
+                <!-- Reseña 3 -->
+                <div class="bg-boutique-card rounded-2xl p-8 border border-boutique-gold/10 flex flex-col justify-between relative">
+                    <div class="absolute top-6 right-6 text-boutique-gold/20 text-4xl font-serif">“</div>
+                    <div class="space-y-4">
+                        <div class="flex text-boutique-gold gap-1 text-sm">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-boutique-sand/90 text-sm italic leading-relaxed">
+                            "¡Me gusta España!"
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-white/10 flex items-center justify-between">
+                        <span class="font-serif font-bold text-sm text-boutique-gold">Васил Василев</span>
+                        <span class="text-[10px] uppercase tracking-widest text-boutique-muted">Google Maps</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: MAPA INTERACTIVO Y UBICACIÓN / CONTACTO -->
+    <section id="contacto" class="py-24 px-4 bg-boutique-dark">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-boutique-gold text-xs uppercase tracking-widest font-semibold block">Encuéntranos</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-boutique-sand">Visita Nuestra Boutique</h2>
+                <div class="w-16 h-0.5 bg-boutique-gold mx-auto"></div>
+                <p class="text-boutique-muted text-sm sm:text-base">
+                    Estamos a su entera disposición en La Solana y Alcubillas. Contáctenos o visítenos directamente.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Información de Contacto -->
+                <div class="space-y-8 bg-boutique-card p-8 sm:p-12 rounded-3xl border border-boutique-gold/20">
+                    <h3 class="font-serif text-2xl font-bold text-boutique-sand">Información de Contacto</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-boutique-gold/10 flex items-center justify-center text-boutique-gold text-lg shrink-0">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs uppercase tracking-widest text-boutique-gold font-semibold mb-1">Dirección</h4>
+                                <p class="text-boutique-sand text-sm">C. Pacheco, 21, 13240 La Solana, Cdad. Real, España</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-boutique-gold/10 flex items-center justify-center text-boutique-gold text-lg shrink-0">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs uppercase tracking-widest text-boutique-gold font-semibold mb-1">Teléfono Directo</h4>
+                                <a href="tel:926631151" class="text-boutique-sand text-sm hover:text-boutique-gold transition-colors font-semibold">926 63 11 51</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-boutique-gold/10 flex items-center justify-center text-boutique-gold text-lg shrink-0">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs uppercase tracking-widest text-boutique-gold font-semibold mb-1">Correo Electrónico</h4>
+                                <a href="mailto:isabelsimarro03@gmail.com" class="text-boutique-sand text-sm hover:text-boutique-gold transition-colors">isabelsimarro03@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-6 border-t border-white/10">
+                        <a href="tel:926631151" class="w-full py-4 rounded-full bg-boutique-gold text-black font-semibold text-xs uppercase tracking-widest hover:bg-boutique-goldLight transition-all duration-300 shadow-lg shadow-boutique-gold/20 flex items-center justify-center gap-2">
+                            <i class="fas fa-phone-alt"></i> Reservar Cita Ahora
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mapa Interactivo Real -->
+                <div class="w-full h-[450px] bg-boutique-card rounded-3xl overflow-hidden border border-boutique-gold/20 p-2 shadow-2xl">
+                    <iframe src="https://www.google.com/maps?q=Florister%C3%ADa%2C%20calzado%20y%20ropa%20de%20ni%C3%B1os%20Isabel%20C.%20Pacheco%2C%2021%2C%2013240%20La%20Solana%2C%20Cdad.%20Real%2C%20Espa%C3%B1a&output=embed" width="100%" height="100%" style="border:0; border-radius: 1.25rem;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="bg-boutique-card border-t border-boutique-gold/20 py-12 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-boutique-gold/10 border border-boutique-gold flex items-center justify-center text-boutique-gold">
+                    <i class="fas fa-seedling text-lg"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif text-lg font-bold tracking-wide text-boutique-sand">Floristería Isabel</span>
+                    <span class="text-[10px] uppercase tracking-widest text-boutique-gold">Alcubillas & La Solana</span>
+                </div>
+            </div>
+
+            <p class="text-xs text-boutique-muted tracking-wider">
+                &copy; <script>document.write(new Date().getFullYear());</script> Floristería, calzado y ropa de niños Isabel. Todos los derechos reservados.
+            </p>
+
+            <div class="flex items-center gap-4 text-boutique-gold">
+                <a href="tel:926631151" class="w-10 h-10 rounded-full bg-boutique-gold/10 hover:bg-boutique-gold hover:text-black transition-all flex items-center justify-center text-sm">
+                    <i class="fas fa-phone-alt"></i>
+                </a>
+                <a href="mailto:isabelsimarro03@gmail.com" class="w-10 h-10 rounded-full bg-boutique-gold/10 hover:bg-boutique-gold hover:text-black transition-all flex items-center justify-center text-sm">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPT PARA MENÚ MÓVIL -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú al hacer clic en un enlace móvil
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
