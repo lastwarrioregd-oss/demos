@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carlos Valcarce Fotógrafos | Estudio de Fotografía en Saldaña, Palencia</title>
+    <meta name="description" content="Estudio de fotografía profesional en Saldaña, Palencia. Capturamos tus momentos más especiales con elegancia, profesionalidad y calidad inigualable.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0f0f0f',
+                            card: '#181818',
+                            gold: '#d4af37',
+                            'gold-light': '#f3e5ab',
+                            beige: '#f4f1ea',
+                            sand: '#e3dcd2'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0f0f0f;
+            color: #f4f1ea;
+        }
+        h1, h2, h3, h4, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa7c11 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border {
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+        .gold-border:hover {
+            border-color: rgba(212, 175, 55, 0.8);
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-brand-beige antialiased selection:bg-brand-gold selection:text-brand-dark">
+
+    <!-- Top Bar -->
+    <div class="bg-black text-brand-sand text-xs py-2 px-4 border-b gold-border">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <span><i class="fa-solid fa-location-dot text-brand-gold mr-1"></i> C. Beato de Valcabado, n1, Saldaña (Palencia)</span>
+                <span class="hidden md:inline"><i class="fa-solid fa-mountain-sun text-brand-gold mr-1"></i> Congosto de Valdavia</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="tel:610501399" class="hover:text-brand-gold transition"><i class="fa-solid fa-phone text-brand-gold mr-1"></i> 610 50 13 99</a>
+                <a href="mailto:error-lite+84f2@duckduckgo.com" class="hover:text-brand-gold transition"><i class="fa-solid fa-envelope text-brand-gold mr-1"></i> Contactar</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-brand-dark/95 backdrop-blur-md border-b gold-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2">
+                <span class="font-serif text-2xl md:text-3xl font-bold tracking-wider gold-gradient-text">CARLOS VALCARCE</span>
+                <span class="hidden sm:inline-block text-xs uppercase tracking-widest text-brand-sand/60 border-l pl-2 border-brand-sand/20">Fotógrafos</span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm tracking-wide">
+                <a href="#inicio" class="hover:text-brand-gold transition">Inicio</a>
+                <a href="#estudio" class="hover:text-brand-gold transition">El Estudio</a>
+                <a href="#servicios" class="hover:text-brand-gold transition">Servicios & Tarifas</a>
+                <a href="#galeria" class="hover:text-brand-gold transition">Galería</a>
+                <a href="#opiniones" class="hover:text-brand-gold transition">Reseñas</a>
+                <a href="#contacto" class="hover:text-brand-gold transition">Ubicación</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="tel:610501399" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-brand-gold to-[#aa7c11] text-brand-dark font-semibold text-sm hover:opacity-95 transition shadow-lg shadow-brand-gold/20">
+                    <i class="fa-solid fa-camera"></i>
+                    <span>Reservar Cita</span>
+                </a>
+                <!-- Mobile menu button -->
+                <button id="menu-btn" class="md:hidden text-brand-gold text-2xl focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-card border-b gold-border px-6 py-4 space-y-3">
+            <a href="#inicio" class="block hover:text-brand-gold transition py-1">Inicio</a>
+            <a href="#estudio" class="block hover:text-brand-gold transition py-1">El Estudio</a>
+            <a href="#servicios" class="block hover:text-brand-gold transition py-1">Servicios & Tarifas</a>
+            <a href="#galeria" class="block hover:text-brand-gold transition py-1">Galería</a>
+            <a href="#opiniones" class="block hover:text-brand-gold transition py-1">Reseñas</a>
+            <a href="#contacto" class="block hover:text-brand-gold transition py-1">Ubicación</a>
+            <div class="pt-2">
+                <a href="tel:610501399" class="block text-center w-full py-3 rounded-full bg-gradient-to-r from-brand-gold to-[#aa7c11] text-brand-dark font-bold text-sm">
+                    Reservar Cita
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" alt="Carlos Valcarce Fotógrafos" class="w-full h-full object-cover object-center opacity-40 scale-105 transform duration-1000">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/70 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 text-center py-20">
+            <span class="inline-block py-1 px-4 rounded-full bg-brand-gold/10 border gold-border text-brand-gold text-xs uppercase tracking-widest mb-6 font-semibold">
+                Estudio de Fotografía Profesional • Saldaña & Congosto de Valdavia
+            </span>
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-tight">
+                Capturamos la esencia de <span class="gold-gradient-text italic">tus momentos únicos</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-brand-sand/80 max-w-2xl mx-auto mb-10 font-light">
+                Excelencia, trato personalizado y calidad superior en cada disparo. Inmortaliza tus recuerdos con el sello de un fotógrafo experto.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="tel:610501399" class="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-brand-gold to-[#aa7c11] text-brand-dark font-bold text-base hover:opacity-95 transition shadow-xl shadow-brand-gold/20 flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <span>Reservar Cita</span>
+                </a>
+                <a href="#servicios" class="w-full sm:w-auto px-8 py-4 rounded-full bg-brand-card/80 border gold-border text-brand-beige font-medium text-base hover:bg-brand-gold/10 transition flex items-center justify-center gap-2">
+                    <span>Ver Servicios</span>
+                    <i class="fa-solid fa-arrow-down text-xs text-brand-gold"></i>
+                </a>
+            </div>
+
+            <!-- Trust badges -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-3 gap-6 pt-10 border-t gold-border/40 text-left max-w-3xl mx-auto">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold flex-shrink-0">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-sm">5 Estrellas</h4>
+                        <p class="text-xs text-brand-sand/60">Excelencia garantizada</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold flex-shrink-0">
+                        <i class="fa-solid fa-gem"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-sm">Alta Calidad</h4>
+                        <p class="text-xs text-brand-sand/60">Estudio exclusivo</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 col-span-2 md:col-span-1">
+                    <div class="w-10 h-10 rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold flex-shrink-0">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-sm">Trato Cercano</h4>
+                        <p class="text-xs text-brand-sand/60">Profesionalidad absoluta</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Studio Section -->
+    <section id="estudio" class="py-24 bg-brand-card relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <div class="relative z-10 rounded-2xl overflow-hidden border gold-border shadow-2xl">
+                        <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=1000&q=80';" alt="Estudio Carlos Valcarce" class="w-full h-[450px] object-cover">
+                    </div>
+                    <!-- Decorative element -->
+                    <div class="absolute -bottom-6 -right-6 w-48 h-48 bg-brand-gold/10 rounded-2xl -z-0 border gold-border hidden sm:block"></div>
+                </div>
+
+                <div class="space-y-6">
+                    <span class="text-brand-gold font-semibold uppercase tracking-widest text-xs">Boutique Fotográfica en Palencia</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold leading-tight">
+                        Arte visual y pasión por el detalle en el <span class="gold-gradient-text">Congosto de Valdavia</span>
+                    </h2>
+                    <p class="text-brand-sand/80 font-light leading-relaxed">
+                        Ubicados en el corazón de Saldaña, en <strong>Carlos Valcarce Fotógrafos</strong> entendemos la fotografía no solo como una imagen, sino como la conservación eterna de las emociones humanas. Nuestro estudio está diseñado para ofrecerte un ambiente íntimo, moderno y exclusivo donde sentirás total confianza.
+                    </p>
+                    <p class="text-brand-sand/80 font-light leading-relaxed">
+                        Cada reportaje, retrato o sesión comercial se aborda con una perspectiva artística única, cuidando la iluminación, la composición y, sobre todo, la naturalidad de los protagonistas.
+                    </p>
+                    
+                    <div class="pt-4 flex items-center gap-6">
+                        <div>
+                            <span class="block font-serif text-3xl font-bold text-brand-gold">+15</span>
+                            <span class="text-xs text-brand-sand/60 uppercase tracking-wider">Años de Experiencia</span>
+                        </div>
+                        <div class="border-l pl-6 gold-border/40">
+                            <span class="block font-serif text-3xl font-bold text-brand-gold">100%</span>
+                            <span class="text-xs text-brand-sand/60 uppercase tracking-wider">Clientes Satisfechos</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="tel:610501399" class="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-brand-dark border gold-border text-brand-gold font-semibold text-sm hover:bg-brand-gold hover:text-brand-dark transition">
+                            <i class="fa-solid fa-calendar-check"></i>
+                            <span>Reserva tu sesión ahora</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Tarifs Section -->
+    <section id="servicios" class="py-24 bg-brand-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-gold font-semibold uppercase tracking-widest text-xs">Nuestros Servicios y Especialidades</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold mt-3 mb-4">
+                    Especialidades <span class="gold-gradient-text">Fotográficas</span>
+                </h2>
+                <p class="text-brand-sand/80 font-light">
+                    Soluciones fotográficas profesionales adaptadas a cada ocasión especial de tu vida o negocio.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-brand-card rounded-2xl p-8 border gold-border hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-brand-gold/10 border gold-border flex items-center justify-center text-brand-gold text-2xl mb-6">
+                            <i class="fa-solid fa-ring"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold mb-3">Bodas y Eventos</h3>
+                        <p class="text-brand-sand/70 text-sm font-light leading-relaxed mb-6">
+                            Cobertura integral de vuestro gran día. Capturamos miradas, lágrimas de alegría y momentos espontáneos con un estilo elegante y atemporal.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t gold-border/30 flex items-center justify-between">
+                        <span class="text-xs uppercase tracking-widest text-brand-gold font-semibold">Consultar Dossier</span>
+                        <a href="tel:610501399" class="px-4 py-2 rounded-full bg-brand-gold/10 hover:bg-brand-gold hover:text-brand-dark text-brand-gold text-xs font-bold transition">Reservar Cita</a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-brand-card rounded-2xl p-8 border gold-border hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-brand-gold/10 border gold-border flex items-center justify-center text-brand-gold text-2xl mb-6">
+                            <i class="fa-solid fa-user-pen"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold mb-3">Retratos de Estudio</h3>
+                        <p class="text-brand-sand/70 text-sm font-light leading-relaxed mb-6">
+                            Sesiones individuales, artísticas, corporativas o de belleza. Iluminación de estudio profesional que resalta tu mejor versión con total naturalidad.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t gold-border/30 flex items-center justify-between">
+                        <span class="text-xs uppercase tracking-widest text-brand-gold font-semibold">Sesión Exclusiva</span>
+                        <a href="tel:610501399" class="px-4 py-2 rounded-full bg-brand-gold/10 hover:bg-brand-gold hover:text-brand-dark text-brand-gold text-xs font-bold transition">Reservar Cita</a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-brand-card rounded-2xl p-8 border gold-border hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-brand-gold/10 border gold-border flex items-center justify-center text-brand-gold text-2xl mb-6">
+                            <i class="fa-solid fa-children"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold mb-3">Infantil y Familiar</h3>
+                        <p class="text-brand-sand/70 text-sm font-light leading-relaxed mb-6">
+                            Inmortaliza la infancia de tus hijos y los lazos familiares. Un ambiente relajado y divertido ideal para los más pequeños de la casa.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t gold-border/30 flex items-center justify-between">
+                        <span class="text-xs uppercase tracking-widest text-brand-gold font-semibold">Recuerdos Inborrables</span>
+                        <a href="tel:610501399" class="px-4 py-2 rounded-full bg-brand-gold/10 hover:bg-brand-gold hover:text-brand-dark text-brand-gold text-xs font-bold transition">Reservar Cita</a>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-brand-card rounded-2xl p-8 border gold-border hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-brand-gold/10 border gold-border flex items-center justify-center text-brand-gold text-2xl mb-6">
+                            <i class="fa-solid fa-building"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold mb-3">Fotografía Comercial</h3>
+                        <p class="text-brand-sand/70 text-sm font-light leading-relaxed mb-6">
+                            Impulsa tu negocio en Saldaña y Palencia con imágenes corporativas, producto, arquitectura y gastronomía de máxima calidad visual.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t gold-border/30 flex items-center justify-between">
+                        <span class="text-xs uppercase tracking-widest text-brand-gold font-semibold">Para Empresas</span>
+                        <a href="tel:610501399" class="px-4 py-2 rounded-full bg-brand-gold/10 hover:bg-brand-gold hover:text-brand-dark text-brand-gold text-xs font-bold transition">Reservar Cita</a>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-brand-card rounded-2xl p-8 border gold-border hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-brand-gold/10 border gold-border flex items-center justify-center text-brand-gold text-2xl mb-6">
+                            <i class="fa-solid fa-cake-candles"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold mb-3">Comuniones y Bautizos</h3>
+                        <p class="text-brand-sand/70 text-sm font-light leading-relaxed mb-6">
+                            Reportajes entrañables para celebraciones religiosas y familiares. Cuidamos cada detalle para reflejar la inocencia y alegría de ese día.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t gold-border/30 flex items-center justify-between">
+                        <span class="text-xs uppercase tracking-widest text-brand-gold font-semibold">Pack Especial</span>
+                        <a href="tel:610501399" class="px-4 py-2 rounded-full bg-brand-gold/10 hover:bg-brand-gold hover:text-brand-dark text-brand-gold text-xs font-bold transition">Reservar Cita</a>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-brand-card rounded-2xl p-8 border gold-border hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-brand-gold/10 border gold-border flex items-center justify-center text-brand-gold text-2xl mb-6">
+                            <i class="fa-solid fa-print"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold mb-3">Laboratorio e Impresión</h3>
+                        <p class="text-brand-sand/70 text-sm font-light leading-relaxed mb-6">
+                            Revelado profesional, ampliaciones en soportes de alta gama, álbumes digitales personalizados y restauración de fotos antiguas.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t gold-border/30 flex items-center justify-between">
+                        <span class="text-xs uppercase tracking-widest text-brand-gold font-semibold">Acabado Premium</span>
+                        <a href="tel:610501399" class="px-4 py-2 rounded-full bg-brand-gold/10 hover:bg-brand-gold hover:text-brand-dark text-brand-gold text-xs font-bold transition">Reservar Cita</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galeria" class="py-24 bg-brand-card">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-gold font-semibold uppercase tracking-widest text-xs">Portafolio</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold mt-3 mb-4">
+                    Nuestras Instalaciones y <span class="gold-gradient-text">Trabajos</span>
+                </h2>
+                <p class="text-brand-sand/80 font-light">
+                    Una muestra visual del compromiso con la estética, la luz y la perfección técnica.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group relative rounded-2xl overflow-hidden border gold-border h-80">
+                    <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=800&q=80';" alt="Trabajo Fotográfico 1" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-brand-gold text-xs uppercase tracking-widest font-semibold">Estudio Saldaña</span>
+                            <h4 class="font-serif text-xl font-bold text-white">Retratos de Autor</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-2xl overflow-hidden border gold-border h-80">
+                    <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80';" alt="Trabajo Fotográfico 2" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-brand-gold text-xs uppercase tracking-widest font-semibold">Congosto de Valdavia</span>
+                            <h4 class="font-serif text-xl font-bold text-white">Bodas y Enlaces</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-2xl overflow-hidden border gold-border h-80">
+                    <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80';" alt="Trabajo Fotográfico 3" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-brand-gold text-xs uppercase tracking-widest font-semibold">Palencia</span>
+                            <h4 class="font-serif text-xl font-bold text-white">Reportaje Social</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-2xl overflow-hidden border gold-border h-80">
+                    <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80';" alt="Trabajo Fotográfico 4" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-brand-gold text-xs uppercase tracking-widest font-semibold">Exteriores</span>
+                            <h4 class="font-serif text-xl font-bold text-white">Paisaje y Naturaleza</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-2xl overflow-hidden border gold-border h-80">
+                    <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=80';" alt="Trabajo Fotográfico 5" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-brand-gold text-xs uppercase tracking-widest font-semibold">Estudio</span>
+                            <h4 class="font-serif text-xl font-bold text-white">Iluminación Creativa</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-2xl overflow-hidden border gold-border h-80">
+                    <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80';" alt="Trabajo Fotográfico 6" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-brand-gold text-xs uppercase tracking-widest font-semibold">Estudio Saldaña</span>
+                            <h4 class="font-serif text-xl font-bold text-white">Retrato Exclusivo</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="opiniones" class="py-24 bg-brand-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-gold font-semibold uppercase tracking-widest text-xs">Opiniones Verificadas</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold mt-3 mb-4">
+                    Lo que opinan <span class="gold-gradient-text">nuestros clientes</span>
+                </h2>
+                <p class="text-brand-sand/80 font-light">
+                    La satisfacción de quienes confían en nosotros es nuestra mejor carta de presentación.
+                </p>
+            </div>
+
+            <div class="max-w-2xl mx-auto">
+                <div class="bg-brand-card rounded-3xl p-8 sm:p-10 border gold-border relative shadow-2xl">
+                    <!-- Quote icon -->
+                    <div class="absolute -top-5 left-10 w-12 h-12 rounded-full bg-brand-gold text-brand-dark flex items-center justify-center text-xl font-bold shadow-lg">
+                        <i class="fa-solid fa-quote-left"></i>
+                    </div>
+
+                    <div class="flex items-center gap-1 text-brand-gold mb-6 mt-2">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    <p class="font-serif text-xl sm:text-2xl italic text-brand-sand mb-8 leading-relaxed">
+                        "Excelente trato, profesionalidad y calidad."
+                    </p>
+
+                    <div class="flex items-center justify-between pt-6 border-t gold-border/30">
+                        <div>
+                            <h4 class="font-bold text-brand-beige">Cliente Verificado</h4>
+                            <p class="text-xs text-brand-gold">Google Maps / Reseña Oficial</p>
+                        </div>
+                        <div class="text-brand-gold/40 text-3xl">
+                            <i class="fa-brands fa-google"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Banner -->
+    <section class="py-20 bg-gradient-to-r from-brand-card via-brand-dark to-brand-card border-y gold-border relative overflow-hidden">
+        <div class="max-w-5xl mx-auto px-4 text-center relative z-10">
+            <h2 class="font-serif text-3xl sm:text-5xl font-bold mb-6">
+                ¿Listo para immortalizar tus <span class="gold-gradient-text">mejores momentos</span>?
+            </h2>
+            <p class="text-brand-sand/80 max-w-2xl mx-auto mb-8 font-light">
+                Ponte en contacto con nosotros hoy mismo y reserva tu cita en nuestro estudio de Saldaña. Estaremos encantados de atenderte.
+            </p>
+            <a href="tel:610501399" class="inline-flex items-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-brand-gold to-[#aa7c11] text-brand-dark font-bold text-base hover:opacity-95 transition shadow-2xl shadow-brand-gold/30">
+                <i class="fa-solid fa-phone-volume text-lg"></i>
+                <span>Reservar Cita: 610 50 13 99</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact & Map Section -->
+    <section id="contacto" class="py-24 bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-gold font-semibold uppercase tracking-widest text-xs">Ubicación y Contacto</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold mt-3 mb-4">
+                    Visítanos en <span class="gold-gradient-text">Saldaña</span>
+                </h2>
+                <p class="text-brand-sand/80 font-light">
+                    Te esperamos en nuestro estudio profesional en la provincia de Palencia.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Info cards -->
+                <div class="space-y-6">
+                    <div class="bg-brand-card rounded-2xl p-6 border gold-border flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-gold/10 border gold-border flex items-center justify-center text-brand-gold text-xl flex-shrink-0 mt-1">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-serif font-bold text-lg mb-1">Dirección del Estudio</h4>
+                            <p class="text-brand-sand/70 text-sm font-light">
+                                C. Beato de Valcabado, n1<br>
+                                34100 Saldaña, Palencia, España<br>
+                                <span class="text-xs text-brand-gold mt-1 inline-block">(Congosto de Valdavia)</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-brand-card rounded-2xl p-6 border gold-border flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-gold/10 border gold-border flex items-center justify-center text-brand-gold text-xl flex-shrink-0 mt-1">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-serif font-bold text-lg mb-1">Teléfono de Contacto</h4>
+                            <p class="text-brand-sand/70 text-sm font-light mb-2">Llámanos para concertar tu cita previa.</p>
+                            <a href="tel:610501399" class="text-brand-gold font-semibold hover:underline">610 50 13 99</a>
+                        </div>
+                    </div>
+
+                    <div class="bg-brand-card rounded-2xl p-6 border gold-border flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-gold/10 border gold-border flex items-center justify-center text-brand-gold text-xl flex-shrink-0 mt-1">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-serif font-bold text-lg mb-1">Correo Electrónico</h4>
+                            <p class="text-brand-sand/70 text-sm font-light mb-2">Escríbenos cualquier consulta.</p>
+                            <a href="mailto:error-lite+84f2@duckduckgo.com" class="text-brand-gold font-semibold hover:underline text-sm break-all">error-lite+84f2@duckduckgo.com</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Map -->
+                <div class="bg-brand-card p-4 rounded-3xl border gold-border shadow-2xl">
+                    <iframe src="https://www.google.com/maps?q=Carlos%20Valcarce%20Fot%C3%B3grafos%20C.%20Beato%20de%20Valcabado%2C%20n1%2C%2034100%20Salda%C3%B1a%2C%20Palencia%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-brand-sand/60 py-12 border-t gold-border text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div>
+                <span class="font-serif text-xl font-bold tracking-wider gold-gradient-text block mb-1">CARLOS VALCARCE FOTÓGRAFOS</span>
+                <p class="text-xs">Estudio de fotografía profesional en Saldaña y Congosto de Valdavia, Palencia.</p>
+            </div>
+            
+            <div class="flex items-center gap-6 text-lg">
+                <a href="tel:610501399" class="text-brand-gold hover:text-white transition"><i class="fa-solid fa-phone"></i></a>
+                <a href="mailto:error-lite+84f2@duckduckgo.com" class="text-brand-gold hover:text-white transition"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+
+            <div class="text-xs">
+                <p>&copy; <span id="current-year"></span> Carlos Valcarce Fotógrafos. Todos los derechos reservados.</p>
+                <p class="mt-1">C. Beato de Valcabado, n1, 34100 Saldaña, Palencia</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu and Year -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on click a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Dynamic Year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
