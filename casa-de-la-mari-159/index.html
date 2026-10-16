@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa de La Mari | Restaurante & Cocina de Autor en Venta del Moro</title>
+    <meta name="description" content="Casa de La Mari en Venta del Moro. Pasión culinaria, trato familiar inolvidable y platos de autor que conquistan los sentidos. Reserva tu mesa.">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        terracota: {
+                            50: '#FBF5F2',
+                            100: '#F6E9E4',
+                            200: '#ECD2C8',
+                            500: '#C85A32',
+                            600: '#B04B24',
+                            700: '#943C1B',
+                            800: '#7B3318',
+                            900: '#52200E'
+                        },
+                        crema: {
+                            50: '#FAF8F5',
+                            100: '#F5F1E9',
+                            200: '#EBE2D4',
+                            300: '#DED1BC'
+                        },
+                        gourmet: {
+                            800: '#2A2521',
+                            900: '#1C1815',
+                            950: '#120F0D'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-crema-50 text-gourmet-800 antialiased selection:bg-terracota-500 selection:text-white">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gourmet-950 text-crema-100 py-2 px-4 text-xs tracking-wider uppercase">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <span class="flex items-center gap-2 font-medium">
+                <i class="fa-solid fa-location-dot text-terracota-500"></i>
+                Venta del Moro y Aldeas | Sabor, Corazón y Tradición Viva
+            </span>
+            <div class="flex items-center gap-6">
+                <a href="mailto:lambrosia.burguer@gmail.com" class="hover:text-terracota-200 transition-colors flex items-center gap-1.5">
+                    <i class="fa-regular fa-envelope text-terracota-500"></i> lambrosia.burguer@gmail.com
+                </a>
+                <span class="hidden md:inline-block text-crema-300/40">|</span>
+                <span class="text-crema-200 font-light hidden md:inline">Hospitalidad de Anáis & Cocina de Autor</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-crema-200 shadow-sm transition-all duration-300">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex flex-col">
+                <span class="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-gourmet-950">
+                    Casa de <span class="text-terracota-600 italic">La Mari</span>
+                </span>
+                <span class="text-[10px] tracking-[0.25em] text-terracota-700 uppercase font-semibold">Venta del Moro • Valencia</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex items-center gap-8 text-sm font-medium text-gourmet-900">
+                <a href="#inicio" class="hover:text-terracota-600 transition-colors">Inicio</a>
+                <a href="#historia" class="hover:text-terracota-600 transition-colors">Nuestra Esencia</a>
+                <a href="#carta" class="hover:text-terracota-600 transition-colors">Carta & Especialidades</a>
+                <a href="#galeria" class="hover:text-terracota-600 transition-colors">Instalaciones</a>
+                <a href="#opiniones" class="hover:text-terracota-600 transition-colors">Opiniones</a>
+                <a href="#contacto" class="hover:text-terracota-600 transition-colors">Ubicación</a>
+            </div>
+
+            <!-- Header CTA -->
+            <div class="flex items-center gap-4">
+                <a href="mailto:lambrosia.burguer@gmail.com" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-terracota-600 hover:bg-terracota-700 text-white font-medium text-sm transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                    <i class="fa-regular fa-calendar-check"></i>
+                    <span>Reservar Mesa</span>
+                </a>
+                <!-- Mobile button -->
+                <button id="menu-btn" class="lg:hidden p-2 text-gourmet-900 focus:outline-none" aria-label="Abrir menú">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-crema-200 px-6 py-6 space-y-4">
+            <a href="#inicio" class="block text-base font-medium text-gourmet-900 hover:text-terracota-600" onclick="toggleMenu()">Inicio</a>
+            <a href="#historia" class="block text-base font-medium text-gourmet-900 hover:text-terracota-600" onclick="toggleMenu()">Nuestra Esencia</a>
+            <a href="#carta" class="block text-base font-medium text-gourmet-900 hover:text-terracota-600" onclick="toggleMenu()">Carta & Especialidades</a>
+            <a href="#galeria" class="block text-base font-medium text-gourmet-900 hover:text-terracota-600" onclick="toggleMenu()">Instalaciones</a>
+            <a href="#opiniones" class="block text-base font-medium text-gourmet-900 hover:text-terracota-600" onclick="toggleMenu()">Opiniones</a>
+            <a href="#contacto" class="block text-base font-medium text-gourmet-900 hover:text-terracota-600" onclick="toggleMenu()">Contacto y Ubicación</a>
+            <div class="pt-4 border-t border-crema-200">
+                <a href="mailto:lambrosia.burguer@gmail.com" class="w-full justify-center inline-flex items-center gap-2 px-5 py-3 rounded-full bg-terracota-600 text-white font-medium text-sm">
+                    <i class="fa-regular fa-calendar-check"></i>
+                    <span>Reservar Mesa</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="inicio" class="relative min-h-[85vh] flex items-center bg-gourmet-950 text-white overflow-hidden">
+            <!-- Background Image with Overlay -->
+            <div class="absolute inset-0 z-0">
+                <img src="https://scontent-sjc6-1.xx.fbcdn.net/v/t39.30808-1/615925552_122102054409212610_5301998280659621795_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx708x708&amp;ctp=s708x708&amp;_nc_cat=104&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=c7Sc7-_bn1sQ7kNvwFS7h4M&amp;_nc_oc=AdoSe6hm-SkFS1XQ5rVM1OoN3UL45HAkJKMrgWgkETNP9snhtagCD4RAVqZvyEOK71M&amp;_nc_zt=24&amp;_nc_ht=scontent-sjc6-1.xx&amp;_nc_gid=YQcmMWDclZ64BtqUcYcu7A&amp;_nc_ss=7b289&amp;oh=00_AQO2qmhrAsQu0tBVRyPaV_xKStOfxWDoU8T1708EbUMQZg&amp;oe=6AD874AE" 
+                     alt="Casa de La Mari Restaurante en Venta del Moro" 
+                     class="w-full h-full object-cover object-center opacity-30 filter brightness-90"
+                     referrerpolicy="no-referrer"
+                     onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+                <div class="absolute inset-0 bg-gradient-to-r from-gourmet-950 via-gourmet-950/80 to-transparent"></div>
+            </div>
+
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+                <div class="max-w-2xl">
+                    <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-terracota-600/30 border border-terracota-500/50 text-terracota-200 text-xs uppercase font-semibold tracking-widest mb-6">
+                        <i class="fa-solid fa-utensils text-xs"></i> Gastronomía con Alma & Corazón
+                    </span>
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight mb-6">
+                        Un rincón con encanto donde comer se convierte en <span class="italic text-terracota-500">un recuerdo imborrable</span>.
+                    </h1>
+                    <p class="text-crema-200 text-lg sm:text-xl font-light leading-relaxed mb-8">
+                        Bienvenidos a Casa de La Mari. La calidez infinita y la sonrisa cercana de Anáis se fusionan con la pasión y el talento de una cocina que emociona en pleno corazón de Venta del Moro.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center">
+                        <a href="mailto:lambrosia.burguer@gmail.com" class="inline-flex justify-center items-center gap-3 px-8 py-4 rounded-full bg-terracota-600 hover:bg-terracota-500 text-white font-medium text-base shadow-xl transition-all duration-300 transform hover:-translate-y-0.5">
+                            <i class="fa-regular fa-envelope"></i>
+                            <span>Reservar Mesa</span>
+                        </a>
+                        <a href="#carta" class="inline-flex justify-center items-center gap-2 px-8 py-4 rounded-full bg-white/10 hover:bg-white/20 text-white font-medium text-base backdrop-blur-sm border border-white/20 transition-all duration-300">
+                            <span>Descubrir Nuestra Carta</span>
+                            <i class="fa-solid fa-arrow-down text-sm"></i>
+                        </a>
+                    </div>
+
+                    <!-- Mini badges -->
+                    <div class="mt-12 pt-8 border-t border-white/10 grid grid-cols-3 gap-4 text-center sm:text-left">
+                        <div>
+                            <p class="font-serif text-2xl font-bold text-white">100%</p>
+                            <p class="text-xs text-crema-300 font-light uppercase tracking-wider">Cercanía y Amor</p>
+                        </div>
+                        <div>
+                            <p class="font-serif text-2xl font-bold text-terracota-500">5.0 ★</p>
+                            <p class="text-xs text-crema-300 font-light uppercase tracking-wider">Opiniones Reales</p>
+                        </div>
+                        <div>
+                            <p class="font-serif text-2xl font-bold text-white">Local</p>
+                            <p class="text-xs text-crema-300 font-light uppercase tracking-wider">Venta del Moro & Aldeas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Story / Essence Section -->
+        <section id="historia" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                    
+                    <div class="relative order-2 lg:order-1">
+                        <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-crema-100">
+                            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1000&q=80" 
+                                 alt="Ambiente acogedor en Casa de La Mari" 
+                                 class="w-full h-[450px] object-cover"
+                                 referrerpolicy="no-referrer"
+                                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+                        </div>
+                        <!-- Floating Badge -->
+                        <div class="absolute -bottom-6 -right-4 sm:right-6 bg-terracota-700 text-white p-6 rounded-2xl shadow-xl max-w-xs">
+                            <i class="fa-solid fa-quote-left text-terracota-200/40 text-3xl mb-2"></i>
+                            <p class="text-sm font-light italic">"Hacía tiempo que no disfrutábamos tanto en una mesa. El talento y la pasión están en cada plato."</p>
+                        </div>
+                    </div>
+
+                    <div class="order-1 lg:order-2">
+                        <div class="inline-flex items-center gap-2 text-terracota-600 font-semibold text-xs tracking-widest uppercase mb-3">
+                            <i class="fa-solid fa-fire-burner"></i> Nuestra Historia & Resiliencia
+                        </div>
+                        <h2 class="font-serif text-3xl sm:text-4xl text-gourmet-950 font-bold mb-6 leading-tight">
+                            El renacer de una pasión culinaria en Venta del Moro
+                        </h2>
+                        <div class="space-y-4 text-gourmet-800 text-base leading-relaxed">
+                            <p>
+                                Tras haber dejado huella gastronómica en Catarroja y sobreponerse con coraje infinito a los estragos de la DANA, esta entrañable pareja ha encontrado en <strong>Venta del Moro</strong> su nuevo hogar para seguir haciendo lo que mejor saben: emocionar a través del plato y del abrazo sincero.
+                            </p>
+                            <p>
+                                En <strong>Casa de La Mari</strong> nada ha cambiado de esa esencia pura: te recibe <strong>Anáis</strong> con una atención inigualable que te hace sentir como en tu propio salón, mientras en la cocina un joven chef desborda virtuosismo, técnica y respeto absoluto por el producto.
+                            </p>
+                            <p class="font-medium text-terracota-800">
+                                Desde el primer café matutino con tostadas crujientes de jamón ibérico y el mejor aceite comarcal, hasta comidas de autor y hamburguesas memorables que justifican cualquier viaje.
+                            </p>
+                        </div>
+
+                        <div class="mt-8 flex flex-wrap gap-4 items-center">
+                            <a href="mailto:lambrosia.burguer@gmail.com" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gourmet-950 hover:bg-terracota-600 text-white font-medium text-sm transition-all duration-300">
+                                <i class="fa-regular fa-envelope"></i>
+                                <span>Reservar Mesa</span>
+                            </a>
+                            <div class="flex items-center gap-3 text-sm text-gourmet-800 font-medium">
+                                <i class="fa-solid fa-shield-heart text-terracota-600 text-lg"></i>
+                                <span>Atención familiar e impecable</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Carta & Especialidades Section -->
+        <section id="carta" class="py-20 bg-crema-100/70 border-t border-b border-crema-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="inline-flex items-center gap-2 text-terracota-600 font-semibold text-xs tracking-widest uppercase mb-3">
+                        <i class="fa-solid fa-wheat-awn"></i> Carta Auténtica y Sugerencias
+                    </span>
+                    <h2 class="font-serif text-3xl sm:text-4xl text-gourmet-950 font-bold mb-4">
+                        Nuestra Carta, Platos Estrella y Especialidades de la Casa
+                    </h2>
+                    <p class="text-gourmet-800 text-base leading-relaxed">
+                        Inspirada en las raíces de Venta del Moro y sus aldeas, con el toque vanguardista que define nuestra cocina y la herencia de nuestras célebres creaciones.
+                    </p>
+                </div>
+
+                <!-- Categories Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Categoria 1: Desayunos & Almuerzos de Pueblo -->
+                    <div class="bg-white rounded-2xl p-7 shadow-sm border border-crema-200 hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 rounded-xl bg-terracota-50 flex items-center justify-center text-terracota-600 mb-5 text-xl">
+                            <i class="fa-solid fa-mug-hot"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-gourmet-950 mb-2">Desayunos & Almuerzos</h3>
+                        <p class="text-xs text-gourmet-800/80 mb-5 uppercase tracking-wider font-semibold">El despertar de la comarca</p>
+                        
+                        <ul class="space-y-4">
+                            <li class="border-b border-crema-100 pb-3">
+                                <div class="flex justify-between items-baseline mb-1">
+                                    <span class="font-semibold text-gourmet-900 text-sm">Tostada Campesina con Jamón y Aceitico</span>
+                                </div>
+                                <p class="text-xs text-gourmet-800 font-light">Pan de pueblo tostado al momento, tomate rallado fresco, jamón de bodega y aceite de oliva virgen extra de la zona.</p>
+                            </li>
+                            <li class="border-b border-crema-100 pb-3">
+                                <div class="flex justify-between items-baseline mb-1">
+                                    <span class="font-semibold text-gourmet-900 text-sm">Almuerzo Típico Venta del Moro</span>
+                                </div>
+                                <p class="text-xs text-gourmet-800 font-light">Embutidos artesanales a la brasa, panceta crujiente, patatas a lo pobre y huevos de corral.</p>
+                            </li>
+                            <li>
+                                <div class="flex justify-between items-baseline mb-1">
+                                    <span class="font-semibold text-gourmet-900 text-sm">Café Especial & Tostadas Dulces</span>
+                                </div>
+                                <p class="text-xs text-gourmet-800 font-light">Café de grano premium con bollería artesana o mantequilla de caserío y mermeladas de temporada.</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Categoria 2: Entrantes de Autor y Tapas -->
+                    <div class="bg-white rounded-2xl p-7 shadow-sm border border-crema-200 hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 rounded-xl bg-terracota-50 flex items-center justify-center text-terracota-600 mb-5 text-xl">
+                            <i class="fa-solid fa-plate-wheat"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-gourmet-950 mb-2">Entrantes & Tapeo de Autor</h3>
+                        <p class="text-xs text-gourmet-800/80 mb-5 uppercase tracking-wider font-semibold">Para abrir boca y compartir</p>
+                        
+                        <ul class="space-y-4">
+                            <li class="border-b border-crema-100 pb-3">
+                                <div class="flex justify-between items-baseline mb-1">
+                                    <span class="font-semibold text-gourmet-900 text-sm">Croquetas Cremosas de Autor</span>
+                                </div>
+                                <p class="text-xs text-gourmet-800 font-light">Masa fundente elaborada con mimo según la inspiración del chef: jamón ibérico o setas silvestres.</p>
+                            </li>
+                            <li class="border-b border-crema-100 pb-3">
+                                <div class="flex justify-between items-baseline mb-1">
+                                    <span class="font-semibold text-gourmet-900 text-sm">Tabla de Quesos de las Aldeas</span>
+                                </div>
+                                <p class="text-xs text-gourmet-800 font-light">Selección curada de quesos de oveja y cabra locales acompañados de frutos secos y confitura casera.</p>
+                            </li>
+                            <li>
+                                <div class="flex justify-between items-baseline mb-1">
+                                    <span class="font-semibold text-gourmet-900 text-sm">Huevos Rotos con Crujiente Ibérico</span>
+                                </div>
+                                <p class="text-xs text-gourmet-800 font-light">Patatas pochadas en aceite de oliva, yema fluida y virutas selectas con un toque secreto de especias.</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Categoria 3: Hamburguesas de Autor & Platos Fuertes -->
+                    <div class="bg-white rounded-2xl p-7 shadow-sm border border-crema-200 hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 rounded-xl bg-terracota-50 flex items-center justify-center text-terracota-600 mb-5 text-xl">
+                            <i class="fa-solid fa-burger"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-gourmet-950 mb-2">Hamburguesas & Carnes</h3>
+                        <p class="text-xs text-gourmet-800/80 mb-5 uppercase tracking-wider font-semibold">Legado gastronómico gourmet</p>
+                        
+                        <ul class="space-y-4">
+                            <li class="border-b border-crema-100 pb-3">
+                                <div class="flex justify-between items-baseline mb-1">
+                                    <span class="font-semibold text-gourmet-900 text-sm">Burger 'La Mari' Signature</span>
+                                </div>
+                                <p class="text-xs text-gourmet-800 font-light">Carne madurada de buey/vaca seleccionada, queso ahumado derretido, cebolla caramelizada lenta y salsa especial en pan brioche artesano.</p>
+                            </li>
+                            <li class="border-b border-crema-100 pb-3">
+                                <div class="flex justify-between items-baseline mb-1">
+                                    <span class="font-semibold text-gourmet-900 text-sm">Carnes a la Brasa & Fondo de Cazuela</span>
+                                </div>
+                                <p class="text-xs text-gourmet-800 font-light">Cortes selectos cocinados al punto exacto con guarnición de la huerta valenciana y reducción de vinos locales.</p>
+                            </li>
+                            <li>
+                                <div class="flex justify-between items-baseline mb-1">
+                                    <span class="font-semibold text-gourmet-900 text-sm">Postres Caseros de la Casa</span>
+                                </div>
+                                <p class="text-xs text-gourmet-800 font-light">Tarta cremosa artesanal horneada cada mañana, el broche de oro dulce para una sobremesa sin prisas.</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Banner Carta CTA -->
+                <div class="mt-14 p-8 rounded-2xl bg-gourmet-950 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+                    <div>
+                        <h4 class="font-serif text-2xl font-bold text-white mb-2">¿Quieres consultar los platos fuera de carta y menú del día?</h4>
+                        <p class="text-crema-200 text-sm">Nuestra cocina cambia según el producto fresco de temporada y la inspiración del chef.</p>
+                    </div>
+                    <a href="mailto:lambrosia.burguer@gmail.com" class="px-8 py-3.5 rounded-full bg-terracota-600 hover:bg-terracota-500 text-white font-medium text-sm transition-all shadow-md whitespace-nowrap">
+                        Reservar Mesa
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galería: Nuestras Instalaciones y Trabajos -->
+        <section id="galeria" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="inline-flex items-center gap-2 text-terracota-600 font-semibold text-xs tracking-widest uppercase mb-3">
+                        <i class="fa-solid fa-camera"></i> Galería de Momentos
+                    </span>
+                    <h2 class="font-serif text-3xl sm:text-4xl text-gourmet-950 font-bold mb-4">
+                        Nuestras Instalaciones y Trabajos
+                    </h2>
+                    <p class="text-gourmet-800 text-base">
+                        Un espacio rústico, cálido y acogedor diseñado para compartir buenos platos, conversaciones reposadas y el mejor ambiente de Venta del Moro.
+                    </p>
+                </div>
+
+                <!-- Gallery Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Real business photo 1 -->
+                    <div class="group relative rounded-2xl overflow-hidden shadow-md h-72">
+                        <img src="https://scontent-sjc6-1.xx.fbcdn.net/v/t39.30808-1/615925552_122102054409212610_5301998280659621795_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx708x708&amp;ctp=s708x708&amp;_nc_cat=104&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=c7Sc7-_bn1sQ7kNvwFS7h4M&amp;_nc_oc=AdoSe6hm-SkFS1XQ5rVM1OoN3UL45HAkJKMrgWgkETNP9snhtagCD4RAVqZvyEOK71M&amp;_nc_zt=24&amp;_nc_ht=scontent-sjc6-1.xx&amp;_nc_gid=YQcmMWDclZ64BtqUcYcu7A&amp;_nc_ss=7b289&amp;oh=00_AQO2qmhrAsQu0tBVRyPaV_xKStOfxWDoU8T1708EbUMQZg&amp;oe=6AD874AE" 
+                             alt="Casa de La Mari - Instalaciones" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             referrerpolicy="no-referrer"
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gourmet-950/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                            <span class="text-white font-medium text-sm">Nuestro rincón en C. Colón, 2</span>
+                        </div>
+                    </div>
+
+                    <!-- Work 2 -->
+                    <div class="group relative rounded-2xl overflow-hidden shadow-md h-72">
+                        <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80" 
+                             alt="Hamburguesa de autor con ingredientes selectos" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             referrerpolicy="no-referrer"
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gourmet-950/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                            <span class="text-white font-medium text-sm">Hamburguesas con carne de máxima calidad</span>
+                        </div>
+                    </div>
+
+                    <!-- Work 3 -->
+                    <div class="group relative rounded-2xl overflow-hidden shadow-md h-72">
+                        <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=800&q=80" 
+                             alt="Desayunos y tostadas con jamón ibérico" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             referrerpolicy="no-referrer"
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gourmet-950/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                            <span class="text-white font-medium text-sm">Tostadas con jamón y aceite de la comarca</span>
+                        </div>
+                    </div>
+
+                    <!-- Work 4 -->
+                    <div class="group relative rounded-2xl overflow-hidden shadow-md h-72">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" 
+                             alt="Platos de cocina de autor" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             referrerpolicy="no-referrer"
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gourmet-950/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                            <span class="text-white font-medium text-sm">Técnica culinaria y pasión en cada plato</span>
+                        </div>
+                    </div>
+
+                    <!-- Work 5 -->
+                    <div class="group relative rounded-2xl overflow-hidden shadow-md h-72">
+                        <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=80" 
+                             alt="Comedor acogedor y sencillo" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             referrerpolicy="no-referrer"
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gourmet-950/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                            <span class="text-white font-medium text-sm">Ambiente cercano y familiar</span>
+                        </div>
+                    </div>
+
+                    <!-- Work 6 -->
+                    <div class="group relative rounded-2xl overflow-hidden shadow-md h-72">
+                        <img src="https://images.unsplash.com/photo-1579684947550-22e945225d9a?auto=format&fit=crop&w=800&q=80" 
+                             alt="Tapas tradicionales y toques modernos" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             referrerpolicy="no-referrer"
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gourmet-950/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                            <span class="text-white font-medium text-sm">Sabores que invitan a repetir</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonios / Opiniones Reales -->
+        <section id="opiniones" class="py-20 bg-crema-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="inline-flex items-center gap-2 text-terracota-600 font-semibold text-xs tracking-widest uppercase mb-3">
+                        <i class="fa-solid fa-star text-amber-500"></i> Opiniones Reales Verificadas
+                    </span>
+                    <h2 class="font-serif text-3xl sm:text-4xl text-gourmet-950 font-bold mb-4">
+                        La experiencia vivida por nuestros comensales
+                    </h2>
+                    <p class="text-gourmet-800 text-base">
+                        Testimonios auténticos de quienes han compartido mesa y mantel con nosotros en Venta del Moro.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Reseña 1 -->
+                    <div class="bg-white rounded-2xl p-8 shadow-sm border border-crema-200 flex flex-col justify-between hover:shadow-md transition-shadow">
+                        <div>
+                            <div class="flex text-amber-500 text-sm gap-1 mb-4">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gourmet-800 text-sm italic leading-relaxed mb-6">
+                                "Desde que llegamos trato eeeeexcepcional por parte de Anáis que te hace sentir como en casa , es un rinconcito con mucho encanto en venta del moro que sin duda tenéis que conocer pronto !! La comida también buenísima , pedimos una de sus…"
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-3 pt-4 border-t border-crema-100">
+                            <div class="w-10 h-10 rounded-full bg-terracota-100 text-terracota-700 flex items-center justify-center font-bold text-sm">
+                                NQ
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gourmet-950 text-sm">Nerea Queralt Marti</h4>
+                                <span class="text-xs text-gourmet-800/70">Cliente en Google Maps</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reseña 2 -->
+                    <div class="bg-white rounded-2xl p-8 shadow-sm border border-crema-200 flex flex-col justify-between hover:shadow-md transition-shadow">
+                        <div>
+                            <div class="flex text-amber-500 text-sm gap-1 mb-4">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gourmet-800 text-sm italic leading-relaxed mb-6">
+                                "Extraordinario. Hacía tiempo que no disfrutábamos tanto en una mesa. El chef es un joven te brillante, cuya pasión y talento están en cada plato. Atención impecable en un ambiente muy sencillo. Merece la pena venir, estés donde estés."
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-3 pt-4 border-t border-crema-100">
+                            <div class="w-10 h-10 rounded-full bg-terracota-100 text-terracota-700 flex items-center justify-center font-bold text-sm">
+                                DA
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gourmet-950 text-sm">Diseños de Autor Valencia</h4>
+                                <span class="text-xs text-gourmet-800/70">Cliente en Google Maps</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reseña 3 -->
+                    <div class="bg-white rounded-2xl p-8 shadow-sm border border-crema-200 flex flex-col justify-between hover:shadow-md transition-shadow">
+                        <div>
+                            <div class="flex text-amber-500 text-sm gap-1 mb-4">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gourmet-800 text-sm italic leading-relaxed mb-6">
+                                "Nos ha encantado la comida, la atención ha sido genial, espero repetir y lo recomiendo a todo el mundo. Ojo con la cocina que hay aquí!"
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-3 pt-4 border-t border-crema-100">
+                            <div class="w-10 h-10 rounded-full bg-terracota-100 text-terracota-700 flex items-center justify-center font-bold text-sm">
+                                JG
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gourmet-950 text-sm">Jose Garcia</h4>
+                                <span class="text-xs text-gourmet-800/70">Cliente en Google Maps</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reseña 4 -->
+                    <div class="bg-white rounded-2xl p-8 shadow-sm border border-crema-200 flex flex-col justify-between hover:shadow-md transition-shadow">
+                        <div>
+                            <div class="flex text-amber-500 text-sm gap-1 mb-4">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gourmet-800 text-sm italic leading-relaxed mb-6">
+                                "Ha sido una gran sorpresa encontrar a esta pareja de nuevo en Venta del Moro, ya habíamos comido en su otro restaurante en Catarroja, que desgraciadamente devastó la Dana. Con ellos no cambia nada, un trato excelente, cercano, familiar, y…"
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-3 pt-4 border-t border-crema-100">
+                            <div class="w-10 h-10 rounded-full bg-terracota-100 text-terracota-700 flex items-center justify-center font-bold text-sm">
+                                OB
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gourmet-950 text-sm">Oscar Beltrán</h4>
+                                <span class="text-xs text-gourmet-800/70">Cliente en Google Maps</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reseña 5 -->
+                    <div class="bg-white rounded-2xl p-8 shadow-sm border border-crema-200 flex flex-col justify-between hover:shadow-md transition-shadow lg:col-span-2">
+                        <div>
+                            <div class="flex text-amber-500 text-sm gap-1 mb-4">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gourmet-800 text-sm italic leading-relaxed mb-6">
+                                "100% recomendado, hemos estado unos días por la zona y tanto para comer como para desayunar esta genial. Cafe bueno, tostadas de jamon con su aceitico riquisimas y los platos para comer inolvidables, volveremos seguro!! Además el trato es insuperable, muy amables y atentos."
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-3 pt-4 border-t border-crema-100">
+                            <div class="w-10 h-10 rounded-full bg-terracota-100 text-terracota-700 flex items-center justify-center font-bold text-sm">
+                                AG
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gourmet-950 text-sm">Alba González Barberá</h4>
+                                <span class="text-xs text-gourmet-800/70">Cliente en Google Maps</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ubicación, Contacto y Mapa -->
+        <section id="contacto" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                    
+                    <!-- Contact Info Column -->
+                    <div class="lg:col-span-5">
+                        <span class="inline-flex items-center gap-2 text-terracota-600 font-semibold text-xs tracking-widest uppercase mb-3">
+                            <i class="fa-solid fa-map-pin"></i> Ven a Conocernos
+                        </span>
+                        <h2 class="font-serif text-3xl sm:text-4xl text-gourmet-950 font-bold mb-6">
+                            Tu mesa te espera en Casa de La Mari
+                        </h2>
+                        <p class="text-gourmet-800 text-base leading-relaxed mb-8">
+                            Ubicados en la tranquila y pintoresca Venta del Moro, a solo un paso de los parajes más bellos de la comarca Utiel-Requena y el Parque Natural de las Hoces del Cabriel.
+                        </p>
+
+                        <div class="space-y-6 mb-8">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-terracota-50 flex-shrink-0 flex items-center justify-center text-terracota-600 text-lg">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gourmet-950 text-sm mb-1">Dirección</h4>
+                                    <p class="text-gourmet-800 text-sm leading-relaxed">
+                                        C. Colon, 2, 46310 Venta del Moro, Valencia, España
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-terracota-50 flex-shrink-0 flex items-center justify-center text-terracota-600 text-lg">
+                                    <i class="fa-regular fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gourmet-950 text-sm mb-1">Reservas por Correo</h4>
+                                    <a href="mailto:lambrosia.burguer@gmail.com" class="text-terracota-600 hover:text-terracota-800 text-sm font-medium transition-colors">
+                                        lambrosia.burguer@gmail.com
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-terracota-50 flex-shrink-0 flex items-center justify-center text-terracota-600 text-lg">
+                                    <i class="fa-regular fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gourmet-950 text-sm mb-1">Horarios & Servicios</h4>
+                                    <p class="text-gourmet-800 text-sm leading-relaxed">
+                                        Desayunos completos, almuerzos tradicionales populares, comidas y cenas gourmet con reserva recomendada.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Main CTA Button -->
+                        <div class="p-6 rounded-2xl bg-terracota-50 border border-terracota-200">
+                            <h4 class="font-serif text-lg font-bold text-terracota-900 mb-2">Reserva tu mesa anticipada</h4>
+                            <p class="text-xs text-gourmet-800 mb-4">Te responderemos a la mayor brevedad para confirmar fecha, hora y número de comensales.</p>
+                            <a href="mailto:lambrosia.burguer@gmail.com" class="w-full inline-flex justify-center items-center gap-2 px-6 py-3.5 rounded-full bg-terracota-600 hover:bg-terracota-700 text-white font-medium text-sm shadow-md transition-all">
+                                <i class="fa-regular fa-envelope"></i>
+                                <span>Reservar Mesa</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Map Column -->
+                    <div class="lg:col-span-7">
+                        <div class="rounded-2xl overflow-hidden shadow-lg border border-crema-200 bg-crema-100">
+                            <iframe 
+                                src="https://www.google.com/maps?q=Casa%20de%20La%20Mari%20C.%20Colon%2C%202%2C%2046310%20Venta%20del%20Moro%2C%20Valencia%2C%20Espa%C3%B1a&output=embed" 
+                                width="100%" 
+                                height="460" 
+                                style="border:0; border-radius: 1rem; display: block;" 
+                                allowfullscreen="" 
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="Mapa interactivo de Casa de La Mari">
+                            </iframe>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gourmet-950 text-crema-200 pt-16 pb-8 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+                <!-- Col 1 -->
+                <div class="md:col-span-2">
+                    <span class="font-serif text-2xl font-bold tracking-tight text-white block mb-2">
+                        Casa de <span class="text-terracota-500 italic">La Mari</span>
+                    </span>
+                    <p class="text-crema-300 text-sm max-w-sm font-light leading-relaxed mb-6">
+                        Gastronomía de autor, desayunos que reconfortan el espíritu y un trato humano insuperable en Venta del Moro y sus aldeas.
+                    </p>
+                    <div class="flex items-center gap-3 text-terracota-400">
+                        <span class="text-xs uppercase tracking-widest text-crema-300/80 font-medium">C. Colon, 2, 46310 Venta del Moro (Valencia)</span>
+                    </div>
+                </div>
+
+                <!-- Col 2 -->
+                <div>
+                    <h5 class="text-white font-semibold text-sm tracking-wider uppercase mb-4">Navegación</h5>
+                    <ul class="space-y-2 text-sm text-crema-300 font-light">
+                        <li><a href="#inicio" class="hover:text-terracota-400 transition-colors">Inicio</a></li>
+                        <li><a href="#historia" class="hover:text-terracota-400 transition-colors">Nuestra Esencia</a></li>
+                        <li><a href="#carta" class="hover:text-terracota-400 transition-colors">Carta & Especialidades</a></li>
+                        <li><a href="#galeria" class="hover:text-terracota-400 transition-colors">Instalaciones</a></li>
+                        <li><a href="#opiniones" class="hover:text-terracota-400 transition-colors">Opiniones Verificadas</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div>
+                    <h5 class="text-white font-semibold text-sm tracking-wider uppercase mb-4">Contacto Directo</h5>
+                    <p class="text-xs text-crema-300 mb-4 leading-relaxed font-light">
+                        Para eventos especiales, celebraciones en grupo o consultas sobre reservas:
+                    </p>
+                    <a href="mailto:lambrosia.burguer@gmail.com" class="inline-flex items-center gap-2 text-sm text-terracota-400 hover:text-white transition-colors">
+                        <i class="fa-regular fa-envelope"></i>
+                        <span>lambrosia.burguer@gmail.com</span>
+                    </a>
+                    <div class="mt-6">
+                        <a href="mailto:lambrosia.burguer@gmail.com" class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-terracota-600 hover:bg-terracota-500 text-white font-medium text-xs transition-colors shadow">
+                            Reservar Mesa
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Copyright -->
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-crema-300/60 font-light">
+                <p>&copy; <span id="current-year"></span> Casa de La Mari. Todos los derechos reservados. Venta del Moro, Valencia.</p>
+                <p class="flex items-center gap-1">
+                    Hecho con <i class="fa-solid fa-heart text-terracota-500 text-[10px]"></i> para los amantes de la buena mesa.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+    </script>
+</body>
+</html>
