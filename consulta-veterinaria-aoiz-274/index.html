@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta Veterinaria Aoiz | Cuidado Integral para tu Mascota en Navarra</title>
+    <meta name="description" content="Consulta Veterinaria Aoiz en Petilla de Aragón y Aoiz, Navarra. Excelente trato, profesionalidad y calidad. Pide tu cita previa en el 639019488.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        vet: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            900: '#134e4a',
+                            light: '#e6fffa'
+                        },
+                        medical: {
+                            blue: '#0284c7',
+                            soft: '#f0f9ff'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+    <!-- Top Bar de Contacto -->
+    <div class="bg-vet-900 text-white text-xs sm:text-sm py-2 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <span><i class="fa-solid fa-location-dot text-vet-400 mr-1"></i> C. Domingo Elizondo, 2, 31430 Aoiz, Navarra</span>
+                <span class="hidden md:inline"><i class="fa-solid fa-clock text-vet-400 mr-1"></i> L-V: 9:00 - 13:30 / 17:00 - 20:00</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="mailto:error-lite+84f2@duckduckgo.com" class="hover:text-vet-300 transition"><i class="fa-solid fa-envelope mr-1"></i> error-lite+84f2@duckduckgo.com</a>
+                <a href="tel:639019488" class="bg-vet-500 hover:bg-vet-600 text-white px-3 py-1 rounded-full font-medium transition flex items-center gap-1 shadow-sm">
+                    <i class="fa-solid fa-phone"></i> 639 01 94 88
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-xl bg-vet-500 flex items-center justify-center text-white text-2xl shadow-md shadow-vet-500/20">
+                    <i class="fa-solid fa-paw"></i>
+                </div>
+                <div>
+                    <span class="block font-bold text-lg sm:text-xl text-slate-900 leading-tight">CONSULTA VETERINARIA</span>
+                    <span class="block text-xs font-semibold tracking-wider text-vet-600 uppercase">AOIZ • NAVARRA</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-600">
+                <a href="#inicio" class="hover:text-vet-600 transition">Inicio</a>
+                <a href="#servicios" class="hover:text-vet-600 transition">Especialidades</a>
+                <a href="#instalaciones" class="hover:text-vet-600 transition">Instalaciones</a>
+                <a href="#opiniones" class="hover:text-vet-600 transition">Opiniones</a>
+                <a href="#contacto" class="hover:text-vet-600 transition">Ubicación</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="hidden sm:block">
+                <a href="tel:639019488" class="bg-vet-600 hover:bg-vet-700 text-white font-semibold px-5 py-2.5 rounded-xl shadow-lg shadow-vet-600/25 transition duration-200 flex items-center gap-2">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    Pedir Cita Previa
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-slate-700 focus:outline-none text-2xl p-1">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 px-4 pt-2 pb-4 space-y-3">
+            <a href="#inicio" class="block py-2 text-slate-600 hover:text-vet-600 font-medium">Inicio</a>
+            <a href="#servicios" class="block py-2 text-slate-600 hover:text-vet-600 font-medium">Especialidades</a>
+            <a href="#instalaciones" class="block py-2 text-slate-600 hover:text-vet-600 font-medium">Instalaciones</a>
+            <a href="#opiniones" class="block py-2 text-slate-600 hover:text-vet-600 font-medium">Opiniones</a>
+            <a href="#contacto" class="block py-2 text-slate-600 hover:text-vet-600 font-medium">Ubicación</a>
+            <a href="tel:639019488" class="w-full text-center bg-vet-600 text-white font-semibold py-3 rounded-xl block shadow-md">
+                <i class="fa-solid fa-calendar-check mr-2"></i> Pedir Cita Previa
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative bg-gradient-to-br from-vet-50 via-white to-sky-50 py-16 md:py-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Texto Hero -->
+                <div class="space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-vet-100 text-vet-800 px-4 py-1.5 rounded-full text-xs font-bold tracking-wide uppercase">
+                        <i class="fa-solid fa-shield-heart text-vet-600"></i> Clínica Veterinaria de Confianza en Aoiz
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight">
+                        Salud y Bienestar para tu <span class="text-vet-600">Fiel Amigo</span>
+                    </h1>
+                    <p class="text-lg text-slate-600 max-w-xl mx-auto lg:mx-0">
+                        Brindamos un excelente trato, máxima profesionalidad y la calidad que tus mascotas se merecen en Aoiz y Petilla de Aragón. Cuidamos de ellos como si fueran nuestra propia familia.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="tel:639019488" class="w-full sm:w-auto bg-vet-600 hover:bg-vet-700 text-white text-center font-bold px-8 py-4 rounded-xl shadow-xl shadow-vet-600/30 transition duration-200 text-lg flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-calendar-check"></i> Pedir Cita Previa
+                        </a>
+                        <a href="#servicios" class="w-full sm:w-auto bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 text-center font-semibold px-6 py-4 rounded-xl transition duration-200 text-lg flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-stethoscope text-vet-600"></i> Ver Tratamientos
+                        </a>
+                    </div>
+
+                    <!-- Trust badges -->
+                    <div class="pt-6 border-t border-slate-200/60 grid grid-cols-3 gap-4 text-center lg:text-left">
+                        <div>
+                            <span class="block text-2xl font-black text-slate-900">+15 Años</span>
+                            <span class="text-xs text-slate-500 font-medium">Experiencia clínica</span>
+                        </div>
+                        <div>
+                            <span class="block text-2xl font-black text-slate-900">100%</span>
+                            <span class="text-xs text-slate-500 font-medium">Trato cercano</span>
+                        </div>
+                        <div>
+                            <span class="block text-2xl font-black text-amber-500">★★★★★</span>
+                            <span class="text-xs text-slate-500 font-medium">Clientes felices</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Imagen Hero con Respaldo Infalible -->
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-vet-500/10 rounded-3xl blur-2xl -z-10"></div>
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white">
+                        <img src="" 
+                             data-fallback="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80"
+                             alt="Consulta Veterinaria Aoiz" 
+                             class="w-full h-[400px] sm:h-[480px] object-cover transform hover:scale-105 transition duration-500"
+                             referrerpolicy="no-referrer"
+                             onerror="this.onerror=null;this.src=this.getAttribute('data-fallback');">
+                    </div>
+                    <!-- Tarjeta flotante -->
+                    <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 hidden sm:flex items-center gap-4">
+                        <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-600 text-xl font-bold">
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-400 font-semibold uppercase">Valoración en Google</p>
+                            <p class="text-sm font-bold text-slate-800">"Excelente trato y calidad"</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Especialidades y Servicios -->
+    <section id="servicios" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-vet-600 font-bold text-sm tracking-wider uppercase bg-vet-50 px-3 py-1 rounded-full">Nuestros Servicios</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Especialidades y Tratamientos Profesionales</h2>
+                <p class="text-slate-600 mt-2">Cuidado médico integral adaptado a las necesidades de perros, gatos y animales de compañía.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Servicio 1 -->
+                <div class="bg-slate-50 hover:bg-vet-50/50 border border-slate-100 rounded-2xl p-8 transition duration-300 group">
+                    <div class="w-14 h-14 bg-vet-100 group-hover:bg-vet-600 group-hover:text-white rounded-2xl flex items-center justify-center text-vet-600 text-2xl mb-6 transition duration-300 shadow-sm">
+                        <i class="fa-solid fa-stethoscope"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Medicina General y Diagnóstico</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        Consultas veterinarias completas, revisiones periódicas, planes de prevención y diagnóstico temprano de patologías.
+                    </p>
+                    <a href="tel:639019488" class="inline-flex items-center gap-2 text-vet-600 font-semibold text-sm group-hover:translate-x-1 transition duration-200">
+                        Pedir Cita Previa <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="bg-slate-50 hover:bg-vet-50/50 border border-slate-100 rounded-2xl p-8 transition duration-300 group">
+                    <div class="w-14 h-14 bg-vet-100 group-hover:bg-vet-600 group-hover:text-white rounded-2xl flex items-center justify-center text-vet-600 text-2xl mb-6 transition duration-300 shadow-sm">
+                        <i class="fa-solid fa-syringe"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Vacunación y Desparasitación</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        Calendarios de vacunación personalizados, control de parásitos internos y externos, y expedición de pasaportes y microchips.
+                    </p>
+                    <a href="tel:639019488" class="inline-flex items-center gap-2 text-vet-600 font-semibold text-sm group-hover:translate-x-1 transition duration-200">
+                        Pedir Cita Previa <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="bg-slate-50 hover:bg-vet-50/50 border border-slate-100 rounded-2xl p-8 transition duration-300 group">
+                    <div class="w-14 h-14 bg-vet-100 group-hover:bg-vet-600 group-hover:text-white rounded-2xl flex items-center justify-center text-vet-600 text-2xl mb-6 transition duration-300 shadow-sm">
+                        <i class="fa-solid fa-kit-medical"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Cirugía y Hospitalización</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        Intervenciones quirúrgicas con estrictos protocolos de seguridad, anestesia monitorizada y un postoperatorio sumamente cuidadoso.
+                    </p>
+                    <a href="tel:639019488" class="inline-flex items-center gap-2 text-vet-600 font-semibold text-sm group-hover:translate-x-1 transition duration-200">
+                        Pedir Cita Previa <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Servicio 4 -->
+                <div class="bg-slate-50 hover:bg-vet-50/50 border border-slate-100 rounded-2xl p-8 transition duration-300 group">
+                    <div class="w-14 h-14 bg-vet-100 group-hover:bg-vet-600 group-hover:text-white rounded-2xl flex items-center justify-center text-vet-600 text-2xl mb-6 transition duration-300 shadow-sm">
+                        <i class="fa-solid fa-bone"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Nutrición y Dietética Veterinaria</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        Asesoramiento nutricional especializado según la edad, raza, nivel de actividad y necesidades médicas específicas de tu mascota.
+                    </p>
+                    <a href="tel:639019488" class="inline-flex items-center gap-2 text-vet-600 font-semibold text-sm group-hover:translate-x-1 transition duration-200">
+                        Pedir Cita Previa <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Servicio 5 -->
+                <div class="bg-slate-50 hover:bg-vet-50/50 border border-slate-100 rounded-2xl p-8 transition duration-300 group">
+                    <div class="w-14 h-14 bg-vet-100 group-hover:bg-vet-600 group-hover:text-white rounded-2xl flex items-center justify-center text-vet-600 text-2xl mb-6 transition duration-300 shadow-sm">
+                        <i class="fa-solid fa-tooth"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Salud Dental (Limpieza Bucal)</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        Eliminación de sarro por ultrasonidos, pulido dental y prevención de enfermedades periodontales para garantizar su salud general.
+                    </p>
+                    <a href="tel:639019488" class="inline-flex items-center gap-2 text-vet-600 font-semibold text-sm group-hover:translate-x-1 transition duration-200">
+                        Pedir Cita Previa <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Servicio 6 -->
+                <div class="bg-slate-50 hover:bg-vet-50/50 border border-slate-100 rounded-2xl p-8 transition duration-300 group">
+                    <div class="w-14 h-14 bg-vet-100 group-hover:bg-vet-600 group-hover:text-white rounded-2xl flex items-center justify-center text-vet-600 text-2xl mb-6 transition duration-300 shadow-sm">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Geriatría y Cuidados Paliativos</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        Programas especiales de salud para mascotas senior, mejorando su calidad de vida en la etapa dorada con tratamientos específicos.
+                    </p>
+                    <a href="tel:639019488" class="inline-flex items-center gap-2 text-vet-600 font-semibold text-sm group-hover:translate-x-1 transition duration-200">
+                        Pedir Cita Previa <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner de Urgencia / Llamada a la acción -->
+    <section class="py-12 bg-vet-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#14b8a6_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+                <div>
+                    <h3 class="text-2xl sm:text-3xl font-bold">¿Necesitas programar una consulta o revisión?</h3>
+                    <p class="text-vet-200 mt-2 max-w-xl">Llámanos directamente y te atenderemos con la amabilidad y profesionalidad que nos caracteriza en Aoiz.</p>
+                </div>
+                <div class="flex-shrink-0">
+                    <a href="tel:639019488" class="bg-white hover:bg-vet-50 text-vet-900 font-bold px-8 py-4 rounded-xl shadow-xl transition duration-200 text-lg inline-flex items-center gap-3">
+                        <i class="fa-solid fa-phone text-vet-600"></i> Pedir Cita Previa (639 01 94 88)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería / Instalaciones -->
+    <section id="instalaciones" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-vet-600 font-bold text-sm tracking-wider uppercase bg-vet-100 px-3 py-1 rounded-full">Entorno Clínico</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Nuestras Instalaciones y Trabajos</h2>
+                <p class="text-slate-600 mt-2">Un espacio equipado y diseñado para garantizar la tranquilidad y seguridad de tu mascota durante su visita.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <div class="rounded-2xl overflow-hidden shadow-lg bg-white border border-slate-100 group">
+                    <div class="h-64 overflow-hidden">
+                        <img src="" 
+                             data-fallback="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=800&q=80" 
+                             alt="Consulta Veterinaria Aoiz - Instalaciones" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                             referrerpolicy="no-referrer"
+                             onerror="this.onerror=null;this.src=this.getAttribute('data-fallback');">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-slate-900 text-lg">Sala de Consulta Luminosa</h4>
+                        <p class="text-slate-500 text-sm mt-1">Ambiente tranquilo para reducir el estrés de perros y gatos.</p>
+                    </div>
+                </div>
+
+                <div class="rounded-2xl overflow-hidden shadow-lg bg-white border border-slate-100 group">
+                    <div class="h-64 overflow-hidden">
+                        <img src="" 
+                             data-fallback="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=800&q=80" 
+                             alt="Consulta Veterinaria Aoiz - Equipamiento" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                             referrerpolicy="no-referrer"
+                             onerror="this.onerror=null;this.src=this.getAttribute('data-fallback');">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-slate-900 text-lg">Área Quirúrgica y Monitoreo</h4>
+                        <p class="text-slate-500 text-sm mt-1">Tecnología avanzada para intervenciones seguras.</p>
+                    </div>
+                </div>
+
+                <div class="rounded-2xl overflow-hidden shadow-lg bg-white border border-slate-100 group">
+                    <div class="h-64 overflow-hidden">
+                        <img src="" 
+                             data-fallback="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&w=800&q=80" 
+                             alt="Consulta Veterinaria Aoiz - Pacientes" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                             referrerpolicy="no-referrer"
+                             onerror="this.onerror=null;this.src=this.getAttribute('data-fallback');">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-slate-900 text-lg">Atención Personalizada</h4>
+                        <p class="text-slate-500 text-sm mt-1">Cariño y dedicación absoluta en cada diagnóstico.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Opiniones Verificadas -->
+    <section id="opiniones" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-vet-600 font-bold text-sm tracking-wider uppercase bg-vet-50 px-3 py-1 rounded-full">Testimonios Reales</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Lo que opinan nuestros clientes</h2>
+                <p class="text-slate-600 mt-2">La satisfacción de las familias que confían en nosotros es nuestra mejor carta de presentación.</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto">
+                <div class="bg-vet-50/50 border border-vet-100 p-8 sm:p-10 rounded-3xl shadow-sm relative">
+                    <div class="absolute -top-4 right-8 bg-vet-600 text-white w-10 h-10 rounded-full flex items-center justify-center shadow-md">
+                        <i class="fa-solid fa-quote-right"></i>
+                    </div>
+                    
+                    <div class="flex items-center gap-1 text-amber-400 mb-4 text-xl">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    <p class="text-slate-700 text-lg sm:text-xl italic font-medium leading-relaxed mb-6">
+                        "Excelente trato, profesionalidad y calidad."
+                    </p>
+
+                    <div class="flex items-center gap-4 border-t border-slate-200/60 pt-4">
+                        <div class="w-12 h-12 bg-vet-600 text-white font-bold rounded-full flex items-center justify-center text-lg">
+                            G
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900">Reseña Verificada de Google Maps</h4>
+                            <p class="text-xs text-slate-500">Cliente local en Navarra</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa Interactivo y Ubicación / Contacto -->
+    <section id="contacto" class="py-20 bg-slate-50 border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-vet-600 font-bold text-sm tracking-wider uppercase bg-vet-100 px-3 py-1 rounded-full">Encuéntranos</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Ubicación y Contacto</h2>
+                <p class="text-slate-600 mt-2">Visítanos en nuestra clínica en Aoiz o ponte en contacto con nosotros para cualquier consulta.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Info de Contacto -->
+                <div class="space-y-8 bg-white p-8 sm:p-10 rounded-3xl shadow-sm border border-slate-100">
+                    <h3 class="text-2xl font-bold text-slate-900">Información de la Clínica</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-vet-100 text-vet-600 rounded-xl flex items-center justify-center text-xl flex-shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm uppercase">Dirección</h4>
+                                <p class="text-slate-600 mt-1">C. Domingo Elizondo, 2, 31430 Aoiz, Navarra, España</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-vet-100 text-vet-600 rounded-xl flex items-center justify-center text-xl flex-shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm uppercase">Teléfono</h4>
+                                <p class="text-slate-600 mt-1"><a href="tel:639019488" class="hover:text-vet-600 font-semibold">639 01 94 88</a></p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-vet-100 text-vet-600 rounded-xl flex items-center justify-center text-xl flex-shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm uppercase">Correo Electrónico</h4>
+                                <p class="text-slate-600 mt-1"><a href="mailto:error-lite+84f2@duckduckgo.com" class="hover:text-vet-600">error-lite+84f2@duckduckgo.com</a></p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-vet-100 text-vet-600 rounded-xl flex items-center justify-center text-xl flex-shrink-0">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm uppercase">Horario Comercial</h4>
+                                <p class="text-slate-600 mt-1">Lunes a Viernes: 9:00 - 13:30 / 17:00 - 20:00</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="tel:639019488" class="w-full bg-vet-600 hover:bg-vet-700 text-white font-bold py-4 rounded-xl shadow-lg shadow-vet-600/25 transition duration-200 text-center block text-lg">
+                            <i class="fa-solid fa-calendar-check mr-2"></i> Pedir Cita Previa
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mapa Interactivo Real -->
+                <div class="bg-white p-3 rounded-3xl shadow-sm border border-slate-100">
+                    <iframe src="https://www.google.com/maps?q=CONSULTA%20VETERINARIA%20AOIZ%20C.%20Domingo%20Elizondo%2C%202%2C%2031430%20Aoiz%2C%20Navarra%2C%20Espa%C3%B1a&output=embed" width="100%" height="450" style="border:0; border-radius: 1.25rem;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 items-center">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-vet-500 flex items-center justify-center text-white text-xl">
+                        <i class="fa-solid fa-paw"></i>
+                    </div>
+                    <div>
+                        <span class="block font-bold text-white text-lg">CONSULTA VETERINARIA AOIZ</span>
+                        <span class="block text-xs text-vet-400">Petilla de Aragón & Aoiz, Navarra</span>
+                    </div>
+                </div>
+                <div class="text-center text-sm">
+                    <p>Cuidado profesional y humano para tu mascota.</p>
+                </div>
+                <div class="flex justify-md-end justify-center gap-4">
+                    <a href="tel:639019488" class="w-10 h-10 rounded-full bg-slate-800 hover:bg-vet-600 hover:text-white flex items-center justify-center transition"><i class="fa-solid fa-phone"></i></a>
+                    <a href="mailto:error-lite+84f2@duckduckgo.com" class="w-10 h-10 rounded-full bg-slate-800 hover:bg-vet-600 hover:text-white flex items-center justify-center transition"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 text-center text-xs text-slate-500">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> Consulta Veterinaria Aoiz. Todos los derechos reservados. C. Domingo Elizondo, 2, 31430 Aoiz, Navarra, España.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script de Menú Móvil -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>
