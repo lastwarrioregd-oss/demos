@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secretos Beauty Parlour Indiba | Centro de Estética en Badajoz</title>
+    <meta name="description" content="Centro de estética exclusivo en Badajoz (06010). Especialistas en Indiba, tratamientos faciales y corporales, masajes y estética avanzada. ¡Reserva tu cita!">
+    <!-- TailwindCSS v3 CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            50: '#fbf8ee',
+                            100: '#f5edd6',
+                            200: '#ebd8a9',
+                            300: '#dfbd75',
+                            400: '#d4a34a',
+                            500: '#b8862c',
+                            600: '#9b6c22',
+                            700: '#7c531d',
+                            800: '#66431c',
+                            900: '#56381b',
+                        },
+                        dark: {
+                            DEFAULT: '#111111',
+                            900: '#0a0a0a',
+                            800: '#171717',
+                            700: '#262626',
+                        }
+                        },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Cormorant Garamond', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .font-serif { font-family: 'Cormorant Garamond', serif; }
+        .font-sans { font-family: 'Montserrat', sans-serif; }
+    </style>
+</head>
+<body class="bg-dark text-gray-200 font-sans antialiased selection:bg-gold-500 selection:text-dark">
+
+    <!-- Top Bar / Aviso -->
+    <div class="bg-dark-900 border-b border-dark-700 text-xs py-2 px-4 text-center sm:flex sm:justify-between sm:px-8 text-gray-400">
+        <div class="flex items-center justify-center gap-4 mb-1 sm:mb-0">
+            <span><i class="fas fa-map-marker-alt text-gold-400 mr-1"></i> Alcantara, 1, 06010 Badajoz, España</span>
+            <span class="hidden md:inline"><i class="fas fa-clock text-gold-400 mr-1"></i> Lunes a Viernes: 9:30 - 20:00</span>
+        </div>
+        <div class="flex items-center justify-center gap-4">
+            <a href="tel:611514353" class="hover:text-gold-400 transition-colors"><i class="fas fa-phone-alt text-gold-400 mr-1"></i> 611 51 43 53</a>
+            <a href="mailto:secretosbeautyparlour@gmail.com" class="hover:text-gold-400 transition-colors hidden sm:inline"><i class="fas fa-envelope text-gold-400 mr-1"></i> secretosbeautyparlour@gmail.com</a>
+        </div>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-dark/90 backdrop-blur-md border-b border-dark-700 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex flex-col">
+                <span class="font-serif text-2xl sm:text-3xl font-bold tracking-wider text-white uppercase">Secretos</span>
+                <span class="text-xs uppercase tracking-[0.3em] text-gold-400 -mt-1">Beauty Parlour Indiba</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm tracking-wide">
+                <a href="#inicio" class="text-white hover:text-gold-400 transition-colors">Inicio</a>
+                <a href="#sobre-nosotros" class="text-gray-300 hover:text-gold-400 transition-colors">Nosotros</a>
+                <a href="#tratamientos" class="text-gray-300 hover:text-gold-400 transition-colors">Tratamientos</a>
+                <a href="#instalaciones" class="text-gray-300 hover:text-gold-400 transition-colors">Instalaciones</a>
+                <a href="#opiniones" class="text-gray-300 hover:text-gold-400 transition-colors">Opiniones</a>
+                <a href="#contacto" class="text-gray-300 hover:text-gold-400 transition-colors">Ubicación</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="hidden md:block">
+                <a href="tel:611514353" class="bg-gold-500 hover:bg-gold-400 text-dark font-semibold px-6 py-3 rounded-full text-sm uppercase tracking-wider transition-all duration-300 shadow-lg shadow-gold-500/10 flex items-center gap-2">
+                    <i class="fas fa-calendar-alt"></i> Reservar Cita
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-gray-300 hover:text-gold-400 focus:outline-none text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-900 border-b border-dark-700 px-4 pt-2 pb-6 space-y-3 font-medium">
+            <a href="#inicio" class="block py-2 text-white hover:text-gold-400 border-b border-dark-800">Inicio</a>
+            <a href="#sobre-nosotros" class="block py-2 text-gray-300 hover:text-gold-400 border-b border-dark-800">Nosotros</a>
+            <a href="#tratamientos" class="block py-2 text-gray-300 hover:text-gold-400 border-b border-dark-800">Tratamientos</a>
+            <a href="#instalaciones" class="block py-2 text-gray-300 hover:text-gold-400 border-b border-dark-800">Instalaciones</a>
+            <a href="#opiniones" class="block py-2 text-gray-300 hover:text-gold-400 border-b border-dark-800">Opiniones</a>
+            <a href="#contacto" class="block py-2 text-gray-300 hover:text-gold-400 border-b border-dark-800">Ubicación</a>
+            <div class="pt-2">
+                <a href="tel:611514353" class="block w-full text-center bg-gold-500 hover:bg-gold-400 text-dark font-semibold px-6 py-3 rounded-full text-sm uppercase tracking-wider transition-all shadow-lg">
+                    <i class="fas fa-calendar-alt mr-2"></i> Reservar Cita
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-dark-900 py-20">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0 opacity-40">
+            <img src="https://scontent-iad3-1.xx.fbcdn.net/v/t39.30808-1/260300471_111129548065322_7826873699384724886_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx2048x2048&amp;ctp=s720x720&amp;_nc_cat=104&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=KZCaUb8lXcMQ7kNvwER0sWw&amp;_nc_oc=AdoWozdMoK_fZstVtTF7fnQR2OGHvrxTCmWYbxhegBffB2mkuDVFZUPDJjUIEXuxt4s&amp;_nc_zt=24&amp;_nc_ht=scontent-iad3-1.xx&amp;_nc_gid=Ah6DHRYE-FtYPeKE4iNirw&amp;_nc_ss=7b289&amp;oh=00_AQPzezwchbUa-pFIv7Be8eNGSYHmN12W5Vd6GdSwiHETog&amp;oe=6AD7F4D9" 
+                 alt="Secretos Beauty Parlour Indiba Badajoz" 
+                 class="w-full h-full object-cover"
+                 referrerpolicy="no-referrer" 
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/70 to-transparent z-1"></div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="inline-block text-gold-400 uppercase tracking-[0.3em] text-xs font-semibold mb-4 bg-gold-500/10 border border-gold-500/20 px-4 py-1.5 rounded-full">
+                Centro de Estética Exclusivo • Badajoz (06010)
+            </span>
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
+                El Arte de Cuidar tu Belleza y Bienestar
+            </h1>
+            <p class="max-w-2xl mx-auto text-lg sm:text-xl text-gray-300 font-light mb-10 leading-relaxed">
+                Especialistas en tecnología Indiba, masajes terapéuticos avanzados, tratamientos faciales y una atención personalizada inigualable en Badajoz.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="tel:611514353" class="w-full sm:w-auto bg-gold-500 hover:bg-gold-400 text-dark font-semibold px-8 py-4 rounded-full text-base uppercase tracking-wider transition-all duration-300 shadow-xl shadow-gold-500/20 flex items-center justify-center gap-3">
+                    <i class="fas fa-phone-alt"></i> Reservar Cita
+                </a>
+                <a href="#tratamientos" class="w-full sm:w-auto bg-transparent hover:bg-white/10 text-white border border-white/20 font-medium px-8 py-4 rounded-full text-base uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-3">
+                    Ver Tratamientos
+                </a>
+            </div>
+
+            <!-- Trust Badges -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-3 gap-6 pt-10 border-t border-white/10 text-left">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gold-500/10 flex items-center justify-center text-gold-400 text-lg flex-shrink-0">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div>
+                        <p class="text-white font-semibold text-sm">Reseñas 5 Estrellas</p>
+                        <p class="text-xs text-gray-400">Clientes 100% satisfechos</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gold-500/10 flex items-center justify-center text-gold-400 text-lg flex-shrink-0">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div>
+                        <p class="text-white font-semibold text-sm">Tecnología Indiba</p>
+                        <p class="text-xs text-gray-400">Estética avanzada líder</p>
+                    </div>
+                </div>
+                <div class="col-span-2 md:col-span-1 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gold-500/10 flex items-center justify-center text-gold-400 text-lg flex-shrink-0">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div>
+                        <p class="text-white font-semibold text-sm">Trato Exclusivo</p>
+                        <p class="text-xs text-gray-400">Profesionales expertos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nosotros -->
+    <section id="sobre-nosotros" class="py-24 bg-dark-800 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-gold-400 uppercase tracking-[0.2em] text-xs font-semibold block mb-2">Nuestro Concepto</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-6 leading-tight">
+                        Un refugio de bienestar y estética avanzada en Badajoz
+                    </h2>
+                    <p class="text-gray-300 font-light leading-relaxed mb-6">
+                        En <strong class="text-white font-normal">Secretos Beauty Parlour Indiba</strong> combinamos la última tecnología estética con la calidez humana para ofrecerte una experiencia transformadora. Nuestro compromiso es realzar tu belleza natural y cuidar de tu salud física a través de manos expertas como las de Belén y José Manuel, destacados por nuestros clientes por su profesionalidad y cercanía.
+                    </p>
+                    <p class="text-gray-300 font-light leading-relaxed mb-8">
+                        Situados en pleno corazón de Badajoz (Código Postal 06010), nuestras instalaciones están diseñadas para garantizar el máximo confort, relax y resultados visibles desde la primera sesión.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div class="border-l-2 border-gold-500 pl-4">
+                            <p class="font-serif text-3xl font-bold text-gold-400 mb-1">+1000</p>
+                            <p class="text-xs uppercase tracking-wider text-gray-400">Clientes Felices</p>
+                        </div>
+                        <div class="border-l-2 border-gold-500 pl-4">
+                            <p class="font-serif text-3xl font-bold text-gold-400 mb-1">100%</p>
+                            <p class="text-xs uppercase tracking-wider text-gray-400">Profesionalidad</p>
+                        </div>
+                    </div>
+                    <a href="tel:611514353" class="inline-flex items-center gap-2 text-gold-400 hover:text-gold-300 font-semibold uppercase tracking-wider text-sm transition-colors">
+                        <span>Reserva tu experiencia ahora</span> <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="relative">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-dark-700">
+                        <img src="https://scontent-iad3-1.xx.fbcdn.net/v/t39.30808-1/260300471_111129548065322_7826873699384724886_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx2048x2048&amp;ctp=s720x720&amp;_nc_cat=104&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=KZCaUb8lXcMQ7kNvwER0sWw&amp;_nc_oc=AdoWozdMoK_fZstVtTF7fnQR2OGHvrxTCmWYbxhegBffB2mkuDVFZUPDJjUIEXuxt4s&amp;_nc_zt=24&amp;_nc_ht=scontent-iad3-1.xx&amp;_nc_gid=Ah6DHRYE-FtYPeKE4iNirw&amp;_nc_ss=7b289&amp;oh=00_AQPzezwchbUa-pFIv7Be8eNGSYHmN12W5Vd6GdSwiHETog&amp;oe=6AD7F4D9" 
+                             alt="Secretos Beauty Parlour Instalaciones" 
+                             class="w-full h-[450px] object-cover"
+                             referrerpolicy="no-referrer" 
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    </div>
+                    <!-- Floating Badge -->
+                    <div class="absolute -bottom-6 -left-6 bg-dark-900 border border-dark-700 p-6 rounded-xl shadow-2xl hidden sm:block max-w-xs">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="text-gold-400 text-xl">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <span class="font-serif text-lg font-bold text-white">Especialistas Indiba</span>
+                        </div>
+                        <p class="text-xs text-gray-400">Radiofrecuencia avanzada para rejuvenecimiento y recuperación corporal.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tratamientos y Servicios -->
+    <section id="tratamientos" class="py-24 bg-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-400 uppercase tracking-[0.2em] text-xs font-semibold block mb-2">Carta de Servicios</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-4">Nuestros Tratamientos y Especialidades</h2>
+                <p class="text-gray-400 font-light">Descubre nuestra selección de tratamientos estéticos de alta gama, diseñados para cuidar de ti de pies a cabeza.</p>
+            </div>
+
+            <!-- Grid de Tratamientos -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Tratamiento 1 -->
+                <div class="bg-dark-800 rounded-2xl p-8 border border-dark-700 hover:border-gold-500/50 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center text-xl mb-6 group-hover:bg-gold-500 group-hover:text-dark transition-colors">
+                            <i class="fas fa-spa"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-white mb-3">Tecnología Indiba</h3>
+                        <p class="text-gray-400 text-sm font-light mb-6">
+                            Radiofrecuencia avanzada líder mundial para rejuvenecimiento facial, reafirmación corporal, reducción de grasa y bienestar integral. Resultados visibles desde la primera sesión.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-dark-700 flex items-center justify-between">
+                        <span class="text-xs uppercase tracking-wider text-gold-400 font-semibold">Tratamiento Estrella</span>
+                        <a href="tel:611514353" class="bg-gold-500/10 hover:bg-gold-500 hover:text-dark text-gold-400 text-xs font-semibold px-4 py-2 rounded-full transition-all">Reservar</a>
+                    </div>
+                </div>
+
+                <!-- Tratamiento 2 -->
+                <div class="bg-dark-800 rounded-2xl p-8 border border-dark-700 hover:border-gold-500/50 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center text-xl mb-6 group-hover:bg-gold-500 group-hover:text-dark transition-colors">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-white mb-3">Masajes Terapéuticos y Relajantes</h3>
+                        <p class="text-gray-400 text-sm font-light mb-6">
+                            Masajes relajantes musculares y quiromasaje profesional impartido por José Manuel. Soluciones efectivas para dolencias musculares, contracturas y desconexión total del estrés diario.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-dark-700 flex items-center justify-between">
+                        <span class="text-xs uppercase tracking-wider text-gold-400 font-semibold">Muy recomendado</span>
+                        <a href="tel:611514353" class="bg-gold-500/10 hover:bg-gold-500 hover:text-dark text-gold-400 text-xs font-semibold px-4 py-2 rounded-full transition-all">Reservar</a>
+                    </div>
+                </div>
+
+                <!-- Tratamiento 3 -->
+                <div class="bg-dark-800 rounded-2xl p-8 border border-dark-700 hover:border-gold-500/50 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center text-xl mb-6 group-hover:bg-gold-500 group-hover:text-dark transition-colors">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-white mb-3">Tratamiento Silver Glove</h3>
+                        <p class="text-gray-400 text-sm font-light mb-6">
+                            Nuestro tratamiento exclusivo y preferido por clientas como Mayte. Una experiencia de belleza única que revitaliza, nutre y aporta una luminosidad extraordinaria a tu piel.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-dark-700 flex items-center justify-between">
+                        <span class="text-xs uppercase tracking-wider text-gold-400 font-semibold">Exclusivo Secretos</span>
+                        <a href="tel:611514353" class="bg-gold-500/10 hover:bg-gold-500 hover:text-dark text-gold-400 text-xs font-semibold px-4 py-2 rounded-full transition-all">Reservar</a>
+                    </div>
+                </div>
+
+                <!-- Tratamiento 4 -->
+                <div class="bg-dark-800 rounded-2xl p-8 border border-dark-700 hover:border-gold-500/50 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center text-xl mb-6 group-hover:bg-gold-500 group-hover:text-dark transition-colors">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-white mb-3">Lifting de Pestañas</h3>
+                        <p class="text-gray-400 text-sm font-light mb-6">
+                            Realza tu mirada de forma natural sin dañarlas. Tratamiento delicado y profesional con resultados impecables que potencian tus ojos con elegancia.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-dark-700 flex items-center justify-between">
+                        <span class="text-xs uppercase tracking-wider text-gold-400 font-semibold">Mirada Perfecta</span>
+                        <a href="tel:611514353" class="bg-gold-500/10 hover:bg-gold-500 hover:text-dark text-gold-400 text-xs font-semibold px-4 py-2 rounded-full transition-all">Reservar</a>
+                    </div>
+                </div>
+
+                <!-- Tratamiento 5 -->
+                <div class="bg-dark-800 rounded-2xl p-8 border border-dark-700 hover:border-gold-500/50 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center text-xl mb-6 group-hover:bg-gold-500 group-hover:text-dark transition-colors">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-white mb-3">Tratamientos Faciales Avanzados</h3>
+                        <p class="text-gray-400 text-sm font-light mb-6">
+                            Limpiezas profundas, hidratación intensiva y protocolos anti-edad personalizados según las necesidades específicas de tu tipo de piel.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-dark-700 flex items-center justify-between">
+                        <span class="text-xs uppercase tracking-wider text-gold-400 font-semibold">Salud Cutánea</span>
+                        <a href="tel:611514353" class="bg-gold-500/10 hover:bg-gold-500 hover:text-dark text-gold-400 text-xs font-semibold px-4 py-2 rounded-full transition-all">Reservar</a>
+                    </div>
+                </div>
+
+                <!-- Tratamiento 6 -->
+                <div class="bg-dark-800 rounded-2xl p-8 border border-dark-700 hover:border-gold-500/50 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center text-xl mb-6 group-hover:bg-gold-500 group-hover:text-dark transition-colors">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-white mb-3">Estética Corporal Integral</h3>
+                        <p class="text-gray-400 text-sm font-light mb-6">
+                            Modelado corporal, tratamientos reductores y reafirmantes combinados con la mejor aparatología del mercado para cuidar tu silueta.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-dark-700 flex items-center justify-between">
+                        <span class="text-xs uppercase tracking-wider text-gold-400 font-semibold">Bienestar Total</span>
+                        <a href="tel:611514353" class="bg-gold-500/10 hover:bg-gold-500 hover:text-dark text-gold-400 text-xs font-semibold px-4 py-2 rounded-full transition-all">Reservar</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Banner CTA Inferior -->
+            <div class="mt-16 bg-gradient-to-r from-dark-800 via-dark-900 to-dark-800 border border-gold-500/30 rounded-3xl p-8 sm:p-12 text-center relative overflow-hidden">
+                <div class="absolute -right-20 -top-20 w-60 h-60 bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                <h3 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-4">¿No sabes qué tratamiento se adapta mejor a ti?</h3>
+                <p class="text-gray-300 font-light max-w-2xl mx-auto mb-8">Llámanos o escríbenos. Nuestro equipo de profesionales te asesorará de forma totalmente personalizada en nuestro centro de Badajoz.</p>
+                <a href="tel:611514353" class="inline-flex items-center gap-3 bg-gold-500 hover:bg-gold-400 text-dark font-semibold px-8 py-4 rounded-full text-base uppercase tracking-wider transition-all shadow-xl shadow-gold-500/20">
+                    <i class="fas fa-phone-alt"></i> Llamar al 611 51 43 53
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería / Instalaciones -->
+    <section id="instalaciones" class="py-24 bg-dark-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-400 uppercase tracking-[0.2em] text-xs font-semibold block mb-2">Ambiente Exclusivo</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-4">Nuestras Instalaciones y Trabajos</h2>
+                <p class="text-gray-400 font-light">Un espacio acogedor, limpio y cuidadosamente decorado para garantizar tu desconexión y confort.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="rounded-2xl overflow-hidden shadow-2xl border border-dark-700 group relative">
+                    <img src="https://scontent-iad3-1.xx.fbcdn.net/v/t39.30808-1/260300471_111129548065322_7826873699384724886_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx2048x2048&amp;ctp=s720x720&amp;_nc_cat=104&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=KZCaUb8lXcMQ7kNvwER0sWw&amp;_nc_oc=AdoWozdMoK_fZstVtTF7fnQR2OGHvrxTCmWYbxhegBffB2mkuDVFZUPDJjUIEXuxt4s&amp;_nc_zt=24&amp;_nc_ht=scontent-iad3-1.xx&amp;_nc_gid=Ah6DHRYE-FtYPeKE4iNirw&amp;_nc_ss=7b289&amp;oh=00_AQPzezwchbUa-pFIv7Be8eNGSYHmN12W5Vd6GdSwiHETog&amp;oe=6AD7F4D9" 
+                         alt="Secretos Beauty Parlour Salón" 
+                         class="w-full h-[380px] object-cover group-hover:scale-105 transition-transform duration-500"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-transparent to-transparent opacity-80 flex items-end p-8">
+                        <div>
+                            <span class="text-gold-400 text-xs font-semibold uppercase tracking-widest">Estética & Bienestar</span>
+                            <h4 class="font-serif text-2xl font-bold text-white">Instalaciones Modernas en Badajoz</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rounded-2xl overflow-hidden shadow-2xl border border-dark-700 group relative">
+                    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80" 
+                         alt="Cabina de estética avanzada Indiba" 
+                         class="w-full h-[380px] object-cover group-hover:scale-105 transition-transform duration-500"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-transparent to-transparent opacity-80 flex items-end p-8">
+                        <div>
+                            <span class="text-gold-400 text-xs font-semibold uppercase tracking-widest">Cabinas Privadas</span>
+                            <h4 class="font-serif text-2xl font-bold text-white">Confort y Relax Absoluto</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Opiniones / Reseñas Reales -->
+    <section id="opiniones" class="py-24 bg-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-400 uppercase tracking-[0.2em] text-xs font-semibold block mb-2">Testimonios Verificados</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-4">Lo que dicen nuestros clientes</h2>
+                <p class="text-gray-400 font-light">La satisfacción de quienes confían en nosotros es nuestra mejor carta de presentación.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Reseña 1 -->
+                <div class="bg-dark-800 p-8 rounded-2xl border border-dark-700 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-gold-400 mb-4 text-sm">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 font-light italic mb-6 text-sm leading-relaxed">
+                            "Un lugar fantástico, buena decoración e instalaciones. Gran profesional José Manuel, me dio un masaje relajante muscular del que salí muy contento. Para repetir y recomendar."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-dark-700">
+                        <div class="w-10 h-10 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center font-bold text-sm">
+                            AS
+                        </div>
+                        <div>
+                            <p class="font-semibold text-white text-sm">Arevi Spain</p>
+                            <p class="text-xs text-gray-400">Google Local Guide</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 2 -->
+                <div class="bg-dark-800 p-8 rounded-2xl border border-dark-700 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-gold-400 mb-4 text-sm">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 font-light italic mb-6 text-sm leading-relaxed">
+                            "Estoy encantada con todo, el sitio es estupendo y el trato magnífico. Me recomendó una amiga el tratamiento Silver Glove y sin duda volveré a repetir. He quedado encantada no sabía de este tratamiento y de momento va a ser mi preferido."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-dark-700">
+                        <div class="w-10 h-10 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center font-bold text-sm">
+                            MG
+                        </div>
+                        <div>
+                            <p class="font-semibold text-white text-sm">Mayte García Lavado</p>
+                            <p class="text-xs text-gray-400">Cliente Verificada</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 3 -->
+                <div class="bg-dark-800 p-8 rounded-2xl border border-dark-700 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-gold-400 mb-4 text-sm">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 font-light italic mb-6 text-sm leading-relaxed">
+                            "Ayer fui a hacerme un lifting de pestañas y aunque tengo que reconocer que me daba un poco de miedo al no conocer el sitio y porque tampoco me lo había hecho nunca acabé encantada. El trato hacía el cliente es espectacular, son muy atentas y te informan de todo, sin duda volveré a repetir."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-dark-700">
+                        <div class="w-10 h-10 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center font-bold text-sm">
+                            SR
+                        </div>
+                        <div>
+                            <p class="font-semibold text-white text-sm">Saray Rodriguez</p>
+                            <p class="text-xs text-gray-400">Cliente Verificada</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 4 -->
+                <div class="bg-dark-800 p-8 rounded-2xl border border-dark-700 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-gold-400 mb-4 text-sm">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 font-light italic mb-6 text-sm leading-relaxed">
+                            "He salido encantada por el trato (Belén es genial), el servicio, el resultado, es un sitio al que volverías y recomendarías sin dudarlo, gracias ❤️"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-dark-700">
+                        <div class="w-10 h-10 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center font-bold text-sm">
+                            NV
+                        </div>
+                        <div>
+                            <p class="font-semibold text-white text-sm">Nadia Vaca</p>
+                            <p class="text-xs text-gray-400">Cliente Verificada</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 5 -->
+                <div class="bg-dark-800 p-8 rounded-2xl border border-dark-700 flex flex-col justify-between md:col-span-2 lg:col-span-2">
+                    <div>
+                        <div class="flex text-gold-400 mb-4 text-sm">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 font-light italic mb-6 text-sm leading-relaxed">
+                            "Yo tuve un problema serio en las costillas, tuve que ir a dos fisios de fuera y el único que me solucionó La movida fue José Manuel, el quiromasajista de secretos."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-dark-700">
+                        <div class="w-10 h-10 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center font-bold text-sm">
+                            PP
+                        </div>
+                        <div>
+                            <p class="font-semibold text-white text-sm">Pablo Puig</p>
+                            <p class="text-xs text-gray-400">Cliente Verificado</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto y Ubicación -->
+    <section id="contacto" class="py-24 bg-dark-800 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-400 uppercase tracking-[0.2em] text-xs font-semibold block mb-2">Visítanos</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-4">¿Dónde Estamos?</h2>
+                <p class="text-gray-400 font-light">Ven a conocernos o reserva tu cita previa por teléfono.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Info de Contacto -->
+                <div class="bg-dark-900 p-8 sm:p-12 rounded-3xl border border-dark-700">
+                    <h3 class="font-serif text-3xl font-bold text-white mb-6">Secretos Beauty Parlour Indiba</h3>
+                    
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center text-xl flex-shrink-0 mt-1">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs uppercase tracking-wider text-gray-400 mb-1">Dirección Exacta</p>
+                                <p class="text-white font-medium">Alcantara, 1, 06010 Badajoz, España</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center text-xl flex-shrink-0 mt-1">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs uppercase tracking-wider text-gray-400 mb-1">Teléfono de Reservas</p>
+                                <a href="tel:611514353" class="text-white font-semibold text-lg hover:text-gold-400 transition-colors">611 51 43 53</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center text-xl flex-shrink-0 mt-1">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs uppercase tracking-wider text-gray-400 mb-1">Correo Electrónico</p>
+                                <a href="mailto:secretosbeautyparlour@gmail.com" class="text-white font-medium hover:text-gold-400 transition-colors">secretosbeautyparlour@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center text-xl flex-shrink-0 mt-1">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs uppercase tracking-wider text-gray-400 mb-1">Horario</p>
+                                <p class="text-white font-medium">Lunes a Viernes: 9:30 - 20:00</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="tel:611514353" class="w-full bg-gold-500 hover:bg-gold-400 text-dark font-semibold py-4 rounded-full text-center uppercase tracking-wider transition-all shadow-xl shadow-gold-500/20 block">
+                        <i class="fas fa-calendar-alt mr-2"></i> Reservar Cita Ahora
+                    </a>
+                </div>
+
+                <!-- Mapa Interactivo Obligatorio -->
+                <div class="bg-dark-900 p-4 rounded-3xl border border-dark-700 shadow-2xl">
+                    <iframe src="https://www.google.com/maps?q=Secretos%20Beauty%20Parlour%20Indiba%20Alcantara%2C%201%2C%2006010%20Badajoz%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-900 border-t border-dark-700 py-12 text-gray-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-center md:text-left">
+                <span class="font-serif text-xl font-bold tracking-wider text-white uppercase block mb-1">Secretos Beauty Parlour Indiba</span>
+                <p class="text-xs text-gray-500">Alcantara, 1, 06010 Badajoz, España • Tel: 611514353</p>
+            </div>
+            <div class="text-xs text-gray-500 text-center md:text-right">
+                <p>&copy; <script>document.write(new Date().getFullYear());</script> Secretos Beauty Parlour Indiba. Todos los derechos reservados.</p>
+                <p class="mt-1">Centro de estética boutique en Badajoz.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript para Menú Móvil -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú al hacer clic en un enlace
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
