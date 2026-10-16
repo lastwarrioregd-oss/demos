@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAVTaller | Artesanía y Creación Exclusiva en Cenicientos, Madrid</title>
+    <!-- Tailwind CSS v3 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0f0f0f',
+                            card: '#1a1a1a',
+                            gold: '#d4af37',
+                            'gold-light': '#f3e5ab',
+                            sand: '#f5f2eb',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Cormorant Garamond', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-brand-dark text-brand-sand font-sans antialiased selection:bg-brand-gold selection:text-brand-dark">
+
+    <!-- Header & Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-brand-dark/90 backdrop-blur-md border-b border-brand-gold/20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2 group">
+                <span class="font-serif text-2xl sm:text-3xl tracking-wider text-brand-gold font-bold">CAV<span class="text-brand-sand font-light">Taller</span></span>
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-8 text-sm uppercase tracking-widest font-medium">
+                <a href="#inicio" class="hover:text-brand-gold transition-colors">Inicio</a>
+                <a href="#artesania" class="hover:text-brand-gold transition-colors">Filosofía</a>
+                <a href="#servicios" class="hover:text-brand-gold transition-colors">Servicios & Creaciones</a>
+                <a href="#galeria" class="hover:text-brand-gold transition-colors">Trabajos</a>
+                <a href="#opiniones" class="hover:text-brand-gold transition-colors">Opiniones</a>
+                <a href="#contacto" class="hover:text-brand-gold transition-colors">Ubicación</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="tel:603832911" class="hidden sm:inline-flex items-center gap-2 bg-brand-gold text-brand-dark px-5 py-2.5 rounded-full text-xs uppercase tracking-widest font-bold hover:bg-brand-gold-light transition-all shadow-lg shadow-brand-gold/20">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Reservar Cita</span>
+                </a>
+                <!-- Mobile menu button -->
+                <button id="menu-btn" class="md:hidden text-brand-sand hover:text-brand-gold text-xl focus:outline-none" aria-label="Menú">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-card border-b border-brand-gold/20 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="block py-2 text-sm uppercase tracking-widest hover:text-brand-gold">Inicio</a>
+            <a href="#artesania" class="block py-2 text-sm uppercase tracking-widest hover:text-brand-gold">Filosofía</a>
+            <a href="#servicios" class="block py-2 text-sm uppercase tracking-widest hover:text-brand-gold">Servicios & Creaciones</a>
+            <a href="#galeria" class="block py-2 text-sm uppercase tracking-widest hover:text-brand-gold">Trabajos</a>
+            <a href="#opiniones" class="block py-2 text-sm uppercase tracking-widest hover:text-brand-gold">Opiniones</a>
+            <a href="#contacto" class="block py-2 text-sm uppercase tracking-widest hover:text-brand-gold">Ubicación</a>
+            <div class="pt-2">
+                <a href="tel:603832911" class="w-full flex items-center justify-center gap-2 bg-brand-gold text-brand-dark px-5 py-3 rounded-full text-xs uppercase tracking-widest font-bold">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Reservar Cita</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1920&q=80';" alt="CAVTaller Artesanía Cenicientos" class="w-full h-full object-cover opacity-30 scale-105 animate-pulse duration-[10000ms]">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/70 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 text-center py-20">
+            <span class="inline-block text-brand-gold text-xs sm:text-sm uppercase tracking-[0.3em] font-semibold mb-4 border border-brand-gold/30 px-4 py-1.5 rounded-full bg-brand-gold/5">
+                Artesanía Exclusiva en Cenicientos, Madrid
+            </span>
+            <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-brand-sand mb-6 leading-tight">
+                El Arte de Crear con <span class="text-brand-gold italic">Maestría y Pasión</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-brand-sand/80 text-base sm:text-lg font-light mb-10 leading-relaxed">
+                En CAVTaller unimos la tradición artesanal con el diseño contemporáneo. Cuidado absoluto por el detalle, profesionalidad inigualable y piezas únicas hechas a medida en el corazón de Cenicientos.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="tel:603832911" class="w-full sm:w-auto bg-brand-gold text-brand-dark px-8 py-4 rounded-full text-sm uppercase tracking-widest font-bold hover:bg-brand-gold-light transition-all shadow-xl shadow-brand-gold/20 flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span>Reservar Cita</span>
+                </a>
+                <a href="#servicios" class="w-full sm:w-auto border border-brand-sand/30 text-brand-sand px-8 py-4 rounded-full text-sm uppercase tracking-widest font-medium hover:border-brand-gold hover:text-brand-gold transition-all flex items-center justify-center gap-3">
+                    <span>Ver Servicios</span>
+                </a>
+            </div>
+
+            <!-- Trust Badges -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-3 gap-6 pt-10 border-t border-brand-gold/10 text-center">
+                <div>
+                    <p class="font-serif text-3xl text-brand-gold font-bold">100%</p>
+                    <p class="text-xs uppercase tracking-wider text-brand-sand/60 mt-1">Artesanal & Local</p>
+                </div>
+                <div>
+                    <p class="font-serif text-3xl text-brand-gold font-bold">5.0 ★</p>
+                    <p class="text-xs uppercase tracking-wider text-brand-sand/60 mt-1">Excelencia en Google</p>
+                </div>
+                <div class="col-span-2 md:col-span-1">
+                    <p class="font-serif text-3xl text-brand-gold font-bold">Cenicientos</p>
+                    <p class="text-xs uppercase tracking-wider text-brand-sand/60 mt-1">Madrid, España</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section id="artesania" class="py-24 bg-brand-card relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-brand-gold text-xs uppercase tracking-[0.2em] font-semibold">Nuestra Esencia</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold mt-2 mb-6 text-brand-sand">
+                        Tradición, Detalle y Excelencia Artesanal
+                    </h2>
+                    <p class="text-brand-sand/80 font-light leading-relaxed mb-6">
+                        En <strong class="text-brand-gold font-normal">CAVTaller</strong> entendemos la artesanía como una forma de expresión viva. Cada proyecto que pasa por nuestras manos en Cenicientos recibe un trato meticuloso, combinando técnicas ancestrales con acabados vanguardistas que garantizan resultados extraordinarios.
+                    </p>
+                    <p class="text-brand-sand/80 font-light leading-relaxed mb-8">
+                        Nuestro compromiso se basa en la excelencia, la escucha activa al cliente y un trato cercano y profesional que nos distingue en toda la región de Madrid.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="border-l-2 border-brand-gold pl-4">
+                            <h3 class="font-bold text-brand-sand uppercase text-xs tracking-wider mb-1">Profesionalidad</h3>
+                            <p class="text-xs text-brand-sand/60">Experiencia y destreza en cada labor artesana.</p>
+                        </div>
+                        <div class="border-l-2 border-brand-gold pl-4">
+                            <h3 class="font-bold text-brand-sand uppercase text-xs tracking-wider mb-1">Calidad Suprema</h3>
+                            <p class="text-xs text-brand-sand/60">Selección rigurosa de materiales y acabados.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-brand-gold/20 aspect-[4/3]">
+                        <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1000&q=80';" alt="Taller de Artesanía CAVTaller" class="w-full h-full object-cover">
+                    </div>
+                    <!-- Decorative element -->
+                    <div class="absolute -bottom-6 -right-6 bg-brand-dark border border-brand-gold/40 p-6 rounded-xl hidden sm:block max-w-xs shadow-2xl">
+                        <p class="font-serif italic text-brand-gold text-lg">"Excelente trato, profesionalidad y calidad."</p>
+                        <span class="text-xs uppercase tracking-widest text-brand-sand/60 mt-2 block">— Reseña Verificada</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="py-24 bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-gold text-xs uppercase tracking-[0.2em] font-semibold">Carta de Servicios</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold mt-2 mb-4 text-brand-sand">Nuestras Especialidades Artesanales</h2>
+                <p class="text-brand-sand/70 font-light">Trabajos personalizados y servicios diseñados bajo los más altos estándares de calidad artesana en Cenicientos.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Servicio 1 -->
+                <div class="bg-brand-card p-8 rounded-2xl border border-brand-gold/10 hover:border-brand-gold/40 transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-brand-gold/10 flex items-center justify-center text-brand-gold text-xl mb-6 group-lib group-hover:bg-brand-gold group-hover:text-brand-dark transition-all">
+                            <i class="fa-solid fa-gem"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-brand-sand mb-3">Diseño y Creación a Medida</h3>
+                        <p class="text-brand-sand/70 text-sm font-light leading-relaxed mb-6">
+                            Piezas y proyectos artesanales únicos fabricados exclusivamente según tus necesidades, gustos y especificaciones técnicas.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-brand-gold/10 flex items-center justify-between">
+                        <span class="text-xs uppercase tracking-widest text-brand-gold font-semibold">Bajo Presupuesto</span>
+                        <a href="tel:603832911" class="text-xs uppercase tracking-widest font-bold text-brand-sand hover:text-brand-gold transition-colors flex items-center gap-1">
+                            Reservar Cita <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="bg-brand-card p-8 rounded-2xl border border-brand-gold/10 hover:border-brand-gold/40 transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-brand-gold/10 flex items-center justify-center text-brand-gold text-xl mb-6 group-hover:bg-brand-gold group-hover:text-brand-dark transition-all">
+                            <i class="fa-solid fa-hands-holding"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-brand-sand mb-3">Restauración & Conservación</h3>
+                        <p class="text-brand-sand/70 text-sm font-light leading-relaxed mb-6">
+                            Devolvemos la vida y el esplendor original a piezas tradicionales y objetos con valor sentimental o histórico mediante técnicas especializadas.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-brand-gold/10 flex items-center justify-between">
+                        <span class="text-xs uppercase tracking-widest text-brand-gold font-semibold">Asesoramiento Experto</span>
+                        <a href="tel:603832911" class="text-xs uppercase tracking-widest font-bold text-brand-sand hover:text-brand-gold transition-colors flex items-center gap-1">
+                            Reservar Cita <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="bg-brand-card p-8 rounded-2xl border border-brand-gold/10 hover:border-brand-gold/40 transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-brand-gold/10 flex items-center justify-center text-brand-gold text-xl mb-6 group-hover:bg-brand-gold group-hover:text-brand-dark transition-all">
+                            <i class="fa-solid fa-compass-drafting"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-brand-sand mb-3">Consultoría Artesana</h3>
+                        <p class="text-brand-sand/70 text-sm font-light leading-relaxed mb-6">
+                            Servicio de asesoría técnica y artística personalizada para particulares y profesionales que buscan soluciones creativas exclusivas.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-brand-gold/10 flex items-center justify-between">
+                        <span class="text-xs uppercase tracking-widest text-brand-gold font-semibold">Atención Exclusiva</span>
+                        <a href="tel:603832911" class="text-xs uppercase tracking-widest font-bold text-brand-sand hover:text-brand-gold transition-colors flex items-center gap-1">
+                            Reservar Cita <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Banner within services -->
+            <div class="mt-16 bg-gradient-to-r from-brand-card via-brand-dark to-brand-card border border-brand-gold/30 rounded-3xl p-8 sm:p-12 text-center relative overflow-hidden">
+                <div class="absolute -right-20 -top-20 w-60 h-60 bg-brand-gold/5 rounded-full blur-3xl pointer-events-none"></div>
+                <h3 class="font-serif text-2xl sm:text-4xl font-bold text-brand-sand mb-4">¿Tienes un proyecto especial en mente?</h3>
+                <p class="text-brand-sand/70 max-w-xl mx-auto font-light mb-8">Llámanos ahora y cuéntanos qué necesitas. Te ofrecemos un trato directo, profesional y adaptado en nuestro taller de Cenicientos.</p>
+                <a href="tel:603832911" class="inline-flex items-center gap-3 bg-brand-gold text-brand-dark px-8 py-4 rounded-full text-xs uppercase tracking-widest font-bold hover:bg-brand-gold-light transition-all shadow-xl shadow-brand-gold/20">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Reservar Cita / Consultar</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galeria" class="py-24 bg-brand-card">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-gold text-xs uppercase tracking-[0.2em] font-semibold">Galería Visual</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold mt-2 mb-4 text-brand-sand">Nuestras Instalaciones y Trabajos</h2>
+                <p class="text-brand-sand/70 font-light">Un recorrido visual por el cuidado entorno de nuestro taller y muestras de nuestra dedicación artesanal.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group relative overflow-hidden rounded-2xl aspect-[4/3] border border-brand-gold/20">
+                    <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80';" alt="Trabajo artesanal 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-xs uppercase tracking-widest text-brand-gold font-bold">Detalle de Elaboración</span>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-2xl aspect-[4/3] border border-brand-gold/20">
+                    <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1452860606243-098c0fb75ddd?auto=format&fit=crop&w=800&q=80';" alt="Trabajo artesanal 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-xs uppercase tracking-widest text-brand-gold font-bold">Instalaciones CAVTaller</span>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-2xl aspect-[4/3] border border-brand-gold/20 sm:col-span-2 lg:col-span-1">
+                    <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1572931065355-684203a628a5?auto=format&fit=crop&w=800&q=80';" alt="Trabajo artesanal 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-xs uppercase tracking-widest text-brand-gold font-bold">Acabados Exclusivos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="opiniones" class="py-24 bg-brand-dark relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-gold text-xs uppercase tracking-[0.2em] font-semibold">Opiniones Verificadas</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold mt-2 mb-4 text-brand-sand">Lo que dicen nuestros clientes</h2>
+                <p class="text-brand-sand/70 font-light">La satisfacción y confianza depositada en nuestro taller son nuestro mayor aval.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-1 max-w-xl mx-auto">
+                <!-- Reseña Real Única -->
+                <div class="bg-brand-card p-8 sm:p-10 rounded-3xl border border-brand-gold/20 relative shadow-2xl">
+                    <div class="flex items-center gap-1 text-brand-gold text-lg mb-6">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="font-serif text-xl sm:text-2xl italic text-brand-sand mb-8 leading-relaxed">
+                        "Excelente trato, profesionalidad y calidad."
+                    </p>
+                    <div class="flex items-center justify-between border-t border-brand-gold/10 pt-6">
+                        <div>
+                            <h4 class="font-bold text-brand-sand uppercase text-xs tracking-wider">Cliente Verificado</h4>
+                            <p class="text-xs text-brand-sand/50 mt-0.5">Google Maps</p>
+                        </div>
+                        <div class="w-10 h-10 rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold">
+                            <i class="fa-solid fa-quote-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Location Section -->
+    <section id="contacto" class="py-24 bg-brand-card border-t border-brand-gold/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-gold text-xs uppercase tracking-[0.2em] font-semibold">Localización & Contacto</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold mt-2 mb-4 text-brand-sand">Visítenos en Cenicientos</h2>
+                <p class="text-brand-sand/70 font-light">Estamos a su entera disposición para cualquier consulta o para programar su reserva.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Info & Details -->
+                <div class="space-y-8">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-gold/10 flex items-center justify-center text-brand-gold text-xl flex-shrink-0 mt-1">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-brand-sand uppercase text-xs tracking-widest mb-1">Dirección</h3>
+                            <p class="text-brand-sand/80 font-light">C. de San Antonio, 1, 28650 Cenicientos, Madrid, España</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-gold/10 flex items-center justify-center text-brand-gold text-xl flex-shrink-0 mt-1">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-brand-sand uppercase text-xs tracking-widest mb-1">Teléfono de Contacto</h3>
+                            <a href="tel:603832911" class="text-brand-gold font-medium hover:underline text-lg">603 83 29 11</a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-gold/10 flex items-center justify-center text-brand-gold text-xl flex-shrink-0 mt-1">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-brand-sand uppercase text-xs tracking-widest mb-1">Correo Electrónico</h3>
+                            <a href="mailto:error-lite+84f2@duckduckgo.com" class="text-brand-sand/80 font-light hover:text-brand-gold transition-colors">error-lite+84f2@duckduckgo.com</a>
+                        </div>
+                    </div>
+
+                    <div class="pt-6">
+                        <a href="tel:603832911" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-brand-gold text-brand-dark px-8 py-4 rounded-full text-xs uppercase tracking-widest font-bold hover:bg-brand-gold-light transition-all shadow-xl shadow-brand-gold/20">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>Reservar Cita Ahora</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Interactive Map -->
+                <div class="rounded-2xl overflow-hidden border border-brand-gold/20 shadow-2xl bg-brand-dark p-2">
+                    <iframe src="https://www.google.com/maps?q=CAVTaller%20C.%20de%20San%20Antonio%2C%201%2C%2028650%20Cenicientos%2C%20Madrid%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark border-t border-brand-gold/20 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-center md:text-left">
+                <span class="font-serif text-2xl tracking-wider text-brand-gold font-bold">CAV<span class="text-brand-sand font-light">Taller</span></span>
+                <p class="text-xs uppercase tracking-widest text-brand-sand/50 mt-1">Artesanía y Exclusividad en Cenicientos</p>
+            </div>
+            <div class="text-xs uppercase tracking-widest text-brand-sand/65 text-center">
+                &copy; <span id="year"></span> CAVTaller. Todos los derechos reservados.
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="tel:603832911" class="w-10 h-10 rounded-full bg-brand-card border border-brand-gold/30 flex items-center justify-center text-brand-gold hover:bg-brand-gold hover:text-brand-dark transition-all">
+                    <i class="fa-solid fa-phone"></i>
+                </a>
+                <a href="mailto:error-lite+84f2@duckduckgo.com" class="w-10 h-10 rounded-full bg-brand-card border border-brand-gold/30 flex items-center justify-center text-brand-gold hover:bg-brand-gold hover:text-brand-dark transition-all">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script to handle mobile menu & year -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
