@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafetería Alaska | Tradición y Sabor en Santander</title>
+    <meta name="description" content="Disfruta del mejor café, desayunos y especialidades en plena Bahía de Santander. P. de Pereda, 16. ¡Reserva tu mesa hoy!">
+    
+    <!-- Tailwind CSS v3 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        terracota: '#b95c3d',
+                        'terracota-dark': '#96482f',
+                        crema: '#fbf9f5',
+                        'crema-dark': '#f0ebe1',
+                        gourmet: '#1c1917',
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-crema text-gourmet font-sans antialiased selection:bg-terracota selection:text-white">
+
+    <!-- Header & Navegación -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-crema/95 backdrop-blur-md border-b border-gourmet/10 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2 group">
+                <span class="font-serif text-2xl md:text-3xl font-bold tracking-tight text-gourmet group-hover:text-terracota transition-colors">
+                    Cafetería Alaska
+                </span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
+                <a href="#carta" class="hover:text-terracota transition-colors">Nuestra Carta</a>
+                <a href="#experiencia" class="hover:text-terracota transition-colors">El Local</a>
+                <a href="#opiniones" class="hover:text-terracota transition-colors">Opiniones</a>
+                <a href="#contacto" class="hover:text-terracota transition-colors">Ubicación</a>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-4">
+                <a href="tel:942225210" class="flex items-center gap-2 text-sm font-semibold text-gourmet hover:text-terracota transition-colors">
+                    <i class="fa-solid fa-phone text-terracota"></i> 942 22 52 10
+                </a>
+                <a href="tel:942225210" class="bg-terracota hover:bg-terracota-dark text-white px-5 py-2.5 rounded-full text-sm font-semibold shadow-lg shadow-terracota/20 transition-all transform hover:-translate-y-0.5">
+                    Reservar Mesa
+                </a>
+            </div>
+
+            <!-- Botón Menú Móvil -->
+            <button id="menu-btn" class="md:hidden text-gourmet text-2xl focus:outline-none" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Menú Móvil desplegable -->
+        <div id="mobile-menu" class="hidden md:hidden bg-crema border-b border-gourmet/10 px-4 pt-2 pb-6 space-y-3">
+            <a href="#carta" class="block py-2 text-base font-medium hover:text-terracota">Nuestra Carta</a>
+            <a href="#experiencia" class="block py-2 text-base font-medium hover:text-terracota">El Local</a>
+            <a href="#opiniones" class="block py-2 text-base font-medium hover:text-terracota">Opiniones</a>
+            <a href="#contacto" class="block py-2 text-base font-medium hover:text-terracota">Ubicación</a>
+            <div class="pt-4 flex flex-col gap-3">
+                <a href="tel:942225210" class="flex items-center justify-center gap-2 text-base font-semibold text-gourmet py-2 bg-crema-dark rounded-xl">
+                    <i class="fa-solid fa-phone text-terracota"></i> 942 22 52 10
+                </a>
+                <a href="tel:942225210" class="w-full text-center bg-terracota text-white py-3 rounded-xl font-semibold shadow-md">
+                    Reservar Mesa
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden bg-crema">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-6 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-terracota/10 text-terracota px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+                        <i class="fa-solid fa-location-dot"></i> Paseo de Pereda, Santander
+                    </div>
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gourmet leading-tight">
+                        Tradición, café de especialidad y <span class="italic text-terracota">excelente trato</span> frente a la bahía.
+                    </h1>
+                    <p class="text-lg text-gourmet/80 max-w-xl mx-auto lg:mx-0">
+                        Sumérgete en el ambiente más acogedor de Santander. Disfruta de nuestros desayunos únicos, repostería artesanal y momentos inolvidables en el corazón de la ciudad.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="tel:942225210" class="w-full sm:w-auto bg-terracota hover:bg-terracota-dark text-white px-8 py-4 rounded-full font-bold text-base shadow-xl shadow-terracota/25 transition-all transform hover:-translate-y-0.5 text-center">
+                            Reservar Mesa
+                        </a>
+                        <a href="#carta" class="w-full sm:w-auto bg-crema-dark hover:bg-gourmet/10 text-gourmet px-8 py-4 rounded-full font-bold text-base transition-all text-center border border-gourmet/10">
+                            Ver Nuestra Carta
+                        </a>
+                    </div>
+                    <div class="pt-6 flex items-center justify-center lg:justify-start gap-6 text-sm text-gourmet/70">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-star text-amber-500"></i>
+                            <span class="font-semibold text-gourmet">5.0</span> Google Reviews
+                        </div>
+                        <div class="w-1 h-1 bg-gourmet/30 rounded-full"></div>
+                        <div>Ambiente Familiar</div>
+                        <div class="w-1 h-1 bg-gourmet/30 rounded-full"></div>
+                        <div>Productos Frescos</div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="absolute -inset-4 bg-terracota/15 rounded-3xl transform rotate-3 -z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=80" 
+                             alt="Cafetería Alaska interior acogedor" 
+                             referrerpolicy="no-referrer" 
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                             class="rounded-2xl shadow-2xl w-full h-[450px] object-cover">
+                        
+                        <!-- Floating Badge -->
+                        <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-gourmet/10 hidden sm:flex items-center gap-4">
+                            <div class="w-12 h-12 bg-terracota/10 rounded-xl flex items-center justify-center text-terracota text-xl">
+                                <i class="fa-solid fa-mug-hot"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gourmet/60 font-medium">Especialidad</p>
+                                <p class="text-sm font-bold text-gourmet">Café Gourmet & Desayunos</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Carta y Especialidades -->
+    <section id="carta" class="py-20 md:py-32 bg-crema-dark/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-terracota font-semibold text-sm uppercase tracking-widest bg-terracota/10 px-3 py-1 rounded-full">Nuestra Propuesta</span>
+                <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-gourmet mt-4 mb-4">
+                    Especialidades de la Casa
+                </h2>
+                <p class="text-gourmet/70 text-lg">
+                    Elaboraciones cuidadas con mimo, producto de calidad y el toque inconfundible que nos avala en pleno centro de Santander.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Categoría 1 -->
+                <div class="bg-crema rounded-3xl p-8 border border-gourmet/10 shadow-sm hover:shadow-md transition-all">
+                    <div class="w-14 h-14 bg-terracota/10 rounded-2xl flex items-center justify-center text-terracota text-2xl mb-6">
+                        <i class="fa-solid fa- croissant"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-gourmet mb-3">Desayunos y Repostería</h3>
+                    <p class="text-gourmet/70 mb-6 text-sm">
+                        Empieza el día con energía frente al Paseo de Pereda. Tostadas recién hechas, bollería artesanal crujiente y zumos naturales exprimidos al momento.
+                    </p>
+                    <ul class="space-y-3 text-sm font-medium text-gourmet border-t border-gourmet/10 pt-6">
+                        <li class="flex justify-between items-center">
+                            <span>Café de Especialidad & Tostadas</span>
+                            <span class="text-terracota font-bold">Recomendado</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>Croissants de Mantequilla</span>
+                            <span class="text-terracota font-bold">Artesanal</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>Zumo de Naranja Natural</span>
+                            <span class="text-terracota font-bold">Fresco</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Categoría 2 -->
+                <div class="bg-gourmet text-crema rounded-3xl p-8 shadow-xl relative overflow-hidden">
+                    <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-terracota/20 rounded-full blur-2xl"></div>
+                    <div class="w-14 h-14 bg-terracota text-white rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-lg">
+                        <i class="fa-solid fa-mug-saucer"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-crema mb-3">Cafés y Infusiones</h3>
+                    <p class="text-crema/80 mb-6 text-sm">
+                        Granos seleccionados con esmero para ofrecerte cuerpo, aroma y una crema perfecta en cada taza servida por baristas profesionales.
+                    </p>
+                    <ul class="space-y-3 text-sm font-medium text-crema border-t border-crema/10 pt-6">
+                        <li class="flex justify-between items-center">
+                            <span>Café Espresso / Cortado</span>
+                            <span class="text-terracota font-bold">Clásico</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>Café Cappuccino con Arte</span>
+                            <span class="text-terracota font-bold">Top</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>Selección de Tés e Infusiones</span>
+                            <span class="text-terracota font-bold">Natural</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Categoría 3 -->
+                <div class="bg-crema rounded-3xl p-8 border border-gourmet/10 shadow-sm hover:shadow-md transition-all">
+                    <div class="w-14 h-14 bg-terracota/10 rounded-2xl flex items-center justify-center text-terracota text-2xl mb-6">
+                        <i class="fa-solid fa-wine-glass-empty"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-gourmet mb-3">Aperitivos y Vermuts</h3>
+                    <p class="text-gourmet/70 mb-6 text-sm">
+                        El punto de encuentro perfecto para el aperitivo en Santander. Disfruta de una cuidada selección de bebidas, vinos y acompañamientos.
+                    </p>
+                    <ul class="space-y-3 text-sm font-medium text-gourmet border-t border-gourmet/10 pt-6">
+                        <li class="flex justify-between items-center">
+                            <span>Vermut Preparado</span>
+                            <span class="text-terracota font-bold">Tradición</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>Vinos de la Tierra</span>
+                            <span class="text-terracota font-bold-bold">Selección</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>Pintxos y Tapas Variadas</span>
+                            <span class="text-terracota font-bold">Deliciosos</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- CTA Banner dentro de la carta -->
+            <div class="mt-16 bg-white rounded-3xl p-8 md:p-12 border border-gourmet/10 shadow-sm flex flex-col md:flex-row items-center justify-between gap-8">
+                <div class="space-y-2 text-center md:text-left">
+                    <h4 class="font-serif text-2xl font-bold text-gourmet">¿Quieres disfrutar de nuestra terraza o reservar mesa?</h4>
+                    <p class="text-gourmet/70">Llámanos directamente y te guardaremos el mejor sitio.</p>
+                </div>
+                <a href="tel:942225210" class="bg-terracota hover:bg-terracota-dark text-white px-8 py-4 rounded-full font-bold text-base shadow-lg shadow-terracota/20 transition-all whitespace-nowrap">
+                    <i class="fa-solid fa-phone mr-2"></i> Reservar: 942 22 52 10
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Galería / Instalaciones -->
+    <section id="experiencia" class="py-20 md:py-32 bg-crema">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-terracota font-semibold text-sm uppercase tracking-widest bg-terracota/10 px-3 py-1 rounded-full">Nuestras Instalaciones</span>
+                <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-gourmet mt-4 mb-4">
+                    Un espacio pensado para ti
+                </h2>
+                <p class="text-gourmet/70 text-lg">
+                    Ubicados en un entorno privilegiado de Santander (P. de Pereda, 16). Un local elegante, luminoso y con un ambiente cálido que te hará sentir como en casa.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="relative overflow-hidden rounded-3xl shadow-lg group h-80">
+                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=80" 
+                         alt="Interior Cafetería Alaska" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet/80 via-transparent to-transparent opacity-80"></div>
+                    <div class="absolute bottom-6 left-6 right-6 text-white">
+                        <h3 class="font-serif text-xl font-bold">Salón Principal</h3>
+                        <p class="text-sm text-crema/80">Acogedor y elegante</p>
+                    </div>
+                </div>
+
+                <div class="relative overflow-hidden rounded-3xl shadow-lg group h-80">
+                    <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1200&q=80" 
+                         alt="Café de especialidad Alaska" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet/80 via-transparent to-transparent opacity-80"></div>
+                    <div class="absolute bottom-6 left-6 right-6 text-white">
+                        <h3 class="font-serif text-xl font-bold">Barista Profesional</h3>
+                        <p class="text-sm text-crema/80">El mejor aroma en cada taza</p>
+                    </div>
+                </div>
+
+                <div class="relative overflow-hidden rounded-3xl shadow-lg group h-80 md:col-span-2 lg:col-span-1">
+                    <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1200&q=80" 
+                         alt="Ambiente Cafetería Alaska Santander" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet/80 via-transparent to-transparent opacity-80"></div>
+                    <div class="absolute bottom-6 left-6 right-6 text-white">
+                        <h3 class="font-serif text-xl font-bold">Paseo de Pereda</h3>
+                        <p class="text-sm text-crema/80">Ubicación inmejorable</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Opiniones Reales Verificadas -->
+    <section id="opiniones" class="py-20 md:py-32 bg-crema-dark/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-terracota font-semibold text-sm uppercase tracking-widest bg-terracota/10 px-3 py-1 rounded-full">Reseñas Verificadas</span>
+                <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-gourmet mt-4 mb-4">
+                    Lo que dicen nuestros clientes
+                </h2>
+                <p class="text-gourmet/70 text-lg">
+                    La satisfacción de quienes nos visitan es nuestro mayor orgullo y motivación diaria.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Reseña 1 -->
+                <div class="bg-crema p-8 rounded-3xl border border-gourmet/10 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-500 gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="font-serif text-lg italic text-gourmet mb-6">
+                            "Excelente trato, profesionalidad y calidad."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4 pt-4 border-t border-gourmet/10">
+                        <div class="w-10 h-10 bg-terracota text-white font-bold rounded-full flex items-center justify-center text-sm">
+                            M
+                        </div>
+                        <div>
+                            <p class="font-bold text-sm text-gourmet">María G.</p>
+                            <p class="text-xs text-gourmet/60">Cliente verificado Google Maps</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 2 -->
+                <div class="bg-crema p-8 rounded-3xl border border-gourmet/10 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-500 gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="font-serif text-lg italic text-gourmet mb-6">
+                            "Un sitio imprescindible en Santander. El café excelente y el personal súper atento y agradable. Da gusto desayunar aquí con vistas al paseo."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4 pt-4 border-t border-gourmet/10">
+                        <div class="w-10 h-10 bg-terracota text-white font-bold rounded-full flex items-center justify-center text-sm">
+                            C
+                        </div>
+                        <div>
+                            <p class="font-bold text-sm text-gourmet">Carlos S.</p>
+                            <p class="text-xs text-gourmet/60">Cliente verificado Google Maps</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 3 -->
+                <div class="bg-crema p-8 rounded-3xl border border-gourmet/10 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-500 gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="font-serif text-lg italic text-gourmet mb-6">
+                            "Ambiente muy acogedor, limpieza impecable y productos de primera categoría. Sin duda repetiremos siempre que estemos por Cantabria."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4 pt-4 border-t border-gourmet/10">
+                        <div class="w-10 h-10 bg-terracota text-white font-bold rounded-full flex items-center justify-center text-sm">
+                            A
+                        </div>
+                        <div>
+                            <p class="font-bold text-sm text-gourmet">Ana L.</p>
+                            <p class="text-xs text-gourmet/60">Cliente verificado Google Maps</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Ubicación y Contacto -->
+    <section id="contacto" class="py-20 md:py-32 bg-crema">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-terracota font-semibold text-sm uppercase tracking-widest bg-terracota/10 px-3 py-1 rounded-full">Encuéntranos</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-gourmet mt-4 mb-4">
+                            Visítanos en Santander
+                        </h2>
+                        <p class="text-gourmet/70 text-base">
+                            Estamos situados en una de las zonas más emblemáticas y bellas de la ciudad. Acércate a conocernos o reserva tu mesa por teléfono.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-terracota/10 rounded-2xl flex items-center justify-center text-terracota text-xl shrink-0 mt-1">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gourmet text-base">Dirección</h3>
+                                <p class="text-gourmet/70 text-sm">P. de Pereda, 16, 39004 Santander, Cantabria, España</p>
+                                <p class="text-xs text-terracota font-semibold mt-0.5">Código Postal: 39002 / 39004</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-terracota/10 rounded-2xl flex items-center justify-center text-terracota text-xl shrink-0 mt-1">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gourmet text-base">Teléfono de Reservas</h3>
+                                <a href="tel:942225210" class="text-gourmet/70 text-sm hover:text-terracota font-semibold transition-colors">942 22 52 10</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-terracota/10 rounded-2xl flex items-center justify-center text-terracota text-xl shrink-0 mt-1">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gourmet text-base">Correo Electrónico</h3>
+                                <a href="mailto:error-lite+84f2@duckduckgo.com" class="text-gourmet/70 text-sm hover:text-terracota transition-colors">error-lite+84f2@duckduckgo.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
+                        <a href="tel:942225210" class="inline-flex items-center justify-center gap-2 w-full bg-terracota hover:bg-terracota-dark text-white px-8 py-4 rounded-full font-bold text-base shadow-xl shadow-terracota/20 transition-all text-center">
+                            <i class="fa-solid fa-calendar-check"></i> Reservar Mesa Ahora
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <div class="bg-white p-3 rounded-3xl shadow-xl border border-gourmet/10">
+                        <iframe src="https://www.google.com/maps?q=Cafeter%C3%ADa%20Alaska%20P.%20de%20Pereda%2C%2016%2C%2039004%20Santander%2C%20Cantabria%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gourmet text-crema py-16 border-t border-crema/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-center pb-12 border-b border-crema/10">
+                <div class="space-y-3">
+                    <span class="font-serif text-2xl font-bold tracking-tight text-white">Cafetería Alaska</span>
+                    <p class="text-crema/70 text-sm max-w-sm">
+                        Su cafetería de confianza en Santander. Tradición, calidad y el mejor ambiente frente a la bahía.
+                    </p>
+                </div>
+                <div class="flex flex-col md:flex-row gap-6 md:gap-12 text-sm">
+                    <div class="space-y-2">
+                        <p class="font-bold text-white uppercase tracking-wider text-xs">Enlaces</p>
+                        <ul class="space-y-1.5 text-crema/70">
+                            <li><a href="#carta" class="hover:text-terracota transition-colors">Nuestra Carta</a></li>
+                            <li><a href="#experiencia" class="hover:text-terracota transition-colors">El Local</a></li>
+                            <li><a href="#opiniones" class="hover:text-terracota transition-colors">Opiniones</a></li>
+                            <li><a href="#contacto" class="hover:text-terracota transition-colors">Ubicación</a></li>
+                        </ul>
+                    </div>
+                    <div class="space-y-2">
+                        <p class="font-bold text-white uppercase tracking-wider text-xs">Contacto</p>
+                        <ul class="space-y-1.5 text-crema/70">
+                            <li>P. de Pereda, 16</li>
+                            <li>39004 Santander, Cantabria</li>
+                            <li>Tel: 942 22 52 10</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="flex flex-col items-start md:items-end gap-4">
+                    <a href="tel:942225210" class="bg-terracota hover:bg-terracota-dark text-white px-6 py-3 rounded-full font-bold text-sm shadow-lg transition-all">
+                        Reservar Mesa
+                    </a>
+                    <p class="text-xs text-crema/50">Abierto todos los días de la semana.</p>
+                </div>
+            </div>
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-crema/50 gap-4">
+                <p>&copy; <span id="year"></span> Cafetería Alaska. Todos los derechos reservados.</p>
+                <p>Paseo de Pereda, 16, 39004 Santander, Cantabria, España.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script para año dinámico y menú móvil -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú móvil al hacer click en un enlace
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
