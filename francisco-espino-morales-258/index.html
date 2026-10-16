@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Francisco Espino Morales | Abogado en Arucas</title>
+    <!-- Tailwind CSS v3 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            light: '#E5C585',
+                            DEFAULT: '#C5A059',
+                            dark: '#9A7B38',
+                        },
+                        matte: {
+                            900: '#0A0A0A',
+                            800: '#141414',
+                            700: '#1F1F1F',
+                            600: '#2A2A2A',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .bg-pattern {
+            background-image: radial-gradient(rgba(197, 160, 89, 0.08) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+    </style>
+</head>
+<body class="bg-matte-900 text-gray-200 font-sans antialiased selection:bg-gold selection:text-matte-900">
+
+    <!-- Top Bar / Aviso -->
+    <div class="bg-matte-800 border-b border-gold/20 py-2 px-4 text-xs tracking-wider text-center text-gold-light">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <span class="flex items-center gap-2">
+                <i class="fa-solid fa-location-dot text-gold"></i> C. Médico Anastasio Escudero Ruiz, 7, 2A, Arucas, Las Palmas
+            </span>
+            <span class="flex items-center gap-4">
+                <a href="tel:647125894" class="hover:text-white transition"><i class="fa-solid fa-phone text-gold mr-1"></i> 647 125 894</a>
+                <a href="mailto:error-lite+84f2@duckduckgo.com" class="hover:text-white transition"><i class="fa-solid fa-envelope text-gold mr-1"></i> Contacto por Email</a>
+            </span>
+        </div>
+    </div>
+
+    <!-- Header / Navegación -->
+    <header class="sticky top-0 z-50 bg-matte-900/90 backdrop-blur-md border-b border-gold/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full border border-gold flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-matte-900 transition duration-300">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                </div>
+                <div>
+                    <span class="block font-serif text-lg font-bold text-white tracking-wide">Francisco Espino</span>
+                    <span class="block text-[10px] uppercase tracking-widest text-gold-light">Despacho Jurídico Arucas</span>
+                </div>
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
+                <a href="#inicio" class="text-gray-300 hover:text-gold transition">Inicio</a>
+                <a href="#sobre-mi" class="text-gray-300 hover:text-gold transition">El Abogado</a>
+                <a href="#servicios" class="text-gray-300 hover:text-gold transition">Especialidades</a>
+                <a href="#instalaciones" class="text-gray-300 hover:text-gold transition">Instalaciones</a>
+                <a href="#opiniones" class="text-gray-300 hover:text-gold transition">Reseñas</a>
+                <a href="#contacto" class="text-gray-300 hover:text-gold transition">Ubicación</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="tel:647125894" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-full border border-gold text-gold hover:bg-gold hover:text-matte-900 text-sm font-semibold tracking-wide transition duration-300 shadow-lg shadow-gold/5">
+                    Reservar Cita
+                </a>
+                <button id="menu-btn" class="md:hidden text-gold text-2xl focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menú móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-matte-800 border-b border-gold/20 px-6 py-6 space-y-4">
+            <a href="#inicio" class="block text-gray-200 hover:text-gold font-medium">Inicio</a>
+            <a href="#sobre-mi" class="block text-gray-200 hover:text-gold font-medium">El Abogado</a>
+            <a href="#servicios" class="block text-gray-200 hover:text-gold font-medium">Especialidades</a>
+            <a href="#instalaciones" class="block text-gray-200 hover:text-gold font-medium">Instalaciones</a>
+            <a href="#opiniones" class="block text-gray-200 hover:text-gold font-medium">Reseñas</a>
+            <a href="#contacto" class="block text-gray-200 hover:text-gold font-medium">Ubicación</a>
+            <div class="pt-4 border-t border-matte-700">
+                <a href="tel:647125894" class="block text-center w-full py-3 rounded-full bg-gold text-matte-900 font-bold">Reservar Cita</a>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative min-h-[85vh] flex items-center justify-center bg-pattern overflow-hidden py-20">
+        <div class="absolute inset-0 bg-gradient-to-b from-matte-900/60 via-matte-900/80 to-matte-900 pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-gold/30 bg-gold/10 text-gold-light text-xs font-medium tracking-widest uppercase">
+                    <i class="fa-solid fa-award"></i> Excelencia y Profesionalidad en Arucas
+                </div>
+                <h1 class="font-serif text-4xl sm:text-6xl font-bold tracking-tight text-white leading-tight">
+                    Defensa jurídica con <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-light via-gold to-gold-dark">rigor y excelencia</span>
+                </h1>
+                <p class="text-lg text-gray-300 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                    Despacho de abogacía especializado en ofrecer un servicio legal altamente personalizado, transparente y orientado a resultados en Las Palmas. Su tranquilidad en manos expertas.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                    <a href="tel:647125894" class="w-full sm:w-auto px-8 py-4 rounded-full bg-gold hover:bg-gold-light text-matte-900 font-bold text-base transition duration-300 shadow-xl shadow-gold/20 text-center flex items-center justify-center gap-3">
+                        <i class="fa-solid fa-calendar-check"></i> Reservar Cita
+                    </a>
+                    <a href="#servicios" class="w-full sm:w-auto px-8 py-4 rounded-full border border-gray-700 hover:border-gold text-gray-300 hover:text-white font-medium text-base transition duration-300 text-center">
+                        Conocer Especialidades
+                    </a>
+                </div>
+                <div class="pt-6 grid grid-cols-3 gap-4 border-t border-matte-800 text-center lg:text-left">
+                    <div>
+                        <span class="block font-serif text-2xl font-bold text-gold">100%</span>
+                        <span class="text-xs text-gray-400">Compromiso</span>
+                    </div>
+                    <div>
+                        <span class="block font-serif text-2xl font-bold text-gold">5★</span>
+                        <span class="text-xs text-gray-400">Valoración Clientes</span>
+                    </div>
+                    <div>
+                        <span class="block font-serif text-2xl font-bold text-gold">Arucas</span>
+                        <span class="text-xs text-gray-400">Las Palmas</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 relative">
+                <div class="relative mx-auto max-w-md lg:max-w-none">
+                    <div class="absolute -inset-1.5 bg-gradient-to-r from-gold to-gold-dark rounded-2xl blur-lg opacity-30"></div>
+                    <div class="relative rounded-2xl overflow-hidden border border-gold/30 bg-matte-800 shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1200&q=80" 
+                             alt="Francisco Espino Morales Abogado Arucas" 
+                             class="w-full h-[450px] object-cover hover:scale-105 transition duration-700"
+                             referrerpolicy="no-referrer" 
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-matte-900 via-transparent to-transparent opacity-80"></div>
+                        <div class="absolute bottom-6 left-6 right-6 p-4 bg-matte-900/90 backdrop-blur border border-gold/20 rounded-xl">
+                            <p class="font-serif font-semibold text-white">Francisco Espino Morales</p>
+                            <p class="text-xs text-gold-light mt-0.5">Colegiado especialista en derecho y defensa legal</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Mí / Filosofía -->
+    <section id="sobre-mi" class="py-24 bg-matte-800 border-t border-b border-gold/10 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-gold uppercase tracking-widest text-xs font-semibold">Filosofía de Trabajo</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">Trato cercano, rigor técnico y total dedicación</h2>
+                    <p class="text-gray-300 leading-relaxed font-light">
+                        Cada caso es único y merece un análisis exhaustivo. En nuestro despacho en Arucas combinamos la experiencia jurídica con una atención personalizada y transparente, asegurando que usted comprenda cada paso de su procedimiento legal.
+                    </p>
+                    <ul class="space-y-3 pt-2 text-gray-200">
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-gold"></i> Asesoramiento jurídico integral y preventivo
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-gold"></i> Transparencia absoluta en honorarios y gestiones
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-gold"></i> Excelente trato y defensa rigurosa de sus intereses
+                        </li>
+                    </ul>
+                    <div class="pt-4">
+                        <a href="tel:647125894" class="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gold hover:bg-gold-light text-matte-900 font-bold text-sm transition shadow-lg shadow-gold/10">
+                            Reservar Cita Previa
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="bg-matte-900 p-8 rounded-2xl border border-gold/20 flex flex-col justify-between">
+                        <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold text-xl mb-6">
+                            <i class="fa-solid fa-handshake"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif font-bold text-white text-lg mb-2">Asesoramiento Personal</h3>
+                            <p class="text-sm text-gray-400">Escuchamos su situación detalladamente para ofrecerle la estrategia legal más acertada.</p>
+                        </div>
+                    </div>
+                    <div class="bg-matte-900 p-8 rounded-2xl border border-gold/20 flex flex-col justify-between mt-0 sm:mt-8">
+                        <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold text-xl mb-6">
+                            <i class="fa-solid fa-gavel"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif font-bold text-white text-lg mb-2">Defensa Judicial</h3>
+                            <p class="text-sm text-gray-400">Representación letrada firme y profesional en juzgados y tribunales.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios / Especialidades -->
+    <section id="servicios" class="py-24 bg-matte-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="text-gold uppercase tracking-widest text-xs font-semibold">Áreas de Práctica</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">Especialidades Jurídicas</h2>
+                <p class="text-gray-400 font-light">Soluciones profesionales adaptadas a sus necesidades legales, avaladas por la calidad y el rigor profesional.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Servicio 1 -->
+                <div class="bg-matte-800 rounded-2xl p-8 border border-gold/20 hover:border-gold transition duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-2xl mb-6 group-hover:bg-gold group-hover:text-matte-900 transition duration-300">
+                            <i class="fa-solid fa-file-contract"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-3">Derecho Civil y Contratos</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                            Redacción y revisión de contratos, reclamaciones de cantidad, herencias, derecho de familia y resolución de conflictos entre particulares.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-matte-700 flex items-center justify-between">
+                        <span class="text-xs text-gold font-semibold uppercase tracking-wider">Atención personalizada</span>
+                        <a href="tel:647125894" class="text-gold hover:text-white text-sm font-bold flex items-center gap-1">Reservar Cita <i class="fa-solid fa-arrow-right text-xs"></i></a>
+                    </div>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="bg-matte-800 rounded-2xl p-8 border border-gold/20 hover:border-gold transition duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-2xl mb-6 group-hover:bg-gold group-hover:text-matte-900 transition duration-300">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-3">Derecho Laboral</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                            Asesoramiento integral en despidos, reclamaciones salariales, expedientes de regulación, modificaciones de condiciones y accidentes laborales.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-matte-700 flex items-center justify-between">
+                        <span class="text-xs text-gold font-semibold uppercase tracking-wider">Defensa rigurosa</span>
+                        <a href="tel:647125894" class="text-gold hover:text-white text-sm font-bold flex items-center gap-1">Reservar Cita <i class="fa-solid fa-arrow-right text-xs"></i></a>
+                    </div>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="bg-matte-800 rounded-2xl p-8 border border-gold/20 hover:border-gold transition duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-2xl mb-6 group-hover:bg-gold group-hover:text-matte-900 transition duration-300">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-3">Asesoría Legal General</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                            Orientación jurídica integral para autónomos y particulares. Resolución de dudas legales complejas con máxima claridad y eficacia.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-matte-700 flex items-center justify-between">
+                        <span class="text-xs text-gold font-semibold uppercase tracking-wider">Calidad garantizada</span>
+                        <a href="tel:647125894" class="text-gold hover:text-white text-sm font-bold flex items-center gap-1">Reservar Cita <i class="fa-solid fa-arrow-right text-xs"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Banner CTA inferior -->
+            <div class="mt-16 bg-gradient-to-r from-matte-800 via-matte-700 to-matte-800 border border-gold/30 rounded-3xl p-8 sm:p-12 text-center relative overflow-hidden">
+                <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+                <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white mb-4">¿Necesita asistencia legal en Arucas o Las Palmas?</h3>
+                <p class="text-gray-300 max-w-xl mx-auto mb-8 font-light">Póngase en contacto hoy mismo para estudiar su caso con la profesionalidad y el trato excelente que merece.</p>
+                <a href="tel:647125894" class="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gold hover:bg-gold-light text-matte-900 font-bold transition duration-300 shadow-xl shadow-gold/20">
+                    <i class="fa-solid fa-phone"></i> Reservar Cita (647 125 894)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería / Instalaciones -->
+    <section id="instalaciones" class="py-24 bg-matte-800 border-t border-gold/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="text-gold uppercase tracking-widest text-xs font-semibold">Despacho Profesional</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">Nuestras Instalaciones</h2>
+                <p class="text-gray-400 font-light">Un espacio discreto, cómodo y perfectamente equipado para recibirle y atender sus consultas con total confidencialidad.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="rounded-2xl overflow-hidden border border-gold/20 bg-matte-900 group">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80" 
+                             alt="Despacho en Arucas" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                             referrerpolicy="no-referrer" 
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif font-bold text-white text-lg">Sala de Reuniones</h3>
+                        <p class="text-xs text-gray-400 mt-1">Espacio privado para la consulta y estudio de casos.</p>
+                    </div>
+                </div>
+
+                <div class="rounded-2xl overflow-hidden border border-gold/20 bg-matte-900 group">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80" 
+                             alt="Atención Legal Francisco Espino" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                             referrerpolicy="no-referrer" 
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif font-bold text-white text-lg">Atención Personalizada</h3>
+                        <p class="text-xs text-gray-400 mt-1">Confidencialidad y tranquilidad garantizadas.</p>
+                    </div>
+                </div>
+
+                <div class="rounded-2xl overflow-hidden border border-gold/20 bg-matte-900 group">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80" 
+                             alt="Instalaciones Abogado Arucas" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                             referrerpolicy="no-referrer" 
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif font-bold text-white text-lg">Estudio Jurídico</h3>
+                        <p class="text-xs text-gray-400 mt-1">Análisis profundo de la normativa vigente.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Opiniones Verificadas -->
+    <section id="opiniones" class="py-24 bg-matte-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="text-gold uppercase tracking-widest text-xs font-semibold">Testimonios Reales</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">Lo que dicen nuestros clientes</h2>
+                <p class="text-gray-400 font-light">La satisfacción de quienes confían en nuestro despacho es nuestro mejor aval.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-1 max-w-2xl mx-auto">
+                <div class="bg-matte-800 p-8 sm:p-10 rounded-3xl border border-gold/20 relative shadow-xl">
+                    <div class="absolute top-6 right-8 text-gold/20 text-6xl font-serif select-none">“</div>
+                    <div class="flex items-center gap-1 text-gold mb-6">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="font-serif text-xl text-gray-200 italic mb-6 leading-relaxed">
+                        "Excelente trato, profesionalidad y calidad."
+                    </p>
+                    <div class="flex items-center gap-4 pt-4 border-t border-matte-700">
+                        <div class="w-12 h-12 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center text-gold font-bold font-serif">
+                            <span>GC</span>
+                        </div>
+                        <div>
+                            <h4 class="font-serif font-bold text-white">Cliente Verificado de Google Maps</h4>
+                            <p class="text-xs text-gold-light">Arucas, Las Palmas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa Interactivo y Contacto -->
+    <section id="contacto" class="py-24 bg-matte-800 border-t border-gold/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="text-gold uppercase tracking-widest text-xs font-semibold">Ubicación y Contacto</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">Visítenos en Arucas</h2>
+                <p class="text-gray-400 font-light">Estamos a su disposición para resolver cualquier consulta jurídica. Reserve su cita previa por teléfono o visítenos en nuestro despacho.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                <!-- Información de contacto -->
+                <div class="lg:col-span-5 space-y-8 bg-matte-900 p-8 rounded-3xl border border-gold/20">
+                    <h3 class="font-serif text-2xl font-bold text-white mb-2">Francisco Espino Morales</h3>
+                    <p class="text-sm text-gray-400">Abogado colegiado especialista en defensa jurídica.</p>
+
+                    <div class="space-y-6 pt-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold shrink-0 mt-1">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white uppercase tracking-wider">Dirección</h4>
+                                <p class="text-gray-400 text-sm mt-1">C. Médico Anastasio Escudero Ruiz, 7, 2A, 35400 Arucas, Las Palmas, España</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold shrink-0 mt-1">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white uppercase tracking-wider">Teléfono</h4>
+                                <p class="text-gray-400 text-sm mt-1">
+                                    <a href="tel:647125894" class="text-gold hover:underline font-semibold">647 125 894</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold shrink-0 mt-1">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white uppercase tracking-wider">Correo Electrónico</h4>
+                                <p class="text-gray-400 text-sm mt-1">
+                                    <a href="mailto:error-lite+84f2@duckduckgo.com" class="text-gold hover:underline">error-lite+84f2@duckduckgo.com</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-6 border-t border-matte-800">
+                        <a href="tel:647125894" class="block w-full text-center py-4 rounded-full bg-gold hover:bg-gold-light text-matte-900 font-bold transition duration-300 shadow-lg shadow-gold/10">
+                            Reservar Cita Ahora
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mapa interactivo real -->
+                <div class="lg:col-span-7 bg-matte-900 p-3 rounded-3xl border border-gold/20 shadow-xl">
+                    <div class="overflow-hidden rounded-2xl">
+                        <iframe src="https://www.google.com/maps?q=Francisco%20Espino%20Morales%20C.%20M%C3%A9dico%20Anastasio%20Escudero%20Ruiz%2C%207%2C%202A%2C%2035400%20Arucas%2C%20Las%20Palmas%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-matte-900 border-t border-gold/20 py-12 text-center text-sm text-gray-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+            <div class="flex justify-center items-center gap-3">
+                <div class="w-8 h-8 rounded-full border border-gold flex items-center justify-center text-gold">
+                    <i class="fa-solid fa-scale-balanced text-xs"></i>
+                </div>
+                <span class="font-serif font-bold text-white text-lg tracking-wide">Francisco Espino Morales</span>
+            </div>
+            <p class="max-w-md mx-auto text-xs text-gray-500 font-light">
+                Despacho de Abogados en Arucas, Las Palmas. Profesionalidad, rigor jurídico y excelente trato al cliente.
+            </p>
+            <div class="pt-6 border-t border-matte-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs">
+                <p>&copy; <script>document.write(new Date().getFullYear());</script> Francisco Espino Morales. Todos los derechos reservados.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-gold transition">Aviso Legal</a>
+                    <a href="#" class="hover:text-gold transition">Política de Privacidad</a>
+                    <a href="#" class="hover:text-gold transition">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
