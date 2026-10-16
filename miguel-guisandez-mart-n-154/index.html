@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Miguel Guisandez Martín | Taller de Reparación de Automóviles en Ávila</title>
+  <meta name="description" content="Taller mecánico de máxima confianza en Ávila y San Juan de la Encinilla. Diagnóstico rápido, honestidad, mecánica general y atención de urgencia. Tel: 920227859.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Barlow & Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#0f172a',    /* Slate 900 */
+              steel: '#1e293b',   /* Slate 800 */
+              accent: '#f59e0b',  /* Amber / Safety Gold */
+              accentHover: '#d97706',
+              cyan: '#38bdf8',
+              metal: '#334155'
+            }
+          },
+          fontFamily: {
+            heading: ['"Barlow Condensed"', 'sans-serif'],
+            body: ['"Montserrat"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Montserrat', sans-serif; }
+    h1, h2, h3, h4, .font-heading { font-family: 'Barlow Condensed', sans-serif; }
+    .bg-grid-pattern {
+      background-image: radial-gradient(rgba(245, 158, 11, 0.12) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-200 antialiased selection:bg-amber-500 selection:text-slate-950">
+
+  <!-- TOP BAR DE INFORMACIÓN RÁPIDA -->
+  <aside aria-label="Información de contacto rápida" class="bg-slate-900 border-b border-slate-800 text-xs sm:text-sm py-2 px-4">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+      <div class="flex items-center gap-4 text-slate-300">
+        <span class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-amber-500"></i> C. Madrigal de las Altas Torres, 22, Ávila</span>
+        <span class="hidden md:inline-flex items-center gap-2"><i class="fa-solid fa-clock text-amber-500"></i> Servicio y Eficacia Inmediata</span>
+      </div>
+      <div class="flex items-center gap-4 ml-auto">
+        <a href="tel:920227859" class="text-amber-400 font-bold hover:text-amber-300 flex items-center gap-2 transition">
+          <i class="fa-solid fa-phone-volume text-amber-500 animate-pulse"></i> 920 22 78 59
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- NAVBAR PRINCIPAL -->
+  <header class="sticky top-0 z-50 bg-slate-950/95 backdrop-blur-md border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center text-slate-950 shadow-lg shadow-amber-500/20">
+          <i class="fa-solid fa-wrench text-2xl"></i>
+        </div>
+        <div>
+          <span class="font-heading text-2xl sm:text-3xl font-extrabold uppercase tracking-wider text-white block leading-none">
+            Miguel Guisandez Martín
+          </span>
+          <span class="text-xs text-amber-400 font-semibold tracking-widest uppercase">Taller Mecánico Especializado</span>
+        </div>
+      </a>
+
+      <!-- Navegación Escritorio -->
+      <nav class="hidden lg:flex items-center gap-8 font-medium text-sm text-slate-300">
+        <a href="#servicios" class="hover:text-amber-400 transition">Servicios Técnicos</a>
+        <a href="#garantias" class="hover:text-amber-400 transition">Por Qué Elegirnos</a>
+        <a href="#instalaciones" class="hover:text-amber-400 transition">Instalaciones</a>
+        <a href="#opiniones" class="hover:text-amber-400 transition">Opiniones Reales</a>
+        <a href="#contacto" class="hover:text-amber-400 transition">Ubicación</a>
+      </nav>
+
+      <!-- Botón de Acción Principal -->
+      <div class="flex items-center gap-3">
+        <a href="tel:920227859" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-heading text-xl uppercase px-5 py-2.5 rounded-md shadow-lg shadow-amber-500/25 transition duration-200 transform hover:-translate-y-0.5 flex items-center gap-2">
+          <i class="fa-solid fa-calculator"></i>
+          <span>Solicitar Presupuesto</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative bg-slate-950 overflow-hidden border-b border-slate-800 py-16 lg:py-24">
+    <div class="absolute inset-0 bg-grid-pattern opacity-40 pointer-events-none"></div>
+    <div class="absolute -top-32 -right-32 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900 border border-amber-500/30 text-amber-400 text-xs sm:text-sm font-semibold uppercase tracking-wider">
+            <span class="w-2 h-2 rounded-full bg-amber-500 animate-ping"></span>
+            Taller Mecánico en Ávila & Comarca
+          </div>
+
+          <h1 class="font-heading text-4xl sm:text-6xl lg:text-7xl font-extrabold uppercase leading-none tracking-tight text-white">
+            Mecánica honesta, soluciones inmediatas y <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">profesionalidad real</span>
+          </h1>
+
+          <p class="text-slate-300 text-base sm:text-lg max-w-2xl leading-relaxed">
+            Especialistas en mecánica integral, diagnosis precisa y resolución rápida de averías. La transparencia y el trato directo que necesitas para que tu vehículo vuelva a la carretera sin esperas ni sorpresas.
+          </p>
+
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 text-left">
+            <div class="bg-slate-900/80 border border-slate-800 p-3 rounded-lg">
+              <i class="fa-solid fa-gauge-high text-amber-500 text-xl mb-1"></i>
+              <div class="font-bold text-white text-sm">Rapidez Extrema</div>
+              <div class="text-xs text-slate-400">Diagnóstico y solución eficaz</div>
+            </div>
+            <div class="bg-slate-900/80 border border-slate-800 p-3 rounded-lg">
+              <i class="fa-solid fa-shield-halved text-amber-500 text-xl mb-1"></i>
+              <div class="font-bold text-white text-sm">Honestidad Total</div>
+              <div class="text-xs text-slate-400">Explicación clara y sin rodeos</div>
+            </div>
+            <div class="bg-slate-900/80 border border-slate-800 p-3 rounded-lg col-span-2 sm:col-span-1">
+              <i class="fa-solid fa-hand-holding-dollar text-amber-500 text-xl mb-1"></i>
+              <div class="font-bold text-white text-sm">Precios Asequibles</div>
+              <div class="text-xs text-slate-400">Tarifas justas y transparentes</div>
+            </div>
+          </div>
+
+          <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <a href="tel:920227859" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-heading text-2xl uppercase tracking-wider px-8 py-3.5 rounded-lg shadow-xl shadow-amber-500/20 text-center transition flex items-center justify-center gap-3">
+              <i class="fa-solid fa-phone"></i>
+              <span>Solicitar Presupuesto</span>
+            </a>
+            <a href="#contacto" class="border border-slate-700 hover:border-slate-500 bg-slate-900/60 hover:bg-slate-900 text-white font-medium px-6 py-3.5 rounded-lg text-center transition flex items-center justify-center gap-2">
+              <i class="fa-solid fa-map-pin text-amber-500"></i>
+              <span>Cómo Llegar</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-md lg:max-w-none rounded-2xl overflow-hidden border border-slate-700/80 shadow-2xl shadow-black/80 bg-slate-900">
+            <img 
+              src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1200&q=80" 
+              alt="Taller de reparación mecánica Miguel Guisandez Martín" 
+              class="w-full h-[420px] object-cover filter brightness-90 contrast-105"
+              referrerpolicy="no-referrer"
+              onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1200&q=80';"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+            <div class="absolute bottom-4 left-4 right-4 p-4 bg-slate-900/90 backdrop-blur-md rounded-xl border border-slate-700">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold">
+                  <i class="fa-solid fa-car-burst"></i>
+                </div>
+                <div>
+                  <h3 class="font-bold text-white text-sm">¿Avería inesperada de viaje?</h3>
+                  <p class="text-xs text-slate-300">Respuesta y auxilio ante imprevistos mecánicos en ruta.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GARANTÍAS Y CARACTERÍSTICAS -->
+  <section id="garantias" class="py-12 bg-slate-900/60 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-900 border border-slate-800">
+          <div class="p-3 bg-amber-500/10 text-amber-500 rounded-lg text-2xl">
+            <i class="fa-solid fa-stopwatch"></i>
+          </div>
+          <div>
+            <h4 class="font-heading text-xl text-white tracking-wide">Reparación Ágil</h4>
+            <p class="text-xs text-slate-400 mt-1">Diagnósticos en tiempo récord para que tu día a día no se detenga.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-900 border border-slate-800">
+          <div class="p-3 bg-amber-500/10 text-amber-500 rounded-lg text-2xl">
+            <i class="fa-solid fa-comments-dollar"></i>
+          </div>
+          <div>
+            <h4 class="font-heading text-xl text-white tracking-wide">Sin Letra Pequeña</h4>
+            <p class="text-xs text-slate-400 mt-1">Claridad desde el primer minuto. Presupuestos honestos y sin sorpresas.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-900 border border-slate-800">
+          <div class="p-3 bg-amber-500/10 text-amber-500 rounded-lg text-2xl">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+          </div>
+          <div>
+            <h4 class="font-heading text-xl text-white tracking-wide">Atención al Conductor</h4>
+            <p class="text-xs text-slate-400 mt-1">Compromiso humano demostrado cuando el coche te deja tirado.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-900 border border-slate-800">
+          <div class="p-3 bg-amber-500/10 text-amber-500 rounded-lg text-2xl">
+            <i class="fa-solid fa-certificate"></i>
+          </div>
+          <div>
+            <h4 class="font-heading text-xl text-white tracking-wide">Mano Experta</h4>
+            <p class="text-xs text-slate-400 mt-1">Profesionales de los que ya no quedan, dedicados a la calidad del trabajo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS TÉCNICOS Y TRABAJOS REALIZADOS -->
+  <section id="servicios" class="py-20 bg-slate-950 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-amber-500 font-heading text-xl uppercase tracking-widest block">Servicio Integral del Automóvil</span>
+        <h2 class="font-heading text-4xl sm:text-5xl font-extrabold uppercase text-white mt-1">
+          Nuestros Servicios Técnicos, Garantías y Trabajos Realizados
+        </h2>
+        <div class="w-20 h-1 bg-amber-500 mx-auto mt-4 mb-4"></div>
+        <p class="text-slate-400 text-sm sm:text-base">
+          Tratamos cada vehículo con el rigor técnico y la minuciosidad de un taller de tradición respaldado por la tecnología moderna.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Servicio 1: Mecánica Rápida y Mantenimiento -->
+        <div class="bg-slate-900 rounded-xl p-6 border border-slate-800 hover:border-amber-500/50 transition-all duration-300 group">
+          <div class="w-14 h-14 rounded-lg bg-slate-800 group-hover:bg-amber-500 text-amber-400 group-hover:text-slate-950 flex items-center justify-center text-2xl transition duration-300 mb-5">
+            <i class="fa-solid fa-oil-can"></i>
+          </div>
+          <h3 class="font-heading text-2xl font-bold uppercase text-white mb-2">Mantenimiento Periódico Oficial</h3>
+          <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+            Cambio de aceite homologado, filtros de aire, combustible y habitáculo. Revisiones preventivas para conservar el rendimiento de fábrica sin perder la garantía.
+          </p>
+          <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Lubricantes de alta gama sintéticos</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Revisión de 30 puntos de seguridad</li>
+          </ul>
+        </div>
+
+        <!-- Servicio 2: Diagnosis y Averías Complejas -->
+        <div class="bg-slate-900 rounded-xl p-6 border border-slate-800 hover:border-amber-500/50 transition-all duration-300 group">
+          <div class="w-14 h-14 rounded-lg bg-slate-800 group-hover:bg-amber-500 text-amber-400 group-hover:text-slate-950 flex items-center justify-center text-2xl transition duration-300 mb-5">
+            <i class="fa-solid fa-laptop-code"></i>
+          </div>
+          <h3 class="font-heading text-2xl font-bold uppercase text-white mb-2">Diagnosis Electrónica y Motor</h3>
+          <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+            Detección certera de fallos de inyección, testigos de cuadro, sistemas antipolución (EGR/FAP) y sensores electrónicos. Soluciones en cuestión de minutos.
+          </p>
+          <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Escáner multimarca avanzado</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Localización exacta sin cambiar piezas al azar</li>
+          </ul>
+        </div>
+
+        <!-- Servicio 3: Frenos, Seguridad y Suspensión -->
+        <div class="bg-slate-900 rounded-xl p-6 border border-slate-800 hover:border-amber-500/50 transition-all duration-300 group">
+          <div class="w-14 h-14 rounded-lg bg-slate-800 group-hover:bg-amber-500 text-amber-400 group-hover:text-slate-950 flex items-center justify-center text-2xl transition duration-300 mb-5">
+            <i class="fa-solid fa-compact-disc"></i>
+          </div>
+          <h3 class="font-heading text-2xl font-bold uppercase text-white mb-2">Frenos, Dirección y Amortiguación</h3>
+          <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+            Sustitución de pastillas, discos de freno, líquido hidráulico, amortiguadores y rótulas para asegurar estabilidad y distancia de frenado óptima.
+          </p>
+          <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Componentes de primeras marcas OEM</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Verificación en banco de prueba</li>
+          </ul>
+        </div>
+
+        <!-- Servicio 4: Mecánica Pesada y Embragues -->
+        <div class="bg-slate-900 rounded-xl p-6 border border-slate-800 hover:border-amber-500/50 transition-all duration-300 group">
+          <div class="w-14 h-14 rounded-lg bg-slate-800 group-hover:bg-amber-500 text-amber-400 group-hover:text-slate-950 flex items-center justify-center text-2xl transition duration-300 mb-5">
+            <i class="fa-solid fa-gear"></i>
+          </div>
+          <h3 class="font-heading text-2xl font-bold uppercase text-white mb-2">Embragues y Distribución</h3>
+          <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+            Kits completos de distribución con bomba de agua y sustitución de embragues y volantes bimasa. Trabajos de precisión garantizados.
+          </p>
+          <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Calado riguroso con herramienta técnica</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Garantía completa de recambio y montaje</li>
+          </ul>
+        </div>
+
+        <!-- Servicio 5: Pre-ITV y Puesta a Punto -->
+        <div class="bg-slate-900 rounded-xl p-6 border border-slate-800 hover:border-amber-500/50 transition-all duration-300 group">
+          <div class="w-14 h-14 rounded-lg bg-slate-800 group-hover:bg-amber-500 text-amber-400 group-hover:text-slate-950 flex items-center justify-center text-2xl transition duration-300 mb-5">
+            <i class="fa-solid fa-clipboard-check"></i>
+          </div>
+          <h3 class="font-heading text-2xl font-bold uppercase text-white mb-2">Revisión Pre-ITV Conducción Segura</h3>
+          <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+            Revisamos luces, emisiones de gases, holguras de dirección, bajos y neumáticos para asegurar que superes la inspección ITV a la primera.
+          </p>
+          <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Análisis de gases CO2/opacidad</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Ajuste y reglaje de faros</li>
+          </ul>
+        </div>
+
+        <!-- Servicio 6: Asistencia y Urgencias en Carretera -->
+        <div class="bg-slate-900 rounded-xl p-6 border border-slate-800 hover:border-amber-500/50 transition-all duration-300 group border-l-4 border-l-amber-500">
+          <div class="w-14 h-14 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center text-2xl mb-5">
+            <i class="fa-solid fa-truck-pickup"></i>
+          </div>
+          <h3 class="font-heading text-2xl font-bold uppercase text-white mb-2">Resolución de Urgencias y Viaje</h3>
+          <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+            ¿Tu coche se ha parado en ruta hacia o desde Ávila? Nos caracterizamos por nuestra implicación para recibirte y buscar una solución inmediata.
+          </p>
+          <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Trato cercano y disposición humana</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Localización de recambios con rapidez</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- BANNER DE CONTACTO RÁPIDO -->
+      <div class="mt-14 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border border-slate-700 p-8 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <h4 class="font-heading text-3xl font-extrabold text-white uppercase">¿Quieres saber el coste de tu reparación?</h4>
+          <p class="text-slate-300 text-sm">Llámanos ahora al 920 22 78 59 y te damos un diagnóstico previo sin rodeos.</p>
+        </div>
+        <a href="tel:920227859" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-heading text-xl uppercase px-8 py-3 rounded-lg shadow-lg font-bold tracking-wider whitespace-nowrap transition">
+          Solicitar Presupuesto
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INSTALACIONES Y TRABAJOS -->
+  <section id="instalaciones" class="py-20 bg-slate-900/40 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <span class="text-amber-500 font-heading text-xl uppercase tracking-widest block">Instalaciones Profesionales</span>
+          <h2 class="font-heading text-4xl sm:text-5xl font-extrabold uppercase text-white">Nuestras Instalaciones y Trabajos</h2>
+          <div class="w-20 h-1 bg-amber-500 mt-3"></div>
+        </div>
+        <p class="text-slate-400 text-sm max-w-md mt-4 md:mt-0">
+          Equipamiento técnico para inspecciones mecánicas rigurosas, elevadores de carga y utilaje específico para turismos y furgonetas.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <div class="group relative overflow-hidden rounded-xl bg-slate-900 border border-slate-800 h-64">
+          <img 
+            src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1200&q=80" 
+            alt="Mecánica de motor y reparación especializada" 
+            class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500"
+            referrerpolicy="no-referrer"
+            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1200&q=80';"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+          <div class="absolute bottom-3 left-3 right-3 text-left">
+            <span class="text-amber-400 font-mono text-xs uppercase">Zona Técnica</span>
+            <p class="font-bold text-white text-sm">Inspección Integral de Motores</p>
+          </div>
+        </div>
+
+        <div class="group relative overflow-hidden rounded-xl bg-slate-900 border border-slate-800 h-64">
+          <img 
+            src="https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=1200&q=80" 
+            alt="Frenos y tren de rodaje" 
+            class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500"
+            referrerpolicy="no-referrer"
+            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1200&q=80';"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+          <div class="absolute bottom-3 left-3 right-3 text-left">
+            <span class="text-amber-400 font-mono text-xs uppercase">Seguridad Activa</span>
+            <p class="font-bold text-white text-sm">Cambio de Discos y Pastillas de Freno</p>
+          </div>
+        </div>
+
+        <div class="group relative overflow-hidden rounded-xl bg-slate-900 border border-slate-800 h-64">
+          <img 
+            src="https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=1200&q=80" 
+            alt="Diagnosis por ordenador" 
+            class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500"
+            referrerpolicy="no-referrer"
+            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1200&q=80';"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+          <div class="absolute bottom-3 left-3 right-3 text-left">
+            <span class="text-amber-400 font-mono text-xs uppercase">Tecnología</span>
+            <p class="font-bold text-white text-sm">Análisis de Errores y Centralitas</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- OPINIONES REALES VERIFICADAS -->
+  <section id="opiniones" class="py-20 bg-slate-950 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-amber-500/10 text-amber-400 rounded-full text-xs font-bold uppercase mb-3">
+          <i class="fa-brands fa-google text-amber-500"></i> Reseñas 100% Verificadas
+        </div>
+        <h2 class="font-heading text-4xl sm:text-5xl font-extrabold uppercase text-white">
+          Lo Que Dicen Nuestros Clientes
+        </h2>
+        <div class="w-20 h-1 bg-amber-500 mx-auto mt-3 mb-4"></div>
+        <p class="text-slate-400 text-sm">
+          Opiniones reales de conductores de Ávila y viajeros en tránsito que confiaron en nosotros.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Opinión 1: Adrian Aguera -->
+        <div class="bg-slate-900 border border-slate-800 p-6 rounded-xl relative flex flex-col justify-between hover:border-slate-700 transition">
+          <div>
+            <div class="flex items-center gap-1 text-amber-400 text-sm mb-4">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-slate-300 text-sm italic leading-relaxed mb-6">
+              "Profesional de los que ya no quedan. Tuve un problema con el coche y en cuestión de una hora me lo resolvió. Fue claro desde el primer momento, honesto y muy profesional, explicándome todo sin…"
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-slate-800/80">
+            <div class="w-10 h-10 rounded-full bg-slate-800 text-amber-400 font-bold flex items-center justify-center border border-slate-700">
+              AA
+            </div>
+            <div>
+              <h4 class="font-bold text-white text-sm">Adrian Aguera</h4>
+              <span class="text-xs text-slate-500 flex items-center gap-1">
+                <i class="fa-solid fa-circle-check text-emerald-500"></i> Cliente Verificado
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Opinión 2: Vanessa Segui Ferri (Historia de Urgencia) -->
+        <div class="bg-slate-900 border border-amber-500/40 p-6 rounded-xl relative flex flex-col justify-between lg:col-span-2 hover:border-amber-500 transition shadow-lg shadow-amber-500/5">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-1 text-amber-400 text-sm">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-xs font-semibold bg-amber-500/10 text-amber-400 px-2.5 py-1 rounded-full border border-amber-500/20">
+                <i class="fa-solid fa-triangle-exclamation mr-1"></i> Auxilio en Viaje
+              </span>
+            </div>
+            <p class="text-slate-200 text-sm sm:text-base italic leading-relaxed mb-6">
+              "El pasado viernes 15 de Noviembre ibamos a salamanca desde Alcoy, cuando llegabamos a Avila nuestro coche se paro, viernes 20h de la tarde, estabamos desesperados, un amable señor nos dia el numero del taller, le llamamos y nos espero a que…"
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-slate-800">
+            <div class="w-10 h-10 rounded-full bg-amber-500 text-slate-950 font-bold flex items-center justify-center">
+              VS
+            </div>
+            <div>
+              <h4 class="font-bold text-white text-sm">Vanessa Segui Ferri</h4>
+              <span class="text-xs text-slate-400 flex items-center gap-1">
+                <i class="fa-solid fa-circle-check text-emerald-500"></i> Cliente Verificado en Google Maps
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Opinión 3: Jorge Sánchez -->
+        <div class="bg-slate-900 border border-slate-800 p-6 rounded-xl relative flex flex-col justify-between hover:border-slate-700 transition">
+          <div>
+            <div class="flex items-center gap-1 text-amber-400 text-sm mb-4">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-slate-300 text-sm italic leading-relaxed mb-6">
+              "Muy buen profesional Diego, soluciona rápido y de forma excelente. Precios muy asequibles. Recomiendo a todos este taller"
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-slate-800/80">
+            <div class="w-10 h-10 rounded-full bg-slate-800 text-amber-400 font-bold flex items-center justify-center border border-slate-700">
+              JS
+            </div>
+            <div>
+              <h4 class="font-bold text-white text-sm">Jorge Sánchez</h4>
+              <span class="text-xs text-slate-500 flex items-center gap-1">
+                <i class="fa-solid fa-circle-check text-emerald-500"></i> Cliente Verificado
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Opinión 4: Pablo Fontecha -->
+        <div class="bg-slate-900 border border-slate-800 p-6 rounded-xl relative flex flex-col justify-between hover:border-slate-700 transition">
+          <div>
+            <div class="flex items-center gap-1 text-amber-400 text-sm mb-4">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-slate-300 text-sm italic leading-relaxed mb-6">
+              "Buenísimo. El mejor taller de Ávila. Gente muy profesional y muy buena."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-slate-800/80">
+            <div class="w-10 h-10 rounded-full bg-slate-800 text-amber-400 font-bold flex items-center justify-center border border-slate-700">
+              PF
+            </div>
+            <div>
+              <h4 class="font-bold text-white text-sm">Pablo Fontecha</h4>
+              <span class="text-xs text-slate-500 flex items-center gap-1">
+                <i class="fa-solid fa-circle-check text-emerald-500"></i> Cliente Verificado
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Opinión 5: Diana Rubio Pérez -->
+        <div class="bg-slate-900 border border-slate-800 p-6 rounded-xl relative flex flex-col justify-between hover:border-slate-700 transition">
+          <div>
+            <div class="flex items-center gap-1 text-amber-400 text-sm mb-4">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-slate-300 text-sm italic leading-relaxed mb-6">
+              "Un trato excelente y muy amables"
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-slate-800/80">
+            <div class="w-10 h-10 rounded-full bg-slate-800 text-amber-400 font-bold flex items-center justify-center border border-slate-700">
+              DR
+            </div>
+            <div>
+              <h4 class="font-bold text-white text-sm">Diana Rubio Pérez</h4>
+              <span class="text-xs text-slate-500 flex items-center gap-1">
+                <i class="fa-solid fa-circle-check text-emerald-500"></i> Cliente Verificado
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- UBICACIÓN, MAPA Y CONTACTO -->
+  <section id="contacto" class="py-20 bg-slate-900 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-amber-500 font-heading text-xl uppercase tracking-widest block">Localización Estratégica</span>
+        <h2 class="font-heading text-4xl sm:text-5xl font-extrabold uppercase text-white">
+          Dónde Estamos y Contacto Directo
+        </h2>
+        <div class="w-20 h-1 bg-amber-500 mx-auto mt-3 mb-4"></div>
+        <p class="text-slate-400 text-sm">
+          Fácil acceso desde Ávila capital y carreteras comarcales. Tráenos tu vehículo o consúltanos ante cualquier incidente.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Tarjeta de Datos y Contacto -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="bg-slate-950 p-6 sm:p-8 rounded-2xl border border-slate-800 shadow-xl space-y-6">
+            
+            <h3 class="font-heading text-2xl font-bold uppercase text-white border-b border-slate-800 pb-3">
+              Datos del Taller
+            </h3>
+
+            <div class="space-y-4">
+              <!-- Dirección -->
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center shrink-0 mt-1">
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div>
+                  <span class="text-xs text-slate-400 block font-semibold uppercase">Dirección Exacta</span>
+                  <p class="text-white font-medium text-sm sm:text-base">
+                    C. Madrigal de las Altas Torres, 22, 05003 Ávila, España
+                  </p>
+                  <span class="text-xs text-slate-500">Referencia San Juan de la Encinilla / Ávila</span>
+                </div>
+              </div>
+
+              <!-- Teléfono -->
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center shrink-0 mt-1">
+                  <i class="fa-solid fa-phone"></i>
+                </div>
+                <div>
+                  <span class="text-xs text-slate-400 block font-semibold uppercase">Teléfono de Atención y Citas</span>
+                  <a href="tel:920227859" class="text-amber-400 hover:text-amber-300 font-bold text-lg sm:text-xl transition">
+                    920 22 78 59
+                  </a>
+                  <p class="text-xs text-slate-400">Llamada directa sin intermediarios</p>
+                </div>
+              </div>
+
+              <!-- Email -->
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center shrink-0 mt-1">
+                  <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div>
+                  <span class="text-xs text-slate-400 block font-semibold uppercase">Correo Electrónico</span>
+                  <a href="mailto:anunciate@elsalvador.com" class="text-slate-200 hover:text-amber-400 font-medium text-sm transition break-all">
+                    anunciate@elsalvador.com
+                  </a>
+                </div>
+              </div>
+
+              <!-- Horarios y Atención -->
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center shrink-0 mt-1">
+                  <i class="fa-solid fa-calendar-check"></i>
+                </div>
+                <div>
+                  <span class="text-xs text-slate-400 block font-semibold uppercase">Disponibilidad</span>
+                  <p class="text-white text-sm font-medium">Lunes a Viernes: Jornada Continua</p>
+                  <p class="text-xs text-slate-400">Atención rápida y emergencias según disposición</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-2">
+              <a href="tel:920227859" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-heading text-2xl uppercase tracking-wider py-3.5 px-4 rounded-xl font-bold flex items-center justify-center gap-3 transition shadow-lg shadow-amber-500/20">
+                <i class="fa-solid fa-phone-volume"></i>
+                <span>Solicitar Presupuesto</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Mapa Interactivo Real -->
+        <div class="lg:col-span-7 bg-slate-950 p-3 rounded-2xl border border-slate-800 shadow-xl">
+          <div class="rounded-xl overflow-hidden w-full">
+            <iframe 
+              src="https://www.google.com/maps?q=Miguel%20Guisandez%20Mart%C3%ADn%20C.%20Madrigal%20de%20las%20Altas%20Torres%2C%2022%2C%2005003%20%C3%81vila%2C%20Espa%C3%B1a&output=embed" 
+              width="100%" 
+              height="400" 
+              style="border:0; border-radius: 0.75rem;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Ubicación de Taller Miguel Guisandez Martín">
+            </iframe>
+          </div>
+          <div class="p-3 flex items-center justify-between text-xs text-slate-400">
+            <span class="flex items-center gap-1.5"><i class="fa-solid fa-diamond-turn-right text-amber-500"></i> Acceso cómodo para todo tipo de vehículos</span>
+            <a href="https://www.google.com/maps?q=Miguel%20Guisandez%20Mart%C3%ADn%20C.%20Madrigal%20de%20las%20Altas%20Torres%2C%2022%2C%2005003%20%C3%81vila%2C%20Espa%C3%B1a" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:underline">Abrir en Google Maps &rarr;</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-950 border-t border-slate-800 text-slate-400 py-12 pb-24 md:pb-12 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-8 border-b border-slate-800/80">
+        
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <div class="w-8 h-8 rounded bg-amber-500 flex items-center justify-center text-slate-950">
+              <i class="fa-solid fa-wrench"></i>
+            </div>
+            <span class="font-heading text-2xl font-bold uppercase text-white">Miguel Guisandez Martín</span>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed mb-3">
+            Taller mecánico de reparación de automóviles. Honestidad, experiencia y resolución técnica rápida para Ávila y alrededores.
+          </p>
+          <p class="text-xs text-amber-500 font-semibold">
+            "Profesional de los que ya no quedan."
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-heading text-lg font-bold uppercase text-white mb-3">Enlaces de Navegación</h4>
+          <ul class="space-y-1.5 text-xs">
+            <li><a href="#servicios" class="hover:text-amber-400 transition">Servicios Mecánicos y Tarifas</a></li>
+            <li><a href="#garantias" class="hover:text-amber-400 transition">Ventajas y Garantías</a></li>
+            <li><a href="#instalaciones" class="hover:text-amber-400 transition">Instalaciones de Trabajo</a></li>
+            <li><a href="#opiniones" class="hover:text-amber-400 transition">Opiniones de Clientes</a></li>
+            <li><a href="#contacto" class="hover:text-amber-400 transition">Cómo Llegar</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-heading text-lg font-bold uppercase text-white mb-3">Contacto Directo</h4>
+          <p class="text-xs text-slate-300 mb-1"><strong>Dirección:</strong> C. Madrigal de las Altas Torres, 22, 05003 Ávila</p>
+          <p class="text-xs text-slate-300 mb-1"><strong>Teléfono:</strong> <a href="tel:920227859" class="text-amber-400 hover:underline">920 22 78 59</a></p>
+          <p class="text-xs text-slate-300 mb-3"><strong>Email:</strong> <a href="mailto:anunciate@elsalvador.com" class="hover:underline">anunciate@elsalvador.com</a></p>
+          <a href="tel:920227859" class="inline-block bg-slate-800 hover:bg-slate-700 text-amber-400 px-3 py-1.5 rounded text-xs font-bold transition">
+            <i class="fa-solid fa-phone mr-1"></i> Llamar al Taller
+          </a>
+        </div>
+
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-3">
+        <p>&copy; <span id="current-year"></span> Miguel Guisandez Martín. Todos los derechos reservados.</p>
+        <p>Taller Mecánico en San Juan de la Encinilla & Ávila | Excelencia en automoción</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BARRA DE ACCIÓN FLOTANTE (MÓVIL) -->
+  <div class="fixed bottom-0 inset-x-0 z-50 bg-slate-950/95 backdrop-blur border-t border-slate-800 p-3 lg:hidden flex gap-3 items-center">
+    <a href="tel:920227859" class="flex-1 bg-amber-500 active:bg-amber-600 text-slate-950 font-heading text-xl uppercase font-extrabold py-3 px-4 rounded-lg flex items-center justify-center gap-2 shadow-lg shadow-amber-500/25">
+      <i class="fa-solid fa-phone-volume"></i>
+      <span>Solicitar Presupuesto</span>
+    </a>
+    <a href="#contacto" class="bg-slate-800 text-amber-400 p-3.5 rounded-lg border border-slate-700 flex items-center justify-center">
+      <i class="fa-solid fa-location-dot text-lg"></i>
+    </a>
+  </div>
+
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
