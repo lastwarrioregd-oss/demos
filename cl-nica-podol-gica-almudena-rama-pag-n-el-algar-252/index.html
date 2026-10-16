@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Podológica Almudena Rama Pagán | Podólogo en El Algar, Murcia</title>
+    <meta name="description" content="Clínica Podológica Almudena Rama Pagán en El Algar. Profesionalidad, excelente trato y salud para tus pies. Pide tu cita previa.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        medical: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#14b8a6', // Turquesa / Verde agua médico
+                            600: '#0d9488',
+                            750: '#0f766e',
+                            900: '#134e4a',
+                        },
+                        clinical: {
+                            blue: '#0284c7',
+                            light: '#f8fafc',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-50 text-slate-700 font-sans antialiased selection:bg-medical-500 selection:text-white">
+
+    <!-- Top Bar informativa -->
+    <div class="bg-medical-900 text-white text-xs sm:text-sm py-2 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <span><i class="fa-solid fa-location-dot text-medical-500 mr-1.5"></i> C. Alcalde de Zalamea, 36, El Algar, Murcia</span>
+                <span class="hidden md:inline"><i class="fa-solid fa-clock text-medical-500 mr-1.5"></i> Lunes a Viernes (Cita previa)</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="mailto:error-lite+84f2@duckduckgo.com" class="hover:text-medical-100 transition"><i class="fa-solid fa-envelope text-medical-500 mr-1.5"></i> error-lite+84f2@duckduckgo.com</a>
+                <a href="tel:630987370" class="font-bold bg-medical-600 hover:bg-medical-500 text-white px-3 py-1 rounded-full transition shadow-sm">
+                    <i class="fa-solid fa-phone mr-1"></i> 630 987 370
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header / Navbar Principal -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-xl bg-medical-500 flex items-center justify-center text-white text-xl shadow-md shadow-medical-500/20 group-hover:scale-105 transition">
+                    <i class="fa-solid fa-shoe-prints"></i>
+                </div>
+                <div>
+                    <span class="block font-bold text-slate-900 text-base sm:text-lg leading-tight">Clínica Podológica</span>
+                    <span class="block text-medical-600 text-xs sm:text-sm font-semibold tracking-wide">Almudena Rama Pagán</span>
+                </div>
+            </a>
+
+            <!-- Navegación Escritorio -->
+            <nav class="hidden lg:flex items-center gap-8 font-medium text-sm text-slate-600">
+                <a href="#inicio" class="hover:text-medical-600 transition">Inicio</a>
+                <a href="#especialidades" class="hover:text-medical-600 transition">Tratamientos</a>
+                <a href="#instalaciones" class="hover:text-medical-600 transition">Instalaciones</a>
+                <a href="#opiniones" class="hover:text-medical-600 transition">Opiniones</a>
+                <a href="#contacto" class="hover:text-medical-600 transition">Ubicación</a>
+            </nav>
+
+            <!-- CTA Header -->
+            <div class="hidden sm:flex items-center">
+                <a href="tel:630987370" class="bg-medical-500 hover:bg-medical-600 text-white font-semibold px-5 py-3 rounded-xl shadow-lg shadow-medical-500/20 transition flex items-center gap-2 transform hover:-translate-y-0.5">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span>Pedir Cita Previa</span>
+                </a>
+            </div>
+
+            <!-- Botón Menú Móvil -->
+            <button id="menu-btn" class="lg:hidden text-slate-700 text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-100 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="block py-2 text-slate-700 font-medium hover:text-medical-600">Inicio</a>
+            <a href="#especialidades" class="block py-2 text-slate-700 font-medium hover:text-medical-600">Tratamientos</a>
+            <a href="#instalaciones" class="block py-2 text-slate-700 font-medium hover:text-medical-600">Instalaciones</a>
+            <a href="#opiniones" class="block py-2 text-slate-700 font-medium hover:text-medical-600">Opiniones</a>
+            <a href="#contacto" class="block py-2 text-slate-700 font-medium hover:text-medical-600">Ubicación</a>
+            <a href="tel:630987370" class="w-full text-center block bg-medical-500 text-white font-semibold py-3 rounded-xl shadow-md mt-4">
+                <i class="fa-solid fa-calendar-check mr-2"></i> Pedir Cita Previa
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative overflow-hidden bg-gradient-to-b from-medical-50/60 to-white py-16 sm:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Text Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-medical-100 text-medical-800 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full">
+                        <i class="fa-solid fa-shield-heart"></i> Podología Profesional en El Algar, Murcia
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight leading-[1.1]">
+                        Salud y bienestar para <span class="text-medical-600 underline decoration-medical-300 decoration-wavy decoration-1">tus pies</span>
+                    </h1>
+                    <p class="text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 font-normal">
+                        Ponemos la salud de tus pisadas en manos expertas. Cuidado integral del pie, quiropodias, estudios biomecánicos y tratamientos personalizados con la máxima profesionalidad y cercanía.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="tel:630987370" class="w-full sm:w-auto bg-medical-500 hover:bg-medical-600 text-white font-bold px-8 py-4 rounded-xl shadow-xl shadow-medical-500/25 transition flex items-center justify-center gap-3 text-base">
+                            <i class="fa-solid fa-calendar-days text-lg"></i>
+                            <span>Pedir Cita Previa</span>
+                        </a>
+                        <a href="#especialidades" class="w-full sm:w-auto bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 font-semibold px-6 py-4 rounded-xl transition flex items-center justify-center gap-2 text-base">
+                            <span>Ver Tratamientos</span>
+                            <i class="fa-solid fa-arrow-down text-xs text-slate-400"></i>
+                        </a>
+                    </div>
+
+                    <!-- Trust Badges -->
+                    <div class="pt-8 border-t border-slate-200/80 grid grid-cols-3 gap-4 text-center lg:text-left">
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-bold text-slate-900">5★</p>
+                            <p class="text-xs sm:text-sm text-slate-500">Valoración Google</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-bold text-slate-900">+100%</p>
+                            <p class="text-xs sm:text-sm text-slate-500">Trato Profesional</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-bold text-slate-900">El Algar</p>
+                            <p class="text-xs sm:text-sm text-slate-500">Ubicación Céntrica</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Image / Visual Card -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="absolute -inset-4 bg-gradient-to-tr from-medical-500/20 to-clinical-blue/20 rounded-3xl blur-2xl -z-10"></div>
+                        <div class="bg-white p-3 rounded-3xl shadow-2xl border border-slate-100">
+                            <img src="" alt="Clínica Podológica Almudena Rama Pagán" 
+                                 referrerpolicy="no-referrer" 
+                                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80';"
+                                 class="rounded-2xl w-full h-[380px] object-cover shadow-inner">
+                            <div class="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-lg border border-slate-100 flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-medical-500 text-white flex items-center justify-center flex-shrink-0 text-xl">
+                                    <i class="fa-solid fa-user-doctor"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-slate-900 text-sm">Almudena Rama Pagán</p>
+                                    <p class="text-xs text-slate-500">Podóloga colegiada</p>
+                                </div>
+                                <div class="ml-auto text-amber-400 text-xs flex gap-0.5">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Características de Confianza -->
+    <section class="py-12 bg-white border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="flex items-start gap-4 p-4 rounded-2xl hover:bg-slate-50 transition">
+                    <div class="w-12 h-12 rounded-xl bg-medical-100 text-medical-600 flex items-center justify-center flex-shrink-0 text-xl font-bold">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-900 text-base mb-1">Excelente Trato Humano</h3>
+                        <p class="text-sm text-slate-600">Atención cercana, personalizada y enfocada en el bienestar integral de cada paciente.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-4 rounded-2xl hover:bg-slate-50 transition">
+                    <div class="w-12 h-12 rounded-xl bg-medical-100 text-medical-600 flex items-center justify-center flex-shrink-0 text-xl font-bold">
+                        <i class="fa-solid fa-stethoscope"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-900 text-base mb-1">Máxima Profesionalidad</h3>
+                        <p class="text-sm text-slate-600">Rigurosidad clínica, esterilización exhaustiva y técnicas avanzadas en podología.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-4 rounded-2xl hover:bg-slate-50 transition">
+                    <div class="w-12 h-12 rounded-xl bg-medical-100 text-medical-600 flex items-center justify-center flex-shrink-0 text-xl font-bold">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-900 text-base mb-1">Ubicación en El Algar</h3>
+                        <p class="text-sm text-slate-600">Situados en C. Alcalde de Zalamea, 36. Fácil acceso y comodidad para vecinos de la zona.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Especialidades y Tratamientos -->
+    <section id="especialidades" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-medical-600 font-semibold text-sm uppercase tracking-wider bg-medical-100 px-3 py-1 rounded-full">Nuestros Servicios</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-3 mb-4">Especialidades y Tratamientos Podológicos</h2>
+                <p class="text-slate-600 text-base">Cuidamos de tus pies en cada etapa de tu vida con tratamientos especializados adaptados a tus necesidades particulares.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Tratamiento 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition border border-slate-100 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-medical-50 text-medical-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-medical-500 group-hover:text-white transition duration-300">
+                            <i class="fa-solid fa-hand-holding-medical"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Quiropodia</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Eliminación indolora de durezas, callosidades y tratamiento de uñas hipertróficas o encarnadas. Mantiene tus pies sanos y ligeros.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-medical-600 uppercase tracking-wide">Cuidado Esencial</span>
+                        <a href="tel:630987370" class="text-sm font-bold text-slate-900 hover:text-medical-600 flex items-center gap-1">
+                            Reservar <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tratamiento 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition border border-slate-100 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-medical-50 text-medical-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-medical-500 group-hover:text-white transition duration-300">
+                            <i class="fa-solid fa-person-walking"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Estudio Biomecánico de la Pisada</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Análisis completo de la marcha y la postura para prevenir lesiones, dolores de rodilla, espalda y mejorar el rendimiento al caminar o hacer deporte.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-medical-600 uppercase tracking-wide">Prevención</span>
+                        <a href="tel:630987370" class="text-sm font-bold text-slate-900 hover:text-medical-600 flex items-center gap-1">
+                            Reservar <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tratamiento 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition border border-slate-100 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-medical-50 text-medical-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-medical-500 group-hover:text-white transition duration-300">
+                            <i class="fa-solid fa-socks"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Ortopodología (Plantillas)</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Diseño y elaboración de soportes plantares personalizados adaptados a las características biomecánicas específicas de cada paciente.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-medical-600 uppercase tracking-wide">Personalizado</span>
+                        <a href="tel:630987370" class="text-sm font-bold text-slate-900 hover:text-medical-600 flex items-center gap-1">
+                            Reservar <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tratamiento 4 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition border border-slate-100 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-medical-50 text-medical-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-medical-500 group-hover:text-white transition duration-300">
+                            <i class="fa-solid fa-microscope"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Podología Geriátrica</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Cuidado especializado de los pies en la tercera edad, previniendo complicaciones derivadas de patologías como la diabetes o problemas circulatorios.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-medical-600 uppercase tracking-wide">Salud Senior</span>
+                        <a href="tel:630987370" class="text-sm font-bold text-slate-900 hover:text-medical-600 flex items-center gap-1">
+                            Reservar <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tratamiento 5 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition border border-slate-100 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-medical-50 text-medical-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-medical-500 group-hover:text-white transition duration-300">
+                            <i class="fa-solid fa-child"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Podología Infantil</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Revisión y diagnóstico precoz de alteraciones en la pisada y el desarrollo de los más pequeños durante su etapa de crecimiento.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-medical-600 uppercase tracking-wide">Infantil</span>
+                        <a href="tel:630987370" class="text-sm font-bold text-slate-900 hover:text-medical-600 flex items-center gap-1">
+                            Reservar <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tratamiento 6 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition border border-slate-100 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-medical-50 text-medical-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-medical-500 group-hover:text-white transition duration-300">
+                            <i class="fa-solid fa-bandage"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Pie Diabético y Cirugía</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Prevención, exploración y cuidados específicos para pacientes con diabetes, así como pequeñas intervenciones en uña encarnada o papilomas.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-medical-600 uppercase tracking-wide">Especializado</span>
+                        <a href="tel:630987370" class="text-sm font-bold text-slate-900 hover:text-medical-600 flex items-center gap-1">
+                            Reservar <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Banner CTA intermedio -->
+            <div class="mt-16 bg-gradient-to-r from-medical-900 to-medical-700 rounded-3xl p-8 sm:p-12 text-white shadow-xl flex flex-col lg:flex-row items-center justify-between gap-8">
+                <div class="space-y-3 text-center lg:text-left">
+                    <h3 class="text-2xl sm:text-3xl font-bold">¿Tienes molestias en los pies o necesitas una revisión?</h3>
+                    <p class="text-medical-100 text-sm sm:text-base max-w-xl">Llámanos ahora y reserva tu cita en nuestra clínica en El Algar. Te atenderemos con la máxima profesionalidad.</p>
+                </div>
+                <a href="tel:630987370" class="bg-white text-medical-900 hover:bg-medical-50 font-bold px-8 py-4 rounded-xl shadow-lg transition flex items-center gap-3 text-base flex-shrink-0">
+                    <i class="fa-solid fa-phone text-medical-600"></i>
+                    <span>630 987 370</span>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Galería / Instalaciones -->
+    <section id="instalaciones" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-medical-600 font-semibold text-sm uppercase tracking-wider bg-medical-100 px-3 py-1 rounded-full">Espacio Clínico</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-3 mb-4">Nuestras Instalaciones</h2>
+                <p class="text-slate-600 text-base">Un entorno moderno, limpio y equipado con la tecnología necesaria para garantizar el mejor diagnóstico y tratamiento podológico.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="overflow-hidden rounded-2xl shadow-md border border-slate-100 group">
+                    <img src="" alt="Clínica Podológica Almudena Rama Pagán - Consulta" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=80';"
+                         class="w-full h-72 object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="overflow-hidden rounded-2xl shadow-md border border-slate-100 group">
+                    <img src="" alt="Tratamiento podológico profesional" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80';"
+                         class="w-full h-72 object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="overflow-hidden rounded-2xl shadow-md border border-slate-100 group">
+                    <img src="" alt="Instalaciones de la clínica en El Algar" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=800&q=80';"
+                         class="w-full h-72 object-cover group-hover:scale-105 transition duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Opiniones Reales Verificadas -->
+    <section id="opiniones" class="py-20 bg-slate-50 border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-medical-600 font-semibold text-sm uppercase tracking-wider bg-medical-100 px-3 py-1 rounded-full">Testimonios</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-3 mb-4">Lo que opinan nuestros pacientes</h2>
+                <p class="text-slate-600 text-base">La satisfacción de quienes confían en nosotros es nuestro mejor aval profesional.</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto">
+                <!-- Tarjeta de Reseña -->
+                <div class="bg-white p-8 sm:p-10 rounded-3xl shadow-lg border border-slate-100 relative">
+                    <div class="absolute -top-4 right-8 bg-medical-500 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg shadow-md">
+                        <i class="fa-solid fa-quote-right"></i>
+                    </div>
+                    <div class="flex items-center gap-1 text-amber-400 text-lg mb-6">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-700 text-lg sm:text-xl italic mb-6 leading-relaxed">
+                        "Excelente trato, profesionalidad y calidad."
+                    </p>
+                    <div class="flex items-center gap-4 pt-6 border-t border-slate-100">
+                        <div class="w-12 h-12 rounded-full bg-medical-100 text-medical-600 font-bold flex items-center justify-center text-base">
+                            P
+                        </div>
+                        <div>
+                            <p class="font-bold text-slate-900 text-base">Paciente Verificado</p>
+                            <p class="text-xs text-slate-500">Reseña de Google Maps</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ubicación y Contacto -->
+    <section id="contacto" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-medical-600 font-semibold text-sm uppercase tracking-wider bg-medical-100 px-3 py-1 rounded-full">Encuéntranos</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-3 mb-4">Ubicación y Contacto</h2>
+                <p class="text-slate-600 text-base">Ven a visitarnos a nuestra clínica en El Algar o ponte en contacto con nosotros para resolver cualquier duda.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                
+                <!-- Info de Contacto -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 space-y-6">
+                        <h3 class="text-xl font-bold text-slate-900">Información de la Clínica</h3>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-medical-100 text-medical-600 flex items-center justify-center flex-shrink-0 text-base">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-slate-900 text-sm">Dirección</p>
+                                <p class="text-slate-600 text-sm mt-0.5">C. Alcalde de Zalamea, 36, 30366 El Algar, Murcia, España</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-medical-100 text-medical-600 flex items-center justify-center flex-shrink-0 text-base">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-slate-900 text-sm">Teléfono</p>
+                                <a href="tel:630987370" class="text-medical-600 font-bold text-sm mt-0.5 hover:underline block">630 987 370</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-medical-100 text-medical-600 flex items-center justify-center flex-shrink-0 text-base">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-slate-900 text-sm">Correo Electrónico</p>
+                                <a href="mailto:error-lite+84f2@duckduckgo.com" class="text-slate-600 text-sm mt-0.5 hover:text-medical-600 block break-all">error-lite+84f2@duckduckgo.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-medical-100 text-medical-600 flex items-center justify-center flex-shrink-0 text-base">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-slate-900 text-sm">Horario</p>
+                                <p class="text-slate-600 text-sm mt-0.5">Lunes a Viernes con cita previa.</p>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t border-slate-200">
+                            <a href="tel:630987370" class="w-full bg-medical-500 hover:bg-medical-600 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-medical-500/20 transition flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-calendar-check"></i>
+                                <span>Pedir Cita Previa</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mapa Interactivo Real -->
+                <div class="lg:col-span-7">
+                    <div class="bg-white p-3 rounded-3xl shadow-lg border border-slate-100">
+                        <iframe src="https://www.google.com/maps?q=Cl%C3%ADnica%20Podol%C3%B3gica%20Almudena%20Rama%20Pag%C3%A1n%20El%20Algar%20C.%20Alcalde%20de%20Zalamea%2C%2036%2C%2030366%20El%20Algar%2C%20Murcia%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-medical-900 text-white pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 pb-12 border-b border-medical-750">
+                
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-medical-500 flex items-center justify-center text-white text-lg">
+                            <i class="fa-solid fa-shoe-prints"></i>
+                        </div>
+                        <div>
+                            <span class="block font-bold text-white text-base">Clínica Podológica</span>
+                            <span class="block text-medical-100 text-xs font-semibold">Almudena Rama Pagán</span>
+                        </div>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Cuidado profesional y especializado de la salud de tus pies en El Algar, Murcia. Confianza, experiencia y cercanía.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-base font-bold mb-4 text-medical-100">Enlaces Rápidos</h4>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li><a href="#inicio" class="hover:text-medical-400 transition">Inicio</a></li>
+                        <li><a href="#especialidades" class="hover:text-medical-400 transition">Tratamientos</a></li>
+                        <li><a href="#instalaciones" class="hover:text-medical-400 transition">Instalaciones</a></li>
+                        <li><a href="#opiniones" class="hover:text-medical-400 transition">Opiniones</a></li>
+                        <li><a href="#contacto" class="hover:text-medical-400 transition">Contacto y Ubicación</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-base font-bold mb-4 text-medical-100">Contacto Directo</h4>
+                    <p class="text-sm text-slate-300 mb-3"><i class="fa-solid fa-location-dot text-medical-400 mr-2"></i> C. Alcalde de Zalamea, 36, El Algar, Murcia</p>
+                    <p class="text-sm text-slate-300 mb-3"><i class="fa-solid fa-phone text-medical-400 mr-2"></i> <a href="tel:630987370" class="hover:underline">630 987 370</a></p>
+                    <p class="text-sm text-slate-300 mb-4"><i class="fa-solid fa-envelope text-medical-400 mr-2"></i> <a href="mailto:error-lite+84f2@duckduckgo.com" class="hover:underline">error-lite+84f2@duckduckgo.com</a></p>
+                    <a href="tel:630987370" class="inline-block bg-medical-500 hover:bg-medical-600 text-white font-bold px-5 py-2.5 rounded-xl text-sm transition shadow-md">
+                        <i class="fa-solid fa-calendar-check mr-1.5"></i> Pedir Cita Previa
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+                <p>&copy; <span id="year"></span> Clínica Podológica Almudena Rama Pagán. Todos los derechos reservados.</p>
+                <p>Diseño y desarrollo web profesional.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script Menu Móvil y Año -->
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú al hacer click en un enlace móvil
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
