@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julián García Vallecillos | Estudio de Fotografía Exclusivo</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            light: '#E6D5B8',
+                            DEFAULT: '#C5A880',
+                            dark: '#9A7B50',
+                        },
+                        darkmatte: {
+                            DEFAULT: '#0A0A0A',
+                            light: '#161616',
+                            card: '#1F1F1F',
+                        },
+                        sand: '#F4F1EA'
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-darkmatte text-sand font-sans antialiased selection:bg-gold selection:text-darkmatte">
+
+    <!-- Header / Navegación -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-darkmatte/90 backdrop-blur-md border-b border-gold/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+            <a href="#" class="flex flex-col">
+                <span class="font-serif text-2xl md:text-3xl tracking-widest text-sand font-bold">JULIÁN GARCÍA</span>
+                <span class="text-xs uppercase tracking-[0.3em] text-gold">Vallecillos · Estudio Fotográfico</span>
+            </a>
+            
+            <nav class="hidden md:flex items-center space-x-10 text-sm tracking-widest uppercase">
+                <a href="#inicio" class="text-sand hover:text-gold transition-colors">Inicio</a>
+                <a href="#estudio" class="text-sand hover:text-gold transition-colors">El Estudio</a>
+                <a href="#servicios" class="text-sand hover:text-gold transition-colors">Servicios & Tarifas</a>
+                <a href="#galeria" class="text-sand hover:text-gold transition-colors">Galería</a>
+                <a href="#contacto" class="text-sand hover:text-gold transition-colors">Contacto</a>
+            </nav>
+
+            <div class="hidden lg:flex items-center space-x-4">
+                <a href="tel:973432191" class="bg-gold hover:bg-gold-light text-darkmatte font-semibold px-6 py-3 rounded-none uppercase text-xs tracking-widest transition-all transform hover:-translate-y-0.5 shadow-lg shadow-gold/10">
+                    Reservar Cita
+                </a>
+            </div>
+
+            <!-- Botón Menú Móvil -->
+            <button id="menu-btn" class="md:hidden text-gold text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div id="mobile-menu" class="hidden md:hidden bg-darkmatte-light border-b border-gold/10 px-6 py-6 space-y-4">
+            <a href="#inicio" class="block text-sand hover:text-gold uppercase text-sm tracking-widest">Inicio</a>
+            <a href="#estudio" class="block text-sand hover:text-gold uppercase text-sm tracking-widest">El Estudio</a>
+            <a href="#servicios" class="block text-sand hover:text-gold uppercase text-sm tracking-widest">Servicios & Tarifas</a>
+            <a href="#galeria" class="block text-sand hover:text-gold uppercase text-sm tracking-widest">Galería</a>
+            <a href="#contacto" class="block text-sand hover:text-gold uppercase text-sm tracking-widest">Contacto</a>
+            <div class="pt-4">
+                <a href="tel:973432191" class="block text-center bg-gold text-darkmatte font-semibold py-3 uppercase text-xs tracking-widest">
+                    Reservar Cita
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=1920&q=80" 
+                 referrerpolicy="no-referrer" 
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                 alt="Estudio de Fotografía Julián García Vallecillos" 
+                 class="w-full h-full object-cover object-center filter brightness-[0.35] scale-105 animate-pulse duration-10000">
+            <div class="absolute inset-0 bg-gradient-to-t from-darkmatte via-darkmatte/60 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center py-20">
+            <span class="inline-block text-gold uppercase tracking-[0.4em] text-xs md:text-sm mb-6 bg-gold/10 border border-gold/30 px-6 py-2 rounded-full">
+                Clariana de Cardener · Lleida
+            </span>
+            <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-sand mb-8 leading-[1.1]">
+                El Arte de <span class="italic font-normal text-gold">Capturar</span> la Eterna Belleza
+            </h1>
+            <p class="max-w-2xl mx-auto text-sand/80 text-lg md:text-xl font-light mb-12 leading-relaxed">
+                Estudio fotográfico de alta gama en Cantaperdius. Retratos exclusivos, bodas y fotografía de autor donde cada detalle respira elegancia y profesionalidad inigualable.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="tel:973432191" class="w-full sm:w-auto bg-gold hover:bg-gold-light text-darkmatte font-bold px-10 py-4 uppercase text-xs tracking-[0.2em] transition-all transform hover:-translate-y-1 shadow-2xl shadow-gold/20">
+                    Reservar Cita
+                </a>
+                <a href="#servicios" class="w-full sm:w-auto border border-gold/50 hover:border-gold text-sand font-medium px-10 py-4 uppercase text-xs tracking-[0.2em] transition-all hover:bg-gold/10">
+                    Ver Tarifas
+                </a>
+            </div>
+
+            <div class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-gold/20 pt-10 text-left">
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-xl">
+                        <i class="fa-solid fa-camera-retro"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-serif text-sand font-bold">Fotografía de Autor</h4>
+                        <p class="text-xs text-sand/60">Técnicas exclusivas y acabados de galería.</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-xl">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-serif text-sand font-bold">Excelente Trato</h4>
+                        <p class="text-xs text-sand/60">Profesionalidad y calidad avalada por clientes.</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-xl">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-serif text-sand font-bold">Cantaperdius, Lleida</h4>
+                        <p class="text-xs text-sand/60">Entorno privado y climatizado.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre el Estudio -->
+    <section id="estudio" class="py-28 bg-darkmatte-light border-y border-gold/10 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-6">
+                    <span class="text-gold uppercase tracking-[0.3em] text-xs font-semibold">Boutique Fotográfica Exclusiva</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-sand leading-tight">
+                        Donde la luz, la técnica y la pasión se convierten en <span class="italic text-gold">eternidad</span>.
+                    </h2>
+                    <p class="text-sand/80 font-light leading-relaxed">
+                        Ubicados en el corazón de Cantaperdius (Lleida), en el estudio de Julián García Vallecillos entendemos la fotografía no solo como una imagen, sino como una experiencia estética superior. Cada sesión está diseñada a medida para resaltar la esencia única de cada cliente con un estándar de sofisticación impecable.
+                    </p>
+                    <p class="text-sand/70 font-light text-sm leading-relaxed">
+                        Nuestras instalaciones cuentan con la última tecnología en iluminación de estudio, fondos de alta gama y un ambiente íntimo pensado para que te sientas completamente cómodo/a durante todo el proceso creativo.
+                    </p>
+                    <div class="pt-4">
+                        <a href="tel:973432191" class="inline-flex items-center space-x-3 text-gold hover:text-gold-light uppercase text-xs tracking-[0.2em] font-bold">
+                            <span>Contactar con el estudio</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="relative z-10 border border-gold/30 p-3 bg-darkmatte">
+                        <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1000&q=80" 
+                             referrerpolicy="no-referrer"
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                             alt="Interior del estudio Julián García Vallecillos" 
+                             class="w-full h-[450px] object-cover grayscale hover:grayscale-0 transition-all duration-700">
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 w-48 h-48 bg-gold/10 border border-gold/20 -z-0 hidden sm:block"></div>
+                    <div class="absolute -top-6 -left-6 w-32 h-32 border border-gold/20 -z-0 hidden sm:block"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios y Tarifas -->
+    <section id="servicios" class="py-28 bg-darkmatte relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <span class="text-gold uppercase tracking-[0.3em] text-xs font-semibold">Exclusividad y Detalle</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-sand mt-3 mb-6">Nuestros Servicios & Tarifas</h2>
+                <p class="text-sand/70 font-light">Descubre nuestras especialidades fotográficas diseñadas para inmortalizar tus momentos más preciados con una calidad inigualable.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Servicio 1 -->
+                <div class="bg-darkmatte-card border border-gold/20 p-8 flex flex-col justify-between hover:border-gold/60 transition-all duration-300 group">
+                    <div>
+                        <div class="text-gold text-3xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-sand mb-3">Retrato Artístico & Beauty</h3>
+                        <p class="text-sand/70 text-sm font-light mb-6 leading-relaxed">
+                            Sesión personalizada enfocada en resaltar tu belleza natural y profesional. Ideal para books de actores, modelos, directivos o perfil personal exclusivo.
+                        </p>
+                        <ul class="space-y-2 text-xs text-sand/80 mb-8 border-t border-gold/10 pt-4">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2"></i> 2 horas de sesión en estudio</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2"></i> Asesoramiento de vestuario</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2"></i> 10 fotografías retocadas en alta resolución</li>
+                        </ul>
+                    </div>
+                    <div class="border-t border-gold/10 pt-6 flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-sand/50 block">Desde</span>
+                            <span class="font-serif text-2xl text-gold font-bold">150€</span>
+                        </div>
+                        <a href="tel:973432191" class="bg-gold/10 hover:bg-gold text-gold hover:text-darkmatte border border-gold/40 px-5 py-2.5 text-xs font-bold uppercase tracking-widest transition-all">
+                            Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="bg-darkmatte-card border border-gold/40 p-8 flex flex-col justify-between hover:border-gold transition-all duration-300 group relative shadow-2xl shadow-gold/5">
+                    <div class="absolute -top-3 right-6 bg-gold text-darkmatte font-bold text-[10px] tracking-widest uppercase px-3 py-1">
+                        Más Popular
+                    </div>
+                    <div>
+                        <div class="text-gold text-3xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-ring"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-sand mb-3">Reportaje de Bodas & Eventos</h3>
+                        <p class="text-sand/70 text-sm font-light mb-6 leading-relaxed">
+                            Cobertura integral de vuestro día especial. Capturamos emociones reales, momentos espontáneos y la elegancia de cada instante con un enfoque documental de autor.
+                        </p>
+                        <ul class="space-y-2 text-xs text-sand/80 mb-8 border-t border-gold/10 pt-4">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2"></i> Cobertura completa (preparativos a fiesta)</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2"></i> Dos fotógrafos profesionales</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2"></i> Álbum de lujo artesanal incluido</li>
+                        </ul>
+                    </div>
+                    <div class="border-t border-gold/10 pt-6 flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-sand/50 block">Desde</span>
+                            <span class="font-serif text-2xl text-gold font-bold">950€</span>
+                        </div>
+                        <a href="tel:973432191" class="bg-gold hover:bg-gold-light text-darkmatte px-5 py-2.5 text-xs font-bold uppercase tracking-widest transition-all">
+                            Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="bg-darkmatte-card border border-gold/20 p-8 flex flex-col justify-between hover:border-gold/60 transition-all duration-300 group">
+                    <div>
+                        <div class="text-gold text-3xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-gem"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-sand mb-3">Fotografía Comercial & Producto</h3>
+                        <p class="text-sand/70 text-sm font-light mb-6 leading-relaxed">
+                            Potencia la imagen de tu marca, boutique o catálogo gastronómico en Clariana de Cardener y Lleida con imágenes de altísimo impacto visual.
+                        </p>
+                        <ul class="space-y-2 text-xs text-sand/80 mb-8 border-t border-gold/10 pt-4">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2"></i> Iluminación avanzada de producto</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2"></i> Retoque digital publicitario</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2"></i> Derechos de uso comercial incluidos</li>
+                        </ul>
+                    </div>
+                    <div class="border-t border-gold/10 pt-6 flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-sand/50 block">Presupuesto</span>
+                            <span class="font-serif text-2xl text-gold font-bold">A Medida</span>
+                        </div>
+                        <a href="tel:973432191" class="bg-gold/10 hover:bg-gold text-gold hover:text-darkmatte border border-gold/40 px-5 py-2.5 text-xs font-bold uppercase tracking-widest transition-all">
+                            Reservar Cita
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería: Nuestras Instalaciones y Trabajos -->
+    <section id="galeria" class="py-28 bg-darkmatte-light border-t border-gold/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold uppercase tracking-[0.3em] text-xs font-semibold">Portafolio Visual</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-sand mt-3 mb-6">Nuestras Instalaciones y Trabajos</h2>
+                <p class="text-sand/70 font-light">Una muestra de la excelencia artística que define a Julián García Vallecillos.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Foto 1 -->
+                <div class="relative group overflow-hidden border border-gold/20 h-80">
+                    <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=800&q=80" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                         alt="Retrato Artístico" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-darkmatte via-darkmatte/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-gold text-xs uppercase tracking-widest">Estudio Cantaperdius</span>
+                            <h4 class="font-serif text-sand text-lg font-bold">Retrato de Autor</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto 2 -->
+                <div class="relative group overflow-hidden border border-gold/20 h-80">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                         alt="Reportaje de Bodas" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-darkmatte via-darkmatte/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-gold text-xs uppercase tracking-widest">Bodas & Eventos</span>
+                            <h4 class="font-serif text-sand text-lg font-bold">Magia en Clariana</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto 3 -->
+                <div class="relative group overflow-hidden border border-gold/20 h-80">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                         alt="Beauty & Editorial" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-darkmatte via-darkmatte/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-gold text-xs uppercase tracking-widest">Sesión Beauty</span>
+                            <h4 class="font-serif text-sand text-lg font-bold">Expresión Exclusiva</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto 4 -->
+                <div class="relative group overflow-hidden border border-gold/20 h-80">
+                    <img src="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?auto=format&fit=crop&w=800&q=80" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                         alt="Instalaciones del Estudio" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-darkmatte via-darkmatte/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-gold text-xs uppercase tracking-widest">Instalaciones</span>
+                            <h4 class="font-serif text-sand text-lg font-bold">Equipamiento Profesional</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto 5 -->
+                <div class="relative group overflow-hidden border border-gold/20 h-80">
+                    <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=80" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                         alt="Cámara y Óptica" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-darkmatte via-darkmatte/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-gold text-xs uppercase tracking-widest">Tecnología</span>
+                            <h4 class="font-serif text-sand text-lg font-bold">Ópticas de Alta Gama</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto 6 -->
+                <div class="relative group overflow-hidden border border-gold/20 h-80">
+                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                         alt="Retrato Masculino" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-darkmatte via-darkmatte/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-gold text-xs uppercase tracking-widest">Estudio Lleida</span>
+                            <h4 class="font-serif text-sand text-lg font-bold">Carácter y Elegancia</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reseñas Verificadas -->
+    <section class="py-28 bg-darkmatte relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold uppercase tracking-[0.3em] text-xs font-semibold">Opiniones Verificadas</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-sand mt-3 mb-6">Lo que dicen nuestros clientes</h2>
+                <div class="flex items-center justify-center space-x-1 text-gold text-lg">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+
+            <div class="max-w-2xl mx-auto">
+                <div class="bg-darkmatte-card border border-gold/30 p-10 relative shadow-2xl">
+                    <div class="absolute -top-4 left-10 bg-gold text-darkmatte w-8 h-8 flex items-center justify-center font-serif text-xl font-bold">
+                        “
+                    </div>
+                    <p class="font-serif text-xl text-sand italic mb-6 leading-relaxed text-center">
+                        "Excelente trato, profesionalidad y calidad."
+                    </p>
+                    <div class="text-center border-t border-gold/10 pt-6">
+                        <span class="font-serif font-bold text-sand block">Cliente Verificado Google Maps</span>
+                        <span class="text-xs text-gold uppercase tracking-widest">Estudio de Fotografía Julián García Vallecillos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto y Mapa Interactivo -->
+    <section id="contacto" class="py-28 bg-darkmatte-light border-t border-gold/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+                <div class="space-y-8">
+                    <div>
+                        <span class="text-gold uppercase tracking-[0.3em] text-xs font-semibold">Localización & Contacto</span>
+                        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-sand mt-3 mb-6">Visita Nuestro Estudio</h2>
+                        <p class="text-sand/70 font-light leading-relaxed">
+                            Estamos ubicados en un entorno privilegiado en Lleida. Reserva tu cita previa para garantizar una atención totalmente personalizada.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-xl flex-shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-bold text-sand">Dirección Exacta</h4>
+                                <p class="text-sand/70 text-sm">25614 Cantaperdius, Lleida, España</p>
+                                <span class="text-xs text-gold uppercase tracking-wider block mt-1">Clariana de Cardener</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-xl flex-shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-bold text-sand">Teléfono de Reservas</h4>
+                                <a href="tel:973432191" class="text-gold hover:underline text-sm font-semibold">973432191</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-xl flex-shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-bold text-sand">Correo Electrónico</h4>
+                                <a href="mailto:error-lite+84f2@duckduckgo.com" class="text-sand/70 hover:text-gold text-sm">error-lite+84f2@duckduckgo.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="tel:973432191" class="inline-block bg-gold hover:bg-gold-light text-darkmatte font-bold px-8 py-4 uppercase text-xs tracking-[0.2em] transition-all shadow-xl shadow-gold/20">
+                            Reservar Cita Ahora
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mapa Interactivo Real -->
+                <div class="bg-darkmatte p-4 border border-gold/30 rounded-2xl shadow-2xl">
+                    <iframe src="https://www.google.com/maps?q=Juli%C3%A1n%20Garc%C3%ADa%20Vallecillos%2025614%20Cantaperdius%2C%20Lleida%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-darkmatte border-t border-gold/20 py-16 text-sand/60 text-sm">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
+            <div>
+                <span class="font-serif text-xl tracking-widest text-sand font-bold block mb-2">JULIÁN GARCÍA VALLECILLOS</span>
+                <p class="text-xs text-sand/50">Estudio de fotografía profesional en Clariana de Cardener, Lleida.</p>
+            </div>
+            
+            <div class="text-center text-xs space-y-2">
+                <p>Dirección: 25614 Cantaperdius, Lleida, España</p>
+                <p>Teléfono: <a href="tel:973432191" class="text-gold hover:underline">973432191</a></p>
+                <p>Email: <a href="mailto:error-lite+84f2@duckduckgo.com" class="text-gold hover:underline">error-lite+84f2@duckduckgo.com</a></p>
+            </div>
+
+            <div class="text-right md:text-right text-xs">
+                <p>&copy; <span id="year"></span> Julián García Vallecillos. Todos los derechos reservados.</p>
+                <p class="text-gold/70 mt-1">Boutique Fotográfica Exclusiva</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script JavaScript básico para menú móvil y año -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú al hacer click en un enlace móvil
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
