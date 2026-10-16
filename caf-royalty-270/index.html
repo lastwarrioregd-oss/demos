@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Royalty | Bar Restaurante en Santander</title>
+    <meta name="description" content="Descubre Café Royalty en C. Calderón de la Barca, 7, 39002 Santander. Excelente trato, profesionalidad y calidad en el corazón de Cantabria. ¡Reserva tu mesa!">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        royal: {
+                            50: '#fbf8f5',
+                            100: '#f3ece4',
+                            200: '#e5d7c7',
+                            300: '#d2bca2',
+                            400: '#bc9876',
+                            500: '#a67c52',
+                            600: '#916744',
+                            700: '#775237',
+                            800: '#62432e',
+                            900: '#523828',
+                            950: '#2c1d14',
+                        },
+                        cream: '#FDFBF7',
+                        terracota: '#C85A32',
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-cream text-royal-900 font-sans antialiased selection:bg-royal-500 selection:text-white">
+
+    <!-- Top Bar / Aviso -->
+    <div class="bg-royal-950 text-royal-200 text-xs py-2 px-4 text-center tracking-wider font-medium">
+        <span class="inline-block mr-4"><i class="fa-solid fa-location-dot text-royal-400 mr-1.5"></i> C. Calderón de la Barca, 7, 39002 Santander</span>
+        <span class="hidden md:inline-block mr-4"><i class="fa-solid fa-phone text-royal-400 mr-1.5"></i> 942 31 24 74</span>
+        <a href="tel:942312474" class="underline hover:text-white font-bold transition-colors">¡Reserva Ahora!</a>
+    </div>
+
+    <!-- Header / Navegación -->
+    <header class="sticky top-0 z-50 bg-cream/95 backdrop-blur-md border-b border-royal-200/60 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2 group">
+                <div class="w-10 h-10 rounded-full bg-royal-900 flex items-center justify-center text-royal-200 font-serif font-bold text-xl group-hover:bg-royal-800 transition-colors">
+                    R
+                </div>
+                <div>
+                    <span class="font-serif text-2xl font-bold tracking-tight text-royal-950 block leading-none">Café Royalty</span>
+                    <span class="text-[10px] uppercase tracking-widest text-royal-600 font-semibold block mt-1">Bar Restaurante • Santander</span>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-royal-800">
+                <a href="#carta" class="hover:text-royal-500 transition-colors">Nuestra Carta</a>
+                <a href="#instalaciones" class="hover:text-royal-500 transition-colors">El Local</a>
+                <a href="#experiencias" class="hover:text-royal-500 transition-colors">Opiniones</a>
+                <a href="#contacto" class="hover:text-royal-500 transition-colors">Ubicación y Contacto</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="tel:942312474" class="hidden sm:inline-flex items-center gap-2 bg-royal-900 hover:bg-royal-800 text-white px-5 py-2.5 rounded-full text-sm font-semibold shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+                    <i class="fa-solid fa-utensils text-xs"></i>
+                    <span>Reservar Mesa</span>
+                </a>
+                <button id="menu-btn" class="md:hidden text-royal-900 text-2xl focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cream border-b border-royal-200 px-6 py-4 space-y-3">
+            <a href="#carta" class="block text-royal-900 font-medium py-1">Nuestra Carta</a>
+            <a href="#instalaciones" class="block text-royal-900 font-medium py-1">El Local</a>
+            <a href="#experiencias" class="block text-royal-900 font-medium py-1">Opiniones</a>
+            <a href="#contacto" class="block text-royal-900 font-medium py-1">Ubicación y Contacto</a>
+            <div class="pt-2">
+                <a href="tel:942312474" class="block w-full text-center bg-royal-900 text-white py-3 rounded-full font-semibold">
+                    Reservar Mesa (942 31 24 74)
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-royal-950 text-white overflow-hidden py-24 lg:py-32">
+        <div class="absolute inset-0 z-0 opacity-40 mix-blend-overlay">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=80" 
+                 alt="Café Royalty Interior" 
+                 class="w-full h-full object-cover"
+                 referrerpolicy="no-referrer" 
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-r from-royal-950 via-royal-950/80 to-transparent z-1"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-royal-800/80 border border-royal-600/50 text-royal-200 text-xs font-semibold tracking-wider uppercase mb-6 backdrop-blur-sm">
+                    <i class="fa-solid fa-star text-amber-400"></i> Calidad y Tradición en Santander
+                </div>
+                <h1 class="font-serif text-4xl sm:text-6xl font-bold tracking-tight leading-tight mb-6 text-cream">
+                    Bienvenido a <span class="italic text-royal-300">Café Royalty</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-royal-100 font-light mb-8 leading-relaxed">
+                    Un espacio gastronómico único en pleno corazón de Cantabria. Disfruta de un excelente trato, máxima profesionalidad y una cocina exquisita diseñada para deleitar tus sentidos.
+                </p>
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                    <a href="tel:942312474" class="inline-flex justify-center items-center gap-3 bg-royal-500 hover:bg-royal-600 text-white px-8 py-4 rounded-full font-bold text-base shadow-xl transition-all transform hover:-translate-y-0.5">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>Reservar Mesa</span>
+                    </a>
+                    <a href="#carta" class="inline-flex justify-center items-center gap-2 bg-transparent hover:bg-white/10 text-cream border border-cream/30 px-8 py-4 rounded-full font-semibold text-base transition-all">
+                        <span>Ver Especialidades</span>
+                        <i class="fa-solid fa-arrow-down text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Insignia de Confianza -->
+                <div class="mt-12 pt-8 border-t border-white/10 flex items-center gap-6">
+                    <div>
+                        <div class="flex text-amber-400 text-sm gap-1 mb-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-xs text-royal-300">"Excelente trato, profesionalidad y calidad."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Características Destacadas -->
+    <section class="py-12 bg-royal-100/50 border-b border-royal-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="flex items-start gap-4 p-6 rounded-2xl bg-cream border border-royal-200/60 shadow-sm">
+                    <div class="w-12 h-12 rounded-xl bg-royal-900 text-royal-200 flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-handshake"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-serif font-bold text-lg text-royal-900 mb-1">Excelente Trato</h3>
+                        <p class="text-sm text-royal-700">Atención cercana, familiar y profesional para que te sientas como en casa en cada visita.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-6 rounded-2xl bg-cream border border-royal-200/60 shadow-sm">
+                    <div class="w-12 h-12 rounded-xl bg-royal-900 text-royal-200 flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-serif font-bold text-lg text-royal-900 mb-1">Máxima Calidad</h3>
+                        <p class="text-sm text-royal-700">Selección rigurosa de productos de primera línea para elaborar platos memorables.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-6 rounded-2xl bg-cream border border-royal-200/60 shadow-sm">
+                    <div class="w-12 h-12 rounded-xl bg-royal-900 text-royal-200 flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-serif font-bold text-lg text-royal-900 mb-1">Ubicación Privilegiada</h3>
+                        <p class="text-sm text-royal-700">Situados en C. Calderón de la Barca, 7 (39002), en pleno centro de Santander.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Nuestra Carta y Especialidades -->
+    <section id="carta" class="py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-royal-600 font-semibold tracking-widest uppercase text-xs block mb-3">Gastronomía Exquisita</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-royal-950 mb-6">Nuestra Carta y Especialidades</h2>
+                <p class="text-royal-700 text-base sm:text-lg">
+                    Descubre nuestra selección de desayunos, raciones, platos principales y tapas caseras elaboradas con el cariño y la profesionalidad que nos caracteriza.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Categoría 1: Desayunos y Cafés -->
+                <div class="bg-white rounded-2xl p-8 border border-royal-200 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-royal-100 text-royal-800 text-xs font-bold uppercase tracking-wider">Mañanas Royalty</span>
+                            <i class="fa-solid fa-mug-hot text-royal-500 text-xl"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-royal-900 mb-4">Cafés y Desayunos</h3>
+                        <ul class="space-y-4 text-royal-700 text-sm mb-6">
+                            <li class="flex justify-between items-center border-b border-royal-100 pb-2">
+                                <span>Café de Especialidad & Tostadas</span>
+                                <span class="font-semibold text-royal-900">Artesanal</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-royal-100 pb-2">
+                                <span>Bollería recién horneada</span>
+                                <span class="font-semibold text-royal-900">Diaria</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-royal-100 pb-2">
+                                <span>Zumo de naranja natural</span>
+                                <span class="font-semibold text-royal-900">100% Exprimido</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="tel:942312474" class="w-full text-center py-2.5 rounded-xl bg-royal-100 hover:bg-royal-900 hover:text-white text-royal-900 text-sm font-semibold transition-colors">
+                        Consultar Disponibilidad
+                    </a>
+                </div>
+
+                <!-- Categoría 2: Platos Estrella y Raciones -->
+                <div class="bg-royal-900 text-white rounded-2xl p-8 shadow-xl relative overflow-hidden flex flex-col justify-between transform md:-translate-y-2">
+                    <div class="absolute top-0 right-0 bg-royal-500 text-white text-[10px] font-bold px-4 py-1.5 rounded-bl-xl uppercase tracking-widest">
+                        Recomendado
+                    </div>
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-royal-800 text-royal-200 text-xs font-bold uppercase tracking-wider">Especialidades</span>
+                            <i class="fa-solid fa-utensils text-royal-300 text-xl"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-cream mb-4">Cocina de Mercado</h3>
+                        <ul class="space-y-4 text-royal-200 text-sm mb-6">
+                            <li class="flex justify-between items-center border-b border-royal-800 pb-2">
+                                <span>Tapas y Raciones Tradicionales</span>
+                                <span class="font-semibold text-white">Caseras</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-royal-800 pb-2">
+                                <span>Pescados y Carnes de la Tierruca</span>
+                                <span class="font-semibold text-white">Calidad Superior</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-royal-800 pb-2">
+                                <span>Sugerencias del Chef</span>
+                                <span class="font-semibold text-white">Según Temporada</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="tel:942312474" class="w-full text-center py-3 rounded-xl bg-royal-500 hover:bg-royal-600 text-white text-sm font-semibold transition-colors shadow-lg">
+                        Reservar para Comer
+                    </a>
+                </div>
+
+                <!-- Categoría 3: Vinos, Vermús y Cervezas -->
+                <div class="bg-white rounded-2xl p-8 border border-royal-200 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-royal-100 text-royal-800 text-xs font-bold uppercase tracking-wider">Bodega & Vermú</span>
+                            <i class="fa-solid fa-wine-glass text-royal-500 text-xl"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-royal-900 mb-4">Para Acompañar</h3>
+                        <ul class="space-y-4 text-royal-700 text-sm mb-6">
+                            <li class="flex justify-between items-center border-b border-royal-100 pb-2">
+                                <span>Vermú preparado de la casa</span>
+                                <span class="font-semibold text-royal-900">Clásico</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-royal-100 pb-2">
+                                <span>Selección de Vinos D.O.</span>
+                                <span class="font-semibold text-royal-900">Tintos y Blancos</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-royal-100 pb-2">
+                                <span>Cervezas frías de barril</span>
+                                <span class="font-semibold text-royal-900">Bien Tiradas</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="tel:942312474" class="w-full text-center py-2.5 rounded-xl bg-royal-100 hover:bg-royal-900 hover:text-white text-royal-900 text-sm font-semibold transition-colors">
+                        Ven a Disfrutar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Galería: Instalaciones y Trabajos -->
+    <section id="instalaciones" class="py-20 bg-royal-100/40 border-t border-b border-royal-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-royal-600 font-semibold tracking-widest uppercase text-xs block mb-3">Ambiente Acogedor</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-royal-950 mb-6">Nuestras Instalaciones</h2>
+                <p class="text-royal-700 text-base sm:text-lg">
+                    Un espacio diseñado para el confort, la buena conversación y el disfrute culinario en el centro de Santander.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="group relative overflow-hidden rounded-2xl shadow-md h-80">
+                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80" 
+                         alt="Ambiente Café Royalty" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-royal-950/80 via-transparent to-transparent opacity-90"></div>
+                    <div class="absolute bottom-6 left-6 right-6 text-white">
+                        <h4 class="font-serif text-xl font-bold">Salón Principal</h4>
+                        <p class="text-xs text-royal-200 mt-1">Ambiente cálido y elegante</p>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-2xl shadow-md h-80">
+                    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=80" 
+                         alt="Barra Café Royalty" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-royal-950/80 via-transparent to-transparent opacity-90"></div>
+                    <div class="absolute bottom-6 left-6 right-6 text-white">
+                        <h4 class="font-serif text-xl font-bold">Nuestra Barra</h4>
+                        <p class="text-xs text-royal-200 mt-1">El punto de encuentro perfecto</p>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-2xl shadow-md h-80">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80" 
+                         alt="Platos y tapas Café Royalty" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-royal-950/80 via-transparent to-transparent opacity-90"></div>
+                    <div class="absolute bottom-6 left-6 right-6 text-white">
+                        <h4 class="font-serif text-xl font-bold">Detalles Culinarios</h4>
+                        <p class="text-xs text-royal-200 mt-1">Sabor y dedicación en cada plato</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Opiniones Reales Verificadas -->
+    <section id="experiencias" class="py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-royal-600 font-semibold tracking-widest uppercase text-xs block mb-3">Testimonios de Clientes</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-royal-950 mb-6">Lo que opinan de nosotros</h2>
+                <p class="text-royal-700 text-base sm:text-lg">
+                    La satisfacción de quienes nos visitan es nuestro mayor aval. Esto es lo que destacan de su experiencia en Café Royalty.
+                </p>
+            </div>
+
+            <div class="max-w-2xl mx-auto">
+                <div class="bg-white p-8 sm:p-10 rounded-3xl border border-royal-200 shadow-lg relative">
+                    <div class="absolute -top-5 right-10 bg-royal-900 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl shadow-md">
+                        <i class="fa-solid fa-quote-right"></i>
+                    </div>
+                    <div class="flex text-amber-400 text-lg gap-1 mb-6">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="font-serif text-xl sm:text-2xl text-royal-900 italic mb-6 leading-relaxed">
+                        "Excelente trato, profesionalidad y calidad."
+                    </p>
+                    <div class="flex items-center gap-4 pt-4 border-t border-royal-100">
+                        <div class="w-12 h-12 rounded-full bg-royal-200 text-royal-900 font-bold flex items-center justify-center text-lg">
+                            G
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-royal-900">Cliente Verificado</h4>
+                            <p class="text-xs text-royal-600">Reseña de Google Maps</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Mapa y Contacto -->
+    <section id="contacto" class="py-20 bg-royal-950 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-royal-400 font-semibold tracking-widest uppercase text-xs block mb-3">Visítanos en Santander</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold mb-6 text-cream">¿Dónde Estamos?</h2>
+                    <p class="text-royal-200 text-base mb-8 leading-relaxed">
+                        Ven a conocernos y disfruta de un momento agradable. Estamos situados en una ubicación inmejorable en Santander. Reserva tu mesa con antelación llamándonos directamente.
+                    </p>
+
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-royal-800 text-royal-300 flex items-center justify-center text-lg shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm uppercase tracking-wide">Dirección</h4>
+                                <p class="text-royal-200 text-base mt-1">C. Calderón de la Barca, 7, 39002 Santander, Cantabria, España</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-royal-800 text-royal-300 flex items-center justify-center text-lg shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm uppercase tracking-wide">Teléfono de Reservas</h4>
+                                <p class="text-royal-200 text-base mt-1">942 31 24 74</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-royal-800 text-royal-300 flex items-center justify-center text-lg shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm uppercase tracking-wide">Correo Electrónico</h4>
+                                <p class="text-royal-200 text-base mt-1">error-lite+84f2@duckduckgo.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="tel:942312474" class="inline-flex items-center gap-3 bg-royal-500 hover:bg-royal-600 text-white px-8 py-4 rounded-full font-bold text-base shadow-xl transition-all transform hover:-translate-y-0.5">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>Reservar Mesa Ahora</span>
+                    </a>
+                </div>
+
+                <div class="bg-royal-900 p-4 rounded-2xl border border-royal-800 shadow-2xl">
+                    <div class="overflow-hidden rounded-xl">
+                        <iframe src="https://www.google.com/maps?q=Caf%C3%A9%20Royalty%20C.%20Calder%C3%B3n%20de%20la%20Barca%2C%207%2C%2039002%20Santander%2C%20Cantabria%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#1b120d] text-royal-300 py-12 border-t border-royal-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-royal-900">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-full bg-royal-500 flex items-center justify-center text-white font-serif font-bold text-sm">
+                        R
+                    </div>
+                    <span class="font-serif text-xl font-bold text-white">Café Royalty</span>
+                </div>
+                <div class="flex items-center gap-6 text-sm">
+                    <a href="#carta" class="hover:text-white transition-colors">Nuestra Carta</a>
+                    <a href="#instalaciones" class="hover:text-white transition-colors">El Local</a>
+                    <a href="#experiencias" class="hover:text-white transition-colors">Opiniones</a>
+                    <a href="#contacto" class="hover:text-white transition-colors">Ubicación</a>
+                </div>
+                <div>
+                    <a href="tel:942312474" class="bg-royal-800 hover:bg-royal-700 text-white text-xs font-bold px-4 py-2.5 rounded-full transition-colors inline-flex items-center gap-2">
+                        <i class="fa-solid fa-phone"></i> 942 31 24 74
+                    </a>
+                </div>
+            </div>
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-royal-400 gap-4">
+                <p>&copy; <span id="year"></span> Café Royalty. Todos los derechos reservados. Bar Restaurante en C. Calderón de la Barca, 7, 39002 Santander, Cantabria.</p>
+                <p>Diseño y Calidad Gastronómica</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script para menú móvil y año -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú al hacer clic en un enlace móvil
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
