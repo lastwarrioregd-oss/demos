@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro Cultural | Biblioteca - El Peral, Cuenca</title>
+    <!-- Tailwind CSS v3 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            light: '#E6D5B8',
+                            DEFAULT: '#C5A880',
+                            dark: '#9A7B52',
+                        },
+                        dark: {
+                            DEFAULT: '#111111',
+                            card: '#1A1A1A',
+                            border: '#2A2A2A'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Cormorant Garamond', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .bg-noise {
+            background-image: radial-gradient(rgba(197, 168, 128, 0.05) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-dark text-gray-300 font-sans antialiased selection:bg-gold selection:text-dark">
+
+    <!-- Top Bar / Aviso Cookies -->
+    <aside aria-label="Aviso legal" class="bg-dark-card border-b border-dark-border text-xs py-2 px-4 text-center text-gray-400">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <p><i class="fas fa-cookie-bite text-gold mr-1.5"></i> Esta página web usa cookies para garantizar la mejor experiencia.</p>
+            <div class="flex items-center gap-4">
+                <a href="mailto:info.ccelima@aecid.es" class="hover:text-gold transition-colors"><i class="fas fa-envelope mr-1"></i> info.ccelima@aecid.es</a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-dark/90 backdrop-blur-md border-b border-dark-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full border border-gold flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-dark transition-all duration-300">
+                    <i class="fas fa-book-reader text-lg"></i>
+                </div>
+                <div>
+                    <span class="font-serif text-2xl font-bold tracking-wider text-white block leading-none">Centro Cultural</span>
+                    <span class="text-[10px] uppercase tracking-widest text-gold block mt-1">Biblioteca · El Peral</span>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
+                <a href="#inicio" class="text-white hover:text-gold transition-colors">Inicio</a>
+                <a href="#servicios" class="text-white hover:text-gold transition-colors">Servicios & Cultura</a>
+                <a href="#instalaciones" class="text-white hover:text-gold transition-colors">Instalaciones</a>
+                <a href="#opiniones" class="text-white hover:text-gold transition-colors">Opiniones</a>
+                <a href="#contacto" class="text-white hover:text-gold transition-colors">Ubicación</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="mailto:info.ccelima@aecid.es" class="hidden sm:inline-flex items-center justify-center px-6 py-2.5 border border-gold text-gold hover:bg-gold hover:text-dark text-xs uppercase tracking-widest font-semibold rounded transition-all duration-300">
+                    Reservar Cita
+                </a>
+                <!-- Mobile menu button -->
+                <button id="menu-btn" class="md:hidden text-white focus:outline-none p-2" aria-label="Menú principal">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-card border-b border-dark-border px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="block text-white hover:text-gold py-2">Inicio</a>
+            <a href="#servicios" class="block text-white hover:text-gold py-2">Servicios & Cultura</a>
+            <a href="#instalaciones" class="block text-white hover:text-gold py-2">Instalaciones</a>
+            <a href="#opiniones" class="block text-white hover:text-gold py-2">Opiniones</a>
+            <a href="#contacto" class="block text-white hover:text-gold py-2">Ubicación</a>
+            <div class="pt-2">
+                <a href="mailto:info.ccelima@aecid.es" class="w-full text-center block px-6 py-3 bg-gold text-dark text-xs uppercase tracking-widest font-bold rounded">
+                    Reservar Cita
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative min-h-[90vh] flex items-center justify-center bg-noise overflow-hidden py-20">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1920&q=80';" alt="Centro Cultural y Biblioteca El Peral" class="w-full h-full object-cover opacity-25">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/70 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold/30 bg-gold/10 text-gold text-xs uppercase tracking-widest mb-6">
+                <i class="fas fa-landmark"><span>Espacio de Encuentro y Saber en Cuenca</span></i>
+            </div>
+            
+            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight mb-6 leading-none">
+                Centro Cultural <span class="text-gold italic font-normal">&amp; Biblioteca</span>
+            </h1>
+            
+            <p class="max-w-2xl mx-auto text-lg md:text-xl text-gray-400 font-light mb-10 leading-relaxed">
+                Un oasis de cultura, cooperación internacional y literatura en el corazón de El Peral. Descubre nuestro espacio exclusivo dedicado al arte, el cine, el teatro y el conocimiento.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="mailto:info.ccelima@aecid.es" class="w-full sm:w-auto px-8 py-4 bg-gold text-dark hover:bg-gold-light font-bold text-xs uppercase tracking-widest rounded transition-all duration-300 shadow-lg shadow-gold/10">
+                    Reservar Cita
+                </a>
+                <a href="#servicios" class="w-full sm:w-auto px-8 py-4 border border-white/20 text-white hover:border-gold hover:text-gold font-bold text-xs uppercase tracking-widest rounded transition-all duration-300">
+                    Explorar Actividades
+                </a>
+            </div>
+
+            <!-- Quick Info Badges -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-20 pt-12 border-t border-dark-border text-left">
+                <div class="flex items-start gap-4">
+                    <div class="text-gold text-2xl mt-1"><i class="fas fa-map-marker-alt"></i></div>
+                    <div>
+                        <h3 class="text-white font-semibold text-sm">Ubicación Privilegiada</h3>
+                        <p class="text-gray-400 text-xs mt-1">C. San Isidro, 3, 16240 El Peral, Cuenca</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="text-gold text-2xl mt-1"><i class="fas fa-globe-americas"></i></div>
+                    <div>
+                        <h3 class="text-white font-semibold text-sm">Cooperación & AECID</h3>
+                        <p class="text-gray-400 text-xs mt-1">Conectados con la red cultural global</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="text-gold text-2xl mt-1"><i class="fas fa-coffee"></i></div>
+                    <div>
+                        <h3 class="text-white font-semibold text-sm">Ambiente Acogedor</h3>
+                        <p class="text-gray-400 text-xs mt-1">Biblioteca pública y terraza de lectura</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: Nuestros Servicios, Cultura y Actividades -->
+    <section id="servicios" class="py-24 bg-dark-card relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold uppercase tracking-widest text-xs font-semibold block mb-2">Programación & Servicios</span>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-white">Especialidades Culturales</h2>
+                <div class="w-16 h-0.5 bg-gold mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-dark border border-dark-border p-8 rounded-xl hover:border-gold/50 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-lg bg-gold/10 text-gold flex items-center justify-center text-2xl mb-6 group-hover:bg-gold group-hover:text-dark transition-all">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-white mb-3">Biblioteca & AECID</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Acceso a fondos bibliográficos impulsados por la Cooperación Española y la AECID. Un espacio ideal para la investigación y el estudio sosegado.
+                    </p>
+                    <ul class="space-y-2 text-xs text-gold">
+                        <li><i class="fas fa-check mr-2"></i>Lectura en sala y préstamo</li>
+                        <li><i class="fas fa-check mr-2"></i>Acción humanitaria y ensayos</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-dark border border-dark-border p-8 rounded-xl hover:border-gold/50 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-lg bg-gold/10 text-gold flex items-center justify-center text-2xl mb-6 group-hover:bg-gold group-hover:text-dark transition-all">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-white mb-3">Cine a Contracorriente</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Ciclos especiales de cine independiente: una mirada profunda a la cinematografía de Latinoamérica y España con debates y coloquios.
+                    </p>
+                    <ul class="space-y-2 text-xs text-gold">
+                        <li><i class="fas fa-check mr-2"></i>Proyecciones exclusivas</li>
+                        <li><i class="fas fa-check mr-2"></i>Debates culturales</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-dark border border-dark-border p-8 rounded-xl hover:border-gold/50 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-lg bg-gold/10 text-gold flex items-center justify-center text-2xl mb-6 group-hover:bg-gold group-hover:text-dark transition-all">
+                        <i class="fas fa-theater-masks"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-white mb-3">Teatro & Miguel EN Cervantes</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Homenajes clásicos como "El retablo de las maravillas", ciclos de teatro contemporáneo y eventos especiales como el GuitarFestPeru.
+                    </p>
+                    <ul class="space-y-2 text-xs text-gold">
+                        <li><i class="fas fa-check mr-2"></i>Artes escénicas y música</li>
+                        <li><i class="fas fa-check mr-2"></i>GuitarFestPeru & Conciertos</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CTA Banner within section -->
+            <div class="mt-16 bg-gradient-to-r from-dark via-dark-card to-dark border border-gold/30 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8">
+                <div>
+                    <h3 class="font-serif text-2xl md:text-3xl font-bold text-white mb-2">¿Quieres participar en nuestras actividades?</h3>
+                    <p class="text-gray-400 text-sm">Reserva tu plaza para eventos, talleres y presentaciones literarias.</p>
+                </div>
+                <a href="mailto:info.ccelima@aecid.es" class="px-8 py-4 bg-gold text-dark hover:bg-gold-light font-bold text-xs uppercase tracking-widest rounded transition-all whitespace-nowrap shadow-lg">
+                    Reservar Cita
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: Nuestras Instalaciones -->
+    <section id="instalaciones" class="py-24 bg-dark relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold uppercase tracking-widest text-xs font-semibold block mb-2">Galería Visual</span>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-white">Nuestras Instalaciones</h2>
+                <div class="w-16 h-0.5 bg-gold mx-auto mt-4"></div>
+                <p class="text-gray-400 mt-4 text-sm">Espacios diseñados para el confort intelectual y el deleite de nuestros visitantes.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Imagen 1 -->
+                <div class="group relative overflow-hidden rounded-xl border border-dark-border aspect-[4/3]">
+                    <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1507842217343-583bb7270b67?auto=format&fit=crop&w=800&q=80';" alt="Biblioteca Sala de Lectura" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                        <span class="text-xs uppercase tracking-widest text-gold font-semibold">Sala Principal</span>
+                        <h3 class="font-serif text-xl font-bold text-white mt-1">Biblioteca del Pueblo</h3>
+                    </div>
+                </div>
+
+                <!-- Imagen 2 -->
+                <div class="group relative overflow-hidden rounded-xl border border-dark-border aspect-[4/3]">
+                    <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=80';" alt="Estanterías y Libros" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                        <span class="text-xs uppercase tracking-widest text-gold font-semibold">Archivo & Cultura</span>
+                        <h3 class="font-serif text-xl font-bold text-white mt-1">Colección AECID</h3>
+                    </div>
+                </div>
+
+                <!-- Imagen 3 -->
+                <div class="group relative overflow-hidden rounded-xl border border-dark-border aspect-[4/3]">
+                    <img src="" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=800&q=80';" alt="Espacio Cultural y Terraza" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                        <span class="text-xs uppercase tracking-widest text-gold font-semibold">Bienestar & Ocio</span>
+                        <h3 class="font-serif text-xl font-bold text-white mt-1">Amplia Terraza y Entorno</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: Opiniones Reales Verificadas -->
+    <section id="opiniones" class="py-24 bg-dark-card border-t border-dark-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold uppercase tracking-widest text-xs font-semibold block mb-2">Testimonios</span>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-white">Opiniones Reales Verificadas</h2>
+                <div class="w-16 h-0.5 bg-gold mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Reseña 1 -->
+                <div class="bg-dark border border-dark-border p-8 rounded-xl relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-gold mb-4 text-sm">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="font-serif text-lg italic text-gray-200 mb-6 leading-relaxed">
+                            "Aquí está ubicada la biblioteca del pueblo."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-dark-border">
+                        <div class="w-10 h-10 rounded-full bg-gold/10 text-gold flex items-center justify-center font-bold text-sm">
+                            DT
+                        </div>
+                        <div>
+                            <h4 class="text-white font-semibold text-sm">- DT</h4>
+                            <span class="text-xs text-gray-500">Google Maps Verified</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 2 -->
+                <div class="bg-dark border border-dark-border p-8 rounded-xl relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-gold mb-4 text-sm">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="font-serif text-lg italic text-gray-200 mb-6 leading-relaxed">
+                            "Buena cocina. Trato muy agradable y amable. Buena relación calidad-precio. Amplia terraza."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-dark-border">
+                        <div class="w-10 h-10 rounded-full bg-gold/10 text-gold flex items-center justify-center font-bold text-sm">
+                            TT
+                        </div>
+                        <div>
+                            <h4 class="text-white font-semibold text-sm">- Teatro Thales</h4>
+                            <span class="text-xs text-gray-500">Google Maps Verified</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: Mapa Interactivo y Ubicación -->
+    <section id="contacto" class="py-24 bg-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold uppercase tracking-widest text-xs font-semibold block mb-2">Encuéntranos</span>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-white">Ubicación y Contacto</h2>
+                <div class="w-16 h-0.5 bg-gold mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                <!-- Info Contacto -->
+                <div class="bg-dark-card border border-dark-border p-8 rounded-2xl space-y-8">
+                    <div>
+                        <span class="text-xs uppercase tracking-widest text-gold font-semibold block mb-1">Dirección Exacta</span>
+                        <p class="text-white font-serif text-lg">C. San Isidro, 3, 16240 El Peral, Cuenca, España</p>
+                    </div>
+
+                    <div>
+                        <span class="text-xs uppercase tracking-widest text-gold font-semibold block mb-1">Correo Electrónico</span>
+                        <a href="mailto:info.ccelima@aecid.es" class="text-white font-serif text-lg hover:text-gold transition-colors">info.ccelima@aecid.es</a>
+                    </div>
+
+                    <div>
+                        <span class="text-xs uppercase tracking-widest text-gold font-semibold block mb-1">Horario Habitual</span>
+                        <p class="text-gray-400 text-sm">Lunes a Viernes: 09:00 - 14:00 y 16:00 - 20:00<br>Sábados: Mañanas</p>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="mailto:info.ccelima@aecid.es" class="w-full text-center block px-6 py-3.5 bg-gold text-dark hover:bg-gold-light font-bold text-xs uppercase tracking-widest rounded transition-all">
+                            Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mapa Interactivo Real -->
+                <div class="lg:col-span-2 bg-dark-card border border-dark-border p-3 rounded-2xl">
+                    <iframe src="https://www.google.com/maps?q=Centro%20Cultural%20C.%20San%20Isidro%2C%203%2C%2016240%20El%20Peral%2C%20Cuenca%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-card border-t border-dark-border py-12 text-center text-gray-500 text-xs">
+        <div class="max-w-7xl mx-auto px-4 space-y-4">
+            <div class="flex items-center justify-center gap-3">
+                <div class="w-8 h-8 rounded-full border border-gold flex items-center justify-center text-gold">
+                    <i class="fas fa-book-reader text-xs"></i>
+                </div>
+                <span class="font-serif text-lg font-bold text-white tracking-wider">Centro Cultural</span>
+            </div>
+            <p>C. San Isidro, 3, 16240 El Peral, Cuenca, España | Email: <a href="mailto:info.ccelima@aecid.es" class="text-gold hover:underline">info.ccelima@aecid.es</a></p>
+            <p class="text-[10px] text-gray-600">&copy; 2024 Centro Cultural Biblioteca El Peral. Todos los derechos reservados. AECID / Cooperación.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
