@@ -3,268 +3,390 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academia Estudio | Centro de Formación y Belleza en León</title>
-    <!-- Tailwind CSS CDN -->
+    <title>Academia Estudio | Centro de Formación en León y Villamejil</title>
+    <meta name="description" content="Centro de formación profesional de excelencia en León y Villamejil. Excelente trato, profesionalidad y calidad garantizada. ¡Reserva tu plaza hoy!">
+    
+    <!-- TailwindCSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        dark: '#121212',
-                        gold: '#D4AF37',
-                        'gold-light': '#F3E5AB',
-                        sand: '#F5F2EB',
-                        charcoal: '#1A1A1A'
+                        dark: '#0a0a0a',
+                        cardDark: '#141414',
+                        gold: {
+                            light: '#e6c594',
+                            DEFAULT: '#c5a059',
+                            dark: '#9d7b38'
+                        },
+                        sand: '#f5f2eb'
                     },
                     fontFamily: {
-                        serif: ['Playfair Display', 'serif'],
-                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
                     }
                 }
             }
         }
     </script>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0a0a0a;
+            color: #f5f2eb;
+        }
+        h1, h2, h3, h4, .font-serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #e6c594 0%, #c5a059 50%, #9d7b38 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-bg-gradient {
+            background: linear-gradient(135deg, #e6c594 0%, #c5a059 50%, #9d7b38 100%);
+        }
+    </style>
 </head>
-<body class="bg-dark text-sand font-sans antialiased selection:bg-gold selection:text-dark">
+<body class="bg-dark text-sand antialiased selection:bg-gold selection:text-dark">
 
-    <!-- Header & Navegación -->
-    <header class="fixed top-0 left-0 w-full z-50 bg-dark/90 backdrop-blur-md border-b border-gold/20 transition-all duration-300">
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-dark/90 backdrop-blur-md border-b border-gold/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-2 group">
-                <span class="font-serif text-2xl tracking-wider text-gold font-bold">ACADEMIA ESTUDIO</span>
+            <a href="#" class="flex items-center gap-2">
+                <span class="font-serif text-2xl sm:text-3xl font-bold tracking-wider gold-gradient">ACADEMIA ESTUDIO</span>
             </a>
             
             <nav class="hidden md:flex items-center gap-8 text-sm uppercase tracking-widest font-medium">
                 <a href="#inicio" class="hover:text-gold transition-colors">Inicio</a>
-                <a href="#servicios" class="hover:text-gold transition-colors">Formación & Servicios</a>
-                <a href="#galeria" class="hover:text-gold transition-colors">Instalaciones</a>
-                <a href="#testimonios" class="hover:text-gold transition-colors">Reseñas</a>
-                <a href="#contacto" class="hover:text-gold transition-colors">Ubicación</a>
+                <a href="#nosotros" class="hover:text-gold transition-colors">Nosotros</a>
+                <a href="#formacion" class="hover:text-gold transition-colors">Programas</a>
+                <a href="#instalaciones" class="hover:text-gold transition-colors">Instalaciones</a>
+                <a href="#opiniones" class="hover:text-gold transition-colors">Opiniones</a>
+                <a href="#contacto" class="hover:text-gold transition-colors">Contacto</a>
             </nav>
 
-            <div class="hidden md:block">
-                <a href="tel:686120394" class="bg-gold text-dark font-semibold px-6 py-3 rounded-full hover:bg-gold-light transition-all shadow-lg shadow-gold/20 tracking-wider text-xs uppercase flex items-center gap-2">
-                    <i class="fa-solid fa-phone"></i> Reservar Cita
+            <div class="flex items-center gap-4">
+                <a href="tel:686120394" class="hidden sm:inline-flex items-center gap-2 px-6 py-2.5 rounded-full gold-bg-gradient text-dark font-semibold text-sm uppercase tracking-wider hover:opacity-95 transition-all shadow-lg shadow-gold/20">
+                    <i class="fa-solid fa-phone"></i>
+                    Reservar Cita
                 </a>
+                
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" class="md:hidden text-gold text-2xl focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </div>
-
-            <!-- Botón Menú Móvil -->
-            <button id="menu-btn" class="md:hidden text-gold text-2xl focus:outline-none">
-                <i class="fa-solid fa-bars"></i>
-            </button>
         </div>
 
-        <!-- Menú Móvil desplegable -->
-        <div id="mobile-menu" class="hidden md:hidden bg-charcoal border-b border-gold/20 px-6 py-6 space-y-4 text-center">
-            <a href="#inicio" class="block text-sand hover:text-gold uppercase tracking-widest text-sm py-2">Inicio</a>
-            <a href="#servicios" class="block text-sand hover:text-gold uppercase tracking-widest text-sm py-2">Formación & Servicios</a>
-            <a href="#galeria" class="block text-sand hover:text-gold uppercase tracking-widest text-sm py-2">Instalaciones</a>
-            <a href="#testimonios" class="block text-sand hover:text-gold uppercase tracking-widest text-sm py-2">Reseñas</a>
-            <a href="#contacto" class="block text-sand hover:text-gold uppercase tracking-widest text-sm py-2">Ubicación</a>
-            <div class="pt-4">
-                <a href="tel:686120394" class="inline-block w-full bg-gold text-dark font-semibold px-6 py-3 rounded-full hover:bg-gold-light transition-all tracking-wider text-xs uppercase">
-                    <i class="fa-solid fa-phone"></i> Reservar Cita
-                </a>
-            </div>
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-dark border-b border-gold/20 px-6 py-6 flex flex-col gap-4 text-center">
+            <a href="#inicio" class="mobile-link hover:text-gold transition-colors py-2 text-lg">Inicio</a>
+            <a href="#nosotros" class="mobile-link hover:text-gold transition-colors py-2 text-lg">Nosotros</a>
+            <a href="#formacion" class="mobile-link hover:text-gold transition-colors py-2 text-lg">Programas</a>
+            <a href="#instalaciones" class="mobile-link hover:text-gold transition-colors py-2 text-lg">Instalaciones</a>
+            <a href="#opiniones" class="mobile-link hover:text-gold transition-colors py-2 text-lg">Opiniones</a>
+            <a href="#contacto" class="mobile-link hover:text-gold transition-colors py-2 text-lg">Contacto</a>
+            <a href="tel:686120394" class="mt-2 inline-block w-full py-3 rounded-full gold-bg-gradient text-dark font-semibold text-center uppercase tracking-wider">
+                Reservar Cita
+            </a>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-        <!-- Background Image con Overlay Oscuro -->
+        <!-- Background Image with Overlay -->
         <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" alt="Academia Estudio" class="w-full h-full object-cover object-center opacity-30 scale-105 animate-pulse duration-[10000ms]">
-            <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/70 to-transparent"></div>
+            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1920&q=80" 
+                 alt="Academia Estudio Centro de Formación" 
+                 class="w-full h-full object-cover opacity-30 scale-105 animate-pulse duration-[10000ms]"
+                 referrerpolicy="no-referrer" 
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/60 to-transparent"></div>
         </div>
 
-        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-24">
-            <span class="inline-block text-gold uppercase tracking-[0.3em] text-xs font-semibold mb-4 border border-gold/30 px-4 py-1.5 rounded-full bg-gold/5">
-                Centro de Formación y Estética Avanzada
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
+            <span class="inline-block py-1 px-4 rounded-full border border-gold/40 text-gold text-xs sm:text-sm uppercase tracking-[0.2em] mb-6 bg-dark/50 backdrop-blur-sm">
+                Centro de Formación Exclusivo • Villamejil & León
             </span>
             <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-tight">
-                Excelencia, Trato Profesional <span class="italic text-gold font-normal">y Calidad</span>
+                Excelencia, Profesionalidad y <span class="gold-gradient italic">Calidad Educativa</span>
             </h1>
-            <p class="text-sand/80 text-lg sm:text-xl max-w-2xl mx-auto font-light mb-10 leading-relaxed">
-                Tu espacio de referencia en León y Villamejil para potenciar tu talento, cuidar tu imagen y alcanzar el máximo nivel profesional.
+            <p class="text-base sm:text-xl text-sand/80 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+                Descubre un espacio boutique dedicado al desarrollo profesional. Brindamos una formación de alto nivel con un trato personalizado e inigualable.
             </p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="tel:686120394" class="w-full sm:w-auto bg-gold text-dark font-bold px-8 py-4 rounded-full hover:bg-gold-light transition-all shadow-xl shadow-gold/20 text-sm uppercase tracking-widest flex items-center justify-center gap-3">
-                    <i class="fa-solid fa-phone"></i> Reservar Cita
+                <a href="tel:686120394" class="w-full sm:w-auto px-8 py-4 rounded-full gold-bg-gradient text-dark font-bold uppercase tracking-wider hover:scale-105 transition-all shadow-xl shadow-gold/20 flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    Reservar Cita
                 </a>
-                <a href="#servicios" class="w-full sm:w-auto border border-gold/40 text-sand hover:bg-gold/10 font-semibold px-8 py-4 rounded-full transition-all text-sm uppercase tracking-widest flex items-center justify-center gap-3">
-                    Ver Especialidades
+                <a href="#formacion" class="w-full sm:w-auto px-8 py-4 rounded-full border border-gold/40 text-sand font-medium uppercase tracking-wider hover:bg-gold/10 transition-all flex items-center justify-center gap-3">
+                    Ver Programas
                 </a>
             </div>
 
-            <!-- Highlights -->
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-20 pt-12 border-t border-gold/10 max-w-3xl mx-auto text-center">
+            <!-- Trust badges -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-3 gap-6 pt-10 border-t border-gold/20 max-w-3xl mx-auto text-center">
                 <div>
-                    <span class="block font-serif text-3xl font-bold text-gold">100%</span>
-                    <span class="text-xs uppercase tracking-wider text-sand/60">Profesionalidad</span>
+                    <div class="font-serif text-3xl font-bold gold-gradient">100%</div>
+                    <div class="text-xs uppercase tracking-wider text-sand/70 mt-1">Profesionalidad</div>
                 </div>
                 <div>
-                    <span class="block font-serif text-3xl font-bold text-gold">Exclusivo</span>
-                    <span class="text-xs uppercase tracking-wider text-sand/60">Trato Personalizado</span>
+                    <div class="font-serif text-3xl font-bold gold-gradient">5 ★</div>
+                    <div class="text-xs uppercase tracking-wider text-sand/70 mt-1">Valoración Google</div>
                 </div>
-                <div>
-                    <span class="block font-serif text-3xl font-bold text-gold">León</span>
-                    <span class="text-xs uppercase tracking-wider text-sand/60">Villamejil y Alrededores</span>
+                <div class="col-span-2 md:col-span-1">
+                    <div class="font-serif text-3xl font-bold gold-gradient">León</div>
+                    <div class="text-xs uppercase tracking-wider text-sand/70 mt-1">& Villamejil</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sección: Nuestros Tratamientos, Cortes y Tarifas -->
-    <section id="servicios" class="py-24 bg-charcoal relative">
+    <!-- About Section -->
+    <section id="nosotros" class="py-24 bg-cardDark/50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <div class="relative rounded-2xl overflow-hidden border border-gold/30 shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1000&q=80" 
+                             alt="Academia Estudio Instalaciones" 
+                             class="w-full h-[450px] object-cover hover:scale-105 transition-transform duration-700"
+                             referrerpolicy="no-referrer" 
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 bg-dark border border-gold/40 p-6 rounded-2xl hidden sm:block shadow-2xl">
+                        <p class="font-serif text-2xl font-bold gold-gradient">Trato Excepcional</p>
+                        <p class="text-xs uppercase tracking-wider text-sand/70 mt-1">Garantía de calidad formativa</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <span class="text-gold text-xs uppercase tracking-[0.2em] font-semibold block mb-3">Sobre Academia Estudio</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold mb-6 leading-tight">
+                        Un concepto único de formación y desarrollo en <span class="gold-gradient">Villamejil y León</span>
+                    </h2>
+                    <p class="text-sand/80 font-light mb-6 leading-relaxed">
+                        En <strong class="text-gold font-normal">Academia Estudio</strong> nos enorgullecemos de ofrecer un entorno de aprendizaje exclusivo y de alta calidad. Cada alumno recibe una atención personalizada diseñada para potenciar sus capacidades al máximo.
+                    </p>
+                    <p class="text-sand/80 font-light mb-8 leading-relaxed">
+                        Nuestra filosofía se basa en la excelencia, la cercanía y el rigor profesional, pilares que destacan en cada una de las opiniones de quienes ya confían en nosotros.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center text-gold">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <span class="font-medium text-sm">Metodología Personalizada</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center text-gold">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <span class="font-medium text-sm">Profesionales Expertos</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center text-gold">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <span class="font-medium text-sm">Ambiente Exclusivo</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center text-gold">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <span class="font-medium text-sm">Atención Garantizada</span>
+                        </div>
+                    </div>
+
+                    <a href="tel:686120394" class="inline-flex items-center gap-3 px-8 py-4 rounded-full gold-bg-gradient text-dark font-bold uppercase tracking-wider hover:opacity-95 transition-all shadow-lg shadow-gold/20">
+                        <i class="fa-solid fa-phone"></i> Reservar Cita
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Programs Section -->
+    <section id="formacion" class="py-24 bg-dark">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-gold uppercase tracking-[0.3em] text-xs font-semibold block mb-2">Servicios & Formación</span>
-                <h2 class="font-serif text-3xl sm:text-5xl font-bold mb-4">Nuestras Especialidades y Tarifas</h2>
-                <div class="w-20 h-0.5 bg-gold mx-auto mb-6"></div>
+                <span class="text-gold text-xs uppercase tracking-[0.2em] font-semibold block mb-3">Nuestros Servicios y Programas</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold mb-4">
+                    Especialidades Académicas y <span class="gold-gradient">Servicios Formativos</span>
+                </h2>
                 <p class="text-sand/70 font-light">
-                    Diseñados bajo estrictos estándares de calidad, enfocados en el cuidado de la imagen personal y la formación profesional de alto nivel.
+                    Diseñados bajo estrictos estándares de calidad para garantizar el éxito y la satisfacción absoluta de nuestros alumnos.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Tarjeta Servicio 1 -->
-                <div class="bg-dark/60 border border-gold/20 rounded-2xl p-8 hover:border-gold transition-all duration-300 group flex flex-col justify-between">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-cardDark border border-gold/20 rounded-2xl p-8 hover:border-gold/60 transition-all duration-300 flex flex-col justify-between group">
                     <div>
-                        <div class="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center text-gold mb-6 group-hover:bg-gold group-hover:text-dark transition-all">
-                            <i class="fa-solid fa-graduation-cap text-xl"></i>
+                        <div class="w-14 h-14 rounded-xl bg-gold/10 flex items-center justify-center text-gold text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-graduation-cap"></i>
                         </div>
-                        <h3 class="font-serif text-2xl font-bold mb-3 text-sand">Cursos de Formación Profesional</h3>
-                        <p class="text-sand/70 text-sm font-light mb-6">
-                            Programas especializados adaptados a la demanda actual del sector de la estética, peluquería y cuidado personal. Aprende de la mano de expertos.
+                        <h3 class="font-serif text-2xl font-bold mb-3 text-gold-light">Formación Académica Integral</h3>
+                        <p class="text-sand/70 text-sm font-light leading-relaxed mb-6">
+                            Programas de estudio adaptados a todos los livelli, impartidos con rigor, profesionalidad y un trato excelente y cercano.
                         </p>
                     </div>
-                    <div class="pt-6 border-t border-gold/10 flex items-center justify-between">
-                        <span class="text-gold font-serif font-bold text-lg">Consultar Tarifas</span>
-                        <a href="tel:686120394" class="text-xs uppercase tracking-widest bg-gold/10 text-gold px-4 py-2 rounded-full hover:bg-gold hover:text-dark transition-all font-semibold">Reservar Cita</a>
+                    <div>
+                        <div class="pt-4 border-t border-gold/10 flex items-center justify-between">
+                            <span class="text-xs uppercase tracking-wider text-sand/60">Consulta plazas</span>
+                            <a href="tel:686120394" class="text-gold hover:text-gold-light font-semibold text-sm flex items-center gap-2">
+                                Reservar Cita <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Tarjeta Servicio 2 -->
-                <div class="bg-dark/60 border border-gold/20 rounded-2xl p-8 hover:border-gold transition-all duration-300 group flex flex-col justify-between">
+                <!-- Card 2 -->
+                <div class="bg-cardDark border border-gold/20 rounded-2xl p-8 hover:border-gold/60 transition-all duration-300 flex flex-col justify-between group">
                     <div>
-                        <div class="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center text-gold mb-6 group-hover:bg-gold group-hover:text-dark transition-all">
-                            <i class="fa-solid fa-wand-magic-sparkles text-xl"></i>
+                        <div class="w-14 h-14 rounded-xl bg-gold/10 flex items-center justify-center text-gold text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-user-tie"></i>
                         </div>
-                        <h3 class="font-serif text-2xl font-bold mb-3 text-sand">Estética y Tratamientos de Belleza</h3>
-                        <p class="text-sand/70 text-sm font-light mb-6">
-                            Tratamientos faciales y corporales exclusivos que garantizan resultados excepcionales con productos de gama alta y máxima profesionalidad.
+                        <h3 class="font-serif text-2xl font-bold mb-3 text-gold-light">Asesoramiento y Tutorías</h3>
+                        <p class="text-sand/70 text-sm font-light leading-relaxed mb-6">
+                            Acompañamiento personalizado en cada etapa formativa para asegurar la máxima asimilación de conocimientos y calidad educativa.
                         </p>
                     </div>
-                    <div class="pt-6 border-t border-gold/10 flex items-center justify-between">
-                        <span class="text-gold font-serif font-bold text-lg">Desde 35€</span>
-                        <a href="tel:686120394" class="text-xs uppercase tracking-widest bg-gold/10 text-gold px-4 py-2 rounded-full hover:bg-gold hover:text-dark transition-all font-semibold">Reservar Cita</a>
+                    <div>
+                        <div class="pt-4 border-t border-gold/10 flex items-center justify-between">
+                            <span class="text-xs uppercase tracking-wider text-sand/60">Atención 1 a 1</span>
+                            <a href="tel:686120394" class="text-gold hover:text-gold-light font-semibold text-sm flex items-center gap-2">
+                                Reservar Cita <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Tarjeta Servicio 3 -->
-                <div class="bg-dark/60 border border-gold/20 rounded-2xl p-8 hover:border-gold transition-all duration-300 group flex flex-col justify-between md:col-span-2 lg:col-span-1">
+                <!-- Card 3 -->
+                <div class="bg-cardDark border border-gold/20 rounded-2xl p-8 hover:border-gold/60 transition-all duration-300 flex flex-col justify-between group">
                     <div>
-                        <div class="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center text-gold mb-6 group-hover:bg-gold group-hover:text-dark transition-all">
-                            <i class="fa-solid fa-scissors text-xl"></i>
+                        <div class="w-14 h-14 rounded-xl bg-gold/10 flex items-center justify-center text-gold text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-award"></i>
                         </div>
-                        <h3 class="font-serif text-2xl font-bold mb-3 text-sand">Estudio de Imagen y Cortes</h3>
-                        <p class="text-sand/70 text-sm font-light mb-6">
-                            Servicios de peluquería, estilismo y asesoramiento de imagen personalizados con un trato impecable y un ambiente exclusivo.
+                        <h3 class="font-serif text-2xl font-bold mb-3 text-gold-light">Talleres y Cursos Especiales</h3>
+                        <p class="text-sand/70 text-sm font-light leading-relaxed mb-6">
+                            Módulos intensivos enfocados en áreas específicas con alta demanda laboral y profesional avalados por nuestros clientes.
                         </p>
                     </div>
-                    <div class="pt-6 border-t border-gold/10 flex items-center justify-between">
-                        <span class="text-gold font-serif font-bold text-lg">Desde 25€</span>
-                        <a href="tel:686120394" class="text-xs uppercase tracking-widest bg-gold/10 text-gold px-4 py-2 rounded-full hover:bg-gold hover:text-dark transition-all font-semibold">Reservar Cita</a>
+                    <div>
+                        <div class="pt-4 border-t border-gold/10 flex items-center justify-between">
+                            <span class="text-xs uppercase tracking-wider text-sand/60">Plazas limitadas</span>
+                            <a href="tel:686120394" class="text-gold hover:text-gold-light font-semibold text-sm flex items-center gap-2">
+                                Reservar Cita <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <a href="tel:686120394" class="inline-flex items-center gap-3 px-8 py-4 rounded-full gold-bg-gradient text-dark font-bold uppercase tracking-wider hover:opacity-95 transition-all shadow-lg shadow-gold/20">
+                    <i class="fa-solid fa-phone"></i> Reservar Cita y Consultar Tarifas
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Sección: Nuestras Instalaciones y Trabajos (Galería) -->
-    <section id="galeria" class="py-24 bg-dark relative overflow-hidden">
+    <!-- Gallery / Instalaciones Section -->
+    <section id="instalaciones" class="py-24 bg-cardDark/40">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-gold uppercase tracking-[0.3em] text-xs font-semibold block mb-2">Boutique & Estudio</span>
-                <h2 class="font-serif text-3xl sm:text-5xl font-bold mb-4">Nuestras Instalaciones y Trabajos</h2>
-                <div class="w-20 h-0.5 bg-gold mx-auto mb-6"></div>
+                <span class="text-gold text-xs uppercase tracking-[0.2em] font-semibold block mb-3">Espacios de Élite</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold mb-4">
+                    Nuestras Instalaciones y <span class="gold-gradient">Ambiente de Trabajo</span>
+                </h2>
                 <p class="text-sand/70 font-light">
-                    Un espacio minimalista, moderno y acogedor pensado exclusivamente para tu bienestar y aprendizaje.
+                    Un entorno moderno, elegante y acondicionado para ofrecer la mejor experiencia formativa.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="relative group overflow-hidden rounded-2xl h-80 border border-gold/20">
-                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" alt="Instalaciones Academia Estudio" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
-                    <div class="absolute bottom-6 left-6 right-6">
-                        <span class="text-gold text-xs uppercase tracking-widest block font-semibold mb-1">Centro</span>
-                        <h4 class="font-serif text-xl font-bold text-sand">Instalaciones Exclusivas</h4>
+                <div class="relative rounded-2xl overflow-hidden border border-gold/20 group h-80">
+                    <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=80" 
+                         alt="Instalación Academia Estudio 1" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="font-serif text-xl font-bold text-gold">Aulas Modernas y Equipadas</span>
                     </div>
                 </div>
 
-                <div class="relative group overflow-hidden rounded-2xl h-80 border border-gold/20">
-                    <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=800&q=80" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" alt="Servicios de Belleza" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
-                    <div class="absolute bottom-6 left-6 right-6">
-                        <span class="text-gold text-xs uppercase tracking-widest block font-semibold mb-1">Tratamientos</span>
-                        <h4 class="font-serif text-xl font-bold text-sand">Atención Personalizada</h4>
+                <div class="relative rounded-2xl overflow-hidden border border-gold/20 group h-80">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" 
+                         alt="Instalación Academia Estudio 2" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="font-serif text-xl font-bold text-gold">Espacios de Trabajo Colaborativo</span>
                     </div>
                 </div>
 
-                <div class="relative group overflow-hidden rounded-2xl h-80 border border-gold/20">
-                    <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=800&q=80" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" alt="Formación Profesional" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
-                    <div class="absolute bottom-6 left-6 right-6">
-                        <span class="text-gold text-xs uppercase tracking-widest block font-semibold mb-1">Formación</span>
-                        <h4 class="font-serif text-xl font-bold text-sand">Clases Prácticas y Teoría</h4>
+                <div class="relative rounded-2xl overflow-hidden border border-gold/20 group h-80">
+                    <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80" 
+                         alt="Instalación Academia Estudio 3" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="font-serif text-xl font-bold text-gold">Zona de Tutorías y Asesoría</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sección: Testimonios / Opiniones Reales Verificadas -->
-    <section id="testimonios" class="py-24 bg-charcoal relative">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Reviews Section -->
+    <section id="opiniones" class="py-24 bg-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-gold uppercase tracking-[0.3em] text-xs font-semibold block mb-2">Opiniones Verificadas</span>
-                <h2 class="font-serif text-3xl sm:text-5xl font-bold mb-4">Lo que opinan nuestros clientes</h2>
-                <div class="w-20 h-0.5 bg-gold mx-auto mb-6"></div>
+                <span class="text-gold text-xs uppercase tracking-[0.2em] font-semibold block mb-3">Opiniones Verificadas</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold mb-4">
+                    Lo que opinan <span class="gold-gradient">nuestros alumnos</span>
+                </h2>
                 <p class="text-sand/70 font-light">
-                    La satisfacción de quienes confían en Academia Estudio es nuestro mayor aval.
+                    La satisfacción de quienes confían en nosotros es nuestro mejor aval.
                 </p>
             </div>
 
             <div class="max-w-2xl mx-auto">
-                <!-- Tarjeta Reseña -->
-                <div class="bg-dark/80 border border-gold/30 rounded-3xl p-8 sm:p-10 relative shadow-2xl">
-                    <div class="absolute -top-5 left-10 bg-gold text-dark w-10 h-10 rounded-full flex items-center justify-center font-serif text-xl font-bold">
-                        <i class="fa-solid fa-quote-left"></i>
-                    </div>
-                    <div class="flex items-center gap-1 text-gold mb-6 mt-2">
+                <div class="bg-cardDark border border-gold/30 rounded-2xl p-8 sm:p-10 shadow-2xl relative">
+                    <div class="absolute -top-4 right-8 text-gold text-4xl font-serif">“</div>
+                    <div class="flex items-center gap-1 text-gold mb-4 text-lg">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                     </div>
-                    <p class="font-serif italic text-xl sm:text-2xl text-sand/90 mb-8 leading-relaxed">
+                    <p class="font-serif text-xl sm:text-2xl text-sand/90 italic mb-6 leading-relaxed">
                         "Excelente trato, profesionalidad y calidad."
                     </p>
-                    <div class="flex items-center justify-between border-t border-gold/10 pt-6">
+                    <div class="flex items-center justify-between pt-6 border-t border-gold/10">
                         <div>
-                            <h4 class="font-semibold text-sand">Cliente Verificado</h4>
-                            <span class="text-xs text-gold uppercase tracking-wider">Google Maps Review</span>
+                            <p class="font-bold text-gold">Cliente Verificado de Google Maps</p>
+                            <p class="text-xs uppercase tracking-wider text-sand/60">Villamejil / León</p>
                         </div>
-                        <div class="text-gold/40 text-3xl">
+                        <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center text-gold">
                             <i class="fa-brands fa-google"></i>
                         </div>
                     </div>
@@ -273,100 +395,95 @@
         </div>
     </section>
 
-    <!-- Sección: Mapa Interactivo y Ubicación / Contacto -->
-    <section id="contacto" class="py-24 bg-dark relative">
+    <!-- Contact & Map Section -->
+    <section id="contacto" class="py-24 bg-cardDark/50 border-t border-gold/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-gold uppercase tracking-[0.3em] text-xs font-semibold block mb-2">Encuéntranos</span>
-                <h2 class="font-serif text-3xl sm:text-5xl font-bold mb-4">Visita Nuestro Centro</h2>
-                <div class="w-20 h-0.5 bg-gold mx-auto mb-6"></div>
+                <span class="text-gold text-xs uppercase tracking-[0.2em] font-semibold block mb-3">Contacto Directo</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold mb-4">
+                    Visítanos o <span class="gold-gradient">Reserva tu Plaza</span>
+                </h2>
                 <p class="text-sand/70 font-light">
-                    Estamos ubicados en una zona accesible para dar servicio en León, Villamejil y alrededores.
+                    Estamos a tu completa disposición para resolver cualquier duda o gestionar tu cita.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <!-- Información de Contacto -->
-                <div class="bg-charcoal border border-gold/20 rounded-3xl p-8 sm:p-10 space-y-8">
-                    <h3 class="font-serif text-2xl font-bold text-gold mb-4">Información de Contacto</h3>
-                    
-                    <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center text-gold shrink-0 mt-1">
-                            <i class="fa-solid fa-location-dot text-lg"></i>
+                <!-- Info & Details -->
+                <div class="space-y-8">
+                    <div class="bg-dark border border-gold/20 p-8 rounded-2xl shadow-xl space-y-6">
+                        <h3 class="font-serif text-2xl font-bold gold-gradient mb-2">Información de Contacto</h3>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold text-xl shrink-0 mt-1">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm uppercase tracking-wider text-gold-light">Dirección Exacta</h4>
+                                <p class="text-sand/80 mt-1 font-light">Av Emilio Hurtado, S/N, 24007 León, España<br><span class="text-xs text-gold/80">(Centro de formación en Villamejil y León)</span></p>
+                            </div>
                         </div>
-                        <div>
-                            <span class="text-xs uppercase tracking-widest text-sand/60 block mb-1 font-semibold">Dirección</span>
-                            <p class="text-sand font-medium">Av Emilio Hurtado, S/N, 24007 León, España</p>
-                        </div>
-                    </div>
 
-                    <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center text-gold shrink-0 mt-1">
-                            <i class="fa-solid fa-phone text-lg"></i>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold text-xl shrink-0 mt-1">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm uppercase tracking-wider text-gold-light">Teléfono</h4>
+                                <a href="tel:686120394" class="text-sand/80 hover:text-gold mt-1 inline-block font-light">686 12 03 94</a>
+                            </div>
                         </div>
-                        <div>
-                            <span class="text-xs uppercase tracking-widest text-sand/60 block mb-1 font-semibold">Teléfono</span>
-                            <a href="tel:686120394" class="text-sand font-medium hover:text-gold transition-colors">686 12 03 94</a>
-                        </div>
-                    </div>
 
-                    <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center text-gold shrink-0 mt-1">
-                            <i class="fa-solid fa-envelope text-lg"></i>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold text-xl shrink-0 mt-1">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm uppercase tracking-wider text-gold-light">Correo Electrónico</h4>
+                                <a href="mailto:error-lite+84f2@duckduckgo.com" class="text-sand/80 hover:text-gold mt-1 inline-block font-light break-all">error-lite+84f2@duckduckgo.com</a>
+                            </div>
                         </div>
-                        <div>
-                            <span class="text-xs uppercase tracking-widest text-sand/60 block mb-1 font-semibold">Correo Electrónico</span>
-                            <a href="mailto:error-lite+84f2@duckduckgo.com" class="text-sand font-medium hover:text-gold transition-colors break-all">error-lite+84f2@duckduckgo.com</a>
-                        </div>
-                    </div>
 
-                    <div class="pt-6 border-t border-gold/10">
-                        <a href="tel:686120394" class="w-full bg-gold text-dark font-bold px-8 py-4 rounded-full hover:bg-gold-light transition-all shadow-xl shadow-gold/20 text-sm uppercase tracking-widest flex items-center justify-center gap-3">
-                            <i class="fa-solid fa-phone"></i> Reservar Cita Ahora
-                        </a>
+                        <div class="pt-4 border-t border-gold/10">
+                            <a href="tel:686120394" class="w-full py-4 rounded-full gold-bg-gradient text-dark font-bold uppercase tracking-wider hover:opacity-95 transition-all shadow-lg shadow-gold/20 flex items-center justify-center gap-3">
+                                <i class="fa-solid fa-calendar-check"></i> Reservar Cita Ahora
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Mapa Interactivo Real -->
-                <div class="bg-charcoal border border-gold/20 rounded-3xl p-4 shadow-2xl">
-                    <div class="overflow-hidden rounded-2xl">
-                        <iframe src="https://www.google.com/maps?q=Academia%20Estudio.%20Av%20Emilio%20Hurtado%2C%20S%2FN%2C%2024007%20Le%C3%B3n%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
-                    </div>
+                <!-- Map -->
+                <div class="bg-dark p-3 rounded-2xl border border-gold/25 shadow-2xl">
+                    <iframe src="https://www.google.com/maps?q=Academia%20Estudio.%20Av%20Emilio%20Hurtado%2C%20S%2FN%2C%2024007%20Le%C3%B3n%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-charcoal border-t border-gold/20 py-12 text-center text-sand/60 text-sm">
+    <footer class="bg-dark border-t border-gold/20 py-12 text-center text-sand/60 text-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
-            <span class="font-serif text-2xl tracking-wider text-gold font-bold block">ACADEMIA ESTUDIO</span>
-            <p>Centro de formación y estética avanzada (Villamejil / León, España).</p>
-            <p class="text-xs text-sand/40 pt-4 border-t border-gold/10">
-                &copy; <span id="year"></span> Academia Estudio. Todos los derechos reservados. Desarrollado con excelencia.
-            </p>
+            <p class="font-serif text-2xl font-bold tracking-wider gold-gradient">ACADEMIA ESTUDIO</p>
+            <p>Centro de formación (Villamejil, España) • Av Emilio Hurtado, S/N, 24007 León, España</p>
+            <p class="text-xs text-sand/40">&copy; <script>document.write(new Date().getFullYear())</script> Academia Estudio. Todos los derechos reservados.</p>
         </div>
     </footer>
 
-    <!-- Script para menú móvil y año dinámico -->
+    <!-- Mobile Menu Script -->
     <script>
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
 
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Cerrar menú al hacer clic en un enlace
-        const mobileLinks = mobileMenu.querySelectorAll('a');
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
         });
-
-        // Año actual en footer
-        document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
