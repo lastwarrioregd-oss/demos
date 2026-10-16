@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Suizo | Cafetería Emblemática en Santander</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        suizo: {
+                            dark: '#1C1614',
+                            terracota: '#A8573E',
+                            crema: '#FDFBF7',
+                            dorado: '#D4AF37',
+                            sand: '#F4EFEA',
+                            brown: '#3E2723'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-suizo-crema text-suizo-dark font-sans antialiased selection:bg-suizo-terracota selection:text-white">
+
+    <!-- Header / Navegación -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-suizo-dark/95 backdrop-blur-md text-suizo-crema border-b border-suizo-dorado/20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2 group">
+                <span class="font-serif text-2xl sm:text-3xl font-bold tracking-wider text-suizo-crema group-hover:text-suizo-dorado transition-colors">
+                    Café Suizo
+                </span>
+                <span class="text-xs uppercase tracking-widest px-2 py-0.5 bg-suizo-terracota text-white rounded-full">Santander</span>
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm tracking-wide">
+                <a href="#inicio" class="hover:text-suizo-dorado transition-colors">Inicio</a>
+                <a href="#historia" class="hover:text-suizo-dorado transition-colors">Nuestra Esencia</a>
+                <a href="#carta" class="hover:text-suizo-dorado transition-colors">Carta & Especialidades</a>
+                <a href="#galeria" class="hover:text-suizo-dorado transition-colors">Instalaciones</a>
+                <a href="#opiniones" class="hover:text-suizo-dorado transition-colors">Reseñas</a>
+                <a href="#contacto" class="hover:text-suizo-dorado transition-colors">Ubicación</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="tel:942215864" class="hidden sm:inline-flex items-center gap-2 bg-suizo-terracota hover:bg-suizo-terracota/9k text-white px-5 py-2.5 rounded-full font-semibold text-sm transition-all shadow-lg shadow-suizo-terracota/20 hover:scale-105">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>942 21 58 64</span>
+                </a>
+                <button id="menu-btn" class="md:hidden text-suizo-crema text-2xl focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menú Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-suizo-dark border-b border-suizo-dorado/20 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="block py-2 text-suizo-crema hover:text-suizo-dorado">Inicio</a>
+            <a href="#historia" class="block py-2 text-suizo-crema hover:text-suizo-dorado">Nuestra Esencia</a>
+            <a href="#carta" class="block py-2 text-suizo-crema hover:text-suizo-dorado">Carta & Especialidades</a>
+            <a href="#galeria" class="block py-2 text-suizo-crema hover:text-suizo-dorado">Instalaciones</a>
+            <a href="#opiniones" class="block py-2 text-suizo-crema hover:text-suizo-dorado">Reseñas</a>
+            <a href="#contacto" class="block py-2 text-suizo-crema hover:text-suizo-dorado">Ubicación</a>
+            <a href="tel:942215864" class="w-full text-center block bg-suizo-terracota text-white py-3 rounded-full font-semibold mt-4">
+                <i class="fa-solid fa-phone mr-2"></i> Reservar Mesa (942 21 58 64)
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-suizo-dark text-suizo-crema">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0 opacity-40">
+            <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1920&q=80" 
+                 alt="Café Suizo Interior" 
+                 class="w-full h-full object-cover"
+                 referrerpolicy="no-referrer" 
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-suizo-dark via-suizo-dark/60 to-transparent z-1"></div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-24">
+            <span class="inline-block text-suizo-dorado uppercase tracking-widest text-sm sm:text-base font-semibold mb-4 px-4 py-1.5 rounded-full border border-suizo-dorado/30 bg-suizo-dark/60 backdrop-blur-sm">
+                Tradición y Elegancia frente a la Bahía
+            </span>
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-tight">
+                El Sabor de la Distinción en <span class="italic text-suizo-dorado">Santander</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-lg sm:text-xl text-suizo-crema/80 font-light mb-10 leading-relaxed">
+                Ubicados en el emblemático Paseo de Pereda. Disfruta de un excelente trato, profesionalidad y calidad inigualable en un ambiente acogedor e histórico.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="tel:942215864" class="w-full sm:w-auto bg-suizo-terracota hover:bg-suizo-terracota/90 text-white font-bold px-8 py-4 rounded-full transition-all shadow-xl shadow-suizo-terracota/30 hover:scale-105 text-center flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-mug-hot text-lg"></i>
+                    <span>Reservar Mesa</span>
+                </a>
+                <a href="#carta" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-suizo-crema border border-white/20 font-semibold px-8 py-4 rounded-full transition-all backdrop-blur-sm text-center">
+                    Ver Nuestra Carta
+                </a>
+            </div>
+
+            <!-- Quick info bar -->
+            <div class="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 pt-10 border-t border-white/10 text-sm">
+                <div class="flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-location-dot text-suizo-dorado text-xl"></i>
+                    <span class="text-suizo-crema/90">P. de Pereda, 28, Santander</span>
+                </div>
+                <div class="flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-award text-suizo-dorado text-xl"></i>
+                    <span class="text-suizo-crema/90">Excelente Trato y Profesionalidad</span>
+                </div>
+                <div class="flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-phone-volume text-suizo-dorado text-xl"></i>
+                    <span class="text-suizo-crema/90">Atención Directa: 942 21 58 64</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Esencia / Historia -->
+    <section id="historia" class="py-24 bg-suizo-sand text-suizo-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div class="space-y-6">
+                    <span class="text-suizo-terracota font-bold tracking-widest uppercase text-sm">Nuestra Esencia</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold leading-tight text-suizo-brown">
+                        Un referente histórico en el corazón de Santander
+                    </h2>
+                    <p class="text-suizo-brown/80 leading-relaxed text-base sm:text-lg font-light">
+                        Situados en una de las postales más bellas de Cantabria, el <strong class="font-semibold text-suizo-dark">Café Suizo</strong> combina la solera de los cafés tradicionales con un servicio impecable y cercano. 
+                    </p>
+                    <p class="text-suizo-brown/80 leading-relaxed text-base sm:text-lg font-light">
+                        Cada detalle está pensado para ofrecerte una experiencia única: desde nuestros cafés de especialidad y desayunos memorables hasta una selección de repostería y tapas elaboradas con mimo y productos de primera calidad.
+                    </p>
+                    <div class="pt-4 flex items-center gap-6">
+                        <div>
+                            <span class="block font-serif text-3xl font-bold text-suizo-terracota">100%</span>
+                            <span class="text-xs text-suizo-brown uppercase tracking-wider">Calidad Garantizada</span>
+                        </div>
+                        <div class="w-px h-12 bg-suizo-brown/20"></div>
+                        <div>
+                            <span class="block font-serif text-3xl font-bold text-suizo-terracota">5 Estrellas</span>
+                            <span class="text-xs text-suizo-brown uppercase tracking-wider">Valoración Clientes</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+                        <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1000&q=80" 
+                             alt="Café y ambiente Café Suizo" 
+                             class="w-full h-[450px] object-cover hover:scale-105 transition-transform duration-700"
+                             referrerpolicy="no-referrer" 
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+                    </div>
+                    <!-- Decorative element -->
+                    <div class="absolute -bottom-6 -right-6 w-72 h-72 bg-suizo-dorado/10 rounded-full blur-3xl -z-10"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carta, Platos Estrella y Especialidades -->
+    <section id="carta" class="py-24 bg-suizo-crema text-suizo-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-suizo-terracota font-bold tracking-widest uppercase text-sm">Gastronomía & Delicias</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-suizo-brown">Nuestra Carta y Especialidades</h2>
+                <p class="text-suizo-brown/80 text-base sm:text-lg">
+                    Elaboraciones cuidadas para acompañar tus mejores momentos frente al Paseo de Pereda.
+                </p>
+            </div>
+
+            <!-- Categorías de Carta -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Card 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-xl shadow-suizo-dark/5 border border-suizo-brown/10 hover:border-suizo-terracota/50 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-suizo-terracota/10 flex items-center justify-center text-suizo-terracota text-xl mb-6">
+                            <i class="fa-solid fa-mug-hot"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-suizo-brown mb-3">Cafés y Desayunos</h3>
+                        <p class="text-suizo-brown/70 text-sm mb-6 leading-relaxed">
+                            Comienza el día con energía. Cafés de origen, infusiones selectas y tostadas con pan de masa madre y productos cántabros.
+                        </p>
+                    </div>
+                    <ul class="space-y-3 border-t border-suizo-brown/10 pt-4 text-sm text-suizo-brown/90 font-medium">
+                        <li class="flex justify-between items-center">
+                            <span>Café Cappuccino Suizo</span>
+                            <span class="text-suizo-terracota font-bold">Recomendado</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>Tostada de Jamón Ibérico y Tomate</span>
+                            <span class="text-suizo-terracota font-bold">Artesanal</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>Zumo de Naranja Natural</span>
+                            <span class="text-suizo-terracota font-bold">Fresco</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-xl shadow-suizo-dark/5 border border-suizo-brown/10 hover:border-suizo-terracota/50 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-suizo-terracota/10 flex items-center justify-center text-suizo-terracota text-xl mb-6">
+                            <i class="fa-solid fa-cake-candles"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-suizo-brown mb-3">Repostería y Pastelería</h3>
+                        <p class="text-suizo-brown/70 text-sm mb-6 leading-relaxed">
+                            El dulce toque de distinción. Pasteles artesanos, tartas caseras y bollería recién horneada para acompañar tu café.
+                        </p>
+                    </div>
+                    <ul class="space-y-3 border-t border-suizo-brown/10 pt-4 text-sm text-suizo-brown/90 font-medium">
+                        <li class="flex justify-between items-center">
+                            <span>Tarta de Queso Casera</span>
+                            <span class="text-suizo-terracota font-bold">Estrella</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>Croissants de Mantequilla</span>
+                            <span class="text-suizo-terracota font-bold">Horneado</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>Surtido de Pastelería Fina</span>
+                            <span class="text-suizo-terracota font-bold">Gourmet</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-xl shadow-suizo-dark/5 border border-suizo-brown/10 hover:border-suizo-terracota/50 transition-all duration-300 flex flex-col justify-between md:col-span-2 lg:col-span-1">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-suizo-terracota/10 flex items-center justify-center text-suizo-terracota text-xl mb-6">
+                            <i class="fa-solid fa-wine-glass-empty"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-suizo-brown mb-3">Aperitivos y Vermuts</h3>
+                        <p class="text-suizo-brown/70 text-sm mb-6 leading-relaxed">
+                            Disfruta del aperitivo santanderino por excelencia frente a la bahía con los mejores caldos, vermuts y tapas selectas.
+                        </p>
+                    </div>
+                    <ul class="space-y-3 border-t border-suizo-brown/10 pt-4 text-sm text-suizo-brown/90 font-medium">
+                        <li class="flex justify-between items-center">
+                            <span>Vermut Preparado de la Casa</span>
+                            <span class="text-suizo-terracota font-bold">Clásico</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>Tapas y Raciones Variadas</span>
+                            <span class="text-suizo-terracota font-bold">Calidad</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>Vinos con Denominación de Origen</span>
+                            <span class="text-suizo-terracota font-bold">Selección</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Callout de reserva -->
+            <div class="mt-16 bg-suizo-dark text-suizo-crema rounded-3xl p-8 sm:p-12 text-center relative overflow-hidden">
+                <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                <div class="relative z-10 max-w-2xl mx-auto space-y-6">
+                    <h3 class="font-serif text-3xl sm:text-4xl font-bold">¿Te apetece visitarnos hoy?</h3>
+                    <p class="text-suizo-crema/80 font-light">
+                        Reserva tu mesa con antelación y asegura el mejor sitio para disfrutar de nuestra atmósfera inigualable.
+                    </p>
+                    <a href="tel:942215864" class="inline-flex items-center gap-3 bg-suizo-terracota hover:bg-suizo-terracota/90 text-white font-bold px-8 py-4 rounded-full transition-all shadow-lg shadow-suizo-terracota/30 hover:scale-105">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>Reservar Mesa: 942 21 58 64</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Galería: Nuestras Instalaciones -->
+    <section id="galeria" class="py-24 bg-suizo-sand text-suizo-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-suizo-terracota font-bold tracking-widest uppercase text-sm">Galería Visual</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-suizo-brown">Nuestras Instalaciones</h2>
+                <p class="text-suizo-brown/80 text-base sm:text-lg">
+                    Un espacio elegante, luminoso y acogedor diseñado para tu máximo confort.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Foto 1 -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-lg h-80 bg-suizo-brown/10">
+                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80" 
+                         alt="Interior Café Suizo" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-suizo-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-serif text-lg font-medium">Ambiente Acogedor e Histórico</span>
+                    </div>
+                </div>
+
+                <!-- Foto 2 -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-lg h-80 bg-suizo-brown/15">
+                    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80" 
+                         alt="Café de especialidad Café Suizo" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-suizo-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-serif text-lg font-medium">Café de Máxima Calidad</span>
+                    </div>
+                </div>
+
+                <!-- Foto 3 -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-lg h-80 bg-suizo-brown/20 md:col-span-2 lg:col-span-1">
+                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80" 
+                         alt="Repostería Café Suizo" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-suizo-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-serif text-lg font-medium">Dulces y Pasteles Artesanos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Opiniones Reales Verificadas -->
+    <section id="opiniones" class="py-24 bg-suizo-crema text-suizo-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-suizo-terracota font-bold tracking-widest uppercase text-sm">Opiniones Verificadas</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-suizo-brown">Lo que dicen nuestros clientes</h2>
+                <p class="text-suizo-brown/80 text-base sm:text-lg">
+                    La satisfacción de quienes nos visitan es nuestro mejor aval en Santander.
+                </p>
+            </div>
+
+            <div class="max-w-2xl mx-auto">
+                <!-- Testimonio Único Real -->
+                <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-2xl border border-suizo-brown/10 relative">
+                    <div class="absolute top-6 right-8 text-suizo-dorado/20 text-6xl font-serif">“</div>
+                    <div class="flex items-center gap-1 text-suizo-dorado mb-6">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <blockquote class="font-serif text-xl sm:text-2xl text-suizo-brown italic leading-relaxed mb-8">
+                        "Excelente trato, profesionalidad y calidad."
+                    </blockquote>
+                    <div class="flex items-center gap-4 border-t border-suizo-brown/10 pt-6">
+                        <div class="w-12 h-12 rounded-full bg-suizo-terracota text-white flex items-center justify-center font-bold text-lg">
+                            G
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-suizo-brown">Cliente Verificado</h4>
+                            <p class="text-xs text-suizo-brown/60 uppercase tracking-wider">Reseña de Google Maps</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto / Mapa Interactivo -->
+    <section id="contacto" class="py-24 bg-suizo-sand text-suizo-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-suizo-terracota font-bold tracking-widest uppercase text-sm">Ubicación y Contacto</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-suizo-brown">Ven a visitarnos</h2>
+                <p class="text-suizo-brown/80 text-base sm:text-lg">
+                    Te esperamos en pleno paseo marítimo de Santander con las puertas abiertas.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                <!-- Info de contacto -->
+                <div class="lg:col-span-5 space-y-8 bg-white p-8 sm:p-10 rounded-3xl shadow-xl border border-suizo-brown/10">
+                    <h3 class="font-serif text-2xl font-bold text-suizo-brown mb-6">Información del Local</h3>
+                    
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-suizo-terracota/10 flex items-center justify-center text-suizo-terracota text-xl shrink-0 mt-1">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-suizo-brown text-sm uppercase tracking-wider mb-1">Dirección</h4>
+                            <p class="text-suizo-brown/80 font-light">P. de Pereda, 28, 39004 Santander, Cantabria, España</p>
+                            <span class="inline-block text-xs text-suizo-terracota font-semibold mt-1">Código Postal: 39002 / 39004</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-suizo-terracota/10 flex items-center justify-center text-suizo-terracota text-xl shrink-0 mt-1">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-suizo-brown text-sm uppercase tracking-wider mb-1">Teléfono de Reservas</h4>
+                            <a href="tel:942215864" class="text-suizo-brown/80 font-medium hover:text-suizo-terracota transition-colors">942 21 58 64</a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-suizo-terracota/10 flex items-center justify-center text-suizo-terracota text-xl shrink-0 mt-1">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-suizo-brown text-sm uppercase tracking-wider mb-1">Correo Electrónico</h4>
+                            <a href="mailto:error-lite+84f2@duckduckgo.com" class="text-suizo-brown/80 font-light hover:text-suizo-terracota transition-colors break-all">error-lite+84f2@duckduckgo.com</a>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-suizo-brown/10">
+                        <a href="tel:942215864" class="w-full bg-suizo-terracota hover:bg-suizo-terracota/90 text-white font-bold py-4 rounded-full transition-all shadow-lg shadow-suizo-terracota/20 text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-mug-hot"></i>
+                            <span>Reservar Mesa</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mapa interactivo -->
+                <div class="lg:col-span-7 bg-white p-4 rounded-3xl shadow-xl border border-suizo-brown/10 overflow-hidden">
+                    <iframe src="https://www.google.com/maps?q=Caf%C3%A9%20Suizo%20P.%20de%20Pereda%2C%2028%2C%2039004%20Santander%2C%20Cantabria%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-suizo-dark text-suizo-cremal/80 text-suizo-crema py-12 border-t border-suizo-dorado/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-center md:text-left">
+                <span class="font-serif text-2xl font-bold tracking-wider text-suizo-crema block mb-1">Café Suizo</span>
+                <p class="text-xs text-suizo-crema/60">P. de Pereda, 28, 39004 Santander, Cantabria, España</p>
+            </div>
+            
+            <div class="text-center text-xs text-suizo-crema/50">
+                &copy; <script>document.write(new Date().getFullYear())</script> Café Suizo. Todos los derechos reservados.
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="tel:942215864" class="w-10 h-10 rounded-full bg-suizo-terracota/20 hover:bg-suizo-terracota text-suizo-cremal hover:text-white flex items-center justify-center transition-colors">
+                    <i class="fa-solid fa-phone"></i>
+                </a>
+                <a href="mailto:error-lite+84f2@duckduckgo.com" class="w-10 h-10 rounded-full bg-suizo-terracota/20 hover:bg-suizo-terracota text-suizo-cremal hover:text-white flex items-center justify-center transition-colors">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script sencillo para menú móvil -->
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Ocultar menú al hacer click en enlaces móviles
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
