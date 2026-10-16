@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Miguel Fernández del Campo | Fontanero Profesional en Segovia y Lastras de Cuéllar</title>
-    <meta name="description" content="Servicios profesionales de fontanería, instalación de baños, cambio de calderas y reparaciones en Segovia, Lastras de Cuéllar y alrededores. Máxima profesionalidad y limpieza.">
+    <meta name="description" content="Servicios profesionales de fontanería, instalación de baños, cambio de calderas y reparaciones en Lastras de Cuéllar, Segovia. Profesional puntual, limpio y detallista. ¡Solicita presupuesto!">
     
-    <!-- Tailwind CSS CDN -->
+    <!-- Tailwind CSS (vía CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -19,17 +19,20 @@
                             950: '#090d16',
                         },
                         steel: {
-                            50: '#f0f5fa',
-                            100: '#d9e7f4',
-                            500: '#3b82f6',
-                            600: '#2563eb',
-                            700: '#1d4ed8',
+                            50: '#f1f5f9',
+                            100: '#e2e8f0',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
                         },
-                        amber: {
-                            450: '#f59e0b',
-                            500: '#f59e0b',
-                            600: '#d97706',
-                        }
+                        accent: {
+                            DEFAULT: '#f59e0b', // Amarillo de alta visibilidad / ámbar industrial
+                            dark: '#d97706',
+                            light: '#fef3c7'
+                        },
+                        industrial: '#0284c7' // Azul acero
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -44,152 +47,152 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- FontAwesome Icons -->
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-slate-900 text-slate-100 font-sans antialiased selection:bg-amber-500 selection:text-slate-950">
+<body class="bg-slate-900 text-steel-100 font-sans antialiased selection:bg-accent selection:text-slate-950">
 
     <!-- Top Bar de Contacto Rápido -->
-    <div class="bg-slate-950 border-b border-slate-800 text-xs py-2 px-4">
+    <div class="bg-slate-950 text-steel-400 text-xs sm:text-sm py-2 px-4 border-b border-steel-800">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
             <div class="flex items-center gap-6">
-                <span class="flex items-center gap-2 text-slate-300">
-                    <i class="fa-solid fa-location-dot text-amber-500"></i> C. de Sta. María la Real de Nieva, 26, 40003 Segovia
+                <span class="flex items-center gap-2 hover:text-accent transition-colors">
+                    <i class="fa-solid fa-location-dot text-accent"></i> Lastras de Cuéllar & Segovia
                 </span>
-                <span class="hidden md:flex items-center gap-2 text-slate-300">
-                    <i class="fa-solid fa-clock text-amber-500"></i> Lunes a Viernes: Urgencias y Citas
-                </span>
+                <a href="mailto:fontaneriamiguelfernandez@gmail.com" class="hidden md:flex items-center gap-2 hover:text-accent transition-colors">
+                    <i class="fa-solid fa-envelope text-accent"></i> fontaneriamiguelfernandez@gmail.com
+                </a>
             </div>
             <div class="flex items-center gap-4">
-                <a href="mailto:fontaneriamiguelfernandez@gmail.com" class="hover:text-amber-400 transition-colors flex items-center gap-1.5 text-slate-300">
-                    <i class="fa-solid fa-envelope text-amber-500"></i> fontaneriamiguelfernandez@gmail.com
-                </a>
-                <a href="tel:616139921" class="bg-amber-500 text-slate-950 font-bold px-3 py-1 rounded hover:bg-amber-400 transition-colors flex items-center gap-1.5">
-                    <i class="fa-solid fa-phone"></i> 616 13 99 21
+                <span class="text-steel-300 font-medium hidden sm:inline">¿Urgencias o dudas técnicas?</span>
+                <a href="tel:616139921" class="bg-accent text-slate-950 font-bold px-3 py-1 rounded-full text-xs sm:text-sm hover:bg-accent-dark transition-all flex items-center gap-1.5 shadow-sm">
+                    <i class="fa-solid fa-phone-volume"></i> 616 13 99 21
                 </a>
             </div>
         </div>
     </div>
 
-    <!-- Header / Navbar -->
-    <header class="sticky top-0 z-50 bg-slate-900/95 backdrop-blur border-b border-slate-800 shadow-xl">
+    <!-- Header / Navegación Principal -->
+    <header class="sticky top-0 z-50 bg-slate-900/95 backdrop-blur border-b border-steel-800 shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
             <a href="#" class="flex items-center gap-3 group">
-                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center text-slate-950 text-xl font-black shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform">
+                <div class="w-11 h-11 rounded-lg bg-accent flex items-center justify-center text-slate-950 font-black text-xl shadow-md group-hover:scale-105 transition-transform">
                     <i class="fa-solid fa-wrench"></i>
                 </div>
                 <div>
-                    <span class="text-lg font-bold tracking-tight block leading-tight text-white">Miguel Fernández</span>
-                    <span class="text-xs text-amber-500 font-medium uppercase tracking-wider">Fontanería Profesional</span>
+                    <span class="block font-bold text-lg sm:text-xl tracking-tight text-white leading-tight">Miguel Fernández</span>
+                    <span class="block text-xs text-accent font-semibold tracking-wider uppercase">Fontanería Profesional</span>
                 </div>
             </a>
 
-            <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
-                <a href="#servicios" class="text-slate-300 hover:text-amber-400 transition-colors">Servicios</a>
-                <a href="#sobre-mi" class="text-slate-300 hover:text-amber-400 transition-colors">Sobre Mí</a>
-                <a href="#trabajos" class="text-slate-300 hover:text-amber-400 transition-colors">Trabajos</a>
-                <a href="#opiniones" class="text-slate-300 hover:text-amber-400 transition-colors">Opiniones</a>
-                <a href="#contacto" class="text-slate-300 hover:text-amber-400 transition-colors">Contacto</a>
+            <!-- Navegación Escritorio -->
+            <nav class="hidden lg:flex items-center gap-8 font-medium text-sm text-steel-300">
+                <a href="#inicio" class="hover:text-accent transition-colors">Inicio</a>
+                <a href="#servicios" class="hover:text-accent transition-colors">Servicios Técnicos</a>
+                <a href="#trabajos" class="hover:text-accent transition-colors">Trabajos Realizados</a>
+                <a href="#opiniones" class="hover:text-accent transition-colors">Opiniones Verificadas</a>
+                <a href="#contacto" class="hover:text-accent transition-colors">Contacto y Ubicación</a>
             </nav>
 
-            <div class="hidden lg:flex items-center">
-                <a href="tel:616139921" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-5 py-2.5 rounded-xl shadow-lg shadow-amber-500/20 transition-all flex items-center gap-2 transform hover:-translate-y-0.5">
-                    <i class="fa-solid fa-phone-volume text-sm"></i>
-                    <span>Solicitar Presupuesto</span>
+            <!-- Botón CTA Escritorio -->
+            <div class="hidden sm:flex items-center gap-4">
+                <a href="tel:616139921" class="bg-industrial hover:bg-sky-600 text-white font-semibold px-5 py-2.5 rounded-lg text-sm transition-all shadow-md flex items-center gap-2">
+                    <i class="fa-solid fa-phone"></i> Solicitar Presupuesto
                 </a>
             </div>
 
-            <!-- Botón menú móvil -->
-            <button id="menu-btn" class="md:hidden text-slate-300 hover:text-white focus:outline-none p-2">
-                <i class="fa-solid fa-bars text-2xl"></i>
+            <!-- Botón Menú Móvil -->
+            <button id="menu-btn" class="lg:hidden text-steel-100 text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
             </button>
         </div>
 
         <!-- Menú Móvil Desplegable -->
-        <div id="mobile-menu" class="hidden md:hidden bg-slate-950 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
-            <a href="#servicios" class="block text-slate-300 hover:text-amber-400 py-2 font-medium">Servicios</a>
-            <a href="#sobre-mi" class="block text-slate-300 hover:text-amber-400 py-2 font-medium">Sobre Mí</a>
-            <a href="#trabajos" class="block text-slate-300 hover:text-amber-400 py-2 font-medium">Trabajos</a>
-            <a href="#opiniones" class="block text-slate-300 hover:text-amber-400 py-2 font-medium">Opiniones</a>
-            <a href="#contacto" class="block text-slate-300 hover:text-amber-400 py-2 font-medium">Contacto</a>
-            <a href="tel:616139921" class="w-full mt-2 bg-amber-500 text-slate-950 font-bold py-3 rounded-xl flex items-center justify-center gap-2">
-                <i class="fa-solid fa-phone-volume"></i> Solicitar Presupuesto
-            </a>
+        <div id="mobile-menu" class="hidden lg:hidden bg-slate-950 border-b border-steel-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="block py-2 text-steel-300 hover:text-accent font-medium">Inicio</a>
+            <a href="#servicios" class="block py-2 text-steel-300 hover:text-accent font-medium">Servicios Técnicos</a>
+            <a href="#trabajos" class="block py-2 text-steel-300 hover:text-accent font-medium">Trabajos Realizados</a>
+            <a href="#opiniones" class="block py-2 text-steel-300 hover:text-accent font-medium">Opiniones Verificadas</a>
+            <a href="#contacto" class="block py-2 text-steel-300 hover:text-accent font-medium">Contacto y Ubicación</a>
+            <div class="pt-2">
+                <a href="tel:616139921" class="w-full bg-accent text-slate-950 font-bold py-3 rounded-lg text-center block shadow">
+                    <i class="fa-solid fa-phone mr-2"></i> Solicitar Presupuesto (616139921)
+                </a>
+            </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="relative bg-gradient-to-b from-slate-900 via-slate-850 to-slate-900 py-20 lg:py-32 overflow-hidden border-b border-slate-800">
-        <!-- Elementos decorativos de fondo -->
-        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
-        <div class="absolute -top-40 -right-40 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+    <section id="inicio" class="relative pt-20 pb-28 overflow-hidden bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950">
+        <!-- Patrón industrial de fondo -->
+        <div class="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#64748b_1px,transparent_1px)] [background-size:16px_16px]"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 
-                <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800 border border-slate-700 text-amber-400 text-xs font-semibold tracking-wide uppercase shadow-inner">
-                        <i class="fa-solid fa-star text-amber-400"></i> Fontanero Altamente Recomendado en Segovia
+                <!-- Columna de Texto -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-slate-800 border border-steel-700 px-3.5 py-1.5 rounded-full text-xs font-semibold text-accent">
+                        <i class="fa-solid fa-circle-check"></i> Fontanero Certificado en Lastras de Cuéllar y Segovia
                     </div>
                     
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-none">
-                        Soluciones de <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">Fontanería</span> con Pasión y Precisión
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
+                        Soluciones de Fontanería con <span class="text-accent underline decoration-industrial decoration-4 underline-offset-8">Pasión y Precisión</span>
                     </h1>
                     
-                    <p class="text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                        Especialistas en instalaciones completas de baños, cambios de caldera sin obras molestas, averías y reformas. Un servicio impecable, puntual y limpio avalado por decenas de clientes satisfechos.
+                    <p class="text-lg sm:text-xl text-steel-300 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                        Instalaciones impecables, cambio de calderas sin escombros molestos y baños completos ejecutados con pulcritud milimétrica. Un profesional que ama su trabajo y cuida cada detalle.
                     </p>
 
-                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-                        <a href="tel:616139921" class="w-full sm:w-auto bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-8 py-4 rounded-xl shadow-xl shadow-amber-500/20 transition-all flex items-center justify-center gap-3 text-base transform hover:-translate-y-0.5">
-                            <i class="fa-solid fa-phone-volume text-lg"></i>
-                            <span>Solicitar Presupuesto</span>
+                    <!-- Botones de Acción -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="tel:616139921" class="w-full sm:w-auto bg-accent hover:bg-accent-dark text-slate-950 font-extrabold px-8 py-4 rounded-xl text-base transition-all shadow-lg hover:shadow-accent/20 flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-phone text-lg"></i> Solicitar Presupuesto
                         </a>
-                        <a href="#servicios" class="w-full sm:w-auto bg-slate-800 hover:bg-slate-700 text-white font-semibold px-8 py-4 rounded-xl border border-slate-700 transition-all flex items-center justify-center gap-2 text-base">
-                            <span>Ver Servicios</span>
-                            <i class="fa-solid fa-arrow-down text-xs text-amber-500"></i>
+                        <a href="#servicios" class="w-full sm:w-auto bg-slate-800 hover:bg-slate-700 text-steel-200 font-semibold px-6 py-4 rounded-xl text-base transition-all border border-steel-700 flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-screwdriver-wrench text-accent"></i> Ver Especialidades
                         </a>
                     </div>
 
-                    <!-- Insignias de confianza rápidas -->
-                    <div class="grid grid-cols-3 gap-4 pt-8 border-t border-slate-800/80 text-center lg:text-left">
+                    <!-- Garantías / Badges rápidos -->
+                    <div class="grid grid-cols-3 gap-4 pt-8 border-t border-steel-800/80 max-w-lg mx-auto lg:mx-0 text-center lg:text-left">
                         <div>
-                            <p class="text-2xl font-black text-white">100%</p>
-                            <p class="text-xs text-slate-400 uppercase tracking-wider mt-0.5">Puntualidad</p>
+                            <span class="block text-2xl font-bold text-white">100%</span>
+                            <span class="text-xs text-steel-400">Puntualidad</span>
                         </div>
                         <div>
-                            <p class="text-2xl font-black text-amber-400">5.0 ★</p>
-                            <p class="text-xs text-slate-400 uppercase tracking-wider mt-0.5">Reseñas Google</p>
+                            <span class="block text-2xl font-bold text-white">Cero</span>
+                            <span class="text-xs text-steel-400">Daños Colaterales</span>
                         </div>
                         <div>
-                            <p class="text-2xl font-black text-white">Limpieza</p>
-                            <p class="text-xs text-slate-400 uppercase tracking-wider mt-0.5">Trabajo sin escombros</p>
+                            <span class="block text-2xl font-bold text-white">5 Estrellas</span>
+                            <span class="text-xs text-steel-400">Valoración Clientes</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Imagen Real Destacada del Hero -->
+                <!-- Columna de Imagen Real -->
                 <div class="lg:col-span-5 relative">
                     <div class="relative mx-auto max-w-md lg:max-w-none">
-                        <div class="absolute -inset-2 bg-gradient-to-r from-amber-500 to-blue-600 rounded-3xl blur-lg opacity-30 animate-pulse"></div>
-                        <div class="relative rounded-2xl overflow-hidden border-2 border-slate-700 shadow-2xl bg-slate-800 aspect-[4/5]">
+                        <!-- Marco decorativo industrial -->
+                        <div class="absolute -inset-2 bg-gradient-to-r from-accent to-industrial rounded-2xl blur-lg opacity-30 animate-pulse"></div>
+                        
+                        <div class="relative bg-slate-800 rounded-2xl overflow-hidden border-2 border-steel-700 shadow-2xl">
                             <img src="https://scontent-sea5-1.xx.fbcdn.net/v/t39.30808-1/286938809_132473369414211_1854992352728083812_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx921x921&amp;ctp=s720x720&amp;_nc_cat=108&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=s60atL7l5IoQ7kNvwFXPm0l&amp;_nc_oc=Adp2GM4b1cI2sWE4m-q2v-keuMvyAEh97pu4Wjss1qCFvvYF0WEOsuxkG4nIOtMozGI&amp;_nc_zt=24&amp;_nc_ht=scontent-sea5-1.xx&amp;_nc_gid=76CNhyXCnCKslKWlMryuaw&amp;_nc_ss=79289&amp;oh=00_AQMDhEjRnGvqoUfL_q7E3wStQGK-gwAt4pCqbzUUFUL0lA&amp;oe=6AD7CBFE" 
-                                 alt="Miguel Fernández del Campo - Fontanero Profesional" 
-                                 class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700"
+                                 alt="Miguel Fernández del Campo - Fontanero en Segovia" 
+                                 class="w-full h-[420px] object-cover object-center transform hover:scale-105 transition-transform duration-700"
                                  referrerpolicy="no-referrer"
                                  onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1200&q=80';">
                             
-                            <!-- Overlay flotante -->
-                            <div class="absolute bottom-4 left-4 right-4 bg-slate-900/90 backdrop-blur-md p-4 rounded-xl border border-slate-700 shadow-lg">
-                                <div class="flex items-center gap-3">
-                                    <div class="w-10 h-10 rounded-full bg-amber-500 text-slate-950 flex items-center justify-center font-bold">
-                                        <i class="fa-solid fa-check"></i>
-                                    </div>
-                                    <div>
-                                        <p class="text-sm font-bold text-white">Profesional Apasionado</p>
-                                        <p class="text-xs text-slate-300">Explicaciones detalladas y excelente gusto</p>
-                                    </div>
+                            <!-- Etiqueta flotante -->
+                            <div class="absolute bottom-4 left-4 right-4 bg-slate-900/90 backdrop-blur-md p-4 rounded-xl border border-steel-700 flex items-center gap-3 shadow-lg">
+                                <div class="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center text-accent shrink-0">
+                                    <i class="fa-solid fa-award text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-sm font-bold text-white">Trabajo Pulcro y Garantizado</h3>
+                                    <p class="text-xs text-steel-300">Asesoramiento experto y excelente gusto estético.</p>
                                 </div>
                             </div>
                         </div>
@@ -201,166 +204,133 @@
     </section>
 
     <!-- Sección de Propuesta de Valor / Por qué elegirnos -->
-    <section class="py-16 bg-slate-950 border-b border-slate-800">
+    <section class="py-20 bg-slate-950 border-y border-steel-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-xs font-bold text-amber-500 uppercase tracking-widest mb-3">La Diferencia Profesional</h2>
-                <p class="text-3xl font-extrabold text-white tracking-tight">¿Por qué confían en Miguel Fernández?</p>
-                <p class="text-slate-400 mt-3">Basado en las experiencias reales de nuestros clientes en Segovia y Lastras de Cuéllar.</p>
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="text-accent font-semibold tracking-wide uppercase text-sm">Excelencia en cada detalle</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">¿Por qué confiar en Miguel Fernández del Campo?</h3>
+                <p class="text-steel-400">Lo que nos diferencia no es solo la técnica, sino la pasión por un trabajo bien hecho y el respeto absolute por tu hogar.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Tarjeta 1 -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:border-amber-500/50 transition-all group">
-                    <div class="w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-broom-wide"></i>
+                <div class="bg-slate-900 p-8 rounded-2xl border border-steel-800 hover:border-accent transition-all group">
+                    <div class="w-14 h-14 rounded-xl bg-slate-800 text-accent flex items-center justify-center text-2xl mb-6 group-hover:bg-accent group-hover:text-slate-950 transition-colors">
+                        <i class="fa-solid fa-clock"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Trabajo Limpio y Sin Daños</h3>
-                    <p class="text-slate-400 leading-relaxed">
-                        Cambiamos calderas de sitio y realizamos instalaciones complejas sin prácticamente escombros ni daños en los azulejos de tu hogar.
-                    </p>
+                    <h4 class="text-xl font-bold text-white mb-3">Puntualidad Absoluta</h4>
+                    <p class="text-steel-400 text-sm leading-relaxed">Respetamos tu tiempo. Llegamos a la hora acordada y cumplimos con los plazos previstos para cada proyecto.</p>
                 </div>
 
                 <!-- Tarjeta 2 -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:border-amber-500/50 transition-all group">
-                    <div class="w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-lightbulb"></i>
+                <div class="bg-slate-900 p-8 rounded-2xl border border-steel-800 hover:border-accent transition-all group">
+                    <div class="w-14 h-14 rounded-xl bg-slate-800 text-accent flex items-center justify-center text-2xl mb-6 group-hover:bg-accent group-hover:text-slate-950 transition-colors">
+                        <i class="fa-solid fa-broom"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Asesoramiento Experto</h3>
-                    <p class="text-slate-400 leading-relaxed">
-                        Muy buen gusto para ayudarte a tomar decisiones de instalación. Te lo explica todo al detalle para que entiendas perfectamente el proceso.
-                    </p>
+                    <h4 class="text-xl font-bold text-white mb-3">Cero Escombros / Limpieza</h4>
+                    <p class="text-steel-400 text-sm leading-relaxed">Cambiamos calderas o realizamos modificaciones sin roturas innecesarias, protegiendo azulejos y acabados.</p>
                 </div>
 
                 <!-- Tarjeta 3 -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:border-amber-500/50 transition-all group">
-                    <div class="w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-clock-rotate-left"></i>
+                <div class="bg-slate-900 p-8 rounded-2xl border border-steel-800 hover:border-accent transition-all group">
+                    <div class="w-14 h-14 rounded-xl bg-slate-800 text-accent flex items-center justify-center text-2xl mb-6 group-hover:bg-accent group-hover:text-slate-950 transition-colors">
+                        <i class="fa-solid fa-comments"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Puntualidad y Eficiencia</h3>
-                    <p class="text-slate-400 leading-relaxed">
-                        Un profesional súper puntual, amable y eficiente. Instalación rápida de baños completos dejando todo en perfecto estado de revista.
-                    </p>
+                    <h4 class="text-xl font-bold text-white mb-3">Explicación Detallada</h4>
+                    <p class="text-steel-400 text-sm leading-relaxed">Te explicamos todo paso a paso para que entiendas la intervención y te ayudamos a tomar las mejores decisiones estéticas y técnicas.</p>
+                </div>
+
+                <!-- Tarjeta 4 -->
+                <div class="bg-slate-900 p-8 rounded-2xl border border-steel-800 hover:border-accent transition-all group">
+                    <div class="w-14 h-14 rounded-xl bg-slate-800 text-accent flex items-center justify-center text-2xl mb-6 group-hover:bg-accent group-hover:text-slate-950 transition-colors">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Garantía y Confianza</h4>
+                    <p class="text-steel-400 text-sm leading-relaxed">Servicio impecable respaldado por decenas de clientes satisfechos que repiten y recomiendan nuestros servicios.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Sección de Servicios Técnicos -->
-    <section id="servicios" class="py-20 bg-slate-900">
+    <section id="servicios" class="py-24 bg-slate-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-xs font-bold text-amber-500 uppercase tracking-widest mb-3">Nuestros Servicios Técnicos</h2>
-                <p class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Especialidades en Fontanería y Climatización</p>
-                <p class="text-slate-400 mt-3">Soluciones integrales con la máxima garantía y calidad de acabados.</p>
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="text-accent font-semibold tracking-wide uppercase text-sm">Servicios Técnicos Especializados</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Soluciones integrales de fontanería y calefacción</h3>
+                <p class="text-steel-400">Desde una pequeña reparación hasta la instalación integral de baños completos y reubicación de sistemas de calefacción.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 
                 <!-- Servicio 1 -->
-                <div class="bg-slate-950 border border-slate-800 rounded-2xl p-8 flex flex-col justify-between hover:border-amber-500/40 transition-all">
-                    <div>
-                        <div class="w-12 h-12 rounded-lg bg-blue-600/10 text-blue-400 flex items-center justify-center text-xl mb-6">
-                            <i class="fa-solid fa-bath"></i>
+                <div class="bg-slate-950 rounded-2xl overflow-hidden border border-steel-800 hover:border-accent transition-all flex flex-col">
+                    <div class="h-48 bg-slate-800 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80" alt="Instalación de Baños Complejos" class="w-full h-full object-cover opacity-75 hover:scale-105 transition-transform duration-500" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1200&q=80';">
+                        <div class="absolute top-4 right-4 bg-slate-900/90 text-accent font-bold text-xs px-3 py-1 rounded-full border border-steel-700">
+                            Especialidad
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-3">Instalación de Baños Completos</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                            Montaje integral de sanitarios, platos de ducha, grifería y mamparas. Realizado de manera rápida y eficiente con acabados profesionales.
-                        </p>
                     </div>
-                    <div>
-                        <a href="tel:616139921" class="inline-flex items-center gap-2 text-amber-400 font-semibold text-sm hover:text-amber-300 transition-colors">
-                            <span>Solicitar Presupuesto</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                    <div class="p-8 flex-1 flex flex-col justify-between space-y-6">
+                        <div class="space-y-3">
+                            <h4 class="text-2xl font-bold text-white">Instalación de Baños Completos</h4>
+                            <p class="text-steel-400 text-sm leading-relaxed">Montaje rápido, eficiente y estético de sanitarios, grifería, platos de ducha y mamparas. Dejando todo en perfecto estado de funcionamiento.</p>
+                        </div>
+                        <ul class="space-y-2 text-xs text-steel-300 border-t border-steel-800 pt-4">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent"></i> Sanitarios y grifería de diseño</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent"></i> Fontanería empotrada y vistas</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent"></i> Acabados limpios y sellados perfectos</li>
+                        </ul>
+                        <a href="tel:616139921" class="w-full bg-slate-800 hover:bg-accent hover:text-slate-950 text-white font-semibold py-3 rounded-xl text-sm transition-all text-center block border border-steel-700">
+                            Solicitar Presupuesto
                         </a>
                     </div>
                 </div>
 
                 <!-- Servicio 2 -->
-                <div class="bg-slate-950 border border-slate-800 rounded-2xl p-8 flex flex-col justify-between hover:border-amber-500/40 transition-all">
-                    <div>
-                        <div class="w-12 h-12 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl mb-6">
-                            <i class="fa-solid fa-fire-flame-curved"></i>
+                <div class="bg-slate-950 rounded-2xl overflow-hidden border border-steel-800 hover:border-accent transition-all flex flex-col">
+                    <div class="h-48 bg-slate-800 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1585914643039-38505500e5e0?auto=format&fit=crop&w=800&q=80" alt="Cambio y Reubicación de Calderas" class="w-full h-full object-cover opacity-75 hover:scale-105 transition-transform duration-500" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1200&q=80';">
+                        <div class="absolute top-4 right-4 bg-slate-900/90 text-accent font-bold text-xs px-3 py-1 rounded-full border border-steel-700">
+                            Alta Demanda
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-3">Cambio y Ubicación de Calderas</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                            Sustitución y reubicación de calderas en nuevas zonas de la vivienda optimizando el espacio, sin apenas escombros ni rotura de azulejos.
-                        </p>
                     </div>
-                    <div>
-                        <a href="tel:616139921" class="inline-flex items-center gap-2 text-amber-400 font-semibold text-sm hover:text-amber-300 transition-colors">
-                            <span>Solicitar Presupuesto</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                    <div class="p-8 flex-1 flex flex-col justify-between space-y-6">
+                        <div class="space-y-3">
+                            <h4 class="text-2xl font-bold text-white">Cambio y Reubicación de Calderas</h4>
+                            <p class="text-steel-400 text-sm leading-relaxed">Cambiamos tu caldera de sitio con absoluta precisión, minimizando los escombros y protegiendo los azulejos existentes.</p>
+                        </div>
+                        <ul class="space-y-2 text-xs text-steel-300 border-t border-steel-800 pt-4">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent"></i> Reubicación sin daños estéticos</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent"></i> Optimización de sistemas de calefacción</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent"></i> Pruebas de presión y seguridad</li>
+                        </ul>
+                        <a href="tel:616139921" class="w-full bg-slate-800 hover:bg-accent hover:text-slate-950 text-white font-semibold py-3 rounded-xl text-sm transition-all text-center block border border-steel-700">
+                            Solicitar Presupuesto
                         </a>
                     </div>
                 </div>
 
                 <!-- Servicio 3 -->
-                <div class="bg-slate-950 border border-slate-800 rounded-2xl p-8 flex flex-col justify-between hover:border-amber-500/40 transition-all">
-                    <div>
-                        <div class="w-12 h-12 rounded-lg bg-blue-600/10 text-blue-400 flex items-center justify-center text-xl mb-6">
-                            <i class="fa-solid fa-faucet-drip"></i>
+                <div class="bg-slate-950 rounded-2xl overflow-hidden border border-steel-800 hover:border-accent transition-all flex flex-col">
+                    <div class="h-48 bg-slate-800 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1542013936693-84d49646e2e0?auto=format&fit=crop&w=800&q=80" alt="Reparaciones y Mantenimiento" class="w-full h-full object-cover opacity-75 hover:scale-105 transition-transform duration-500" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1200&q=80';">
+                        <div class="absolute top-4 right-4 bg-slate-900/90 text-accent font-bold text-xs px-3 py-1 rounded-full border border-steel-700">
+                            Servicio Rápido
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-3">Reparación de Averías y Fugas</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                            Detección y solución rápida de goteras, tuberías rotas, grifos desgastados y problemas en redes de saneamiento particulares.
-                        </p>
                     </div>
-                    <div>
-                        <a href="tel:616139921" class="inline-flex items-center gap-2 text-amber-400 font-semibold text-sm hover:text-amber-300 transition-colors">
-                            <span>Solicitar Presupuesto</span> <i class="fa-solid fa-arrow-right text-xs"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Servicio 4 -->
-                <div class="bg-slate-950 border border-slate-800 rounded-2xl p-8 flex flex-col justify-between hover:border-amber-500/40 transition-all">
-                    <div>
-                        <div class="w-12 h-12 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl mb-6">
-                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                    <div class="p-8 flex-1 flex flex-col justify-between space-y-6">
+                        <div class="space-y-3">
+                            <h4 class="text-2xl font-bold text-white">Reparaciones y Averías</h4>
+                            <p class="text-steel-400 text-sm leading-relaxed">Diagnóstico experto y solución definitiva para fugas, atascos, sustitución de grifos, termos y mantenimiento general de fontanería.</p>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-3">Instalaciones de Fontanería General</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                            Diseño y montaje de redes de agua fría, caliente y desagües para obras nuevas, reformas de viviendas o locales comerciales.
-                        </p>
-                    </div>
-                    <div>
-                        <a href="tel:616139921" class="inline-flex items-center gap-2 text-amber-400 font-semibold text-sm hover:text-amber-300 transition-colors">
-                            <span>Solicitar Presupuesto</span> <i class="fa-solid fa-arrow-right text-xs"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Servicio 5 -->
-                <div class="bg-slate-950 border border-slate-800 rounded-2xl p-8 flex flex-col justify-between hover:border-amber-500/40 transition-all">
-                    <div>
-                        <div class="w-12 h-12 rounded-lg bg-blue-600/10 text-blue-400 flex items-center justify-center text-xl mb-6">
-                            <i class="fa-solid fa-house-chimney-medical"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-3">Mantenimiento Preventivo</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                            Revisiones periódicas de instalaciones de fontanería para evitar sorpresas desagradables y alargar la vida útil de tus equipos.
-                        </p>
-                    </div>
-                    <div>
-                        <a href="tel:616139921" class="inline-flex items-center gap-2 text-amber-400 font-semibold text-sm hover:text-amber-300 transition-colors">
-                            <span>Solicitar Presupuesto</span> <i class="fa-solid fa-arrow-right text-xs"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Servicio 6 -->
-                <div class="bg-slate-950 border border-slate-800 rounded-2xl p-8 flex flex-col justify-between hover:border-amber-500/40 transition-all">
-                    <div>
-                        <div class="w-12 h-12 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl mb-6">
-                            <i class="fa-solid fa-comments-dollar"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-3">Asesoramiento y Presupuestos</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                            Te explicamos cada detalle técnico del proyecto para que tomes la mejor decisión adaptada a tus necesidades y presupuesto.
-                        </p>
-                    </div>
-                    <div>
-                        <a href="tel:616139921" class="inline-flex items-center gap-2 text-amber-400 font-semibold text-sm hover:text-amber-300 transition-colors">
-                            <span>Solicitar Presupuesto</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                        <ul class="space-y-2 text-xs text-steel-300 border-t border-steel-800 pt-4">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent"></i> Detección y reparación de fugas</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent"></i> Sustitución de termos y calentadores</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent"></i> Asesoramiento técnico personalizado</li>
+                        </ul>
+                        <a href="tel:616139921" class="w-full bg-slate-800 hover:bg-accent hover:text-slate-950 text-white font-semibold py-3 rounded-xl text-sm transition-all text-center block border border-steel-700">
+                            Solicitar Presupuesto
                         </a>
                     </div>
                 </div>
@@ -369,220 +339,197 @@
         </div>
     </section>
 
-    <!-- Sección Sobre Mí / Perfil Profesional -->
-    <section id="sobre-mi" class="py-20 bg-slate-950 border-t border-b border-slate-800">
+    <!-- Galería / Trabajos Realizados (Fotos Reales) -->
+    <section id="trabajos" class="py-20 bg-slate-950 border-y border-steel-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                
-                <div class="lg:col-span-6 relative">
-                    <div class="relative rounded-2xl overflow-hidden border border-slate-700 shadow-2xl bg-slate-900">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="text-accent font-semibold tracking-wide uppercase text-sm">Galería de proyectos</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Nuestras Instalaciones y Trabajos</h3>
+                <p class="text-steel-400">Imágenes reales de intervenciones profesionales realizadas por Miguel Fernández del Campo en Segovia y alrededores.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <!-- Foto Real Principal -->
+                <div class="bg-slate-900 p-3 rounded-2xl border border-steel-800 shadow-xl group">
+                    <div class="overflow-hidden rounded-xl relative h-[380px]">
                         <img src="https://scontent-sea5-1.xx.fbcdn.net/v/t39.30808-1/286938809_132473369414211_1854992352728083812_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx921x921&amp;ctp=s720x720&amp;_nc_cat=108&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=s60atL7l5IoQ7kNvwFXPm0l&amp;_nc_oc=Adp2GM4b1cI2sWE4m-q2v-keuMvyAEh97pu4Wjss1qCFvvYF0WEOsuxkG4nIOtMozGI&amp;_nc_zt=24&amp;_nc_ht=scontent-sea5-1.xx&amp;_nc_gid=76CNhyXCnCKslKWlMryuaw&amp;_nc_ss=79289&amp;oh=00_AQMDhEjRnGvqoUfL_q7E3wStQGK-gwAt4pCqbzUUFUL0lA&amp;oe=6AD7CBFE" 
-                             alt="Miguel Fernández del Campo" 
-                             class="w-full h-auto object-cover"
+                             alt="Trabajo de fontanería real Miguel Fernández" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                              referrerpolicy="no-referrer"
                              onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1200&q=80';">
                     </div>
+                    <div class="p-4">
+                        <span class="text-accent text-xs font-bold uppercase tracking-wider">Instalación Profesional</span>
+                        <h4 class="text-white font-bold text-lg mt-1">Acabados de máxima calidad y rigor técnico</h4>
+                    </div>
                 </div>
 
-                <div class="lg:col-span-6 space-y-6">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-amber-400 text-xs font-semibold tracking-wide uppercase">
-                        <i class="fa-solid fa-user-check"></i> Profesionalidad y Vocación
+                <!-- Tarjeta de Resumen / Llamada a la Acción visual -->
+                <div class="bg-slate-900 p-8 sm:p-10 rounded-2xl border border-steel-800 space-y-6">
+                    <div class="w-12 h-12 rounded-xl bg-accent/20 text-accent flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-medal"></i>
                     </div>
-                    
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-                        Hola, soy Miguel Fernández del Campo
-                    </h2>
-                    
-                    <p class="text-slate-300 leading-relaxed text-base">
-                        Me apasiona mi trabajo y entiendo la fontanería no solo como un oficio, sino como un compromiso con la tranquilidad y el confort de tus espacios. Cada instalación, reforma o cambio de caldera se realiza cuidando cada milímetro de detalle.
+                    <h4 class="text-2xl font-bold text-white">¿Tienes un proyecto de fontanería en mente?</h4>
+                    <p class="text-steel-300 text-sm leading-relaxed">
+                        Ya sea que necesites renovar tus baños, reubicar una caldera o acometer una instalación compleja, ponemos nuestra experiencia y buen gusto a tu disposición.
                     </p>
-
-                    <div class="space-y-4 pt-2">
-                        <div class="flex items-start gap-3">
-                            <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center flex-shrink-0 mt-1">
-                                <i class="fa-solid fa-check text-xs"></i>
-                            </div>
-                            <p class="text-slate-300 text-sm"><strong class="text-white">Atención personalizada:</strong> Te explico todo al detalle para que entiendas el alcance del trabajo.</p>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center flex-shrink-0 mt-1">
-                                <i class="fa-solid fa-check text-xs"></i>
-                            </div>
-                            <p class="text-slate-300 text-sm"><strong class="text-white">Ubicado en Segovia:</strong> Dando servicio con rapidez en Lastras de Cuéllar y toda la provincia.</p>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center flex-shrink-0 mt-1">
-                                <i class="fa-solid fa-check text-xs"></i>
-                            </div>
-                            <p class="text-slate-300 text-sm"><strong class="text-white">Confianza total:</strong> Clientes recurrentes que avalan un servicio impecable año tras año.</p>
-                        </div>
-                    </div>
-
                     <div class="pt-4">
-                        <a href="tel:616139921" class="inline-flex items-center gap-3 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-7 py-3.5 rounded-xl shadow-lg shadow-amber-500/20 transition-all">
-                            <i class="fa-solid fa-phone"></i>
-                            <span>Contactar Directamente</span>
+                        <a href="tel:616139921" class="inline-flex items-center justify-center gap-3 bg-accent hover:bg-accent-dark text-slate-950 font-bold px-6 py-3.5 rounded-xl text-sm transition-all shadow-md w-full sm:w-auto">
+                            <i class="fa-solid fa-phone"></i> Solicitar Presupuesto Ahora
                         </a>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Galería de Trabajos -->
-    <section id="trabajos" class="py-20 bg-slate-900">
+    <!-- Opiniones Reales Verificadas -->
+    <section id="opiniones" class="py-24 bg-slate-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-xs font-bold text-amber-500 uppercase tracking-widest mb-3">Galería Visual</h2>
-                <p class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Nuestras Instalaciones y Trabajos</p>
-                <p class="text-slate-400 mt-3">Muestra real de la calidad, limpieza y precisión en cada obra realizada.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div class="bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-xl group">
-                    <div class="aspect-[4/3] overflow-hidden relative">
-                        <img src="https://scontent-sea5-1.xx.fbcdn.net/v/t39.30808-1/286938809_132473369414211_1854992352728083812_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx921x921&amp;ctp=s720x720&amp;_nc_cat=108&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=s60atL7l5IoQ7kNvwFXPm0l&amp;_nc_oc=Adp2GM4b1cI2sWE4m-q2v-keuMvyAEh97pu4Wjss1qCFvvYF0WEOsuxkG4nIOtMozGI&amp;_nc_zt=24&amp;_nc_ht=scontent-sea5-1.xx&amp;_nc_gid=76CNhyXCnCKslKWlMryuaw&amp;_nc_ss=79289&amp;oh=00_AQMDhEjRnGvqoUfL_q7E3wStQGK-gwAt4pCqbzUUFUL0lA&amp;oe=6AD7CBFE" 
-                             alt="Trabajo de fontanería por Miguel Fernández" 
-                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                             referrerpolicy="no-referrer"
-                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1200&q=80';">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-lg font-bold text-white mb-2">Instalación y Acabados de Precisión</h3>
-                        <p class="text-slate-400 text-sm">Atención minuciosa al detalle en cada proyecto de fontanería y calefacción.</p>
-                    </div>
-                </div>
-
-                <div class="bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-xl group">
-                    <div class="aspect-[4/3] overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80" 
-                             alt="Instalación de baños y sanitarios" 
-                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                             referrerpolicy="no-referrer"
-                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1200&q=80';">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-lg font-bold text-white mb-2">Montaje de Baños Completos</h3>
-                        <p class="text-slate-400 text-sm">Rapidez, eficiencia y resultados estéticos impecables en cada reforma.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección de Opiniones Reales Verificadas -->
-    <section id="opiniones" class="py-20 bg-slate-950 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-xs font-bold text-amber-500 uppercase tracking-widest mb-3">Testimonios Verificados</h2>
-                <p class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Lo que opinan nuestros clientes</p>
-                <p class="text-slate-400 mt-3">Reseñas 100% reales extraídas de Google Maps.</p>
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="text-accent font-semibold tracking-wide uppercase text-sm">Testimonios Reales</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Lo que opinan nuestros clientes en Google Maps</h3>
+                <p class="text-steel-400">La satisfacción de quienes ya han confiado en nosotros es nuestra mejor carta de presentación.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
                 <!-- Reseña 1 -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 flex flex-col justify-between shadow-lg">
-                    <div>
-                        <div class="flex text-amber-400 gap-1 mb-4 text-sm">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <div class="bg-slate-950 p-8 rounded-2xl border border-steel-800 flex flex-col justify-between space-y-6 shadow-md relative">
+                    <div class="absolute top-6 right-6 text-accent/20 text-4xl">
+                        <i class="fa-solid fa-quote-right"></i>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="text-accent flex gap-1 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
                         </div>
-                        <p class="text-slate-300 text-sm leading-relaxed italic mb-6">
+                        <p class="text-steel-300 text-sm leading-relaxed italic">
                             "Estoy encantado con el servicio recibido. Su profesionalidad, conocimiento y atención al detalle son realmente impresionantes. Hizo la instalación de dos baños completos de manera rápida y eficiente, dejando todo en perfecto estado. Totalmente recomendable"
                         </p>
                     </div>
-                    <div class="flex items-center gap-3 pt-4 border-t border-slate-800">
-                        <div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 font-bold flex items-center justify-center text-sm">
-                            A
-                        </div>
+                    <div class="border-t border-steel-800 pt-4 flex items-center justify-between">
                         <div>
-                            <p class="text-white font-bold text-sm">Alvaro de Jesús Sen</p>
-                            <p class="text-xs text-slate-400">Cliente Verificado</p>
+                            <span class="block font-bold text-white text-sm">Alvaro de Jesús Sen</span>
+                            <span class="text-xs text-steel-500">Google Local Guide</span>
+                        </div>
+                        <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-accent text-xs font-bold">
+                            A
                         </div>
                     </div>
                 </div>
 
                 <!-- Reseña 2 -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 flex flex-col justify-between shadow-lg">
-                    <div>
-                        <div class="flex text-amber-400 gap-1 mb-4 text-sm">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <div class="bg-slate-950 p-8 rounded-2xl border border-steel-800 flex flex-col justify-between space-y-6 shadow-md relative">
+                    <div class="absolute top-6 right-6 text-accent/20 text-4xl">
+                        <i class="fa-solid fa-quote-right"></i>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="text-accent flex gap-1 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
                         </div>
-                        <p class="text-slate-300 text-sm leading-relaxed italic mb-6">
+                        <p class="text-steel-300 text-sm leading-relaxed italic">
                             "Muy buen profesional. Atento al detalle. Me cambió la caldera de sitio y no tuve prácticamente escombro ni daños en los azulejos. Me quedó fenomenal. Tiene muy buen gusto a la hora de ayudar a tomar decisiones de instalación. Estoy muy contenta. Lo recomiendo."
                         </p>
                     </div>
-                    <div class="flex items-center gap-3 pt-4 border-t border-slate-800">
-                        <div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 font-bold flex items-center justify-center text-sm">
-                            S
-                        </div>
+                    <div class="border-t border-steel-800 pt-4 flex items-center justify-between">
                         <div>
-                            <p class="text-white font-bold text-sm">Sue</p>
-                            <p class="text-xs text-slate-400">Cliente Verificado</p>
+                            <span class="block font-bold text-white text-sm">Sue</span>
+                            <span class="text-xs text-steel-500">Cliente Verificado</span>
+                        </div>
+                        <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-accent text-xs font-bold">
+                            S
                         </div>
                     </div>
                 </div>
 
                 <!-- Reseña 3 -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 flex flex-col justify-between shadow-lg">
-                    <div>
-                        <div class="flex text-amber-400 gap-1 mb-4 text-sm">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <div class="bg-slate-950 p-8 rounded-2xl border border-steel-800 flex flex-col justify-between space-y-6 shadow-md relative">
+                    <div class="absolute top-6 right-6 text-accent/20 text-4xl">
+                        <i class="fa-solid fa-quote-right"></i>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="text-accent flex gap-1 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
                         </div>
-                        <p class="text-slate-300 text-sm leading-relaxed italic mb-6">
+                        <p class="text-steel-300 text-sm leading-relaxed italic">
                             "Ha sido un auténtico placer contar con sus servicios! Un chico súper puntual, amable y profesional! Muy recomendable 😉…"
                         </p>
                     </div>
-                    <div class="flex items-center gap-3 pt-4 border-t border-slate-800">
-                        <div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 font-bold flex items-center justify-center text-sm">
-                            M
-                        </div>
+                    <div class="border-t border-steel-800 pt-4 flex items-center justify-between">
                         <div>
-                            <p class="text-white font-bold text-sm">MarietC.</p>
-                            <p class="text-xs text-slate-400">Cliente Verificado</p>
+                            <span class="block font-bold text-white text-sm">MarietC.</span>
+                            <span class="text-xs text-steel-500">Cliente Verificado</span>
+                        </div>
+                        <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-accent text-xs font-bold">
+                            M
                         </div>
                     </div>
                 </div>
 
                 <!-- Reseña 4 -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 flex flex-col justify-between shadow-lg">
-                    <div>
-                        <div class="flex text-amber-400 gap-1 mb-4 text-sm">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <div class="bg-slate-950 p-8 rounded-2xl border border-steel-800 flex flex-col justify-between space-y-6 shadow-md relative">
+                    <div class="absolute top-6 right-6 text-accent/20 text-4xl">
+                        <i class="fa-solid fa-quote-right"></i>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="text-accent flex gap-1 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
                         </div>
-                        <p class="text-slate-300 text-sm leading-relaxed italic mb-6">
+                        <p class="text-steel-300 text-sm leading-relaxed italic">
                             "Servicio impecable. He contratado varias veces sus servicios y volveré a hacerlo siempre que lo necesite. Gran profesional."
                         </p>
                     </div>
-                    <div class="flex items-center gap-3 pt-4 border-t border-slate-800">
-                        <div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 font-bold flex items-center justify-center text-sm">
-                            A
-                        </div>
+                    <div class="border-t border-steel-800 pt-4 flex items-center justify-between">
                         <div>
-                            <p class="text-white font-bold text-sm">Anna París</p>
-                            <p class="text-xs text-slate-400">Cliente Verificado</p>
+                            <span class="block font-bold text-white text-sm">Anna París</span>
+                            <span class="text-xs text-steel-500">Cliente Verificado</span>
+                        </div>
+                        <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-accent text-xs font-bold">
+                            A
                         </div>
                     </div>
                 </div>
 
                 <!-- Reseña 5 -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 flex flex-col justify-between shadow-lg md:col-span-2 lg:col-span-2">
-                    <div>
-                        <div class="flex text-amber-400 gap-1 mb-4 text-sm">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <div class="bg-slate-950 p-8 rounded-2xl border border-steel-800 flex flex-col justify-between space-y-6 shadow-md relative md:col-span-2 lg:col-span-2">
+                    <div class="absolute top-6 right-6 text-accent/20 text-4xl">
+                        <i class="fa-solid fa-quote-right"></i>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="text-accent flex gap-1 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
                         </div>
-                        <p class="text-slate-300 text-sm leading-relaxed italic mb-6">
-                            "Experiencia increíble, un profesional que le apasiona y sabe lo que hace, te lo explica todo al detalle para que entiendas todo. Quedan pocos como él tan profesionales"
+                        <p class="text-steel-300 text-sm leading-relaxed italic">
+                            "Experiencia increíble , un profesional que le apasiona y sabe lo que hace, te lo explica todo al detalle para que entiendas todo. Quedan pocos como él tan profesionales"
                         </p>
                     </div>
-                    <div class="flex items-center gap-3 pt-4 border-t border-slate-800">
-                        <div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 font-bold flex items-center justify-center text-sm">
-                            C
-                        </div>
+                    <div class="border-t border-steel-800 pt-4 flex items-center justify-between">
                         <div>
-                            <p class="text-white font-bold text-sm">Carolina González</p>
-                            <p class="text-xs text-slate-400">Cliente Verificado</p>
+                            <span class="block font-bold text-white text-sm">Carolina González</span>
+                            <span class="text-xs text-steel-500">Cliente Verificado</span>
+                        </div>
+                        <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-accent text-xs font-bold">
+                            C
                         </div>
                     </div>
                 </div>
@@ -592,64 +539,67 @@
     </section>
 
     <!-- Sección de Contacto y Mapa Interactivo -->
-    <section id="contacto" class="py-20 bg-slate-900 border-t border-slate-800">
+    <section id="contacto" class="py-24 bg-slate-950 border-t border-steel-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-xs font-bold text-amber-500 uppercase tracking-widest mb-3">¿Necesitas un Fontanero?</h2>
-                <p class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Contacto y Ubicación</p>
-                <p class="text-slate-400 mt-3">Llámanos directamente o visítanos en Segovia y Lastras de Cuéllar.</p>
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="text-accent font-semibold tracking-wide uppercase text-sm">Estamos cerca de ti</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Contacto y Ubicación</h3>
+                <p class="text-steel-400">Ponte en contacto directo con Miguel Fernández del Campo para solicitar presupuesto sin compromiso.</p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
                 
-                <!-- Tarjetas de Información y Acceso Rápido -->
-                <div class="lg:col-span-5 space-y-6">
-                    <div class="bg-slate-950 border border-slate-800 rounded-2xl p-6 sm:p-8 space-y-6">
-                        <h3 class="text-xl font-bold text-white mb-2">Información de Contacto</h3>
-                        
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center flex-shrink-0 text-xl">
+                <!-- Datos de Contacto y Llamada Directa -->
+                <div class="lg:col-span-5 space-y-8 bg-slate-900 p-8 sm:p-10 rounded-2xl border border-steel-800">
+                    <h4 class="text-2xl font-bold text-white">Información de Contacto</h4>
+                    
+                    <ul class="space-y-6 text-steel-300">
+                        <li class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-accent/20 text-accent flex items-center justify-center shrink-0 mt-1">
                                 <i class="fa-solid fa-location-dot"></i>
                             </div>
                             <div>
-                                <p class="text-sm font-bold text-white">Dirección</p>
-                                <p class="text-slate-400 text-sm mt-0.5">C. de Sta. María la Real de Nieva, 26, 40003 Segovia, España</p>
+                                <strong class="block text-white text-sm font-semibold">Dirección Principal:</strong>
+                                <span class="text-sm text-steel-400">C. de Sta. María la Real de Nieva, 26, 40003 Segovia, España</span>
+                                <span class="block text-xs text-accent mt-1">Atendemos Lastras de Cuéllar y toda la provincia de Segovia</span>
                             </div>
-                        </div>
+                        </li>
 
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center flex-shrink-0 text-xl">
+                        <li class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-accent/20 text-accent flex items-center justify-center shrink-0 mt-1">
                                 <i class="fa-solid fa-phone"></i>
                             </div>
                             <div>
-                                <p class="text-sm font-bold text-white">Teléfono de Atención</p>
-                                <a href="tel:616139921" class="text-amber-400 hover:underline text-sm font-semibold mt-0.5 block">616 13 99 21</a>
+                                <strong class="block text-white text-sm font-semibold">Teléfono Directo:</strong>
+                                <a href="tel:616139921" class="text-sm text-accent hover:underline font-bold">616 13 99 21</a>
                             </div>
-                        </div>
+                        </li>
 
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center flex-shrink-0 text-xl">
+                        <li class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-accent/20 text-accent flex items-center justify-center shrink-0 mt-1">
                                 <i class="fa-solid fa-envelope"></i>
                             </div>
                             <div>
-                                <p class="text-sm font-bold text-white">Correo Electrónico</p>
-                                <a href="mailto:fontaneriamiguelfernandez@gmail.com" class="text-slate-400 hover:text-amber-400 text-sm mt-0.5 block break-all">fontaneriamiguelfernandez@gmail.com</a>
+                                <strong class="block text-white text-sm font-semibold">Correo Electrónico:</strong>
+                                <a href="mailto:fontaneriamiguelfernandez@gmail.com" class="text-sm text-steel-400 hover:text-accent transition-colors">fontaneriamiguelfernandez@gmail.com</a>
                             </div>
-                        </div>
+                        </li>
+                    </ul>
 
-                        <div class="pt-4 border-t border-slate-800">
-                            <a href="tel:616139921" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-4 rounded-xl shadow-lg shadow-amber-500/20 transition-all flex items-center justify-center gap-3 text-base">
-                                <i class="fa-solid fa-phone-volume"></i>
-                                <span>Solicitar Presupuesto</span>
-                            </a>
-                        </div>
+                    <div class="pt-4 border-t border-steel-800">
+                        <a href="tel:616139921" class="w-full bg-accent hover:bg-accent-dark text-slate-950 font-extrabold py-4 rounded-xl text-center block transition-all shadow-lg flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-phone-volume text-lg"></i> Solicitar Presupuesto
+                        </a>
                     </div>
                 </div>
 
                 <!-- Mapa Interactivo Real -->
-                <div class="lg:col-span-7">
-                    <div class="bg-slate-950 border border-slate-800 rounded-2xl p-4 shadow-xl">
+                <div class="lg:col-span-7 bg-slate-900 p-4 rounded-2xl border border-steel-800 shadow-xl">
+                    <div class="w-full overflow-hidden rounded-xl">
                         <iframe src="https://www.google.com/maps?q=Miguel%20Fern%C3%A1ndez%20del%20Campo%20C.%20de%20Sta.%20Mar%C3%ADa%20la%20Real%20de%20Nieva%2C%2026%2C%2040003%20Segovia%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <div class="p-4 text-center">
+                        <p class="text-xs text-steel-400"><i class="fa-solid fa-info-circle text-accent mr-1"></i> Ubicación exacta registrada en Segovia. Desplazamientos a Lastras de Cuéllar y alrededores.</p>
                     </div>
                 </div>
 
@@ -657,37 +607,39 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-slate-950 border-t border-slate-800 py-12 text-sm text-slate-400">
+    <!-- Footer Profesional -->
+    <footer class="bg-slate-950 border-t border-steel-800 text-steel-400 py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 pb-8 border-b border-steel-800/80">
                 <div class="flex items-center gap-3">
-                    <div class="w-9 h-9 rounded-lg bg-amber-500 flex items-center justify-center text-slate-950 font-black">
+                    <div class="w-10 h-10 rounded-lg bg-accent flex items-center justify-center text-slate-950 font-black text-lg">
                         <i class="fa-solid fa-wrench"></i>
                     </div>
-                    <span class="text-white font-bold tracking-tight">Miguel Fernández del Campo</span>
+                    <div>
+                        <span class="block font-bold text-white text-lg">Miguel Fernández del Campo</span>
+                        <span class="block text-xs text-accent">Fontanería Profesional en Lastras de Cuéllar y Segovia</span>
+                    </div>
                 </div>
-                
-                <p class="text-center md:text-left text-xs">
-                    &copy; <span id="current-year"></span> Miguel Fernández del Campo. Todos los derechos reservados. Fontanero en Lastras de Cuéllar y Segovia.
-                </p>
-
                 <div class="flex items-center gap-4">
-                    <a href="tel:616139921" class="w-9 h-9 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-amber-400 hover:bg-amber-500 hover:text-slate-950 transition-colors">
-                        <i class="fa-solid fa-phone"></i>
+                    <a href="tel:616139921" class="bg-industrial hover:bg-sky-600 text-white font-semibold px-4 py-2 rounded-lg text-sm transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-phone"></i> 616139921
                     </a>
-                    <a href="mailto:fontaneriamiguelfernandez@gmail.com" class="w-9 h-9 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-amber-400 hover:bg-amber-500 hover:text-slate-950 transition-colors">
-                        <i class="fa-solid fa-envelope"></i>
-                    </a>
+                </div>
+            </div>
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-steel-500 gap-4">
+                <p>&copy; <span id="current-year"></span> Miguel Fernández del Campo. Todos los derechos reservados.</p>
+                <div class="flex gap-6">
+                    <a href="#inicio" class="hover:text-steel-300 transition-colors">Aviso Legal</a>
+                    <a href="#inicio" class="hover:text-steel-300 transition-colors">Política de Privacidad</a>
+                    <a href="#inicio" class="hover:text-steel-300 transition-colors">Cookies</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Script para menú móvil y año automático -->
+    <!-- Script para menú móvil y año dinámico -->
     <script>
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-        
+        // Menú móvil toggle
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
 
@@ -696,11 +648,14 @@
         });
 
         // Cerrar menú móvil al hacer click en un enlace
-        mobileMenu.querySelectorAll('a').forEach(link => {
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
         });
+
+        // Actualizar año en el footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
