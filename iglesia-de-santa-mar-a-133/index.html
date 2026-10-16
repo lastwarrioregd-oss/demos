@@ -11,12 +11,19 @@
             theme: {
                 extend: {
                     colors: {
-                        brand: {
-                            dark: '#121212',
-                            card: '#1a1a1a',
-                            gold: '#d4af37',
-                            goldLight: '#f3e5ab',
-                            sand: '#f5f4f0',
+                        gold: {
+                            light: '#D4AF37',
+                            DEFAULT: '#C5A059',
+                            dark: '#997A35',
+                        },
+                        darkmatte: {
+                            DEFAULT: '#121212',
+                            light: '#1E1E1E',
+                            card: '#181818'
+                        },
+                        sand: {
+                            DEFAULT: '#F4F1EA',
+                            dark: '#E2DCD3'
                         }
                     },
                     fontFamily: {
@@ -30,450 +37,460 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-brand-dark text-brand-sand font-sans antialiased selection:bg-brand-gold selection:text-brand-dark">
+<body class="bg-darkmatte text-sand font-sans antialiased selection:bg-gold selection:text-black">
 
-    <!-- Header / Navbar -->
-    <header class="fixed top-0 left-0 w-full z-50 bg-brand-dark/90 backdrop-blur-md border-b border-brand-gold/20 transition-all duration-300">
+    <!-- Header & Navigation -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-darkmatte/90 backdrop-blur-md border-b border-gold/20 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="#" class="flex items-center space-x-3 group">
-                <div class="w-10 h-10 rounded-full border border-brand-gold flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-dark transition-colors duration-300">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full border border-gold/50 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-black transition-all duration-300">
                     <i class="fa-solid fa-place-of-worship"></i>
                 </div>
                 <div>
-                    <span class="block font-serif text-lg font-bold tracking-wider text-white">IGLESIA DE SANTA MARÍA</span>
-                    <span class="block text-xs uppercase tracking-widest text-brand-gold">Alaejos • Valladolid</span>
+                    <span class="font-serif text-xl tracking-wider text-white block">Santa María</span>
+                    <span class="text-xs text-gold tracking-widest uppercase">Alaejos • Valladolid</span>
                 </div>
             </a>
             
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
-                <a href="#inicio" class="hover:text-brand-gold transition-colors">Inicio</a>
-                <a href="#historia" class="hover:text-brand-gold transition-colors">El Templo</a>
-                <a href="#servicios" class="hover:text-brand-gold transition-colors">Visitas & Servicios</a>
-                <a href="#galeria" class="hover:text-brand-gold transition-colors">Arquitectura</a>
-                <a href="#opiniones" class="hover:text-brand-gold transition-colors">Opiniones</a>
-                <a href="#contacto" class="hover:text-brand-gold transition-colors">Ubicación</a>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
+                <a href="#historia" class="hover:text-gold transition-colors">Historia</a>
+                <a href="#patrimonio" class="hover:text-gold transition-colors">Patrimonio</a>
+                <a href="#galeria" class="hover:text-gold transition-colors">Galería</a>
+                <a href="#testimonios" class="hover:text-gold transition-colors">Testimonios</a>
+                <a href="#contacto" class="hover:text-gold transition-colors">Ubicación</a>
             </nav>
 
-            <div class="hidden lg:flex items-center space-x-4">
-                <a href="tel:983867135" class="bg-brand-gold text-brand-dark hover:bg-brand-goldLight font-semibold px-6 py-2.5 rounded-full text-sm transition-all duration-300 shadow-lg shadow-brand-gold/10 flex items-center gap-2">
-                    <i class="fa-solid fa-phone"></i>
+            <div class="flex items-center gap-4">
+                <a href="tel:983867135" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gold text-gold text-sm font-medium tracking-wide hover:bg-gold hover:text-black transition-all duration-300">
+                    <i class="fa-solid fa-phone text-xs"></i>
                     <span>Reservar Cita</span>
                 </a>
+                <!-- Mobile menu button -->
+                <button id="menu-btn" class="md:hidden text-sand hover:text-gold focus:outline-none p-2 text-xl">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </div>
-
-            <!-- Mobile menu button -->
-            <button id="mobile-menu-btn" class="md:hidden text-brand-sand hover:text-brand-gold text-xl focus:outline-none">
-                <i class="fa-solid fa-bars"></i>
-            </button>
         </div>
 
-        <!-- Mobile menu dropdown -->
-        <div id="mobile-menu" class="hidden md:hidden bg-brand-dark border-b border-brand-gold/20 px-4 pt-2 pb-6 space-y-3">
-            <a href="#inicio" class="block py-2 hover:text-brand-gold">Inicio</a>
-            <a href="#historia" class="block py-2 hover:text-brand-gold">El Templo</a>
-            <a href="#servicios" class="block py-2 hover:text-brand-gold">Visitas & Servicios</a>
-            <a href="#galeria" class="block py-2 hover:text-brand-gold">Arquitectura</a>
-            <a href="#opiniones" class="block py-2 hover:text-brand-gold">Opiniones</a>
-            <a href="#contacto" class="block py-2 hover:text-brand-gold">Ubicación</a>
-            <div class="pt-2">
-                <a href="tel:983867135" class="w-full block text-center bg-brand-gold text-brand-dark font-semibold py-3 rounded-full text-sm">
-                    <i class="fa-solid fa-phone mr-2"></i> Reservar Cita
-                </a>
-            </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-darkmatte-light border-b border-gold/20 px-4 pt-2 pb-6 space-y-3">
+            <a href="#historia" class="block py-2 text-sand hover:text-gold border-b border-white/5">Historia</a>
+            <a href="#patrimonio" class="block py-2 text-sand hover:text-gold border-b border-white/5">Patrimonio</a>
+            <a href="#galeria" class="block py-2 text-sand hover:text-gold border-b border-white/5">Galería</a>
+            <a href="#testimonios" class="block py-2 text-sand hover:text-gold border-b border-white/5">Testimonios</a>
+            <a href="#contacto" class="block py-2 text-sand hover:text-gold border-b border-white/5">Ubicación</a>
+            <a href="tel:983867135" class="w-full mt-4 flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-gold text-black font-semibold tracking-wide">
+                <i class="fa-solid fa-phone"></i>
+                <span>Reservar Cita</span>
+            </a>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-        <!-- Background with image and overlay -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <!-- Background Overlay Image -->
         <div class="absolute inset-0 z-0">
             <img src="https://scontent-sea5-1.xx.fbcdn.net/v/t39.30808-1/430080446_900854005375743_5518876172536969801_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx1414x2000&amp;ctp=s960x960&amp;_nc_cat=105&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=wxrsufpWZKkQ7kNvwGERrs1&amp;_nc_oc=AdpRfj93tiVZ8anG8ixoclIL0--5iQ-thwsk1d1EeSxHOjhCbVE4Iu5FositLzJEtPA&amp;_nc_zt=24&amp;_nc_ht=scontent-sea5-1.xx&amp;_nc_gid=Ic288t23vbVhSkuJILnoiw&amp;_nc_ss=7b289&amp;oh=00_AQO4hBb6N2Uejwzln6WwgpMwuezwWsCmx3GmNhcLR3pLCQ&amp;oe=6AD7C3DF" 
-                 alt="Iglesia de Santa María Alaejos" 
+                 alt="Iglesia de Santa María en Alaejos" 
                  referrerpolicy="no-referrer" 
                  onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
-                 class="w-full h-full object-cover object-center filter brightness-50 scale-105 animate-pulse duration-1000">
-            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/60 to-transparent"></div>
+                 class="w-full h-full object-cover object-center filter brightness-50 transform scale-105 animate-pulse duration-10000">
+            <div class="absolute inset-0 bg-gradient-to-t from-darkmatte via-darkmatte/60 to-transparent"></div>
         </div>
 
         <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-24">
-            <span class="inline-block text-brand-gold uppercase tracking-[0.3em] text-xs font-semibold mb-4 px-4 py-1.5 rounded-full border border-brand-gold/30 bg-brand-dark/40 backdrop-blur-sm">
-                Monumento Histórico del Siglo XVI • Alaejos, Valladolid
-            </span>
-            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
-                Iglesia de <span class="text-brand-gold italic">Santa María</span>
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold/40 bg-gold/10 text-gold text-xs uppercase tracking-widest mb-6 backdrop-blur-sm">
+                <i class="fa-solid fa-gem text-[10px]"></i> Monumento Histórico Exclusivo
+            </div>
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold text-white tracking-tight mb-6 leading-tight">
+                Iglesia de <span class="text-gold italic">Santa María</span>
             </h1>
-            <p class="max-w-2xl mx-auto text-lg sm:text-xl text-brand-sand/90 font-light mb-10 leading-relaxed">
-                Un compendio magistral de historia que une estilos renacentistas, mudéjares y barrocos. Descubre artesonados incomparables y un majestuoso retablo mayor dorado.
+            <p class="max-w-2xl mx-auto text-lg sm:text-xl text-sand/80 font-light mb-10 leading-relaxed">
+                Una joya arquitectónica del siglo XVI en Alaejos que fusiona con maestría los estilos renacentista, mudéjar y barroco. Un compendio de historia, arte sacro y artesonados incomparables.
             </p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="tel:983867135" class="w-full sm:w-auto bg-brand-gold text-brand-dark hover:bg-brand-goldLight font-bold px-8 py-4 rounded-full text-base transition-all duration-300 shadow-xl shadow-brand-gold/20 flex items-center justify-center gap-3">
+                <a href="tel:983867135" class="w-full sm:w-auto px-8 py-4 rounded-full bg-gold text-black font-semibold tracking-wide hover:bg-gold-light transition-all duration-300 shadow-lg shadow-gold/20 flex items-center justify-center gap-3">
                     <i class="fa-solid fa-phone"></i>
                     <span>Reservar Cita</span>
                 </a>
-                <a href="#historia" class="w-full sm:w-auto border border-brand-gold/40 hover:border-brand-gold text-white font-medium px-8 py-4 rounded-full text-base transition-all duration-300 backdrop-blur-sm flex items-center justify-center gap-2">
-                    <span>Conocer Más</span>
+                <a href="#patrimonio" class="w-full sm:w-auto px-8 py-4 rounded-full border border-sand/30 text-sand font-medium tracking-wide hover:border-gold hover:text-gold transition-all duration-300 flex items-center justify-center gap-2">
+                    <span>Descubrir Tesoros</span>
                     <i class="fa-solid fa-arrow-down text-xs"></i>
                 </a>
             </div>
 
-            <!-- Quick Info Badges -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-16 pt-12 border-t border-brand-gold/10 text-left">
-                <div class="flex items-center space-x-4 bg-brand-card/60 backdrop-blur-md p-4 rounded-xl border border-brand-gold/10">
-                    <div class="w-12 h-12 rounded-lg bg-brand-gold/10 text-brand-gold flex items-center justify-center text-xl shrink-0">
-                        <i class="fa-solid fa-landmark"></i>
-                    </div>
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-3 gap-6 pt-10 border-t border-white/10 text-left max-w-3xl mx-auto">
+                <div class="flex items-start gap-3">
+                    <div class="text-gold text-xl mt-1"><i class="fa-solid fa-landmark"></i></div>
                     <div>
-                        <h3 class="text-xs uppercase tracking-wider text-brand-gold font-semibold">Arquitectura</h3>
-                        <p class="text-sm text-brand-sand">Renacentista, Mudéjar y Barroco</p>
+                        <h3 class="text-white font-serif text-sm">Siglo XVI</h3>
+                        <p class="text-xs text-sand/60">Arquitectura mudéjar</p>
                     </div>
                 </div>
-                <div class="flex items-center space-x-4 bg-brand-card/60 backdrop-blur-md p-4 rounded-xl border border-brand-gold/10">
-                    <div class="w-12 h-12 rounded-lg bg-brand-gold/10 text-brand-gold flex items-center justify-center text-xl shrink-0">
-                        <i class="fa-solid fa-calendar-days"></i>
-                    </div>
+                <div class="flex items-start gap-3">
+                    <div class="text-gold text-xl mt-1"><i class="fa-solid fa-feather-pointed"></i></div>
                     <div>
-                        <h3 class="text-xs uppercase tracking-wider text-brand-gold font-semibold">Época</h3>
-                        <p class="text-sm text-brand-sand">Construida en el Siglo XVI</p>
+                        <h3 class="text-white font-serif text-sm">Artesonados</h3>
+                        <p class="text-xs text-sand/60">Relieves excepcionales en nogal</p>
                     </div>
                 </div>
-                <div class="flex items-center space-x-4 bg-brand-card/60 backdrop-blur-md p-4 rounded-xl border border-brand-gold/10">
-                    <div class="w-12 h-12 rounded-lg bg-brand-gold/10 text-brand-gold flex items-center justify-center text-xl shrink-0">
-                        <i class="fa-solid fa-location-dot"></i>
-                    </div>
+                <div class="flex items-start gap-3 col-span-2 md:col-span-1">
+                    <div class="text-gold text-xl mt-1"><i class="fa-solid fa-location-dot"></i></div>
                     <div>
-                        <h3 class="text-xs uppercase tracking-wider text-brand-gold font-semibold">Ubicación</h3>
-                        <p class="text-sm text-brand-sand">Pl. Sta. María, 1, Alaejos</p>
+                        <h3 class="text-white font-serif text-sm">Alaejos</h3>
+                        <p class="text-xs text-sand/60">Valladolid, España</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Historia Section -->
-    <section id="historia" class="py-24 bg-brand-dark relative">
+    <!-- Historia y Contexto Section -->
+    <section id="historia" class="py-24 bg-darkmatte-light relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div class="space-y-6">
-                    <span class="text-brand-gold uppercase tracking-[0.2em] text-xs font-semibold">Legado e Historia</span>
-                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white leading-tight">
-                        Un compendio de Historia y Arte en Alaejos
+                <div>
+                    <span class="text-gold text-xs font-semibold tracking-widest uppercase block mb-3">Legado Histórico</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl text-white font-bold mb-6 leading-snug">
+                        Un compendio arquitectónico que cautivó a ilustres de la historia
                     </h2>
-                    <p class="text-brand-sand/80 leading-relaxed font-light">
-                        Construida en el <strong class="text-brand-gold font-semibold">siglo XVI</strong> en ladrillo unido con argamasa de cal y yeso, la Iglesia de Santa María une con maestría estilos renacentistas, mudéjares y barrocos. Cuenta con tres naves cubiertas con bóvedas de crucería decoradas en oro.
+                    <p class="text-sand/80 font-light mb-6 leading-relaxed">
+                        Construida en el siglo XVI en ladrillo unido con argamasa de cal y yeso, la Iglesia de Santa María une estilos renacentistas, mudéjares y barrocos. Cuenta con tres naves cubiertas con bóvedas de crucería decoradas en oro que reflejan el esplendor de una época dorada.
                     </p>
-                    <p class="text-brand-sand/80 leading-relaxed font-light">
-                        Es célebre por albergar un majestuoso retablo mayor dorado, importantes retablos laterales y unos impresionantes artesonados de madera de nogal con relieves tallados que han cautivado a figuras históricas de la talla de Miguel de Unamuno.
+                    <p class="text-sand/80 font-light mb-8 leading-relaxed">
+                        Grandes figuras como Don Miguel de Unamuno hacían un alto en su camino hacia la Universidad de Salamanca para contemplar extasiados su suntuoso artesonado, tumbándose en el suelo para apreciar cada detalle milimétrico de su artesanía en nogal y oro.
                     </p>
-                    <div class="grid grid-cols-2 gap-6 pt-4">
-                        <div class="border-l-2 border-brand-gold pl-4">
-                            <span class="block font-serif text-3xl font-bold text-brand-gold mb-1">Siglo XVI</span>
-                            <span class="text-xs text-brand-sand/70 uppercase tracking-wider">Época de Construcción</span>
+                    <div class="grid grid-cols-2 gap-6 pt-4 border-t border-gold/20">
+                        <div>
+                            <span class="block font-serif text-3xl text-gold font-bold mb-1">Siglo XVI</span>
+                            <span class="text-xs text-sand/70 uppercase tracking-wider">Época de Construcción</span>
                         </div>
-                        <div class="border-l-2 border-brand-gold pl-4">
-                            <span class="block font-serif text-3xl font-bold text-brand-gold mb-1">Nogal y Oro</span>
-                            <span class="text-xs text-brand-sand/70 uppercase tracking-wider">Artesonados y Retablos</span>
+                        <div>
+                            <span class="block font-serif text-3xl text-gold font-bold mb-1">3 Naves</span>
+                            <span class="text-xs text-sand/70 uppercase tracking-wider">Bóvedas de Crucería</span>
                         </div>
-                    </div>
-                    <div class="pt-4">
-                        <a href="tel:983867135" class="inline-flex items-center gap-2 text-brand-gold hover:text-brand-goldLight font-semibold tracking-wide text-sm uppercase">
-                            <span>Consulta horarios y visitas</span>
-                            <i class="fa-solid fa-arrow-right text-xs"></i>
-                        </a>
                     </div>
                 </div>
                 <div class="relative">
-                    <div class="relative z-10 rounded-2xl overflow-hidden border border-brand-gold/20 shadow-2xl">
-                        <img src="https://scontent-sea5-1.xx.fbcdn.net/v/t39.30808-1/430080446_900854005375743_5518876172536969801_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx1414x2000&amp;ctp=s960x960&amp;_nc_cat=105&amp;&amp;_nc_sid=3ab345&amp;_nc_ohc=wxrsufpWZKkQ7kNvwGERrs1&amp;_nc_oc=AdpRfj93tiVZ8anG8ixoclIL0--5iQ-thwsk1d1EeSxHOjhCbVE4Iu5FositLzJEtPA&amp;_nc_zt=24&amp;_nc_ht=scontent-sea5-1.xx&amp;oh=00_AQO4hBb6N2Uejwzln6WwgpMwuezwWsCmx3GmNhcLR3pLCQ&amp;oe=6AD7C3DF" 
-                             alt="Iglesia de Santa María detalle" 
-                             referrerpolicy="no-referrer"
+                    <div class="absolute -inset-2 bg-gradient-to-r from-gold to-gold-dark rounded-2xl opacity-20 blur-lg"></div>
+                    <div class="relative bg-darkmatte-card p-2 rounded-2xl border border-gold/30 overflow-hidden shadow-2xl">
+                        <img src="https://scontent-sea5-1.xx.fbcdn.net/v/t39.30808-1/430080446_900854005375743_5518876172536969801_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx1414x2000&amp;ctp=s960x960&amp;_nc_cat=105&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=wxrsufpWZKkQ7kNvwGERrs1&amp;_nc_oc=AdpRfj93tiVZ8anG8ixoclIL0--5iQ-thwsk1d1EeSxHOjhCbVE4Iu5FositLzJEtPA&amp;_nc_zt=24&amp;_nc_ht=scontent-sea5-1.xx&amp;_nc_gid=Ic288t23vbVhSkuJILnoiw&amp;_nc_ss=7b289&amp;oh=00_AQO4hBb6N2Uejwzln6WwgpMwuezwWsCmx3GmNhcLR3pLCQ&amp;oe=6AD7C3DF" 
+                             alt="Detalle Arquitectónico Iglesia de Santa María" 
+                             referrerpolicy="no-referrer" 
                              onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
-                             class="w-full h-[500px] object-cover hover:scale-105 transition-transform duration-700">
+                             class="w-full h-[450px] object-cover rounded-xl filter contrast-105">
                     </div>
-                    <div class="absolute -bottom-6 -right-6 w-72 h-72 bg-brand-gold/10 rounded-full blur-3xl -z-10"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Nuestros Tratamientos, Cortes y Tarifas (Servicios y Visitas) -->
-    <section id="servicios" class="py-24 bg-brand-card border-y border-brand-gold/10">
+    <!-- Patrimonio y Especialidades Section (Reemplazo de Tratamientos/Carta) -->
+    <section id="patrimonio" class="py-24 bg-darkmatte">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-brand-gold uppercase tracking-[0.2em] text-xs font-semibold">Servicios & Culto</span>
-                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mt-3 mb-4">
-                    Visitas Culturales y Celebraciones Litúrgicas
+                <span class="text-gold text-xs font-semibold tracking-widest uppercase block mb-3">Joyas Artísticas</span>
+                <h2 class="font-serif text-3xl sm:text-5xl text-white font-bold mb-4">
+                    Nuestros Elementos y Servicios Patrimoniales
                 </h2>
-                <p class="text-brand-sand/80 font-light">
-                    Información esencial sobre el acceso al templo, culto dominical y apertura monumental.
+                <p class="text-sand/70 font-light text-base sm:text-lg">
+                    Un recorrido detallado por las obras maestras que conforman este templo monumental en Alaejos.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Servicio 1 -->
-                <div class="bg-brand-dark p-8 rounded-2xl border border-brand-gold/20 hover:border-brand-gold/60 transition-all duration-300 flex flex-col justify-between group">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Elemento 1 -->
+                <div class="bg-darkmatte-light p-8 rounded-2xl border border-gold/20 hover:border-gold transition-all duration-300 group flex flex-col justify-between">
                     <div>
-                        <div class="w-14 h-14 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-gold group-hover:text-brand-dark transition-colors">
+                        <div class="w-14 h-14 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-2xl mb-6 group-hover:bg-gold group-hover:text-black transition-all duration-300">
+                            <i class="fa-solid fa-crown"></i>
+                        </div>
+                        <h3 class="font-serif text-xl text-white font-semibold mb-3">El Retablo Mayor Dorado</h3>
+                        <p class="text-sand/70 text-sm font-light leading-relaxed mb-6">
+                            Majestuoso retablo principal recubierto de oro fino, considerado uno de los exponentes máximos del arte sacro de la región por su rica ornamentación y relieve.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/5 flex items-center justify-between text-xs text-gold">
+                        <span>Estilo Barroco / Renacentista</span>
+                        <a href="tel:983867135" class="hover:underline font-semibold flex items-center gap-1">Reservar Cita <i class="fa-solid fa-chevron-right text-[10px]"></i></a>
+                    </div>
+                </div>
+
+                <!-- Elemento 2 -->
+                <div class="bg-darkmatte-light p-8 rounded-2xl border border-gold/20 hover:border-gold transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-2xl mb-6 group-hover:bg-gold group-hover:text-black transition-all duration-300">
+                            <i class="fa-solid fa-border-all"></i>
+                        </div>
+                        <h3 class="font-serif text-xl text-white font-semibold mb-3">Artesonados en Nogal</h3>
+                        <p class="text-sand/70 text-sm font-light leading-relaxed mb-6">
+                            Espectaculares armaduras y artesonados mudéjares de madera de nogal con relieves excepcionales. Obra alabada históricamente por intelectuales como Unamuno.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/5 flex items-center justify-between text-xs text-gold">
+                        <span>Madera Dorada</span>
+                        <a href="tel:983867135" class="hover:underline font-semibold flex items-center gap-1">Reservar Cita <i class="fa-solid fa-chevron-right text-[10px]"></i></a>
+                    </div>
+                </div>
+
+                <!-- Elemento 3 -->
+                <div class="bg-darkmatte-light p-8 rounded-2xl border border-gold/20 hover:border-gold transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-2xl mb-6 group-hover:bg-gold group-hover:text-black transition-all duration-300">
                             <i class="fa-solid fa-church"></i>
                         </div>
-                        <h3 class="font-serif text-2xl font-bold text-white mb-3">Culto Dominical</h3>
-                        <p class="text-brand-sand/70 text-sm leading-relaxed mb-6">
-                            Celebración de la eucaristía dominical y en algunas festividades y solemnidades marianas. En temporada de invierno se habilita una pequeña capilla para la misa diaria.
+                        <h3 class="font-serif text-xl text-white font-semibold mb-3">Retablos Laterales</h3>
+                        <p class="text-sand/70 text-sm font-light leading-relaxed mb-6">
+                            Importantes conjuntos escultóricos laterales que custodian valiosas tallas religiosas y muestran la evolución artística de los siglos XVI y XVII en Castilla.
                         </p>
                     </div>
-                    <div class="pt-4 border-t border-brand-gold/10 flex items-center justify-between">
-                        <span class="text-xs uppercase tracking-wider text-brand-gold font-semibold">Domingos y Festivos</span>
-                        <a href="tel:983867135" class="text-sm font-semibold text-brand-gold hover:underline">Reservar Cita</a>
+                    <div class="pt-4 border-t border-white/5 flex items-center justify-between text-xs text-gold">
+                        <span>Escultura Sacra</span>
+                        <a href="tel:983867135" class="hover:underline font-semibold flex items-center gap-1">Reservar Cita <i class="fa-solid fa-chevron-right text-[10px]"></i></a>
                     </div>
                 </div>
 
-                <!-- Servicio 2 -->
-                <div class="bg-brand-dark p-8 rounded-2xl border border-brand-gold/20 hover:border-brand-gold/60 transition-all duration-300 flex flex-col justify-between group">
+                <!-- Elemento 4 -->
+                <div class="bg-darkmatte-light p-8 rounded-2xl border border-gold/20 hover:border-gold transition-all duration-300 group flex flex-col justify-between">
                     <div>
-                        <div class="w-14 h-14 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-gold group-hover:text-brand-dark transition-colors">
-                            <i class="fa-solid fa-monument"></i>
+                        <div class="w-14 h-14 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-2xl mb-6 group-hover:bg-gold group-hover:text-black transition-all duration-300">
+                            <i class="fa-solid fa-cubes"></i>
                         </div>
-                        <h3 class="font-serif text-2xl font-bold text-white mb-3">Visitas Turísticas</h3>
-                        <p class="text-brand-sand/70 text-sm leading-relaxed mb-6">
-                            Descubre el templo mudéjero-renacentista, sus magníficos artesonados en nogal con relieves y los retablos dorados de incalculable valor histórico y artístico.
+                        <h3 class="font-serif text-xl text-white font-semibold mb-3">Arquitectura Mudéjar</h3>
+                        <p class="text-sand/70 text-sm font-light leading-relaxed mb-6">
+                            Monumental uso del ladrillo visto unido con argamasa de cal y yeso al más puro estilo mudéjar castellano, dotando al exterior e interior de una personalidad única.
                         </p>
                     </div>
-                    <div class="pt-4 border-t border-brand-gold/10 flex items-center justify-between">
-                        <span class="text-xs uppercase tracking-wider text-brand-gold font-semibold">Turismo Alaejos</span>
-                        <a href="tel:983867135" class="text-sm font-semibold text-brand-gold hover:underline">Reservar Cita</a>
+                    <div class="pt-4 border-t border-white/5 flex items-center justify-between text-xs text-gold">
+                        <span>Ladrillo y Cal</span>
+                        <a href="tel:983867135" class="hover:underline font-semibold flex items-center gap-1">Reservar Cita <i class="fa-solid fa-chevron-right text-[10px]"></i></a>
                     </div>
                 </div>
 
-                <!-- Servicio 3 -->
-                <div class="bg-brand-dark p-8 rounded-2xl border border-brand-gold/20 hover:border-brand-gold/60 transition-all duration-300 flex flex-col justify-between group">
+                <!-- Elemento 5 -->
+                <div class="bg-darkmatte-light p-8 rounded-2xl border border-gold/20 hover:border-gold transition-all duration-300 group flex flex-col justify-between">
                     <div>
-                        <div class="w-14 h-14 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-gold group-hover:text-brand-dark transition-colors">
-                            <i class="fa-solid fa-book-open-reader"></i>
+                        <div class="w-14 h-14 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-2xl mb-6 group-hover:bg-gold group-hover:text-black transition-all duration-300">
+                            <i class="fa-solid fa-book-bible"></i>
                         </div>
-                        <h3 class="font-serif text-2xl font-bold text-white mb-3">Estudio y Patrimonio</h3>
-                        <p class="text-brand-sand/70 text-sm leading-relaxed mb-6">
-                            Punto de referencia para historiadores, amantes del arte mudéjar y seguidores de la literatura y el pensamiento que, como Unamuno, admiran la arquitectura tradicional castellana.
+                        <h3 class="font-serif text-xl text-white font-semibold mb-3">Culto Dominical y Festividades</h3>
+                        <p class="text-sand/70 text-sm font-light leading-relaxed mb-6">
+                            Celebración de eucaristías dominicales y solemnidades marianas. En temporada invernal, las misas diarias se habilitan en una acogedora capilla menor.
                         </p>
                     </div>
-                    <div class="pt-4 border-t border-brand-gold/10 flex items-center justify-between">
-                        <span class="text-xs uppercase tracking-wider text-brand-gold font-semibold">Información General</span>
-                        <a href="tel:983867135" class="text-sm font-semibold text-brand-gold hover:underline">Reservar Cita</a>
+                    <div class="pt-4 border-t border-white/5 flex items-center justify-between text-xs text-gold">
+                        <span>Liturgia Activa</span>
+                        <a href="tel:983867135" class="hover:underline font-semibold flex items-center gap-1">Reservar Cita <i class="fa-solid fa-chevron-right text-[10px]"></i></a>
+                    </div>
+                </div>
+
+                <!-- Elemento 6 -->
+                <div class="bg-darkmatte-light p-8 rounded-2xl border border-gold/20 hover:border-gold transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-2xl mb-6 group-hover:bg-gold group-hover:text-black transition-all duration-300">
+                            <i class="fa-solid fa-binoculars"></i>
+                        </div>
+                        <h3 class="font-serif text-xl text-white font-semibold mb-3">Visitas Turísticas</h3>
+                        <p class="text-sand/70 text-sm font-light leading-relaxed mb-6">
+                            Acceso guiado e información cultural gestionada a través del ayuntamiento para admirar este monumento imprescindible de la provincia de Valladolid.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/5 flex items-center justify-between text-xs text-gold">
+                        <span>Turismo Cultural</span>
+                        <a href="tel:983867135" class="hover:underline font-semibold flex items-center gap-1">Reservar Cita <i class="fa-solid fa-chevron-right text-[10px]"></i></a>
                     </div>
                 </div>
             </div>
 
-            <!-- Call to action inside services -->
             <div class="mt-12 text-center">
-                <a href="tel:983867135" class="inline-flex items-center gap-3 bg-brand-gold text-brand-dark font-bold px-8 py-4 rounded-full text-base hover:bg-brand-goldLight transition-all shadow-xl shadow-brand-gold/10">
+                <a href="tel:983867135" class="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gold text-black font-semibold tracking-wide hover:bg-gold-light transition-all duration-300 shadow-lg shadow-gold/20">
                     <i class="fa-solid fa-phone"></i>
-                    <span>Reservar Cita / Consultar Horarios</span>
+                    <span>Reservar Cita</span>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Galería / Nuestras Instalaciones y Trabajos -->
-    <section id="galeria" class="py-24 bg-brand-dark">
+    <!-- Galería "Nuestras Instalaciones y Trabajos" -->
+    <section id="galeria" class="py-24 bg-darkmatte-light">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-brand-gold uppercase tracking-[0.2em] text-xs font-semibold">Nuestras Instalaciones y Trabajos</span>
-                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mt-3 mb-4">
-                    Galería Monumental
+                <span class="text-gold text-xs font-semibold tracking-widest uppercase block mb-3">Nuestras Instalaciones y Trabajos</span>
+                <h2 class="font-serif text-3xl sm:text-5xl text-white font-bold mb-4">
+                    Galería Fotográfica
                 </h2>
-                <p class="text-brand-sand/80 font-light">
-                    Una mirada detallada al templo de Santa María, sus detalles arquitectónicos y su majestuosidad en Alaejos.
+                <p class="text-sand/70 font-light text-base sm:text-lg">
+                    Capturas detalladas de la arquitectura, retablos y espacios sagrados de la Iglesia de Santa María.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Gallery Item 1 -->
-                <div class="group relative rounded-2xl overflow-hidden border border-brand-gold/20 h-80 bg-brand-card">
-                    <img src="https://scontent-sea5-1.xx.fbcdn.net/v/t39.30808-1/430080446_900854005375743_5518876172536969801_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx1414x2000&amp;ctp=s960x960&amp;_nc_cat=105&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=wxrsufpWZKkQ7kNvwGERrs1&amp;_nc_oc=AdpRfj93tiVZ8anG8ixoclIL0--5iQ-thwsk1d1EeSxHOjhCbVE4Iu5FositLzJEtPA&amp;_nc_zt=24&amp;_nc_ht=scontent-sea5-1.xx&amp;oh=00_AQO4hBb6N2Uejwzln6WwgpMwuezwWsCmx3GmNhcLR3pLCQ&amp;oe=6AD7C3DF" 
-                         alt="Iglesia de Santa María Alaejos fachada" 
-                         referrerpolicy="no-referrer"
+                <div class="relative group overflow-hidden rounded-2xl border border-gold/20 h-80">
+                    <img src="https://scontent-sea5-1.xx.fbcdn.net/v/t39.30808-1/430080446_900854005375743_5518876172536969801_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx1414x2000&amp;ctp=s960x960&amp;_nc_cat=105&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=wxrsufpWZKkQ7kNvwGERrs1&amp;_nc_oc=AdpRfj93tiVZ8anG8ixoclIL0--5iQ-thwsk1d1EeSxHOjhCbVE4Iu5FositLzJEtPA&amp;_nc_zt=24&amp;_nc_ht=scontent-sea5-1.xx&amp;_nc_gid=Ic288t23vbVhSkuJILnoiw&amp;_nc_ss=7b289&amp;oh=00_AQO4hBb6N2Uejwzln6WwgpMwuezwWsCmx3GmNhcLR3pLCQ&amp;oe=6AD7C3DF" 
+                         alt="Fachada y detalle Santa María Alaejos" 
+                         referrerpolicy="no-referrer" 
                          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
-                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
-                    <div class="absolute bottom-6 left-6 right-6">
-                        <span class="text-xs uppercase tracking-widest text-brand-gold font-semibold">Exterior</span>
-                        <h3 class="font-serif text-xl font-bold text-white mt-1">Monumento Siglo XVI</h3>
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-darkmatte via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <span class="text-xs text-gold font-semibold uppercase tracking-wider block mb-1">Arquitectura</span>
+                        <h4 class="font-serif text-white text-lg font-medium">Fachada Principal</h4>
                     </div>
                 </div>
 
-                <!-- Gallery Item 2 -->
-                <div class="group relative rounded-2xl overflow-hidden border border-brand-gold/20 h-80 bg-brand-card">
+                <div class="relative group overflow-hidden rounded-2xl border border-gold/20 h-80">
                     <img src="https://images.unsplash.com/photo-1548625149-fc4a29cf7092?auto=format&fit=crop&w=1200&q=80" 
-                         alt="Artesonados y detalles de nogal" 
-                         referrerpolicy="no-referrer"
+                         alt="Interior y Bóvedas" 
+                         referrerpolicy="no-referrer" 
                          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
-                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
-                    <div class="absolute bottom-6 left-6 right-6">
-                        <span class="text-xs uppercase tracking-widest text-brand-gold font-semibold">Interior</span>
-                        <h3 class="font-serif text-xl font-bold text-white mt-1">Artesonados en Nogal y Oro</h3>
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-darkmatte via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <span class="text-xs text-gold font-semibold uppercase tracking-wider block mb-1">Interior</span>
+                        <h4 class="font-serif text-white text-lg font-medium">Bóvedas de Crucería</h4>
                     </div>
                 </div>
 
-                <!-- Gallery Item 3 -->
-                <div class="group relative rounded-2xl overflow-hidden border border-brand-gold/20 h-80 bg-brand-card md:col-span-2 lg:col-span-1">
-                    <img src="https://images.unsplash.com/photo-1543968996-ee822b8176ba?auto=format&fit=crop&w=1200&q=80" 
-                         alt="Retablo Mayor" 
-                         referrerpolicy="no-referrer"
+                <div class="relative group overflow-hidden rounded-2xl border border-gold/20 h-80">
+                    <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=1200&q=80" 
+                         alt="Arte Sacro y Retablos" 
+                         referrerpolicy="no-referrer" 
                          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
-                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
-                    <div class="absolute bottom-6 left-6 right-6">
-                        <span class="text-xs uppercase tracking-widest text-brand-gold font-semibold">Patrimonio</span>
-                        <h3 class="font-serif text-xl font-bold text-white mt-1">Retablo Mayor Dorado</h3>
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-darkmatte via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <span class="text-xs text-gold font-semibold uppercase tracking-wider block mb-1">Ornamentación</span>
+                        <h4 class="font-serif text-white text-lg font-medium">Retablo Mayor Dorado</h4>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Opiniones Reales Verificadas -->
-    <section id="opiniones" class="py-24 bg-brand-card border-t border-brand-gold/10">
+    <!-- Testimonios / Opiniones Reales Verificadas -->
+    <section id="testimonios" class="py-24 bg-darkmatte">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-brand-gold uppercase tracking-[0.2em] text-xs font-semibold">Opiniones Reales Verificadas</span>
-                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mt-3 mb-4">
+                <span class="text-gold text-xs font-semibold tracking-widest uppercase block mb-3">Opiniones Verificadas</span>
+                <h2 class="font-serif text-3xl sm:text-5xl text-white font-bold mb-4">
                     Lo que dicen nuestros visitantes
                 </h2>
-                <p class="text-brand-sand/80 font-light">
-                    Testimonios reales extraídos de Google Maps sobre la experiencia en la Iglesia de Santa María.
+                <p class="text-sand/70 font-light text-base sm:text-lg">
+                    Experiencias reales compartidas en Google Maps y portales culturales.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Review 1 -->
-                <div class="bg-brand-dark p-8 rounded-2xl border border-brand-gold/20 flex flex-col justify-between relative">
-                    <div class="absolute top-6 right-6 text-brand-gold/20 text-4xl font-serif">“</div>
+                <!-- Reseña 1 -->
+                <div class="bg-darkmatte-light p-8 rounded-2xl border border-gold/20 flex flex-col justify-between relative">
+                    <div class="absolute top-6 right-6 text-gold/20 text-4xl font-serif">“</div>
                     <div>
-                        <div class="flex text-brand-gold space-x-1 mb-4">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
+                        <div class="flex text-gold text-sm gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
-                        <p class="text-brand-sand/90 text-sm italic leading-relaxed mb-6">
-                            "Preciosa e importante templo de Santa María en la zona más pobre, según vecinos, pero un compendio de Historia con magestuoso retablo mayor dorado, importantes retablos laterales. Destaca por armaduras o artesonados de lo mejor dorados o en…"
+                        <p class="text-sand/80 text-sm font-light italic mb-6 leading-relaxed">
+                            "Preciosa e importante templo de Santa María en la zona más pobre, según vecinos, pero un compendio de Historia con magestuoso retablo mayor dorado, importantes retablos laterales. Destaca por armaduras o artesonados de lo mejor dorados o en..."
                         </p>
                     </div>
-                    <div class="flex items-center space-x-3 pt-4 border-t border-brand-gold/10">
-                        <div class="w-10 h-10 rounded-full bg-brand-gold/20 text-brand-gold flex items-center justify-center font-bold text-sm">
-                            FJ
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/5">
+                        <div class="w-10 h-10 rounded-full bg-gold/20 text-gold flex items-center justify-center font-serif font-bold">
+                            F
                         </div>
                         <div>
-                            <h4 class="text-sm font-bold text-white">Francisco José Jaspe y Anido</h4>
-                            <span class="text-xs text-brand-gold">Google Maps</span>
+                            <h4 class="text-white text-sm font-medium">Francisco José Jaspe y Anido</h4>
+                            <span class="text-xs text-sand/60">Google Local Guide</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Review 2 -->
-                <div class="bg-brand-dark p-8 rounded-2xl border border-brand-gold/20 flex flex-col justify-between relative">
-                    <div class="absolute top-6 right-6 text-brand-gold/20 text-4xl font-serif">“</div>
+                <!-- Reseña 2 -->
+                <div class="bg-darkmatte-light p-8 rounded-2xl border border-gold/20 flex flex-col justify-between relative">
+                    <div class="absolute top-6 right-6 text-gold/20 text-4xl font-serif">“</div>
                     <div>
-                        <div class="flex text-brand-gold space-x-1 mb-4">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
+                        <div class="flex text-gold text-sm gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
-                        <p class="text-brand-sand/90 text-sm italic leading-relaxed mb-6">
+                        <p class="text-sand/80 text-sm font-light italic mb-6 leading-relaxed">
                             "Monumento imprescindible. Sólo hay culto dominical en algunas festividades y solemnidades marianas. En invierno se ha habilitado en una pequeña capilla para la misa diaria."
                         </p>
                     </div>
-                    <div class="flex items-center space-x-3 pt-4 border-t border-brand-gold/10">
-                        <div class="w-10 h-10 rounded-full bg-brand-gold/20 text-brand-gold flex items-center justify-center font-bold text-sm">
-                            PS
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/5">
+                        <div class="w-10 h-10 rounded-full bg-gold/20 text-gold flex items-center justify-center font-serif font-bold">
+                            P
                         </div>
                         <div>
-                            <h4 class="text-sm font-bold text-white">Pablo Santana</h4>
-                            <span class="text-xs text-brand-gold">Google Maps</span>
+                            <h4 class="text-white text-sm font-medium">Pablo Santana</h4>
+                            <span class="text-xs text-sand/60">Google Maps Review</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Review 3 -->
-                <div class="bg-brand-dark p-8 rounded-2xl border border-brand-gold/20 flex flex-col justify-between relative">
-                    <div class="absolute top-6 right-6 text-brand-gold/20 text-4xl font-serif">“</div>
+                <!-- Reseña 3 -->
+                <div class="bg-darkmatte-light p-8 rounded-2xl border border-gold/20 flex flex-col justify-between relative">
+                    <div class="absolute top-6 right-6 text-gold/20 text-4xl font-serif">“</div>
                     <div>
-                        <div class="flex text-brand-gold space-x-1 mb-4">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
+                        <div class="flex text-gold text-sm gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
-                        <p class="text-brand-sand/90 text-sm italic leading-relaxed mb-6">
+                        <p class="text-sand/80 text-sm font-light italic mb-6 leading-relaxed">
                             "Construida en el siglo XVI en ladrillo unido con argamasa de cal y yeso, la Iglesia de Santa María une estilos renacentistas, mudéjares y barrocos. Cuenta con tres naves cubiertas con bóvedas de crucería​ decoradas en oro…"
                         </p>
                     </div>
-                    <div class="flex items-center space-x-3 pt-4 border-t border-brand-gold/10">
-                        <div class="w-10 h-10 rounded-full bg-brand-gold/20 text-brand-gold flex items-center justify-center font-bold text-sm">
-                            RA
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/5">
+                        <div class="w-10 h-10 rounded-full bg-gold/20 text-gold flex items-center justify-center font-serif font-bold">
+                            R
                         </div>
                         <div>
-                            <h4 class="text-sm font-bold text-white">Rafa Alvarez Polo</h4>
-                            <span class="text-xs text-brand-gold">Google Maps</span>
+                            <h4 class="text-white text-sm font-medium">Rafa Alvarez Polo</h4>
+                            <span class="text-xs text-sand/60">Google Maps Review</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Review 4 -->
-                <div class="bg-brand-dark p-8 rounded-2xl border border-brand-gold/20 flex flex-col justify-between relative">
-                    <div class="absolute top-6 right-6 text-brand-gold/20 text-4xl font-serif">“</div>
+                <!-- Reseña 4 -->
+                <div class="bg-darkmatte-light p-8 rounded-2xl border border-gold/20 flex flex-col justify-between relative">
+                    <div class="absolute top-6 right-6 text-gold/20 text-4xl font-serif">“</div>
                     <div>
-                        <div class="flex text-brand-gold space-x-1 mb-4">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
+                        <div class="flex text-gold text-sm gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
-                        <p class="text-brand-sand/90 text-sm italic leading-relaxed mb-6">
+                        <p class="text-sand/80 text-sm font-light italic mb-6 leading-relaxed">
                             "Espectacular iglesia mudéjar. Cuentan que Unamuno, hacía un alto en su camino hacía la Universidad de Salamanca, de la que fue rector, para tumbarse en el suelo y apreciar cada uno de los detalles del artesonado...…"
                         </p>
                     </div>
-                    <div class="flex items-center space-x-3 pt-4 border-t border-brand-gold/10">
-                        <div class="w-10 h-10 rounded-full bg-brand-gold/20 text-brand-gold flex items-center justify-center font-bold text-sm">
-                            PL
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/5">
+                        <div class="w-10 h-10 rounded-full bg-gold/20 text-gold flex items-center justify-center font-serif font-bold">
+                            P
                         </div>
                         <div>
-                            <h4 class="text-sm font-bold text-white">Patricia Lrenzo</h4>
-                            <span class="text-xs text-brand-gold">Google Maps</span>
+                            <h4 class="text-white text-sm font-medium">Patricia Lrenzo</h4>
+                            <span class="text-xs text-sand/60">Google Maps Review</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Review 5 -->
-                <div class="bg-brand-dark p-8 rounded-2xl border border-brand-gold/20 flex flex-col justify-between relative md:col-span-2 lg:col-span-1">
-                    <div class="absolute top-6 right-6 text-brand-gold/20 text-4xl font-serif">“</div>
+                <!-- Reseña 5 -->
+                <div class="bg-darkmatte-light p-8 rounded-2xl border border-gold/20 flex flex-col justify-between relative md:col-span-2 lg:col-span-1">
+                    <div class="absolute top-6 right-6 text-gold/20 text-4xl font-serif">“</div>
                     <div>
-                        <div class="flex text-brand-gold space-x-1 mb-4">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
+                        <div class="flex text-gold text-sm gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
-                        <p class="text-brand-sand/90 text-sm italic leading-relaxed mb-6">
+                        <p class="text-sand/80 text-sm font-light italic mb-6 leading-relaxed">
                             "Espectaculares artesonados en nogal ( los relieves ) e iglesia monumental con adobe al estilo mudéjar."
                         </p>
                     </div>
-                    <div class="flex items-center space-x-3 pt-4 border-t border-brand-gold/10">
-                        <div class="w-10 h-10 rounded-full bg-brand-gold/20 text-brand-gold flex items-center justify-center font-bold text-sm">
-                            JC
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/5">
+                        <div class="w-10 h-10 rounded-full bg-gold/20 text-gold flex items-center justify-center font-serif font-bold">
+                            J
                         </div>
                         <div>
-                            <h4 class="text-sm font-bold text-white">Juan Carlos Corral</h4>
-                            <span class="text-xs text-brand-gold">Google Maps</span>
+                            <h4 class="text-white text-sm font-medium">Juan Carlos Corral</h4>
+                            <span class="text-xs text-sand/60">Google Maps Review</span>
                         </div>
                     </div>
                 </div>
@@ -481,115 +498,114 @@
         </div>
     </section>
 
-    <!-- Mapa Interactivo y Ubicación / Contacto -->
-    <section id="contacto" class="py-24 bg-brand-dark relative">
+    <!-- Sección Contacto y Mapa Interactivo -->
+    <section id="contacto" class="py-24 bg-darkmatte-light relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-brand-gold uppercase tracking-[0.2em] text-xs font-semibold">Ubicación y Contacto</span>
-                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mt-3 mb-4">
-                    Visítanos en Alaejos
+                <span class="text-gold text-xs font-semibold tracking-widest uppercase block mb-3">Visítanos</span>
+                <h2 class="font-serif text-3xl sm:text-5xl text-white font-bold mb-4">
+                    Ubicación y Contacto
                 </h2>
-                <p class="text-brand-sand/80 font-light">
-                    Encuéntranos en el corazón de Valladolid y planifica tu visita cultural o consulta de horarios.
+                <p class="text-sand/70 font-light text-base sm:text-lg">
+                    Ven a descubrir el patrimonio de Alaejos. Estamos a tu disposición para cualquier consulta.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <!-- Info Column -->
-                <div class="space-y-8 bg-brand-card p-8 sm:p-12 rounded-3xl border border-brand-gold/20">
-                    <h3 class="font-serif text-2xl font-bold text-white mb-6">Información de Contacto</h3>
-                    
-                    <div class="flex items-start space-x-4">
-                        <div class="w-12 h-12 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center text-xl shrink-0 mt-1">
+                <!-- Información -->
+                <div class="bg-darkmatte p-8 sm:p-10 rounded-3xl border border-gold/20 space-y-8">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-xl flex-shrink-0">
                             <i class="fa-solid fa-location-dot"></i>
                         </div>
                         <div>
-                            <h4 class="text-xs uppercase tracking-wider text-brand-gold font-semibold mb-1">Dirección</h4>
-                            <p class="text-brand-sand text-sm sm:text-base leading-relaxed">Pl. Sta. María, 1, 47510 Alaejos, Valladolid, España</p>
+                            <h4 class="text-white font-serif text-lg mb-1">Dirección Exacta</h4>
+                            <p class="text-sand/70 text-sm font-light">Pl. Sta. María, 1, 47510 Alaejos, Valladolid, España</p>
                         </div>
                     </div>
 
-                    <div class="flex items-start space-x-4">
-                        <div class="w-12 h-12 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center text-xl shrink-0 mt-1">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-xl flex-shrink-0">
                             <i class="fa-solid fa-phone"></i>
                         </div>
                         <div>
-                            <h4 class="text-xs uppercase tracking-wider text-brand-gold font-semibold mb-1">Teléfono</h4>
-                            <a href="tel:983867135" class="text-brand-sand hover:text-brand-gold transition-colors text-sm sm:text-base">983 86 71 35</a>
+                            <h4 class="text-white font-serif text-lg mb-1">Teléfono de Contacto</h4>
+                            <a href="tel:983867135" class="text-gold hover:underline text-sm font-medium">983 86 71 35</a>
                         </div>
                     </div>
 
-                    <div class="flex items-start space-x-4">
-                        <div class="w-12 h-12 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center text-xl shrink-0 mt-1">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-xl flex-shrink-0">
                             <i class="fa-solid fa-envelope"></i>
                         </div>
                         <div>
-                            <h4 class="text-xs uppercase tracking-wider text-brand-gold font-semibold mb-1">Correo Electrónico</h4>
-                            <a href="mailto:turismo@alaejos.gob.es" class="text-brand-sand hover:text-brand-gold transition-colors text-sm sm:text-base">turismo@alaejos.gob.es</a>
+                            <h4 class="text-white font-serif text-lg mb-1">Correo Electrónico</h4>
+                            <a href="mailto:turismo@alaejos.gob.es" class="text-gold hover:underline text-sm font-medium">turismo@alaejos.gob.es</a>
                         </div>
                     </div>
 
-                    <div class="pt-4">
-                        <a href="tel:983867135" class="w-full bg-brand-gold text-brand-dark hover:bg-brand-goldLight font-bold py-4 rounded-full text-center transition-all duration-300 shadow-xl shadow-brand-gold/10 flex items-center justify-center gap-2">
+                    <div class="pt-6 border-t border-white/10">
+                        <a href="tel:983867135" class="w-full flex items-center justify-center gap-3 py-4 rounded-full bg-gold text-black font-semibold tracking-wide hover:bg-gold-light transition-all duration-300 shadow-lg shadow-gold/20">
                             <i class="fa-solid fa-phone"></i>
                             <span>Reservar Cita</span>
                         </a>
                     </div>
                 </div>
 
-                <!-- Map Column -->
-                <div class="rounded-3xl overflow-hidden border border-brand-gold/20 shadow-2xl bg-brand-card p-2">
-                    <iframe src="https://www.google.com/maps?q=Iglesia%20de%20Santa%20Mar%C3%ADa%20Pl.%20Sta.%20Mar%C3%ADa%2C%201%2C%2047510%20Alaejos%2C%20Valladolid%2C%20Espa%C3%B1a&output=embed" width="100%" height="450" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                <!-- Mapa Interactivo -->
+                <div class="bg-darkmatte p-3 rounded-3xl border border-gold/30 shadow-2xl overflow-hidden">
+                    <iframe src="https://www.google.com/maps?q=Iglesia%20de%20Santa%20Mar%C3%ADa%20Pl.%20Sta.%20Mar%C3%ADa%2C%201%2C%2047510%20Alaejos%2C%20Valladolid%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-brand-dark border-t border-brand-gold/20 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-                <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 rounded-full border border-brand-gold flex items-center justify-center text-brand-gold">
-                        <i class="fa-solid fa-place-of-worship"></i>
-                    </div>
-                    <div>
-                        <span class="block font-serif text-lg font-bold tracking-wider text-white">IGLESIA DE SANTA MARÍA</span>
-                        <span class="block text-xs uppercase tracking-widest text-brand-gold">Alaejos, Valladolid</span>
-                    </div>
+    <footer class="bg-black py-12 border-t border-gold/20 text-sand/60 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full border border-gold/50 flex items-center justify-center text-gold">
+                    <i class="fa-solid fa-place-of-worship text-xs"></i>
                 </div>
+                <div>
+                    <span class="font-serif text-white tracking-wider">Iglesia de Santa María</span>
+                    <span class="text-[10px] text-gold tracking-widest uppercase block">Alaejos, Valladolid</span>
+                </div>
+            </div>
+            
+            <p class="text-xs font-light">
+                &copy; <span id="current-year"></span> Iglesia de Santa María - Alaejos. Todos los derechos reservados.
+            </p>
 
-                <div class="text-center md:text-right">
-                    <p class="text-xs text-brand-sand/60">
-                        &copy; <span id="current-year"></span> Iglesia de Santa María (Alaejos, España). Todos los derechos reservados.
-                    </p>
-                    <p class="text-xs text-brand-gold/80 mt-1">
-                        Pl. Sta. María, 1, 47510 Alaejos | Tel: <a href="tel:983867135" class="hover:underline">983867135</a>
-                    </p>
-                </div>
+            <div class="flex items-center gap-4 text-gold">
+                <a href="tel:983867135" class="w-9 h-9 rounded-full border border-gold/30 flex items-center justify-center hover:bg-gold hover:text-black transition-all">
+                    <i class="fa-solid fa-phone text-xs"></i>
+                </a>
+                <a href="mailto:turismo@alaejos.gob.es" class="w-9 h-9 rounded-full border border-gold/30 flex items-center justify-center hover:bg-gold hover:text-black transition-all">
+                    <i class="fa-solid fa-envelope text-xs"></i>
+                </a>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript for Mobile Menu & Dynamic Year -->
+    <!-- Scripts -->
     <script>
         // Mobile Menu Toggle
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
         });
 
         // Close mobile menu on link click
-        const mobileLinks = menu.querySelectorAll('a');
-        mobileLinks.forEach(link => {
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
-                menu.classList.add('hidden');
+                mobileMenu.classList.add('hidden');
             });
         });
 
-        // Dynamic Year
+        // Current Year
         document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
 </body>
