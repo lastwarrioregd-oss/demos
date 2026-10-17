@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peluquería Boston | Elegancia, Estilo y Tradición en Eibar</title>
+    <meta name="description" content="Peluquería Boston en Eibar. Cortes de pelo modernos y clásicos, cuidado de barba y atención personalizada con cita previa.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        terracota: '#C85A32',
+                        'terracota-dark': '#A34320',
+                        crema: '#FDFBF7',
+                        'crema-card': '#F5EFF0',
+                        'crema-warm': '#EFE7DE',
+                        gourmet: '#1A1817',
+                        'gourmet-light': '#2A2725',
+                        dorado: '#D4A359'
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-crema text-gourmet font-sans antialiased selection:bg-terracota selection:text-white">
+
+    <!-- Top Info Bar -->
+    <div class="bg-gourmet text-crema text-xs md:text-sm py-2.5 px-4 border-b border-gourmet-light">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-6">
+                <span class="flex items-center gap-2">
+                    <i class="fa-solid fa-location-dot text-terracota"></i>
+                    Bidebarrieta Kalea, 20, 20600 Eibar, Gipuzkoa
+                </span>
+                <span class="hidden md:flex items-center gap-2">
+                    <i class="fa-solid fa-clock text-terracota"></i>
+                    Atención con Cita Previa
+                </span>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="tel:943201648" class="hover:text-terracota transition-colors flex items-center gap-2">
+                    <i class="fa-solid fa-phone text-terracota"></i>
+                    943 20 16 48
+                </a>
+                <a href="mailto:ktlordahlbiz@gmail.com" class="hover:text-terracota transition-colors flex items-center gap-2">
+                    <i class="fa-solid fa-envelope text-terracota"></i>
+                    ktlordahlbiz@gmail.com
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-crema/95 backdrop-blur-md border-b border-terracota/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full bg-terracota flex items-center justify-center text-crema font-serif text-xl font-bold shadow-md group-hover:bg-terracota-dark transition-colors">
+                    B
+                </div>
+                <div>
+                    <span class="font-serif text-2xl font-bold tracking-tight text-gourmet block leading-none">Peluquería Boston</span>
+                    <span class="text-xs uppercase tracking-widest text-terracota font-semibold">Eibar • Tradición y Estilo</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
+                <a href="#inicio" class="hover:text-terracota transition-colors">Inicio</a>
+                <a href="#experiencia" class="hover:text-terracota transition-colors">La Experiencia</a>
+                <a href="#especialidades" class="hover:text-terracota transition-colors">Especialidades</a>
+                <a href="#instalaciones" class="hover:text-terracota transition-colors">Galeria</a>
+                <a href="#opiniones" class="hover:text-terracota transition-colors">Opiniones</a>
+                <a href="#contacto" class="hover:text-terracota transition-colors">Contacto</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="hidden sm:block">
+                <a href="tel:943201648" class="inline-flex items-center gap-2 bg-terracota hover:bg-terracota-dark text-crema font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 text-sm tracking-wide">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    Reservar Mesa
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" class="md:hidden text-gourmet hover:text-terracota p-2" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-crema border-b border-terracota/10 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="block py-2 text-gourmet hover:text-terracota font-medium border-b border-gourmet/5">Inicio</a>
+            <a href="#experiencia" class="block py-2 text-gourmet hover:text-terracota font-medium border-b border-gourmet/5">La Experiencia</a>
+            <a href="#especialidades" class="block py-2 text-gourmet hover:text-terracota font-medium border-b border-gourmet/5">Especialidades</a>
+            <a href="#instalaciones" class="block py-2 text-gourmet hover:text-terracota font-medium border-b border-gourmet/5">Galería</a>
+            <a href="#opiniones" class="block py-2 text-gourmet hover:text-terracota font-medium border-b border-gourmet/5">Opiniones</a>
+            <a href="#contacto" class="block py-2 text-gourmet hover:text-terracota font-medium border-b border-gourmet/5">Contacto</a>
+            <div class="pt-2">
+                <a href="tel:943201648" class="w-full inline-flex justify-center items-center gap-2 bg-terracota text-crema font-semibold px-6 py-3 rounded-lg text-center shadow-md">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    Reservar Mesa
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative bg-gourmet text-crema overflow-hidden py-20 lg:py-32">
+        <!-- Background Pattern / Image Overlay -->
+        <div class="absolute inset-0 opacity-25 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1600&q=80');"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-gourmet via-gourmet/90 to-transparent"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl space-y-8">
+                <div class="inline-flex items-center gap-2 bg-terracota/20 border border-terracota/40 text-dorado px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider uppercase backdrop-blur-sm">
+                    <i class="fa-solid fa-scissors"></i>
+                    Peluquería & Barbería Emblemática en Eibar
+                </div>
+                
+                <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
+                    Un toque de elegancia y puntualidad para tu estilo diario
+                </h1>
+                
+                <p class="text-crema/80 text-lg sm:text-xl font-light leading-relaxed">
+                    Uno de los pocos y verdaderos maestros estilistas tradicionales que perduran en el centro de Eibar. Cortes modernos, atención exquisita al detalle y la máxima puntualidad que tu agenda exige.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
+                    <a href="tel:943201648" class="inline-flex justify-center items-center gap-3 bg-terracota hover:bg-terracota-dark text-crema font-bold px-8 py-4 rounded-lg shadow-xl hover:shadow-terracota/30 transition-all duration-300 text-base">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        Reservar Mesa
+                    </a>
+                    <a href="#especialidades" class="inline-flex justify-center items-center gap-2 border-2 border-crema/30 hover:border-crema text-crema font-semibold px-8 py-4 rounded-lg transition-all duration-300 text-base backdrop-blur-sm">
+                        Ver Servicios & Carta
+                    </a>
+                </div>
+
+                <!-- Trust Badges -->
+                <div class="grid grid-cols-3 gap-4 pt-8 border-t border-crema/10 text-center sm:text-left">
+                    <div>
+                        <div class="text-2xl font-bold text-dorado font-serif">100%</div>
+                        <div class="text-xs text-crema/70 uppercase tracking-wider">Puntualidad Absoluta</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold text-dorado font-serif">Centro</div>
+                        <div class="text-xs text-crema/70 uppercase tracking-wider">Ubicación Emblemática</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold text-dorado font-serif">5★</div>
+                        <div class="text-xs text-crema/70 uppercase tracking-wider">Satisfacción Cliente</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Essential Highlights / Brand Value -->
+    <section id="experiencia" class="py-16 bg-crema-warm/50 border-y border-terracota/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Highlight 1 -->
+                <div class="bg-crema p-8 rounded-xl shadow-sm border border-terracota/10 flex flex-col items-start gap-4">
+                    <div class="w-12 h-12 rounded-full bg-terracota/10 text-terracota flex items-center justify-center text-xl">
+                        <i class="fa-regular fa-clock"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-gourmet">Respeto a Tu Tiempo</h3>
+                    <p class="text-gourmet/70 text-sm leading-relaxed">
+                        Atención personalizada con cita previa estrictamente cumplida. Sabes exactamente a qué hora entras y a qué hora sales sin esperas innecesarias.
+                    </p>
+                </div>
+
+                <!-- Highlight 2 -->
+                <div class="bg-crema p-8 rounded-xl shadow-sm border border-terracota/10 flex flex-col items-start gap-4">
+                    <div class="w-12 h-12 rounded-full bg-terracota/10 text-terracota flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-gourmet">Cuidado del Detalle</h3>
+                    <p class="text-gourmet/70 text-sm leading-relaxed">
+                        Cada corte, lavado y peinado se realiza con máxima dedicación, precisión artesanal y un toque indiscutible de elegancia.
+                    </p>
+                </div>
+
+                <!-- Highlight 3 -->
+                <div class="bg-crema p-8 rounded-xl shadow-sm border border-terracota/10 flex flex-col items-start gap-4">
+                    <div class="w-12 h-12 rounded-full bg-terracota/10 text-terracota flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-gourmet">Trato Cálido y Simpático</h3>
+                    <p class="text-gourmet/70 text-sm leading-relaxed">
+                        Un ambiente amigable y acogedor donde te sentirás en casa desde el primer minuto. La combinación perfecta de profesionalismo y calidez humana.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: Carta, Platos Estrella y Especialidades -->
+    <section id="especialidades" class="py-20 bg-crema">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="text-terracota font-semibold text-sm uppercase tracking-widest">Nuestra Selección de Servicios</span>
+                <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-gourmet">
+                    Nuestra Carta, Platos Estrella y Especialidades de la Casa
+                </h2>
+                <div class="w-24 h-1 bg-terracota mx-auto rounded-full"></div>
+                <p class="text-gourmet/80 text-base sm:text-lg">
+                    Diseñados para el hombre contemporáneo que valora un acabado impecable, la máxima higiene y una experiencia de renovación completa.
+                </p>
+            </div>
+
+            <!-- Categories Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Category 1: Cortes & Peinados Estrella -->
+                <div class="bg-crema-card p-8 rounded-2xl border border-terracota/15 shadow-md hover:shadow-lg transition-shadow">
+                    <div class="flex items-center gap-4 mb-6 border-b border-terracota/20 pb-4">
+                        <div class="w-10 h-10 rounded-full bg-terracota text-crema flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-crown"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif text-2xl font-bold text-gourmet">Cortes & Peinados Estrella</h3>
+                            <p class="text-xs text-terracota uppercase tracking-wider font-semibold">Técnica Precisa & Tendencia Vanguardista</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <!-- Item 1 -->
+                        <div class="flex justify-between items-start border-b border-gourmet/10 pb-4">
+                            <div class="space-y-1 pr-4">
+                                <h4 class="font-serif font-bold text-lg text-gourmet flex items-center gap-2">
+                                    Corte Caballero Boston "Toque de Elegancia"
+                                    <span class="text-xs bg-terracota/10 text-terracota px-2 py-0.5 rounded font-sans font-semibold">Insignia</span>
+                                </h4>
+                                <p class="text-sm text-gourmet/70">
+                                    Asesoramiento de imagen, corte personalizado adaptado a tus facciones, lavado relajante con masaje capilar y peinado final.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="flex justify-between items-start border-b border-gourmet/10 pb-4">
+                            <div class="space-y-1 pr-4">
+                                <h4 class="font-serif font-bold text-lg text-gourmet">Corte Moderno Fade & Degradados</h4>
+                                <p class="text-sm text-gourmet/70">
+                                    Transiciones limpias y pulidas a navaja o máquina. Estilo fresco, moderno y de gran precisión para un acabado definido.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div class="flex justify-between items-start">
+                            <div class="space-y-1 pr-4">
+                                <h4 class="font-serif font-bold text-lg text-gourmet">Corte Tradicional Clásico</h4>
+                                <p class="text-sm text-gourmet/70">
+                                    La elegancia atemporal del corte a tijera que nunca pasa de moda. Simetría, elegancia y sobriedad masculina.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 2: Especialidades en Barbería & Cuidado -->
+                <div class="bg-crema-card p-8 rounded-2xl border border-terracota/15 shadow-md hover:shadow-lg transition-shadow">
+                    <div class="flex items-center gap-4 mb-6 border-b border-terracota/20 pb-4">
+                        <div class="w-10 h-10 rounded-full bg-terracota text-crema flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-gem"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif text-2xl font-bold text-gourmet">Especialidades en Barbería & Cuidado</h3>
+                            <p class="text-xs text-terracota uppercase tracking-wider font-semibold">Ritual de Cuidado Facial & Barba</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <!-- Item 1 -->
+                        <div class="flex justify-between items-start border-b border-gourmet/10 pb-4">
+                            <div class="space-y-1 pr-4">
+                                <h4 class="font-serif font-bold text-lg text-gourmet flex items-center gap-2">
+                                    Ritual de Barba Ritual & Definición
+                                    <span class="text-xs bg-terracota/10 text-terracota px-2 py-0.5 rounded font-sans font-semibold">Recomendado</span>
+                                </h4>
+                                <p class="text-sm text-gourmet/70">
+                                    Perfilado de contornos a navaja, rebajado de volumen, alineado y aplicación de aceites esenciales para máxima hidratación.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="flex justify-between items-start border-b border-gourmet/10 pb-4">
+                            <div class="space-y-1 pr-4">
+                                <h4 class="font-serif font-bold text-lg text-gourmet">Lavado Premium & Masaje Tonificante</h4>
+                                <p class="text-sm text-gourmet/70">
+                                    Lavado purificante con champús tratantes adaptados a cada tipo de cuero cabelludo, acompañado de un agradable masaje relajante.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div class="flex justify-between items-start">
+                            <div class="space-y-1 pr-4">
+                                <h4 class="font-serif font-bold text-lg text-gourmet">Servicio Completo "Menú Especial Boston"</h4>
+                                <p class="text-sm text-gourmet/70">
+                                    Experiencia integral: Corte completo, lavado tratante, peinado técnico y arreglo / perfilado de barba o patillas.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Callout inside section -->
+            <div class="mt-12 bg-gourmet text-crema rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+                <div class="space-y-2 text-center md:text-left">
+                    <h3 class="font-serif text-2xl font-bold text-dorado">¿Buscas un horario en específico?</h3>
+                    <p class="text-crema/80 text-sm">Reserva con antelación para asegurar tu cita a la hora exacta que mejor se adapte a ti.</p>
+                </div>
+                <a href="tel:943201648" class="inline-flex items-center gap-2 bg-terracota hover:bg-terracota-dark text-crema font-bold px-8 py-3.5 rounded-lg transition-colors whitespace-nowrap">
+                    <i class="fa-solid fa-phone"></i>
+                    Reservar Mesa
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: Gallery - Nuestras Instalaciones y Trabajos -->
+    <section id="instalaciones" class="py-20 bg-crema-warm/40 border-t border-terracota/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto space-y-4 mb-12">
+                <span class="text-terracota font-semibold text-sm uppercase tracking-widest">Nuestra Galería</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-gourmet">Nuestras Instalaciones y Trabajos</h2>
+                <p class="text-gourmet/70 text-sm sm:text-base">Un espacio cómodo, limpio e impecable en pleno corazón de Eibar.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery Card 1 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-md aspect-4/3 bg-gourmet">
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=80" 
+                         alt="Instalaciones Peluquería Boston" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet/80 via-transparent to-transparent flex items-end p-6">
+                        <span class="text-crema font-serif text-lg font-medium">Sillones Tradicionales & Confort</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Card 2 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-md aspect-4/3 bg-gourmet">
+                    <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=800&q=80" 
+                         alt="Corte y Estilo" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet/80 via-transparent to-transparent flex items-end p-6">
+                        <span class="text-crema font-serif text-lg font-medium">Cortes Modernos con Elegancia</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Card 3 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-md aspect-4/3 bg-gourmet">
+                    <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=800&q=80" 
+                         alt="Detalle y Cuidado" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gourmet/80 via-transparent to-transparent flex items-end p-6">
+                        <span class="text-crema font-serif text-lg font-medium">Atención a Cada Detalle</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: Opiniones Reales Verificadas -->
+    <section id="opiniones" class="py-20 bg-crema">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto space-y-4 mb-16">
+                <span class="text-terracota font-semibold text-sm uppercase tracking-widest">Lo Que Dicen Nuestros Clientes</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-gourmet">Opiniones Reales Verificadas</h2>
+                <div class="flex items-center justify-center gap-1 text-dorado text-xl pt-2">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <span class="text-gourmet font-bold text-base ml-2">Reseñas en Google Maps</span>
+                </div>
+            </div>
+
+            <!-- Reviews Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Review 1 -->
+                <div class="bg-crema-card p-8 rounded-2xl border border-terracota/10 shadow-md flex flex-col justify-between relative">
+                    <i class="fa-solid fa-quote-right absolute top-6 right-6 text-terracota/15 text-4xl"></i>
+                    <div class="space-y-4">
+                        <div class="flex text-dorado text-sm gap-1">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gourmet/80 text-sm leading-relaxed italic">
+                            "Muy buena peluqueria en el centro de Eibar. Se adapta a tus horarios concita previa y diempre se respeta por lo que sabescuanto vas a tardar. El peluquero ess muy simpatico y gran profesional cuidando todos los detalles tanto en el corte, lavado y peinafo. En definitiva muy recomendable"
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-gourmet/10 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-terracota text-crema flex items-center justify-center font-bold text-sm">
+                            FV
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-gourmet">Fernando Valle</h4>
+                            <span class="text-xs text-gourmet/60">Cliente Verificado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-crema-card p-8 rounded-2xl border border-terracota/10 shadow-md flex flex-col justify-between relative">
+                    <i class="fa-solid fa-quote-right absolute top-6 right-6 text-terracota/15 text-4xl"></i>
+                    <div class="space-y-4">
+                        <div class="flex text-dorado text-sm gap-1">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gourmet/80 text-sm leading-relaxed italic">
+                            "Un peluquero simpático y muy agradable, con unos cortes de pelo muy modernos y rápido. Un toque de elegancia."
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-gourmet/10 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-terracota text-crema flex items-center justify-center font-bold text-sm">
+                            A7
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-gourmet">Al_berto76</h4>
+                            <span class="text-xs text-gourmet/60">Cliente Verificado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-crema-card p-8 rounded-2xl border border-terracota/10 shadow-md flex flex-col justify-between relative">
+                    <i class="fa-solid fa-quote-right absolute top-6 right-6 text-terracota/15 text-4xl"></i>
+                    <div class="space-y-4">
+                        <div class="flex text-dorado text-sm gap-1">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gourmet/80 text-sm leading-relaxed italic">
+                            "Un buen lugar para cortarse el pelo. De los pocos peluqueros de aqui que quedan en Eibar."
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-gourmet/10 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-terracota text-crema flex items-center justify-center font-bold text-sm">
+                            S7
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-gourmet">Sia 74</h4>
+                            <span class="text-xs text-gourmet/60">Cliente Verificado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="bg-crema-card p-8 rounded-2xl border border-terracota/10 shadow-md flex flex-col justify-between relative">
+                    <i class="fa-solid fa-quote-right absolute top-6 right-6 text-terracota/15 text-4xl"></i>
+                    <div class="space-y-4">
+                        <div class="flex text-dorado text-sm gap-1">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gourmet/80 text-sm leading-relaxed italic">
+                            "Muy profesional y dedicado. Completamente recomendado."
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-gourmet/10 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-terracota text-crema flex items-center justify-center font-bold text-sm">
+                            F
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-gourmet">Frost</h4>
+                            <span class="text-xs text-gourmet/60">Cliente Verificado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 5 -->
+                <div class="bg-crema-card p-8 rounded-2xl border border-terracota/10 shadow-md flex flex-col justify-between relative md:col-span-2 lg:col-span-1">
+                    <i class="fa-solid fa-quote-right absolute top-6 right-6 text-terracota/15 text-4xl"></i>
+                    <div class="space-y-4">
+                        <div class="flex text-dorado text-sm gap-1">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gourmet/80 text-sm leading-relaxed italic">
+                            "Puntualidad y corte de pelo excelente."
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-gourmet/10 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-terracota text-crema flex items-center justify-center font-bold text-sm">
+                            J
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-gourmet">Josemi la perla</h4>
+                            <span class="text-xs text-gourmet/60">Cliente Verificado</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: Ubicación y Contacto con Mapa Interactivo -->
+    <section id="contacto" class="py-20 bg-gourmet text-crema relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Contact Details -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-terracota font-semibold text-sm uppercase tracking-widest">Encuéntranos Fácilmente</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-crema mt-2">Visítanos en Eibar</h2>
+                        <p class="text-crema/70 text-sm mt-3">
+                            En pleno centro comercial e histórico de Eibar, con facilidades de acceso y cercanía.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-lg bg-terracota/20 border border-terracota/40 text-terracota flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-bold text-lg text-crema">Dirección Exacta</h4>
+                                <p class="text-crema/80 text-sm leading-relaxed">
+                                    Bidebarrieta Kalea, 20, 20600 Eibar, Gipuzkoa, España
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-lg bg-terracota/20 border border-terracota/40 text-terracota flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-bold text-lg text-crema">Teléfono & Cita Previa</h4>
+                                <p class="text-crema/80 text-sm">
+                                    <a href="tel:943201648" class="hover:text-terracota transition-colors text-lg font-bold text-dorado">
+                                        943 20 16 48
+                                    </a>
+                                </p>
+                                <p class="text-xs text-crema/60 mt-1">Llama para reservar tu franja horaria.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-lg bg-terracota/20 border border-terracota/40 text-terracota flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-bold text-lg text-crema">Correo Electrónico</h4>
+                                <p class="text-crema/80 text-sm">
+                                    <a href="mailto:ktlordahlbiz@gmail.com" class="hover:text-terracota transition-colors">
+                                        ktlordahlbiz@gmail.com
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="tel:943201648" class="w-full sm:w-auto inline-flex justify-center items-center gap-3 bg-terracota hover:bg-terracota-dark text-crema font-bold px-8 py-4 rounded-lg shadow-xl transition-all duration-300">
+                            <i class="fa-solid fa-calendar-check"></i>
+                            Reservar Mesa
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Interactive Map Frame -->
+                <div class="lg:col-span-7">
+                    <div class="p-3 bg-gourmet-light border border-terracota/20 rounded-2xl shadow-2xl">
+                        <iframe src="https://www.google.com/maps?q=Peluquer%C3%ADa%20Boston%20Bidebarrieta%20Kalea%2C%2020%2C%2020600%20Eibar%2C%20Gipuzkoa%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gourmet border-t border-gourmet-light text-crema/60 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 pb-8 border-b border-crema/10">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full bg-terracota flex items-center justify-center text-crema font-serif text-base font-bold">
+                        B
+                    </div>
+                    <span class="font-serif text-xl font-bold text-crema">Peluquería Boston</span>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-6 text-sm">
+                    <a href="#inicio" class="hover:text-terracota transition-colors">Inicio</a>
+                    <a href="#experiencia" class="hover:text-terracota transition-colors">La Experiencia</a>
+                    <a href="#especialidades" class="hover:text-terracota transition-colors">Especialidades</a>
+                    <a href="#instalaciones" class="hover:text-terracota transition-colors">Galería</a>
+                    <a href="#opiniones" class="hover:text-terracota transition-colors">Opiniones</a>
+                    <a href="#contacto" class="hover:text-terracota transition-colors">Contacto</a>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <a href="tel:943201648" aria-label="Llamar" class="w-10 h-10 rounded-full bg-gourmet-light hover:bg-terracota text-crema flex items-center justify-center transition-colors">
+                        <i class="fa-solid fa-phone"></i>
+                    </a>
+                    <a href="mailto:ktlordahlbiz@gmail.com" aria-label="Enviar correo" class="w-10 h-10 rounded-full bg-gourmet-light hover:bg-terracota text-crema flex items-center justify-center transition-colors">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs">
+                <p>&copy; <span id="current-year"></span> Peluquería Boston. Todos los derechos reservados.</p>
+                <p>Bidebarrieta Kalea, 20, 20600 Eibar, Gipuzkoa</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed Floating Action Button for Mobile -->
+    <div class="sm:hidden fixed bottom-4 right-4 z-50">
+        <a href="tel:943201648" class="flex items-center gap-2 bg-terracota text-crema font-bold px-5 py-3.5 rounded-full shadow-2xl hover:bg-terracota-dark border-2 border-crema/20">
+            <i class="fa-solid fa-calendar-check text-lg"></i>
+            <span>Reservar Mesa</span>
+        </a>
+    </div>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
