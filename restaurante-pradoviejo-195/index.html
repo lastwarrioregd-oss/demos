@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante Pradoviejo | Cocina de Producto y Tradición en Moaña</title>
+    <meta name="description" content="Restaurante Pradoviejo en Moaña, Pontevedra. Producto excelente tratado con mimo, pescados salvajes, carnes seleccionadas, terraza interior y una cuidada carta de vinos.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        terracotta: {
+                            50: '#FDF8F6',
+                            100: '#F9EDE8',
+                            500: '#C8623E',
+                            600: '#B44F2D',
+                            700: '#943E20',
+                            800: '#75321A',
+                        },
+                        gourmet: {
+                            50: '#FAF8F5',
+                            100: '#F3EFE8',
+                            200: '#E6DFD3',
+                            800: '#231F1C',
+                            900: '#171412',
+                            950: '#0F0D0C',
+                        },
+                        cream: '#F7F4EE',
+                        gold: '#C5A059'
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .gold-gradient {
+            background: linear-gradient(135deg, #C5A059 0%, #E3C888 50%, #B89246 100%);
+        }
+        .hero-pattern {
+            background-color: #0F0D0C;
+            background-image: radial-gradient(rgba(200, 98, 62, 0.15) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+        .card-blur {
+            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.92);
+        }
+    </style>
+</head>
+<body class="bg-cream text-gourmet-900 font-sans antialiased selection:bg-terracotta-500 selection:text-white">
+
+    <!-- Top Contact Strip -->
+    <aside class="bg-gourmet-950 text-gourmet-200 text-xs py-2.5 border-b border-white/10 hidden md:block" aria-label="Información rápida de contacto">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center space-x-6">
+                <span><i class="fa-solid fa-location-dot text-terracotta-500 mr-2"></i>Rúa de Ramón Cabanillas, 16, Bajo - Moaña, Pontevedra</span>
+                <span><i class="fa-regular fa-clock text-terracotta-500 mr-2"></i>Comidas & Cenas | Terraza Interior</span>
+            </div>
+            <div class="flex items-center space-x-6">
+                <a href="mailto:enrique@pradoviejo.com" class="hover:text-terracotta-500 transition-colors">
+                    <i class="fa-regular fa-envelope text-terracotta-500 mr-1.5"></i>enrique@pradoviejo.com
+                </a>
+                <a href="tel:986050351" class="font-semibold text-white hover:text-terracotta-500 transition-colors">
+                    <i class="fa-solid fa-phone text-terracotta-500 mr-1.5"></i>986 050 351
+                </a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-gourmet-950/95 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-11 h-11 rounded-full border border-terracotta-500/50 flex items-center justify-center bg-gourmet-900 text-terracotta-500 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-utensils text-lg"></i>
+                </div>
+                <div>
+                    <span class="block font-serif text-2xl tracking-wider text-white font-bold leading-none">PRADOVIEJO</span>
+                    <span class="text-[10px] uppercase tracking-[0.25em] text-terracotta-500 font-semibold">Restaurante · Moaña</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center space-x-8 text-sm tracking-wide text-gourmet-100 font-medium">
+                <a href="#filosofia" class="hover:text-terracotta-500 transition-colors">Nuestra Esencia</a>
+                <a href="#carta" class="hover:text-terracotta-500 transition-colors">Especialidades</a>
+                <a href="#instalaciones" class="hover:text-terracotta-500 transition-colors">El Espacio</a>
+                <a href="#opiniones" class="hover:text-terracotta-500 transition-colors">Experiencias</a>
+                <a href="#contacto" class="hover:text-terracotta-500 transition-colors">Cómo Llegar</a>
+            </nav>
+
+            <!-- CTA Desktop -->
+            <div class="hidden sm:flex items-center space-x-4">
+                <a href="tel:986050351" class="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white font-semibold text-sm shadow-lg shadow-terracotta-500/20 transform hover:-translate-y-0.5 transition-all duration-200">
+                    <i class="fa-solid fa-calendar-check mr-2"></i> Reservar Mesa
+                </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button id="mobileMenuBtn" aria-label="Abrir Menú" class="lg:hidden text-white p-2 focus:outline-none">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-gourmet-900 border-b border-white/10 px-6 py-6 transition-all duration-300">
+            <div class="flex flex-col space-y-4 text-center">
+                <a href="#filosofia" class="text-gourmet-100 py-2 hover:text-terracotta-500" onclick="toggleMobileMenu()">Nuestra Esencia</a>
+                <a href="#carta" class="text-gourmet-100 py-2 hover:text-terracotta-500" onclick="toggleMobileMenu()">Especialidades</a>
+                <a href="#instalaciones" class="text-gourmet-100 py-2 hover:text-terracotta-500" onclick="toggleMobileMenu()">El Espacio</a>
+                <a href="#opiniones" class="text-gourmet-100 py-2 hover:text-terracotta-500" onclick="toggleMobileMenu()">Opiniones</a>
+                <a href="#contacto" class="text-gourmet-100 py-2 hover:text-terracotta-500" onclick="toggleMobileMenu()">Ubicación y Contacto</a>
+                <a href="tel:986050351" class="mt-2 inline-flex items-center justify-center px-6 py-3 rounded-full bg-terracotta-500 text-white font-semibold shadow-md">
+                    <i class="fa-solid fa-phone mr-2"></i> Reservar Mesa (986 050 351)
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative bg-gourmet-950 text-white py-24 md:py-32 overflow-hidden hero-pattern">
+            <div class="absolute inset-0 bg-gradient-to-r from-gourmet-950 via-gourmet-950/80 to-transparent z-10"></div>
+            
+            <div class="max-w-7xl mx-auto px-6 relative z-20 grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-terracotta-500/20 border border-terracotta-500/40 text-terracotta-500 text-xs font-semibold tracking-wide uppercase">
+                        <i class="fa-solid fa-certificate"></i>
+                        <span>Gastronomía Gallega de Excelencia · Moaña</span>
+                    </div>
+
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] text-white">
+                        El arte del producto tratado con <span class="italic font-normal text-terracotta-500">mimo</span> y distinción.
+                    </h1>
+
+                    <p class="text-gourmet-200 text-base sm:text-lg max-w-xl font-light leading-relaxed">
+                        Bienvenido a <strong>Restaurante Pradoviejo</strong>. Una atmósfera minimalista, flores frescas, nuestra exclusiva terraza interior y la calidez de un servicio familiar que convierte cada velada en un recuerdo inolvidable.
+                    </p>
+
+                    <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                        <a href="tel:986050351" class="inline-flex items-center justify-center px-8 py-4 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white font-bold text-base shadow-xl shadow-terracotta-500/25 transition transform hover:-translate-y-0.5 text-center">
+                            <i class="fa-solid fa-phone-volume mr-3"></i> Reservar Mesa Ahora
+                        </a>
+                        <a href="#carta" class="inline-flex items-center justify-center px-8 py-4 rounded-full border border-white/20 hover:border-white/50 text-gourmet-100 hover:text-white font-medium text-base transition text-center">
+                            <i class="fa-solid fa-book-open mr-2.5"></i> Explorar Platos Estrella
+                        </a>
+                    </div>
+
+                    <!-- Trust indicators -->
+                    <div class="pt-8 border-t border-white/10 grid grid-cols-3 gap-6 text-center sm:text-left">
+                        <div>
+                            <div class="text-2xl font-serif font-bold text-white flex items-center justify-center sm:justify-start">
+                                4.9 <i class="fa-solid fa-star text-gold text-sm ml-1.5"></i>
+                            </div>
+                            <p class="text-xs text-gourmet-200">Crítica unánime</p>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-serif font-bold text-white">Rías Baixas</div>
+                            <p class="text-xs text-gourmet-200">Pescado & Marisco Salvaje</p>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-serif font-bold text-white">Terraza</div>
+                            <p class="text-xs text-gourmet-200">Jardín Interior Íntimo</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Photo with Framed Design -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="absolute -inset-2 rounded-2xl bg-gradient-to-tr from-terracotta-500/40 to-transparent blur-lg"></div>
+                        <div class="relative rounded-2xl overflow-hidden border border-white/15 shadow-2xl bg-gourmet-900 aspect-[4/5] sm:aspect-square lg:aspect-[4/5]">
+                            <!-- Real photo from business provided -->
+                            <img 
+                                src="https://scontent-sea5-1.xx.fbcdn.net/v/t39.30808-1/304915908_450456567144533_5552799500391699382_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx709x709&amp;ctp=s709x709&amp;_nc_cat=110&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=yeKO8KzRHUgQ7kNvwGTJRCg&amp;_nc_oc=Adp5VulYPFgbjaDmVNaSnxGVsgGMZVe-6ZBH2RPV7uuFHfn1XdLsKhCKCOeVBVfeXJg&amp;_nc_zt=24&amp;_nc_ht=scontent-sea5-1.xx&amp;_nc_gid=7-15-we52LPsDDBYflmJXw&amp;_nc_ss=7b289&amp;oh=00_AQP_YJgJKQmqXFbHEarujcRf9GlLnkXw6zbfofE3foJF1A&amp;oe=6AD98D85" 
+                                alt="Restaurante Pradoviejo Moaña - Identidad y Gastronomía" 
+                                class="w-full h-full object-cover object-center transform hover:scale-105 transition duration-700"
+                                referrerpolicy="no-referrer" 
+                                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                            >
+                            <div class="absolute inset-0 bg-gradient-to-t from-gourmet-950/90 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-6 left-6 right-6 p-4 rounded-xl card-blur border border-white/30 text-gourmet-900 shadow-md">
+                                <p class="text-xs font-semibold tracking-wider uppercase text-terracotta-600 mb-0.5">Espacio Único</p>
+                                <p class="font-serif font-bold text-base leading-snug">Rúa de Ramón Cabanillas, 16 · Moaña</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filosofía & Detalles de Servicio -->
+        <section id="filosofia" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-terracotta-600 font-semibold tracking-widest uppercase text-xs">Cuidado por el detalle</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold mt-2 text-gourmet-900">
+                        Una experiencia sensorial que se queda en la memoria
+                    </h2>
+                    <div class="w-16 h-0.5 bg-terracotta-500 mx-auto mt-4"></div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="p-8 rounded-2xl bg-gourmet-50 border border-gourmet-200/60 hover:shadow-xl transition-all duration-300 group">
+                        <div class="w-14 h-14 rounded-xl bg-terracotta-500/10 text-terracotta-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-terracotta-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-spa"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold mb-3 text-gourmet-900">Decoración Minimalista & Flores</h3>
+                        <p class="text-gourmet-800 text-sm leading-relaxed">
+                            Un salón sosegado donde las flores naturales aportan vida y armonía. Pensado para disfrutar de una sobremesa tranquila sin prisas ni estridencias.
+                        </p>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="p-8 rounded-2xl bg-gourmet-50 border border-gourmet-200/60 hover:shadow-xl transition-all duration-300 group">
+                        <div class="w-14 h-14 rounded-xl bg-terracotta-500/10 text-terracotta-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-terracotta-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-tree"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold mb-3 text-gourmet-900">Estupenda Terraza Interior</h3>
+                        <p class="text-gourmet-800 text-sm leading-relaxed">
+                            Nuestro rincón más codiciado: un patio interior reservado donde degustar los mejores pescados y una copa de vino al abrigo del mejor ambiente de Moaña.
+                        </p>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="p-8 rounded-2xl bg-gourmet-50 border border-gourmet-200/60 hover:shadow-xl transition-all duration-300 group">
+                        <div class="w-14 h-14 rounded-xl bg-terracotta-500/10 text-terracotta-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-terracotta-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-wine-glass-empty"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold mb-3 text-gourmet-900">Atención de Diez & Maridaje</h3>
+                        <p class="text-gourmet-800 text-sm leading-relaxed">
+                            María, Luci y todo nuestro equipo te acompañarán en la elección de cada plato y vino. Una dedicación cercana y experta alabada por quienes nos visitan.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Nuestra Carta y Especialidades -->
+        <section id="carta" class="py-24 bg-cream relative">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-6 border-b border-gourmet-200">
+                    <div>
+                        <span class="text-terracotta-600 font-semibold tracking-widest uppercase text-xs">Propuesta Gastronómica</span>
+                        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-gourmet-900 mt-2">
+                            Nuestra Carta & Platos Estrella
+                        </h2>
+                    </div>
+                    <p class="text-gourmet-800 text-sm md:text-base max-w-md mt-4 md:mt-0 font-light">
+                        Materia prima de máxima frescura, recetas gallegas con mirada actual y sugerencias del día según lonja y mercado.
+                    </p>
+                </div>
+
+                <!-- Grid de Categorías Gastronómicas -->
+                <div class="grid lg:grid-cols-2 gap-12">
+                    
+                    <!-- Categoría 1: Entrantes y Tapas de Autor -->
+                    <div class="bg-white p-8 md:p-10 rounded-2xl shadow-sm border border-gourmet-200/80">
+                        <div class="flex items-center space-x-3 mb-8">
+                            <span class="w-10 h-10 rounded-full bg-terracotta-100 text-terracotta-700 flex items-center justify-center font-serif font-bold text-lg">01</span>
+                            <h3 class="font-serif text-2xl font-bold text-gourmet-900">Entrantes del Mar & Tradición</h3>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div class="group border-b border-gourmet-100 pb-5">
+                                <div class="flex justify-between items-baseline">
+                                    <h4 class="font-serif text-xl font-bold text-gourmet-900 group-hover:text-terracotta-600 transition-colors">Navajas Frescas de la Ría</h4>
+                                    <span class="text-sm font-semibold text-terracotta-700">Producto Fresco</span>
+                                </div>
+                                <p class="text-sm text-gourmet-800 mt-1">Tratadas con el calor exacto en plancha, toque de AOVE virgen extra y limón. Elogiadas por su textura tierna y sabor a mar puro.</p>
+                            </div>
+
+                            <div class="group border-b border-gourmet-100 pb-5">
+                                <div class="flex justify-between items-baseline">
+                                    <h4 class="font-serif text-xl font-bold text-gourmet-900 group-hover:text-terracotta-600 transition-colors">Almejas a la Sartén Pradoviejo</h4>
+                                    <span class="text-sm font-semibold text-terracotta-700">Especialidad</span>
+                                </div>
+                                <p class="text-sm text-gourmet-800 mt-1">Almejas de ría salteadas con emulsión sutil de vino albariño, ajo confitado y perejil fresco. Una preparación inolvidable.</p>
+                            </div>
+
+                            <div class="group border-b border-gourmet-100 pb-5">
+                                <div class="flex justify-between items-baseline">
+                                    <h4 class="font-serif text-xl font-bold text-gourmet-900 group-hover:text-terracotta-600 transition-colors">Croquetas Melosas Caseras</h4>
+                                    <span class="text-sm font-semibold text-terracotta-700">Clásico</span>
+                                </div>
+                                <p class="text-sm text-gourmet-800 mt-1">Bechamel suave y crujiente exterior elaboradas artesanalmente a diario. Cremosas, intensas y equilibradas.</p>
+                            </div>
+
+                            <div class="group">
+                                <div class="flex justify-between items-baseline">
+                                    <h4 class="font-serif text-xl font-bold text-gourmet-900 group-hover:text-terracotta-600 transition-colors">Salmorejo Fino de Bienvenida</h4>
+                                    <span class="text-sm font-semibold text-terracotta-700">Cortesía de la Casa</span>
+                                </div>
+                                <p class="text-sm text-gourmet-800 mt-1">Nuestra aplaudida tapa de bienvenida: textura aterciopelada, sutil equilibrio ácido y aroma de aceite de oliva premium.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Categoría 2: Pescados Salvajes y Carnes Nobles -->
+                    <div class="bg-white p-8 md:p-10 rounded-2xl shadow-sm border border-gourmet-200/80">
+                        <div class="flex items-center space-x-3 mb-8">
+                            <span class="w-10 h-10 rounded-full bg-terracotta-100 text-terracotta-700 flex items-center justify-center font-serif font-bold text-lg">02</span>
+                            <h3 class="font-serif text-2xl font-bold text-gourmet-900">Pescados de Lonja & Carnes</h3>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div class="group border-b border-gourmet-100 pb-5">
+                                <div class="flex justify-between items-baseline">
+                                    <h4 class="font-serif text-xl font-bold text-gourmet-900 group-hover:text-terracotta-600 transition-colors">Mero Salvaje al Punto Óptimo</h4>
+                                    <span class="text-sm font-semibold text-terracotta-700">Pieza Noble</span>
+                                </div>
+                                <p class="text-sm text-gourmet-800 mt-1">Lomo de mero salvaje sellado a fuego vivo para preservar sus jugos, servido con guarnición de verduras de huerta salteadas.</p>
+                            </div>
+
+                            <div class="group border-b border-gourmet-100 pb-5">
+                                <div class="flex justify-between items-baseline">
+                                    <h4 class="font-serif text-xl font-bold text-gourmet-900 group-hover:text-terracotta-600 transition-colors">Rodaballo a la Espalda</h4>
+                                    <span class="text-sm font-semibold text-terracotta-700">Pescado de Costa</span>
+                                </div>
+                                <p class="text-sm text-gourmet-800 mt-1">Pieza fresca de carne prieta y jugosa con suave sofrito de ajos dorados y vinagre de sidra natural.</p>
+                            </div>
+
+                            <div class="group border-b border-gourmet-100 pb-5">
+                                <div class="flex justify-between items-baseline">
+                                    <h4 class="font-serif text-xl font-bold text-gourmet-900 group-hover:text-terracotta-600 transition-colors">Selección de Carnes Premium</h4>
+                                    <span class="text-sm font-semibold text-terracotta-700">Corte Selecto</span>
+                                </div>
+                                <p class="text-sm text-gourmet-800 mt-1">Cortes con maduración perfecta, cocinados a la parrilla y aderezados con escamas de sal marina. Sabor pleno y ternura exquisita.</p>
+                            </div>
+
+                            <div class="group">
+                                <div class="flex justify-between items-baseline">
+                                    <h4 class="font-serif text-xl font-bold text-gourmet-900 group-hover:text-terracotta-600 transition-colors">Pan Gallego Artesano & Dulces Caseros</h4>
+                                    <span class="text-sm font-semibold text-terracotta-700">El Broche de Oro</span>
+                                </div>
+                                <p class="text-sm text-gourmet-800 mt-1">Hogazas tradicionales de corteza crujiente y miga hidratada, y postres elaborados diariamente en nuestros fogones.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Callout Carta de Vinos -->
+                <div class="mt-12 bg-gourmet-950 text-white p-8 md:p-12 rounded-3xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div class="space-y-3 max-w-2xl">
+                        <span class="text-xs uppercase tracking-widest text-terracotta-500 font-semibold"><i class="fa-solid fa-wine-bottle mr-2"></i>Bodega de Referencia</span>
+                        <h3 class="font-serif text-2xl sm:text-3xl font-bold">Déjate aconsejar por nuestro servicio de sala</h3>
+                        <p class="text-gourmet-200 text-sm leading-relaxed">
+                            Contamos con una amplia y singular carta de vinos: blancos de las Rías Baixas, Ribeiros de autor, tintos gallegos y denominaciones nacionales e internacionales seleccionadas cuidadosamente.
+                        </p>
+                    </div>
+                    <div>
+                        <a href="tel:986050351" class="whitespace-nowrap px-8 py-3.5 bg-terracotta-500 hover:bg-terracotta-600 text-white rounded-full font-bold text-sm transition transform hover:-translate-y-0.5 inline-block text-center shadow-lg shadow-terracotta-500/30">
+                            <i class="fa-solid fa-phone mr-2"></i> Reservar Mesa
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galería e Instalaciones -->
+        <section id="instalaciones" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <span class="text-terracotta-600 font-semibold tracking-widest uppercase text-xs">Un ambiente creado para gozar</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold mt-2 text-gourmet-900">
+                        Nuestras Instalaciones y Trabajos
+                    </h2>
+                    <p class="text-gourmet-800 text-sm mt-3">Diseño limpio, detalles botánicos, ambiente cálido y la esencia viva de Moaña.</p>
+                </div>
+
+                <!-- Image Showcase Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Imagen Principal del Negocio (Real CDN) -->
+                    <div class="relative group rounded-2xl overflow-hidden shadow-md bg-gourmet-900 aspect-[4/3]">
+                        <img 
+                            src="https://scontent-sea5-1.xx.fbcdn.net/v/t39.30808-1/304915908_450456567144533_5552799500391699382_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx709x709&amp;ctp=s709x709&amp;_nc_cat=110&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=yeKO8KzRHUgQ7kNvwGTJRCg&amp;_nc_oc=Adp5VulYPFgbjaDmVNaSnxGVsgGMZVe-6ZBH2RPV7uuFHfn1XdLsKhCKCOeVBVfeXJg&amp;_nc_zt=24&amp;_nc_ht=scontent-sea5-1.xx&amp;_nc_gid=7-15-we52LPsDDBYflmJXw&amp;_nc_ss=7b289&amp;oh=00_AQP_YJgJKQmqXFbHEarujcRf9GlLnkXw6zbfofE3foJF1A&amp;oe=6AD98D85" 
+                            alt="Restaurante Pradoviejo - Gastronomía y Detalle" 
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            referrerpolicy="no-referrer"
+                            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <span class="text-white font-serif text-lg">Restaurante Pradoviejo · Moaña</span>
+                        </div>
+                    </div>
+
+                    <!-- Salón Minimalista y Flores -->
+                    <div class="relative group rounded-2xl overflow-hidden shadow-md bg-gourmet-900 aspect-[4/3]">
+                        <img 
+                            src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=800&q=80" 
+                            alt="Comedor Minimalista y Elegante con Flores" 
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            referrerpolicy="no-referrer"
+                            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <span class="text-white font-serif text-lg">Comedor de diseño sosegado y acogedor</span>
+                        </div>
+                    </div>
+
+                    <!-- Terraza Interior -->
+                    <div class="relative group rounded-2xl overflow-hidden shadow-md bg-gourmet-900 aspect-[4/3]">
+                        <img 
+                            src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" 
+                            alt="Terraza Interior Climatizada" 
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            referrerpolicy="no-referrer"
+                            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <span class="text-white font-serif text-lg">Nuestra codiciada terraza interior</span>
+                        </div>
+                    </div>
+
+                    <!-- Producto de la Ría -->
+                    <div class="relative group rounded-2xl overflow-hidden shadow-md bg-gourmet-900 aspect-[4/3]">
+                        <img 
+                            src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=800&q=80" 
+                            alt="Mariscos y Pescados Frescos de la Ría" 
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            referrerpolicy="no-referrer"
+                            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <span class="text-white font-serif text-lg">Pescado y marisco seleccionado de la costa</span>
+                        </div>
+                    </div>
+
+                    <!-- Bodega & Vinos -->
+                    <div class="relative group rounded-2xl overflow-hidden shadow-md bg-gourmet-900 aspect-[4/3]">
+                        <img 
+                            src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80" 
+                            alt="Carta de Vinos y Maridaje Exclusivo" 
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            referrerpolicy="no-referrer"
+                            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <span class="text-white font-serif text-lg">Cuidada selección de bodega y maridajes</span>
+                        </div>
+                    </div>
+
+                    <!-- Presentación Gourmet -->
+                    <div class="relative group rounded-2xl overflow-hidden shadow-md bg-gourmet-900 aspect-[4/3]">
+                        <img 
+                            src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" 
+                            alt="Plato de Carne tratado con mimo" 
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            referrerpolicy="no-referrer"
+                            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <span class="text-white font-serif text-lg">Puntos de cocción exactos y respeto al ingrediente</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Opiniones Reales Verificadas -->
+        <section id="opiniones" class="py-24 bg-gourmet-50 border-y border-gourmet-200/70">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <div class="inline-flex items-center space-x-1.5 text-gold mb-2 text-sm">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-gourmet-900">
+                        La Voz de Nuestros Comensales
+                    </h2>
+                    <p class="text-gourmet-800 text-sm mt-3 font-light">Reseñas auténticas y espontáneas de clientes en Google Maps y portales de gastronomía.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Reseña 1 -->
+                    <div class="bg-white p-8 rounded-2xl border border-gourmet-200/80 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center space-x-1 text-gold text-xs mb-4">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gourmet-900 text-sm leading-relaxed italic">
+                                "Una experiencia muy chula. El restaurante tiene una decoración minimalista, es agradable, con flores naturales que dan un toque especial. La atención fue de diez, María y Luci son encantadoras, profesionales y muy…"
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-gourmet-100 flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-terracotta-100 text-terracotta-700 font-bold flex items-center justify-center text-sm">
+                                TF
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-sm text-gourmet-900">Tita F. Ramallo</h4>
+                                <span class="text-xs text-gourmet-800">Cliente Verificado</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reseña 2 -->
+                    <div class="bg-white p-8 rounded-2xl border border-gourmet-200/80 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center space-x-1 text-gold text-xs mb-4">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gourmet-900 text-sm leading-relaxed italic">
+                                "Elegante restaurante con bonita decoración y una estupenda terraza interior, excelente atención de las camareras, muy buen producto tratado con mimo, nos dieron de tapa un salmorejo rico y muy fino, comimos una navajas muy buenas y un…"
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-gourmet-100 flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-terracotta-100 text-terracotta-700 font-bold flex items-center justify-center text-sm">
+                                O
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-sm text-gourmet-900">Oscar</h4>
+                                <span class="text-xs text-gourmet-800">Cliente Verificado</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reseña 3 -->
+                    <div class="bg-white p-8 rounded-2xl border border-gourmet-200/80 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center space-x-1 text-gold text-xs mb-4">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gourmet-900 text-sm leading-relaxed italic">
+                                "Primera vez en este magnífico restaurante. Una sorpresa para los sentidos. Atención del personal inmejorable. Estábamos un poco perdidos en la carta y nos dejamos aconsejar. El resultado? Repetiremos sin duda. I N C R E I B L E!"
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-gourmet-100 flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-terracotta-100 text-terracotta-700 font-bold flex items-center justify-center text-sm">
+                                ER
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-sm text-gourmet-900">Eduardo Rivas</h4>
+                                <span class="text-xs text-gourmet-800">Cliente Verificado</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reseña 4 -->
+                    <div class="bg-white p-8 rounded-2xl border border-gourmet-200/80 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center space-x-1 text-gold text-xs mb-4">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gourmet-900 text-sm leading-relaxed italic">
+                                "El ambiente y servicio excelentes. La carta de vino espectacular y lis platos maravillosos. Probamos unas almejas, unas croquetas y un mero que permanecerán en nuestra memoria por mucho tiempo. El espacio minimalista muy agradable."
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-gourmet-100 flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-terracotta-100 text-terracotta-700 font-bold flex items-center justify-center text-sm">
+                                EF
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-sm text-gourmet-900">Eduardo Fernandez</h4>
+                                <span class="text-xs text-gourmet-800">Cliente Verificado</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reseña 5 -->
+                    <div class="bg-white p-8 rounded-2xl border border-gourmet-200/80 shadow-sm flex flex-col justify-between lg:col-span-2">
+                        <div>
+                            <div class="flex items-center space-x-1 text-gold text-xs mb-4">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gourmet-900 text-sm sm:text-base leading-relaxed italic">
+                                "Ayee domingo comimos allí. Como siempre la comida fue exquisita tanto la carne como el rodaballo que comí yo. El pan buenísimo, una muy buena carta de vinos (dejaros aconsejar por Luci, una crac) el ambiente acogedor y lo mejor, el…"
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-gourmet-100 flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-terracotta-100 text-terracotta-700 font-bold flex items-center justify-center text-sm">
+                                MV
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-sm text-gourmet-900">MARIA DEL MAR VALDES</h4>
+                                <span class="text-xs text-gourmet-800">Cliente Verificado</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Ubicación, Contacto y Mapa Interactivo -->
+        <section id="contacto" class="py-24 bg-white relative">
+            <div class="max-w-7xl mx-auto px-6">
+                
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <span class="text-terracotta-600 font-semibold tracking-widest uppercase text-xs">Visítanos en Moaña</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold mt-2 text-gourmet-900">
+                        Cómo Llegar y Reservar
+                    </h2>
+                    <p class="text-gourmet-800 text-sm mt-3">Te recomendamos reservar con antelación para asegurar tu mesa en el comedor o en nuestra terraza interior.</p>
+                </div>
+
+                <div class="grid lg:grid-cols-12 gap-10 items-start">
+                    
+                    <!-- Ficha de Datos de Contacto Directo -->
+                    <div class="lg:col-span-5 bg-gourmet-950 text-white p-8 sm:p-10 rounded-3xl shadow-xl space-y-8">
+                        <div>
+                            <span class="text-terracotta-500 font-semibold uppercase tracking-wider text-xs block mb-1">Contacto Directo</span>
+                            <h3 class="font-serif text-3xl font-bold">Restaurante Pradoviejo</h3>
+                            <p class="text-gourmet-200 text-sm mt-2">Un remanso de calma y alta cocina en la comarca del Morrazo.</p>
+                        </div>
+
+                        <div class="space-y-6">
+                            <!-- Dirección -->
+                            <div class="flex items-start space-x-4">
+                                <div class="w-10 h-10 rounded-full bg-white/10 flex-shrink-0 flex items-center justify-center text-terracotta-500 text-lg mt-0.5">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs uppercase tracking-wider text-gourmet-200 font-semibold">Dirección</h4>
+                                    <p class="text-white text-sm font-medium mt-0.5">Rúa de Ramón Cabanillas, 16, Bajo</p>
+                                    <p class="text-gourmet-200 text-xs">36950 Moaña, Pontevedra, España</p>
+                                </div>
+                            </div>
+
+                            <!-- Teléfono -->
+                            <div class="flex items-start space-x-4">
+                                <div class="w-10 h-10 rounded-full bg-white/10 flex-shrink-0 flex items-center justify-center text-terracotta-500 text-lg mt-0.5">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs uppercase tracking-wider text-gourmet-200 font-semibold">Teléfono de Reservas</h4>
+                                    <a href="tel:986050351" class="text-xl font-serif font-bold text-white hover:text-terracotta-500 transition-colors block mt-0.5">
+                                        986 050 351
+                                    </a>
+                                    <span class="text-xs text-gourmet-200">Llamada directa para consultar disponibilidad</span>
+                                </div>
+                            </div>
+
+                            <!-- Correo Electrónico -->
+                            <div class="flex items-start space-x-4">
+                                <div class="w-10 h-10 rounded-full bg-white/10 flex-shrink-0 flex items-center justify-center text-terracotta-500 text-lg mt-0.5">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs uppercase tracking-wider text-gourmet-200 font-semibold">Correo Electrónico</h4>
+                                    <a href="mailto:enrique@pradoviejo.com" class="text-sm font-medium text-white hover:text-terracotta-500 transition-colors block mt-0.5">
+                                        enrique@pradoviejo.com
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Botón directo de reserva -->
+                        <div class="pt-4 border-t border-white/10">
+                            <a href="tel:986050351" class="w-full flex items-center justify-center py-4 px-6 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white font-bold text-base shadow-xl shadow-terracotta-500/25 transition transform hover:-translate-y-0.5">
+                                <i class="fa-solid fa-phone-volume mr-3"></i> Reservar Mesa (986 050 351)
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Mapa Interactivo Real Obligatorio -->
+                    <div class="lg:col-span-7 h-full flex flex-col justify-between">
+                        <div class="w-full rounded-2xl overflow-hidden shadow-lg border border-gourmet-200">
+                            <iframe 
+                                src="https://www.google.com/maps?q=Restaurante%20Pradoviejo%20R%C3%BAa%20de%20Ram%C3%B3n%20Cabanillas%2C%2016%2C%20Bajo%2C%2036950%20Moa%C3%B1a%2C%20Pontevedra%2C%20Espa%C3%B1a&output=embed" 
+                                width="100%" 
+                                height="380" 
+                                style="border:0; border-radius: 1rem;" 
+                                allowfullscreen="" 
+                                loading="lazy"
+                                title="Ubicación de Restaurante Pradoviejo en Google Maps">
+                            </iframe>
+                        </div>
+
+                        <div class="mt-6 p-6 rounded-2xl bg-cream border border-gourmet-200/80 flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <i class="fa-solid fa-circle-info text-terracotta-600 text-xl"></i>
+                                <p class="text-xs sm:text-sm text-gourmet-800">
+                                    Fácil acceso y aparcamiento cercano en el corazón de Moaña, a escasos minutos del paseo marítimo.
+                                </p>
+                            </div>
+                            <a href="https://www.google.com/maps?q=Restaurante%20Pradoviejo%20R%C3%BAa%20de%20Ram%C3%B3n%20Cabanillas%2C%2016%2C%20Bajo%2C%2036950%20Moa%C3%B1a%2C%20Pontevedra%2C%20Espa%C3%B1a" target="_blank" rel="noopener noreferrer" class="ml-4 text-xs font-semibold text-terracotta-700 hover:text-terracotta-800 whitespace-nowrap">
+                                Abrir GPS <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gourmet-950 text-gourmet-200 pt-16 pb-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+                
+                <div class="md:col-span-2 space-y-4">
+                    <span class="block font-serif text-2xl tracking-wider text-white font-bold">RESTAURANTE PRADOVIEJO</span>
+                    <p class="text-sm max-w-sm text-gourmet-200 font-light leading-relaxed">
+                        Cocina de producto en Moaña (Pontevedra). Pescados de lonja, carnes nobles, flores frescas y el calor de una atención que cuida cada instante.
+                    </p>
+                    <div class="flex items-center space-x-4 pt-2">
+                        <a href="tel:986050351" aria-label="Llamar" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-terracotta-500 transition-colors">
+                            <i class="fa-solid fa-phone text-sm"></i>
+                        </a>
+                        <a href="mailto:enrique@pradoviejo.com" aria-label="Enviar Email" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-terracotta-500 transition-colors">
+                            <i class="fa-solid fa-envelope text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-serif font-bold text-lg mb-4">Navegación</h4>
+                    <ul class="space-y-2.5 text-xs text-gourmet-200">
+                        <li><a href="#filosofia" class="hover:text-terracotta-500 transition">Nuestra Esencia</a></li>
+                        <li><a href="#carta" class="hover:text-terracotta-500 transition">Platos & Especialidades</a></li>
+                        <li><a href="#instalaciones" class="hover:text-terracotta-500 transition">Terraza Interior & Espacio</a></li>
+                        <li><a href="#opiniones" class="hover:text-terracotta-500 transition">Reseñas de Clientes</a></li>
+                        <li><a href="#contacto" class="hover:text-terracotta-500 transition">Ubicación & Reservas</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-serif font-bold text-lg mb-4">Contacto</h4>
+                    <p class="text-xs text-gourmet-200 leading-relaxed mb-2">
+                        Rúa de Ramón Cabanillas, 16, Bajo<br>
+                        36950 Moaña, Pontevedra, España
+                    </p>
+                    <p class="text-xs text-gourmet-200 mb-1">
+                        <strong>Tel:</strong> <a href="tel:986050351" class="hover:text-terracotta-500">986 050 351</a>
+                    </p>
+                    <p class="text-xs text-gourmet-200">
+                        <strong>Email:</strong> <a href="mailto:enrique@pradoviejo.com" class="hover:text-terracotta-500">enrique@pradoviejo.com</a>
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-gourmet-200 gap-4">
+                <p>&copy; <span id="currentYear"></span> Restaurante Pradoviejo. Todos los derechos reservados.</p>
+                <p class="text-gourmet-200">Moaña · Pontevedra · Rías Baixas</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón Flotante Móvil para Llamar/Reservar -->
+    <div class="fixed bottom-5 right-5 z-40 sm:hidden">
+        <a href="tel:986050351" class="flex items-center space-x-2 bg-terracotta-500 hover:bg-terracotta-600 text-white font-bold py-3.5 px-6 rounded-full shadow-2xl transition transform active:scale-95 border-2 border-white/20">
+            <i class="fa-solid fa-phone"></i>
+            <span>Reservar Mesa</span>
+        </a>
+    </div>
+
+    <!-- Script de soporte de navegación móvil y año dinámico -->
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+        }
+    </script>
+</body>
+</html>
