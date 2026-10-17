@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vezdemarbán | Tienda de Alimentación & Despensa Selecta</title>
+    <meta name="description" content="Vezdemarbán: Tradición gastronómica, herencia chocolatera y productos selectos de Zamora. Alimentación cuidada al detalle con el trato más cercano.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        matte: {
+                            DEFAULT: '#0f0f11',
+                            dark: '#080809',
+                            light: '#18181b',
+                            card: '#141416'
+                        },
+                        gold: {
+                            DEFAULT: '#c5a059',
+                            light: '#dfbe7a',
+                            dark: '#9d7a36',
+                            muted: '#bfa168'
+                        },
+                        sand: {
+                            DEFAULT: '#f5f0eb',
+                            light: '#faf8f5',
+                            dark: '#e8ded2'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #dfbe7a 0%, #c5a059 50%, #9d7a36 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border-gradient {
+            border-image: linear-gradient(to right, #c5a059, #333338, #c5a059) 1;
+        }
+    </style>
+</head>
+<body class="bg-matte text-sand font-sans antialiased selection:bg-gold selection:text-matte overflow-x-hidden">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-matte-dark border-b border-gold/20 py-2.5 px-4 text-xs tracking-widest text-gold text-center uppercase flex justify-center items-center gap-3">
+        <span><i class="fa-solid fa-gem text-[10px] mr-1"></i> Tradición Chocolatera e Historia Zamorana</span>
+        <span class="hidden md:inline text-zinc-600">|</span>
+        <span class="hidden md:inline">Atención personalizada y productos de proximidad</span>
+        <span class="hidden md:inline text-zinc-600">|</span>
+        <a href="mailto:raices_marbanas@vezdemarban.com" class="underline hover:text-white transition-colors">raices_marbanas@vezdemarban.com</a>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-matte/90 backdrop-blur-md border-b border-white/5 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#" class="flex flex-col group">
+                <span class="font-serif text-2xl md:text-3xl tracking-[0.2em] font-semibold text-sand group-hover:text-gold transition-colors uppercase">
+                    Vezdemarbán
+                </span>
+                <span class="text-[9px] tracking-[0.35em] uppercase text-gold font-light">
+                    Alimentación & Selección Raíces
+                </span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex items-center space-x-8 text-xs font-medium uppercase tracking-[0.2em] text-sand/80">
+                <a href="#inicio" class="hover:text-gold transition-colors">Inicio</a>
+                <a href="#historia" class="hover:text-gold transition-colors">El Pueblo</a>
+                <a href="#tarifas" class="hover:text-gold transition-colors">Servicios & Tarifas</a>
+                <a href="#galeria" class="hover:text-gold transition-colors">Instalaciones</a>
+                <a href="#opiniones" class="hover:text-gold transition-colors">Opiniones</a>
+                <a href="#contacto" class="hover:text-gold transition-colors">Ubicación</a>
+            </div>
+
+            <!-- Header CTA -->
+            <div class="hidden sm:block">
+                <a href="mailto:raices_marbanas@vezdemarban.com" 
+                   class="inline-flex items-center justify-center px-6 py-2.5 text-xs font-semibold tracking-widest uppercase text-matte bg-gold hover:bg-gold-light transition-all duration-300 rounded-none shadow-lg shadow-gold/10 hover:shadow-gold/25 hover:-translate-y-0.5">
+                    Reservar Cita
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobileMenuBtn" class="lg:hidden text-sand hover:text-gold focus:outline-none p-2" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars-staggered text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-matte-dark border-b border-gold/20 px-6 py-6 space-y-4 text-xs uppercase tracking-widest text-center">
+            <a href="#inicio" class="block py-2 hover:text-gold" onclick="toggleMenu()">Inicio</a>
+            <a href="#historia" class="block py-2 hover:text-gold" onclick="toggleMenu()">El Pueblo & Tradición</a>
+            <a href="#tarifas" class="block py-2 hover:text-gold" onclick="toggleMenu()">Servicios & Tarifas</a>
+            <a href="#galeria" class="block py-2 hover:text-gold" onclick="toggleMenu()">Instalaciones</a>
+            <a href="#opiniones" class="block py-2 hover:text-gold" onclick="toggleMenu()">Opiniones</a>
+            <a href="#contacto" class="block py-2 hover:text-gold" onclick="toggleMenu()">Ubicación</a>
+            <div class="pt-4 border-t border-white/10">
+                <a href="mailto:raices_marbanas@vezdemarban.com" class="block w-full py-3 text-matte bg-gold font-bold">
+                    Reservar Cita
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="inicio" class="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-24">
+        <!-- Background Imagery with Dark Elegant Matte Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://www.civinauta.com/municipios/zamora/vezdemarban/opengraph-image/ae0874e612" 
+                 alt="Vezdemarbán Zamora Panorámica" 
+                 referrerpolicy="no-referrer"
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                 class="w-full h-full object-cover object-center filter brightness-[0.35] contrast-125 scale-105 transform hover:scale-100 transition-transform duration-1000">
+            <div class="absolute inset-0 bg-gradient-to-t from-matte via-matte/70 to-transparent"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gold/10 via-transparent to-matte/90"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+            <div class="inline-flex items-center gap-3 px-4 py-1.5 mb-6 border border-gold/40 bg-matte-light/60 backdrop-blur-sm">
+                <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
+                <span class="text-[11px] tracking-[0.25em] text-sand uppercase font-medium">Boutique de Alimentación & Tradición Marbana</span>
+            </div>
+
+            <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
+                El Arte del Buen Sabor <br>
+                <span class="font-normal italic gold-gradient-text">y Raíces de Nuestra Tierra</span>
+            </h1>
+
+            <p class="max-w-2xl mx-auto text-sm sm:text-base text-sand/80 font-light leading-relaxed mb-10 tracking-wide">
+                Herederos del legendario pasado chocolatero y harinero de Vezdemarbán. Ponemos a tu alcance una cuidada tienda con los mejores alimentos cotidianos, productos tradicionales zamoranos y una atención cálida y cercana.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="mailto:raices_marbanas@vezdemarban.com" 
+                   class="w-full sm:w-auto px-10 py-4 bg-gold hover:bg-gold-light text-matte text-xs tracking-[0.25em] font-semibold uppercase transition-all duration-300 shadow-xl shadow-gold/20 hover:scale-105">
+                    Reservar Cita
+                </a>
+                <a href="#tarifas" 
+                   class="w-full sm:w-auto px-8 py-4 border border-sand/30 hover:border-gold text-sand hover:text-gold text-xs tracking-[0.25em] font-medium uppercase transition-all duration-300 backdrop-blur-sm">
+                    Ver Carta y Tarifas
+                </a>
+            </div>
+
+            <!-- Micro Metrics -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 pt-10 border-t border-white/10 text-center">
+                <div>
+                    <span class="font-serif text-3xl text-gold font-bold">100%</span>
+                    <p class="text-[11px] uppercase tracking-widest text-sand/60 mt-1">Cercanía & Trato Humano</p>
+                </div>
+                <div>
+                    <span class="font-serif text-3xl text-gold font-bold">Toro</span>
+                    <p class="text-[11px] uppercase tracking-widest text-sand/60 mt-1">A sólo 12 km</p>
+                </div>
+                <div>
+                    <span class="font-serif text-3xl text-gold font-bold">S.XVIII</span>
+                    <p class="text-[11px] uppercase tracking-widest text-sand/60 mt-1">Herencia Chocolatera</p>
+                </div>
+                <div>
+                    <span class="font-serif text-3xl text-gold font-bold">5.0 ★</span>
+                    <p class="text-[11px] uppercase tracking-widest text-sand/60 mt-1">Opiniones Excelentes</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Historic Essence & Presentation -->
+    <section id="historia" class="py-24 bg-matte-dark relative border-t border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-xs font-semibold tracking-[0.3em] uppercase text-gold block">Memoria y Esplendor Zamorano</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl text-white font-normal leading-tight">
+                        Un pueblo que resiste con dignidad, historia y <span class="italic text-gold">alma auténtica</span>.
+                    </h2>
+                    <p class="text-sm text-sand/75 leading-relaxed font-light">
+                        Vezdemarbán no es un lugar cualquiera: en tiempos pasados gozó de una vibrante industria textil, harinera y, sobre todo, una célebre tradición de maestros chocolateros que conquistaron el paladar de toda la región.
+                    </p>
+                    <p class="text-sm text-sand/75 leading-relaxed font-light">
+                        En nuestra tienda de alimentación mantenemos vivo ese espíritu de entrega, calidez y servicio cotidiano. Como destacan nuestros vecinos y visitantes, brindamos ese rincón esencial donde el trato es siempre amable, cercano y personalizado.
+                    </p>
+                    <div class="pt-4">
+                        <div class="flex items-center space-x-4 border-l-2 border-gold pl-4 py-2">
+                            <p class="font-serif italic text-sand/90 text-sm">
+                                "El único pueblo de los alrededores con 2 iglesias bien mantenidas, rico pasado y vecinos que reciben con el corazón abierto."
+                            </p>
+                        </div>
+                    </div>
+                    <div class="pt-2">
+                        <a href="mailto:raices_marbanas@vezdemarban.com" class="inline-block px-7 py-3 bg-transparent border border-gold text-gold hover:bg-gold hover:text-matte text-xs tracking-[0.2em] uppercase font-semibold transition-all">
+                            Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="bg-matte-card p-8 border border-white/5 hover:border-gold/40 transition-all duration-300">
+                        <div class="w-12 h-12 flex items-center justify-center bg-matte rounded-full text-gold mb-6 border border-gold/30">
+                            <i class="fa-solid fa-cookie-bite text-xl"></i>
+                        </div>
+                        <h3 class="font-serif text-xl text-white mb-2">Herencia Chocolatera</h3>
+                        <p class="text-xs text-sand/70 leading-relaxed font-light">
+                            Rememoramos las prestigiosas fábricas que hicieron ilustre al municipio, ofreciendo selecciones de chocolate y dulces artesanos con pura alma tradicional.
+                        </p>
+                    </div>
+
+                    <div class="bg-matte-card p-8 border border-white/5 hover:border-gold/40 transition-all duration-300 sm:translate-y-6">
+                        <div class="w-12 h-12 flex items-center justify-center bg-matte rounded-full text-gold mb-6 border border-gold/30">
+                            <i class="fa-solid fa-wheat-awn text-xl"></i>
+                        </div>
+                        <h3 class="font-serif text-xl text-white mb-2">Cereales & Harineras</h3>
+                        <p class="text-xs text-sand/70 leading-relaxed font-light">
+                            Productos con el trigo y harinas de calidad de nuestra comarca, panadería fresca y granos seleccionados con pureza castellana.
+                        </p>
+                    </div>
+
+                    <div class="bg-matte-card p-8 border border-white/5 hover:border-gold/40 transition-all duration-300">
+                        <div class="w-12 h-12 flex items-center justify-center bg-matte rounded-full text-gold mb-6 border border-gold/30">
+                            <i class="fa-solid fa-basket-shopping text-xl"></i>
+                        </div>
+                        <h3 class="font-serif text-xl text-white mb-2">Despensa del Día a Día</h3>
+                        <p class="text-xs text-sand/70 leading-relaxed font-light">
+                            Abastecimiento diario para los más de 700 vecinos y visitantes. Charcutería, lácteos, conservas, frutas y básicos indispensables con simpatía.
+                        </p>
+                    </div>
+
+                    <div class="bg-matte-card p-8 border border-white/5 hover:border-gold/40 transition-all duration-300 sm:translate-y-6">
+                        <div class="w-12 h-12 flex items-center justify-center bg-matte rounded-full text-gold mb-6 border border-gold/30">
+                            <i class="fa-solid fa-wine-glass text-xl"></i>
+                        </div>
+                        <h3 class="font-serif text-xl text-white mb-2">Cercanía a Toro</h3>
+                        <p class="text-xs text-sand/70 leading-relaxed font-light">
+                            Ubicados a 12 km de la cuna del vino Toro, acogemos caldos singulares y maridajes auténticos para celebraciones y vida cotidiana.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: Nuestros Tratamientos, Cortes y Tarifas -->
+    <section id="tarifas" class="py-24 bg-matte relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-[0.3em] text-gold font-semibold block mb-3">Carta de Selección & Servicios</span>
+                <h2 class="font-serif text-4xl sm:text-5xl text-white font-medium">Nuestros Tratamientos, Cortes y Tarifas</h2>
+                <div class="w-20 h-0.5 bg-gold mx-auto my-6"></div>
+                <p class="text-sand/75 text-sm font-light">
+                    Explora nuestra cuidada gama de productos de alimentación, cortes selectos de la tierra, packs tradicionales de chocolate y servicios a medida para hogares y eventos locales.
+                </p>
+            </div>
+
+            <!-- Categories Tabs / Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                
+                <!-- Category 1: Cortes Ibéricos & Charcutería Tradicional -->
+                <div class="bg-matte-light p-8 md:p-10 border border-white/10 hover:border-gold/50 transition-all">
+                    <div class="flex items-center justify-between border-b border-gold/30 pb-4 mb-6">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-drumstick-bite text-gold text-lg"></i>
+                            <h3 class="font-serif text-2xl text-white tracking-wide">Cortes & Charcutería de Zamora</h3>
+                        </div>
+                        <span class="text-[10px] tracking-widest uppercase bg-gold/10 text-gold px-2.5 py-1 font-mono">Artesanal</span>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex justify-between items-start border-b border-white/5 pb-4">
+                            <div>
+                                <h4 class="text-sm font-medium text-sand hover:text-gold transition-colors">Corte a Cuchillo Jamón Ibérico Curado</h4>
+                                <p class="text-xs text-sand/60 font-light mt-1">Loncheado experto al momento o envasado al vacío para máxima frescura.</p>
+                            </div>
+                            <span class="font-serif text-lg text-gold font-semibold ml-4">12,50€ <span class="text-[10px] text-sand/50">/100g</span></span>
+                        </div>
+
+                        <div class="flex justify-between items-start border-b border-white/5 pb-4">
+                            <div>
+                                <h4 class="text-sm font-medium text-sand hover:text-gold transition-colors">Queso Zamorano D.O. Curado de Oveja</h4>
+                                <p class="text-xs text-sand/60 font-light mt-1">Leche cruda de oveja autóctona, madurado en bodega con corteza natural.</p>
+                            </div>
+                            <span class="font-serif text-lg text-gold font-semibold ml-4">7,90€ <span class="text-[10px] text-sand/50">/cuña</span></span>
+                        </div>
+
+                        <div class="flex justify-between items-start border-b border-white/5 pb-4">
+                            <div>
+                                <h4 class="text-sm font-medium text-sand hover:text-gold transition-colors">Embutidos Nobles de la Tierra de Campos</h4>
+                                <p class="text-xs text-sand/60 font-light mt-1">Chorizo cular marinado con pimentón dulce, salchichón y lomo embuchado.</p>
+                            </div>
+                            <span class="font-serif text-lg text-gold font-semibold ml-4">5,80€ <span class="text-[10px] text-sand/50">/pieza</span></span>
+                        </div>
+
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="text-sm font-medium text-sand hover:text-gold transition-colors">Tabla Degustación Raíces Marbanas</h4>
+                                <p class="text-xs text-sand/60 font-light mt-1">Surtido selecto para festividades o reuniones familiares de Vezdemarbán.</p>
+                            </div>
+                            <span class="font-serif text-lg text-gold font-semibold ml-4">24,00€ <span class="text-[10px] text-sand/50">/tabla</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 2: Herencia Chocolatera & Repostería -->
+                <div class="bg-matte-light p-8 md:p-10 border border-white/10 hover:border-gold/50 transition-all">
+                    <div class="flex items-center justify-between border-b border-gold/30 pb-4 mb-6">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-mortar-pestle text-gold text-lg"></i>
+                            <h3 class="font-serif text-2xl text-white tracking-wide">Tradición Chocolatera & Dulces</h3>
+                        </div>
+                        <span class="text-[10px] tracking-widest uppercase bg-gold/10 text-gold px-2.5 py-1 font-mono">Homenaje</span>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex justify-between items-start border-b border-white/5 pb-4">
+                            <div>
+                                <h4 class="text-sm font-medium text-sand hover:text-gold transition-colors">Chocolate a la Taza Estilo Tradicional Marbán</h4>
+                                <p class="text-xs text-sand/60 font-light mt-1">Tableta gruesa artesanal con canela y aroma de harina tostada histórica.</p>
+                            </div>
+                            <span class="font-serif text-lg text-gold font-semibold ml-4">4,50€ <span class="text-[10px] text-sand/50">/ud</span></span>
+                        </div>
+
+                        <div class="flex justify-between items-start border-b border-white/5 pb-4">
+                            <div>
+                                <h4 class="text-sm font-medium text-sand hover:text-gold transition-colors">Bombones Puros Selección Cacao 75%</h4>
+                                <p class="text-xs text-sand/60 font-light mt-1">Elaboración cuidada en recuerdo de los maestros obradores de la villa.</p>
+                            </div>
+                            <span class="font-serif text-lg text-gold font-semibold ml-4">9,20€ <span class="text-[10px] text-sand/50">/caja</span></span>
+                        </div>
+
+                        <div class="flex justify-between items-start border-b border-white/5 pb-4">
+                            <div>
+                                <h4 class="text-sm font-medium text-sand hover:text-gold transition-colors">Dulces Típicos Patronales "Virgen de la Cuesta"</h4>
+                                <p class="text-xs text-sand/60 font-light mt-1">Pastas secas de manteca y almendra, fieles a las fiestas de septiembre.</p>
+                            </div>
+                            <span class="font-serif text-lg text-gold font-semibold ml-4">6,00€ <span class="text-[10px] text-sand/50">/bolsa</span></span>
+                        </div>
+
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="text-sm font-medium text-sand hover:text-gold transition-colors">Lote Degustación Dulce & Chocolate</h4>
+                                <p class="text-xs text-sand/60 font-light mt-1">Surtido gourmet ideal para regalo con estuche elegante.</p>
+                            </div>
+                            <span class="font-serif text-lg text-gold font-semibold ml-4">18,50€ <span class="text-[10px] text-sand/50">/pack</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 3: Harinas, Panadería & Despensa Esencial -->
+                <div class="bg-matte-light p-8 md:p-10 border border-white/10 hover:border-gold/50 transition-all">
+                    <div class="flex items-center justify-between border-b border-gold/30 pb-4 mb-6">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-wheat-awn-circle-exclamation text-gold text-lg"></i>
+                            <h3 class="font-serif text-2xl text-white tracking-wide">Panadería, Harinas & Granos</h3>
+                        </div>
+                        <span class="text-[10px] tracking-widest uppercase bg-gold/10 text-gold px-2.5 py-1 font-mono">Básicos</span>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex justify-between items-start border-b border-white/5 pb-4">
+                            <div>
+                                <h4 class="text-sm font-medium text-sand hover:text-gold transition-colors">Pan Hogaza Zamorano Diario</h4>
+                                <p class="text-xs text-sand/60 font-light mt-1">Corteza crujiente, miga densa con masa madre y harinas del entorno.</p>
+                            </div>
+                            <span class="font-serif text-lg text-gold font-semibold ml-4">2,20€ <span class="text-[10px] text-sand/50">/hogaza</span></span>
+                        </div>
+
+                        <div class="flex justify-between items-start border-b border-white/5 pb-4">
+                            <div>
+                                <h4 class="text-sm font-medium text-sand hover:text-gold transition-colors">Harina de Fuerza Tradición Molinera</h4>
+                                <p class="text-xs text-sand/60 font-light mt-1">Molida para repostería casera y panificación artesana de pueblo.</p>
+                            </div>
+                            <span class="font-serif text-lg text-gold font-semibold ml-4">1,90€ <span class="text-[10px] text-sand/50">/kg</span></span>
+                        </div>
+
+                        <div class="flex justify-between items-start border-b border-white/5 pb-4">
+                            <div>
+                                <h4 class="text-sm font-medium text-sand hover:text-gold transition-colors">Legumbres Seleccionadas (Garbanzo de Fuentesaúco)</h4>
+                                <p class="text-xs text-sand/60 font-light mt-1">Grano tierno y mantecoso de la comarca, indispensable en puchero.</p>
+                            </div>
+                            <span class="font-serif text-lg text-gold font-semibold ml-4">3,80€ <span class="text-[10px] text-sand/50">/kg</span></span>
+                        </div>
+
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="text-sm font-medium text-sand hover:text-gold transition-colors">Cesta de Víveres Semanal Completa</h4>
+                                <p class="text-xs text-sand/60 font-light mt-1">Leche, fruta fresca de temporada, huevos de corral y artículos cotidianos.</p>
+                            </div>
+                            <span class="font-serif text-lg text-gold font-semibold ml-4">35,00€ <span class="text-[10px] text-sand/50">/cesta</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 4: Bodega & Atención Especial -->
+                <div class="bg-matte-light p-8 md:p-10 border border-white/10 hover:border-gold/50 transition-all">
+                    <div class="flex items-center justify-between border-b border-gold/30 pb-4 mb-6">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-wine-bottle text-gold text-lg"></i>
+                            <h3 class="font-serif text-2xl text-white tracking-wide">Bodega Toro & Encargos a Medida</h3>
+                        </div>
+                        <span class="text-[10px] tracking-widest uppercase bg-gold/10 text-gold px-2.5 py-1 font-mono">Exclusivo</span>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex justify-between items-start border-b border-white/5 pb-4">
+                            <div>
+                                <h4 class="text-sm font-medium text-sand hover:text-gold transition-colors">Vino Tinto D.O. Toro Roble</h4>
+                                <p class="text-xs text-sand/60 font-light mt-1">Tinta de Toro de viñedos viejos a pocos kilómetros de Vezdemarbán.</p>
+                            </div>
+                            <span class="font-serif text-lg text-gold font-semibold ml-4">9,50€ <span class="text-[10px] text-sand/50">/botella</span></span>
+                        </div>
+
+                        <div class="flex justify-between items-start border-b border-white/5 pb-4">
+                            <div>
+                                <h4 class="text-sm font-medium text-sand hover:text-gold transition-colors">Reserva Familiar D.O. Toro</h4>
+                                <p class="text-xs text-sand/60 font-light mt-1">Crianza en barrica de roble con gran cuerpo y notas balsámicas.</p>
+                            </div>
+                            <span class="font-serif text-lg text-gold font-semibold ml-4">16,00€ <span class="text-[10px] text-sand/50">/botella</span></span>
+                        </div>
+
+                        <div class="flex justify-between items-start border-b border-white/5 pb-4">
+                            <div>
+                                <h4 class="text-sm font-medium text-sand hover:text-gold transition-colors">Servicio de Preparación y Encargo Personalizado</h4>
+                                <p class="text-xs text-sand/60 font-light mt-1">Preparamos listas de compra completas para vecinos, casas rurales y eventos.</p>
+                            </div>
+                            <span class="font-serif text-lg text-gold font-semibold ml-4">Consultar</span>
+                        </div>
+
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="text-sm font-medium text-sand hover:text-gold transition-colors">Cata Asistida de Productos Locales</h4>
+                                <p class="text-xs text-sand/60 font-light mt-1">Reserva previa por email para grupos que deseen conocer los sabores del pueblo.</p>
+                            </div>
+                            <span class="font-serif text-lg text-gold font-semibold ml-4">Bajo Cita</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Centralized Action Callout -->
+            <div class="mt-14 text-center">
+                <a href="mailto:raices_marbanas@vezdemarban.com" 
+                   class="inline-flex items-center gap-3 px-10 py-4 bg-gold hover:bg-gold-light text-matte text-xs tracking-[0.25em] font-bold uppercase transition-all duration-300 shadow-xl shadow-gold/20 hover:scale-105">
+                    <i class="fa-regular fa-calendar-check"></i>
+                    Reservar Cita
+                </a>
+                <p class="text-xs text-sand/50 mt-3 font-light">¿Necesitas un encargo especial o consultar disponibilidad? Escríbenos directamente.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section: Nuestras Instalaciones y Trabajos -->
+    <section id="galeria" class="py-24 bg-matte-dark border-t border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+                <div>
+                    <span class="text-xs uppercase tracking-[0.3em] text-gold font-semibold block mb-3">Imágenes & Entorno</span>
+                    <h2 class="font-serif text-4xl text-white font-medium">Nuestras Instalaciones y Trabajos</h2>
+                </div>
+                <div class="mt-4 md:mt-0">
+                    <a href="mailto:raices_marbanas@vezdemarban.com" class="inline-block px-6 py-2.5 border border-gold/50 text-gold hover:bg-gold hover:text-matte text-xs tracking-widest uppercase transition-all">
+                        Reservar Cita
+                    </a>
+                </div>
+            </div>
+
+            <!-- Image Grid with strict fallback rules -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Real Photo Provided -->
+                <div class="group relative overflow-hidden bg-matte-card aspect-[4/3] border border-white/10">
+                    <img src="https://www.civinauta.com/municipios/zamora/vezdemarban/opengraph-image/ae0874e612" 
+                         alt="Entorno y Arquitectura Vezdemarbán" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                         class="w-full h-full object-cover filter brightness-90 group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                        <span class="text-[10px] tracking-widest uppercase text-gold">Vista Panorámica y Entorno</span>
+                        <h4 class="font-serif text-lg text-white font-medium">Vezdemarbán, Zamora</h4>
+                    </div>
+                </div>
+
+                <!-- Curated Boutique Artisan Shop Visual 1 -->
+                <div class="group relative overflow-hidden bg-matte-card aspect-[4/3] border border-white/10">
+                    <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80" 
+                         alt="Selección de Alimentos y Despensa" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                         class="w-full h-full object-cover filter brightness-90 group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                        <span class="text-[10px] tracking-widest uppercase text-gold">Despensa Cuidadosa</span>
+                        <h4 class="font-serif text-lg text-white font-medium">Calidad de Proximidad</h4>
+                    </div>
+                </div>
+
+                <!-- Curated Boutique Artisan Shop Visual 2 -->
+                <div class="group relative overflow-hidden bg-matte-card aspect-[4/3] border border-white/10">
+                    <img src="https://images.unsplash.com/photo-1511018556340-d16986a1c194?auto=format&fit=crop&w=800&q=80" 
+                         alt="Chocolates y Harinas Artesanales" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                         class="w-full h-full object-cover filter brightness-90 group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                        <span class="text-[10px] tracking-widest uppercase text-gold">Artesanía Marbana</span>
+                        <h4 class="font-serif text-lg text-white font-medium">Chocolates & Dulces Selectos</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Verified Reviews Section (Real Quotes from Business Data) -->
+    <section id="opiniones" class="py-24 bg-matte relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-[0.3em] text-gold font-semibold block mb-3">Voces Reales de la Comunidad</span>
+                <h2 class="font-serif text-4xl text-white font-medium">Opiniones de Nuestros Vecinos & Clientes</h2>
+                <div class="w-16 h-0.5 bg-gold mx-auto my-4"></div>
+                <p class="text-xs text-sand/70 uppercase tracking-widest">Reseñas Verificadas en Portales y Google Maps</p>
+            </div>
+
+            <!-- Reviews Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Review 1: Fernando Sastre -->
+                <div class="bg-matte-light p-8 border border-white/5 flex flex-col justify-between hover:border-gold/40 transition-all">
+                    <div>
+                        <div class="flex text-gold text-xs space-x-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sand/80 text-sm font-light leading-relaxed italic mb-6">
+                            "Un pueblo Zamorano con encanto e historia muy antigua en tiempos pasados tuvo mucha industria, chocolatera y textil, harinera fue un pueblo muy importante, llegando a tener siete parroquias. Las fiestas de la patrona el 8 de Septiembre La Virgen de La Cuesta son de gran tradición, al igual que las fiestas de carnaval y el mayo."
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                        <div>
+                            <span class="font-medium text-sm text-white block">Fernando Sastre</span>
+                            <span class="text-[10px] text-gold tracking-widest uppercase">pucelanocisterniga</span>
+                        </div>
+                        <i class="fa-brands fa-google text-sand/30"></i>
+                    </div>
+                </div>
+
+                <!-- Review 2: CLP321 (Highlighting the Shop) -->
+                <div class="bg-matte-light p-8 border border-gold/40 flex flex-col justify-between shadow-lg shadow-gold/5 relative">
+                    <span class="absolute -top-3 right-6 bg-gold text-matte text-[9px] uppercase tracking-widest font-bold px-3 py-1">Sobre la Tienda</span>
+                    <div>
+                        <div class="flex text-gold text-xs space-x-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sand/80 text-sm font-light leading-relaxed italic mb-6">
+                            "Un pueblo de los que van resistiendo la despoblación, cuenta con una pequeña tienda, regentada por un matrimonio muy amable, servicial y simpatico, también existen tres bares, uno de ellos restaurante, panadería..."
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                        <div>
+                            <span class="font-medium text-sm text-white block">CLP321</span>
+                            <span class="text-[10px] text-gold tracking-widest uppercase">Visitante Verificado</span>
+                        </div>
+                        <i class="fa-solid fa-store text-gold/60"></i>
+                    </div>
+                </div>
+
+                <!-- Review 3: jorgito Jorginho -->
+                <div class="bg-matte-light p-8 border border-white/5 flex flex-col justify-between hover:border-gold/40 transition-all">
+                    <div>
+                        <div class="flex text-gold text-xs space-x-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sand/80 text-sm font-light leading-relaxed italic mb-6">
+                            "Uno de los mejores pueblos de la zona, con un pasado esplendoroso con tradición chocolatera, el único pueblo de los alrededores con 2 iglesias bien mantenidas y en uso. En el pasado era el único de la zona con cine. Actualmente tienen un…"
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                        <div>
+                            <span class="font-medium text-sm text-white block">jorgito Jorginho</span>
+                            <span class="text-[10px] text-gold tracking-widest uppercase">Vecino & Explorador</span>
+                        </div>
+                        <i class="fa-brands fa-google text-sand/30"></i>
+                    </div>
+                </div>
+
+                <!-- Review 4: Jose luis Casero -->
+                <div class="bg-matte-light p-8 border border-white/5 flex flex-col justify-between hover:border-gold/40 transition-all">
+                    <div>
+                        <div class="flex text-gold text-xs space-x-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sand/80 text-sm font-light leading-relaxed italic mb-6">
+                            "Es un pueblo de la provincia de Zamora, a 12 kilómetros de Toro, tiene una Iglesia bien bonita y su campanario Gótico. Tubo muchas fábricas de chocolate pero a ido a menos, el municipio cuenta con 700 vecinos."
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                        <div>
+                            <span class="font-medium text-sm text-white block">Jose luis Casero</span>
+                            <span class="text-[10px] text-gold tracking-widest uppercase">Guía Local</span>
+                        </div>
+                        <i class="fa-brands fa-google text-sand/30"></i>
+                    </div>
+                </div>
+
+                <!-- Review 5: Chanadu -->
+                <div class="bg-matte-light p-8 border border-white/5 flex flex-col justify-between hover:border-gold/40 transition-all">
+                    <div>
+                        <div class="flex text-gold text-xs space-x-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sand/80 text-sm font-light leading-relaxed italic mb-6">
+                            "El mejor pueblo para un marbano."
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                        <div>
+                            <span class="font-medium text-sm text-white block">Chanadu</span>
+                            <span class="text-[10px] text-gold tracking-widest uppercase">Sentimiento Marbano</span>
+                        </div>
+                        <i class="fa-solid fa-heart text-gold/60"></i>
+                    </div>
+                </div>
+
+                <!-- Service Commitment Card -->
+                <div class="bg-gradient-to-br from-matte-card to-matte p-8 border border-gold/30 flex flex-col justify-between">
+                    <div>
+                        <span class="text-gold text-xs font-mono tracking-widest uppercase block mb-2">Compromiso</span>
+                        <h3 class="font-serif text-2xl text-white mb-3">Atención De Confianza</h3>
+                        <p class="text-xs text-sand/70 font-light leading-relaxed">
+                            Cuidamos cada pedido con el mismo empeño y simpatía que ha sostenido a nuestra comunidad durante generaciones.
+                        </p>
+                    </div>
+                    <div class="pt-6">
+                        <a href="mailto:raices_marbanas@vezdemarban.com" class="block text-center py-3 bg-gold text-matte text-xs uppercase font-bold tracking-widest hover:bg-gold-light transition-colors">
+                            Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact Section -->
+    <section id="contacto" class="py-24 bg-matte-dark relative border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Contact Details -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-xs uppercase tracking-[0.3em] text-gold font-semibold block mb-3">Visítanos y Conéctate</span>
+                        <h2 class="font-serif text-4xl text-white font-medium">Ubicación & Contacto</h2>
+                        <div class="w-16 h-0.5 bg-gold my-4"></div>
+                        <p class="text-sm text-sand/75 font-light leading-relaxed">
+                            Estamos en el corazón de Vezdemarbán, a tan solo 12 km de Toro. Ven a conocernos o haz tu consulta por correo electrónico antes de tu visita.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-full bg-matte border border-gold/40 flex items-center justify-center text-gold flex-shrink-0 mt-1">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs uppercase tracking-widest text-gold font-semibold">Dirección</h4>
+                                <p class="text-sm text-white font-light mt-0.5">49840 Vezdemarbán, Zamora, España</p>
+                                <span class="text-[11px] text-sand/50">Tierra del Pan / Alfoz de Toro</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-full bg-matte border border-gold/40 flex items-center justify-center text-gold flex-shrink-0 mt-1">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs uppercase tracking-widest text-gold font-semibold">Correo Electrónico</h4>
+                                <a href="mailto:raices_marbanas@vezdemarban.com" class="text-sm text-white hover:text-gold transition-colors font-light mt-0.5 block">
+                                    raices_marbanas@vezdemarban.com
+                                </a>
+                                <span class="text-[11px] text-sand/50">Atención directa para encargos y reservas</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-full bg-matte border border-gold/40 flex items-center justify-center text-gold flex-shrink-0 mt-1">
+                                <i class="fa-regular fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs uppercase tracking-widest text-gold font-semibold">Horario de Despensa</h4>
+                                <p class="text-sm text-white font-light mt-0.5">Lunes a Sábado: Mañanas y Tardes</p>
+                                <span class="text-[11px] text-sand/50">Domingos y Festivos: Servicio local habitual</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
+                        <a href="mailto:raices_marbanas@vezdemarban.com" 
+                           class="inline-block w-full sm:w-auto text-center px-10 py-4 bg-gold hover:bg-gold-light text-matte text-xs tracking-[0.25em] font-bold uppercase transition-all duration-300 shadow-xl shadow-gold/20">
+                            Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Interactive Map Frame -->
+                <div class="lg:col-span-7 bg-matte p-3 border border-white/10 shadow-2xl">
+                    <iframe src="https://www.google.com/maps?q=Vezdemarban%2049840%20Vezdemarb%C3%A1n%2C%20Zamora%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                    <div class="flex items-center justify-between px-4 py-3 text-[11px] text-sand/60">
+                        <span><i class="fa-solid fa-map-pin text-gold mr-1"></i> Coordenadas: Vezdemarbán (Zamora)</span>
+                        <span>Acceso desde Toro & autovías</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-matte-dark border-t border-white/10 py-12 text-sand/70 text-xs">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-center md:text-left">
+                <span class="font-serif text-xl tracking-[0.2em] font-semibold text-white block uppercase">Vezdemarbán</span>
+                <p class="text-[11px] text-sand/50 mt-1">Tienda de alimentación y homenaje a la cultura gastronómica marbana.</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-6 text-[11px] uppercase tracking-widest">
+                <a href="#inicio" class="hover:text-gold transition-colors">Inicio</a>
+                <a href="#historia" class="hover:text-gold transition-colors">Historia</a>
+                <a href="#tarifas" class="hover:text-gold transition-colors">Tarifas</a>
+                <a href="#galeria" class="hover:text-gold transition-colors">Instalaciones</a>
+                <a href="#opiniones" class="hover:text-gold transition-colors">Opiniones</a>
+                <a href="mailto:raices_marbanas@vezdemarban.com" class="text-gold font-bold hover:underline">Reservar Cita</a>
+            </div>
+
+            <div class="text-center md:text-right text-[11px] text-sand/40">
+                <p>&copy; <span id="currentYear"></span> Vezdemarbán. Todos los derechos reservados.</p>
+                <p class="mt-0.5">49840 Vezdemarbán, Zamora, España</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script for mobile menu and year -->
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+    </script>
+</body>
+</html>
