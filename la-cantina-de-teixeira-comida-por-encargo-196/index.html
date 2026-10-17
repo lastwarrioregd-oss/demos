@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Cantina de Teixeira | Comida por Encargo en Tejeira (León)</title>
+    <meta name="description" content="Auténtica cocina tradicional por encargo en Tejeira, en el corazón de los Ancares Leoneses. Platos con alma elaborados por Mari Flor y atención cercana de Luis.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        terracota: {
+                            50: '#FDF7F4',
+                            100: '#F9EDE7',
+                            200: '#F3D8CD',
+                            500: '#C85A32',
+                            600: '#B04822',
+                            700: '#8E3818',
+                            800: '#6E2C13',
+                            900: '#461A0A'
+                        },
+                        gourmet: {
+                            base: '#171513',
+                            card: '#201C18',
+                            crema: '#FDFBF7',
+                            cremaDark: '#F4ECE1',
+                            dorado: '#D6A354'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Cinzel', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-pattern {
+            background-color: #171513;
+            background-image: radial-gradient(rgba(200, 90, 50, 0.15) 1px, transparent 0);
+            background-size: 28px 28px;
+        }
+        .blur-card {
+            background: rgba(32, 28, 24, 0.85);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="font-sans bg-gourmet-crema text-stone-800 antialiased selection:bg-terracota-500 selection:text-white">
+
+    <!-- Top Notice Bar -->
+    <div class="bg-gourmet-base text-stone-300 border-b border-stone-800 py-2.5 px-4 text-xs md:text-sm">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4 text-center sm:text-left">
+                <span class="inline-flex items-center text-terracota-500 font-medium">
+                    <i class="fa-solid fa-mountain mr-1.5"></i> Ancares Leoneses (Tejeira, León)
+                </span>
+                <span class="hidden md:inline text-stone-500">•</span>
+                <span class="text-stone-300">Cocina artesanal elaborada exclusivamente bajo encargo previo</span>
+            </div>
+            <div class="flex items-center gap-5">
+                <a href="tel:608313193" class="hover:text-terracota-500 transition-colors flex items-center gap-1.5 font-medium text-white">
+                    <i class="fa-solid fa-phone text-terracota-500"></i> 608 31 31 93
+                </a>
+                <span class="text-stone-600">|</span>
+                <a href="mailto:lacantinadeteixeira@hotmail.com" class="hover:text-terracota-500 transition-colors hidden sm:flex items-center gap-1.5">
+                    <i class="fa-regular fa-envelope text-terracota-500"></i> lacantinadeteixeira@hotmail.com
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="sticky top-0 z-50 bg-stone-900/95 backdrop-blur-md border-b border-stone-800/80 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand / Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 rounded-full bg-terracota-700/30 border border-terracota-500/50 flex items-center justify-center text-terracota-500 text-xl group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <div>
+                        <span class="font-serif text-lg md:text-xl font-bold tracking-wider text-white block uppercase leading-tight group-hover:text-terracota-500 transition-colors">
+                            La Cantina de Teixeira
+                        </span>
+                        <span class="text-xs uppercase tracking-widest text-terracota-500 font-semibold block">
+                            Comida por Encargo
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-stone-300">
+                    <a href="#experiencia" class="hover:text-white transition-colors">La Cantina</a>
+                    <a href="#carta" class="hover:text-white transition-colors">Nuestra Carta</a>
+                    <a href="#galeria" class="hover:text-white transition-colors">Instalaciones</a>
+                    <a href="#opiniones" class="hover:text-white transition-colors">Opiniones</a>
+                    <a href="#contacto" class="hover:text-white transition-colors">Ubicación</a>
+                </nav>
+
+                <!-- Header CTA Button -->
+                <div class="hidden sm:flex items-center gap-4">
+                    <a href="tel:608313193" class="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full bg-terracota-600 hover:bg-terracota-500 text-white font-medium text-sm tracking-wide shadow-lg shadow-terracota-900/30 hover:shadow-terracota-600/40 transform hover:-translate-y-0.5 transition-all">
+                        <i class="fa-solid fa-bell-concierge"></i>
+                        <span>Reservar Mesa</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" aria-label="Abrir menú" class="lg:hidden p-2 rounded-lg text-stone-300 hover:text-white hover:bg-stone-800 focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-stone-900 border-b border-stone-800 px-4 pt-3 pb-6 space-y-3">
+            <a href="#experiencia" class="block px-3 py-2 rounded-md text-base font-medium text-stone-300 hover:bg-stone-800 hover:text-white">La Cantina</a>
+            <a href="#carta" class="block px-3 py-2 rounded-md text-base font-medium text-stone-300 hover:bg-stone-800 hover:text-white">Nuestra Carta y Especialidades</a>
+            <a href="#galeria" class="block px-3 py-2 rounded-md text-base font-medium text-stone-300 hover:bg-stone-800 hover:text-white">Instalaciones y Fotos</a>
+            <a href="#opiniones" class="block px-3 py-2 rounded-md text-base font-medium text-stone-300 hover:bg-stone-800 hover:text-white">Opiniones de Clientes</a>
+            <a href="#contacto" class="block px-3 py-2 rounded-md text-base font-medium text-stone-300 hover:bg-stone-800 hover:text-white">Contacto y Cómo Llegar</a>
+            <div class="pt-3">
+                <a href="tel:608313193" class="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-terracota-600 text-white font-semibold">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Reservar Mesa</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gourmet-base text-white overflow-hidden py-16 md:py-28 hero-pattern border-b border-stone-800">
+        <div class="absolute inset-0 bg-gradient-to-r from-stone-950 via-stone-900/90 to-stone-950/70 z-10"></div>
+        
+        <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Content -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-terracota-500/10 border border-terracota-500/30 text-terracota-500 text-xs sm:text-sm font-semibold tracking-wider uppercase">
+                        <i class="fa-solid fa-fire-burner"></i> Cocina Casera Tradicional de Montaña
+                    </div>
+                    
+                    <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-stone-100 leading-tight">
+                        El placer de comer sin prisa en los <span class="text-terracota-500 italic">Ancares Leoneses</span>
+                    </h1>
+
+                    <p class="text-stone-300 text-base sm:text-lg md:text-xl font-light leading-relaxed">
+                        En <strong class="text-white font-medium">La Cantina de Teixeira</strong>, cada servicio es una celebración íntima. Cocinamos a fuego lento y exclusivamente bajo encargo previo de la mano de <span class="text-terracota-200 font-medium">Mari Flor</span> y la cálida acogida de <span class="text-terracota-200 font-medium">Luis</span> en Tejeira.
+                    </p>
+
+                    <!-- Trust indicators -->
+                    <div class="pt-2 flex flex-wrap items-center gap-6 text-stone-400 text-sm">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-star text-amber-400"></i>
+                            <span class="text-stone-200 font-semibold">5.0 / 5.0</span>
+                            <span class="text-xs text-stone-400">Opiniones Verificadas</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-heart text-terracota-500"></i>
+                            <span class="text-stone-200">Trato Familiar Inolvidable</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-leaf text-emerald-400"></i>
+                            <span class="text-stone-200">Producto Local y de Temporada</span>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="pt-4 flex flex-col sm:flex-row gap-4 sm:items-center">
+                        <a href="tel:608313193" class="inline-flex justify-center items-center gap-3 px-8 py-4 rounded-xl bg-terracota-600 hover:bg-terracota-500 text-white font-semibold text-lg shadow-xl shadow-terracota-950/60 transform hover:-translate-y-0.5 transition-all">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>Reservar Mesa</span>
+                        </a>
+                        <a href="#carta" class="inline-flex justify-center items-center gap-2 px-7 py-4 rounded-xl bg-stone-800/90 hover:bg-stone-700 text-stone-200 font-semibold text-base border border-stone-700 transition-all">
+                            <span>Ver Especialidades</span>
+                            <i class="fa-solid fa-arrow-down text-terracota-500 text-xs"></i>
+                        </a>
+                    </div>
+                    
+                    <p class="text-xs text-stone-400 flex items-center gap-2 pt-1">
+                        <i class="fa-solid fa-circle-info text-terracota-500"></i>
+                        <span>Importante: Para garantizar los mejores guisos frescos, rogamos reservar con suficiente antelación.</span>
+                    </p>
+                </div>
+
+                <!-- Hero Photo with Reliable Fallback -->
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Decorative Frame -->
+                        <div class="absolute -inset-2 bg-gradient-to-r from-terracota-600 to-amber-600 rounded-3xl blur-xl opacity-30 transform -rotate-2"></div>
+                        
+                        <div class="relative rounded-2xl overflow-hidden border-2 border-stone-700/80 shadow-2xl bg-stone-900 group">
+                            <img 
+                                src="https://scontent-sea5-1.xx.fbcdn.net/v/t39.30808-1/353677074_723800969747764_4880895665841165592_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx886x886&amp;ctp=s720x720&amp;_nc_cat=100&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=Jj_sho-yfYAQ7kNvwHrSzND&amp;_nc_oc=Adp4ulySyzwJzpW_qIrP05V-uvIjhwV7GZdSYH7P3kFoWRY1WbEV5IuQj-uCMweGSQ8&amp;_nc_zt=24&amp;_nc_ht=scontent-sea5-1.xx&amp;_nc_gid=vGeTf2Hxr2DpiotvGneS7w&amp;_nc_ss=7b289&amp;oh=00_AQNqb78OJm6vU38wFtqy0xB6sVVZEFhgDvrWM5ji4WhFSg&amp;oe=6AD9ACC8" 
+                                alt="La Cantina de Teixeira - Fachada y Encanto" 
+                                class="w-full h-96 lg:h-[450px] object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                                referrerpolicy="no-referrer"
+                                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                            >
+                            
+                            <!-- Overlay badge -->
+                            <div class="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-stone-900/90 backdrop-blur-md border border-stone-700 text-stone-200">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <p class="font-serif font-bold text-white text-sm">Calle la Ermita, S/N</p>
+                                        <p class="text-xs text-stone-400">24511 Tejeira, León, España</p>
+                                    </div>
+                                    <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-terracota-500/20 text-terracota-500 border border-terracota-500/40">
+                                        Abierto por Encargo
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Section / Story Behind -->
+    <section id="experiencia" class="py-20 bg-stone-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5 space-y-4">
+                    <span class="text-xs uppercase tracking-widest text-terracota-600 font-bold">Autenticidad & Pasión</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900 leading-tight">
+                        La mano mágica de Flor y la hospitalidad de Luis
+                    </h2>
+                    <div class="w-16 h-1 bg-terracota-500 rounded"></div>
+                    <p class="text-stone-700 leading-relaxed pt-2">
+                        Visitar Tejeira y detenerse en <strong>La Cantina de Teixeira</strong> es descubrir la esencia más pura del Bierzo y los Ancares leoneses. Aquí no existen prisas ni cartas estandarizadas: cada comensal disfruta de una mesa preparada especialmente para su grupo, con platos cocinados al momento con productos de proximidad insuperable.
+                    </p>
+                    <p class="text-stone-700 leading-relaxed">
+                        Nuestros clientes coinciden: sentarse a nuestra mesa es revivir los sabores de antaño, donde la generosidad de los platos y la calidez humana convierten una simple comida en un recuerdo imborrable de montaña.
+                    </p>
+                    
+                    <div class="pt-4 grid grid-cols-2 gap-4">
+                        <div class="p-4 rounded-xl bg-white border border-stone-200 shadow-sm">
+                            <i class="fa-solid fa-utensils text-2xl text-terracota-600 mb-2"></i>
+                            <h4 class="font-bold text-stone-900 text-sm">Comida Casera 100%</h4>
+                            <p class="text-xs text-stone-600 mt-1">Guisos lentos, carnes autóctonas y postres artesanales.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white border border-stone-200 shadow-sm">
+                            <i class="fa-solid fa-person-hiking text-2xl text-terracota-600 mb-2"></i>
+                            <h4 class="font-bold text-stone-900 text-sm">Parada Obligatoria</h4>
+                            <p class="text-xs text-stone-600 mt-1">El broche de oro tras una ruta por los Ancares.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="space-y-4">
+                            <div class="rounded-2xl overflow-hidden shadow-lg border border-stone-300">
+                                <img 
+                                    src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80" 
+                                    alt="Carnes y guisos tradicionales" 
+                                    class="w-full h-64 object-cover hover:scale-105 transition-transform duration-500"
+                                    referrerpolicy="no-referrer"
+                                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                                >
+                            </div>
+                            <div class="p-6 rounded-2xl bg-terracota-800 text-white shadow-xl">
+                                <span class="font-serif text-3xl font-bold block mb-1">100%</span>
+                                <span class="text-sm font-medium text-terracota-200 block">Dedicación y Servicio Personalizado</span>
+                                <p class="text-xs text-stone-300 mt-2 leading-relaxed">
+                                    "Nuestra sorpresa fue mayúscula cuando empezaron a servirnos desde el primero hasta el postre."
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4 pt-0 sm:pt-8">
+                            <div class="p-6 rounded-2xl bg-stone-900 text-white shadow-xl border border-stone-800">
+                                <i class="fa-solid fa-quote-left text-terracota-500 text-3xl mb-3"></i>
+                                <p class="text-sm italic text-stone-300 leading-relaxed">
+                                    "Flor tiene una mano para cocinar que todo el mundo debería probar. Una experiencia culinaria única."
+                                </p>
+                                <span class="block text-xs font-semibold text-terracota-400 mt-3">— Carlos Espinal Novella</span>
+                            </div>
+                            <div class="rounded-2xl overflow-hidden shadow-lg border border-stone-300">
+                                <img 
+                                    src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=700&q=80" 
+                                    alt="Ambiente acogedor restaurante de montaña" 
+                                    class="w-full h-64 object-cover hover:scale-105 transition-transform duration-500"
+                                    referrerpolicy="no-referrer"
+                                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu / Specialties Section -->
+    <section id="carta" class="py-24 bg-gourmet-base text-stone-100 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-xs uppercase tracking-widest text-terracota-500 font-bold">Gastronomía Leonesa y de Montaña</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-white">
+                    Nuestra Carta, Platos Estrella y Especialidades de la Casa
+                </h2>
+                <div class="w-20 h-1 bg-terracota-500 mx-auto rounded"></div>
+                <p class="text-stone-300 text-base leading-relaxed">
+                    Al ser un restaurante de <em>Comida por Encargo</em>, los menús se confeccionan a medida con producto fresco de temporada. Estos son algunos de nuestros platos más celebrados por quienes nos visitan:
+                </p>
+            </div>
+
+            <!-- Categories Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Category 1: Guisos y Cuchara -->
+                <div class="bg-gourmet-card border border-stone-800 rounded-2xl p-6 sm:p-8 flex flex-col justify-between hover:border-terracota-500/50 transition-all duration-300 shadow-xl group">
+                    <div>
+                        <div class="flex items-center justify-between mb-6 pb-4 border-b border-stone-800">
+                            <div class="flex items-center gap-3">
+                                <span class="w-10 h-10 rounded-xl bg-terracota-500/20 text-terracota-500 flex items-center justify-center text-lg">
+                                    <i class="fa-solid fa-bowl-rice"></i>
+                                </span>
+                                <h3 class="font-serif text-xl font-bold text-white group-hover:text-terracota-500 transition-colors">
+                                    Guisos de Montaña
+                                </h3>
+                            </div>
+                            <span class="text-xs uppercase px-2 py-1 rounded bg-stone-800 text-terracota-400 font-semibold">Cuchara</span>
+                        </div>
+
+                        <ul class="space-y-5">
+                            <li class="border-b border-stone-800/60 pb-3">
+                                <div class="flex justify-between items-start gap-2">
+                                    <h4 class="font-semibold text-stone-200">Fabada Astur-Leonesa de la Casa</h4>
+                                    <span class="text-terracota-400 font-medium text-sm">Por encargo</span>
+                                </div>
+                                <p class="text-xs text-stone-400 mt-1">Con compango tradicional seleccionado, faba tierna cocinada a fuego lentísimo y suave caldo artesanal.</p>
+                            </li>
+                            <li class="border-b border-stone-800/60 pb-3">
+                                <div class="flex justify-between items-start gap-2">
+                                    <h4 class="font-semibold text-stone-200">Guiso de Caza / Ternera de Ancares</h4>
+                                    <span class="text-terracota-400 font-medium text-sm">Especialidad</span>
+                                </div>
+                                <p class="text-xs text-stone-400 mt-1">Carne melosa estofada con setas de la comarca, vino tinto berciano y hierbas silvestres.</p>
+                            </li>
+                            <li>
+                                <div class="flex justify-between items-start gap-2">
+                                    <h4 class="font-semibold text-stone-200">Caldo de Montaña Tradicional</h4>
+                                    <span class="text-terracota-400 font-medium text-sm">Reconfortante</span>
+                                </div>
+                                <p class="text-xs text-stone-400 mt-1">Receta ancestral con berzas tiernas, patata autóctona y el mejor aderezo para templar el cuerpo.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mt-6 pt-4 border-t border-stone-800/60 text-center">
+                        <span class="text-xs text-stone-400 italic">"Una mano para cocinar inigualable"</span>
+                    </div>
+                </div>
+
+                <!-- Category 2: Asados y Carnes Nobles -->
+                <div class="bg-gourmet-card border border-stone-800 rounded-2xl p-6 sm:p-8 flex flex-col justify-between hover:border-terracota-500/50 transition-all duration-300 shadow-xl group">
+                    <div>
+                        <div class="flex items-center justify-between mb-6 pb-4 border-b border-stone-800">
+                            <div class="flex items-center gap-3">
+                                <span class="w-10 h-10 rounded-xl bg-terracota-500/20 text-terracota-500 flex items-center justify-center text-lg">
+                                    <i class="fa-solid fa-drumstick-bite"></i>
+                                </span>
+                                <h3 class="font-serif text-xl font-bold text-white group-hover:text-terracota-500 transition-colors">
+                                    Asados y Carnes
+                                </h3>
+                            </div>
+                            <span class="text-xs uppercase px-2 py-1 rounded bg-stone-800 text-terracota-400 font-semibold">Braseados</span>
+                        </div>
+
+                        <ul class="space-y-5">
+                            <li class="border-b border-stone-800/60 pb-3">
+                                <div class="flex justify-between items-start gap-2">
+                                    <h4 class="font-semibold text-stone-200">Cabrito Asado al Horno Tradicional</h4>
+                                    <span class="text-terracota-400 font-medium text-sm">Plato Estrella</span>
+                                </div>
+                                <p class="text-xs text-stone-400 mt-1">Crujiente por fuera y jugoso por dentro, regado con su propio jugo y patatas panadera doradas.</p>
+                            </li>
+                            <li class="border-b border-stone-800/60 pb-3">
+                                <div class="flex justify-between items-start gap-2">
+                                    <h4 class="font-semibold text-stone-200">Carrilleras Ibéricas en Reducción</h4>
+                                    <span class="text-terracota-400 font-medium text-sm">Fuego Lento</span>
+                                </div>
+                                <p class="text-xs text-stone-400 mt-1">Textura que se deshace en boca con salsa espesa y brillante elaborada pacientemente por Flor.</p>
+                            </li>
+                            <li>
+                                <div class="flex justify-between items-start gap-2">
+                                    <h4 class="font-semibold text-stone-200">Chuletón y Carnes Rojas de la Zona</h4>
+                                    <span class="text-terracota-400 font-medium text-sm">A la Piedra</span>
+                                </div>
+                                <p class="text-xs text-stone-400 mt-1">Cortes seleccionados de ternera madurada con el sabor inconfundible de los pastos de montaña.</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-6 pt-4 border-t border-stone-800/60 text-center">
+                        <span class="text-xs text-stone-400 italic">Preparado con esmero el mismo día de su visita</span>
+                    </div>
+                </div>
+
+                <!-- Category 3: Entrantes, Embutidos y Postres -->
+                <div class="bg-gourmet-card border border-stone-800 rounded-2xl p-6 sm:p-8 flex flex-col justify-between hover:border-terracota-500/50 transition-all duration-300 shadow-xl group md:col-span-2 lg:col-span-1">
+                    <div>
+                        <div class="flex items-center justify-between mb-6 pb-4 border-b border-stone-800">
+                            <div class="flex items-center gap-3">
+                                <span class="w-10 h-10 rounded-xl bg-terracota-500/20 text-terracota-500 flex items-center justify-center text-lg">
+                                    <i class="fa-solid fa-cake-candles"></i>
+                                </span>
+                                <h3 class="font-serif text-xl font-bold text-white group-hover:text-terracota-500 transition-colors">
+                                    Entrantes & Postres
+                                </h3>
+                            </div>
+                            <span class="text-xs uppercase px-2 py-1 rounded bg-stone-800 text-terracota-400 font-semibold">Casero</span>
+                        </div>
+
+                        <ul class="space-y-5">
+                            <li class="border-b border-stone-800/60 pb-3">
+                                <div class="flex justify-between items-start gap-2">
+                                    <h4 class="font-semibold text-stone-200">Tabla de Cecina y Embutidos de León</h4>
+                                    <span class="text-terracota-400 font-medium text-sm">Artesano</span>
+                                </div>
+                                <p class="text-xs text-stone-400 mt-1">Cecina curada al humo de roble, chorizos curados, lomo de la tierra y quesos artesanos.</p>
+                            </li>
+                            <li class="border-b border-stone-800/60 pb-3">
+                                <div class="flex justify-between items-start gap-2">
+                                    <h4 class="font-semibold text-stone-200">Revuelto de Setas y Botillo</h4>
+                                    <span class="text-terracota-400 font-medium text-sm">Bierzo puro</span>
+                                </div>
+                                <p class="text-xs text-stone-400 mt-1">Combinación de huevos de corral con el toque inconfundible de la gastronomía comarcal.</p>
+                            </li>
+                            <li>
+                                <div class="flex justify-between items-start gap-2">
+                                    <h4 class="font-semibold text-stone-200">Postres Caseros de Mari Flor</h4>
+                                    <span class="text-terracota-400 font-medium text-sm">Broche de Oro</span>
+                                </div>
+                                <p class="text-xs text-stone-400 mt-1">Flanes tradicionales, tartas de queso al horno, compotas de manzana reineta y delicias según la temporada.</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-6 pt-4 border-t border-stone-800/60 text-center">
+                        <span class="text-xs text-stone-400 italic">"Del primero hasta el postre, una sorpresa mayúscula"</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Custom Meal Callout -->
+            <div class="mt-14 p-8 rounded-2xl bg-gradient-to-r from-terracota-900/80 to-stone-900 border border-terracota-500/40 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="space-y-2 text-center md:text-left">
+                    <h3 class="font-serif text-2xl font-bold text-white">¿Tienes un grupo o una comida especial en mente?</h3>
+                    <p class="text-stone-300 text-sm max-w-2xl">
+                        Atendemos desde parejas hasta reuniones familiares o grupos de senderistas (hasta grupos grandes de 15 a 20 personas). Llámanos con anticipación y Luis y Flor prepararán un menú personalizado inigualable.
+                    </p>
+                </div>
+                <a href="tel:608313193" class="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-terracota-500 hover:bg-terracota-600 text-white font-semibold text-base whitespace-nowrap shadow-lg shadow-terracota-950 transition-all transform hover:scale-105">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <span>Reservar Mesa</span>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Gallery Section: "Nuestras Instalaciones y Trabajos" -->
+    <section id="galeria" class="py-20 bg-stone-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+                <span class="text-xs uppercase tracking-widest text-terracota-700 font-bold">Un Rincón Único en Tejeira</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900">
+                    Nuestras Instalaciones y Trabajos
+                </h2>
+                <div class="w-16 h-1 bg-terracota-600 mx-auto rounded"></div>
+                <p class="text-stone-600 text-sm sm:text-base">
+                    Un espacio cálido, de piedra y madera, donde se respira el aire puro de la montaña leonesa y el aroma de los fogones encendidos.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Real Photo 1 with Fallback & no-referrer -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-md bg-stone-900 h-72">
+                    <img 
+                        src="https://scontent-sea5-1.xx.fbcdn.net/v/t39.30808-1/353677074_723800969747764_4880895665841165592_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx886x886&amp;ctp=s720x720&amp;_nc_cat=100&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=Jj_sho-yfYAQ7kNvwHrSzND&amp;_nc_oc=Adp4ulySyzwJzpW_qIrP05V-uvIjhwV7GZdSYH7P3kFoWRY1WbEV5IuQj-uCMweGSQ8&amp;_nc_zt=24&amp;_nc_ht=scontent-sea5-1.xx&amp;_nc_gid=vGeTf2Hxr2DpiotvGneS7w&amp;_nc_ss=7b289&amp;oh=00_AQNqb78OJm6vU38wFtqy0xB6sVVZEFhgDvrWM5ji4WhFSg&amp;oe=6AD9ACC8" 
+                        alt="La Cantina de Teixeira Fachada y entorno" 
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        referrerpolicy="no-referrer"
+                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90 group-hover:opacity-100 transition-opacity flex items-end p-5">
+                        <span class="text-white font-medium text-sm">Nuestra Cantina en Tejeira</span>
+                    </div>
+                </div>
+
+                <!-- Gallery 2 -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-md bg-stone-900 h-72">
+                    <img 
+                        src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=800&q=80" 
+                        alt="Comedor acogedor y mesas preparadas" 
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        referrerpolicy="no-referrer"
+                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90 group-hover:opacity-100 transition-opacity flex items-end p-5">
+                        <span class="text-white font-medium text-sm">Comedor Rústico y Cálido</span>
+                    </div>
+                </div>
+
+                <!-- Gallery 3 -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-md bg-stone-900 h-72">
+                    <img 
+                        src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80" 
+                        alt="Platos recién servidos con mimo" 
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        referrerpolicy="no-referrer"
+                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90 group-hover:opacity-100 transition-opacity flex items-end p-5">
+                        <span class="text-white font-medium text-sm">Platos de Cuchara y Sabor Real</span>
+                    </div>
+                </div>
+
+                <!-- Gallery 4 -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-md bg-stone-900 h-72">
+                    <img 
+                        src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80" 
+                        alt="Entorno de los Ancares Leoneses" 
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        referrerpolicy="no-referrer"
+                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90 group-hover:opacity-100 transition-opacity flex items-end p-5">
+                        <span class="text-white font-medium text-sm">Naturaleza en Los Ancares</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="opiniones" class="py-24 bg-stone-950 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-semibold uppercase tracking-wider border border-amber-500/20">
+                    <i class="fa-solid fa-check-circle"></i> Reseñas 100% Reales de Clientes
+                </div>
+                <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-stone-100">
+                    Lo que dicen quienes ya nos conocen
+                </h2>
+                <div class="w-16 h-1 bg-terracota-500 mx-auto rounded"></div>
+                <p class="text-stone-400 text-sm sm:text-base">
+                    La mayor satisfacción de Luis y Mari Flor es ver regresar a familias y senderistas año tras año.
+                </p>
+            </div>
+
+            <!-- Review Cards Grid (The 5 exact reviews) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Review 1 -->
+                <div class="bg-stone-900/90 border border-stone-800 rounded-2xl p-6 flex flex-col justify-between hover:border-terracota-500/40 transition-all duration-300 shadow-xl">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex text-amber-400 text-sm gap-1">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="text-xs text-stone-300 font-bold uppercase"><i class="fa-brands fa-google mr-1 text-stone-400"></i> Google</span>
+                        </div>
+                        <p class="text-stone-300 text-sm leading-relaxed italic">
+                            "La comida fue simplemente perfecta, todo estaba delicioso. El trato, inmejorable, con una atención cercana y cuidada por parte de los dueños que marca la diferencia.…"
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-4 border-t border-stone-800/80 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-terracota-700 flex items-center justify-center font-bold text-white text-sm">
+                            M
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-stone-200 text-sm">maria jesus mendez</h4>
+                            <p class="text-xs text-stone-300 font-medium">Cliente Verificado</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-stone-900/90 border border-stone-800 rounded-2xl p-6 flex flex-col justify-between hover:border-terracota-500/40 transition-all duration-300 shadow-xl">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex text-amber-400 text-sm gap-1">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="text-xs text-stone-300 font-bold uppercase"><i class="fa-brands fa-google mr-1 text-stone-400"></i> Google</span>
+                        </div>
+                        <p class="text-stone-300 text-sm leading-relaxed italic">
+                            "Sitio espectacular e ideal acompañarlo con una caminata por los Ancares leoneses. Nos llevaron nuestros amigos de Binatur y fue un descubrimiento encontrar con…"
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-4 border-t border-stone-800/80 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-amber-700 flex items-center justify-center font-bold text-white text-sm">
+                            J
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-stone-200 text-sm">javier corrales</h4>
+                            <p class="text-xs text-stone-300 font-medium">Rutas & Senderismo</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-stone-900/90 border border-stone-800 rounded-2xl p-6 flex flex-col justify-between hover:border-terracota-500/40 transition-all duration-300 shadow-xl">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex text-amber-400 text-sm gap-1">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="text-xs text-stone-300 font-bold uppercase"><i class="fa-brands fa-google mr-1 text-stone-400"></i> Google</span>
+                        </div>
+                        <p class="text-stone-300 text-sm leading-relaxed italic">
+                            "Restaurante agradable y recogedor, los dueños son personas muy amables y atentas. La comida fue espectacular, todo lo que pedimos estaba buenísimo, Flor tiene una mano para cocinar que todo el mundo debería probar, fuimos 17 personas y…"
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-4 border-t border-stone-800/80 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-stone-700 flex items-center justify-center font-bold text-white text-sm">
+                            C
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-stone-200 text-sm">Carlos Espinal Novella</h4>
+                            <p class="text-xs text-stone-300 font-medium">Comida de Grupo (17 comensales)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="bg-stone-900/90 border border-stone-800 rounded-2xl p-6 flex flex-col justify-between hover:border-terracota-500/40 transition-all duration-300 shadow-xl">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex text-amber-400 text-sm gap-1">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="text-xs text-stone-300 font-bold uppercase"><i class="fa-brands fa-google mr-1 text-stone-400"></i> Google</span>
+                        </div>
+                        <p class="text-stone-300 text-sm leading-relaxed italic">
+                            "No tenemos palabras para describir la experiencia culinaria y la atención recibida por parte de Luis y Mari Flor porque hay que ir , verlo y disfrutarlo en persona.…"
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-4 border-t border-stone-800/80 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-terracota-800 flex items-center justify-center font-bold text-white text-sm">
+                            J
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-stone-200 text-sm">Javier Mugica</h4>
+                            <p class="text-xs text-stone-300 font-medium">Cliente Verificado</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 5 -->
+                <div class="bg-stone-900/90 border border-stone-800 rounded-2xl p-6 flex flex-col justify-between hover:border-terracota-500/40 transition-all duration-300 shadow-xl md:col-span-2 lg:col-span-2">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex text-amber-400 text-sm gap-1">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="text-xs text-amber-400 font-bold uppercase"><i class="fa-solid fa-award mr-1"></i> Reseña Destacada</span>
+                        </div>
+                        <p class="text-stone-200 text-base leading-relaxed italic">
+                            "Si alguien se merece estrellas Michelin, este lugar es uno de ellos. Después de reservar para tres y sin saber el menú. Nuestra sorpresa fue mayúscula cuando empezaron a servirnos desde el primero hasta el postre.…"
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-4 border-t border-stone-800/80 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-amber-600 flex items-center justify-center font-bold text-white text-sm">
+                            T
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white text-sm">tito rodriguez</h4>
+                            <p class="text-xs text-stone-300 font-medium">Experiencia Menú Sorpresa</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CTA bottom reviews -->
+            <div class="mt-12 text-center">
+                <a href="tel:608313193" class="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-terracota-600 hover:bg-terracota-500 text-white font-semibold text-base shadow-lg shadow-terracota-950/80 transition-all">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Reservar Mesa</span>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Map & Contact Section -->
+    <section id="contacto" class="py-20 bg-stone-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
+                
+                <!-- Contact info panel -->
+                <div class="lg:col-span-5 bg-white p-8 sm:p-10 rounded-3xl shadow-xl border border-stone-200 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs uppercase tracking-widest text-terracota-600 font-bold">Contacto & Reservas</span>
+                        <h2 class="font-serif text-3xl font-bold text-stone-900 mt-1 mb-6">
+                            Ven a Disfrutar a Tejeira
+                        </h2>
+                        
+                        <div class="space-y-6 text-stone-700">
+                            <!-- Address -->
+                            <div class="flex items-start gap-4">
+                                <div class="w-11 h-11 rounded-xl bg-terracota-50 border border-terracota-200 text-terracota-600 flex items-center justify-center shrink-0 text-lg">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-stone-900 text-sm">Dirección Exacta</h4>
+                                    <p class="text-sm text-stone-600 leading-snug">
+                                        Calle la Ermita, S/N<br>
+                                        24511 Tejeira, León, España
+                                    </p>
+                                    <span class="inline-block mt-1 text-xs text-stone-500">C.P. 40079 / 24511 (Los Ancares Leoneses)</span>
+                                </div>
+                            </div>
+
+                            <!-- Phone -->
+                            <div class="flex items-start gap-4">
+                                <div class="w-11 h-11 rounded-xl bg-terracota-50 border border-terracota-200 text-terracota-600 flex items-center justify-center shrink-0 text-lg">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-stone-900 text-sm">Teléfono Directo</h4>
+                                    <p class="text-xs text-stone-600 mb-1">Imprescindible llamar antes para encargar la comida:</p>
+                                    <a href="tel:608313193" class="text-lg font-bold text-terracota-600 hover:text-terracota-700 transition-colors">
+                                        608 31 31 93
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="flex items-start gap-4">
+                                <div class="w-11 h-11 rounded-xl bg-terracota-50 border border-terracota-200 text-terracota-600 flex items-center justify-center shrink-0 text-lg">
+                                    <i class="fa-regular fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-stone-900 text-sm">Correo Electrónico</h4>
+                                    <a href="mailto:lacantinadeteixeira@hotmail.com" class="text-sm text-stone-700 hover:text-terracota-600 break-all transition-colors">
+                                        lacantinadeteixeira@hotmail.com
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- How works -->
+                            <div class="p-4 rounded-xl bg-stone-50 border border-stone-200 text-xs text-stone-600 space-y-1">
+                                <p class="font-bold text-stone-800"><i class="fa-solid fa-circle-check text-terracota-500 mr-1"></i> Modo de servicio:</p>
+                                <p>Cocinamos por encargo para que los ingredientes sean adquiridos y elaborados al punto exacto para ti y tu grupo.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA In Card -->
+                    <div class="mt-8 pt-6 border-t border-stone-100">
+                        <a href="tel:608313193" class="w-full inline-flex justify-center items-center gap-3 px-6 py-4 rounded-xl bg-terracota-600 hover:bg-terracota-500 text-white font-bold text-base shadow-lg shadow-terracota-800/30 transition-all">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>Reservar Mesa</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Interactive Map Panel -->
+                <div class="lg:col-span-7 bg-white p-4 sm:p-6 rounded-3xl shadow-xl border border-stone-200 flex flex-col">
+                    <div class="flex items-center justify-between mb-4 px-2">
+                        <div>
+                            <h3 class="font-serif font-bold text-stone-900 text-lg">Ubicación en el Mapa</h3>
+                            <p class="text-xs text-stone-500">Tejeira (León) • Junto a la Ermita</p>
+                        </div>
+                        <a href="https://maps.google.com/?q=La+Cantina+de+Teixeira+-+Comida+por+Encargo+Calle+la+Ermita,+S/N,+24511+Tejeira,+León,+España" target="_blank" rel="noopener noreferrer" class="text-xs text-terracota-600 font-semibold hover:underline flex items-center gap-1">
+                            <span>Abrir en Google Maps</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+
+                    <!-- Required Interactive Map Iframe -->
+                    <div class="w-full flex-1 min-h-[380px] rounded-2xl overflow-hidden border border-stone-200 shadow-inner">
+                        <iframe src="https://www.google.com/maps?q=La%20Cantina%20de%20Teixeira%20-%20Comida%20por%20Encargo%20Calle%20la%20Ermita%2C%20S%2FN%2C%2024511%20Tejeira%2C%20Le%C3%B3n%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+
+                    <p class="text-xs text-stone-500 mt-3 text-center sm:text-left px-2">
+                        <i class="fa-solid fa-car text-terracota-500 mr-1"></i> Acceso por carretera de montaña con vistas panorámicas privilegiadas. Se recomienda consultar el clima en temporada invernal.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gourmet-base text-stone-400 border-t border-stone-800 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center border-b border-stone-800/80 pb-8 text-center md:text-left">
+                <div>
+                    <h3 class="font-serif text-lg font-bold text-white uppercase tracking-wider">
+                        La Cantina de Teixeira
+                    </h3>
+                    <p class="text-xs text-terracota-500 uppercase tracking-widest mt-0.5 font-medium">
+                        Comida por Encargo • Tejeira (León)
+                    </p>
+                    <p class="text-xs text-stone-400 mt-2 max-w-sm">
+                        La auténtica cocina tradicional casera en el entorno incomparable de los Ancares Leoneses.
+                    </p>
+                </div>
+
+                <div class="flex justify-center gap-6 text-sm">
+                    <a href="#experiencia" class="hover:text-stone-200 transition-colors">La Cantina</a>
+                    <a href="#carta" class="hover:text-stone-200 transition-colors">Especialidades</a>
+                    <a href="#opiniones" class="hover:text-stone-200 transition-colors">Opiniones</a>
+                    <a href="#contacto" class="hover:text-stone-200 transition-colors">Cómo Llegar</a>
+                </div>
+
+                <div class="flex flex-col items-center md:items-end gap-2">
+                    <a href="tel:608313193" class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-stone-800 hover:bg-stone-700 text-white font-medium text-xs border border-stone-700 transition-colors">
+                        <i class="fa-solid fa-phone text-terracota-500"></i>
+                        <span>608 31 31 93</span>
+                    </a>
+                    <span class="text-xs text-stone-400">Atención telefónica para encargos</span>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-stone-400">
+                <p>&copy; <span id="currentYear"></span> La Cantina de Teixeira - Comida por Encargo. Todos los derechos reservados.</p>
+                <p class="flex items-center gap-1">
+                    <span>Calle la Ermita, S/N, 24511 Tejeira, León</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Button for Mobile -->
+    <aside aria-label="Acciones rápidas" class="fixed bottom-5 right-5 z-40 sm:hidden">
+        <a href="tel:608313193" class="flex items-center gap-2 px-5 py-3.5 rounded-full bg-terracota-600 text-white font-bold text-sm shadow-2xl border-2 border-white/20 active:scale-95 transition-transform animate-bounce">
+            <i class="fa-solid fa-phone"></i>
+            <span>Reservar Mesa</span>
+        </a>
+    </aside>
+
+    <!-- Simple Vanilla JS for UI Interaction -->
+    <script>
+        // Set current year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                const isHidden = mobileMenu.classList.contains('hidden');
+                if (isHidden) {
+                    mobileMenu.classList.remove('hidden');
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-xmark');
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars');
+                }
+            });
+
+            // Close mobile menu when clicking any anchor inside it
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars');
+                });
+            });
+        }
+    </script>
+</body>
+</html>
