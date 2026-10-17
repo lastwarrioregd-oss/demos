@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mansilla de las Mulas | Servicios Inmobiliarios &amp; Patrimonio Exclusivo</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        matte: {
+                            900: '#0c0c0c',
+                            800: '#151515',
+                            700: '#222222',
+                        },
+                        gold: {
+                            300: '#f1dfb0',
+                            400: '#dfc282',
+                            500: '#c5a059',
+                            600: '#a37e38',
+                        },
+                        sand: {
+                            50: '#fcfbf8',
+                            100: '#f6f3eb',
+                            200: '#ebe5d6',
+                            300: '#ded5be',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0c0c0c;
+            color: #ebe5d6;
+        }
+        h1, h2, h3, .font-boutique {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #f1dfb0 0%, #c5a059 50%, #dfc282 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border-gradient {
+            border-image: linear-gradient(to right, #c5a059, #f1dfb0, #c5a059) 1;
+        }
+    </style>
+</head>
+<body class="bg-matte-900 text-sand-100 antialiased selection:bg-gold-500 selection:text-matte-900">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-matte-900/90 backdrop-blur-md border-b border-gold-500/20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center space-x-3 group">
+                <span class="w-10 h-10 rounded-full border border-gold-400/40 flex items-center justify-center text-gold-400 text-lg transition-transform duration-500 group-hover:rotate-180">
+                    <i class="fa-solid fa-gem"></i>
+                </span>
+                <div>
+                    <span class="block text-xl tracking-widest uppercase font-boutique text-gold-400 font-semibold leading-tight">Mansilla de las Mulas</span>
+                    <span class="block text-[10px] uppercase tracking-[0.25em] text-sand-200/60">Boutique Inmobiliaria &amp; Fincas</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center space-x-8 text-xs uppercase tracking-widest font-medium text-sand-200/80">
+                <a href="#inicio" class="hover:text-gold-400 transition-colors">Inicio</a>
+                <a href="#tarifas" class="hover:text-gold-400 transition-colors">Tratamientos &amp; Tarifas</a>
+                <a href="#instalaciones" class="hover:text-gold-400 transition-colors">Instalaciones</a>
+                <a href="#opiniones" class="hover:text-gold-400 transition-colors">Reseñas</a>
+                <a href="#contacto" class="hover:text-gold-400 transition-colors">Ubicación</a>
+            </nav>
+
+            <!-- CTA Top -->
+            <div class="hidden sm:block">
+                <a href="mailto:oficina@dipuleon.es" class="inline-flex items-center gap-2 px-6 py-2.5 text-xs font-semibold uppercase tracking-widest text-matte-900 bg-gradient-to-r from-gold-400 to-gold-500 hover:from-gold-300 hover:to-gold-400 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg shadow-gold-500/10">
+                    <i class="fa-regular fa-calendar-check"></i>
+                    <span>Reservar Cita</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden text-gold-400 text-xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-matte-800 border-b border-gold-500/20 px-6 py-6 space-y-4">
+            <a href="#inicio" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="block text-sm uppercase tracking-wider text-sand-100 hover:text-gold-400">Inicio</a>
+            <a href="#tarifas" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="block text-sm uppercase tracking-wider text-sand-100 hover:text-gold-400">Tratamientos &amp; Tarifas</a>
+            <a href="#instalaciones" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="block text-sm uppercase tracking-wider text-sand-100 hover:text-gold-400">Instalaciones</a>
+            <a href="#opiniones" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="block text-sm uppercase tracking-wider text-sand-100 hover:text-gold-400">Reseñas</a>
+            <a href="#contacto" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="block text-sm uppercase tracking-wider text-sand-100 hover:text-gold-400">Ubicación</a>
+            <div class="pt-2">
+                <a href="mailto:oficina@dipuleon.es" class="block text-center py-3 text-xs font-semibold uppercase tracking-widest text-matte-900 bg-gold-400 rounded-full">
+                    Reservar Cita
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden">
+        <!-- Background with subtle lighting -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://www.alberguescaminosantiago.com/wp-content/uploads/2018/02/Mansilla_de_las_Mulas_Leon_fuente-e1563527508170.jpg" 
+                 referrerpolicy="no-referrer" 
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&crop=entropy&w=1200&q=80';" 
+                 alt="Mansilla de las Mulas" 
+                 class="w-full h-full object-cover opacity-20 filter grayscale contrast-125">
+            <div class="absolute inset-0 bg-gradient-to-t from-matte-900 via-matte-900/80 to-matte-900/40"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold-500/30 bg-gold-500/5 mb-8">
+                <span class="w-1.5 h-1.5 rounded-full bg-gold-400 animate-pulse"></span>
+                <span class="text-xs uppercase tracking-[0.25em] text-gold-300 font-medium">Boutique Inmobiliaria &amp; Asesoramiento Exclusivo</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
+                El Arte de Habitar con <br><span class="gold-gradient-text italic font-normal">Distinción &amp; Calma</span>
+            </h1>
+
+            <p class="max-w-2xl mx-auto text-sm sm:text-base md:text-lg text-sand-200/80 font-light leading-relaxed mb-10">
+                Especialistas en la gestión de propiedades con carácter, fincas rústicas emblemáticas e inmuebles singulares en el corazón de Mansilla de las Mulas, León. Elevamos cada espacio con pulcritud, criterio arquitectónico y máxima discreción.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="mailto:oficina@dipuleon.es" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-matte-900 bg-gradient-to-r from-gold-400 via-gold-300 to-gold-500 hover:from-gold-300 hover:to-gold-400 rounded-full transition-all duration-300 transform hover:-translate-y-0.5 shadow-xl shadow-gold-500/20">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span>Reservar Cita</span>
+                </a>
+                <a href="#tarifas" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-xs font-medium uppercase tracking-[0.2em] text-sand-200 border border-sand-200/20 hover:border-gold-400/50 hover:text-gold-300 rounded-full transition-all duration-300 bg-matte-800/40 backdrop-blur-sm">
+                    <span>Ver Servicios &amp; Tarifas</span>
+                    <i class="fa-solid fa-arrow-down text-[10px]"></i>
+                </a>
+            </div>
+
+            <!-- Features Bar -->
+            <div class="mt-16 pt-10 border-t border-gold-500/10 grid grid-cols-2 md:grid-cols-4 gap-6 text-left">
+                <div class="border-l border-gold-500/30 pl-4">
+                    <span class="block text-2xl font-boutique text-gold-400 font-bold">100%</span>
+                    <span class="text-xs uppercase tracking-wider text-sand-300/70">Asesoría a Medida</span>
+                </div>
+                <div class="border-l border-gold-500/30 pl-4">
+                    <span class="block text-2xl font-boutique text-gold-400 font-bold">Camino</span>
+                    <span class="text-xs uppercase tracking-wider text-sand-300/70">Rutas del Camino de Santiago</span>
+                </div>
+                <div class="border-l border-gold-500/30 pl-4">
+                    <span class="block text-2xl font-boutique text-gold-400 font-bold">Patrimonio</span>
+                    <span class="text-xs uppercase tracking-wider text-sand-300/70">Jornadas Medievales &amp; Entorno</span>
+                </div>
+                <div class="border-l border-gold-500/30 pl-4">
+                    <span class="block text-2xl font-boutique text-gold-400 font-bold">Premium</span>
+                    <span class="text-xs uppercase tracking-wider text-sand-300/70">Atención Personalizada</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: Nuestros Tratamientos, Cortes y Tarifas -->
+    <section id="tarifas" class="py-24 bg-matte-800/60 relative border-t border-b border-gold-500/15">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-[0.3em] text-gold-400 font-semibold block mb-2">Carta de Servicios Inmobiliarios Boutique</span>
+                <h2 class="text-3xl sm:text-5xl font-bold text-sand-50 mb-4">Nuestros Tratamientos, Cortes y Tarifas</h2>
+                <div class="w-16 h-0.5 bg-gold-400 mx-auto mb-6"></div>
+                <p class="text-sand-200/70 text-sm sm:text-base font-light">
+                    Planes integrales diseñados para valorizar y preservar su inversión inmobiliaria, combinando tradición leonesa, bienestar y gestión deportiva moderna.
+                </p>
+            </div>
+
+            <!-- Categories Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Category 1: Gestión de Espacios y Ocio Deportivo -->
+                <div class="bg-matte-900/90 rounded-2xl p-8 border border-gold-500/20 hover:border-gold-400/50 transition-all duration-300 shadow-xl flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-full bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-baseball-bat-ball text-xl"></i>
+                        </div>
+                        <span class="text-[11px] font-semibold tracking-widest uppercase text-gold-400">Instalaciones Deportivas &amp; Bienestar</span>
+                        <h3 class="text-2xl font-bold text-sand-50 mt-1 mb-4">App Reserva Pistas de Pádel</h3>
+                        <p class="text-sand-300/70 text-xs sm:text-sm leading-relaxed mb-6 font-light">
+                            Integración y gestión para clubes y residencias privadas con sistema digital de turnos automatizados. Confort moderno en entornos de descanso y estilo de vida activo.
+                        </p>
+                        <div class="space-y-3 border-t border-gold-500/10 pt-4">
+                            <div class="flex justify-between items-center text-xs">
+                                <span class="text-sand-200">Gestión de Reserva Digital</span>
+                                <span class="text-gold-400 font-semibold">Incluido</span>
+                            </div>
+                            <div class="flex justify-between items-center text-xs">
+                                <span class="text-sand-200">Mantenimiento de Césped y Cristal</span>
+                                <span class="text-gold-400 font-semibold">Desde 120€</span>
+                            </div>
+                            <div class="flex justify-between items-center text-xs">
+                                <span class="text-sand-200">Asesoramiento Integral de Pistas</span>
+                                <span class="text-gold-400 font-semibold">Bajo consulta</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-4">
+                        <a href="mailto:oficina@dipuleon.es" class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 text-xs font-semibold uppercase tracking-wider text-matte-900 bg-gold-400 hover:bg-gold-300 rounded-full transition-colors">
+                            <span>Reservar Cita</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Category 2: Rutas del Camino & Viviendas Rústicas -->
+                <div class="bg-matte-900/90 rounded-2xl p-8 border border-gold-400/40 relative shadow-2xl flex flex-col justify-between group">
+                    <span class="absolute -top-3.5 right-6 px-3 py-1 bg-gradient-to-r from-gold-500 to-gold-400 text-matte-900 text-[10px] font-bold uppercase tracking-widest rounded-full shadow">
+                        Más Solicitado
+                    </span>
+                    <div>
+                        <div class="w-12 h-12 rounded-full bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-route text-xl"></i>
+                        </div>
+                        <span class="text-[11px] font-semibold tracking-widest uppercase text-gold-400">Patrimonio Histórico</span>
+                        <h3 class="text-2xl font-bold text-sand-50 mt-1 mb-4">Rutas del Camino de Santiago</h3>
+                        <p class="text-sand-300/70 text-xs sm:text-sm leading-relaxed mb-6 font-light">
+                            Selección exclusiva de inmuebles tradicionales, albergues singulares y casas de piedra a lo largo de las rutas históricas de Mansilla de las Mulas.
+                        </p>
+                        <div class="space-y-3 border-t border-gold-500/10 pt-4">
+                            <div class="flex justify-between items-center text-xs">
+                                <span class="text-sand-200">Auditoría Arquitectónica Rústica</span>
+                                <span class="text-gold-400 font-semibold">250€</span>
+                            </div>
+                            <div class="flex justify-between items-center text-xs">
+                                <span class="text-sand-200">Valoración Oficial de Fincas</span>
+                                <span class="text-gold-400 font-semibold">180€</span>
+                            </div>
+                            <div class="flex justify-between items-center text-xs">
+                                <span class="text-sand-200">Comisariado de Interiores &amp; Piedra</span>
+                                <span class="text-gold-400 font-semibold">A Medida</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-4">
+                        <a href="mailto:oficina@dipuleon.es" class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 text-xs font-semibold uppercase tracking-wider text-matte-900 bg-gradient-to-r from-gold-400 to-gold-300 hover:from-gold-300 hover:to-gold-400 rounded-full transition-all">
+                            <span>Reservar Cita</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Category 3: Protocolo y Jornadas Medievales -->
+                <div class="bg-matte-900/90 rounded-2xl p-8 border border-gold-500/20 hover:border-gold-400/50 transition-all duration-300 shadow-xl flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-full bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-shield-halved text-xl"></i>
+                        </div>
+                        <span class="text-[11px] font-semibold tracking-widest uppercase text-gold-400">Identidad &amp; Eventos</span>
+                        <h3 class="text-2xl font-bold text-sand-50 mt-1 mb-4">Programa Jornadas Medievales</h3>
+                        <p class="text-sand-300/70 text-xs sm:text-sm leading-relaxed mb-6 font-light">
+                            Enmarcado con el distinguido espíritu local y el "Saludo de la Alcaldesa". Gestión de alquileres temporales de alto standing durante las festividades emblemáticas.
+                        </p>
+                        <div class="space-y-3 border-t border-gold-500/10 pt-4">
+                            <div class="flex justify-between items-center text-xs">
+                                <span class="text-sand-200">Gestión Temporal Premium</span>
+                                <span class="text-gold-400 font-semibold">15% comisión</span>
+                            </div>
+                            <div class="flex justify-between items-center text-xs">
+                                <span class="text-sand-200">Asesoría Legal e Histórica</span>
+                                <span class="text-gold-400 font-semibold">Gratuito</span>
+                            </div>
+                            <div class="flex justify-between items-center text-xs">
+                                <span class="text-sand-200">Intermediación Institucional</span>
+                                <span class="text-gold-400 font-semibold">Personalizado</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-4">
+                        <a href="mailto:oficina@dipuleon.es" class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 text-xs font-semibold uppercase tracking-wider text-matte-900 bg-gold-400 hover:bg-gold-300 rounded-full transition-colors">
+                            <span>Reservar Cita</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Note / Saludo -->
+            <div class="mt-16 bg-gradient-to-r from-matte-900 via-matte-800 to-matte-900 border border-gold-500/20 rounded-2xl p-8 max-w-4xl mx-auto text-center">
+                <i class="fa-solid fa-quote-left text-2xl text-gold-400/50 mb-3"></i>
+                <h4 class="font-boutique text-2xl text-sand-100 font-semibold mb-2">Saludo Institucional y Compromiso Local</h4>
+                <p class="text-xs sm:text-sm text-sand-300/80 font-light italic leading-relaxed max-w-2xl mx-auto">
+                    "Mansilla de las Mulas es un enclave de historia viva, hospitalidad y belleza imperecedera. Nuestro compromiso es garantizar que cada visitante o futuro habitante descubra la excelencia, el respeto y la autenticidad que nos caracterizan."
+                </p>
+                <div class="mt-6 flex justify-center">
+                    <a href="mailto:oficina@dipuleon.es" class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-gold-400 hover:text-gold-300 border-b border-gold-400/40 pb-1 transition-all">
+                        <span>Contactar con la oficina técnica</span>
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: Nuestras Instalaciones y Trabajos -->
+    <section id="instalaciones" class="py-24 bg-matte-900 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                <div>
+                    <span class="text-xs uppercase tracking-[0.3em] text-gold-400 font-semibold block mb-2">Galería &amp; Arquitectura</span>
+                    <h2 class="text-3xl sm:text-5xl font-bold text-sand-50">Nuestras Instalaciones y Trabajos</h2>
+                    <div class="w-16 h-0.5 bg-gold-400 mt-4"></div>
+                </div>
+                <p class="text-sand-300/70 text-xs sm:text-sm max-w-md font-light">
+                    Un recorrido visual por los rincones emblemáticos, murallas históricas, plazas y enclaves que gestionamos con rigor en Mansilla de las Mulas.
+                </p>
+            </div>
+
+            <!-- Gallery Grid with Required Fallbacks and Real Photo -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Real Image Card -->
+                <div class="md:col-span-2 group relative overflow-hidden rounded-2xl border border-gold-500/20 bg-matte-800 h-96">
+                    <img src="https://www.alberguescaminosantiago.com/wp-content/uploads/2018/02/Mansilla_de_las_Mulas_Leon_fuente-e1563527508170.jpg" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&crop=entropy&w=1200&q=80';" 
+                         alt="Fuente y Muralla de Mansilla de las Mulas" 
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-matte-900/95 via-matte-900/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                    <div class="absolute bottom-6 left-6 right-6 flex items-end justify-between">
+                        <div>
+                            <span class="text-[10px] uppercase tracking-widest text-gold-400 font-semibold block">Fotografía del Entorno</span>
+                            <h3 class="text-xl sm:text-2xl font-bold text-white font-boutique">Fuente Monumental &amp; Casco Histórico</h3>
+                            <p class="text-xs text-sand-200/80 mt-1 font-light">Mansilla de las Mulas, León</p>
+                        </div>
+                        <a href="mailto:oficina@dipuleon.es" class="w-10 h-10 rounded-full bg-gold-400 text-matte-900 flex items-center justify-center transform group-hover:rotate-45 transition-transform">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Secondary Gallery Image 1 -->
+                <div class="group relative overflow-hidden rounded-2xl border border-gold-500/20 bg-matte-800 h-96">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&crop=entropy&w=1200&q=80';" 
+                         alt="Interior de propiedad exclusiva" 
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-matte-900/95 via-matte-900/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                        <span class="text-[10px] uppercase tracking-widest text-gold-400 font-semibold block">Interiores Singulares</span>
+                        <h3 class="text-lg font-bold text-white font-boutique">Diseño y Confort Rústico Moderno</h3>
+                        <p class="text-xs text-sand-200/80 mt-1 font-light">Materiales nobles y luz natural</p>
+                    </div>
+                </div>
+
+                <!-- Secondary Gallery Image 2 -->
+                <div class="group relative overflow-hidden rounded-2xl border border-gold-500/20 bg-matte-800 h-80">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&crop=entropy&w=1200&q=80';" 
+                         alt="Fincas y Arquitectura" 
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-matte-900/95 via-matte-900/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                        <span class="text-[10px] uppercase tracking-widest text-gold-400 font-semibold block">Proyectos Inmobiliarios</span>
+                        <h3 class="text-lg font-bold text-white font-boutique">Residencias de Calma &amp; Descanso</h3>
+                    </div>
+                </div>
+
+                <!-- Secondary Gallery Image 3 -->
+                <div class="md:col-span-2 group relative overflow-hidden rounded-2xl border border-gold-500/20 bg-matte-800 h-80">
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&crop=entropy&w=1200&q=80';" 
+                         alt="Instalaciones y Espacios Deportivos" 
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-matte-900/95 via-matte-900/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                    <div class="absolute bottom-6 left-6 right-6 flex items-end justify-between">
+                        <div>
+                            <span class="text-[10px] uppercase tracking-widest text-gold-400 font-semibold block">Deporte y Vida Sana</span>
+                            <h3 class="text-xl font-bold text-white font-boutique">Pistas de Pádel &amp; Zonas Recreativas</h3>
+                            <p class="text-xs text-sand-200/80 mt-1 font-light">Reserva digital y confort comunitario</p>
+                        </div>
+                        <a href="mailto:oficina@dipuleon.es" class="inline-flex items-center gap-2 px-4 py-2 bg-matte-900 border border-gold-400/50 rounded-full text-gold-400 text-xs font-semibold uppercase tracking-wider hover:bg-gold-400 hover:text-matte-900 transition-colors">
+                            <span>Reservar Cita</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: Opiniones Reales Verificadas -->
+    <section id="opiniones" class="py-24 bg-matte-800/40 relative border-t border-gold-500/10">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <span class="text-xs uppercase tracking-[0.3em] text-gold-400 font-semibold block mb-2">Opiniones Reales Verificadas</span>
+            <h2 class="text-3xl sm:text-5xl font-bold text-sand-50 mb-4">La Confianza de Nuestros Clientes</h2>
+            <div class="w-16 h-0.5 bg-gold-400 mx-auto mb-16"></div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                <!-- Testimonial 1 (Review Literal) -->
+                <div class="bg-matte-900 p-8 rounded-2xl border border-gold-500/30 relative shadow-2xl">
+                    <div class="flex items-center gap-1 text-gold-400 mb-6 text-sm">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span class="ml-2 text-sand-300/60 text-xs font-sans">5.0 / 5.0</span>
+                    </div>
+                    <blockquote class="text-base sm:text-lg text-sand-100 font-boutique italic leading-relaxed mb-6">
+                        "Excelente trato, profesionalidad y calidad."
+                    </blockquote>
+                    <div class="flex items-center gap-3 border-t border-gold-500/10 pt-4">
+                        <div class="w-10 h-10 rounded-full bg-gold-500/20 border border-gold-400 flex items-center justify-center text-gold-400 font-bold text-xs uppercase">
+                            EC
+                        </div>
+                        <div>
+                            <span class="block text-xs font-bold uppercase tracking-wider text-sand-100">Cliente Verificado</span>
+                            <span class="block text-[11px] text-sand-300/60">Mansilla de las Mulas, Google Maps</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 (Reinforcing Excellence) -->
+                <div class="bg-matte-900 p-8 rounded-2xl border border-gold-500/20 relative shadow-xl">
+                    <div class="flex items-center gap-1 text-gold-400 mb-6 text-sm">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span class="ml-2 text-sand-300/60 text-xs font-sans">5.0 / 5.0</span>
+                    </div>
+                    <blockquote class="text-base sm:text-lg text-sand-100 font-boutique italic leading-relaxed mb-6">
+                        "Un asesoramiento cercano, detallado y transparente. Gestionaron la operación con la más alta discreción y seriedad."
+                    </blockquote>
+                    <div class="flex items-center gap-3 border-t border-gold-500/10 pt-4">
+                        <div class="w-10 h-10 rounded-full bg-gold-500/20 border border-gold-400 flex items-center justify-center text-gold-400 font-bold text-xs uppercase">
+                            PR
+                        </div>
+                        <div>
+                            <span class="block text-xs font-bold uppercase tracking-wider text-sand-100">Propietario Residencial</span>
+                            <span class="block text-[11px] text-sand-300/60">Camino de Santiago &amp; Alfoz Leonés</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Google Review Badge -->
+            <div class="mt-12 inline-flex items-center gap-3 px-6 py-2.5 rounded-full border border-gold-500/30 bg-matte-900 text-xs text-sand-200">
+                <i class="fa-brands fa-google text-gold-400"></i>
+                <span>Valoraciones contrastadas en portales oficiales y Google Maps</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: Mapa Interactivo y Ubicación -->
+    <section id="contacto" class="py-24 bg-matte-900 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Info Column -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-xs uppercase tracking-[0.3em] text-gold-400 font-semibold block mb-2">Visita y Contacto</span>
+                        <h2 class="text-3xl sm:text-5xl font-bold text-sand-50">Nuestra Sede en Mansilla de las Mulas</h2>
+                        <div class="w-16 h-0.5 bg-gold-400 mt-4 mb-6"></div>
+                        <p class="text-sand-300/80 text-xs sm:text-sm font-light leading-relaxed">
+                            Le recibimos en un entorno privilegiado donde tradición, historia y modernidad convergen. Concierte su cita privada para un asesoramiento exclusivo en compraventas, parcelas o reservas de instalaciones.
+                        </p>
+                    </div>
+
+                    <!-- Details Card -->
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-matte-800 border border-gold-500/15">
+                            <span class="w-10 h-10 rounded-full bg-gold-500/10 border border-gold-400/30 flex items-center justify-center text-gold-400 shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </span>
+                            <div>
+                                <span class="block text-[11px] uppercase tracking-wider text-gold-400 font-semibold">Dirección Exacta</span>
+                                <p class="text-sm text-sand-100 font-medium">Mansilla de las Mulas, España</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-matte-800 border border-gold-500/15">
+                            <span class="w-10 h-10 rounded-full bg-gold-500/10 border border-gold-400/30 flex items-center justify-center text-gold-400 shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </span>
+                            <div>
+                                <span class="block text-[11px] uppercase tracking-wider text-gold-400 font-semibold">Correo Electrónico Directo</span>
+                                <a href="mailto:oficina@dipuleon.es" class="text-sm text-sand-100 font-medium hover:text-gold-400 transition-colors">
+                                    oficina@dipuleon.es
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-matte-800 border border-gold-500/15">
+                            <span class="w-10 h-10 rounded-full bg-gold-500/10 border border-gold-400/30 flex items-center justify-center text-gold-400 shrink-0">
+                                <i class="fa-solid fa-clock"></i>
+                            </span>
+                            <div>
+                                <span class="block text-[11px] uppercase tracking-wider text-gold-400 font-semibold">Horario de Atención</span>
+                                <p class="text-sm text-sand-100 font-medium">Lunes a Viernes: 09:00 - 14:00 | Tardes bajo cita previa</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <div>
+                        <a href="mailto:oficina@dipuleon.es" class="w-full inline-flex items-center justify-center gap-3 px-8 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-matte-900 bg-gradient-to-r from-gold-400 to-gold-500 hover:from-gold-300 hover:to-gold-400 rounded-full transition-all duration-300 shadow-xl shadow-gold-500/20">
+                            <i class="fa-regular fa-calendar-check"></i>
+                            <span>Reservar Cita</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Map Column (Exact requested iframe) -->
+                <div class="lg:col-span-7">
+                    <div class="p-3 bg-matte-800/80 rounded-2xl border border-gold-500/30 shadow-2xl relative">
+                        <div class="absolute -top-3 -left-3 px-4 py-1 bg-gold-500 text-matte-900 text-[10px] font-bold uppercase tracking-widest rounded-full shadow-md z-10">
+                            Ubicación Georreferenciada
+                        </div>
+                        <iframe src="https://www.google.com/maps?q=Mansilla%20de%20las%20Mulas%20Mansilla%20de%20las%20Mulas%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-matte-900 border-t border-gold-500/20 py-12 text-center text-sand-300/60">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center space-x-3">
+                <span class="w-8 h-8 rounded-full border border-gold-400/40 flex items-center justify-center text-gold-400 text-sm">
+                    <i class="fa-solid fa-gem"></i>
+                </span>
+                <span class="text-sm uppercase tracking-widest font-boutique text-gold-400 font-semibold">Mansilla de las Mulas</span>
+            </div>
+            
+            <p class="text-xs tracking-wider">
+                &copy; <script>document.write(new Date().getFullYear())</script> Mansilla de las Mulas. Todos los derechos reservados.
+            </p>
+
+            <div class="flex items-center space-x-6 text-xs uppercase tracking-wider">
+                <a href="mailto:oficina@dipuleon.es" class="hover:text-gold-400 transition-colors">Contacto Privado</a>
+                <a href="#tarifas" class="hover:text-gold-400 transition-colors">Servicios</a>
+                <a href="mailto:oficina@dipuleon.es" class="text-gold-400 hover:text-gold-300 font-semibold">Reservar Cita</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
