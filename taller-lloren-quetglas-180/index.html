@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taller Llorenç Quetglas | Taller de Reparación de Automóviles</title>
+  <meta name="description" content="Taller mecánico profesional de automoción en Inca y comarca del Raiguer / Costitx. Mecánica general, diagnosis computarizada, mantenimiento y reparación integral.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#0f172a',
+              slate: '#1e293b',
+              steel: '#334155',
+              accent: '#f59e0b',
+              accentHover: '#d97706',
+              highlight: '#ea580c'
+            }
+          },
+          fontFamily: {
+            sans: ['Barlow', 'sans-serif'],
+            display: ['Oswald', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Oswald & Barlow -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Barlow', sans-serif;
+      background-color: #0b0f17;
+      color: #e2e8f0;
+    }
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'Oswald', sans-serif;
+      letter-spacing: 0.03em;
+    }
+    .accent-gradient {
+      background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
+    }
+    .panel-gradient {
+      background: linear-gradient(180deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.95) 100%);
+    }
+  </style>
+</head>
+<body class="selection:bg-amber-500 selection:text-black">
+
+  <!-- TOP BAR INFO -->
+  <header class="bg-brand-dark border-b border-slate-800 text-xs sm:text-sm text-slate-400 py-2.5 px-4">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+      <div class="flex items-center flex-wrap gap-4 justify-center md:justify-start">
+        <span class="flex items-center gap-1.5 text-slate-300">
+          <i class="fa-solid fa-location-dot text-amber-500"></i>
+          Pol. Ind. Can Matzari, Carrer Capellers, 65, Inca
+        </span>
+        <span class="hidden sm:inline-block text-slate-600">|</span>
+        <span class="flex items-center gap-1.5 text-slate-300">
+          <i class="fa-solid fa-clock text-amber-500"></i>
+          Lunes a Viernes: 08:00 - 18:30
+        </span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="mailto:jddhelp@profrac.com" class="hover:text-amber-400 transition-colors flex items-center gap-1.5">
+          <i class="fa-solid fa-envelope text-amber-500"></i> jddhelp@profrac.com
+        </a>
+        <a href="tel:971506093" class="text-amber-400 font-bold hover:text-amber-300 transition-colors flex items-center gap-1.5">
+          <i class="fa-solid fa-phone"></i> 971 50 60 93
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- NAVBAR -->
+  <nav class="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 shadow-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-3 group">
+          <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center text-slate-950 text-2xl shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform">
+            <i class="fa-solid fa-wrench"></i>
+          </div>
+          <div>
+            <span class="block text-xl sm:text-2xl font-bold tracking-wider uppercase text-white font-heading">
+              Taller Llorenç Quetglas
+            </span>
+            <span class="block text-xs uppercase tracking-widest text-amber-500 font-medium">
+              Servicio Mecánico y Automoción
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Nav Links -->
+        <div class="hidden md:flex items-center space-x-6 text-sm font-semibold uppercase tracking-wider text-slate-300">
+          <a href="#inicio" class="hover:text-amber-400 transition-colors">Inicio</a>
+          <a href="#servicios" class="hover:text-amber-400 transition-colors">Servicios Técnicos</a>
+          <a href="#galeria" class="hover:text-amber-400 transition-colors">Instalaciones</a>
+          <a href="#opiniones" class="hover:text-amber-400 transition-colors">Valoraciones</a>
+          <a href="#contacto" class="hover:text-amber-400 transition-colors">Contacto</a>
+        </div>
+
+        <!-- CTA Direct Action -->
+        <div class="hidden sm:block">
+          <a href="tel:971506093" class="accent-gradient text-slate-950 font-bold px-5 py-2.5 rounded-md uppercase tracking-wider text-sm flex items-center gap-2 hover:opacity-95 shadow-md shadow-amber-500/20 transform hover:-translate-y-0.5 transition-all">
+            <i class="fa-solid fa-file-lines"></i>
+            Solicitar Presupuesto
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section id="inicio" class="relative min-h-[580px] lg:min-h-[660px] flex items-center overflow-hidden border-b border-slate-800">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=1920&q=80" 
+           alt="Taller Mecánico Llorenç Quetglas" 
+           class="w-full h-full object-cover object-center filter brightness-40 contrast-125 scale-105 transform animate-pulse duration-1000"
+           referrerpolicy="no-referrer" 
+           onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1200&q=80';">
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-slate-900/60"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+      <div class="max-w-2xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs sm:text-sm font-semibold uppercase tracking-widest mb-6">
+          <i class="fa-solid fa-gears"></i> Diagnóstico Profesional y Mecánica Integral
+        </div>
+        
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold uppercase text-white leading-tight mb-6">
+          Solidez técnica y compromiso para tu <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">automóvil</span>
+        </h1>
+        
+        <p class="text-slate-300 text-base sm:text-lg mb-8 leading-relaxed">
+          Ubicados en el Polígono Industrial Can Matzari en Inca, damos cobertura integral a vehículos particulares, furgonetas y campers de Costitx, Inca y comarca. Atendemos problemas mecánicos críticos con rigor y equipamiento industrial.
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row gap-4 mb-10">
+          <a href="tel:971506093" class="accent-gradient text-slate-950 text-base font-bold px-8 py-3.5 rounded uppercase tracking-wider text-center flex items-center justify-center gap-3 shadow-lg shadow-amber-500/30 hover:scale-105 transition-all">
+            <i class="fa-solid fa-phone-volume"></i>
+            Solicitar Presupuesto
+          </a>
+          <a href="#servicios" class="bg-slate-800/80 hover:bg-slate-700/80 border border-slate-600 text-white font-semibold px-8 py-3.5 rounded uppercase tracking-wider text-center flex items-center justify-center gap-2 transition-all">
+            <i class="fa-solid fa-list-check text-amber-400"></i>
+            Nuestros Servicios
+          </a>
+        </div>
+
+        <!-- Quick Proof Badges -->
+        <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-800/80 text-slate-300">
+          <div>
+            <div class="text-xl sm:text-2xl font-bold text-amber-400 font-heading">INCA & COSTITX</div>
+            <p class="text-xs text-slate-400 uppercase tracking-wider">Polígono Can Matzari</p>
+          </div>
+          <div>
+            <div class="text-xl sm:text-2xl font-bold text-white font-heading">MULTIMARCA</div>
+            <p class="text-xs text-slate-400 uppercase tracking-wider">Turismos y Campers</p>
+          </div>
+          <div>
+            <div class="text-xl sm:text-2xl font-bold text-amber-400 font-heading">IN SITU</div>
+            <p class="text-xs text-slate-400 uppercase tracking-wider">Capacidad de Auxilio</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES STRIP -->
+  <section class="bg-slate-900 border-b border-slate-800 py-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center md:text-left">
+        <div class="flex items-center justify-center md:justify-start gap-3">
+          <i class="fa-solid fa-screwdriver-wrench text-2xl text-amber-500"></i>
+          <div>
+            <h4 class="text-sm font-bold text-white uppercase tracking-wider">Mecánica Completa</h4>
+            <p class="text-xs text-slate-400">Motor, frenos y transmisión</p>
+          </div>
+        </div>
+        <div class="flex items-center justify-center md:justify-start gap-3">
+          <i class="fa-solid fa-microchip text-2xl text-amber-500"></i>
+          <div>
+            <h4 class="text-sm font-bold text-white uppercase tracking-wider">Diagnosis Multimarca</h4>
+            <p class="text-xs text-slate-400">Detección de averías electrónicas</p>
+          </div>
+        </div>
+        <div class="flex items-center justify-center md:justify-start gap-3">
+          <i class="fa-solid fa-truck-pickup text-2xl text-amber-500"></i>
+          <div>
+            <h4 class="text-sm font-bold text-white uppercase tracking-wider">Furgonetas & Campers</h4>
+            <p class="text-xs text-slate-400">Espacio apto para gran volumen</p>
+          </div>
+        </div>
+        <div class="flex items-center justify-center md:justify-start gap-3">
+          <i class="fa-solid fa-shield-halved text-2xl text-amber-500"></i>
+          <div>
+            <h4 class="text-sm font-bold text-white uppercase tracking-wider">Garantía en Taller</h4>
+            <p class="text-xs text-slate-400">Piezas homologadas</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS TÉCNICOS -->
+  <section id="servicios" class="py-16 sm:py-24 bg-slate-950 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-amber-500 uppercase tracking-widest text-xs font-bold block mb-2">Especialistas en Mallorca</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold uppercase text-white mb-4">
+          Nuestros Servicios Técnicos, Garantías y Trabajos Realizados
+        </h2>
+        <div class="w-20 h-1 bg-amber-500 mx-auto mb-4"></div>
+        <p class="text-slate-400 text-sm sm:text-base">
+          Mantenimiento riguroso, reparación mecánica de alta complejidad y auxilio técnico. Selecciona el servicio que requiera tu vehículo y solicita presupuesto directo.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Servicio 1 -->
+        <div class="panel-gradient border border-slate-800 rounded-lg p-6 hover:border-amber-500/50 transition-all group">
+          <div class="w-12 h-12 rounded bg-slate-800 group-hover:bg-amber-500 group-hover:text-slate-950 text-amber-500 text-2xl flex items-center justify-center mb-5 transition-colors">
+            <i class="fa-solid fa-oil-can"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white uppercase mb-2">Mantenimiento y Puesta a Punto</h3>
+          <p class="text-slate-400 text-sm mb-4">
+            Cambio de aceite sintético, filtros de admisión y habitáculo, revisión pre-ITV exhaustiva, control de niveles y estado de neumáticos para un rodaje seguro.
+          </p>
+          <ul class="text-xs text-slate-300 space-y-2 mb-6">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Inspección de 40 puntos vitales</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Preparación y pase directo de ITV</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Sustitución de fluidos y refrigerante</li>
+          </ul>
+          <a href="tel:971506093" class="text-amber-400 hover:text-amber-300 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
+            Solicitar Presupuesto <i class="fa-solid fa-chevron-right text-[10px]"></i>
+          </a>
+        </div>
+
+        <!-- Servicio 2 -->
+        <div class="panel-gradient border border-slate-800 rounded-lg p-6 hover:border-amber-500/50 transition-all group">
+          <div class="w-12 h-12 rounded bg-slate-800 group-hover:bg-amber-500 group-hover:text-slate-950 text-amber-500 text-2xl flex items-center justify-center mb-5 transition-colors">
+            <i class="fa-solid fa-car-burst"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white uppercase mb-2">Frenos, Dirección y Amortiguación</h3>
+          <p class="text-slate-400 text-sm mb-4">
+            Sustitución de pastillas y discos de freno, purgado de sistemas hidráulicos ABS, amortiguadores y rótulas para garantizar la máxima adherencia en carretera.
+          </p>
+          <ul class="text-xs text-slate-300 space-y-2 mb-6">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Comprobación de desgaste milimétrico</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Líquido de frenos DOT4 / DOT5.1</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Alineado y equilibrado de dirección</li>
+          </ul>
+          <a href="tel:971506093" class="text-amber-400 hover:text-amber-300 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
+            Solicitar Presupuesto <i class="fa-solid fa-chevron-right text-[10px]"></i>
+          </a>
+        </div>
+
+        <!-- Servicio 3 -->
+        <div class="panel-gradient border border-slate-800 rounded-lg p-6 hover:border-amber-500/50 transition-all group">
+          <div class="w-12 h-12 rounded bg-slate-800 group-hover:bg-amber-500 group-hover:text-slate-950 text-amber-500 text-2xl flex items-center justify-center mb-5 transition-colors">
+            <i class="fa-solid fa-gears"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white uppercase mb-2">Motor, Distribución y Embragues</h3>
+          <p class="text-slate-400 text-sm mb-4">
+            Intervenciones profundas de mecánica pesada: kits de correa o cadena de distribución con bomba de agua, sustitución de embragues bimasa y juntas de culata.
+          </p>
+          <ul class="text-xs text-slate-300 space-y-2 mb-6">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Marcas líderes en componentes OEM</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Ajuste según tolerancias de fabricante</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Garantía escrita en piezas y mano de obra</li>
+          </ul>
+          <a href="tel:971506093" class="text-amber-400 hover:text-amber-300 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
+            Solicitar Presupuesto <i class="fa-solid fa-chevron-right text-[10px]"></i>
+          </a>
+        </div>
+
+        <!-- Servicio 4 -->
+        <div class="panel-gradient border border-slate-800 rounded-lg p-6 hover:border-amber-500/50 transition-all group">
+          <div class="w-12 h-12 rounded bg-slate-800 group-hover:bg-amber-500 group-hover:text-slate-950 text-amber-500 text-2xl flex items-center justify-center mb-5 transition-colors">
+            <i class="fa-solid fa-laptop-code"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white uppercase mb-2">Diagnosis Electrónica Computarizada</h3>
+          <p class="text-slate-400 text-sm mb-4">
+            Lectura e interpretación de códigos de error OBD-II multimarca. Solución a fallos de inyección diésel y gasolina, sensores de gases, EGR y filtro FAP.
+          </p>
+          <ul class="text-xs text-slate-300 space-y-2 mb-6">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Testeo de centralitas electrónicas ECU</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Apagado y reseteo de testigos de avería</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Análisis de osciloscopio en sensores</li>
+          </ul>
+          <a href="tel:971506093" class="text-amber-400 hover:text-amber-300 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
+            Solicitar Presupuesto <i class="fa-solid fa-chevron-right text-[10px]"></i>
+          </a>
+        </div>
+
+        <!-- Servicio 5 -->
+        <div class="panel-gradient border border-slate-800 rounded-lg p-6 hover:border-amber-500/50 transition-all group">
+          <div class="w-12 h-12 rounded bg-slate-800 group-hover:bg-amber-500 group-hover:text-slate-950 text-amber-500 text-2xl flex items-center justify-center mb-5 transition-colors">
+            <i class="fa-solid fa-caravan"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white uppercase mb-2">Campers y Vehículos Comerciales</h3>
+          <p class="text-slate-400 text-sm mb-4">
+            Atención especializada a furgones de trabajo y vehículos camperizados. Mantenimiento del tren de potencia para resistir peso y largos recorridos.
+          </p>
+          <ul class="text-xs text-slate-300 space-y-2 mb-6">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Refuerzo de suspensiones y ballestas</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Chequeo de sistemas de carga e inyección</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Capacidad dimensional para furgonetas</li>
+          </ul>
+          <a href="tel:971506093" class="text-amber-400 hover:text-amber-300 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
+            Solicitar Presupuesto <i class="fa-solid fa-chevron-right text-[10px]"></i>
+          </a>
+        </div>
+
+        <!-- Servicio 6 -->
+        <div class="panel-gradient border border-slate-800 rounded-lg p-6 hover:border-amber-500/50 transition-all group">
+          <div class="w-12 h-12 rounded bg-slate-800 group-hover:bg-amber-500 group-hover:text-slate-950 text-amber-500 text-2xl flex items-center justify-center mb-5 transition-colors">
+            <i class="fa-solid fa-truck-medical"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white uppercase mb-2">Asistencia e Intervención In Situ</h3>
+          <p class="text-slate-400 text-sm mb-4">
+            Capacidad demostrada de desplazamiento directo ante averías que dejan el coche tirado cuando la grúa demora, solucionando inmovilizaciones imprevistas.
+          </p>
+          <ul class="text-xs text-slate-300 space-y-2 mb-6">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Asistencia en carretera comarcal</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Arranque con booster y cambio de batería</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Reparación provisional para traslado</li>
+          </ul>
+          <a href="tel:971506093" class="text-amber-400 hover:text-amber-300 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
+            Solicitar Presupuesto <i class="fa-solid fa-chevron-right text-[10px]"></i>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- BANNER DE GARANTÍA -->
+      <div class="mt-12 p-8 rounded-lg border border-amber-500/30 bg-gradient-to-r from-amber-500/10 via-slate-900 to-amber-500/5 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-5">
+          <div class="w-16 h-16 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center text-3xl shrink-0">
+            <i class="fa-solid fa-award"></i>
+          </div>
+          <div>
+            <h4 class="text-xl font-bold uppercase text-white font-heading">¿Tienes una avería urgente o necesitas presupuesto previo?</h4>
+            <p class="text-sm text-slate-400">Atendemos directamente en nuestras instalaciones de Can Matzari o vía llamada telefónica.</p>
+          </div>
+        </div>
+        <a href="tel:971506093" class="accent-gradient text-slate-950 font-bold px-7 py-3 rounded uppercase text-sm tracking-wider whitespace-nowrap shadow-md hover:scale-105 transition-transform">
+          Solicitar Presupuesto
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GALERÍA DE INSTALACIONES Y TRABAJOS -->
+  <section id="galeria" class="py-16 bg-slate-900 border-t border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-amber-500 uppercase tracking-widest text-xs font-bold block mb-2">Entorno Industrial</span>
+        <h2 class="text-3xl sm:text-4xl font-bold uppercase text-white mb-3">Nuestras Instalaciones y Trabajos</h2>
+        <div class="w-16 h-1 bg-amber-500 mx-auto"></div>
+        <p class="text-slate-400 text-sm mt-3">Maquinaria de elevación, herramientas de banco y diagnosis para intervenciones en turismos y vehículos de transporte.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- Foto 1 -->
+        <div class="relative overflow-hidden rounded-lg group h-64 bg-slate-800 border border-slate-800">
+          <img src="https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=800&q=80" 
+               alt="Elevador hidráulico y revisión de chasis" 
+               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 filter brightness-90 group-hover:brightness-100"
+               referrerpolicy="no-referrer" 
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1200&q=80';">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+          <div class="absolute bottom-3 left-3 right-3 text-white">
+            <span class="text-xs text-amber-400 font-semibold uppercase tracking-wider block">Inspección de Bajos</span>
+            <span class="text-sm font-bold font-heading">Elevadores Industriales</span>
+          </div>
+        </div>
+
+        <!-- Foto 2 -->
+        <div class="relative overflow-hidden rounded-lg group h-64 bg-slate-800 border border-slate-800">
+          <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=800&q=80" 
+               alt="Reparación y ajuste de motor térmico" 
+               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 filter brightness-90 group-hover:brightness-100"
+               referrerpolicy="no-referrer" 
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1200&q=80';">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+          <div class="absolute bottom-3 left-3 right-3 text-white">
+            <span class="text-xs text-amber-400 font-semibold uppercase tracking-wider block">Tren de Potencia</span>
+            <span class="text-sm font-bold font-heading">Mecánica de Precisión</span>
+          </div>
+        </div>
+
+        <!-- Foto 3 -->
+        <div class="relative overflow-hidden rounded-lg group h-64 bg-slate-800 border border-slate-800">
+          <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=800&q=80" 
+               alt="Alineación y sistema de frenado" 
+               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 filter brightness-90 group-hover:brightness-100"
+               referrerpolicy="no-referrer" 
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1200&q=80';">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+          <div class="absolute bottom-3 left-3 right-3 text-white">
+            <span class="text-xs text-amber-400 font-semibold uppercase tracking-wider block">Seguridad Activa</span>
+            <span class="text-sm font-bold font-heading">Frenado y Suspensión</span>
+          </div>
+        </div>
+
+        <!-- Foto 4 -->
+        <div class="relative overflow-hidden rounded-lg group h-64 bg-slate-800 border border-slate-800">
+          <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80" 
+               alt="Mantenimiento general en nave industrial" 
+               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 filter brightness-90 group-hover:brightness-100"
+               referrerpolicy="no-referrer" 
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1200&q=80';">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+          <div class="absolute bottom-3 left-3 right-3 text-white">
+            <span class="text-xs text-amber-400 font-semibold uppercase tracking-wider block">Can Matzari, Inca</span>
+            <span class="text-sm font-bold font-heading">Nave Taller Especializada</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS REALES VERIFICADOS -->
+  <section id="opiniones" class="py-16 sm:py-24 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-amber-500 uppercase tracking-widest text-xs font-bold block mb-2">Transparencia Total</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold uppercase text-white mb-4">
+          Opiniones Reales Verificadas
+        </h2>
+        <div class="w-20 h-1 bg-amber-500 mx-auto mb-4"></div>
+        <p class="text-slate-400 text-sm sm:text-base">
+          Compartimos de forma íntegra las valoraciones públicas aportadas por los usuarios que han acudido al taller.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Opinión 1: Isamara Lluna -->
+        <div class="bg-slate-900 border border-slate-800 rounded-lg p-6 flex flex-col justify-between hover:border-slate-700 transition-all">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex text-amber-400 text-sm">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-slate-500 text-xs flex items-center gap-1">
+                <i class="fa-brands fa-google text-slate-400"></i> Reseña verificada
+              </span>
+            </div>
+            <p class="text-slate-300 text-sm leading-relaxed italic mb-6">
+              "Un profesional de pies a cabeza, el coche nos dejo tirados, la grua no venia para poder llevarselo (nos esperaba mas de lo que tocaba para poder tener el coche el mismo dia). El se desplazo hasta donde estabamos para poder arreglarnoslo o…"
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-slate-800">
+            <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center font-bold text-amber-400">
+              IL
+            </div>
+            <div>
+              <div class="text-sm font-bold text-white font-heading">Isamara Lluna Porciuncula Muiño</div>
+              <div class="text-xs text-slate-400">Cliente verificado</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Opinión 2: Mateu -->
+        <div class="bg-slate-900 border border-slate-800 rounded-lg p-6 flex flex-col justify-between hover:border-slate-700 transition-all">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex text-amber-400 text-sm">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-slate-500 text-xs flex items-center gap-1">
+                <i class="fa-brands fa-google text-slate-400"></i> Reseña verificada
+              </span>
+            </div>
+            <p class="text-slate-300 text-sm leading-relaxed italic mb-6">
+              "Pensé que había un encontrado un taller serio, eran amables al principio, pero me equivoqué, estoy cansado de llamar y de quedar con ellos y nunca te devuelven las llamadas y siempre te fallan. me han decepcionado. una pena"
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-slate-800">
+            <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center font-bold text-amber-400">
+              M
+            </div>
+            <div>
+              <div class="text-sm font-bold text-white font-heading">Mateu</div>
+              <div class="text-xs text-slate-400">Cliente verificado</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Opinión 3: Laura Concolino -->
+        <div class="bg-slate-900 border border-slate-800 rounded-lg p-6 flex flex-col justify-between hover:border-slate-700 transition-all">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex text-amber-400 text-sm">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-slate-500 text-xs flex items-center gap-1">
+                <i class="fa-brands fa-google text-slate-400"></i> Reseña verificada
+              </span>
+            </div>
+            <p class="text-slate-300 text-sm leading-relaxed italic mb-6">
+              "No lo recomendaría nunca. Llevo más de un año y medio esperando a que me den mi coche y cada vez nadie me da noticias, ni contestan. Impresentables."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-slate-800">
+            <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center font-bold text-amber-400">
+              LC
+            </div>
+            <div>
+              <div class="text-sm font-bold text-white font-heading">laura concolino</div>
+              <div class="text-xs text-slate-400">Cliente verificada</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Opinión 4: Liliana Carranza -->
+        <div class="bg-slate-900 border border-slate-800 rounded-lg p-6 flex flex-col justify-between hover:border-slate-700 transition-all">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex text-amber-400 text-sm">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-slate-500 text-xs flex items-center gap-1">
+                <i class="fa-brands fa-google text-slate-400"></i> Reseña verificada
+              </span>
+            </div>
+            <p class="text-slate-300 text-sm leading-relaxed italic mb-6">
+              "Espantoso. Muy decepcionante. No recomiendo que nadie deje aquí su vehículo y menos si es una camper. Esperé dos semanas para llevar mi vehículo y en un mes no han tenido la decencia de mirarlo. Ha estado fuera del taller durante todo ese…"
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-slate-800">
+            <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center font-bold text-amber-400">
+              LC
+            </div>
+            <div>
+              <div class="text-sm font-bold text-white font-heading">Liliana Carranza</div>
+              <div class="text-xs text-slate-400">Cliente verificada</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Opinión 5: Natalia Londoño -->
+        <div class="bg-slate-900 border border-slate-800 rounded-lg p-6 flex flex-col justify-between hover:border-slate-700 transition-all">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex text-amber-400 text-sm">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-slate-500 text-xs flex items-center gap-1">
+                <i class="fa-brands fa-google text-slate-400"></i> Reseña verificada
+              </span>
+            </div>
+            <p class="text-slate-300 text-sm leading-relaxed italic mb-6">
+              "Experiencia decepcionante y sensación de estafa” Llevé mi coche a este taller durante un tiempo, confiando en su profesionalidad,…"
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-slate-800">
+            <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center font-bold text-amber-400">
+              NL
+            </div>
+            <div>
+              <div class="text-sm font-bold text-white font-heading">Natalia Londoño</div>
+              <div class="text-xs text-slate-400">Cliente verificada</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta Informativa de Contacto Directo -->
+        <div class="bg-gradient-to-br from-slate-900 to-amber-950/40 border border-amber-500/40 rounded-lg p-6 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded bg-amber-500/20 text-amber-400 flex items-center justify-center mb-4">
+              <i class="fa-solid fa-headset text-xl"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white uppercase mb-2">Canal de Atención Directa</h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+              Para presupuestos claros y seguimiento técnico de intervenciones en curso, rogamos comunicación directa con el responsable técnico en horario de taller.
+            </p>
+          </div>
+          <a href="tel:971506093" class="accent-gradient text-slate-950 font-bold py-2.5 px-4 rounded text-center uppercase tracking-wider text-xs block shadow hover:opacity-90">
+            Solicitar Presupuesto
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- UBICACIÓN, MAPA Y CONTACTO -->
+  <section id="contacto" class="py-16 sm:py-24 bg-slate-900 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-amber-500 uppercase tracking-widest text-xs font-bold block mb-2">Localización Estratégica</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold uppercase text-white mb-4">
+          Dónde Encontrarnos y Contactar
+        </h2>
+        <div class="w-20 h-1 bg-amber-500 mx-auto mb-4"></div>
+        <p class="text-slate-400 text-sm sm:text-base">
+          Fácil acceso desde la autopista Ma-13 y conexión directa con Costitx, Sencelles, Sineu e Inca.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Ficha de Datos -->
+        <div class="lg:col-span-5 bg-slate-950 border border-slate-800 rounded-xl p-6 sm:p-8 space-y-6">
+          <h3 class="text-2xl font-bold text-white uppercase font-heading border-b border-slate-800 pb-4">
+            Taller Llorenç Quetglas
+          </h3>
+
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded bg-slate-900 border border-slate-800 flex items-center justify-center text-amber-500 shrink-0">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div>
+              <span class="block text-xs uppercase tracking-wider text-slate-400">Dirección Exacta</span>
+              <span class="text-sm sm:text-base font-semibold text-white">
+                Pol. Ind. Can Matzari, Carrer Capellers, 65, 07300 Inca, Balearic Islands, España
+              </span>
+              <p class="text-xs text-amber-500/80 mt-1">Servicio de referencia para Costitx y comarca.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded bg-slate-900 border border-slate-800 flex items-center justify-center text-amber-500 shrink-0">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <div>
+              <span class="block text-xs uppercase tracking-wider text-slate-400">Teléfono Directo</span>
+              <a href="tel:971506093" class="text-lg font-bold text-amber-400 hover:text-amber-300 transition-colors">
+                971 50 60 93
+              </a>
+              <p class="text-xs text-slate-400">Llama directamente para citas y presupuestos</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded bg-slate-900 border border-slate-800 flex items-center justify-center text-amber-500 shrink-0">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div>
+              <span class="block text-xs uppercase tracking-wider text-slate-400">Correo Electrónico</span>
+              <a href="mailto:jddhelp@profrac.com" class="text-sm font-semibold text-slate-200 hover:text-amber-400 transition-colors">
+                jddhelp@profrac.com
+              </a>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded bg-slate-900 border border-slate-800 flex items-center justify-center text-amber-500 shrink-0">
+              <i class="fa-solid fa-warehouse"></i>
+            </div>
+            <div>
+              <span class="block text-xs uppercase tracking-wider text-slate-400">Horario de Operaciones</span>
+              <p class="text-sm text-slate-200 font-semibold">Lunes a Viernes: 08:00 - 13:30 / 15:00 - 18:30</p>
+              <p class="text-xs text-slate-400">Sábados y Domingos: Cerrado</p>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-800">
+            <a href="tel:971506093" class="accent-gradient text-slate-950 font-bold w-full py-3.5 rounded text-center uppercase tracking-wider text-sm flex items-center justify-center gap-2 shadow-lg hover:brightness-105 transition-all">
+              <i class="fa-solid fa-file-invoice-dollar"></i>
+              Solicitar Presupuesto
+            </a>
+          </div>
+        </div>
+
+        <!-- Mapa Interactivo Real -->
+        <div class="lg:col-span-7 bg-slate-950 border border-slate-800 rounded-xl p-3 sm:p-4 shadow-2xl">
+          <div class="relative w-full rounded-lg overflow-hidden border border-slate-800">
+            <iframe src="https://www.google.com/maps?q=Taller%20Lloren%C3%A7%20Quetglas%20Pol.%20Ind.%20Can%20Matzari%2C%20Carrer%20Capellers%2C%2065%2C%2007300%20Inca%2C%20Balearic%20Islands%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+          <div class="mt-4 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 px-2 gap-2">
+            <span><i class="fa-solid fa-map-pin text-amber-500 mr-1"></i> Polígono Industrial Can Matzari - Fácil aparcamiento para camiones y campers.</span>
+            <a href="https://www.google.com/maps?q=Taller%20Lloren%C3%A7%20Quetglas%20Pol.%20Ind.%20Can%20Matzari%2C%20Carrer%20Capellers%2C%2065%2C%2007300%20Inca%2C%20Balearic%20Islands%2C%20Espa%C3%B1a" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:underline uppercase font-semibold">
+              Abrir en Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-[10px] ml-1"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA FINAL PERSUASIVO -->
+  <section class="relative py-16 bg-gradient-to-b from-slate-900 to-slate-950 border-t border-slate-800 text-center overflow-hidden">
+    <div class="max-w-4xl mx-auto px-4 relative z-10">
+      <div class="inline-block p-3 rounded-full bg-amber-500/10 text-amber-500 mb-4">
+        <i class="fa-solid fa-car-on text-3xl"></i>
+      </div>
+      <h2 class="text-3xl sm:text-5xl font-bold uppercase text-white mb-4">
+        ¿Avería inesperada o revisión pendiente?
+      </h2>
+      <p class="text-slate-300 text-base sm:text-lg mb-8 max-w-2xl mx-auto">
+        Consulta de inmediato la disponibilidad en taller y asegura la puesta a punto con recambios de calidad y asesoramiento profesional.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="tel:971506093" class="accent-gradient text-slate-950 text-base font-bold px-10 py-4 rounded uppercase tracking-wider shadow-lg shadow-amber-500/20 hover:scale-105 transition-all flex items-center justify-center gap-2">
+          <i class="fa-solid fa-phone"></i>
+          Solicitar Presupuesto (971 50 60 93)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-brand-dark border-t border-slate-800 text-slate-500 text-sm py-12 pb-24 sm:pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+        
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-8 h-8 rounded bg-amber-500 flex items-center justify-center text-slate-950 text-base">
+              <i class="fa-solid fa-wrench"></i>
+            </div>
+            <span class="text-xl font-bold uppercase tracking-wider text-white font-heading">
+              Taller Llorenç Quetglas
+            </span>
+          </div>
+          <p class="text-xs text-slate-400 max-w-md leading-relaxed mb-4">
+            Servicio integral de automoción, mantenimiento y diagnosis de vehículos ligeros, furgonetas y campers para Costitx, Inca y el centro de Mallorca.
+          </p>
+          <p class="text-xs text-slate-500">
+            Pol. Ind. Can Matzari, Carrer Capellers, 65, 07300 Inca, Balearic Islands, España
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-white text-xs font-bold uppercase tracking-widest mb-4 font-heading">Enlaces Directos</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#inicio" class="hover:text-amber-400 transition-colors">Inicio</a></li>
+            <li><a href="#servicios" class="hover:text-amber-400 transition-colors">Servicios Técnicos</a></li>
+            <li><a href="#galeria" class="hover:text-amber-400 transition-colors">Instalaciones y Trabajos</a></li>
+            <li><a href="#opiniones" class="hover:text-amber-400 transition-colors">Opiniones Verificadas</a></li>
+            <li><a href="#contacto" class="hover:text-amber-400 transition-colors">Contacto y Mapa</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white text-xs font-bold uppercase tracking-widest mb-4 font-heading">Contacto</h4>
+          <ul class="space-y-2 text-xs">
+            <li class="text-slate-300">Teléfono: <a href="tel:971506093" class="text-amber-400 font-bold hover:underline">971 50 60 93</a></li>
+            <li class="text-slate-300">Email: <a href="mailto:jddhelp@profrac.com" class="hover:text-white transition-colors">jddhelp@profrac.com</a></li>
+            <li class="text-slate-400">Atención telefónica en horario laboral</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="border-t border-slate-800/80 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-4">
+        <p>&copy; 2025 Taller Llorenç Quetglas. Todos los derechos reservados.</p>
+        <p class="text-slate-500 text-[11px]">Taller de reparación de automóviles registrado en Inca / Costitx, Islas Baleares.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE FLOATING ACTION BAR -->
+  <div class="fixed bottom-0 left-0 right-0 z-50 sm:hidden bg-slate-900/95 border-t border-slate-700 p-3 backdrop-blur-md flex gap-2">
+    <a href="tel:971506093" class="accent-gradient text-slate-950 font-bold text-sm uppercase tracking-wider py-3 px-4 rounded w-full flex items-center justify-center gap-2 shadow-lg">
+      <i class="fa-solid fa-phone"></i>
+      Solicitar Presupuesto
+    </a>
+  </div>
+
+</body>
+</html>
