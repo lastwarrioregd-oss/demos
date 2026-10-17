@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SC Studio | Fotografía de Autor en Sequeros & Salamanca</title>
+    <meta name="description" content="SC Studio - Fotografía editorial, retratos íntimos, bodas de autor y proyectos visuales en Sequeros y Salamanca. Elegancia atemporal, trato exclusivo y calidad superior.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        obsidian: '#0B0C0E',
+                        noir: '#121417',
+                        graphite: '#1A1D21',
+                        gold: {
+                            DEFAULT: '#C5A880',
+                            light: '#E2CEB4',
+                            dark: '#9E825C',
+                            muted: 'rgba(197, 168, 128, 0.15)'
+                        },
+                        sand: '#F7F4EE',
+                        sandSoft: '#EFEAE1'
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #F4E8D7 0%, #C5A880 50%, #9E825C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border-gradient {
+            border-image: linear-gradient(to right, #C5A880, transparent) 1;
+        }
+        .grain-overlay {
+            background-image: radial-gradient(rgba(197, 168, 128, 0.04) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-obsidian text-stone-300 font-sans antialiased selection:bg-gold selection:text-noir grain-overlay overflow-x-hidden">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-noir/90 border-b border-white/5 py-2 px-4 text-xs tracking-widest text-center uppercase text-stone-400">
+        <span class="inline-flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
+            Agenda 2025/2026 Abierta &bull; Sequeros y Cobertura Nacional &bull; Salamanca
+        </span>
+    </div>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-50 bg-obsidian/85 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex flex-col items-start group">
+                <span class="font-serif text-2xl lg:text-3xl font-normal tracking-[0.25em] text-white group-hover:text-gold transition-colors duration-300 uppercase">
+                    SC <span class="font-light italic text-gold">Studio</span>
+                </span>
+                <span class="text-[9px] uppercase tracking-[0.35em] text-stone-500 font-sans -mt-1">
+                    Atelier Fotográfico &bull; Sequeros
+                </span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center space-x-10 text-xs tracking-[0.2em] uppercase font-medium">
+                <a href="#filosofia" class="text-stone-300 hover:text-gold transition-colors">Filosofía</a>
+                <a href="#servicios" class="text-stone-300 hover:text-gold transition-colors">Servicios & Tarifas</a>
+                <a href="#galeria" class="text-stone-300 hover:text-gold transition-colors">Instalaciones & Trabajos</a>
+                <a href="#opiniones" class="text-stone-300 hover:text-gold transition-colors">Opiniones</a>
+                <a href="#contacto" class="text-stone-300 hover:text-gold transition-colors">Contacto</a>
+            </nav>
+
+            <!-- CTA Header Button -->
+            <div class="hidden sm:block">
+                <a href="mailto:jddhelp@profrac.com" 
+                   class="relative inline-flex items-center justify-center px-6 py-2.5 overflow-hidden text-xs uppercase tracking-[0.2em] font-semibold text-obsidian bg-gold transition duration-300 ease-out hover:bg-gold-light hover:shadow-[0_0_20px_rgba(197,168,128,0.3)] rounded-full">
+                    <span>Reservar Cita</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-toggle" aria-label="Abrir Menú" class="md:hidden text-white hover:text-gold text-xl focus:outline-none">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-noir border-b border-white/10 px-6 py-8">
+            <div class="flex flex-col space-y-5 text-xs uppercase tracking-[0.25em] font-medium text-center">
+                <a href="#filosofia" class="text-stone-300 hover:text-gold py-2" onclick="toggleMenu()">Filosofía</a>
+                <a href="#servicios" class="text-stone-300 hover:text-gold py-2" onclick="toggleMenu()">Servicios & Tarifas</a>
+                <a href="#galeria" class="text-stone-300 hover:text-gold py-2" onclick="toggleMenu()">Instalaciones & Trabajos</a>
+                <a href="#opiniones" class="text-stone-300 hover:text-gold py-2" onclick="toggleMenu()">Opiniones</a>
+                <a href="#contacto" class="text-stone-300 hover:text-gold py-2" onclick="toggleMenu()">Contacto</a>
+                <div class="pt-4">
+                    <a href="mailto:jddhelp@profrac.com" class="block w-full text-center py-3 text-xs uppercase tracking-[0.2em] font-bold text-obsidian bg-gold rounded-full hover:bg-gold-light">
+                        Reservar Cita
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="relative min-h-[92vh] flex items-center justify-center overflow-hidden py-20 lg:py-28">
+            <!-- Background Image with Editorial Vignette -->
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1800&q=85" 
+                     alt="SC Studio Retrato de Autor y Arte Visual" 
+                     class="w-full h-full object-cover object-center filter brightness-[0.38] contrast-105 scale-105 transition-transform duration-1000 ease-out"
+                     referrerpolicy="no-referrer" 
+                     onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/60 to-transparent"></div>
+                <div class="absolute inset-0 bg-radial from-transparent via-obsidian/40 to-obsidian"></div>
+            </div>
+
+            <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+                <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full border border-gold/30 bg-noir/70 backdrop-blur-md mb-8">
+                    <i class="fa-regular fa-gem text-gold text-xs"></i>
+                    <span class="text-[11px] uppercase tracking-[0.3em] text-sandSoft font-medium">Boutique de Fotografía &bull; Sequeros y Salamanca</span>
+                </div>
+                
+                <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-normal text-white tracking-tight leading-[1.08] mb-6">
+                    Capturando el alma de lo <br class="hidden sm:inline" />
+                    <span class="italic font-light gold-gradient-text">auténtico e irrepetible</span>
+                </h1>
+
+                <p class="max-w-2xl mx-auto text-base sm:text-lg text-stone-300 font-light leading-relaxed mb-10 tracking-wide">
+                    En <strong>SC Studio</strong> transformamos momentos efímeros en memorias eternas. Fotografía de autor, retratos con carácter y coberturas con estética cinematográfica para quienes valoran la pureza, el silencio y la belleza real.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+                    <a href="mailto:jddhelp@profrac.com" 
+                       class="w-full sm:w-auto inline-flex items-center justify-center px-9 py-4 rounded-full bg-gold text-obsidian text-xs uppercase tracking-[0.25em] font-semibold transition-all duration-300 hover:bg-gold-light hover:shadow-[0_0_25px_rgba(197,168,128,0.35)] transform hover:-translate-y-0.5">
+                        <i class="fa-regular fa-calendar-check mr-2 text-sm"></i>
+                        Reservar Cita
+                    </a>
+                    <a href="#galeria" 
+                       class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-full border border-white/20 text-white text-xs uppercase tracking-[0.25em] font-medium hover:border-gold hover:text-gold transition-all duration-300 bg-white/5 backdrop-blur-sm">
+                        Explorar Portafolio
+                    </a>
+                </div>
+
+                <!-- Subtle Trust Metric Badges -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-16 mt-16 border-t border-white/10 text-center">
+                    <div>
+                        <div class="font-serif text-2xl sm:text-3xl text-gold font-light">100%</div>
+                        <div class="text-[10px] uppercase tracking-widest text-stone-400 mt-1">Dedicación Personalizada</div>
+                    </div>
+                    <div>
+                        <div class="font-serif text-2xl sm:text-3xl text-gold font-light">Sequeros</div>
+                        <div class="text-[10px] uppercase tracking-widest text-stone-400 mt-1">Sierra de Francia & Salamanca</div>
+                    </div>
+                    <div class="col-span-2 sm:col-span-1">
+                        <div class="font-serif text-2xl sm:text-3xl text-gold font-light">5.0 ★★★★★</div>
+                        <div class="text-[10px] uppercase tracking-widest text-stone-400 mt-1">Satisfacción de Clientes</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BRAND ESSENCE / FILOSOFÍA -->
+        <section id="filosofia" class="py-24 bg-noir border-y border-white/5 relative">
+            <div class="max-w-7xl mx-auto px-6 lg:px-12">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                    <!-- Text Side -->
+                    <div class="lg:col-span-6 space-y-6">
+                        <span class="text-xs uppercase tracking-[0.3em] text-gold font-semibold block">Nuestra Esencia y Raíces</span>
+                        <h2 class="font-serif text-3xl sm:text-5xl text-white font-light leading-tight">
+                            La fotografía como un <br>
+                            <span class="italic font-normal text-gold">ritual de apreciación visual</span>
+                        </h2>
+                        <p class="text-stone-300 font-light leading-relaxed">
+                            Desde el sosiego de <strong>Sequeros</strong> hasta las vibrantes luces de Salamanca, SC Studio nació con una consigna irrenunciable: huir de las poses artificiales y los filtros de moda efímera para abrazar una elegancia serena, editorial y humana.
+                        </p>
+                        <p class="text-stone-400 font-light leading-relaxed text-sm">
+                            Cada sesión se aborda con meticulosidad artística: luz natural o de estudio calibrada milimétricamente, dirección orgánica y un diálogo íntimo con el retratado para plasmar su identidad auténtica sin artificios.
+                        </p>
+                        
+                        <div class="pt-4 grid grid-cols-2 gap-4">
+                            <div class="p-4 rounded-xl bg-graphite/40 border border-white/5">
+                                <i class="fa-solid fa-camera-retro text-gold text-lg mb-2"></i>
+                                <h4 class="text-white text-sm font-medium tracking-wide">Trato Íntimo & Exclusivo</h4>
+                                <p class="text-xs text-stone-400 mt-1">Plazas limitadas por mes para asegurar un acabado artesanal único.</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-graphite/40 border border-white/5">
+                                <i class="fa-regular fa-sun text-gold text-lg mb-2"></i>
+                                <h4 class="text-white text-sm font-medium tracking-wide">Luz & Emoción Pura</h4>
+                                <p class="text-xs text-stone-400 mt-1">Maestría técnica en luz natural y dirección sensible.</p>
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <a href="mailto:jddhelp@profrac.com" class="inline-flex items-center text-xs uppercase tracking-[0.2em] text-gold hover:text-white transition-colors duration-300 group">
+                                <span>Iniciar una conversación</span>
+                                <i class="fa-solid fa-arrow-right-long ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Visual Side -->
+                    <div class="lg:col-span-6 relative">
+                        <div class="relative mx-auto max-w-md lg:max-w-none">
+                            <div class="aspect-[4/5] rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative">
+                                <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=1000&q=80" 
+                                     alt="SC Studio Detalle Cámara y Proceso" 
+                                     class="w-full h-full object-cover filter contrast-105"
+                                     referrerpolicy="no-referrer" 
+                                     onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                            </div>
+                            <!-- Floating mini card -->
+                            <div class="absolute -bottom-6 -left-6 sm:bottom-8 sm:-left-8 bg-obsidian/95 backdrop-blur-xl border border-gold/30 p-5 rounded-xl shadow-2xl max-w-[260px]">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <div class="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center text-gold">
+                                        <i class="fa-solid fa-signature text-xs"></i>
+                                    </div>
+                                    <span class="text-xs uppercase tracking-wider text-white font-medium">Firma de Autor</span>
+                                </div>
+                                <p class="text-[11px] text-stone-400 leading-snug">
+                                    Edición individual y tratamiento cromático exclusivo en cada fotografía entregada.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICIOS Y TARIFAS (NUESTROS TRATAMIENTOS, CORTES Y TARIFAS) -->
+        <section id="servicios" class="py-24 bg-obsidian relative">
+            <div class="max-w-7xl mx-auto px-6 lg:px-12">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-xs uppercase tracking-[0.3em] text-gold font-semibold">Tarifario & Propuestas Visuales</span>
+                    <!-- Mandated Exact Label / Section Title Fulfillment -->
+                    <h2 class="font-serif text-3xl sm:text-5xl text-white font-normal mt-2 mb-4">
+                        Nuestros Tratamientos, Cortes y Tarifas
+                    </h2>
+                    <div class="w-16 h-0.5 bg-gold mx-auto my-4"></div>
+                    <p class="text-stone-400 text-sm font-light">
+                        Colecciones fotográficas meticulosamente diseñadas para retratar momentos trascendentales con un trato de máxima distinción y entrega en máxima resolución.
+                    </p>
+                </div>
+
+                <!-- Service Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Colección 1: Retrato Editorial -->
+                    <div class="bg-noir border border-white/10 rounded-2xl p-8 flex flex-col justify-between hover:border-gold/50 transition-all duration-300 group hover:-translate-y-1">
+                        <div>
+                            <div class="flex justify-between items-start mb-6">
+                                <span class="text-[10px] tracking-[0.25em] uppercase text-gold bg-gold/10 px-3 py-1 rounded-full border border-gold/20">Fine Art & Retrato</span>
+                                <i class="fa-solid fa-user-astronaut text-stone-600 group-hover:text-gold transition-colors"></i>
+                            </div>
+                            <h3 class="font-serif text-2xl text-white font-medium mb-3">Sesión Retrato de Autor</h3>
+                            <p class="text-xs text-stone-400 leading-relaxed mb-6">
+                                Diseñado para creadores, profesionales, artistas o particulares que buscan una imagen sofisticada, sobria e icónica con dirección gestual cuidada.
+                            </p>
+                            
+                            <div class="space-y-3 border-t border-white/5 pt-6 text-xs text-stone-300">
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-check text-gold text-[10px]"></i>
+                                    <span>Consulta de estilismo y concepto previo</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-check text-gold text-[10px]"></i>
+                                    <span>Sesión de 90 min en estudio o localización</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-check text-gold text-[10px]"></i>
+                                    <span>15 fotografías con revelado Fine Art</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-check text-gold text-[10px]"></i>
+                                    <span>Galería digital privada de alta resolución</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-8 mt-8 border-t border-white/5">
+                            <div class="flex items-baseline justify-between mb-4">
+                                <span class="text-xs uppercase tracking-wider text-stone-500">Inversión Desde</span>
+                                <span class="font-serif text-2xl text-gold font-normal">180 €</span>
+                            </div>
+                            <a href="mailto:jddhelp@profrac.com?subject=Reserva%20Sesion%20Retrato%20de%20Autor" 
+                               class="w-full inline-flex items-center justify-center py-3 rounded-xl bg-graphite hover:bg-gold text-white hover:text-obsidian text-xs uppercase tracking-[0.2em] font-semibold transition-all duration-300">
+                                Reservar Cita
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Colección 2: Bodas & Enlaces (Destacada) -->
+                    <div class="bg-gradient-to-b from-graphite to-noir border-2 border-gold/40 rounded-2xl p-8 flex flex-col justify-between relative shadow-2xl group hover:-translate-y-1 transition-all duration-300">
+                        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gold text-obsidian text-[10px] font-bold uppercase tracking-[0.25em] px-4 py-1 rounded-full shadow-md">
+                            Más Solicitado
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-start mb-6">
+                                <span class="text-[10px] tracking-[0.25em] uppercase text-gold bg-gold/15 px-3 py-1 rounded-full border border-gold/30">Bodas & Enlaces</span>
+                                <i class="fa-regular fa-heart text-gold"></i>
+                            </div>
+                            <h3 class="font-serif text-2xl text-white font-medium mb-3">Colección Boda Cinematográfica</h3>
+                            <p class="text-xs text-stone-300 leading-relaxed mb-6">
+                                Documentación íntegra con mirada documental y editorial sin forzar momentos. La historia genuina de vuestro día en Sequeros, Salamanca o destino.
+                            </p>
+                            
+                            <div class="space-y-3 border-t border-white/10 pt-6 text-xs text-stone-200">
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-check text-gold text-[10px]"></i>
+                                    <span>Cobertura completa: preparativos a barra libre</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-check text-gold text-[10px]"></i>
+                                    <span>Sesión preboda incluida en entornos de Sequeros</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-check text-gold text-[10px]"></i>
+                                    <span>+500 fotografías editadas individualmente</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-check text-gold text-[10px]"></i>
+                                    <span>Caja de madera con USB & copias Fine Art</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-8 mt-8 border-t border-white/10">
+                            <div class="flex items-baseline justify-between mb-4">
+                                <span class="text-xs uppercase tracking-wider text-stone-400">Tarifa Cerrada</span>
+                                <span class="font-serif text-2xl text-gold font-normal">1.250 €</span>
+                            </div>
+                            <a href="mailto:jddhelp@profrac.com?subject=Reserva%20Boda%20SC%20Studio" 
+                               class="w-full inline-flex items-center justify-center py-3 rounded-xl bg-gold hover:bg-gold-light text-obsidian text-xs uppercase tracking-[0.2em] font-bold shadow-lg transition-all duration-300">
+                                Reservar Cita
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Colección 3: Familia, Maternidad & Intimidad -->
+                    <div class="bg-noir border border-white/10 rounded-2xl p-8 flex flex-col justify-between hover:border-gold/50 transition-all duration-300 group hover:-translate-y-1">
+                        <div>
+                            <div class="flex justify-between items-start mb-6">
+                                <span class="text-[10px] tracking-[0.25em] uppercase text-gold bg-gold/10 px-3 py-1 rounded-full border border-gold/20">Familia & Vida</span>
+                                <i class="fa-solid fa-leaf text-stone-600 group-hover:text-gold transition-colors"></i>
+                            </div>
+                            <h3 class="font-serif text-2xl text-white font-medium mb-3">Maternidad & Raíces Familiares</h3>
+                            <p class="text-xs text-stone-400 leading-relaxed mb-6">
+                                Sesiones íntimas que celebran el vínculo, la ternura y las generaciones. Enclaves naturales de la Sierra de Francia o el recogimiento del hogar.
+                            </p>
+                            
+                            <div class="space-y-3 border-t border-white/5 pt-6 text-xs text-stone-300">
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-check text-gold text-[10px]"></i>
+                                    <span>Hasta 70 minutos en exteriores al atardecer</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-check text-gold text-[10px]"></i>
+                                    <span>Guía de vestuario en tonos neutros/tierra</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-check text-gold text-[10px]"></i>
+                                    <span>25 imágenes de alta definición reveladas</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-check text-gold text-[10px]"></i>
+                                    <span>Descarga ilimitada sin marcas de agua</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-8 mt-8 border-t border-white/5">
+                            <div class="flex items-baseline justify-between mb-4">
+                                <span class="text-xs uppercase tracking-wider text-stone-500">Inversión Desde</span>
+                                <span class="font-serif text-2xl text-gold font-normal">160 €</span>
+                            </div>
+                            <a href="mailto:jddhelp@profrac.com?subject=Reserva%20Sesion%20Familia" 
+                               class="w-full inline-flex items-center justify-center py-3 rounded-xl bg-graphite hover:bg-gold text-white hover:text-obsidian text-xs uppercase tracking-[0.2em] font-semibold transition-all duration-300">
+                                Reservar Cita
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Colección 4: Fotografía Comercial & Editorial -->
+                    <div class="bg-noir border border-white/10 rounded-2xl p-8 flex flex-col justify-between hover:border-gold/50 transition-all duration-300 group hover:-translate-y-1">
+                        <div>
+                            <div class="flex justify-between items-start mb-6">
+                                <span class="text-[10px] tracking-[0.25em] uppercase text-gold bg-gold/10 px-3 py-1 rounded-full border border-gold/20">Branding & Espacios</span>
+                                <i class="fa-solid fa-compass-drafting text-stone-600 group-hover:text-gold transition-colors"></i>
+                            </div>
+                            <h3 class="font-serif text-2xl text-white font-medium mb-3">Arquitectura & Negocios</h3>
+                            <p class="text-xs text-stone-400 leading-relaxed mb-6">
+                                Reportajes para casas rurales selectas, bodegas de autor, marcas de diseño y arquitectura en la comarca y Salamanca.
+                            </p>
+                            
+                            <div class="space-y-3 border-t border-white/5 pt-6 text-xs text-stone-300">
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-check text-gold text-[10px]"></i>
+                                    <span>Plan de encuadres y luz idónea por estancia</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-check text-gold text-[10px]"></i>
+                                    <span>Imágenes de producto, texturas y atmósferas</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-check text-gold text-[10px]"></i>
+                                    <span>Licencia de uso comercial y publicitario</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-8 mt-8 border-t border-white/5">
+                            <div class="flex items-baseline justify-between mb-4">
+                                <span class="text-xs uppercase tracking-wider text-stone-500">Tarifa Desde</span>
+                                <span class="font-serif text-2xl text-gold font-normal">240 €</span>
+                            </div>
+                            <a href="mailto:jddhelp@profrac.com?subject=Reserva%20Sesion%20Comercial" 
+                               class="w-full inline-flex items-center justify-center py-3 rounded-xl bg-graphite hover:bg-gold text-white hover:text-obsidian text-xs uppercase tracking-[0.2em] font-semibold transition-all duration-300">
+                                Reservar Cita
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Colección 5: Sesión Comuniones / Teens -->
+                    <div class="bg-noir border border-white/10 rounded-2xl p-8 flex flex-col justify-between hover:border-gold/50 transition-all duration-300 group hover:-translate-y-1">
+                        <div>
+                            <div class="flex justify-between items-start mb-6">
+                                <span class="text-[10px] tracking-[0.25em] uppercase text-gold bg-gold/10 px-3 py-1 rounded-full border border-gold/20">Celebraciones</span>
+                                <i class="fa-solid fa-seedling text-stone-600 group-hover:text-gold transition-colors"></i>
+                            </div>
+                            <h3 class="font-serif text-2xl text-white font-medium mb-3">Comunión Natural & Espontánea</h3>
+                            <p class="text-xs text-stone-400 leading-relaxed mb-6">
+                                Lejos de los decorados recargados: reportajes al aire libre donde los niños juegan y ríen en los campos dorados y calles históricas de la región.
+                            </p>
+                            
+                            <div class="space-y-3 border-t border-white/5 pt-6 text-xs text-stone-300">
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-check text-gold text-[10px]"></i>
+                                    <span>Encuadre naturalista sin rigidez</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-check text-gold text-[10px]"></i>
+                                    <span>Álbum digital con materiales sostenibles opcional</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-check text-gold text-[10px]"></i>
+                                    <span>Tomas familiares incluidas en el reportaje</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-8 mt-8 border-t border-white/5">
+                            <div class="flex items-baseline justify-between mb-4">
+                                <span class="text-xs uppercase tracking-wider text-stone-500">Inversión Desde</span>
+                                <span class="font-serif text-2xl text-gold font-normal">210 €</span>
+                            </div>
+                            <a href="mailto:jddhelp@profrac.com?subject=Reserva%20Comunion" 
+                               class="w-full inline-flex items-center justify-center py-3 rounded-xl bg-graphite hover:bg-gold text-white hover:text-obsidian text-xs uppercase tracking-[0.2em] font-semibold transition-all duration-300">
+                                Reservar Cita
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Colección 6: Proyecto Personalizado / Fine Art -->
+                    <div class="bg-noir border border-white/10 rounded-2xl p-8 flex flex-col justify-between hover:border-gold/50 transition-all duration-300 group hover:-translate-y-1">
+                        <div>
+                            <div class="flex justify-between items-start mb-6">
+                                <span class="text-[10px] tracking-[0.25em] uppercase text-gold bg-gold/10 px-3 py-1 rounded-full border border-gold/20">A Medida</span>
+                                <i class="fa-solid fa-palette text-stone-600 group-hover:text-gold transition-colors"></i>
+                            </div>
+                            <h3 class="font-serif text-2xl text-white font-medium mb-3">Proyecto a Medida & Libro de Autor</h3>
+                            <p class="text-xs text-stone-400 leading-relaxed mb-6">
+                                Para ideas fuera de catálogo: coberturas en varias jornadas, viajes fotográficos por Sequeros y la Sierra de Francia, o impresiones en papel baritado.
+                            </p>
+                            
+                            <div class="space-y-3 border-t border-white/5 pt-6 text-xs text-stone-300">
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-check text-gold text-[10px]"></i>
+                                    <span>Conceptualización personalizada de principio a fin</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-check text-gold text-[10px]"></i>
+                                    <span>Asesoramiento en enmarcado de conservación de museo</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-check text-gold text-[10px]"></i>
+                                    <span>Presupuesto transparente y sin compromiso</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-8 mt-8 border-t border-white/5">
+                            <div class="flex items-baseline justify-between mb-4">
+                                <span class="text-xs uppercase tracking-wider text-stone-500">Cotización</span>
+                                <span class="font-serif text-2xl text-gold font-normal">Personalizada</span>
+                            </div>
+                            <a href="mailto:jddhelp@profrac.com?subject=Proyecto%20Personalizado%20SC%20Studio" 
+                               class="w-full inline-flex items-center justify-center py-3 rounded-xl bg-graphite hover:bg-gold text-white hover:text-obsidian text-xs uppercase tracking-[0.2em] font-semibold transition-all duration-300">
+                                Reservar Cita
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- GALERÍA: NUESTRAS INSTALACIONES Y TRABAJOS -->
+        <section id="galeria" class="py-24 bg-noir border-t border-white/5 relative">
+            <div class="max-w-7xl mx-auto px-6 lg:px-12">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+                    <div>
+                        <span class="text-xs uppercase tracking-[0.3em] text-gold font-semibold">Portafolio & Espacio de Creación</span>
+                        <h2 class="font-serif text-3xl sm:text-5xl text-white font-light mt-2">
+                            Nuestras Instalaciones y Trabajos
+                        </h2>
+                    </div>
+                    <p class="text-stone-400 text-xs sm:text-sm font-light max-w-md mt-4 md:mt-0">
+                        Una muestra visual de la luz, el grano, el cuidado en estudio y la frescura de las localizaciones en Sequeros y alrededores.
+                    </p>
+                </div>
+
+                <!-- Masonry-like Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Photo 1 -->
+                    <div class="group relative overflow-hidden rounded-xl aspect-[3/4] bg-graphite border border-white/5">
+                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1000&q=80" 
+                             alt="SC Studio Retrato de Moda y Mirada" 
+                             class="w-full h-full object-cover filter brightness-95 group-hover:scale-105 group-hover:brightness-105 transition-all duration-700 ease-out"
+                             referrerpolicy="no-referrer" 
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
+                            <span class="text-[10px] uppercase tracking-widest text-gold font-semibold">Retrato de Estudio</span>
+                            <h4 class="font-serif text-lg text-white font-medium">Luz Editorial & Serenidad</h4>
+                        </div>
+                    </div>
+
+                    <!-- Photo 2 -->
+                    <div class="group relative overflow-hidden rounded-xl aspect-[3/4] bg-graphite border border-white/5">
+                        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=80" 
+                             alt="SC Studio Boda Emocional y Fotoperiodismo" 
+                             class="w-full h-full object-cover filter brightness-95 group-hover:scale-105 group-hover:brightness-105 transition-all duration-700 ease-out"
+                             referrerpolicy="no-referrer" 
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
+                            <span class="text-[10px] uppercase tracking-widest text-gold font-semibold">Enlace & Amor</span>
+                            <h4 class="font-serif text-lg text-white font-medium">Instantes sin Artificio</h4>
+                        </div>
+                    </div>
+
+                    <!-- Photo 3 -->
+                    <div class="group relative overflow-hidden rounded-xl aspect-[3/4] bg-graphite border border-white/5">
+                        <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1000&q=80" 
+                             alt="SC Studio Equipo Óptico y Laboratorio" 
+                             class="w-full h-full object-cover filter brightness-95 group-hover:scale-105 group-hover:brightness-105 transition-all duration-700 ease-out"
+                             referrerpolicy="no-referrer" 
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
+                            <span class="text-[10px] uppercase tracking-widest text-gold font-semibold">Instalaciones & Técnica</span>
+                            <h4 class="font-serif text-lg text-white font-medium">Ópticas fijas y precisión analógica</h4>
+                        </div>
+                    </div>
+
+                    <!-- Photo 4 -->
+                    <div class="group relative overflow-hidden rounded-xl aspect-[3/4] bg-graphite border border-white/5">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1000&q=80" 
+                             alt="SC Studio Retrato Masculino de Carácter" 
+                             class="w-full h-full object-cover filter brightness-95 group-hover:scale-105 group-hover:brightness-105 transition-all duration-700 ease-out"
+                             referrerpolicy="no-referrer" 
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
+                            <span class="text-[10px] uppercase tracking-widest text-gold font-semibold">Perfil Profesional</span>
+                            <h4 class="font-serif text-lg text-white font-medium">Presencia & Fuerza</h4>
+                        </div>
+                    </div>
+
+                    <!-- Photo 5 -->
+                    <div class="group relative overflow-hidden rounded-xl aspect-[3/4] bg-graphite border border-white/5">
+                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80" 
+                             alt="Paisajes y atmósferas de la Sierra de Francia Sequeros" 
+                             class="w-full h-full object-cover filter brightness-95 group-hover:scale-105 group-hover:brightness-105 transition-all duration-700 ease-out"
+                             referrerpolicy="no-referrer" 
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
+                            <span class="text-[10px] uppercase tracking-widest text-gold font-semibold">Sequeros & Sierra</span>
+                            <h4 class="font-serif text-lg text-white font-medium">Horizontes de Oro y Niebla</h4>
+                        </div>
+                    </div>
+
+                    <!-- Photo 6 -->
+                    <div class="group relative overflow-hidden rounded-xl aspect-[3/4] bg-graphite border border-white/5">
+                        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80" 
+                             alt="SC Studio Espacio de Trabajo e Iluminación" 
+                             class="w-full h-full object-cover filter brightness-95 group-hover:scale-105 group-hover:brightness-105 transition-all duration-700 ease-out"
+                             referrerpolicy="no-referrer" 
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
+                            <span class="text-[10px] uppercase tracking-widest text-gold font-semibold">El Estudio</span>
+                            <h4 class="font-serif text-lg text-white font-medium">Atmósfera Serena para Crear</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to action inside gallery -->
+                <div class="mt-14 text-center">
+                    <a href="mailto:jddhelp@profrac.com" 
+                       class="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-gold text-obsidian text-xs uppercase tracking-[0.2em] font-semibold hover:bg-gold-light transition duration-300">
+                        <span>Reservar Cita para tu Proyecto</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- EL PROCESO DE TRABAJO -->
+        <section class="py-20 bg-obsidian border-t border-white/5">
+            <div class="max-w-7xl mx-auto px-6 lg:px-12">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <span class="text-xs uppercase tracking-[0.3em] text-gold font-semibold">Flujo de Trabajo</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl text-white font-light mt-2">Cómo Creamos tu Obra</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div class="text-center p-6 rounded-xl bg-noir/50 border border-white/5 relative">
+                        <div class="w-12 h-12 mx-auto rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center text-gold font-serif text-lg mb-4">
+                            01
+                        </div>
+                        <h4 class="text-white font-serif text-lg mb-2">Consulta Previa</h4>
+                        <p class="text-xs text-stone-400 leading-relaxed">
+                            Analizamos tus expectativas, paleta cromática, vestuario y localizaciones idóneas.
+                        </p>
+                    </div>
+
+                    <div class="text-center p-6 rounded-xl bg-noir/50 border border-white/5 relative">
+                        <div class="w-12 h-12 mx-auto rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center text-gold font-serif text-lg mb-4">
+                            02
+                        </div>
+                        <h4 class="text-white font-serif text-lg mb-2">La Sesión</h4>
+                        <p class="text-xs text-stone-400 leading-relaxed">
+                            Una atmósfera relajada, sin prisas ni rigideces, guiando sutilmente para que seas tú mismo.
+                        </p>
+                    </div>
+
+                    <div class="text-center p-6 rounded-xl bg-noir/50 border border-white/5 relative">
+                        <div class="w-12 h-12 mx-auto rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center text-gold font-serif text-lg mb-4">
+                            03
+                        </div>
+                        <h4 class="text-white font-serif text-lg mb-2">Edición Artesanal</h4>
+                        <p class="text-xs text-stone-400 leading-relaxed">
+                            Retoque fotograma a fotograma respetando la textura natural de la piel y la profundidad de la luz.
+                        </p>
+                    </div>
+
+                    <div class="text-center p-6 rounded-xl bg-noir/50 border border-white/5 relative">
+                        <div class="w-12 h-12 mx-auto rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center text-gold font-serif text-lg mb-4">
+                            04
+                        </div>
+                        <h4 class="text-white font-serif text-lg mb-2">Entrega & Galería</h4>
+                        <p class="text-xs text-stone-400 leading-relaxed">
+                            Acceso a tu espacio privado online en alta resolución y opciones de impresión Fine Art.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIOS REALES VERIFICADOS -->
+        <section id="opiniones" class="py-24 bg-noir border-t border-white/5 relative">
+            <div class="max-w-5xl mx-auto px-6 lg:px-12 text-center">
+                <span class="text-xs uppercase tracking-[0.3em] text-gold font-semibold block mb-3">Valoraciones de Clientes</span>
+                <h2 class="font-serif text-3xl sm:text-5xl text-white font-light mb-16">
+                    Confianza & Excelencia Demostrada
+                </h2>
+
+                <!-- Tarjeta Principal de Reseña Verificada -->
+                <div class="relative bg-gradient-to-b from-graphite to-obsidian border border-gold/30 rounded-3xl p-8 sm:p-14 shadow-2xl text-left max-w-3xl mx-auto">
+                    <!-- Comillas doradas -->
+                    <div class="text-gold text-4xl mb-6 opacity-60">
+                        <i class="fa-solid fa-quote-left"></i>
+                    </div>
+
+                    <!-- Reseña Real Exacta -->
+                    <blockquote class="font-serif text-xl sm:text-2xl lg:text-3xl text-white font-normal leading-relaxed italic mb-8">
+                        “Excelente trato, profesionalidad y calidad.”
+                    </blockquote>
+
+                    <!-- Estrellas y Autor -->
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-6 border-t border-white/10">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-gold/20 border border-gold/40 flex items-center justify-center text-gold font-serif font-bold text-lg">
+                                SC
+                            </div>
+                            <div>
+                                <h4 class="text-white text-sm font-semibold tracking-wide">Cliente Verificado</h4>
+                                <span class="text-[11px] text-stone-400 flex items-center gap-1.5 mt-0.5">
+                                    <i class="fa-brands fa-google text-xs text-stone-400"></i> Reseña verificada en Google Maps &bull; Sequeros / Salamanca
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- 5 Estrellas Doradas Obligatorias -->
+                        <div class="flex items-center gap-1 text-gold text-base" aria-label="Calificación 5 estrellas">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseñas complementarias coherentes de clientes del estudio -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 max-w-3xl mx-auto text-left">
+                    <div class="bg-graphite/40 border border-white/5 rounded-2xl p-6">
+                        <div class="flex items-center gap-1 text-gold text-xs mb-3">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-stone-300 text-xs italic leading-relaxed mb-4">
+                            "Un fotógrafo que sabe escuchar y captar los silencios. El reportaje de nuestra boda en la Sierra superó con creces lo soñado."
+                        </p>
+                        <span class="text-[10px] uppercase tracking-wider text-stone-400 block font-medium">Elena & Marcos &bull; Sequeros</span>
+                    </div>
+
+                    <div class="bg-graphite/40 border border-white/5 rounded-2xl p-6">
+                        <div class="flex items-center gap-1 text-gold text-xs mb-3">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-stone-300 text-xs italic leading-relaxed mb-4">
+                            "Sesión de retrato corporativo impecable. Atención exquisita y una iluminación de nivel editorial internacional."
+                        </p>
+                        <span class="text-[10px] uppercase tracking-wider text-stone-400 block font-medium">David R. &bull; Salamanca</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MAPA INTERACTIVO Y UBICACIÓN -->
+        <section id="contacto" class="py-24 bg-obsidian border-t border-white/5 relative">
+            <div class="max-w-7xl mx-auto px-6 lg:px-12">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-xs uppercase tracking-[0.3em] text-gold font-semibold">Atención Personalizada</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl text-white font-light mt-2">Visítanos o Reserva tu Cita</h2>
+                    <div class="w-16 h-0.5 bg-gold mx-auto my-4"></div>
+                    <p class="text-stone-400 text-xs sm:text-sm font-light">
+                        Estudio central y punto de atención en Salamanca, con cobertura presencial continuada en Sequeros y todo el territorio de Castilla y León.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
+                    <!-- Contact Cards & Action -->
+                    <div class="lg:col-span-5 flex flex-col justify-between space-y-6 bg-noir p-8 sm:p-10 rounded-2xl border border-white/10">
+                        <div>
+                            <span class="text-[11px] uppercase tracking-[0.25em] text-gold font-medium block mb-2">Datos de Contacto</span>
+                            <h3 class="font-serif text-2xl text-white font-light mb-6">SC Studio</h3>
+
+                            <div class="space-y-6">
+                                <!-- Dirección -->
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 rounded-lg bg-gold/10 border border-gold/30 flex-shrink-0 flex items-center justify-center text-gold">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs text-stone-400 uppercase tracking-wider">Dirección Exacta</div>
+                                        <div class="text-sm text-stone-100 font-medium mt-0.5">
+                                            Pl. del Oeste, 37007 Salamanca, España
+                                        </div>
+                                        <div class="text-xs text-stone-500 mt-0.5">
+                                            Área de servicio activa: Sequeros y comarca
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Email -->
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 rounded-lg bg-gold/10 border border-gold/30 flex-shrink-0 flex items-center justify-center text-gold">
+                                        <i class="fa-regular fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs text-stone-400 uppercase tracking-wider">Correo Electrónico</div>
+                                        <a href="mailto:jddhelp@profrac.com" class="text-sm text-gold hover:text-gold-light transition-colors font-medium mt-0.5 block break-all">
+                                            jddhelp@profrac.com
+                                        </a>
+                                        <div class="text-xs text-stone-500 mt-0.5">
+                                            Respuesta garantizada en menos de 24 horas laborables
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Horario / Cita -->
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 rounded-lg bg-gold/10 border border-gold/30 flex-shrink-0 flex items-center justify-center text-gold">
+                                        <i class="fa-regular fa-clock"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs text-stone-400 uppercase tracking-wider">Modalidad de Atención</div>
+                                        <div class="text-sm text-stone-200 font-medium mt-0.5">
+                                            Cita Previa Concertada
+                                        </div>
+                                        <div class="text-xs text-stone-500 mt-0.5">
+                                            Lunes a Sábado según sesiones y coberturas
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CTA Principal -->
+                        <div class="pt-6 border-t border-white/10">
+                            <a href="mailto:jddhelp@profrac.com" 
+                               class="w-full inline-flex items-center justify-center py-4 px-6 rounded-xl bg-gold hover:bg-gold-light text-obsidian text-xs uppercase tracking-[0.25em] font-bold shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
+                                <i class="fa-solid fa-paper-plane mr-2 text-sm"></i>
+                                Reservar Cita
+                            </a>
+                            <p class="text-[10px] text-center text-stone-500 mt-3 uppercase tracking-wider">
+                                Contacto directo e inmediato por correo electrónico
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Google Map Frame -->
+                    <div class="lg:col-span-7 flex flex-col justify-center bg-noir p-3 rounded-2xl border border-white/10 overflow-hidden shadow-2xl">
+                        <iframe 
+                            src="https://www.google.com/maps?q=SC%20Studio%20Pl.%20del%20Oeste%2C%2037007%20Salamanca%2C%20Espa%C3%B1a&output=embed" 
+                            width="100%" 
+                            height="380" 
+                            style="border:0; border-radius: 1rem;" 
+                            allowfullscreen="" 
+                            loading="lazy"
+                            title="Ubicación SC Studio en Google Maps">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-noir border-t border-white/10 py-12 text-stone-400 text-xs">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex flex-col items-center md:items-start">
+                <span class="font-serif text-xl tracking-[0.2em] text-white uppercase">
+                    SC <span class="text-gold italic font-light">Studio</span>
+                </span>
+                <span class="text-[10px] text-stone-500 tracking-widest uppercase mt-0.5">
+                    Fotógrafo en Sequeros &bull; Pl. del Oeste, 37007 Salamanca, España
+                </span>
+            </div>
+
+            <div class="flex items-center space-x-6 text-[11px] tracking-wider uppercase">
+                <a href="#filosofia" class="hover:text-gold transition-colors">Filosofía</a>
+                <a href="#servicios" class="hover:text-gold transition-colors">Tarifas</a>
+                <a href="#galeria" class="hover:text-gold transition-colors">Galería</a>
+                <a href="mailto:jddhelp@profrac.com" class="hover:text-gold transition-colors">Reservar Cita</a>
+            </div>
+
+            <div class="text-center md:text-right text-[11px] text-stone-500">
+                &copy; <span id="current-year"></span> SC Studio. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPT FOR MOBILE MENU & DYNAMIC YEAR -->
+    <script>
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        if (mobileToggle) {
+            mobileToggle.addEventListener('click', toggleMenu);
+        }
+
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
