@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peluquería Elebe | Salón Boutique de Belleza en Bizkaia</title>
+    <meta name="description" content="Peluquería Elebe en Zelaieta - Elantxobe. Cortes de vanguardia, coloración experta, tratamientos capilares exclusivos y el trato cálido y profesional de Elena.">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#111111',
+                            matte: '#1a1918',
+                            charcoal: '#242321',
+                            gold: '#c5a880',
+                            goldLight: '#dec7a9',
+                            sand: '#f8f6f2',
+                            sandDark: '#ebe5db',
+                            muted: '#8f8c85'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #dfcbaf 0%, #c5a880 50%, #9e7f57 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border-gradient {
+            border-image: linear-gradient(to right, #c5a880, transparent) 1;
+        }
+        .blur-card {
+            backdrop-filter: blur(12px);
+            background: rgba(26, 25, 24, 0.85);
+        }
+    </style>
+</head>
+<body class="bg-brand-sand text-brand-charcoal font-sans antialiased selection:bg-brand-gold selection:text-white">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-brand-dark text-brand-goldLight text-xs py-2 px-4 tracking-wider uppercase border-b border-white/10">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-center gap-2">
+            <span class="flex items-center gap-2">
+                <i class="fa-solid fa-location-dot text-brand-gold"></i> Iturritxo Kalea, 2, Zelaieta (Bizkaia)
+            </span>
+            <div class="flex items-center gap-6">
+                <span class="hidden md:inline-flex items-center gap-2">
+                    <i class="fa-solid fa-clock text-brand-gold"></i> Cita previa recomendada
+                </span>
+                <a href="tel:946550105" class="text-white hover:text-brand-gold transition-colors font-medium flex items-center gap-1">
+                    <i class="fa-solid fa-phone text-xs"></i> 946 550 105
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-brand-dark/95 backdrop-blur-md border-b border-brand-gold/20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <a href="#" class="group flex flex-col">
+                    <span class="font-serif text-2xl sm:text-3xl text-white tracking-widest font-normal uppercase group-hover:text-brand-gold transition-colors">
+                        ELEBE
+                    </span>
+                    <span class="text-[10px] tracking-[0.3em] uppercase text-brand-gold -mt-1 font-sans">
+                        Peluquería & Belleza
+                    </span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#experiencia" class="text-sm uppercase tracking-widest text-zinc-300 hover:text-brand-gold transition-colors">La Peluquería</a>
+                    <a href="#servicios" class="text-sm uppercase tracking-widest text-zinc-300 hover:text-brand-gold transition-colors">Servicios & Tarifas</a>
+                    <a href="#galeria" class="text-sm uppercase tracking-widest text-zinc-300 hover:text-brand-gold transition-colors">Instalaciones</a>
+                    <a href="#opiniones" class="text-sm uppercase tracking-widest text-zinc-300 hover:text-brand-gold transition-colors">Reseñas</a>
+                    <a href="#contacto" class="text-sm uppercase tracking-widest text-zinc-300 hover:text-brand-gold transition-colors">Contacto</a>
+                </nav>
+
+                <!-- Right Action Button -->
+                <div class="flex items-center gap-4">
+                    <a href="tel:946550105" class="relative inline-flex items-center justify-center px-6 py-2.5 text-xs font-semibold uppercase tracking-widest text-brand-dark transition-all duration-300 bg-brand-gold hover:bg-brand-goldLight rounded-full shadow-lg shadow-brand-gold/20 hover:scale-105 active:scale-95">
+                        <i class="fa-solid fa-calendar-check mr-2"></i> Reservar Cita
+                    </a>
+
+                    <!-- Mobile Hamburger Button -->
+                    <button id="mobileMenuBtn" class="md:hidden text-zinc-300 hover:text-brand-gold p-2" aria-label="Abrir Menú">
+                        <i class="fa-solid fa-bars-staggered text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-brand-matte border-t border-brand-charcoal px-6 py-6 space-y-4">
+            <a href="#experiencia" class="block text-sm uppercase tracking-wider text-zinc-200 hover:text-brand-gold py-1">La Peluquería</a>
+            <a href="#servicios" class="block text-sm uppercase tracking-wider text-zinc-200 hover:text-brand-gold py-1">Servicios & Tarifas</a>
+            <a href="#galeria" class="block text-sm uppercase tracking-wider text-zinc-200 hover:text-brand-gold py-1">Instalaciones</a>
+            <a href="#opiniones" class="block text-sm uppercase tracking-wider text-zinc-200 hover:text-brand-gold py-1">Reseñas</a>
+            <a href="#contacto" class="block text-sm uppercase tracking-wider text-zinc-200 hover:text-brand-gold py-1">Contacto</a>
+            <div class="pt-4 border-t border-white/10 flex flex-col gap-3">
+                <a href="tel:946550105" class="w-full text-center py-3 bg-brand-gold text-brand-dark text-xs font-bold uppercase tracking-wider rounded-lg">
+                    <i class="fa-solid fa-phone mr-2"></i> Llamar al 946 550 105
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-brand-dark min-h-[88vh] flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1800&q=80" 
+                 alt="Peluquería Elebe en Bizkaia" 
+                 referrerpolicy="no-referrer"
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                 class="w-full h-full object-cover object-center brightness-50 scale-105 animate-[pulse_8s_ease-in-out_infinite]">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/70 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-gold/40 bg-brand-matte/60 backdrop-blur-md mb-8">
+                <span class="w-2 h-2 rounded-full bg-brand-gold animate-ping"></span>
+                <span class="text-xs uppercase tracking-[0.25em] text-brand-goldLight font-medium">Boutique de Belleza & Estilo • Zelaieta / Elantxobe</span>
+            </div>
+
+            <!-- Title -->
+            <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl text-white font-normal tracking-tight leading-tight mb-6">
+                El arte de verte impecable, <br class="hidden sm:block">
+                <span class="italic font-light gold-gradient-text">en el mejor ambiente.</span>
+            </h1>
+
+            <p class="max-w-2xl mx-auto text-base sm:text-lg text-zinc-300 font-light leading-relaxed mb-10">
+                En <strong class="text-white font-medium">Peluquería Elebe</strong> unimos maestría técnica en cortes y color con un trato humano, familiar y divertido. Salir bien peinada y con una sonrisa es nuestra promesa diaria con Elena.
+            </p>
+
+            <!-- CTA Group -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
+                <a href="tel:946550105" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-sm font-bold uppercase tracking-widest text-brand-dark bg-brand-gold hover:bg-brand-goldLight transition-all duration-300 rounded-full shadow-xl shadow-brand-gold/30 hover:translate-y-[-2px]">
+                    <i class="fa-solid fa-phone-volume mr-2"></i> Reservar Cita
+                </a>
+                <a href="#servicios" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-sm font-semibold uppercase tracking-widest text-white border border-white/20 hover:border-brand-gold hover:text-brand-gold transition-all duration-300 rounded-full bg-white/5 backdrop-blur-sm">
+                    Ver Tratamientos
+                </a>
+            </div>
+
+            <!-- Highlights ribbon -->
+            <div class="mt-16 pt-10 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6 text-left">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-white/5 border border-brand-gold/30 flex items-center justify-center text-brand-gold flex-shrink-0">
+                        <i class="fa-solid fa-scissors"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-xs font-semibold uppercase tracking-wider text-white">Cortes Expertos</h2>
+                        <p class="text-xs text-zinc-400">Técnica adaptada a ti</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-white/5 border border-brand-gold/30 flex items-center justify-center text-brand-gold flex-shrink-0">
+                        <i class="fa-solid fa-spray-can-sparkles"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-xs font-semibold uppercase tracking-wider text-white">Color de Vanguardia</h2>
+                        <p class="text-xs text-zinc-400">Brillo y matices puros</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-white/5 border border-brand-gold/30 flex items-center justify-center text-brand-gold flex-shrink-0">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-xs font-semibold uppercase tracking-wider text-white">Trato Familiar</h2>
+                        <p class="text-xs text-zinc-400">Cercanía y risas</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-white/5 border border-brand-gold/30 flex items-center justify-center text-brand-gold flex-shrink-0">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-xs font-semibold uppercase tracking-wider text-white">100% Satisfacción</h2>
+                        <p class="text-xs text-zinc-400">Sales como soñabas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Experience Section -->
+    <section id="experiencia" class="py-24 bg-brand-sand">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                
+                <!-- Imagery Column -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="overflow-hidden rounded-2xl shadow-2xl border border-brand-sandDark aspect-[4/5]">
+                            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=80" 
+                                 alt="Elena en Peluquería Elebe" 
+                                 referrerpolicy="no-referrer"
+                                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                                 class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <!-- Experience Float Card -->
+                        <div class="absolute -bottom-6 -right-6 sm:bottom-8 sm:-right-8 bg-brand-matte text-white p-6 rounded-xl shadow-xl border border-brand-gold/30 max-w-xs">
+                            <span class="text-brand-gold text-3xl font-serif font-bold">100%</span>
+                            <p class="text-xs font-medium uppercase tracking-wider text-zinc-200 mt-1">Dedicación & Estilo Personalizado</p>
+                            <p class="text-[11px] text-zinc-400 mt-1 font-light">"Sales como esperabas. Súper bien."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Content Column -->
+                <div class="lg:col-span-7">
+                    <span class="text-xs font-bold uppercase tracking-[0.25em] text-brand-gold">Peluquería Elebe en Zelaieta</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-brand-dark mt-2 mb-6 leading-tight">
+                        Donde la técnica profesional se encuentra con la calidez de casa.
+                    </h2>
+
+                    <div class="space-y-4 text-zinc-600 font-light leading-relaxed">
+                        <p>
+                            Ubicada en <strong>Iturritxo Kalea</strong> en un entorno idílico y bien posicionado de Bizkaia, <strong>Peluquería Elebe</strong> nace del compromiso por brindar una peluquería moderna, honesta y de altísima calidad a nuestros vecinos de Zelaieta, Elantxobe y alrededores.
+                        </p>
+                        <p>
+                            Para nosotras, visitar la peluquería no es un trámite: es un momento para desconectar, charlar, echar unas buenas risas y confiar tu melena a manos expertas que escuchan detalladamente lo que buscas.
+                        </p>
+                    </div>
+
+                    <!-- Highlights bullets -->
+                    <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="p-4 rounded-xl bg-white border border-brand-sandDark shadow-sm flex items-start gap-3">
+                            <i class="fa-solid fa-check text-brand-gold mt-1"></i>
+                            <div>
+                                <h3 class="text-sm font-semibold text-brand-dark">Diagnóstico Capilar</h3>
+                                <p class="text-xs text-zinc-500">Evaluamos tu textura y rostro antes de cortar o aplicar color.</p>
+                            </div>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white border border-brand-sandDark shadow-sm flex items-start gap-3">
+                            <i class="fa-solid fa-check text-brand-gold mt-1"></i>
+                            <div>
+                                <h3 class="text-sm font-semibold text-brand-dark">Cuidado Integral</h3>
+                                <p class="text-xs text-zinc-500">Productos premium que preservan la salud de tu fibra capilar.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Direct reservation action -->
+                    <div class="mt-8 flex items-center gap-6">
+                        <a href="tel:946550105" class="inline-flex items-center justify-center px-7 py-3.5 text-xs font-bold uppercase tracking-widest text-white bg-brand-dark hover:bg-brand-matte border border-brand-dark hover:border-brand-gold transition-all duration-300 rounded-full shadow-md">
+                            <i class="fa-solid fa-phone mr-2 text-brand-gold"></i> Reservar Cita
+                        </a>
+                        <span class="text-xs font-medium text-zinc-500">
+                            Atención telefónica directa
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services & Pricing Menu -->
+    <section id="servicios" class="py-24 bg-brand-matte text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold uppercase tracking-[0.25em] text-brand-gold">Nuestros Tratamientos, Cortes y Tarifas</span>
+                <h2 class="font-serif text-3xl sm:text-5xl mt-3 mb-4">Servicios Diseñados para Enamorar</h2>
+                <div class="w-16 h-0.5 bg-brand-gold mx-auto mb-6"></div>
+                <p class="text-sm sm:text-base text-zinc-400 font-light">
+                    Tarifas transparentes, asesoramiento de imagen personalizado y cosmética profesional para mujeres, hombres y toda la familia.
+                </p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Category 1: Cortes & Peinados -->
+                <div class="bg-brand-dark/90 rounded-2xl p-8 border border-white/10 hover:border-brand-gold/50 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-brand-charcoal flex items-center justify-center text-brand-gold mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-scissors text-xl"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl text-white mb-2">Corte & Styling</h3>
+                        <p class="text-xs text-zinc-400 mb-6">Precisión milimétrica adaptada a la caída natural y tus facciones.</p>
+
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-baseline border-b border-white/5 pb-2">
+                                <div>
+                                    <h4 class="text-sm font-medium text-zinc-200">Corte Mujer + Asesoría</h4>
+                                    <p class="text-xs text-zinc-400">Lavado, masaje capilar y peinado</p>
+                                </div>
+                                <span class="text-sm font-semibold text-brand-goldLight">Desde 22€</span>
+                            </div>
+
+                            <div class="flex justify-between items-baseline border-b border-white/5 pb-2">
+                                <div>
+                                    <h4 class="text-sm font-medium text-zinc-200">Corte Caballero</h4>
+                                    <p class="text-xs text-zinc-400">Corte clásico, degradado o a tijera</p>
+                                </div>
+                                <span class="text-sm font-semibold text-brand-goldLight">Desde 14€</span>
+                            </div>
+
+                            <div class="flex justify-between items-baseline border-b border-white/5 pb-2">
+                                <div>
+                                    <h4 class="text-sm font-medium text-zinc-200">Lavado & Marcado</h4>
+                                    <p class="text-xs text-zinc-400">Brushing pulido, ondas naturales o volumen</p>
+                                </div>
+                                <span class="text-sm font-semibold text-brand-goldLight">Desde 16€</span>
+                            </div>
+
+                            <div class="flex justify-between items-baseline border-b border-white/5 pb-2">
+                                <div>
+                                    <h4 class="text-sm font-medium text-zinc-200">Corte Infantil</h4>
+                                    <p class="text-xs text-zinc-400">Paciencia, diversión y estilismo moderno</p>
+                                </div>
+                                <span class="text-sm font-semibold text-brand-goldLight">12€</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 pt-4">
+                        <a href="tel:946550105" class="w-full inline-flex items-center justify-center py-2.5 px-4 text-xs uppercase font-bold tracking-wider rounded-lg bg-white/5 hover:bg-brand-gold hover:text-brand-dark transition-all text-zinc-300">
+                            Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Category 2: Coloración & Mechas -->
+                <div class="bg-brand-dark/90 rounded-2xl p-8 border border-brand-gold/40 shadow-xl relative flex flex-col justify-between group">
+                    <div class="absolute -top-3 right-6 bg-brand-gold text-brand-dark text-[10px] uppercase font-bold px-3 py-1 rounded-full tracking-widest">
+                        Especialidad
+                    </div>
+
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-brand-charcoal flex items-center justify-center text-brand-gold mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-wand-magic-sparkles text-xl"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl text-white mb-2">Color & Reflejos</h3>
+                        <p class="text-xs text-zinc-400 mb-6">Tonos vivos, cobertura 100% de canas y técnicas de luz.</p>
+
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-baseline border-b border-white/5 pb-2">
+                                <div>
+                                    <h4 class="text-sm font-medium text-zinc-200">Color Raíz Premium</h4>
+                                    <p class="text-xs text-zinc-400">Coloración tratante de máximo brillo</p>
+                                </div>
+                                <span class="text-sm font-semibold text-brand-goldLight">Desde 28€</span>
+                            </div>
+
+                            <div class="flex justify-between items-baseline border-b border-white/5 pb-2">
+                                <div>
+                                    <h4 class="text-sm font-medium text-zinc-200">Mechas Balayage / Babylights</h4>
+                                    <p class="text-xs text-zinc-400">Degradado sutil con matiz personalizado</p>
+                                </div>
+                                <span class="text-sm font-semibold text-brand-goldLight">Desde 45€</span>
+                            </div>
+
+                            <div class="flex justify-between items-baseline border-b border-white/5 pb-2">
+                                <div>
+                                    <h4 class="text-sm font-medium text-zinc-200">Reflejos Tradicionales</h4>
+                                    <p class="text-xs text-zinc-400">Luminosidad completa en toda la melena</p>
+                                </div>
+                                <span class="text-sm font-semibold text-brand-goldLight">Desde 35€</span>
+                            </div>
+
+                            <div class="flex justify-between items-baseline border-b border-white/5 pb-2">
+                                <div>
+                                    <h4 class="text-sm font-medium text-zinc-200">Baño de Brillo & Matiz</h4>
+                                    <p class="text-xs text-zinc-400">Sella cutícula y reaviva el color</p>
+                                </div>
+                                <span class="text-sm font-semibold text-brand-goldLight">Desde 18€</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 pt-4">
+                        <a href="tel:946550105" class="w-full inline-flex items-center justify-center py-2.5 px-4 text-xs uppercase font-bold tracking-wider rounded-lg bg-brand-gold text-brand-dark hover:bg-brand-goldLight transition-all">
+                            Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Category 3: Tratamientos & Eventos -->
+                <div class="bg-brand-dark/90 rounded-2xl p-8 border border-white/10 hover:border-brand-gold/50 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-brand-charcoal flex items-center justify-center text-brand-gold mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-spa text-xl"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl text-white mb-2">Tratamientos & Fiestas</h3>
+                        <p class="text-xs text-zinc-400 mb-6">Nutrición profunda, recogidos y estilismo para citas especiales.</p>
+
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-baseline border-b border-white/5 pb-2">
+                                <div>
+                                    <h4 class="text-sm font-medium text-zinc-200">Ritual Hidratación Profunda</h4>
+                                    <p class="text-xs text-zinc-400">Mascarilla intensiva con aporte proteico</p>
+                                </div>
+                                <span class="text-sm font-semibold text-brand-goldLight">15€</span>
+                            </div>
+
+                            <div class="flex justify-between items-baseline border-b border-white/5 pb-2">
+                                <div>
+                                    <h4 class="text-sm font-medium text-zinc-200">Tratamiento Antiencrespamiento</h4>
+                                    <p class="text-xs text-zinc-400">Disciplina, suavidad y brillo espejo</p>
+                                </div>
+                                <span class="text-sm font-semibold text-brand-goldLight">Consultar</span>
+                            </div>
+
+                            <div class="flex justify-between items-baseline border-b border-white/5 pb-2">
+                                <div>
+                                    <h4 class="text-sm font-medium text-zinc-200">Recogidos & Semirecogidos</h4>
+                                    <p class="text-xs text-zinc-400">Bodas, comuniones y eventos</p>
+                                </div>
+                                <span class="text-sm font-semibold text-brand-goldLight">Desde 35€</span>
+                            </div>
+
+                            <div class="flex justify-between items-baseline border-b border-white/5 pb-2">
+                                <div>
+                                    <h4 class="text-sm font-medium text-zinc-200">Pack Novia / Madrina</h4>
+                                    <p class="text-xs text-zinc-400">Prueba previa y peinado del gran día</p>
+                                </div>
+                                <span class="text-sm font-semibold text-brand-goldLight">Personalizado</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 pt-4">
+                        <a href="tel:946550105" class="w-full inline-flex items-center justify-center py-2.5 px-4 text-xs uppercase font-bold tracking-wider rounded-lg bg-white/5 hover:bg-brand-gold hover:text-brand-dark transition-all text-zinc-300">
+                            Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Note -->
+            <p class="text-center text-xs text-zinc-400 mt-10 italic">
+                * Las tarifas son orientativas y pueden ajustarse según la longitud o densidad del cabello. Consúltanos sin compromiso llamando al 946 550 105.
+            </p>
+        </div>
+    </section>
+
+    <!-- Gallery Section: Nuestras Instalaciones y Trabajos -->
+    <section id="galeria" class="py-24 bg-brand-sand">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-[0.25em] text-brand-gold">Inspiración Visual</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl text-brand-dark mt-2">Nuestras Instalaciones y Trabajos</h2>
+                </div>
+                <p class="text-xs sm:text-sm text-zinc-500 max-w-md mt-4 md:mt-0 font-light">
+                    Un vistazo a los resultados, acabados y atmósfera acogedora que te esperan en el salón de Elena.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery Item 1 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-md aspect-square bg-brand-charcoal">
+                    <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=800&q=80" 
+                         alt="Corte y Peinado Elegante" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-brand-gold text-xs uppercase tracking-wider font-semibold">Corte & Brushing</span>
+                            <h3 class="text-white font-serif text-lg">Acabados con movimiento natural</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-md aspect-square bg-brand-charcoal">
+                    <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=800&q=80" 
+                         alt="Coloración y Reflejos Luminosos" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-brand-gold text-xs uppercase tracking-wider font-semibold">Técnica Balayage</span>
+                            <h3 class="text-white font-serif text-lg">Degradados de luz y dimensión</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-md aspect-square bg-brand-charcoal">
+                    <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=800&q=80" 
+                         alt="Instalaciones y Confort" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-brand-gold text-xs uppercase tracking-wider font-semibold">Ambiente Íntimo</span>
+                            <h3 class="text-white font-serif text-lg">Espacio relajante y cuidado</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-md aspect-square bg-brand-charcoal">
+                    <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=800&q=80" 
+                         alt="Peinados de Fiesta" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-brand-gold text-xs uppercase tracking-wider font-semibold">Ocasiones Especiales</span>
+                            <h3 class="text-white font-serif text-lg">Peinados que duran toda la velada</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-md aspect-square bg-brand-charcoal">
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=80" 
+                         alt="Corte Masculino y Barba" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-brand-gold text-xs uppercase tracking-wider font-semibold">Estilo Caballero</span>
+                            <h3 class="text-white font-serif text-lg">Cortes limpios y definidos</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-md aspect-square bg-brand-charcoal">
+                    <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=800&q=80" 
+                         alt="Tratamientos Capilares y Brillo" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-brand-gold text-xs uppercase tracking-wider font-semibold">Cuidado & Salud</span>
+                            <h3 class="text-white font-serif text-lg">Cabello fuerte, suave y radiante</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Verified Customer Reviews Section -->
+    <section id="opiniones" class="py-24 bg-brand-matte text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-bold uppercase tracking-[0.25em] text-brand-gold">Opiniones Verificadas</span>
+                <h2 class="font-serif text-3xl sm:text-5xl mt-3 mb-4">Lo Que Dicen Quienes Nos Visitan</h2>
+                <div class="w-16 h-0.5 bg-brand-gold mx-auto mb-4"></div>
+                <div class="flex items-center justify-center gap-1 text-brand-gold text-sm">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <span class="text-xs text-zinc-300 font-sans ml-2">(Valoraciones reales en Google Maps)</span>
+                </div>
+            </div>
+
+            <!-- Review Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Review 1 -->
+                <div class="bg-brand-dark p-8 rounded-2xl border border-white/10 flex flex-col justify-between hover:border-brand-gold/40 transition-all duration-300 shadow-xl relative">
+                    <i class="fa-solid fa-quote-right text-brand-gold/20 text-5xl absolute top-6 right-6 pointer-events-none"></i>
+                    <div>
+                        <div class="flex text-brand-gold text-xs mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-zinc-300 italic text-sm sm:text-base leading-relaxed mb-6 font-serif">
+                            “Elena es muy profesional, ir a la peluquería elebe significa , salir bien peinada y despues de haber hechado unas risas”
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/5">
+                        <div class="w-10 h-10 rounded-full bg-brand-charcoal text-brand-gold flex items-center justify-center font-bold font-serif">
+                            C
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-semibold text-white">Carmmen Irasuegi Archaga</h3>
+                            <span class="text-[11px] text-zinc-400">Cliente Verificada • Google Maps</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-brand-dark p-8 rounded-2xl border border-white/10 flex flex-col justify-between hover:border-brand-gold/40 transition-all duration-300 shadow-xl relative">
+                    <i class="fa-solid fa-quote-right text-brand-gold/20 text-5xl absolute top-6 right-6 pointer-events-none"></i>
+                    <div>
+                        <div class="flex text-brand-gold text-xs mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-zinc-300 italic text-sm sm:text-base leading-relaxed mb-6 font-serif">
+                            “Ese lugar está muy bien posicionado y te cortan el pelo demasiado bien”
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/5">
+                        <div class="w-10 h-10 rounded-full bg-brand-charcoal text-brand-gold flex items-center justify-center font-bold font-serif">
+                            E
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-semibold text-white">Eneko Bilbao</h3>
+                            <span class="text-[11px] text-zinc-400">Cliente Verificado • Google Maps</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-brand-dark p-8 rounded-2xl border border-white/10 flex flex-col justify-between hover:border-brand-gold/40 transition-all duration-300 shadow-xl relative">
+                    <i class="fa-solid fa-quote-right text-brand-gold/20 text-5xl absolute top-6 right-6 pointer-events-none"></i>
+                    <div>
+                        <div class="flex text-brand-gold text-xs mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-zinc-300 italic text-sm sm:text-base leading-relaxed mb-6 font-serif">
+                            “Un trato familiar. Y sales como esperabas. Súper bien”
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/5">
+                        <div class="w-10 h-10 rounded-full bg-brand-charcoal text-brand-gold flex items-center justify-center font-bold font-serif">
+                            M
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-semibold text-white">Marian Ruiz</h3>
+                            <span class="text-[11px] text-zinc-400">Cliente Verificada • Google Maps</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Trust Bar -->
+            <div class="mt-16 py-6 px-8 rounded-2xl bg-brand-dark/60 border border-brand-gold/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-brand-gold/20 text-brand-gold flex items-center justify-center text-xl flex-shrink-0">
+                        <i class="fa-solid fa-smile"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-semibold text-white">¿Quieres disfrutar de la experiencia Elebe?</h4>
+                        <p class="text-xs text-zinc-400">Llámanos y asegúrate tu momento de belleza y bienestar con Elena.</p>
+                    </div>
+                </div>
+                <a href="tel:946550105" class="px-6 py-3 bg-brand-gold text-brand-dark text-xs uppercase font-bold tracking-widest rounded-full hover:bg-brand-goldLight transition-colors whitespace-nowrap">
+                    Reservar Cita
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Location & Contact Section with Interactive Map -->
+    <section id="contacto" class="py-24 bg-brand-sand relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-bold uppercase tracking-[0.25em] text-brand-gold">Dónde Encontrarnos</span>
+                <h2 class="font-serif text-3xl sm:text-4xl text-brand-dark mt-2 mb-3">Tu Salón en Zelaieta, Bizkaia</h2>
+                <div class="w-16 h-0.5 bg-brand-gold mx-auto mb-4"></div>
+                <p class="text-sm text-zinc-600 font-light">
+                    Fácil acceso, excelente ubicación y un entorno inmejorable en la comarca de Busturialdea / Elantxobe.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                <!-- Contact Information Card -->
+                <div class="lg:col-span-5 bg-white p-8 sm:p-10 rounded-2xl shadow-lg border border-brand-sandDark flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-serif text-2xl text-brand-dark mb-6">Información de Contacto</h3>
+
+                        <div class="space-y-6">
+                            <!-- Address -->
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-brand-sand text-brand-gold flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs uppercase tracking-wider font-bold text-zinc-400">Dirección</h4>
+                                    <p class="text-sm font-semibold text-brand-dark mt-0.5">
+                                        Iturritxo Kalea, 2, 48220 Zelaieta, Bizkaia, España
+                                    </p>
+                                    <span class="text-xs text-zinc-500">Comarca de Busturialdea / Elantxobe</span>
+                                </div>
+                            </div>
+
+                            <!-- Phone -->
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-brand-sand text-brand-gold flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs uppercase tracking-wider font-bold text-zinc-400">Teléfono Directo</h4>
+                                    <a href="tel:946550105" class="text-lg font-bold text-brand-dark hover:text-brand-gold transition-colors block mt-0.5">
+                                        946 550 105
+                                    </a>
+                                    <span class="text-xs text-zinc-500">Llamada inmediata para citas y consultas</span>
+                                </div>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-brand-sand text-brand-gold flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs uppercase tracking-wider font-bold text-zinc-400">Correo Electrónico</h4>
+                                    <a href="mailto:jddhelp@profrac.com" class="text-sm font-semibold text-brand-dark hover:text-brand-gold transition-colors block mt-0.5">
+                                        jddhelp@profrac.com
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Attention hours -->
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-brand-sand text-brand-gold flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs uppercase tracking-wider font-bold text-zinc-400">Horario de Atención</h4>
+                                    <p class="text-xs text-zinc-600 mt-1">
+                                        De Martes a Sábado (Horario comercial y cita previa)<br>
+                                        <span class="italic text-zinc-400">Te recomendamos reservar con antelación</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Direct reservation button inside card -->
+                    <div class="mt-8 pt-6 border-t border-brand-sandDark">
+                        <a href="tel:946550105" class="w-full inline-flex items-center justify-center py-4 px-6 text-xs uppercase font-bold tracking-widest text-white bg-brand-dark hover:bg-brand-matte rounded-xl transition-all shadow-md group">
+                            <i class="fa-solid fa-phone mr-2 text-brand-gold group-hover:rotate-12 transition-transform"></i>
+                            Reservar Cita Ahora
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Interactive Map Container -->
+                <div class="lg:col-span-7 rounded-2xl overflow-hidden shadow-lg border border-brand-sandDark bg-white min-h-[380px] flex flex-col">
+                    <div class="p-4 bg-brand-dark text-white flex items-center justify-between text-xs tracking-wider">
+                        <span class="flex items-center gap-2">
+                            <i class="fa-solid fa-map-location-dot text-brand-gold"></i> Localización exacta en Google Maps
+                        </span>
+                        <a href="https://www.google.com/maps?q=Peluquer%C3%ADa%20Elebe%20Iturritxo%20Kalea%2C%202%2C%2048220%20Zelaieta%2C%20Bizkaia%2C%20Espa%C3%B1a" target="_blank" rel="noopener noreferrer" class="text-brand-gold hover:underline">
+                            Abrir en app <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i>
+                        </a>
+                    </div>
+                    <div class="w-full flex-grow">
+                        <iframe src="https://www.google.com/maps?q=Peluquer%C3%ADa%20Elebe%20Iturritxo%20Kalea%2C%202%2C%2048220%20Zelaieta%2C%20Bizkaia%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 0 0 1rem 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-zinc-400 py-16 border-t border-white/10 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                
+                <!-- Col 1: Brand -->
+                <div class="md:col-span-2">
+                    <span class="font-serif text-2xl text-white tracking-widest font-normal uppercase">
+                        PELUQUERÍA ELEBE
+                    </span>
+                    <p class="text-xs text-brand-gold tracking-[0.25em] uppercase mt-1 mb-4">Salón de Belleza • Zelaieta</p>
+                    <p class="text-zinc-400 leading-relaxed font-light max-w-md">
+                        Tu espacio de confianza en Bizkaia. Cortes con estilo propio, colorimetría experta y un ambiente amigable y relajante donde salir peinada como siempre quisiste.
+                    </p>
+                </div>
+
+                <!-- Col 2: Enlaces Rápidos -->
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-widest mb-4">Navegación</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#experiencia" class="hover:text-brand-gold transition-colors">La Peluquería</a></li>
+                        <li><a href="#servicios" class="hover:text-brand-gold transition-colors">Cortes y Tratamientos</a></li>
+                        <li><a href="#galeria" class="hover:text-brand-gold transition-colors">Nuestros Trabajos</a></li>
+                        <li><a href="#opiniones" class="hover:text-brand-gold transition-colors">Testimonios Reales</a></li>
+                        <li><a href="#contacto" class="hover:text-brand-gold transition-colors">Cómo Llegar</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Contacto Rápido -->
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-widest mb-4">Reservas</h4>
+                    <p class="mb-2">¿Quieres tu cita hoy mismo?</p>
+                    <a href="tel:946550105" class="inline-flex items-center gap-2 text-white font-bold text-sm hover:text-brand-gold transition-colors mb-4">
+                        <i class="fa-solid fa-phone text-brand-gold"></i> 946 550 105
+                    </a>
+                    <p class="text-[11px] text-zinc-400">Iturritxo Kalea, 2, 48220 Zelaieta, Bizkaia</p>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4 text-zinc-400">
+                <p>© <span id="currentYear"></span> Peluquería Elebe. Todos los derechos reservados.</p>
+                <div class="flex items-center space-x-6">
+                    <span class="text-zinc-400">Zelaieta / Elantxobe • Bizkaia</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Button for Mobile -->
+    <div class="fixed bottom-6 right-6 z-50 md:hidden">
+        <a href="tel:946550105" class="flex items-center justify-center w-14 h-14 bg-brand-gold text-brand-dark rounded-full shadow-2xl shadow-brand-gold/50 active:scale-95 transition-transform" aria-label="Llamar para reservar">
+            <i class="fa-solid fa-phone text-xl animate-bounce"></i>
+        </a>
+    </div>
+
+    <!-- JavaScript for Mobile Menu & Dynamic Year -->
+    <script>
+        // Update year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
