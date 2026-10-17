@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Naturbell | Gabinete de Estética Avanzada en Salamanca</title>
+  <meta name="description" content="Naturbell: Centro de estética avanzada dirigido por Ana Belén. Tratamientos faciales, corporales, aparatología de vanguardia y microblading en Salamanca.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              black: '#0D0D0D',
+              dark: '#161616',
+              charcoal: '#222222',
+              gold: '#C5A880',
+              goldHover: '#B5966C',
+              sand: '#F7F5F0',
+              sandMuted: '#EFECE6',
+              beige: '#E6DFC5'
+            }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'serif'],
+            sans: ['"Montserrat"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .bg-glass {
+      background: rgba(22, 22, 22, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .text-gold-gradient {
+      background: linear-gradient(135deg, #F3E7D3 0%, #C5A880 50%, #9E7D53 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .border-gold-subtle {
+      border-color: rgba(197, 168, 128, 0.25);
+    }
+  </style>
+</head>
+<body class="bg-brand-black text-stone-300 font-sans antialiased selection:bg-brand-gold selection:text-black">
+
+  <!-- Top Notification Bar -->
+  <div class="bg-brand-gold text-black py-2 px-4 text-xs font-semibold tracking-widest uppercase text-center flex items-center justify-center gap-2">
+    <i class="fa-regular fa-calendar-check"></i>
+    <span>Atención personalizada con cita previa | P.º de Carmelitas, 41, Salamanca</span>
+    <a href="tel:686952259" class="underline hover:opacity-80 transition ml-2 hidden sm:inline">Llamar: 686 95 22 59</a>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="sticky top-0 z-50 bg-glass border-b border-brand-charcoal transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#" class="group flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full border border-brand-gold flex items-center justify-center text-brand-gold transition-all duration-300 group-hover:scale-105 group-hover:border-white">
+          <span class="font-serif text-2xl italic font-semibold">N</span>
+        </div>
+        <div>
+          <span class="font-serif text-2xl tracking-wider text-white font-normal block leading-none">NATURBELL</span>
+          <span class="text-[9px] uppercase tracking-[0.25em] text-brand-gold block font-semibold">Gabinete de Estética</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center space-x-8 text-xs uppercase tracking-widest font-medium text-stone-300">
+        <a href="#experiencia" class="hover:text-brand-gold transition-colors">Experiencia</a>
+        <a href="#tratamientos" class="hover:text-brand-gold transition-colors">Tratamientos</a>
+        <a href="#instalaciones" class="hover:text-brand-gold transition-colors">Instalaciones</a>
+        <a href="#opiniones" class="hover:text-brand-gold transition-colors">Opiniones</a>
+        <a href="#ubicacion" class="hover:text-brand-gold transition-colors">Contacto</a>
+      </nav>
+
+      <!-- Desktop CTA Button -->
+      <div class="hidden sm:block">
+        <a href="tel:686952259" class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-brand-gold hover:bg-brand-goldHover text-black text-xs font-semibold uppercase tracking-wider transition-all duration-300 transform hover:scale-[1.02] shadow-lg shadow-brand-gold/10">
+          <i class="fa-solid fa-phone-volume text-sm"></i>
+          <span>Reservar Cita</span>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="menu-toggle" class="md:hidden text-white text-xl focus:outline-none" aria-label="Abrir Menú">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-brand-dark border-b border-brand-charcoal px-6 py-6 space-y-4">
+      <a href="#experiencia" class="block text-sm uppercase tracking-wider text-stone-300 hover:text-brand-gold">Experiencia</a>
+      <a href="#tratamientos" class="block text-sm uppercase tracking-wider text-stone-300 hover:text-brand-gold">Tratamientos y Tarifas</a>
+      <a href="#instalaciones" class="block text-sm uppercase tracking-wider text-stone-300 hover:text-brand-gold">Instalaciones y Trabajos</a>
+      <a href="#opiniones" class="block text-sm uppercase tracking-wider text-stone-300 hover:text-brand-gold">Opiniones</a>
+      <a href="#ubicacion" class="block text-sm uppercase tracking-wider text-stone-300 hover:text-brand-gold">Ubicación</a>
+      <a href="tel:686952259" class="block text-center w-full py-3 bg-brand-gold text-black font-semibold text-xs uppercase tracking-wider rounded-full mt-4">
+        Reservar Cita
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-brand-black">
+    <!-- Background Image with Dark Luxury Overlay -->
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1920&q=80" 
+           alt="Tratamiento estético Naturbell" 
+           class="w-full h-full object-cover object-center opacity-30 scale-105 transform duration-1000 ease-out" 
+           referrerpolicy="no-referrer" 
+           onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+      <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/60 to-transparent"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-brand-black via-brand-black/50 to-transparent"></div>
+    </div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-6 py-20 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-gold/40 bg-brand-dark/80 text-brand-gold text-xs tracking-widest uppercase mb-6 backdrop-blur-md">
+        <i class="fa-solid fa-sparkles text-[11px]"></i>
+        <span>Gabinete de Estética Avanzada · Ana Belén</span>
+      </div>
+
+      <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-normal text-white leading-tight sm:leading-none mb-6">
+        El arte del cuidado personal <br>
+        <span class="italic text-gold-gradient font-light">en las mejores manos.</span>
+      </h1>
+
+      <p class="max-w-2xl mx-auto text-stone-300 text-sm sm:text-base leading-relaxed font-light mb-10">
+        Bienvenida a un espacio íntimo donde la aparatología de vanguardia se funde con la delicadeza, el diagnóstico honesto y tratamientos a medida para devolverle a tu piel su tersura y luminosidad natural.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="tel:686952259" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-brand-gold hover:bg-brand-goldHover text-black text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-xl shadow-brand-gold/15">
+          <i class="fa-solid fa-calendar-check text-sm"></i>
+          <span>Reservar Cita</span>
+        </a>
+        <a href="#tratamientos" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-stone-700 hover:border-brand-gold text-white text-xs font-medium uppercase tracking-widest transition-all duration-300 bg-brand-dark/50 hover:bg-brand-dark">
+          <span>Explorar Tratamientos</span>
+          <i class="fa-solid fa-arrow-down text-xs"></i>
+        </a>
+      </div>
+
+      <!-- Trust Badges -->
+      <div class="mt-16 pt-10 border-t border-brand-charcoal grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div>
+          <div class="text-2xl font-serif text-brand-gold">5.0 ★★★★★</div>
+          <p class="text-[11px] text-stone-400 uppercase tracking-widest mt-1">Calificación en Google</p>
+        </div>
+        <div>
+          <div class="text-2xl font-serif text-white">Máquinas Top</div>
+          <p class="text-[11px] text-stone-400 uppercase tracking-widest mt-1">Aparatología Avanzada</p>
+        </div>
+        <div>
+          <div class="text-2xl font-serif text-white">Personalizado</div>
+          <p class="text-[11px] text-stone-400 uppercase tracking-widest mt-1">Diagnóstico Individual</p>
+        </div>
+        <div>
+          <div class="text-2xl font-serif text-brand-gold">Paseo Carmelitas</div>
+          <p class="text-[11px] text-stone-400 uppercase tracking-widest mt-1">Salamanca Centro</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre Ana Belén / Experiencia Section -->
+  <section id="experiencia" class="py-24 bg-brand-dark border-t border-b border-brand-charcoal">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        
+        <div class="lg:col-span-6 relative">
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            <!-- Decorative Accent Frame -->
+            <div class="absolute -top-4 -left-4 w-full h-full border border-brand-gold/40 rounded-2xl pointer-events-none"></div>
+            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1000&q=80" 
+                 alt="Cuidado facial y bienestar en Naturbell" 
+                 class="relative rounded-2xl object-cover w-full h-[480px] shadow-2xl" 
+                 referrerpolicy="no-referrer" 
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+            
+            <div class="absolute -bottom-6 -right-4 bg-brand-black/95 border border-brand-gold/40 p-5 rounded-xl shadow-xl max-w-xs">
+              <div class="flex items-center gap-3">
+                <i class="fa-solid fa-award text-brand-gold text-2xl"></i>
+                <div>
+                  <p class="text-white text-xs font-semibold">"Las mejores manos de Salamanca"</p>
+                  <p class="text-stone-400 text-[10px] mt-0.5">Opinión real de nuestras clientas</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6">
+          <div class="inline-flex items-center gap-2 text-xs font-semibold tracking-widest text-brand-gold uppercase mb-3">
+            <span class="w-6 h-[1px] bg-brand-gold"></span>
+            <span>Profesionalidad & Delicadeza</span>
+          </div>
+          <h2 class="font-serif text-3xl sm:text-4xl text-white mb-6 leading-tight">
+            Cuidado riguroso de la piel con la máxima atención personal
+          </h2>
+          <p class="text-stone-300 text-sm sm:text-base leading-relaxed mb-6 font-light">
+            En <strong>Naturbell</strong>, cada cita es un paréntesis de calma y bienestar. Dirigido por <strong>Ana Belén</strong>, nuestro gabinete se distingue por la honestidad en el asesoramiento y el dominio de protocolos faciales y corporales que marcan un antes y un después.
+          </p>
+          <p class="text-stone-400 text-sm leading-relaxed mb-8 font-light">
+            No creemos en tratamientos genéricos. Analizamos el estado biológico de tu piel para seleccionar la combinación precisa de cosmecéutica de alta gama, técnicas manuales envolventes y tecnología estética de última generación.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-full bg-brand-charcoal flex items-center justify-center text-brand-gold shrink-0 mt-1">
+                <i class="fa-solid fa-check text-xs"></i>
+              </div>
+              <div>
+                <h4 class="text-white text-sm font-medium">Equipamiento Avanzado</h4>
+                <p class="text-stone-400 text-xs">Maquinaria puntera para resultados visibles desde la primera sesión.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-full bg-brand-charcoal flex items-center justify-center text-brand-gold shrink-0 mt-1">
+                <i class="fa-solid fa-shield-heart text-xs"></i>
+              </div>
+              <div>
+                <h4 class="text-white text-sm font-medium">Higiene & Seguridad</h4>
+                <p class="text-stone-400 text-xs">Máxima pulcritud y protocolos estrictos de bienestar y confort.</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="tel:686952259" class="inline-flex items-center gap-3 px-7 py-3 rounded-full bg-transparent border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-black text-xs font-semibold uppercase tracking-wider transition-all duration-300">
+            <i class="fa-solid fa-phone text-xs"></i>
+            <span>Reservar Cita</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Nuestros Tratamientos y Carta de Servicios -->
+  <section id="tratamientos" class="py-24 bg-brand-black">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs uppercase tracking-widest text-brand-gold font-semibold block mb-2">Carta de Especialidades</span>
+        <h2 class="font-serif text-3xl sm:text-5xl text-white font-normal mb-4">Nuestros Tratamientos y Tarifas</h2>
+        <p class="text-stone-400 text-sm font-light">
+          Programas creados para realzar tu belleza innata. Tarifas claras, honestas y adaptadas a las necesidades específicas de tu rostro y cuerpo.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Bloque 1: Cuidado Facial -->
+        <div class="bg-brand-dark p-8 rounded-2xl border border-brand-charcoal hover:border-brand-gold/50 transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-brand-charcoal text-brand-gold flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+            <h3 class="font-serif text-2xl text-white mb-2">Faciales & Piel Tersa</h3>
+            <p class="text-stone-400 text-xs mb-6">Tratamientos a medida con tecnología no invasiva para renovar, desintoxicar e iluminar.</p>
+            
+            <ul class="space-y-4 text-xs">
+              <li class="flex items-start justify-between border-b border-brand-charcoal pb-3">
+                <div>
+                  <strong class="text-white block font-medium">Higiene Profunda & Oxigenación</strong>
+                  <span class="text-stone-400 text-[11px]">Limpieza de cutis profunda, extracción y purificación celular.</span>
+                </div>
+                <span class="text-brand-gold font-medium ml-2 shrink-0">Consultar</span>
+              </li>
+              <li class="flex items-start justify-between border-b border-brand-charcoal pb-3">
+                <div>
+                  <strong class="text-white block font-medium">Tratamiento Firmeza & Tersura</strong>
+                  <span class="text-stone-400 text-[11px]">Protocolo antiedad con maquinaria reafirmante y activos puros.</span>
+                </div>
+                <span class="text-brand-gold font-medium ml-2 shrink-0">Personalizado</span>
+              </li>
+              <li class="flex items-start justify-between">
+                <div>
+                  <strong class="text-white block font-medium">Preparación de Piel para Eventos</strong>
+                  <span class="text-stone-400 text-[11px]">Efecto flash y luminosidad inmediata para novias y ocasiones.</span>
+                </div>
+                <span class="text-brand-gold font-medium ml-2 shrink-0">Especial</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-8 pt-4">
+            <a href="tel:686952259" class="w-full text-center block py-2.5 rounded-full border border-stone-700 hover:border-brand-gold text-white hover:text-brand-gold text-xs font-medium uppercase tracking-wider transition">
+              Reservar Cita
+            </a>
+          </div>
+        </div>
+
+        <!-- Bloque 2: Mirada & Microblading -->
+        <div class="bg-brand-dark p-8 rounded-2xl border border-brand-gold/40 shadow-xl shadow-brand-gold/5 flex flex-col justify-between group relative overflow-hidden">
+          <div class="absolute top-0 right-0 bg-brand-gold text-black text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-bl-lg">
+            Especialidad
+          </div>
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-brand-charcoal text-brand-gold flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-feather-pointed"></i>
+            </div>
+            <h3 class="font-serif text-2xl text-white mb-2">Mirada & Microblading</h3>
+            <p class="text-stone-400 text-xs mb-6">Técnicas hiperrealistas de precisión milimétrica adaptadas a la fisonomía de tu rostro.</p>
+            
+            <ul class="space-y-4 text-xs">
+              <li class="flex items-start justify-between border-b border-brand-charcoal pb-3">
+                <div>
+                  <strong class="text-white block font-medium">Microblading Pelo a Pelo</strong>
+                  <span class="text-stone-400 text-[11px]">Pigmentación natural, diseño simétrico y relleno armónico.</span>
+                </div>
+                <span class="text-brand-gold font-medium ml-2 shrink-0">Tarifa a Medida</span>
+              </li>
+              <li class="flex items-start justify-between border-b border-brand-charcoal pb-3">
+                <div>
+                  <strong class="text-white block font-medium">Diseño & Perfilado de Cejas</strong>
+                  <span class="text-stone-400 text-[11px]">Estudio visagístico y depilación con máxima delicadeza.</span>
+                </div>
+                <span class="text-brand-gold font-medium ml-2 shrink-0">Desde 12€</span>
+              </li>
+              <li class="flex items-start justify-between">
+                <div>
+                  <strong class="text-white block font-medium">Lifting & Tinte de Pestañas</strong>
+                  <span class="text-stone-400 text-[11px]">Curvatura e intensidad en tu mirada durante semanas.</span>
+                </div>
+                <span class="text-brand-gold font-medium ml-2 shrink-0">Consultar</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-8 pt-4">
+            <a href="tel:686952259" class="w-full text-center block py-2.5 rounded-full bg-brand-gold text-black hover:bg-brand-goldHover text-xs font-semibold uppercase tracking-wider transition">
+              Reservar Cita
+            </a>
+          </div>
+        </div>
+
+        <!-- Bloque 3: Corporal & Depilación -->
+        <div class="bg-brand-dark p-8 rounded-2xl border border-brand-charcoal hover:border-brand-gold/50 transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-brand-charcoal text-brand-gold flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-spa"></i>
+            </div>
+            <h3 class="font-serif text-2xl text-white mb-2">Corporal & Depilación</h3>
+            <p class="text-stone-400 text-xs mb-6">Equipamiento tecnológico y cuidados globales para tonificar y mimar tu piel.</p>
+            
+            <ul class="space-y-4 text-xs">
+              <li class="flex items-start justify-between border-b border-brand-charcoal pb-3">
+                <div>
+                  <strong class="text-white block font-medium">Tratamientos Corporales con Máquinas</strong>
+                  <span class="text-stone-400 text-[11px]">Drenaje, modelado, reducción de retención y celulitis.</span>
+                </div>
+                <span class="text-brand-gold font-medium ml-2 shrink-0">Bono Sesiones</span>
+              </li>
+              <li class="flex items-start justify-between border-b border-brand-charcoal pb-3">
+                <div>
+                  <strong class="text-white block font-medium">Depilación Profesional</strong>
+                  <span class="text-stone-400 text-[11px]">Zonas faciales y corporales con trato suave y sin irritación.</span>
+                </div>
+                <span class="text-brand-gold font-medium ml-2 shrink-0">Económico</span>
+              </li>
+              <li class="flex items-start justify-between">
+                <div>
+                  <strong class="text-white block font-medium">Masajes & Bienestar Integrativo</strong>
+                  <span class="text-stone-400 text-[11px]">Desconexión muscular y renovación energética profunda.</span>
+                </div>
+                <span class="text-brand-gold font-medium ml-2 shrink-0">Cita Previa</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-8 pt-4">
+            <a href="tel:686952259" class="w-full text-center block py-2.5 rounded-full border border-stone-700 hover:border-brand-gold text-white hover:text-brand-gold text-xs font-medium uppercase tracking-wider transition">
+              Reservar Cita
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-12 p-6 rounded-2xl bg-brand-dark/50 border border-brand-charcoal text-center max-w-2xl mx-auto">
+        <p class="text-xs text-stone-400 leading-relaxed">
+          <i class="fa-solid fa-circle-info text-brand-gold mr-1"></i>
+          Precios atractivos y promociones personalizadas según pack de sesiones. Te asesoramos sin compromiso para sugerirte únicamente lo que tu piel de verdad necesita.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Nuestras Instalaciones y Trabajos -->
+  <section id="instalaciones" class="py-24 bg-brand-dark border-t border-b border-brand-charcoal">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+        <div>
+          <span class="text-xs uppercase tracking-widest text-brand-gold font-semibold block mb-2">Galería de Imágenes</span>
+          <h2 class="font-serif text-3xl sm:text-5xl text-white font-normal">Nuestras Instalaciones y Trabajos</h2>
+        </div>
+        <p class="text-stone-400 text-xs sm:text-sm max-w-md font-light">
+          Un entorno pulcro, armonioso y relajante concebido para garantizar tu confort, bienestar e intimidad durante cada sesión.
+        </p>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <div class="group relative overflow-hidden rounded-2xl aspect-[4/5] bg-brand-charcoal">
+          <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80" 
+               alt="Gabinete y cabina de belleza Naturbell" 
+               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+               referrerpolicy="no-referrer" 
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+            <div>
+              <span class="text-[10px] uppercase text-brand-gold font-semibold tracking-wider block">Ambiente</span>
+              <p class="text-white text-sm font-serif">Cabina de Tratamiento</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="group relative overflow-hidden rounded-2xl aspect-[4/5] bg-brand-charcoal">
+          <img src="https://images.unsplash.com/photo-1512290900672-1f5518b956a8?auto=format&fit=crop&w=800&q=80" 
+               alt="Tratamiento de piel tersa en Naturbell" 
+               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+               referrerpolicy="no-referrer" 
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+            <div>
+              <span class="text-[10px] uppercase text-brand-gold font-semibold tracking-wider block">Facial</span>
+              <p class="text-white text-sm font-serif">Cuidado y Tersura de Cutis</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="group relative overflow-hidden rounded-2xl aspect-[4/5] bg-brand-charcoal">
+          <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80" 
+               alt="Microblading y perfilado de cejas profesional" 
+               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+               referrerpolicy="no-referrer" 
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+            <div>
+              <span class="text-[10px] uppercase text-brand-gold font-semibold tracking-wider block">Mirada</span>
+              <p class="text-white text-sm font-serif">Precisión en Cejas & Microblading</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="group relative overflow-hidden rounded-2xl aspect-[4/5] bg-brand-charcoal">
+          <img src="https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?auto=format&fit=crop&w=800&q=80" 
+               alt="Cosmecéutica y aparatología estética" 
+               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+               referrerpolicy="no-referrer" 
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+            <div>
+              <span class="text-[10px] uppercase text-brand-gold font-semibold tracking-wider block">Aparatología</span>
+              <p class="text-white text-sm font-serif">Tecnología de Punta</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-10 text-center">
+        <a href="tel:686952259" class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-brand-gold hover:text-white transition">
+          <span>Consulta disponibilidad y pide cita ahora</span>
+          <i class="fa-solid fa-arrow-right text-xs"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Opiniones Reales Verificadas -->
+  <section id="opiniones" class="py-24 bg-brand-black">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <div class="inline-flex items-center justify-center gap-1 text-brand-gold text-sm mb-3">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <span class="text-xs uppercase tracking-widest text-brand-gold font-semibold block mb-2">Opiniones Reales Verificadas</span>
+        <h2 class="font-serif text-3xl sm:text-5xl text-white font-normal mb-4">La Confianza de Nuestras Clientas</h2>
+        <p class="text-stone-400 text-sm font-light">
+          Reseñas auténticas extraídas de Google Maps de quienes confían habitualmente en Ana Belén para el cuidado de su piel.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Reseña 1: Laura Macias -->
+        <div class="bg-brand-dark p-7 rounded-2xl border border-brand-charcoal hover:border-brand-gold/40 transition duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex text-brand-gold text-xs gap-1">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-[10px] text-stone-500 uppercase tracking-wider"><i class="fa-brands fa-google text-stone-400 mr-1"></i>Verificada</span>
+            </div>
+            <p class="text-stone-300 text-xs sm:text-sm leading-relaxed italic mb-6">
+              "He quedado muy contenta con el trabajo realizado por Ana, su delicadeza y profesionalidad, su conocimiento y trato personal tan pulido y bien hecho. Un placer."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-brand-charcoal">
+            <div class="w-8 h-8 rounded-full bg-brand-charcoal border border-brand-gold/30 flex items-center justify-center text-xs text-brand-gold font-serif">
+              LM
+            </div>
+            <div>
+              <p class="text-white text-xs font-semibold">Laura Macias</p>
+              <p class="text-stone-400 text-[10px]">Clienta Verificada</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reseña 2: María Díez -->
+        <div class="bg-brand-dark p-7 rounded-2xl border border-brand-charcoal hover:border-brand-gold/40 transition duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex text-brand-gold text-xs gap-1">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-[10px] text-stone-500 uppercase tracking-wider"><i class="fa-brands fa-google text-stone-400 mr-1"></i>Verificada</span>
+            </div>
+            <p class="text-stone-300 text-xs sm:text-sm leading-relaxed italic mb-6">
+              "Después de probar en varios centros de belleza conocí a Ana Belén y estoy encantada con ella. Es excelente como persona y como profesional, he notado mucha diferencia porque Ana cuida la piel con los mejores tratamientos y buenas máquinas…"
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-brand-charcoal">
+            <div class="w-8 h-8 rounded-full bg-brand-charcoal border border-brand-gold/30 flex items-center justify-center text-xs text-brand-gold font-serif">
+              MD
+            </div>
+            <div>
+              <p class="text-white text-xs font-semibold">María Díez</p>
+              <p class="text-stone-400 text-[10px]">Clienta Verificada</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reseña 3: Rubi de Tormes -->
+        <div class="bg-brand-dark p-7 rounded-2xl border border-brand-charcoal hover:border-brand-gold/40 transition duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex text-brand-gold text-xs gap-1">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-[10px] text-stone-500 uppercase tracking-wider"><i class="fa-brands fa-google text-stone-400 mr-1"></i>Verificada</span>
+            </div>
+            <p class="text-stone-300 text-xs sm:text-sm leading-relaxed italic mb-6">
+              "Me encanta el trato, el cuidado y delicadeza de Ana en los tratamientos, si quieres lucir una piel tersa, hacerte un tratamiento facial o corporal, limpieza de cutis, depilación o microblading este es tu centro, quedarás encantad@, yo…"
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-brand-charcoal">
+            <div class="w-8 h-8 rounded-full bg-brand-charcoal border border-brand-gold/30 flex items-center justify-center text-xs text-brand-gold font-serif">
+              RT
+            </div>
+            <div>
+              <p class="text-white text-xs font-semibold">Rubi de Tormes</p>
+              <p class="text-stone-400 text-[10px]">Clienta Verificada</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reseña 4: Iris Sánchez Pinto -->
+        <div class="bg-brand-dark p-7 rounded-2xl border border-brand-charcoal hover:border-brand-gold/40 transition duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex text-brand-gold text-xs gap-1">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-[10px] text-stone-500 uppercase tracking-wider"><i class="fa-brands fa-google text-stone-400 mr-1"></i>Verificada</span>
+            </div>
+            <p class="text-stone-300 text-xs sm:text-sm leading-relaxed italic mb-6">
+              "Trato increíble y trabajo aún mejor! Las mejores manos de toda Salamanca para preparar tu piel y todo muy bien! Sin duda alguna es mi lugar favorito y no lo cambio por nada ni nadie!"
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-brand-charcoal">
+            <div class="w-8 h-8 rounded-full bg-brand-charcoal border border-brand-gold/30 flex items-center justify-center text-xs text-brand-gold font-serif">
+              IS
+            </div>
+            <div>
+              <p class="text-white text-xs font-semibold">Iris Sánchez Pinto</p>
+              <p class="text-stone-400 text-[10px]">Clienta Verificada</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reseña 5: tatiana de la cruz -->
+        <div class="bg-brand-dark p-7 rounded-2xl border border-brand-charcoal hover:border-brand-gold/40 transition duration-300 flex flex-col justify-between md:col-span-2 lg:col-span-2">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex text-brand-gold text-xs gap-1">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-[10px] text-stone-500 uppercase tracking-wider"><i class="fa-brands fa-google text-stone-400 mr-1"></i>Verificada</span>
+            </div>
+            <p class="text-stone-300 text-xs sm:text-sm leading-relaxed italic mb-6">
+              "Recomendaría este gabinete a quienes quieran disfrutar de un buen trato y profesionalidad. Me informaron de diferentes tratamientos adecuados a mis necesidades transmitiéndome una gran seguridad. Cuidan las medidas covid y precios muy atractivos."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-brand-charcoal">
+            <div class="w-8 h-8 rounded-full bg-brand-charcoal border border-brand-gold/30 flex items-center justify-center text-xs text-brand-gold font-serif">
+              TC
+            </div>
+            <div>
+              <p class="text-white text-xs font-semibold">tatiana de la cruz</p>
+              <p class="text-stone-400 text-[10px]">Clienta Verificada</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-12 text-center">
+        <a href="tel:686952259" class="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-brand-gold hover:bg-brand-goldHover text-black text-xs font-bold uppercase tracking-widest transition duration-300 shadow-lg shadow-brand-gold/10">
+          <i class="fa-solid fa-phone-volume"></i>
+          <span>Reservar Cita</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Ubicación & Contacto / Mapa Interactivo -->
+  <section id="ubicacion" class="py-24 bg-brand-dark border-t border-brand-charcoal">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Info Column -->
+        <div class="lg:col-span-5">
+          <span class="text-xs uppercase tracking-widest text-brand-gold font-semibold block mb-2">Visítanos en Salamanca</span>
+          <h2 class="font-serif text-3xl sm:text-4xl text-white font-normal mb-6">Tu espacio de confianza y serenidad</h2>
+          <p class="text-stone-300 text-sm font-light leading-relaxed mb-8">
+            Ubicado en una de las avenidas más céntricas y accesibles de Salamanca (Paseo de Carmelitas). Prestamos atención personalizada a clientas de la capital, comarca y Aldehuela de Yeltes.
+          </p>
+
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-brand-black border border-brand-gold/40 flex items-center justify-center text-brand-gold shrink-0 mt-0.5">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div>
+                <strong class="text-white text-xs font-semibold uppercase tracking-wider block">Dirección</strong>
+                <p class="text-stone-300 text-sm mt-0.5">P.º de Carmelitas, 41, 37002 Salamanca, España</p>
+                <span class="text-stone-500 text-xs">A pocos pasos de Puerta Zamora y centro urbano.</span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-brand-black border border-brand-gold/40 flex items-center justify-center text-brand-gold shrink-0 mt-0.5">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div>
+                <strong class="text-white text-xs font-semibold uppercase tracking-wider block">Teléfono & Cita Previa</strong>
+                <a href="tel:686952259" class="text-brand-gold text-base font-semibold hover:underline block mt-0.5">686 95 22 59</a>
+                <span class="text-stone-500 text-xs">Llamadas o mensajes para agendar tu consulta.</span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-brand-black border border-brand-gold/40 flex items-center justify-center text-brand-gold shrink-0 mt-0.5">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div>
+                <strong class="text-white text-xs font-semibold uppercase tracking-wider block">Correo Electrónico</strong>
+                <a href="mailto:aguevara@nuuktech.com" class="text-stone-300 text-sm hover:text-brand-gold transition block mt-0.5">aguevara@nuuktech.com</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-brand-charcoal">
+            <a href="tel:686952259" class="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-brand-gold hover:bg-brand-goldHover text-black text-xs font-bold uppercase tracking-widest transition duration-300">
+              <i class="fa-solid fa-calendar-check"></i>
+              <span>Reservar Cita</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Interactive Map Column -->
+        <div class="lg:col-span-7">
+          <div class="p-2 rounded-2xl bg-brand-black border border-brand-charcoal shadow-2xl overflow-hidden">
+            <iframe src="https://www.google.com/maps?q=Naturbell%20P.%20de%20Carmelitas%2C%2041%2C%2037002%20Salamanca%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner / Footer Pre-Closure -->
+  <section class="py-16 bg-gradient-to-r from-brand-black via-brand-dark to-brand-black border-t border-brand-charcoal text-center">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="font-serif text-3xl sm:text-4xl text-white mb-4">¿Lista para renovar tu bienestar y tu piel?</h2>
+      <p class="text-stone-400 text-sm mb-8 max-w-xl mx-auto font-light">
+        Agenda hoy tu cita y déjate cuidar por la dedicación y delicadeza que Ana Belén ofrece en Naturbell.
+      </p>
+      <a href="tel:686952259" class="inline-flex items-center gap-3 px-9 py-4 rounded-full bg-brand-gold hover:bg-brand-goldHover text-black text-xs font-bold uppercase tracking-widest transition duration-300 shadow-xl shadow-brand-gold/15">
+        <i class="fa-solid fa-phone"></i>
+        <span>Reservar Cita</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-brand-black border-t border-brand-charcoal py-12 text-stone-500 text-xs">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-brand-charcoal">
+        <div class="flex items-center gap-3">
+          <span class="font-serif text-2xl text-white tracking-widest">NATURBELL</span>
+          <span class="text-stone-600">|</span>
+          <span class="text-[11px] text-stone-400">Estética Avanzada · Salamanca</span>
+        </div>
+        <div class="flex items-center space-x-6 text-stone-400">
+          <a href="#experiencia" class="hover:text-brand-gold transition">Experiencia</a>
+          <a href="#tratamientos" class="hover:text-brand-gold transition">Tratamientos</a>
+          <a href="#opiniones" class="hover:text-brand-gold transition">Opiniones</a>
+          <a href="#ubicacion" class="hover:text-brand-gold transition">Contacto</a>
+        </div>
+      </div>
+      <div class="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-stone-600">
+        <p>© <span id="current-year"></span> Naturbell. Todos los derechos reservados.</p>
+        <p>P.º de Carmelitas, 41, 37002 Salamanca, España · Tel: 686 95 22 59</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Mobile Action Bar -->
+  <div class="fixed bottom-4 left-4 right-4 z-40 sm:hidden">
+    <a href="tel:686952259" class="flex items-center justify-center gap-2 w-full py-3.5 bg-brand-gold text-black rounded-full font-bold text-xs uppercase tracking-wider shadow-2xl shadow-black/80">
+      <i class="fa-solid fa-phone"></i>
+      <span>Reservar Cita: 686 95 22 59</span>
+    </a>
+  </div>
+
+  <script>
+    // Dynamic Year
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Mobile Menu Toggle
+    const menuBtn = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close menu when clicking links
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  </script>
+</body>
+</html>
