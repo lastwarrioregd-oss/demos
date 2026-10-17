@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante La Terraza | Cocina Tradicional Castellana y Serrana en Salamanca</title>
+    <meta name="description" content="Disfruta del auténtico sabor de la cocina española y serrana en Restaurante La Terraza. Famosas patatas meneás, tostón cuchifrito, carnes selectas y menú del día casero por 15€.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        terracotta: {
+                            50: '#FDF7F4',
+                            100: '#F9EEE9',
+                            200: '#F2D8CD',
+                            500: '#C25E3E',
+                            600: '#A94E31',
+                            700: '#8A3E26',
+                            800: '#6D3220',
+                            900: '#522518'
+                        },
+                        cream: {
+                            50: '#FAF8F5',
+                            100: '#F5F0E8',
+                            200: '#EBE2D4',
+                            300: '#DED1BD'
+                        },
+                        darkslate: {
+                            800: '#262220',
+                            900: '#1C1917',
+                            950: '#131110'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .wood-pattern {
+            background-color: #1c1917;
+            background-image: radial-gradient(#3a312a 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-cream-50 text-darkslate-900 font-sans antialiased selection:bg-terracotta-500 selection:text-white">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-darkslate-950 text-cream-200 text-xs sm:text-sm py-2 px-4 border-b border-terracotta-900/30">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <span><i class="fa-solid fa-map-pin text-terracotta-500 mr-2"></i>Plaza El Banco, 9, Salamanca</span>
+                <span class="hidden md:inline text-cream-300">|</span>
+                <span class="hidden md:inline"><i class="fa-solid fa-clock text-terracotta-500 mr-2"></i>Cocina Casera y Serrana</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="tel:923435100" class="hover:text-terracotta-500 transition-colors font-medium flex items-center">
+                    <i class="fa-solid fa-phone-volume text-terracotta-500 mr-1.5 animate-pulse"></i> 923 43 51 00
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-cream-200 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#" class="flex flex-col group">
+                    <span class="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-darkslate-900 group-hover:text-terracotta-600 transition-colors">
+                        La Terraza
+                    </span>
+                    <span class="text-xs uppercase tracking-widest text-terracotta-700 font-semibold -mt-1">
+                        Restaurante Castellano
+                    </span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a href="#inicio" class="text-darkslate-800 hover:text-terracotta-600 font-medium transition-colors text-sm uppercase tracking-wider">Inicio</a>
+                    <a href="#carta" class="text-darkslate-800 hover:text-terracotta-600 font-medium transition-colors text-sm uppercase tracking-wider">Nuestra Carta</a>
+                    <a href="#menu-del-dia" class="text-darkslate-800 hover:text-terracotta-600 font-medium transition-colors text-sm uppercase tracking-wider">Menú del Día</a>
+                    <a href="#galeria" class="text-darkslate-800 hover:text-terracotta-600 font-medium transition-colors text-sm uppercase tracking-wider">Instalaciones</a>
+                    <a href="#opiniones" class="text-darkslate-800 hover:text-terracotta-600 font-medium transition-colors text-sm uppercase tracking-wider">Opiniones</a>
+                    <a href="#contacto" class="text-darkslate-800 hover:text-terracotta-600 font-medium transition-colors text-sm uppercase tracking-wider">Contacto</a>
+                </nav>
+
+                <!-- Header CTA Button -->
+                <div class="flex items-center gap-3">
+                    <a href="tel:923435100" class="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-sm font-semibold text-white bg-terracotta-600 hover:bg-terracotta-700 shadow-md hover:shadow-lg transition duration-200 transform hover:-translate-y-0.5">
+                        <i class="fa-solid fa-utensils mr-2 text-xs"></i>
+                        <span>Reservar Mesa</span>
+                    </a>
+                    
+                    <!-- Mobile Hamburger Button -->
+                    <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-lg text-darkslate-800 hover:bg-cream-100 focus:outline-none" aria-label="Abrir Menú">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-cream-50 border-b border-cream-200 px-6 py-5 space-y-4 shadow-xl">
+            <a href="#inicio" class="block text-darkslate-800 font-medium hover:text-terracotta-600 py-1">Inicio</a>
+            <a href="#carta" class="block text-darkslate-800 font-medium hover:text-terracotta-600 py-1">Nuestra Carta</a>
+            <a href="#menu-del-dia" class="block text-darkslate-800 font-medium hover:text-terracotta-600 py-1">Menú del Día</a>
+            <a href="#galeria" class="block text-darkslate-800 font-medium hover:text-terracotta-600 py-1">Instalaciones</a>
+            <a href="#opiniones" class="block text-darkslate-800 font-medium hover:text-terracotta-600 py-1">Opiniones</a>
+            <a href="#contacto" class="block text-darkslate-800 font-medium hover:text-terracotta-600 py-1">Contacto y Mapa</a>
+            <div class="pt-3 border-t border-cream-200">
+                <a href="tel:923435100" class="w-full inline-flex items-center justify-center px-5 py-3 rounded-xl text-base font-semibold text-white bg-terracotta-600 hover:bg-terracotta-700 shadow-md">
+                    <i class="fa-solid fa-phone mr-2"></i> Reservar Mesa (923 43 51 00)
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative min-h-[85vh] flex items-center justify-center bg-darkslate-950 text-white overflow-hidden">
+        <!-- Hero Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img 
+                src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1920&q=80" 
+                alt="Platos tradicionales y carnes a la brasa en Restaurante La Terraza" 
+                class="w-full h-full object-cover opacity-35 filter brightness-90"
+                referrerpolicy="no-referrer"
+                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-darkslate-950 via-darkslate-950/60 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-terracotta-500/20 border border-terracotta-500/40 text-terracotta-200 text-xs sm:text-sm font-semibold tracking-wide uppercase mb-6 backdrop-blur-sm">
+                <i class="fa-solid fa-star text-amber-400 text-xs"></i> Sabores Auténticos de la Sierra de Salamanca
+            </div>
+
+            <!-- Main Heading -->
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-cream-50 leading-[1.15] mb-6">
+                El placer de la auténtica <br class="hidden sm:inline"/>
+                <span class="text-terracotta-500 italic">Cocina Castellana</span>
+            </h1>
+
+            <p class="text-lg sm:text-xl text-cream-200/90 max-w-2xl mx-auto font-light leading-relaxed mb-10">
+                Especialistas en patatas meneás artesanales, tostón cuchifrito y carnes de primera calidad. Vistas privilegiadas, ambiente acogedor y el trato familiar que mereces.
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+                <a href="tel:923435100" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-bold text-white bg-terracotta-600 hover:bg-terracotta-700 shadow-xl hover:shadow-terracotta-600/30 transition-all duration-300 transform hover:-translate-y-1">
+                    <i class="fa-solid fa-calendar-check mr-2 text-lg"></i>
+                    Reservar Mesa
+                </a>
+                <a href="#carta" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-cream-100 bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-sm transition-all duration-300">
+                    <i class="fa-solid fa-book-open mr-2"></i>
+                    Descubrir Especialidades
+                </a>
+            </div>
+
+            <!-- Highlights Bar -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 pt-10 border-t border-white/10 text-left">
+                <div class="p-3">
+                    <div class="text-terracotta-400 text-xl mb-1"><i class="fa-solid fa-bowl-rice"></i></div>
+                    <h3 class="font-semibold text-white text-sm">Patatas Meneás</h3>
+                    <p class="text-cream-300/80 text-xs">Receta serrana de la casa</p>
+                </div>
+                <div class="p-3">
+                    <div class="text-terracotta-400 text-xl mb-1"><i class="fa-solid fa-tag"></i></div>
+                    <h3 class="font-semibold text-white text-sm">Menú del Día 15€</h3>
+                    <p class="text-cream-300/80 text-xs">Con bebida, postre y café</p>
+                </div>
+                <div class="p-3">
+                    <div class="text-terracotta-400 text-xl mb-1"><i class="fa-solid fa-drumstick-bite"></i></div>
+                    <h3 class="font-semibold text-white text-sm">Tostón Cuchifrito</h3>
+                    <p class="text-cream-300/80 text-xs">Crujiente y tradicional</p>
+                </div>
+                <div class="p-3">
+                    <div class="text-terracotta-400 text-xl mb-1"><i class="fa-solid fa-mountain-sun"></i></div>
+                    <h3 class="font-semibold text-white text-sm">Vistas y Tranquilidad</h3>
+                    <p class="text-cream-300/80 text-xs">Comedor cómodo y limpio</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction & Atmosphere Section -->
+    <section class="py-20 bg-cream-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div class="space-y-6">
+                    <div class="inline-flex items-center gap-2 text-terracotta-700 font-bold uppercase tracking-widest text-xs">
+                        <span class="w-8 h-0.5 bg-terracotta-600"></span> Nuestra Esencia
+                    </div>
+                    <h2 class="font-serif text-3xl sm:text-4xl text-darkslate-900 font-bold leading-tight">
+                        Un refugio gastronómico con sabor a pueblo y tradición
+                    </h2>
+                    <p class="text-darkslate-800/80 leading-relaxed text-base">
+                        Situado en la comarca de la Sierra de Salamanca, en <strong>Restaurante La Terraza</strong> mantenemos viva la pasión por los platos que han alimentado a generaciones. Nuestro objetivo es que disfrutes de una cocina sin artificios, generosa en raciones y con materia prima seleccionada.
+                    </p>
+                    <p class="text-darkslate-800/80 leading-relaxed text-base">
+                        Disponemos de un acogedor comedor, limpio, luminoso y con buen acceso, pensado tanto para comidas familiares de fin de semana como para reponer fuerzas durante tu visita a nuestros pueblos y sierras.
+                    </p>
+                    
+                    <div class="pt-4 flex flex-col sm:flex-row gap-6 border-t border-cream-200">
+                        <div>
+                            <span class="block font-serif text-3xl font-bold text-terracotta-700">100%</span>
+                            <span class="text-xs uppercase tracking-wider text-darkslate-800 font-semibold">Elaboración Casera</span>
+                        </div>
+                        <div class="sm:border-l sm:border-cream-300 sm:pl-6">
+                            <span class="block font-serif text-3xl font-bold text-terracotta-700">15€</span>
+                            <span class="text-xs uppercase tracking-wider text-darkslate-800 font-semibold">Menú Completo Diario</span>
+                        </div>
+                        <div class="sm:border-l sm:border-cream-300 sm:pl-6">
+                            <span class="block font-serif text-3xl font-bold text-terracotta-700">Sierra</span>
+                            <span class="text-xs uppercase tracking-wider text-darkslate-800 font-semibold">Entorno y Vistas Únicas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+                        <img 
+                            src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1000&q=80" 
+                            alt="Salón y ambiente en Restaurante La Terraza" 
+                            class="w-full h-[420px] object-cover hover:scale-105 transition-transform duration-700"
+                            referrerpolicy="no-referrer"
+                            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                        >
+                    </div>
+                    <!-- Secondary Floating Decorative Box -->
+                    <div class="absolute -bottom-6 -left-6 z-20 bg-darkslate-900 text-white p-6 rounded-xl shadow-xl max-w-xs hidden sm:block border-l-4 border-terracotta-500">
+                        <p class="font-serif italic text-sm text-cream-200">
+                            "Comedor mediano, ambiente muy tranquilo y vistas que complementan una comida inolvidable."
+                        </p>
+                        <span class="block mt-2 text-xs font-semibold text-terracotta-400">— Comensales habituales</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menú del Día Highlight Callout -->
+    <section id="menu-del-dia" class="py-16 bg-gradient-to-br from-terracotta-800 to-terracotta-900 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="bg-white/10 backdrop-blur-md rounded-3xl p-8 sm:p-12 border border-white/20 shadow-2xl">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-8 space-y-4">
+                        <div class="inline-flex items-center px-3.5 py-1 rounded-full bg-amber-400 text-darkslate-950 font-bold text-xs uppercase tracking-wide">
+                            <i class="fa-solid fa-crown mr-1.5"></i> Lo más valorado
+                        </div>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">
+                            Menú del Día Casero por solo 15€
+                        </h2>
+                        <p class="text-cream-100 text-base sm:text-lg leading-relaxed font-light">
+                            Una propuesta completa, variada y con porciones bien despachadas: <strong>Primer plato a elegir</strong> (con opción siempre de nuestras afamadas patatas meneás), <strong>segundo plato con carnes seleccionadas</strong>, pan recién horneado, <strong>bebida, postre casero y café incluidos</strong>.
+                        </p>
+                        <div class="flex flex-wrap gap-3 pt-2 text-xs sm:text-sm text-cream-200">
+                            <span class="flex items-center"><i class="fa-solid fa-check text-amber-300 mr-1.5"></i> Primer y Segundo Plato</span>
+                            <span class="flex items-center"><i class="fa-solid fa-check text-amber-300 mr-1.5"></i> Postres de la Casa</span>
+                            <span class="flex items-center"><i class="fa-solid fa-check text-amber-300 mr-1.5"></i> Bebida y Café Incluidos</span>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-4 flex flex-col items-center justify-center bg-white/15 p-6 rounded-2xl border border-white/20 text-center">
+                        <span class="text-xs uppercase tracking-widest text-cream-200 font-semibold mb-1">Precio Cerrado</span>
+                        <div class="font-serif text-5xl sm:text-6xl font-bold text-white mb-2">
+                            15<span class="text-3xl text-amber-300">€</span>
+                        </div>
+                        <span class="text-xs text-cream-200 mb-5">Excelente relación calidad-precio</span>
+                        <a href="tel:923435100" class="w-full inline-flex items-center justify-center py-3.5 px-6 rounded-xl text-sm font-bold bg-white text-terracotta-800 hover:bg-cream-100 transition shadow-lg">
+                            <i class="fa-solid fa-phone mr-2"></i> Reservar Mesa
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: Nuestra Carta, Platos Estrella y Especialidades -->
+    <section id="carta" class="py-24 bg-cream-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-terracotta-600 font-bold text-xs uppercase tracking-widest block mb-2">Gastronomía de Salamanca</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-darkslate-900 tracking-tight">
+                    Nuestra Carta, Platos Estrella y Especialidades de la Casa
+                </h2>
+                <div class="w-20 h-1 bg-terracotta-500 mx-auto my-5 rounded-full"></div>
+                <p class="text-darkslate-800/80 text-base leading-relaxed">
+                    Platos generosos cocinados a fuego lento con el recetario de toda la vida. Descubre nuestras especialidades más elogiadas por nuestros clientes.
+                </p>
+            </div>
+
+            <!-- Grid of Menu Specialties -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Plato 1: Patatas Meneás -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-cream-200 group flex flex-col">
+                    <div class="relative h-56 overflow-hidden">
+                        <img 
+                            src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=800&q=80" 
+                            alt="Patatas Meneás con Torreznos de Soria y Salamanca" 
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            referrerpolicy="no-referrer"
+                            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                        >
+                        <span class="absolute top-4 left-4 bg-terracotta-600 text-white text-xs uppercase font-bold tracking-wider px-3 py-1 rounded-full shadow">
+                            Plato Insignia
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h3 class="font-serif text-xl font-bold text-darkslate-900">Patatas Meneás Serranas</h3>
+                            </div>
+                            <p class="text-darkslate-700/80 text-sm leading-relaxed mb-4">
+                                El plato más aclamado de nuestra cocina. Puré rústico aromatizado con pimentón de la Vera, coronado con torreznos bien crujientes y dorados. "Están de muerte", afirman quienes nos visitan.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-cream-100 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-terracotta-700"><i class="fa-solid fa-heart mr-1"></i> Especialidad indiscutible</span>
+                            <a href="tel:923435100" class="text-xs font-bold text-darkslate-900 hover:text-terracotta-600">Pedir info &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Plato 2: Solomillo al Roquefort -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-cream-200 group flex flex-col">
+                    <div class="relative h-56 overflow-hidden">
+                        <img 
+                            src="https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=800&q=80" 
+                            alt="Solomillo de ternera en salsa roquefort" 
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            referrerpolicy="no-referrer"
+                            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                        >
+                        <span class="absolute top-4 left-4 bg-darkslate-900 text-white text-xs uppercase font-bold tracking-wider px-3 py-1 rounded-full shadow">
+                            Carnes Selectas
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h3 class="font-serif text-xl font-bold text-darkslate-900">Solomillo al Roquefort</h3>
+                            </div>
+                            <p class="text-darkslate-700/80 text-sm leading-relaxed mb-4">
+                                Carne tierna de calidad insuperable bañada en una salsa untuosa y potente de queso Roquefort, elaborada desde cero en nuestros fogones para los paladares más exigentes.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-cream-100 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-terracotta-700"><i class="fa-solid fa-fire mr-1"></i> Punto a tu gusto</span>
+                            <a href="tel:923435100" class="text-xs font-bold text-darkslate-900 hover:text-terracotta-600">Pedir info &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Plato 3: Tostón Cuchifrito -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-cream-200 group flex flex-col">
+                    <div class="relative h-56 overflow-hidden">
+                        <img 
+                            src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" 
+                            alt="Tostón cuchifrito tradicional castellano" 
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            referrerpolicy="no-referrer"
+                            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                        >
+                        <span class="absolute top-4 left-4 bg-terracotta-600 text-white text-xs uppercase font-bold tracking-wider px-3 py-1 rounded-full shadow">
+                            Tradición Pura
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h3 class="font-serif text-xl font-bold text-darkslate-900">Tostón Cuchifrito</h3>
+                            </div>
+                            <p class="text-darkslate-700/80 text-sm leading-relaxed mb-4">
+                                Cochinillo troceado y frito a fuego vivo con ajo y laurel, logrando esa textura inimitable: piel sumamente crujiente y una carne interior tierna, jugosa y llena de sabor campestre.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-cream-100 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-terracotta-700"><i class="fa-solid fa-sparkles mr-1"></i> Crujiente perfecto</span>
+                            <a href="tel:923435100" class="text-xs font-bold text-darkslate-900 hover:text-terracotta-600">Pedir info &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Plato 4: Cabrito Asado / Cuchifrito -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-cream-200 group flex flex-col">
+                    <div class="relative h-56 overflow-hidden">
+                        <img 
+                            src="https://images.unsplash.com/photo-1514944298352-fa01815e197c?auto=format&fit=crop&w=800&q=80" 
+                            alt="Cabrito de la Sierra preparado a la usanza tradicional" 
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            referrerpolicy="no-referrer"
+                            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                        >
+                        <span class="absolute top-4 left-4 bg-darkslate-800 text-white text-xs uppercase font-bold tracking-wider px-3 py-1 rounded-full shadow">
+                            Sabor Serrano
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h3 class="font-serif text-xl font-bold text-darkslate-900">Cabrito de la Sierra</h3>
+                            </div>
+                            <p class="text-darkslate-700/80 text-sm leading-relaxed mb-4">
+                                Carne tierna procedente de las dehesas y sierras circundantes. Preparado según disponibilidad para asegurar frescura y autenticidad en cada servicio.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-cream-100 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-terracotta-700"><i class="fa-solid fa-award mr-1"></i> Receta de la comarca</span>
+                            <a href="tel:923435100" class="text-xs font-bold text-darkslate-900 hover:text-terracotta-600">Pedir info &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Plato 5: Embutidos Ibéricos & Entrantes -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-cream-200 group flex flex-col">
+                    <div class="relative h-56 overflow-hidden">
+                        <img 
+                            src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" 
+                            alt="Tabla de embutidos salmantinos y jamón ibérico" 
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            referrerpolicy="no-referrer"
+                            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                        >
+                        <span class="absolute top-4 left-4 bg-terracotta-600 text-white text-xs uppercase font-bold tracking-wider px-3 py-1 rounded-full shadow">
+                            Tierra Salmantina
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h3 class="font-serif text-xl font-bold text-darkslate-900">Surtido de Embutidos y Quesos</h3>
+                            </div>
+                            <p class="text-darkslate-700/80 text-sm leading-relaxed mb-4">
+                                Jamón de bellota, lomo, chorizo y salchichón acompañados de quesos curados de oveja. El entrante imprescindible para empezar cualquier buena tertulia alrededor de la mesa.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-cream-100 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-terracotta-700"><i class="fa-solid fa-wine-glass mr-1"></i> Ideal para compartir</span>
+                            <a href="tel:923435100" class="text-xs font-bold text-darkslate-900 hover:text-terracotta-600">Pedir info &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Plato 6: Postres Caseros -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-cream-200 group flex flex-col">
+                    <div class="relative h-56 overflow-hidden">
+                        <img 
+                            src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&q=80" 
+                            alt="Postres caseros flan tarta y piña preparada" 
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            referrerpolicy="no-referrer"
+                            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                        >
+                        <span class="absolute top-4 left-4 bg-darkslate-900 text-white text-xs uppercase font-bold tracking-wider px-3 py-1 rounded-full shadow">
+                            El Broche Dulce
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h3 class="font-serif text-xl font-bold text-darkslate-900">Postres Caseros de la Abuela</h3>
+                            </div>
+                            <p class="text-darkslate-700/80 text-sm leading-relaxed mb-4">
+                                Flan de huevo con caramelo, natillas aromáticas, tarta de queso horneada y piña natural. Todo elaborado a diario en nuestro obrador para culminar tu experiencia con una sonrisa.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-cream-100 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-terracotta-700"><i class="fa-solid fa-cookie mr-1"></i> 100% Hecho en casa</span>
+                            <a href="tel:923435100" class="text-xs font-bold text-darkslate-900 hover:text-terracotta-600">Pedir info &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Call to action banner inside menu -->
+            <div class="mt-14 text-center">
+                <p class="text-darkslate-800 text-sm mb-4">
+                    ¿Quieres consultar la disponibilidad de platos fuera de carta o avisar de tu llegada con antelación?
+                </p>
+                <a href="tel:923435100" class="inline-flex items-center px-8 py-3.5 rounded-full text-sm font-bold text-white bg-terracotta-600 hover:bg-terracotta-700 shadow-md transition-all">
+                    <i class="fa-solid fa-phone mr-2"></i> Reservar Mesa / Llamar al 923 43 51 00
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería: Nuestras Instalaciones y Trabajos -->
+    <section id="galeria" class="py-20 bg-cream-100 border-t border-cream-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-terracotta-600 font-bold text-xs uppercase tracking-widest block mb-2">Espacios para Disfrutar</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-darkslate-900 tracking-tight">
+                    Nuestras Instalaciones y Trabajos
+                </h2>
+                <div class="w-16 h-1 bg-terracotta-500 mx-auto my-4 rounded-full"></div>
+                <p class="text-darkslate-700 text-sm sm:text-base">
+                    Un comedor mediano, cuidado al detalle, luminoso y con amplios ventanales orientados a los horizontes serranos.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery Item 1 -->
+                <div class="relative group overflow-hidden rounded-2xl shadow-md h-72">
+                    <img 
+                        src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" 
+                        alt="Comedor acogedor del restaurante" 
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        referrerpolicy="no-referrer"
+                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-darkslate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-medium text-sm">Comedor tranquilo y con buenas vistas</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="relative group overflow-hidden rounded-2xl shadow-md h-72">
+                    <img 
+                        src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=800&q=80" 
+                        alt="Preparación de mesas para comidas familiares" 
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        referrerpolicy="no-referrer"
+                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-darkslate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-medium text-sm">Mesas preparadas para grupos y familias</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="relative group overflow-hidden rounded-2xl shadow-md h-72">
+                    <img 
+                        src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80" 
+                        alt="Emplatado y raciones de cocina casera" 
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        referrerpolicy="no-referrer"
+                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-darkslate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-medium text-sm">Raciones abundantes y cocinadas con mimo</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="relative group overflow-hidden rounded-2xl shadow-md h-72">
+                    <img 
+                        src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80" 
+                        alt="Rincón cálido y ambiente serrano" 
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        referrerpolicy="no-referrer"
+                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-darkslate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-medium text-sm">Limpieza rigurosa y accesibilidad</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5 -->
+                <div class="relative group overflow-hidden rounded-2xl shadow-md h-72">
+                    <img 
+                        src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" 
+                        alt="Platos de carne recién cocinada" 
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        referrerpolicy="no-referrer"
+                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-darkslate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-medium text-sm">El auténtico sabor del tostón y la brasa</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6 -->
+                <div class="relative group overflow-hidden rounded-2xl shadow-md h-72">
+                    <img 
+                        src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80" 
+                        alt="Vinos de la tierra y sobremesa castellana" 
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        referrerpolicy="no-referrer"
+                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-darkslate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-medium text-sm">Vinos y sobremesas sin prisas</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reseñas Reales de Clientes en Google Maps -->
+    <section id="opiniones" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-1 text-amber-500 mb-3 text-lg">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-darkslate-900 tracking-tight">
+                    Opiniones Reales de Nuestros Clientes
+                </h2>
+                <div class="w-16 h-1 bg-terracotta-500 mx-auto my-4 rounded-full"></div>
+                <p class="text-darkslate-700 text-sm sm:text-base">
+                    Testimonios transparentes y verificados recogidos de comensales que han compartido mesa con nosotros.
+                </p>
+            </div>
+
+            <!-- Reviews Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Testimonial 1 -->
+                <div class="bg-cream-50 p-8 rounded-2xl border border-cream-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-darkslate-800 text-sm leading-relaxed italic mb-6">
+                            "Una atención muy buena, hay buena variedad de platos a elegir y la cantidad de estos es muy decente, están muy buenos. Tiene un comedor mediano y un ambiente muy tranquilo y con buenas vistas. El sitio esta limpio y tiene buen acceso. Para…"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-cream-200">
+                        <div class="w-10 h-10 rounded-full bg-terracotta-100 text-terracotta-700 flex items-center justify-center font-bold text-sm">
+                            D
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-darkslate-900">David PC</h4>
+                            <span class="text-xs text-darkslate-500 flex items-center"><i class="fa-brands fa-google mr-1 text-[10px]"></i> Cliente verificado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-cream-50 p-8 rounded-2xl border border-cream-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-darkslate-800 text-sm leading-relaxed italic mb-6">
+                            "Menú del día casero riquísimo y muy bien de precio, 15€ con bebida, café y postre incluido. Las meneás espectaculares y el solomillo al Roquefort también lo destaco por la calidad de la carne y el sabor de la salsa. Los postres muy…"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-cream-200">
+                        <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center font-bold text-sm">
+                            A
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-darkslate-900">Ana Belén Vidal del Cura</h4>
+                            <span class="text-xs text-darkslate-500 flex items-center"><i class="fa-brands fa-google mr-1 text-[10px]"></i> Cliente verificado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-cream-50 p-8 rounded-2xl border border-cream-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-darkslate-800 text-sm leading-relaxed italic mb-6">
+                            "Lugar increíble. La comida es de bastante buena calidad. Hacen unas patatas meneas que están de muerte. Los puntos de las carnes es lo que les cuesta un poco más. El resto de…"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-cream-200">
+                        <div class="w-10 h-10 rounded-full bg-terracotta-200 text-terracotta-800 flex items-center justify-center font-bold text-sm">
+                            A
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-darkslate-900">Almade</h4>
+                            <span class="text-xs text-darkslate-500 flex items-center"><i class="fa-brands fa-google mr-1 text-[10px]"></i> Cliente verificado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="bg-cream-50 p-8 rounded-2xl border border-cream-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-darkslate-800 text-sm leading-relaxed italic mb-6">
+                            "Antes funcionaba mejor en calidad, cantidad y atención. Hemos vuelto y el cambio se nota. El tostón cuchifrito estaba bien. La piña mediana y el cabrito un poco escaso."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-cream-200">
+                        <div class="w-10 h-10 rounded-full bg-cream-200 text-darkslate-700 flex items-center justify-center font-bold text-sm">
+                            F
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-darkslate-900">Florencio V</h4>
+                            <span class="text-xs text-darkslate-500 flex items-center"><i class="fa-brands fa-google mr-1 text-[10px]"></i> Cliente verificado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 5 -->
+                <div class="bg-cream-50 p-8 rounded-2xl border border-cream-200 shadow-sm flex flex-col justify-between hover:shadow-md transition md:col-span-2 lg:col-span-1">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-darkslate-800 text-sm leading-relaxed italic mb-6">
+                            "Fuimos un viernes por la noche y la experiencia fue algo desconcertante. Al llegar (20:30h), tuvieron que llamar a la cocinera para que viniera; menos mal que coincidió que otra pareja también quería cenar, porque si no, parece que no…"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-cream-200">
+                        <div class="w-10 h-10 rounded-full bg-darkslate-200 text-darkslate-800 flex items-center justify-center font-bold text-sm">
+                            A
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-darkslate-900">Antonio</h4>
+                            <span class="text-xs text-darkslate-500 flex items-center"><i class="fa-brands fa-google mr-1 text-[10px]"></i> Cliente verificado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Informational Tip Card to balance grid -->
+                <div class="bg-darkslate-900 text-white p-8 rounded-2xl border border-darkslate-800 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-xl bg-terracotta-600/30 text-terracotta-400 flex items-center justify-center text-lg mb-4">
+                            <i class="fa-solid fa-lightbulb"></i>
+                        </div>
+                        <h4 class="font-serif text-xl font-bold mb-2">Consejo para tu visita</h4>
+                        <p class="text-cream-200/90 text-sm leading-relaxed mb-4">
+                            Al tratarse de un restaurante de entorno rural con cocina de elaboración pausada, <strong>recomendamos siempre reservar con antelación</strong>, especialmente para cenas de viernes o comidas de fin de semana.
+                        </p>
+                    </div>
+                    <a href="tel:923435100" class="inline-flex items-center justify-center w-full py-3 px-4 rounded-xl text-xs font-bold text-white bg-terracotta-600 hover:bg-terracotta-700 transition">
+                        <i class="fa-solid fa-phone mr-2"></i> Reservar Mesa (923 43 51 00)
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Ubicación, Contacto y Mapa Interactivo -->
+    <section id="contacto" class="py-20 bg-cream-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-terracotta-600 font-bold text-xs uppercase tracking-widest block mb-2">Ven a Conocernos</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-darkslate-900 tracking-tight">
+                    Dónde Estamos y Contacto
+                </h2>
+                <div class="w-16 h-1 bg-terracotta-500 mx-auto my-4 rounded-full"></div>
+                <p class="text-darkslate-700 text-sm sm:text-base">
+                    Situados en la Plaza El Banco, punto neurálgico y de cómodo estacionamiento.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Contact Details Cards (5 cols) -->
+                <div class="lg:col-span-5 space-y-4">
+                    
+                    <!-- Dirección -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-cream-200 flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-terracotta-50 text-terracotta-600 flex items-center justify-center flex-shrink-0 text-xl">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-darkslate-900 text-base mb-1">Dirección Exacta</h3>
+                            <p class="text-darkslate-700 text-sm leading-relaxed">
+                                Plaza El Banco, 9, BAJO<br>
+                                37670 Santibáñez de la Sierra (Salamanca, España)
+                            </p>
+                            <span class="inline-block mt-2 text-xs font-semibold text-terracotta-600">
+                                Acceso cómodo y fácil aparcamiento
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Teléfono y Reservas -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-cream-200 flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-terracotta-50 text-terracotta-600 flex items-center justify-center flex-shrink-0 text-xl">
+                            <i class="fa-solid fa-phone-flip"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-darkslate-900 text-base mb-1">Teléfono Directo</h3>
+                            <p class="text-darkslate-700 text-sm mb-3">
+                                Llámanos para asegurar tu mesa o consultar el menú diario disponible:
+                            </p>
+                            <a href="tel:923435100" class="inline-flex items-center text-lg font-bold text-terracotta-600 hover:text-terracotta-700 font-serif">
+                                <i class="fa-solid fa-phone text-sm mr-2"></i> 923 43 51 00
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Correo Electrónico -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-cream-200 flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-terracotta-50 text-terracotta-600 flex items-center justify-center flex-shrink-0 text-xl">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-darkslate-900 text-base mb-1">Correo Electrónico</h3>
+                            <p class="text-darkslate-700 text-sm mb-2">Para consultas y eventos grupales:</p>
+                            <a href="mailto:litbcs@lightinthebox.com" class="text-sm font-semibold text-darkslate-900 hover:text-terracotta-600 break-all transition">
+                                litbcs@lightinthebox.com
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Call To Action Direct -->
+                    <div class="pt-2">
+                        <a href="tel:923435100" class="w-full inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-bold text-white bg-terracotta-600 hover:bg-terracotta-700 shadow-lg hover:shadow-terracotta-600/30 transition-all duration-300">
+                            <i class="fa-solid fa-utensils mr-2"></i>
+                            Reservar Mesa Ahora
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Google Maps Interactive Embed (7 cols) -->
+                <div class="lg:col-span-7 bg-white p-3 rounded-2xl shadow-sm border border-cream-200 overflow-hidden">
+                    <iframe 
+                        src="https://www.google.com/maps?q=Restaurante%20La%20Terraza%20Plaza%20El%20Banco%2C%209%2C%20BAJO%2C%2037670%20Santib%C3%A1%C3%B1ez%20de%20la%20Sierra%2C%20Salamanca%2C%20Espa%C3%B1a&output=embed" 
+                        width="100%" 
+                        height="380" 
+                        style="border:0; border-radius: 1rem;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                    <div class="p-3 text-center text-xs text-darkslate-500">
+                        <i class="fa-solid fa-location-arrow mr-1 text-terracotta-600"></i> Encuéntranos en pleno centro de Santibáñez de la Sierra
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="wood-pattern text-cream-200 border-t border-darkslate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                
+                <!-- Col 1: Sobre el Negocio -->
+                <div class="space-y-4">
+                    <span class="font-serif text-2xl font-bold tracking-tight text-white block">
+                        La Terraza
+                    </span>
+                    <p class="text-sm text-cream-300/80 leading-relaxed">
+                        Restaurante de cocina española en el corazón serrano de Salamanca. Platos caseros, tradición en cada cucharada y un trato cercano para sentirse como en casa.
+                    </p>
+                    <div class="flex gap-3 text-cream-300">
+                        <a href="tel:923435100" class="w-8 h-8 rounded-full bg-darkslate-800 hover:bg-terracotta-600 hover:text-white flex items-center justify-center transition-colors">
+                            <i class="fa-solid fa-phone text-xs"></i>
+                        </a>
+                        <a href="mailto:litbcs@lightinthebox.com" class="w-8 h-8 rounded-full bg-darkslate-800 hover:bg-terracotta-600 hover:text-white flex items-center justify-center transition-colors">
+                            <i class="fa-solid fa-envelope text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Enlaces Rápidos -->
+                <div>
+                    <h3 class="font-serif text-lg font-bold text-white mb-4">Navegación</h3>
+                    <ul class="space-y-2.5 text-sm text-cream-300/80">
+                        <li><a href="#inicio" class="hover:text-terracotta-400 transition-colors">Inicio</a></li>
+                        <li><a href="#carta" class="hover:text-terracotta-400 transition-colors">Platos Estrella & Carta</a></li>
+                        <li><a href="#menu-del-dia" class="hover:text-terracotta-400 transition-colors">Menú Diario (15€)</a></li>
+                        <li><a href="#galeria" class="hover:text-terracotta-400 transition-colors">Instalaciones & Comedor</a></li>
+                        <li><a href="#opiniones" class="hover:text-terracotta-400 transition-colors">Reseñas de Clientes</a></li>
+                        <li><a href="#contacto" class="hover:text-terracotta-400 transition-colors">Ubicación y Mapa</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Platos Destacados -->
+                <div>
+                    <h3 class="font-serif text-lg font-bold text-white mb-4">Especialidades</h3>
+                    <ul class="space-y-2 text-sm text-cream-300/80">
+                        <li class="flex items-center"><i class="fa-solid fa-utensils text-terracotta-500 mr-2 text-xs"></i> Patatas Meneás con Torreznos</li>
+                        <li class="flex items-center"><i class="fa-solid fa-utensils text-terracotta-500 mr-2 text-xs"></i> Tostón Cuchifrito</li>
+                        <li class="flex items-center"><i class="fa-solid fa-utensils text-terracotta-500 mr-2 text-xs"></i> Solomillo al Roquefort</li>
+                        <li class="flex items-center"><i class="fa-solid fa-utensils text-terracotta-500 mr-2 text-xs"></i> Cabrito de la Sierra</li>
+                        <li class="flex items-center"><i class="fa-solid fa-utensils text-terracotta-500 mr-2 text-xs"></i> Postres de la Casa</li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contacto Rápido -->
+                <div>
+                    <h3 class="font-serif text-lg font-bold text-white mb-4">Contacto</h3>
+                    <div class="space-y-3 text-sm text-cream-300/80">
+                        <p class="flex items-start">
+                            <i class="fa-solid fa-map-pin text-terracotta-500 mr-2.5 mt-1 text-sm"></i>
+                            <span>Plaza El Banco, 9, BAJO, 37670 Santibáñez de la Sierra, Salamanca</span>
+                        </p>
+                        <p class="flex items-center">
+                            <i class="fa-solid fa-phone text-terracotta-500 mr-2.5 text-sm"></i>
+                            <a href="tel:923435100" class="hover:text-white font-semibold">923 43 51 00</a>
+                        </p>
+                        <p class="flex items-center">
+                            <i class="fa-solid fa-envelope text-terracotta-500 mr-2.5 text-sm"></i>
+                            <a href="mailto:litbcs@lightinthebox.com" class="hover:text-white break-all">litbcs@lightinthebox.com</a>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Copyright and Notice -->
+            <div class="mt-12 pt-8 border-t border-darkslate-800 flex flex-col sm:flex-row justify-between items-center text-xs text-cream-300/60 gap-4">
+                <p>&copy; <span id="currentYear"></span> Restaurante La Terraza. Todos los derechos reservados.</p>
+                <p>Cocina Española y Tradicional en Santibáñez de la Sierra (Salamanca).</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script & Utilities -->
+    <script>
+        // Set dynamic year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
