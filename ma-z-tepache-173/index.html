@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAÍZ TEPACHE | Restaurante & Cocina Mexicana de Raíz</title>
+  <meta name="description" content="Maíz Tepache - Experiencia gastronómica mexicana auténtica. Platillos tradicionales, maíz de origen, tepache artesanal y el mejor ambiente en Tuxtla Gutiérrez.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Prata&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            terracotta: {
+              50: '#fbf5f2',
+              100: '#f7ebe4',
+              200: '#edd8cc',
+              400: '#cf7d53',
+              500: '#be5d2f',
+              600: '#a74922',
+              700: '#87391c',
+              800: '#6f301b',
+              900: '#461f12',
+            },
+            corn: {
+              DEFAULT: '#D4AF37',
+              light: '#E5C158',
+              dark: '#A6841B',
+            },
+            night: '#131110',
+            charcoal: '#1E1A18',
+            warmgray: '#2C2623',
+            crema: '#FDFBF7'
+          },
+          fontFamily: {
+            serif: ['Prata', 'Cinzel', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .bg-pattern {
+      background-image: radial-gradient(rgba(190, 93, 47, 0.08) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+  </style>
+</head>
+<body class="bg-crema text-night font-sans antialiased selection:bg-terracotta-500 selection:text-white">
+
+  <!-- TOP BAR INFO -->
+  <div class="bg-night text-zinc-300 text-xs py-2 px-4 border-b border-zinc-800">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-4 text-center sm:text-left">
+        <span><i class="fa-solid fa-location-dot text-terracotta-500 mr-1.5"></i> Satélite Loma Larga, Tuxtla Gutiérrez</span>
+        <span class="hidden md:inline text-zinc-600">|</span>
+        <span class="hidden md:inline"><i class="fa-solid fa-clock text-terracotta-500 mr-1.5"></i> Desayunos, Comidas y Cenas</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="mailto:maiztepache@gmail.com" class="hover:text-terracotta-400 transition-colors">
+          <i class="fa-solid fa-envelope text-terracotta-500 mr-1"></i> maiztepache@gmail.com
+        </a>
+        <a href="tel:529617081146" class="hover:text-terracotta-400 font-semibold text-white transition-colors">
+          <i class="fa-solid fa-phone text-terracotta-500 mr-1"></i> +52 961 708 1146
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header class="sticky top-0 z-50 bg-night/95 backdrop-blur-md border-b border-zinc-800/80 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-3 group">
+          <div class="w-11 h-11 rounded-full bg-terracotta-600/20 border border-terracotta-500/40 flex items-center justify-center text-corn group-hover:scale-105 transition-transform">
+            <i class="fa-solid fa-seedling text-lg"></i>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-serif text-xl sm:text-2xl font-bold tracking-wider text-white">MAÍZ TEPACHE</span>
+            <span class="text-[10px] tracking-[0.25em] text-terracotta-400 uppercase font-medium">Cocina & Tradición Mexicana</span>
+          </div>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="#concepto" class="text-sm font-medium text-zinc-300 hover:text-white transition-colors">Concepto</a>
+          <a href="#carta" class="text-sm font-medium text-zinc-300 hover:text-white transition-colors">Nuestra Carta</a>
+          <a href="#instalaciones" class="text-sm font-medium text-zinc-300 hover:text-white transition-colors">Instalaciones</a>
+          <a href="#opiniones" class="text-sm font-medium text-zinc-300 hover:text-white transition-colors">Opiniones</a>
+          <a href="#contacto" class="text-sm font-medium text-zinc-300 hover:text-white transition-colors">Contacto</a>
+        </nav>
+
+        <!-- CTA Button -->
+        <div class="hidden sm:flex items-center gap-3">
+          <a href="tel:529617081146" class="inline-flex items-center gap-2 bg-gradient-to-r from-terracotta-600 to-terracotta-500 hover:from-terracotta-500 hover:to-terracotta-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide shadow-lg shadow-terracotta-900/40 hover:shadow-terracotta-600/30 transition-all transform hover:-translate-y-0.5">
+            <i class="fa-regular fa-calendar-check text-xs"></i>
+            <span>Reservar Mesa</span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Trigger -->
+        <button id="mobileMenuBtn" class="md:hidden text-zinc-300 hover:text-white p-2 text-xl focus:outline-none" aria-label="Abrir Menú">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileMenu" class="hidden md:hidden bg-charcoal border-b border-zinc-800 px-4 pt-3 pb-6 space-y-3">
+      <a href="#concepto" class="block text-zinc-200 py-2 border-b border-zinc-800/60 font-medium">Concepto</a>
+      <a href="#carta" class="block text-zinc-200 py-2 border-b border-zinc-800/60 font-medium">Nuestra Carta</a>
+      <a href="#instalaciones" class="block text-zinc-200 py-2 border-b border-zinc-800/60 font-medium">Instalaciones</a>
+      <a href="#opiniones" class="block text-zinc-200 py-2 border-b border-zinc-800/60 font-medium">Opiniones</a>
+      <a href="#contacto" class="block text-zinc-200 py-2 border-b border-zinc-800/60 font-medium">Contacto</a>
+      <a href="tel:529617081146" class="w-full mt-4 flex items-center justify-center gap-2 bg-terracotta-600 hover:bg-terracotta-500 text-white py-3 rounded-xl font-semibold">
+        <i class="fa-regular fa-calendar-check"></i>
+        <span>Reservar Mesa</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative min-h-[92vh] flex items-center justify-center bg-night text-white overflow-hidden">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 z-0">
+      <img src="https://scontent-sjc6-1.xx.fbcdn.net/v/t39.30808-1/469725120_122113023104597286_171088566954722270_n.jpg?stp=cp6_dst-jpg_tt6&amp;cstp=mx1181x1181&amp;ctp=s720x720&amp;_nc_cat=100&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=h8I1Z6hAuv0Q7kNvwHNvmn3&amp;_nc_oc=AdoER7Zit0G3aFB_stTluZoBUbGd0aeHMnFQZ7wMRfa2wknEfEYe2YijJpiE87qSOy4&amp;_nc_zt=24&amp;_nc_ht=scontent-sjc6-1.xx&amp;_nc_gid=2NMCDDRNptPDf6GszEzj5A&amp;_nc_ss=79289&amp;oh=00_AQMeNLUtibugyQjSeuhCJGWQ1aJvL7r-297twl1fWHgATg&amp;oe=6AD92B13"
+           referrerpolicy="no-referrer"
+           onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+           alt="Maíz Tepache Ambiente y Gastronomía"
+           class="w-full h-full object-cover object-center filter brightness-[0.35] scale-105 transform motion-safe:animate-pulse transition-all duration-1000" />
+      <div class="absolute inset-0 bg-gradient-to-t from-night via-night/60 to-transparent"></div>
+      <div class="absolute inset-0 bg-radial-at-c from-transparent via-night/40 to-night"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-terracotta-600/30 border border-terracotta-500/50 backdrop-blur-md mb-6">
+        <span class="w-2 h-2 rounded-full bg-corn animate-ping"></span>
+        <span class="text-xs sm:text-sm font-semibold tracking-widest text-terracotta-200 uppercase">Sabores Ancestrales & Fusión Contemporánea</span>
+      </div>
+
+      <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
+        Donde el Maíz y el Tepache <br class="hidden sm:inline">
+        <span class="italic font-normal text-corn">Se Vuelven Alta Cocina</span>
+      </h1>
+
+      <p class="max-w-2xl mx-auto text-base sm:text-lg text-zinc-300 font-normal leading-relaxed mb-10">
+        Ubicados en un exclusivo primer piso con elevador. Una oda al maíz nixtamalizado, platillos icónicos de la cocina mexicana, fermentos de autor y el ambiente idóneo para sobremesas memorables.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+        <a href="tel:529617081146" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-terracotta-600 hover:bg-terracotta-500 text-white px-8 py-4 rounded-full font-semibold text-base shadow-xl shadow-terracotta-900/50 hover:shadow-terracotta-600/50 transition-all transform hover:-translate-y-1">
+          <i class="fa-solid fa-phone-volume"></i>
+          <span>Reservar Mesa</span>
+        </a>
+        <a href="#carta" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-zinc-900/80 hover:bg-zinc-800 text-zinc-200 hover:text-white border border-zinc-700/80 px-8 py-4 rounded-full font-semibold text-base backdrop-blur-sm transition-all">
+          <i class="fa-solid fa-utensils text-corn"></i>
+          <span>Explorar la Carta</span>
+        </a>
+      </div>
+
+      <!-- Trust Badges -->
+      <div class="mt-16 pt-8 border-t border-zinc-800/80 grid grid-cols-2 md:grid-cols-4 gap-6 text-zinc-400 text-sm">
+        <div class="flex flex-col items-center">
+          <i class="fa-solid fa-building-columns text-terracotta-400 text-xl mb-2"></i>
+          <span class="text-white font-medium">Primer Piso Exclusivo</span>
+          <span class="text-xs text-zinc-400">Acceso cómodo por elevador</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <i class="fa-solid fa-jar text-corn text-xl mb-2"></i>
+          <span class="text-white font-medium">Tepache & Maíz</span>
+          <span class="text-xs text-zinc-400">Ingredientes 100% de origen</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <i class="fa-solid fa-mug-saucer text-terracotta-400 text-xl mb-2"></i>
+          <span class="text-white font-medium">Desayunos & Sobremesa</span>
+          <span class="text-xs text-zinc-400">Café de altura y confort</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <i class="fa-solid fa-star text-corn text-xl mb-2"></i>
+          <span class="text-white font-medium">Sabor Casero & Gourmet</span>
+          <span class="text-xs text-zinc-400">Platillos con carácter</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HISTORIA Y CONCEPTO -->
+  <section id="concepto" class="py-20 bg-pattern">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Visual Composition -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-zinc-200">
+            <img src="https://scontent-sjc6-1.xx.fbcdn.net/v/t39.30808-1/469725120_122113023104597286_171088566954722270_n.jpg?stp=cp6_dst-jpg_tt6&amp;cstp=mx1181x1181&amp;ctp=s720x720&amp;_nc_cat=100&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=h8I1Z6hAuv0Q7kNvwHNvmn3&amp;_nc_oc=AdoER7Zit0G3aFB_stTluZoBUbGd0aeHMnFQZ7wMRfa2wknEfEYe2YijJpiE87qSOy4&amp;_nc_zt=24&amp;_nc_ht=scontent-sjc6-1.xx&amp;_nc_gid=2NMCDDRNptPDf6GszEzj5A&amp;_nc_ss=79289&amp;oh=00_AQMeNLUtibugyQjSeuhCJGWQ1aJvL7r-297twl1fWHgATg&amp;oe=6AD92B13"
+                 referrerpolicy="no-referrer"
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                 alt="Identidad Maíz Tepache"
+                 class="w-full h-[440px] object-cover hover:scale-105 transition-transform duration-700" />
+          </div>
+          <!-- Badge -->
+          <div class="absolute -bottom-6 -right-6 bg-night text-white p-6 rounded-2xl shadow-xl hidden sm:block border border-terracotta-500/30">
+            <p class="font-serif text-3xl font-bold text-corn">100%</p>
+            <p class="text-xs uppercase tracking-wider text-zinc-300">Herencia Mexicana</p>
+          </div>
+        </div>
+
+        <!-- Text Content -->
+        <div class="lg:col-span-7">
+          <span class="text-terracotta-600 font-bold uppercase tracking-widest text-xs">Concepto & Pasión Culinaria</span>
+          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-night mt-2 mb-6">
+            Rindiendo culto al grano sagrado y a la bebida de los dioses
+          </h2>
+          <p class="text-zinc-600 text-base sm:text-lg leading-relaxed mb-6">
+            En <strong>MAÍZ TEPACHE</strong> celebramos la riqueza de nuestra tierra. Cada plato es un diálogo entre las recetas tradicionales de las abuelas mexicanas y una propuesta estética contemporánea. 
+          </p>
+          <p class="text-zinc-600 text-base leading-relaxed mb-8">
+            Aquí el maíz es transformado con respeto para crear texturas inigualables, mientras el tepache fermentado lentamente brinda notas cítricas y dulces que acompañan tanto un desayuno contundente con café de sobremesa como una velada especial de antojos selectos.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+            <div class="flex items-start gap-3 p-4 rounded-xl bg-white border border-stone-200 shadow-sm">
+              <i class="fa-solid fa-mortar-pestle text-terracotta-500 text-xl mt-1"></i>
+              <div>
+                <h4 class="font-semibold text-night text-sm">Sazón Casera Auténtica</h4>
+                <p class="text-xs text-zinc-500">Recetas con alma: frijoles charros, salsas molcajeteadas y enchiladas vivas.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-4 rounded-xl bg-white border border-stone-200 shadow-sm">
+              <i class="fa-solid fa-wine-glass text-terracotta-500 text-xl mt-1"></i>
+              <div>
+                <h4 class="font-semibold text-night text-sm">El Gustito de Ocasión</h4>
+                <p class="text-xs text-zinc-500">El sitio idóneo para consentirte con nuestras creaciones emblemáticas como el esquite de autor.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <a href="tel:529617081146" class="inline-flex items-center gap-2 bg-terracotta-600 hover:bg-terracotta-500 text-white px-6 py-3 rounded-full text-sm font-semibold tracking-wide shadow-md transition-all">
+              <span>Reservar Mesa</span>
+              <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARTA Y ESPECIALIDADES -->
+  <section id="carta" class="py-24 bg-night text-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-corn text-xs uppercase tracking-widest font-semibold">Gastronomía de Autor & Raíces</span>
+        <h2 class="font-serif text-3xl sm:text-5xl font-bold mt-2 mb-4">Nuestra Carta, Platos Estrella y Especialidades</h2>
+        <div class="w-20 h-1 bg-terracotta-500 mx-auto mb-6"></div>
+        <p class="text-zinc-400 text-sm sm:text-base">
+          Inspirados en las recomendaciones y antojos favoritos de quienes nos visitan: desde los aclamados desayunos caseros hasta nuestra joya urbana: el esquite gourmet.
+        </p>
+      </div>
+
+      <!-- Categories Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Categoría 1: Desayunos de la Casa -->
+        <div class="bg-charcoal/90 rounded-2xl p-6 sm:p-8 border border-zinc-800 hover:border-terracotta-500/50 transition-all duration-300 shadow-xl flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between pb-4 border-b border-zinc-800 mb-6">
+              <span class="font-serif text-xl font-bold text-corn">Tradición de Desayuno</span>
+              <i class="fa-solid fa-sun text-terracotta-400"></i>
+            </div>
+
+            <div class="space-y-6">
+              <div class="group">
+                <div class="flex justify-between items-baseline mb-1">
+                  <h4 class="font-bold text-white group-hover:text-corn transition-colors">Huevos Túmulos</h4>
+                  <span class="text-terracotta-400 text-xs font-semibold uppercase">Especialidad</span>
+                </div>
+                <p class="text-xs text-zinc-400 leading-relaxed">Huevos de campo preparados a la perfección sobre base artesanal, coronados con salsa tibia de la casa y frijoles refritos.</p>
+              </div>
+
+              <div class="group">
+                <div class="flex justify-between items-baseline mb-1">
+                  <h4 class="font-bold text-white group-hover:text-corn transition-colors">Enchiladas Verdes Caseras</h4>
+                  <span class="text-zinc-300 text-xs">Clásico</span>
+                </div>
+                <p class="text-xs text-zinc-400 leading-relaxed">Tortillas de maíz recién pasadas por el comal, pollo deshebrado tierno, bañadas en salsa verde con crema de rancho y queso fresco.</p>
+              </div>
+
+              <div class="group">
+                <div class="flex justify-between items-baseline mb-1">
+                  <h4 class="font-bold text-white group-hover:text-corn transition-colors">Chilaquiles Verdes Crujientes</h4>
+                  <span class="text-zinc-300 text-xs">Favorito</span>
+                </div>
+                <p class="text-xs text-zinc-400 leading-relaxed">Totopos de maíz fritos al instante, bañados en salsa verde esmeralda con cilantro fresco, cebolla morada y guarnición de frijoles charros.</p>
+              </div>
+
+              <div class="group">
+                <div class="flex justify-between items-baseline mb-1">
+                  <h4 class="font-bold text-white group-hover:text-corn transition-colors">Frijoles Charros Tradicionales</h4>
+                  <span class="text-zinc-300 text-xs">Receta Casera</span>
+                </div>
+                <p class="text-xs text-zinc-400 leading-relaxed">Cocidos lentamente en olla de barro con tocino, chorizo, chile serrano y un toque de cilantro campirano.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-4 border-t border-zinc-800/80">
+            <span class="text-[11px] text-zinc-400 italic flex items-center gap-1.5">
+              <i class="fa-solid fa-check text-corn text-[10px]"></i> Incluye opción de café de sobremesa
+            </span>
+          </div>
+        </div>
+
+        <!-- Categoría 2: Los Antojos & El Esquite Estrella -->
+        <div class="bg-charcoal/90 rounded-2xl p-6 sm:p-8 border-2 border-terracotta-600/60 hover:border-terracotta-500 transition-all duration-300 shadow-2xl relative flex flex-col justify-between">
+          <span class="absolute -top-3.5 right-6 bg-gradient-to-r from-corn to-terracotta-500 text-night font-bold text-[11px] uppercase tracking-wider py-1 px-3 rounded-full shadow">
+            Platillo Más Comentado
+          </span>
+
+          <div>
+            <div class="flex items-center justify-between pb-4 border-b border-zinc-800 mb-6">
+              <span class="font-serif text-xl font-bold text-white">Antojos de Maíz & Joyas</span>
+              <i class="fa-solid fa-fire-burner text-corn"></i>
+            </div>
+
+            <div class="space-y-6">
+              <div class="p-3.5 rounded-xl bg-terracotta-900/20 border border-terracotta-600/30">
+                <div class="flex justify-between items-baseline mb-1">
+                  <h4 class="font-bold text-corn text-sm">El Esquite de Autor "Maíz Tepache"</h4>
+                  <span class="text-xs text-white font-medium">Imperdible</span>
+                </div>
+                <p class="text-xs text-zinc-300 leading-relaxed">El plato que desafía expectativas. Granos tiernos de elote criollo cocinados con epazote silvestre, mayonesa ahumada, queso de cincho añejo y polvo de chiles tatemados. Un verdadero gusto al paladar.</p>
+              </div>
+
+              <div class="group">
+                <div class="flex justify-between items-baseline mb-1">
+                  <h4 class="font-bold text-white group-hover:text-corn transition-colors">Tacos de Maíz Criollo</h4>
+                  <span class="text-zinc-300 text-xs">A la plancha</span>
+                </div>
+                <p class="text-xs text-zinc-400 leading-relaxed">Doble tortilla caliente de nixtamal con guisados de fiesta, cebollitas asadas y salsas artesanales a elección.</p>
+              </div>
+
+              <div class="group">
+                <div class="flex justify-between items-baseline mb-1">
+                  <h4 class="font-bold text-white group-hover:text-corn transition-colors">Cortes & Guisos de Ocasión</h4>
+                  <span class="text-zinc-300 text-xs">Cena & Comida</span>
+                </div>
+                <p class="text-xs text-zinc-400 leading-relaxed">Selección de carnes preparadas al momento para compartir, acompañadas de nopales asados y queso fundido.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-4 border-t border-zinc-800/80">
+            <a href="tel:529617081146" class="w-full inline-flex items-center justify-center gap-2 bg-terracotta-600 hover:bg-terracotta-500 text-white py-2.5 rounded-xl font-medium text-xs tracking-wider uppercase transition-colors">
+              <span>Reservar Mesa</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Categoría 3: Fermentos, Tepache y Cafetería -->
+        <div class="bg-charcoal/90 rounded-2xl p-6 sm:p-8 border border-zinc-800 hover:border-terracotta-500/50 transition-all duration-300 shadow-xl flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between pb-4 border-b border-zinc-800 mb-6">
+              <span class="font-serif text-xl font-bold text-corn">Bebidas & Sobremesa</span>
+              <i class="fa-solid fa-mug-hot text-terracotta-400"></i>
+            </div>
+
+            <div class="space-y-6">
+              <div class="group">
+                <div class="flex justify-between items-baseline mb-1">
+                  <h4 class="font-bold text-white group-hover:text-corn transition-colors">Tepache Artesanal de Piña</h4>
+                  <span class="text-terracotta-400 text-xs font-semibold uppercase">Casa</span>
+                </div>
+                <p class="text-xs text-zinc-400 leading-relaxed">Fermentación tradicional con piloncillo puro, clavo y canela de Ceilán. Fresco, burbujeante y lleno de historia viva.</p>
+              </div>
+
+              <div class="group">
+                <div class="flex justify-between items-baseline mb-1">
+                  <h4 class="font-bold text-white group-hover:text-corn transition-colors">Café de Sobremesa Chiapaneco</h4>
+                  <span class="text-zinc-300 text-xs">De Altura</span>
+                </div>
+                <p class="text-xs text-zinc-400 leading-relaxed">Granos tostados artesanalmente con notas a chocolate amargo y avellana, ideal para prolongar la conversación tras la comida.</p>
+              </div>
+
+              <div class="group">
+                <div class="flex justify-between items-baseline mb-1">
+                  <h4 class="font-bold text-white group-hover:text-corn transition-colors">Aguas Frescas de Frutas Naturales</h4>
+                  <span class="text-zinc-300 text-xs">Del Día</span>
+                </div>
+                <p class="text-xs text-zinc-400 leading-relaxed">Preparadas al momento con frutos de estación y endulzadas con equilibrio para refrescar el paladar.</p>
+              </div>
+
+              <div class="group">
+                <div class="flex justify-between items-baseline mb-1">
+                  <h4 class="font-bold text-white group-hover:text-corn transition-colors">Mixología con Destilados Mexicanos</h4>
+                  <span class="text-zinc-300 text-xs">Cava</span>
+                </div>
+                <p class="text-xs text-zinc-400 leading-relaxed">Cocteles de autor fusionando mezcal, tequila y reducciones de tepache con hierbas aromáticas.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-4 border-t border-zinc-800/80">
+            <span class="text-[11px] text-zinc-400 italic flex items-center gap-1.5">
+              <i class="fa-solid fa-heart text-terracotta-500 text-[10px]"></i> Servicio cálido y ambiente inigualable
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Banner de Reserva en Sección Carta -->
+      <div class="mt-14 bg-gradient-to-r from-terracotta-900/60 via-charcoal to-terracotta-900/60 border border-terracotta-500/30 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+        <div>
+          <h3 class="font-serif text-2xl font-bold text-white">¿Planeas una reunión familiar o un festejo especial?</h3>
+          <p class="text-zinc-300 text-sm mt-1">Disfruta de nuestras instalaciones en el primer piso con toda la comodidad y el sabor que mereces.</p>
+        </div>
+        <a href="tel:529617081146" class="whitespace-nowrap bg-terracotta-600 hover:bg-terracotta-500 text-white font-semibold px-7 py-3.5 rounded-full shadow-lg transition-transform hover:scale-105">
+          <i class="fa-solid fa-phone mr-2"></i> Reservar Mesa
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NUESTRAS INSTALACIONES Y TRABAJOS -->
+  <section id="instalaciones" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-terracotta-600 text-xs uppercase tracking-widest font-bold">Ambiente, Diseño & Confort</span>
+        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-night mt-2 mb-4">Nuestras Instalaciones y Trabajos</h2>
+        <div class="w-20 h-1 bg-terracotta-500 mx-auto mb-6"></div>
+        <p class="text-zinc-600 text-sm sm:text-base">
+          Un espacio diseñado para deleitar todos los sentidos: arquitectura con toques contemporáneos, iluminación acogedora y un servicio enfocado en hacerte sentir como en casa.
+        </p>
+      </div>
+
+      <!-- Grid Galería -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Foto 1 (Negocio Real) -->
+        <div class="group relative rounded-2xl overflow-hidden shadow-lg h-80 bg-zinc-900">
+          <img src="https://scontent-sjc6-1.xx.fbcdn.net/v/t39.30808-1/469725120_122113023104597286_171088566954722270_n.jpg?stp=cp6_dst-jpg_tt6&amp;cstp=mx1181x1181&amp;ctp=s720x720&amp;_nc_cat=100&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=h8I1Z6hAuv0Q7kNvwHNvmn3&amp;_nc_oc=AdoER7Zit0G3aFB_stTluZoBUbGd0aeHMnFQZ7wMRfa2wknEfEYe2YijJpiE87qSOy4&amp;_nc_zt=24&amp;_nc_ht=scontent-sjc6-1.xx&amp;_nc_gid=2NMCDDRNptPDf6GszEzj5A&amp;_nc_ss=79289&amp;oh=00_AQMeNLUtibugyQjSeuhCJGWQ1aJvL7r-297twl1fWHgATg&amp;oe=6AD92B13"
+               referrerpolicy="no-referrer"
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+               alt="Salón y Ambiente Maíz Tepache"
+               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+          <div class="absolute inset-0 bg-gradient-to-t from-night/90 via-night/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+            <span class="text-corn text-xs font-semibold uppercase tracking-wider">Identidad Visual</span>
+            <h4 class="text-white font-serif text-lg font-bold">Concepto & Arquitectura Cálida</h4>
+            <p class="text-zinc-300 text-xs mt-1">Ambiente moderno con alma mexicana en primer piso.</p>
+          </div>
+        </div>
+
+        <!-- Foto 2 (Gourmet / Maiz) -->
+        <div class="group relative rounded-2xl overflow-hidden shadow-lg h-80 bg-zinc-900">
+          <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=800&q=80"
+               referrerpolicy="no-referrer"
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+               alt="Platillos de Maíz de la Casa"
+               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+          <div class="absolute inset-0 bg-gradient-to-t from-night/90 via-night/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+            <span class="text-corn text-xs font-semibold uppercase tracking-wider">Nuestra Cocina</span>
+            <h4 class="text-white font-serif text-lg font-bold">Maíz Nixtamalizado al Comal</h4>
+            <p class="text-zinc-300 text-xs mt-1">Sabor genuino y masa preparada todos los días.</p>
+          </div>
+        </div>
+
+        <!-- Foto 3 (Esquites / Antojos) -->
+        <div class="group relative rounded-2xl overflow-hidden shadow-lg h-80 bg-zinc-900">
+          <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=800&q=80"
+               referrerpolicy="no-referrer"
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+               alt="Esquites y antojos gourmets"
+               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+          <div class="absolute inset-0 bg-gradient-to-t from-night/90 via-night/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+            <span class="text-corn text-xs font-semibold uppercase tracking-wider">Especialidad de la Casa</span>
+            <h4 class="text-white font-serif text-lg font-bold">Esquites de Autor</h4>
+            <p class="text-zinc-300 text-xs mt-1">El consentido de nuestros comensales y amantes del maíz.</p>
+          </div>
+        </div>
+
+        <!-- Foto 4 (Desayunos) -->
+        <div class="group relative rounded-2xl overflow-hidden shadow-lg h-80 bg-zinc-900">
+          <img src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=800&q=80"
+               referrerpolicy="no-referrer"
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+               alt="Desayunos caseros y enchiladas verdes"
+               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+          <div class="absolute inset-0 bg-gradient-to-t from-night/90 via-night/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+            <span class="text-corn text-xs font-semibold uppercase tracking-wider">Matutino</span>
+            <h4 class="text-white font-serif text-lg font-bold">Enchiladas & Chilaquiles Verdes</h4>
+            <p class="text-zinc-300 text-xs mt-1">La auténtica sazón de hogar para empezar la mañana.</p>
+          </div>
+        </div>
+
+        <!-- Foto 5 (Bebidas y Tepache) -->
+        <div class="group relative rounded-2xl overflow-hidden shadow-lg h-80 bg-zinc-900">
+          <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=800&q=80"
+               referrerpolicy="no-referrer"
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+               alt="Tepache y coctelería ancestral"
+               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+          <div class="absolute inset-0 bg-gradient-to-t from-night/90 via-night/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+            <span class="text-corn text-xs font-semibold uppercase tracking-wider">Barra Ancestral</span>
+            <h4 class="text-white font-serif text-lg font-bold">Tepache Artesanal & Mixología</h4>
+            <p class="text-zinc-300 text-xs mt-1">Bebidas refrescantes con receta de la casa.</p>
+          </div>
+        </div>
+
+        <!-- Foto 6 (Espacio para sobremesa) -->
+        <div class="group relative rounded-2xl overflow-hidden shadow-lg h-80 bg-zinc-900">
+          <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=800&q=80"
+               referrerpolicy="no-referrer"
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+               alt="Sobremesa y café de altura"
+               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+          <div class="absolute inset-0 bg-gradient-to-t from-night/90 via-night/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+            <span class="text-corn text-xs font-semibold uppercase tracking-wider">La Experiencia</span>
+            <h4 class="text-white font-serif text-lg font-bold">Café y Conversación Prolongada</h4>
+            <p class="text-zinc-300 text-xs mt-1">Mesas amplias, cómodas y diseñadas para compartir.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- OPINIONES REALES VERIFICADAS -->
+  <section id="opiniones" class="py-24 bg-terracotta-50/70 border-y border-stone-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-terracotta-600 text-xs uppercase tracking-widest font-bold">Testimonios Reales de Clientes</span>
+        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-night mt-2 mb-4">Lo que Opinan de Maíz Tepache</h2>
+        <div class="w-20 h-1 bg-terracotta-500 mx-auto mb-6"></div>
+        <p class="text-zinc-600 text-sm sm:text-base">
+          Valoramos cada experiencia compartida en Google Maps y portales gastronómicos. Transparencia, carácter y evolución constante.
+        </p>
+      </div>
+
+      <!-- Reviews Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Review 1: Karen Paola V. Hernandez -->
+        <div class="bg-white p-7 rounded-2xl shadow-sm border border-stone-200/80 flex flex-col justify-between hover:shadow-md transition-shadow">
+          <div>
+            <div class="flex items-center gap-1 text-corn mb-4">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-zinc-700 text-sm leading-relaxed italic mb-6">
+              "Todo lo que pedimos estuvo delicioso, un poquito caro pero si te quieres dar un gustito de vez en cuando este es el lugar indicado !! Lo que me sorprendió fue el esquite, la verdad solo lo pedí para criticarlo 🤭 por precio …pero me quede sorprendida del sabor 🤤 tal vez lo volvería a comprar 🤭…"
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-stone-100">
+            <div class="w-10 h-10 rounded-full bg-terracotta-100 text-terracotta-700 font-bold flex items-center justify-center text-sm">
+              KP
+            </div>
+            <div>
+              <h4 class="font-bold text-night text-sm">Karen Paola V. Hernandez</h4>
+              <p class="text-xs text-zinc-400">Cliente Verificada en Google Maps</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2: Alberto Duran -->
+        <div class="bg-white p-7 rounded-2xl shadow-sm border border-stone-200/80 flex flex-col justify-between hover:shadow-md transition-shadow">
+          <div>
+            <div class="flex items-center gap-1 text-corn mb-4">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-zinc-700 text-sm leading-relaxed italic mb-6">
+              "Sorpresa de desayuno...los platillos con sabor casero bien preparados , al menos los huevos túmulos, las enchiladas verdes, los chilaquiles verdes , los frijoes charros ; todos muy ricos..y que decir de la atención excelente..bonita ambientación, agradable para degustar el café de sobremesa"
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-stone-100">
+            <div class="w-10 h-10 rounded-full bg-terracotta-100 text-terracotta-700 font-bold flex items-center justify-center text-sm">
+              AD
+            </div>
+            <div>
+              <h4 class="font-bold text-night text-sm">Alberto Duran</h4>
+              <p class="text-xs text-zinc-400">Cliente Verificado en Google Maps</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3: Cuauhtemoc Montero -->
+        <div class="bg-white p-7 rounded-2xl shadow-sm border border-stone-200/80 flex flex-col justify-between hover:shadow-md transition-shadow">
+          <div>
+            <div class="flex items-center gap-1 text-corn mb-4">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-zinc-700 text-sm leading-relaxed italic mb-6">
+              "Es un lugar unico. Muy mexicano mezcla estos extraordinarios productos mexicanos. Que hacen platillos extraordinarios. Visitenlo vale la pena es rico."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-stone-100">
+            <div class="w-10 h-10 rounded-full bg-terracotta-100 text-terracotta-700 font-bold flex items-center justify-center text-sm">
+              CM
+            </div>
+            <div>
+              <h4 class="font-bold text-night text-sm">Cuauhtemoc Montero</h4>
+              <p class="text-xs text-zinc-400">Cliente Verificado en Google Maps</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 4: Miguel Valdepeña -->
+        <div class="bg-white p-7 rounded-2xl shadow-sm border border-stone-200/80 flex flex-col justify-between hover:shadow-md transition-shadow">
+          <div>
+            <div class="flex items-center gap-1 text-corn mb-4">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-zinc-700 text-sm leading-relaxed italic mb-6">
+              "Ubicado en el primer piso subiendo el elevador, el ambiente, concepto y atención del lugar es bastante agradable. Sin embargo, la frescura de los alimentos deja un poco que desear. En mi visita, la carne era seca y claramente no fue cocinada al momento."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-stone-100">
+            <div class="w-10 h-10 rounded-full bg-zinc-200 text-zinc-700 font-bold flex items-center justify-center text-sm">
+              MV
+            </div>
+            <div>
+              <h4 class="font-bold text-night text-sm">Miguel Valdepeña</h4>
+              <p class="text-xs text-zinc-400">Cliente Verificado en Google Maps</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 5: Manu Aguilar -->
+        <div class="bg-white p-7 rounded-2xl shadow-sm border border-stone-200/80 flex flex-col justify-between hover:shadow-md transition-shadow">
+          <div>
+            <div class="flex items-center gap-1 text-corn mb-4">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-zinc-700 text-sm leading-relaxed italic mb-6">
+              "El lugar está bonito, la comida es buena a secas, nada innovador o sorprendente. Por el precio esperaba más, siento que puedo comer lo mismo en otros lugares por mucho menos."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-stone-100">
+            <div class="w-10 h-10 rounded-full bg-zinc-200 text-zinc-700 font-bold flex items-center justify-center text-sm">
+              MA
+            </div>
+            <div>
+              <h4 class="font-bold text-night text-sm">Manu Aguilar</h4>
+              <p class="text-xs text-zinc-400">Cliente Verificado en Google Maps</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card de Compromiso de Calidad -->
+        <div class="bg-gradient-to-br from-night to-charcoal text-white p-7 rounded-2xl shadow-lg border border-terracotta-500/40 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-2 text-corn mb-3">
+              <i class="fa-solid fa-utensils"></i>
+              <span class="text-xs uppercase tracking-widest font-semibold">Compromiso Culinario</span>
+            </div>
+            <h3 class="font-serif text-xl font-bold mb-3">Cocinando al Momento para Ti</h3>
+            <p class="text-zinc-300 text-xs sm:text-sm leading-relaxed">
+              Tomamos en cuenta cada crítica y sugerencia para asegurar que tus platillos, guisos y carnes lleguen a tu mesa con la máxima frescura, textura jugosa y sabor inigualable.
+            </p>
+          </div>
+          <div class="mt-6">
+            <a href="tel:529617081146" class="inline-flex items-center gap-2 text-corn hover:text-white font-semibold text-xs tracking-wider uppercase transition-colors">
+              <span>Vive la experiencia hoy</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACIÓN, MAPA Y CONTACTO -->
+  <section id="contacto" class="py-24 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-terracotta-600 text-xs uppercase tracking-widest font-bold">Cómo Encontrarnos</span>
+        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-night mt-2 mb-4">Ubicación y Reservas</h2>
+        <div class="w-20 h-1 bg-terracotta-500 mx-auto mb-6"></div>
+        <p class="text-zinc-600 text-sm sm:text-base">
+          Te esperamos en un entorno exclusivo con acceso rápido y elevador directo en Satélite Loma Larga, Tuxtla Gutiérrez.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <!-- Tarjeta de Datos de Contacto -->
+        <div class="lg:col-span-5 bg-charcoal text-white p-8 sm:p-10 rounded-2xl shadow-xl border border-zinc-800">
+          <h3 class="font-serif text-2xl font-bold text-white mb-2">Visítanos</h3>
+          <p class="text-zinc-400 text-sm mb-8">Comunícate directamente para reservar tu mesa o realizar consultas sobre eventos privados.</p>
+
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="w-11 h-11 rounded-xl bg-terracotta-600/20 text-terracotta-400 border border-terracotta-500/30 flex items-center justify-center shrink-0 mt-0.5">
+                <i class="fa-solid fa-map-location-dot"></i>
+              </div>
+              <div>
+                <h4 class="text-xs uppercase tracking-wider font-semibold text-corn">Dirección Exacta</h4>
+                <p class="text-zinc-200 text-sm mt-0.5 leading-relaxed">
+                  Carr. Panamericana a Chiapa de Corzo, Satélite Loma Larga, 29040 Tuxtla Gutiérrez, Chis., México
+                </p>
+                <span class="inline-block mt-1 text-xs text-terracotta-400 font-medium">
+                  <i class="fa-solid fa-elevator mr-1"></i> Primer piso subiendo por el elevador
+                </span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-11 h-11 rounded-xl bg-terracotta-600/20 text-terracotta-400 border border-terracotta-500/30 flex items-center justify-center shrink-0 mt-0.5">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div>
+                <h4 class="text-xs uppercase tracking-wider font-semibold text-corn">Teléfono de Reservas</h4>
+                <a href="tel:529617081146" class="text-white hover:text-terracotta-400 font-bold text-lg transition-colors block mt-0.5">
+                  +52 961 708 1146
+                </a>
+                <p class="text-xs text-zinc-400">Atención inmediata para reservas</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-11 h-11 rounded-xl bg-terracotta-600/20 text-terracotta-400 border border-terracotta-500/30 flex items-center justify-center shrink-0 mt-0.5">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div>
+                <h4 class="text-xs uppercase tracking-wider font-semibold text-corn">Correo Electrónico</h4>
+                <a href="mailto:maiztepache@gmail.com" class="text-zinc-200 hover:text-white text-sm transition-colors block mt-0.5">
+                  maiztepache@gmail.com
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-10 pt-6 border-t border-zinc-800">
+            <a href="tel:529617081146" class="w-full inline-flex items-center justify-center gap-3 bg-gradient-to-r from-terracotta-600 to-terracotta-500 hover:from-terracotta-500 hover:to-terracotta-600 text-white py-3.5 px-6 rounded-xl font-semibold text-sm shadow-lg transition-all">
+              <i class="fa-solid fa-calendar-check"></i>
+              <span>Reservar Mesa Ahora</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Mapa Interactivo Integrado -->
+        <div class="lg:col-span-7 bg-stone-100 rounded-2xl overflow-hidden shadow-xl border border-stone-200 p-2 sm:p-3">
+          <div class="w-full overflow-hidden rounded-xl">
+            <iframe src="https://www.google.com/maps?q=MA%C3%8DZ%20TEPACHE%20Carr.%20Panamericana%20a%20Chiapa%20de%20Corzo%2C%20Sat%C3%A9lite%20Loma%20Larga%2C%2029040%20Tuxtla%20Guti%C3%A9rrez%2C%20Chis.%2C%20M%C3%A9xico&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+          <div class="p-4 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-500 gap-2">
+            <span><i class="fa-solid fa-circle-info text-terracotta-500 mr-1"></i> Frente a la Carretera Panamericana en Tuxtla Gutiérrez</span>
+            <a href="tel:529617081146" class="text-terracotta-600 font-semibold hover:underline">¿Cómo llegar? Llámanos</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-night text-zinc-400 text-sm border-t border-zinc-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+        
+        <!-- Info Principal -->
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-9 h-9 rounded-full bg-terracotta-600/30 border border-terracotta-500/40 flex items-center justify-center text-corn">
+              <i class="fa-solid fa-seedling text-sm"></i>
+            </div>
+            <span class="font-serif text-xl font-bold tracking-wider text-white">MAÍZ TEPACHE</span>
+          </div>
+          <p class="text-zinc-400 text-xs sm:text-sm max-w-sm leading-relaxed mb-6">
+            Restaurante mexicano consagrado a las recetas del maíz, fermentados artesanales y platillos con sazón de hogar en un espacio diseñado para disfrutar.
+          </p>
+          <div class="flex items-center gap-3">
+            <a href="tel:529617081146" class="w-9 h-9 rounded-full bg-zinc-800 hover:bg-terracotta-600 text-zinc-300 hover:text-white flex items-center justify-center transition-colors" title="Llamar">
+              <i class="fa-solid fa-phone text-xs"></i>
+            </a>
+            <a href="mailto:maiztepache@gmail.com" class="w-9 h-9 rounded-full bg-zinc-800 hover:bg-terracotta-600 text-zinc-300 hover:text-white flex items-center justify-center transition-colors" title="Email">
+              <i class="fa-solid fa-envelope text-xs"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Enlaces Rápidos -->
+        <div>
+          <h4 class="font-serif text-white font-bold text-sm mb-4 uppercase tracking-wider">Navegación</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#concepto" class="hover:text-white transition-colors">Nuestro Concepto</a></li>
+            <li><a href="#carta" class="hover:text-white transition-colors">Carta & Especialidades</a></li>
+            <li><a href="#instalaciones" class="hover:text-white transition-colors">Instalaciones</a></li>
+            <li><a href="#opiniones" class="hover:text-white transition-colors">Reseñas de Clientes</a></li>
+            <li><a href="#contacto" class="hover:text-white transition-colors">Ubicación y Mapa</a></li>
+          </ul>
+        </div>
+
+        <!-- Reservas Directas -->
+        <div>
+          <h4 class="font-serif text-white font-bold text-sm mb-4 uppercase tracking-wider">Atención</h4>
+          <p class="text-xs text-zinc-400 mb-3">Haz tu reservación para garantizar tu mesa en el primer piso:</p>
+          <a href="tel:529617081146" class="inline-block bg-terracotta-600 hover:bg-terracotta-500 text-white text-xs font-semibold px-4 py-2.5 rounded-lg transition-colors">
+            Reservar Mesa: +52 961 708 1146
+          </a>
+        </div>
+
+      </div>
+
+      <div class="mt-12 pt-6 border-t border-zinc-800 text-center text-xs text-zinc-400">
+        <p>&copy; <span id="currentYear"></span> MAÍZ TEPACHE. Todos los derechos reservados. Cocina y Tradición Mexicana.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT PARA AÑO Y MENÚ RESPONSIVO -->
+  <script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Cerrar menú al hacer clic en enlaces en móviles
+    document.querySelectorAll('#mobileMenu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  </script>
+</body>
+</html>
