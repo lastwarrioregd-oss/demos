@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Machaco | Ferretería & Suministros Boutique</title>
+  <meta name="description" content="Machaco en Villa del Prado. La emblemática ferretería con esencia tradicional y servicio boutique personalizado. Asesoría experta, herramientas y aprovisionamiento a medida.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            noir: {
+              950: '#0a0a0b',
+              900: '#111113',
+              850: '#17171a',
+              800: '#1f1f24',
+              700: '#2b2b32'
+            },
+            or: {
+              light: '#f2e3c6',
+              DEFAULT: '#c5a059',
+              dark: '#9a7736',
+              glow: '#dfba73'
+            },
+            sand: {
+              50: '#fdfbf7',
+              100: '#f7f4ed',
+              200: '#ede6d8',
+              300: '#ded3be',
+              400: '#c5b79e'
+            }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .bg-grain {
+      background-image: radial-gradient(rgba(197, 160, 89, 0.04) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #f2e3c6 0%, #c5a059 50%, #dfba73 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gold-border-gradient {
+      border-image: linear-gradient(to right, rgba(197, 160, 89, 0.4), rgba(197, 160, 89, 0.05)) 1;
+    }
+  </style>
+</head>
+<body class="bg-noir-950 text-sand-100 font-sans antialiased selection:bg-or selection:text-noir-950">
+
+  <!-- TOP BAR -->
+  <aside aria-label="Información rápida" class="bg-noir-900 border-b border-noir-800 text-xs text-sand-400 py-2.5 px-4">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center space-x-6">
+        <span class="flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-or text-xs"></i> Av. de la Constitución, 34, Villa del Prado, Madrid</span>
+        <span class="hidden md:inline-flex items-center gap-1.5"><i class="fa-regular fa-clock text-or text-xs"></i> Lunes a Sábado: Atención personalizada</span>
+      </div>
+      <div class="flex items-center space-x-4">
+        <a href="mailto:juan@ejemplo.com" class="hover:text-or transition-colors"><i class="fa-regular fa-envelope text-or mr-1"></i> juan@ejemplo.com</a>
+        <span class="text-noir-700">|</span>
+        <a href="tel:918620858" class="text-or hover:text-white font-medium flex items-center gap-1"><i class="fa-solid fa-phone text-xs"></i> 918 620 858</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 bg-noir-950/90 backdrop-blur-md border-b border-noir-800/80 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo -->
+        <a href="#" class="flex flex-col">
+          <span class="font-serif text-2xl sm:text-3xl tracking-[0.2em] font-semibold text-white uppercase">Machaco</span>
+          <span class="text-[9px] uppercase tracking-[0.35em] text-or font-medium -mt-1">Atelier & Ferretería</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center space-x-8 text-sm tracking-wider uppercase font-medium text-sand-300">
+          <a href="#concepto" class="hover:text-or transition-colors">Concepto</a>
+          <a href="#tarifas" class="hover:text-or transition-colors">Servicios & Tarifas</a>
+          <a href="#galeria" class="hover:text-or transition-colors">Instalaciones</a>
+          <a href="#opiniones" class="hover:text-or transition-colors">Testimonios</a>
+          <a href="#contacto" class="hover:text-or transition-colors">Ubicación</a>
+        </nav>
+
+        <!-- CTA Button -->
+        <div class="flex items-center space-x-4">
+          <a href="tel:918620858" class="hidden sm:inline-flex items-center justify-center px-6 py-2.5 text-xs font-semibold tracking-[0.2em] uppercase rounded-full border border-or bg-gradient-to-r from-or to-or-dark text-noir-950 hover:from-white hover:to-sand-200 transition-all duration-300 shadow-[0_0_20px_rgba(197,160,89,0.25)]">
+            Reservar Cita
+          </a>
+          <a href="tel:918620858" class="lg:hidden p-2 text-or border border-noir-700 rounded-lg">
+            <i class="fa-solid fa-phone"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative min-h-[90vh] flex items-center justify-center bg-noir-950 bg-grain overflow-hidden py-20">
+    <!-- Atmospheric lighting -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-or/10 rounded-full blur-[140px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Left Column: Copywriting -->
+        <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-or/30 bg-noir-900/80 backdrop-blur-sm">
+            <span class="w-1.5 h-1.5 rounded-full bg-or animate-pulse"></span>
+            <span class="text-[11px] uppercase tracking-[0.25em] text-or font-semibold">Tradición Exclusiva • Villa del Prado</span>
+          </div>
+
+          <h1 class="font-serif text-4xl sm:text-6xl xl:text-7xl leading-[1.1] font-normal text-white">
+            La elegancia de <br class="hidden sm:inline">
+            <span class="gold-gradient-text italic font-serif">las cosas bien hechas</span>
+          </h1>
+
+          <p class="text-sand-300 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 font-light leading-relaxed">
+            En <strong class="text-white font-medium">Machaco</strong> el trato personal se eleva a categoría de arte. Más que una ferretería de siempre: una curaduría de soluciones domésticas, equipamiento profesional y resolución técnica a tu medida.
+          </p>
+
+          <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+            <a href="tel:918620858" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 text-xs font-semibold tracking-[0.2em] uppercase rounded-full bg-or hover:bg-white text-noir-950 transition-all duration-300 shadow-xl shadow-or/15">
+              <span>Reservar Cita</span>
+              <i class="fa-solid fa-arrow-right text-[11px]"></i>
+            </a>
+            <a href="#tarifas" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-xs font-semibold tracking-[0.2em] uppercase rounded-full border border-noir-700 bg-noir-900/70 hover:border-or/50 text-sand-200 transition-all duration-300">
+              <i class="fa-regular fa-compass text-or text-xs"></i>
+              <span>¿Se puede visitar por dentro?</span>
+            </a>
+          </div>
+
+          <!-- Quick trust indicators -->
+          <div class="pt-8 border-t border-noir-800/80 grid grid-cols-3 gap-4 text-center lg:text-left">
+            <div>
+              <p class="font-serif text-2xl sm:text-3xl text-or font-medium">100%</p>
+              <p class="text-[11px] uppercase tracking-wider text-sand-400 mt-1">Trato Cercano</p>
+            </div>
+            <div>
+              <p class="font-serif text-2xl sm:text-3xl text-or font-medium">+10.000</p>
+              <p class="text-[11px] uppercase tracking-wider text-sand-400 mt-1">Referencias</p>
+            </div>
+            <div>
+              <p class="font-serif text-2xl sm:text-3xl text-or font-medium">5.0 ★</p>
+              <p class="text-[11px] uppercase tracking-wider text-sand-400 mt-1">Excelencia Real</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Hero Real Business Photo Frame -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            <!-- Decorative border frames -->
+            <div class="absolute -inset-3 border border-or/20 rounded-2xl -rotate-1 pointer-events-none"></div>
+            <div class="absolute -inset-1 border border-or/40 rounded-2xl rotate-1 pointer-events-none"></div>
+
+            <div class="relative rounded-xl overflow-hidden bg-noir-900 shadow-2xl border border-noir-700 group">
+              <img 
+                src="https://www.viajarporcantabria.com/wp-content/uploads/2026/10/santander-estacion_maritima.jpg" 
+                alt="Instalaciones y espacio Machaco" 
+                referrerpolicy="no-referrer"
+                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                class="w-full h-[450px] sm:h-[500px] object-cover object-center transform group-hover:scale-105 transition-transform duration-700 filter contrast-105"
+              >
+              <div class="absolute inset-0 bg-gradient-to-t from-noir-950 via-noir-950/20 to-transparent"></div>
+              
+              <div class="absolute bottom-6 left-6 right-6 p-4 rounded-lg bg-noir-900/90 backdrop-blur-md border border-noir-700/80">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="text-xs uppercase tracking-widest text-or font-medium">Sede Principal</p>
+                    <p class="text-sm font-serif text-white mt-0.5">Av. de la Constitución, 34</p>
+                  </div>
+                  <a href="tel:918620858" class="text-xs uppercase tracking-wider text-sand-200 hover:text-or flex items-center gap-1 font-semibold">
+                    Llamar <i class="fa-solid fa-arrow-trend-up text-or text-[10px]"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY / CONCEPTO SECTION -->
+  <section id="concepto" class="py-24 bg-noir-900 relative border-t border-noir-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs uppercase tracking-[0.3em] text-or font-semibold">La Boutique de Suministros</span>
+        <h2 class="font-serif text-3xl sm:text-5xl text-white mt-2 mb-4 font-normal">
+          El encanto de los de antes, <br><span class="italic text-or">la precisión del presente</span>
+        </h2>
+        <div class="w-16 h-px bg-or mx-auto mb-6"></div>
+        <p class="text-sand-300 font-light text-base leading-relaxed">
+          En un mundo de grandes superficies despersonalizadas, en Machaco conservamos la nobleza del oficio. Entrar aquí es respirar historia familiar, confianza absoluta y la certeza de que César y los hermanos encontrarán la solución idónea para tu proyecto.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div class="p-8 rounded-xl bg-noir-950/70 border border-noir-800 hover:border-or/40 transition-all duration-300 group">
+          <div class="w-14 h-14 rounded-full bg-noir-850 flex items-center justify-center text-or mb-6 border border-or/20 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-handshake-simple text-xl"></i>
+          </div>
+          <h3 class="font-serif text-xl text-white mb-2 font-medium">Atención de Confianza</h3>
+          <p class="text-sand-400 text-sm leading-relaxed">
+            Trato cercano y personalizado de toda la vida. Te asesoramos con paciencia y maestría para resolver cualquier duda o reto en tu hogar u obra.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="p-8 rounded-xl bg-noir-950/70 border border-noir-800 hover:border-or/40 transition-all duration-300 group">
+          <div class="w-14 h-14 rounded-full bg-noir-850 flex items-center justify-center text-or mb-6 border border-or/20 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-boxes-packing text-xl"></i>
+          </div>
+          <h3 class="font-serif text-xl text-white mb-2 font-medium">Catálogo Ilimitado</h3>
+          <p class="text-sand-400 text-sm leading-relaxed">
+            Desde bombonas de camping gaz hasta carretillas, escaleras o tapas de menaje. Y si una pieza no está en estantería, te la conseguimos a un precio altamente competitivo.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="p-8 rounded-xl bg-noir-950/70 border border-noir-800 hover:border-or/40 transition-all duration-300 group">
+          <div class="w-14 h-14 rounded-full bg-noir-850 flex items-center justify-center text-or mb-6 border border-or/20 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-compass-drafting text-xl"></i>
+          </div>
+          <h3 class="font-serif text-xl text-white mb-2 font-medium">Resolución Técnica Experta</h3>
+          <p class="text-sand-400 text-sm leading-relaxed">
+            César y nuestro equipo desentrañan cualquier obstáculo técnico. Tu proyecto cuenta con el respaldo de profesionales con décadas de veteranía real.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS / CARTA / TARIFAS SECTION -->
+  <section id="tarifas" class="py-24 bg-noir-950 relative border-t border-noir-800 bg-grain">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div>
+          <span class="text-xs uppercase tracking-[0.3em] text-or font-semibold">Carta de Servicios Especializados</span>
+          <h2 class="font-serif text-3xl sm:text-5xl text-white mt-2 font-normal">
+            Nuestros Tratamientos, Cortes y Tarifas
+          </h2>
+          <p class="text-sand-400 text-sm max-w-xl mt-3 font-light">
+            Servicios estructurados con transparencia y rigor boutique. ¿Se puede visitar por dentro? Sí, nuestro mostrador está abierto para explorar, asesorarte y compartir tu experiencia.
+          </p>
+        </div>
+        <div>
+          <a href="tel:918620858" class="inline-flex items-center gap-2 px-6 py-3.5 text-xs font-semibold tracking-[0.2em] uppercase rounded-full bg-or hover:bg-white text-noir-950 transition-all duration-300">
+            <span>Reservar Cita</span>
+            <i class="fa-solid fa-phone text-[10px]"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Grid de Colecciones y Tarifas -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        
+        <!-- Tarjeta 1: Suministros y Herramienta Clásica -->
+        <article class="p-8 rounded-2xl bg-noir-900 border border-noir-800 hover:border-or/30 transition-all duration-300">
+          <div class="flex items-center justify-between border-b border-noir-800 pb-4 mb-6">
+            <div class="flex items-center gap-3">
+              <i class="fa-solid fa-screwdriver-wrench text-or text-lg"></i>
+              <h3 class="font-serif text-2xl text-white font-medium">Equipamiento & Herramientas</h3>
+            </div>
+            <span class="text-xs uppercase tracking-wider text-or bg-noir-850 px-3 py-1 rounded-full border border-or/20">Esenciales</span>
+          </div>
+
+          <div class="space-y-6">
+            <div class="flex justify-between items-start">
+              <div>
+                <h4 class="text-white text-base font-medium">Carretillas reforzadas de obra y huerto</h4>
+                <p class="text-xs text-sand-400 mt-1">Estructura de alta resistencia para tareas exigentes.</p>
+              </div>
+              <span class="font-serif text-or text-lg whitespace-nowrap ml-4">Consulte modelo</span>
+            </div>
+
+            <div class="flex justify-between items-start">
+              <div>
+                <h4 class="text-white text-base font-medium">Escaleras de aluminio y tijera</h4>
+                <p class="text-xs text-sand-400 mt-1">Múltiples tramos, máxima seguridad y estabilidad certificada.</p>
+              </div>
+              <span class="font-serif text-or text-lg whitespace-nowrap ml-4">Tarifa directa</span>
+            </div>
+
+            <div class="flex justify-between items-start">
+              <div>
+                <h4 class="text-white text-base font-medium">Tornillería al detalle y corte de perfilería</h4>
+                <p class="text-xs text-sand-400 mt-1">Llévese exactamente la cantidad requerida, sin sobrantes.</p>
+              </div>
+              <span class="font-serif text-or text-lg whitespace-nowrap ml-4">Al peso / Unidad</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Tarjeta 2: Energía, Gas y Hogar Tradicional -->
+        <article class="p-8 rounded-2xl bg-noir-900 border border-noir-800 hover:border-or/30 transition-all duration-300">
+          <div class="flex items-center justify-between border-b border-noir-800 pb-4 mb-6">
+            <div class="flex items-center gap-3">
+              <i class="fa-solid fa-fire-burner text-or text-lg"></i>
+              <h3 class="font-serif text-2xl text-white font-medium">Energía & Menaje de Siempre</h3>
+            </div>
+            <span class="text-xs uppercase tracking-wider text-or bg-noir-850 px-3 py-1 rounded-full border border-or/20">Hogar & Campo</span>
+          </div>
+
+          <div class="space-y-6">
+            <div class="flex justify-between items-start">
+              <div>
+                <h4 class="text-white text-base font-medium">Bombonas Camping Gaz (Cartuchos y formato pequeño)</h4>
+                <p class="text-xs text-sand-400 mt-1">Disponibilidad continuada para escapadas, soldadura o cocina exterior.</p>
+              </div>
+              <span class="font-serif text-or text-lg whitespace-nowrap ml-4">Tarifa oficial</span>
+            </div>
+
+            <div class="flex justify-between items-start">
+              <div>
+                <h4 class="text-white text-base font-medium">Tapas de olla, asas y repuestos de cocina clásica</h4>
+                <p class="text-xs text-sand-400 mt-1">El tesoro para restaurar el menaje de siempre sin reemplazarlo entero.</p>
+              </div>
+              <span class="font-serif text-or text-lg whitespace-nowrap ml-4">Económico</span>
+            </div>
+
+            <div class="flex justify-between items-start">
+              <div>
+                <h4 class="text-white text-base font-medium">Repuestos de fontanería y racorería especializada</h4>
+                <p class="text-xs text-sand-400 mt-1">Juntas, adaptadores y válvulas para evitar goteos domésticos.</p>
+              </div>
+              <span class="font-serif text-or text-lg whitespace-nowrap ml-4">A medida</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Tarjeta 3: Asesoría Técnica César y Resolución de Retos -->
+        <article class="p-8 rounded-2xl bg-noir-900 border border-noir-800 hover:border-or/30 transition-all duration-300">
+          <div class="flex items-center justify-between border-b border-noir-800 pb-4 mb-6">
+            <div class="flex items-center gap-3">
+              <i class="fa-solid fa-user-shield text-or text-lg"></i>
+              <h3 class="font-serif text-2xl text-white font-medium">Asesoramiento & Diagnóstico Técnico</h3>
+            </div>
+            <span class="text-xs uppercase tracking-wider text-or bg-noir-850 px-3 py-1 rounded-full border border-or/20">Especialista</span>
+          </div>
+
+          <div class="space-y-6">
+            <div class="flex justify-between items-start">
+              <div>
+                <h4 class="text-white text-base font-medium">Resolución de obstáculos de montaje e instalación</h4>
+                <p class="text-xs text-sand-400 mt-1">César evalúa tu caso particular y prescribe la solución más duradera y certera.</p>
+              </div>
+              <span class="font-serif text-or text-sm whitespace-nowrap ml-4">Incluido en compra</span>
+            </div>
+
+            <div class="flex justify-between items-start">
+              <div>
+                <h4 class="text-white text-base font-medium">Localización de piezas discontinuadas o especiales</h4>
+                <p class="text-xs text-sand-400 mt-1">"Buceamos" en el stock histórico para encontrar lo que nadie más conserva.</p>
+              </div>
+              <span class="font-serif text-or text-sm whitespace-nowrap ml-4">Atención directa</span>
+            </div>
+
+            <div class="flex justify-between items-start">
+              <div>
+                <h4 class="text-white text-base font-medium">Guía de fijaciones para muros complejos</h4>
+                <p class="text-xs text-sand-400 mt-1">Tacos químicos, anclajes pesados y soluciones para casas rústicas.</p>
+              </div>
+              <span class="font-serif text-or text-sm whitespace-nowrap ml-4">Personalizada</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Tarjeta 4: Encargos a Medida con Precio Competitivo -->
+        <article class="p-8 rounded-2xl bg-noir-900 border border-noir-800 hover:border-or/30 transition-all duration-300">
+          <div class="flex items-center justify-between border-b border-noir-800 pb-4 mb-6">
+            <div class="flex items-center gap-3">
+              <i class="fa-solid fa-truck-fast text-or text-lg"></i>
+              <h3 class="font-serif text-2xl text-white font-medium">Búsqueda & Encargo Bajo Demanda</h3>
+            </div>
+            <span class="text-xs uppercase tracking-wider text-or bg-noir-850 px-3 py-1 rounded-full border border-or/20">Compromiso</span>
+          </div>
+
+          <div class="space-y-6">
+            <div class="flex justify-between items-start">
+              <div>
+                <h4 class="text-white text-base font-medium">Servicio "Si no lo hay, te lo traemos"</h4>
+                <p class="text-xs text-sand-400 mt-1">Gestión rápida con distribuidores de primer nivel para maquinaria o repuestos específicos.</p>
+              </div>
+              <span class="font-serif text-or text-lg whitespace-nowrap ml-4">Precio Competitivo</span>
+            </div>
+
+            <div class="flex justify-between items-start">
+              <div>
+                <h4 class="text-white text-base font-medium">Visita técnica presencial y recorrido en tienda</h4>
+                <p class="text-xs text-sand-400 mt-1">¿Se puede visitar por dentro? Sí, recorre nuestros pasillos y comparte tu experiencia con nosotros.</p>
+              </div>
+              <span class="font-serif text-or text-sm whitespace-nowrap ml-4">Bienvenida libre</span>
+            </div>
+
+            <div class="flex justify-between items-start">
+              <div>
+                <h4 class="text-white text-base font-medium">Suministros integrales para mantenimiento y reformas</h4>
+                <p class="text-xs text-sand-400 mt-1">Condiciones especiales para profesionales locales y particulares constantes.</p>
+              </div>
+              <span class="font-serif text-or text-lg whitespace-nowrap ml-4">Presupuesto Cerrado</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Action Banner under Rates -->
+      <div class="mt-12 p-8 rounded-2xl bg-gradient-to-r from-noir-900 via-noir-850 to-noir-900 border border-or/20 text-center flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div class="text-left">
+          <h4 class="font-serif text-xl sm:text-2xl text-white">¿Tienes un reto de bricolaje o necesitas una pieza exacta?</h4>
+          <p class="text-sand-400 text-sm mt-1">Llámanos ahora mismo para reservar tu consulta previa con César o los hermanos.</p>
+        </div>
+        <a href="tel:918620858" class="px-8 py-3.5 text-xs font-semibold tracking-[0.2em] uppercase rounded-full bg-or hover:bg-white text-noir-950 transition-all duration-300 whitespace-nowrap">
+          Reservar Cita
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GALERÍA: NUESTRAS INSTALACIONES Y TRABAJOS -->
+  <section id="galeria" class="py-24 bg-noir-900 border-t border-noir-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs uppercase tracking-[0.3em] text-or font-semibold">Atmósfera & Espacios</span>
+        <h2 class="font-serif text-3xl sm:text-5xl text-white mt-2 mb-4 font-normal">
+          Nuestras Instalaciones y Trabajos
+        </h2>
+        <div class="w-16 h-px bg-or mx-auto mb-6"></div>
+        <p class="text-sand-300 text-sm font-light">
+          Un rincón donde el tiempo adquiere otra textura. Espacios repletos de soluciones, estanterías con historia y una dedicación constante a cada cliente.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Foto Real del Negocio con Fallback Infalible -->
+        <div class="relative group rounded-xl overflow-hidden border border-noir-800 bg-noir-950 h-80">
+          <img 
+            src="https://www.viajarporcantabria.com/wp-content/uploads/2026/10/santander-estacion_maritima.jpg" 
+            alt="Nuestras Instalaciones y Trabajos - Fachada y Espacio Machaco" 
+            referrerpolicy="no-referrer"
+            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 filter brightness-95"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-noir-950/90 via-noir-950/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
+          <div class="absolute bottom-4 left-4 right-4 text-left">
+            <span class="text-[10px] uppercase tracking-widest text-or font-semibold">Fotografía Destacada</span>
+            <p class="text-white font-serif text-lg">Instalaciones de Machaco</p>
+          </div>
+        </div>
+
+        <!-- Foto Inspiracional Boutique de Herramientas 1 -->
+        <div class="relative group rounded-xl overflow-hidden border border-noir-800 bg-noir-950 h-80">
+          <img 
+            src="https://images.unsplash.com/photo-1581783898377-1c85bf937427?auto=format&fit=crop&w=800&q=80" 
+            alt="Nuestras Instalaciones y Trabajos - Selección de precisión" 
+            referrerpolicy="no-referrer"
+            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 filter brightness-95"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-noir-950/90 via-noir-950/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
+          <div class="absolute bottom-4 left-4 right-4 text-left">
+            <span class="text-[10px] uppercase tracking-widest text-or font-semibold">El Taller</span>
+            <p class="text-white font-serif text-lg">Curaduría de Herramientas</p>
+          </div>
+        </div>
+
+        <!-- Foto Inspiracional Boutique de Herramientas 2 -->
+        <div class="relative group rounded-xl overflow-hidden border border-noir-800 bg-noir-950 h-80">
+          <img 
+            src="https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=800&q=80" 
+            alt="Nuestras Instalaciones y Trabajos - Reparación y asesoría" 
+            referrerpolicy="no-referrer"
+            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 filter brightness-95"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-noir-950/90 via-noir-950/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
+          <div class="absolute bottom-4 left-4 right-4 text-left">
+            <span class="text-[10px] uppercase tracking-widest text-or font-semibold">Memoria & Artesanía</span>
+            <p class="text-white font-serif text-lg">Soluciones a Medida</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Comparte tu experiencia prompt -->
+      <div class="mt-12 text-center">
+        <p class="text-sand-400 text-sm font-light">
+          ¿Has visitado Machaco recientemente? <span class="text-sand-200">Comparte tu experiencia</span> y ayúdanos a seguir manteniendo viva la ferretería de siempre.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- OPINIONES REALES VERIFICADAS -->
+  <section id="opiniones" class="py-24 bg-noir-950 border-t border-noir-800 bg-grain">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs uppercase tracking-[0.3em] text-or font-semibold">Reseñas Verificadas en Google Maps</span>
+        <h2 class="font-serif text-3xl sm:text-5xl text-white mt-2 mb-4 font-normal">
+          Lo que dicen quienes nos conocen
+        </h2>
+        <div class="w-16 h-px bg-or mx-auto mb-6"></div>
+        <p class="text-sand-300 text-sm font-light">
+          Opiniones 100% auténticas de clientes que forman parte de la historia de nuestra casa.
+        </p>
+      </div>
+
+      <!-- Reviews Grid: 5 Verbatim Reviews -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Review 1 -->
+        <div class="p-8 rounded-2xl bg-noir-900/90 border border-noir-800 hover:border-or/40 transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center space-x-1 text-or mb-4 text-xs">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-sand-200 text-sm font-serif italic leading-relaxed mb-6">
+              "Una ferretería de pueblo, hay un poco de cada cosa y está bastante bien,  los hermanos son super majos y te ayudan con dudas."
+            </p>
+          </div>
+          <div class="pt-4 border-t border-noir-800 flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-noir-800 border border-or/30 flex items-center justify-center text-or font-serif text-sm">
+              N
+            </div>
+            <div>
+              <p class="text-xs font-semibold text-white tracking-wide">nora isabel (NorIsa)</p>
+              <p class="text-[10px] text-sand-400">Cliente Verificado</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="p-8 rounded-2xl bg-noir-900/90 border border-noir-800 hover:border-or/40 transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center space-x-1 text-or mb-4 text-xs">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-sand-200 text-sm font-serif italic leading-relaxed mb-6">
+              "Una ferretería que tiene de todo y César un gran profesional te resuelve todo los obstáculos. Gracias por tu gran servicio"
+            </p>
+          </div>
+          <div class="pt-4 border-t border-noir-800 flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-noir-800 border border-or/30 flex items-center justify-center text-or font-serif text-sm">
+              D
+            </div>
+            <div>
+              <p class="text-xs font-semibold text-white tracking-wide">Demelsa La Osa</p>
+              <p class="text-[10px] text-sand-400">Cliente Verificado</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="p-8 rounded-2xl bg-noir-900/90 border border-noir-800 hover:border-or/40 transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center space-x-1 text-or mb-4 text-xs">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-sand-200 text-sm font-serif italic leading-relaxed mb-6">
+              "Entrar allí, es entrar en recuerdos al pasado. La de veces que habré ido de niño con mi tío Jenaro y mi abuelo Julian a comprar allí. Trato muy cercano."
+            </p>
+          </div>
+          <div class="pt-4 border-t border-noir-800 flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-noir-800 border border-or/30 flex items-center justify-center text-or font-serif text-sm">
+              P
+            </div>
+            <div>
+              <p class="text-xs font-semibold text-white tracking-wide">Ponte Welllness Massage Studio Pontevedra</p>
+              <p class="text-[10px] text-sand-400">Cliente Verificado</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 4 -->
+        <div class="p-8 rounded-2xl bg-noir-900/90 border border-noir-800 hover:border-or/40 transition-all flex flex-col justify-between lg:col-start-1 lg:col-span-1.5 md:col-span-1">
+          <div>
+            <div class="flex items-center space-x-1 text-or mb-4 text-xs">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-sand-200 text-sm font-serif italic leading-relaxed mb-6">
+              "No sabria como describirlo, es una especie de ferretería de las de antes, trato amable y tienes desde bombonas pequeñas de camping gaz a carretillas, escaleras, tapas de olla, en fin a mi me gusta bucear alli"
+            </p>
+          </div>
+          <div class="pt-4 border-t border-noir-800 flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-noir-800 border border-or/30 flex items-center justify-center text-or font-serif text-sm">
+              J
+            </div>
+            <div>
+              <p class="text-xs font-semibold text-white tracking-wide">Jose Valverde</p>
+              <p class="text-[10px] text-sand-400">Cliente Verificado</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 5 -->
+        <div class="p-8 rounded-2xl bg-noir-900/90 border border-noir-800 hover:border-or/40 transition-all flex flex-col justify-between lg:col-span-2 md:col-span-1">
+          <div>
+            <div class="flex items-center space-x-1 text-or mb-4 text-xs">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-sand-200 text-sm font-serif italic leading-relaxed mb-6">
+              "Tienen de todo. Si no lo hay  te lo traen con unos precios muy competitivos. Son unas bellísimas personas."
+            </p>
+          </div>
+          <div class="pt-4 border-t border-noir-800 flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-noir-800 border border-or/30 flex items-center justify-center text-or font-serif text-sm">
+              L
+            </div>
+            <div>
+              <p class="text-xs font-semibold text-white tracking-wide">L S</p>
+              <p class="text-[10px] text-sand-400">Cliente Verificado</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MAPA INTERACTIVO Y UBICACIÓN -->
+  <section id="contacto" class="py-24 bg-noir-900 border-t border-noir-800 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left: Contact info -->
+        <div class="lg:col-span-5 space-y-8">
+          <div>
+            <span class="text-xs uppercase tracking-[0.3em] text-or font-semibold">Localización & Citas</span>
+            <h2 class="font-serif text-3xl sm:text-5xl text-white mt-2 font-normal">
+              Visítanos en Villa del Prado
+            </h2>
+            <div class="w-16 h-px bg-or mt-4 mb-6"></div>
+            <p class="text-sand-300 text-sm font-light leading-relaxed">
+              Estamos ubicados en una de las avenidas principales, con cómodo acceso. Estaremos encantados de recibirte para atender tus necesidades de suministro con dedicación artesanal.
+            </p>
+          </div>
+
+          <div class="space-y-4">
+            <!-- Dirección Exacta -->
+            <div class="flex items-start gap-4 p-4 rounded-xl bg-noir-950 border border-noir-800">
+              <div class="w-10 h-10 rounded-lg bg-noir-850 flex items-center justify-center text-or border border-noir-700 shrink-0">
+                <i class="fa-solid fa-map-location-dot"></i>
+              </div>
+              <div>
+                <p class="text-xs uppercase tracking-wider text-sand-400">Dirección Exacta</p>
+                <p class="text-white text-sm font-medium mt-0.5">Av. de la Constitución, 34, 28630 Villa del Prado, Madrid, España</p>
+              </div>
+            </div>
+
+            <!-- Teléfono Directo -->
+            <a href="tel:918620858" class="flex items-start gap-4 p-4 rounded-xl bg-noir-950 border border-noir-800 hover:border-or/40 transition-colors group">
+              <div class="w-10 h-10 rounded-lg bg-noir-850 flex items-center justify-center text-or border border-noir-700 shrink-0 group-hover:scale-105 transition-transform">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div>
+                <p class="text-xs uppercase tracking-wider text-sand-400">Llamada Directa / Cita</p>
+                <p class="text-white text-sm font-medium mt-0.5 group-hover:text-or transition-colors">918 620 858</p>
+              </div>
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:juan@ejemplo.com" class="flex items-start gap-4 p-4 rounded-xl bg-noir-950 border border-noir-800 hover:border-or/40 transition-colors group">
+              <div class="w-10 h-10 rounded-lg bg-noir-850 flex items-center justify-center text-or border border-noir-700 shrink-0 group-hover:scale-105 transition-transform">
+                <i class="fa-regular fa-envelope"></i>
+              </div>
+              <div>
+                <p class="text-xs uppercase tracking-wider text-sand-400">Correo Electrónico</p>
+                <p class="text-white text-sm font-medium mt-0.5 group-hover:text-or transition-colors">juan@ejemplo.com</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="pt-2">
+            <a href="tel:918620858" class="w-full inline-flex items-center justify-center gap-2 px-8 py-4 text-xs font-semibold tracking-[0.2em] uppercase rounded-full bg-or hover:bg-white text-noir-950 transition-all duration-300 shadow-xl shadow-or/15">
+              <span>Reservar Cita</span>
+              <i class="fa-solid fa-calendar-check text-xs"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Mapa Interactivo Real -->
+        <div class="lg:col-span-7">
+          <div class="p-2 sm:p-3 rounded-2xl bg-noir-950 border border-noir-800 shadow-2xl">
+            <iframe 
+              src="https://www.google.com/maps?q=Machaco%20Av.%20de%20la%20Constituci%C3%B3n%2C%2034%2C%2028630%20Villa%20del%20Prado%2C%20Madrid%2C%20Espa%C3%B1a&output=embed" 
+              width="100%" 
+              height="380" 
+              style="border:0; border-radius: 1rem;" 
+              allowfullscreen="" 
+              loading="lazy"
+              title="Ubicación de Machaco en Google Maps"
+            ></iframe>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-noir-950 border-t border-noir-800/80 py-12 text-sand-400 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      <div class="flex flex-col items-center md:items-start">
+        <span class="font-serif text-xl tracking-[0.25em] text-white uppercase font-medium">Machaco</span>
+        <span class="text-[9px] uppercase tracking-[0.3em] text-or">Ferretería & Suministros Tradicionales</span>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-6 uppercase tracking-wider text-[11px]">
+        <a href="#concepto" class="hover:text-or transition-colors">Concepto</a>
+        <a href="#tarifas" class="hover:text-or transition-colors">Tarifas</a>
+        <a href="#galeria" class="hover:text-or transition-colors">Instalaciones</a>
+        <a href="#opiniones" class="hover:text-or transition-colors">Testimonios</a>
+        <a href="#contacto" class="hover:text-or transition-colors">Contacto</a>
+      </div>
+
+      <div class="text-center md:text-right">
+        <p>© <span id="year">2025</span> Machaco. Villa del Prado, Madrid.</p>
+        <p class="text-[10px] text-noir-700 mt-1">Calidad, cercanía y tradición desde sus inicios.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    // Año dinámico en footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
