@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro de Estética y Belleza Beatriz Tarancón | Cuidado Exclusivo y Bienestar</title>
+    <meta name="description" content="Centro de Estética y Belleza Beatriz Tarancón. Especialistas en transformaciones estéticas, tratamientos faciales, corporales y bienestar en Iniesta y comarca.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#121212',
+                            noir: '#1A1A1A',
+                            gold: '#D4AF37',
+                            softGold: '#E6CA65',
+                            sand: '#F7F4EE',
+                            beige: '#EFE9DE',
+                            muted: '#9C9588'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #D4AF37 0%, #F5E6AB 50%, #B89025 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border-gradient {
+            border-image: linear-gradient(to right, #D4AF37, #F3E5AB, #B89025) 1;
+        }
+        .glass-panel {
+            background: rgba(26, 26, 26, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.18);
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-stone-200 font-sans antialiased selection:bg-brand-gold selection:text-black">
+
+    <!-- Top Info Bar -->
+    <div class="bg-brand-noir/90 text-xs tracking-wider border-b border-brand-gold/20 py-2.5 px-4 hidden md:block">
+        <div class="max-w-7xl mx-auto flex justify-between items-center text-brand-muted">
+            <div class="flex items-center space-x-6">
+                <span><i class="fa-solid fa-location-dot text-brand-gold mr-2"></i> Calle Paseo del Arroyo, C. Júcar, 6, Iniesta (Cuenca)</span>
+                <span><i class="fa-solid fa-clock text-brand-gold mr-2"></i> Cita previa y atención personalizada</span>
+            </div>
+            <div class="flex items-center space-x-6">
+                <a href="mailto:bea.tarancon@hotmail.es" class="hover:text-brand-gold transition-colors"><i class="fa-solid fa-envelope text-brand-gold mr-2"></i>bea.tarancon@hotmail.es</a>
+                <a href="tel:635949817" class="text-brand-gold font-medium hover:text-white transition-colors"><i class="fa-solid fa-phone mr-1"></i> 635 94 98 17</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 glass-panel border-b border-white/5 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="#" class="flex flex-col group">
+                    <span class="font-serif text-2xl md:text-3xl tracking-widest uppercase text-white font-semibold group-hover:text-brand-gold transition-colors">
+                        Beatriz Tarancón
+                    </span>
+                    <span class="text-[10px] uppercase tracking-[0.3em] text-brand-gold -mt-1 font-medium">
+                        Centro de Estética & Belleza
+                    </span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium tracking-wide">
+                    <a href="#inicio" class="text-stone-300 hover:text-brand-gold transition-colors">Inicio</a>
+                    <a href="#sobre-nosotros" class="text-stone-300 hover:text-brand-gold transition-colors">La Esencia</a>
+                    <a href="#servicios" class="text-stone-300 hover:text-brand-gold transition-colors">Tratamientos</a>
+                    <a href="#galeria" class="text-stone-300 hover:text-brand-gold transition-colors">Instalaciones</a>
+                    <a href="#opiniones" class="text-stone-300 hover:text-brand-gold transition-colors">Testimonios</a>
+                    <a href="#contacto" class="text-stone-300 hover:text-brand-gold transition-colors">Contacto</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden sm:flex items-center">
+                    <a href="tel:635949817" class="relative inline-flex items-center justify-center px-7 py-3 overflow-hidden text-xs font-semibold uppercase tracking-widest text-black bg-brand-gold rounded-full shadow-lg hover:bg-brand-softGold transition duration-300 ease-out transform hover:-translate-y-0.5">
+                        <i class="fa-solid fa-calendar-check mr-2"></i> Reservar Cita
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" aria-label="Abrir Menú" class="text-stone-300 hover:text-brand-gold focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-brand-noir border-b border-brand-gold/20 px-6 py-6 space-y-4">
+            <a href="#inicio" class="block text-stone-200 hover:text-brand-gold text-base py-1">Inicio</a>
+            <a href="#sobre-nosotros" class="block text-stone-200 hover:text-brand-gold text-base py-1">La Esencia</a>
+            <a href="#servicios" class="block text-stone-200 hover:text-brand-gold text-base py-1">Tratamientos</a>
+            <a href="#galeria" class="block text-stone-200 hover:text-brand-gold text-base py-1">Instalaciones</a>
+            <a href="#opiniones" class="block text-stone-200 hover:text-brand-gold text-base py-1">Testimonios</a>
+            <a href="#contacto" class="block text-stone-200 hover:text-brand-gold text-base py-1">Contacto</a>
+            <a href="tel:635949817" class="w-full text-center inline-block mt-4 px-6 py-3 text-xs font-semibold uppercase tracking-widest text-black bg-brand-gold rounded-full">
+                <i class="fa-solid fa-phone mr-2"></i> Reservar Cita
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-brand-dark">
+        <!-- Background Ambient Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img 
+                src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1920&q=80" 
+                alt="Ambiente spa y estética relajante" 
+                class="w-full h-full object-cover object-center filter brightness-40 contrast-110"
+                referrerpolicy="no-referrer"
+                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/75 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-24">
+            <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full border border-brand-gold/30 bg-black/40 backdrop-blur-md mb-8">
+                <span class="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
+                <span class="text-xs uppercase tracking-[0.25em] text-stone-300 font-medium">Boutique de Belleza & Transformación Personal</span>
+            </div>
+            
+            <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-light text-white tracking-tight leading-tight mb-6">
+                El Arte de Resaltar tu <br>
+                <span class="italic font-normal gold-gradient-text">Verdadera Belleza</span>
+            </h1>
+
+            <p class="max-w-2xl mx-auto text-base sm:text-lg text-stone-300 font-light leading-relaxed mb-10">
+                Experiencias estéticas exclusivas, asesoramiento honesto y técnicas avanzadas diseñadas para revitalizar tu piel, transformar tu imagen y ofrecerte un bienestar absoluto.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+                <a href="tel:635949817" class="w-full sm:w-auto px-9 py-4 rounded-full text-xs font-semibold uppercase tracking-widest text-black bg-brand-gold hover:bg-brand-softGold transition-all duration-300 shadow-xl shadow-brand-gold/20 flex items-center justify-center space-x-2">
+                    <i class="fa-solid fa-sparkles"></i>
+                    <span>Reservar Cita</span>
+                </a>
+                <a href="#servicios" class="w-full sm:w-auto px-9 py-4 rounded-full text-xs font-semibold uppercase tracking-widest text-white border border-white/20 hover:border-brand-gold hover:text-brand-gold transition-all duration-300 flex items-center justify-center space-x-2">
+                    <span>Descubrir Carta</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+
+            <!-- Badges -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-3 gap-6 pt-10 border-t border-white/10 text-stone-400 text-xs">
+                <div class="flex items-center justify-center space-x-2">
+                    <i class="fa-solid fa-certificate text-brand-gold text-base"></i>
+                    <span>Diagnóstico Personalizado</span>
+                </div>
+                <div class="flex items-center justify-center space-x-2">
+                    <i class="fa-solid fa-star text-brand-gold text-base"></i>
+                    <span>5.0 Valoración de Clientes</span>
+                </div>
+                <div class="col-span-2 md:col-span-1 flex items-center justify-center space-x-2">
+                    <i class="fa-solid fa-heart text-brand-gold text-base"></i>
+                    <span>Cuidado Integral & Mimo</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nosotros / La Esencia -->
+    <section id="sobre-nosotros" class="py-24 bg-brand-noir relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                <!-- Image Composition -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="aspect-[4/5] rounded-2xl overflow-hidden border border-brand-gold/20 shadow-2xl relative">
+                            <img 
+                                src="https://scontent-sea5-1.xx.fbcdn.net/v/t39.30808-1/271692519_6826820097388425_2676731865988033958_n.jpg?stp=dst-jpg_tt6&cstp=mx307x303&ctp=s307x303&_nc_cat=101&ccb=1-7&_nc_sid=3ab345&_nc_ohc=ZCLeX9vXjZ4Q7kNvwG3ZIjT&_nc_oc=AdrF20_cAYe-fC6hGOSablEweDgbO1jpDwAtK0zW7Hy5HzKHGe3S4D2QotET1nHGjyw&_nc_zt=24&_nc_ht=scontent-sea5-1.xx&_nc_gid=8Zg5TXiyVCC5lgf65GtQ6w&_nc_ss=7b289&oh=00_AQNhoPnfWDDrzagf-AVGQIoBR6kjc3NlRc9q8M9DwsHdMA&oe=6AD9B0A7" 
+                                alt="Beatriz Tarancón - Especialista en Belleza" 
+                                class="w-full h-full object-cover"
+                                referrerpolicy="no-referrer"
+                                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                            >
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 glass-panel p-5 rounded-xl border border-brand-gold/30 hidden sm:block max-w-xs">
+                            <p class="font-serif text-2xl text-brand-gold font-bold">100% Pasión</p>
+                            <p class="text-xs text-stone-300 mt-1">Por el detalle, el rigor profesional y la belleza auténtica de cada cliente.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Content -->
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="text-xs font-semibold uppercase tracking-[0.3em] text-brand-gold">Conócenos</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-light text-white leading-tight">
+                        Transformaciones Espectaculares, <br>
+                        <span class="italic gold-gradient-text">Atención a tu Medida</span>
+                    </h2>
+                    <p class="text-stone-300 text-sm sm:text-base leading-relaxed">
+                        En el <strong>Centro de Estética y Belleza Beatriz Tarancón</strong>, entendemos la estética no como un cambio superficial, sino como un ritual de bienestar, confianza y autenticidad. Nos caracterizamos por escuchar activamente tus inquietudes y orientarte honestamente con el tratamiento que mejor se adapta a tu piel y ritmo de vida.
+                    </p>
+                    <p class="text-stone-300 text-sm sm:text-base leading-relaxed">
+                        Conocidas en Iniesta, Enguídanos y comarca por ofrecer cambios visibles e increíbles, combinamos aparatología de vanguardia, cosmética seleccionada y una calidez humana que te hará sentir en calma desde el primer minuto.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div class="p-4 rounded-lg bg-white/5 border border-white/5">
+                            <i class="fa-solid fa-wand-magic-sparkles text-brand-gold mb-2 text-xl"></i>
+                            <h4 class="font-medium text-white text-sm">Asesoramiento Experto</h4>
+                            <p class="text-stone-400 text-xs mt-1">Diagnóstico previo para garantizar resultados reales y duraderos.</p>
+                        </div>
+                        <div class="p-4 rounded-lg bg-white/5 border border-white/5">
+                            <i class="fa-solid fa-spa text-brand-gold mb-2 text-xl"></i>
+                            <h4 class="font-medium text-white text-sm">Atmósfera Exclusiva</h4>
+                            <p class="text-stone-400 text-xs mt-1">Un espacio íntimo concebido para desconectar del estrés diario.</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="tel:635949817" class="inline-flex items-center text-xs font-semibold uppercase tracking-widest text-brand-gold hover:text-white transition-colors">
+                            <span>Consulta tu caso directamente</span>
+                            <i class="fa-solid fa-angle-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tratamientos, Cortes y Tarifas -->
+    <section id="servicios" class="py-24 bg-brand-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-semibold uppercase tracking-[0.3em] text-brand-gold">Nuestra Carta de Servicios</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-light text-white mt-2 mb-4">
+                    Nuestros Tratamientos & Especialidades
+                </h2>
+                <div class="w-16 h-0.5 bg-brand-gold mx-auto mb-6"></div>
+                <p class="text-stone-400 text-sm leading-relaxed">
+                    Un abanico de soluciones integrales diseñadas con precisión técnica para renovar tu bienestar facial, corporal y potenciar tu estilo personal.
+                </p>
+            </div>
+
+            <!-- Categories Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Category 1: Cuidado Facial Avanzado -->
+                <div class="glass-panel p-8 rounded-2xl flex flex-col justify-between hover:border-brand-gold/50 transition-all duration-300">
+                    <div>
+                        <div class="w-12 h-12 rounded-full bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold text-xl mb-6">
+                            <i class="fa-solid fa-face-smile"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl text-white font-medium mb-3">Estética Facial Avanzada</h3>
+                        <p class="text-xs text-stone-400 mb-6 leading-relaxed">Higiene profunda, regeneración celular y luminosidad adaptada a cada biotipo cutáneo.</p>
+                        
+                        <ul class="space-y-4 text-xs">
+                            <li class="flex justify-between items-center border-b border-white/5 pb-2">
+                                <span class="text-stone-200">Higiene Facial Profunda con Purificación</span>
+                                <span class="text-brand-gold font-medium">Consultar</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-white/5 pb-2">
+                                <span class="text-stone-200">Tratamiento Antiedad & Tensor Efecto Flash</span>
+                                <span class="text-brand-gold font-medium">Personalizado</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-white/5 pb-2">
+                                <span class="text-stone-200">Hidratación Profunda con Vitaminas</span>
+                                <span class="text-brand-gold font-medium">Sesión</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-white/5 pb-2">
+                                <span class="text-stone-200">Peeling Regenerador & Antimanchas</span>
+                                <span class="text-brand-gold font-medium">Bajo Diagnóstico</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-white/10">
+                        <a href="tel:635949817" class="w-full block text-center py-2.5 rounded-full text-[11px] font-semibold uppercase tracking-wider text-black bg-brand-gold hover:bg-brand-softGold transition-colors">
+                            Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Category 2: Belleza de la Mirada y Transformación -->
+                <div class="glass-panel p-8 rounded-2xl flex flex-col justify-between border-brand-gold/40 relative hover:border-brand-gold transition-all duration-300">
+                    <span class="absolute -top-3 right-6 bg-brand-gold text-black text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+                        Especialidad
+                    </span>
+                    <div>
+                        <div class="w-12 h-12 rounded-full bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold text-xl mb-6">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl text-white font-medium mb-3">Mirada, Cejas & Cambios de Look</h3>
+                        <p class="text-xs text-stone-400 mb-6 leading-relaxed">Resaltamos la expresividad natural de tu rostro con transformaciones espectaculares.</p>
+                        
+                        <ul class="space-y-4 text-xs">
+                            <li class="flex justify-between items-center border-b border-white/5 pb-2">
+                                <span class="text-stone-200">Diseño & Perfilado de Cejas Personalizado</span>
+                                <span class="text-brand-gold font-medium">Tarifa Estudio</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-white/5 pb-2">
+                                <span class="text-stone-200">Lifting & Tinte de Pestañas Volumen</span>
+                                <span class="text-brand-gold font-medium">Consultar</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-white/5 pb-2">
+                                <span class="text-stone-200">Laminado y Nutrición de Cejas</span>
+                                <span class="text-brand-gold font-medium">Sesión</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-white/5 pb-2">
+                                <span class="text-stone-200">Maquillaje de Evento & Novias</span>
+                                <span class="text-brand-gold font-medium">A Medida</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-white/10">
+                        <a href="tel:635949817" class="w-full block text-center py-2.5 rounded-full text-[11px] font-semibold uppercase tracking-wider text-black bg-brand-gold hover:bg-brand-softGold transition-colors">
+                            Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Category 3: Corporal y Bienestar -->
+                <div class="glass-panel p-8 rounded-2xl flex flex-col justify-between hover:border-brand-gold/50 transition-all duration-300">
+                    <div>
+                        <div class="w-12 h-12 rounded-full bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold text-xl mb-6">
+                            <i class="fa-solid fa-feather-pointed"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl text-white font-medium mb-3">Remodelación & Bienestar</h3>
+                        <p class="text-xs text-stone-400 mb-6 leading-relaxed">Técnicas manuales y aparatología para tonificar, descontracturar y aliviar tensiones.</p>
+                        
+                        <ul class="space-y-4 text-xs">
+                            <li class="flex justify-between items-center border-b border-white/5 pb-2">
+                                <span class="text-stone-200">Masaje Relajante & Antiestrés Integral</span>
+                                <span class="text-brand-gold font-medium">Sesión</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-white/5 pb-2">
+                                <span class="text-stone-200">Tratamiento Reductor y Reafirmante</span>
+                                <span class="text-brand-gold font-medium">Bono Especial</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-white/5 pb-2">
+                                <span class="text-stone-200">Drenaje Linfático y Circulatorio</span>
+                                <span class="text-brand-gold font-medium">Personalizado</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-white/5 pb-2">
+                                <span class="text-stone-200">Exfoliación Corporal e Hidratación Seda</span>
+                                <span class="text-brand-gold font-medium">Consultar</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-white/10">
+                        <a href="tel:635949817" class="w-full block text-center py-2.5 rounded-full text-[11px] font-semibold uppercase tracking-wider text-black bg-brand-gold hover:bg-brand-softGold transition-colors">
+                            Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Category 4: Manicura y Pedicura Spa -->
+                <div class="glass-panel p-8 rounded-2xl flex flex-col justify-between hover:border-brand-gold/50 transition-all duration-300">
+                    <div>
+                        <div class="w-12 h-12 rounded-full bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold text-xl mb-6">
+                            <i class="fa-solid fa-hand-sparkles"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl text-white font-medium mb-3">Manicura & Pedicura Spa</h3>
+                        <p class="text-xs text-stone-400 mb-6 leading-relaxed">Cuidado minucioso de manos y pies con esmaltado de alta duración y acabado impecable.</p>
+                        
+                        <ul class="space-y-4 text-xs">
+                            <li class="flex justify-between items-center border-b border-white/5 pb-2">
+                                <span class="text-stone-200">Manicura Rusa / Combinada de Precisión</span>
+                                <span class="text-brand-gold font-medium">Completa</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-white/5 pb-2">
+                                <span class="text-stone-200">Esmaltado Semipermanente Reforzado</span>
+                                <span class="text-brand-gold font-medium">Consultar</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-white/5 pb-2">
+                                <span class="text-stone-200">Pedicura Completa Tratante & Confort</span>
+                                <span class="text-brand-gold font-medium">Sesión</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-white/5 pb-2">
+                                <span class="text-stone-200">Nail Art & Diseños Minimalistas</span>
+                                <span class="text-brand-gold font-medium">Bajo Pedido</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-white/10">
+                        <a href="tel:635949817" class="w-full block text-center py-2.5 rounded-full text-[11px] font-semibold uppercase tracking-wider text-black bg-brand-gold hover:bg-brand-softGold transition-colors">
+                            Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Category 5: Depilación & Suavidad -->
+                <div class="glass-panel p-8 rounded-2xl flex flex-col justify-between hover:border-brand-gold/50 transition-all duration-300">
+                    <div>
+                        <div class="w-12 h-12 rounded-full bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold text-xl mb-6">
+                            <i class="fa-solid fa-gem"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl text-white font-medium mb-3">Depilación & Suavidad</h3>
+                        <p class="text-xs text-stone-400 mb-6 leading-relaxed">Técnicas eficaces y respetuosas para mantener tu piel sedosa durante semanas.</p>
+                        
+                        <ul class="space-y-4 text-xs">
+                            <li class="flex justify-between items-center border-b border-white/5 pb-2">
+                                <span class="text-stone-200">Depilación con Cera Tibia / Caliente Higiénica</span>
+                                <span class="text-brand-gold font-medium">Por Zonas</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-white/5 pb-2">
+                                <span class="text-stone-200">Depilación Facial Delicada</span>
+                                <span class="text-brand-gold font-medium">Consultar</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-white/5 pb-2">
+                                <span class="text-stone-200">Asesoramiento en Fotodepilación / Láser</span>
+                                <span class="text-brand-gold font-medium">Pack Bonos</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-white/5 pb-2">
+                                <span class="text-stone-200">Tratamiento Post-Depilatorio Calmante</span>
+                                <span class="text-brand-gold font-medium">Incluido</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-white/10">
+                        <a href="tel:635949817" class="w-full block text-center py-2.5 rounded-full text-[11px] font-semibold uppercase tracking-wider text-black bg-brand-gold hover:bg-brand-softGold transition-colors">
+                            Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Category 6: Bonos y Cuidado de Novias -->
+                <div class="glass-panel p-8 rounded-2xl flex flex-col justify-between hover:border-brand-gold/50 transition-all duration-300">
+                    <div>
+                        <div class="w-12 h-12 rounded-full bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold text-xl mb-6">
+                            <i class="fa-solid fa-crown"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl text-white font-medium mb-3">Rituales & Packs Especiales</h3>
+                        <p class="text-xs text-stone-400 mb-6 leading-relaxed">Experiencias completas para ocasiones inolvidables o regalos de bienestar.</p>
+                        
+                        <ul class="space-y-4 text-xs">
+                            <li class="flex justify-between items-center border-b border-white/5 pb-2">
+                                <span class="text-stone-200">Pack Novia Radiante (Facial + Manos + Maquillaje)</span>
+                                <span class="text-brand-gold font-medium">A Medida</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-white/5 pb-2">
+                                <span class="text-stone-200">Tarjeta Regalo Experiencia Belleza</span>
+                                <span class="text-brand-gold font-medium">Desde 30€</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-white/5 pb-2">
+                                <span class="text-stone-200">Ritual Desconexión Sensorial 90 min</span>
+                                <span class="text-brand-gold font-medium">Bajo Reserva</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-white/5 pb-2">
+                                <span class="text-stone-200">Seguimiento Estético Integral</span>
+                                <span class="text-brand-gold font-medium">Gratuito</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-white/10">
+                        <a href="tel:635949817" class="w-full block text-center py-2.5 rounded-full text-[11px] font-semibold uppercase tracking-wider text-black bg-brand-gold hover:bg-brand-softGold transition-colors">
+                            Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Note -->
+            <div class="mt-12 text-center text-xs text-stone-400 bg-white/5 rounded-xl p-4 max-w-2xl mx-auto border border-white/5">
+                <i class="fa-solid fa-circle-info text-brand-gold mr-1.5"></i> Cada piel y cuerpo es único. Te recomendamos solicitar una primera valoración telefónica o presencial sin compromiso para ajustar la tarifa y protocolo idóneo para ti.
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería / Nuestras Instalaciones y Trabajos -->
+    <section id="galeria" class="py-24 bg-brand-noir border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-semibold uppercase tracking-[0.3em] text-brand-gold">Imágenes y Detalles</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-light text-white mt-2 mb-4">
+                    Nuestras Instalaciones y Trabajos
+                </h2>
+                <div class="w-16 h-0.5 bg-brand-gold mx-auto mb-6"></div>
+                <p class="text-stone-400 text-sm">
+                    Espacios higiénicos, acogedores y pensados para tu máxima comodidad y discreción en cada sesión.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Foto 1 (Real del Negocio) -->
+                <div class="group relative overflow-hidden rounded-xl aspect-[4/3] bg-stone-900 border border-brand-gold/20">
+                    <img 
+                        src="https://scontent-sea5-1.xx.fbcdn.net/v/t39.30808-1/271692519_6826820097388425_2676731865988033958_n.jpg?stp=dst-jpg_tt6&cstp=mx307x303&ctp=s307x303&_nc_cat=101&ccb=1-7&_nc_sid=3ab345&_nc_ohc=ZCLeX9vXjZ4Q7kNvwG3ZIjT&_nc_oc=AdrF20_cAYe-fC6hGOSablEweDgbO1jpDwAtK0zW7Hy5HzKHGe3S4D2QotET1nHGjyw&_nc_zt=24&_nc_ht=scontent-sea5-1.xx&_nc_gid=8Zg5TXiyVCC5lgf65GtQ6w&_nc_ss=7b289&oh=00_AQNhoPnfWDDrzagf-AVGQIoBR6kjc3NlRc9q8M9DwsHdMA&oe=6AD9B0A7" 
+                        alt="Beatriz Tarancón Centro de Estética" 
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        referrerpolicy="no-referrer"
+                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white text-sm font-medium tracking-wide">Beatriz Tarancón • Dirección & Asesoría</span>
+                    </div>
+                </div>
+
+                <!-- Foto 2 -->
+                <div class="group relative overflow-hidden rounded-xl aspect-[4/3] bg-stone-900 border border-brand-gold/20">
+                    <img 
+                        src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80" 
+                        alt="Tratamiento facial personalizado" 
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        referrerpolicy="no-referrer"
+                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white text-sm font-medium tracking-wide">Cabina de Tratamientos Faciales Avanzados</span>
+                    </div>
+                </div>
+
+                <!-- Foto 3 -->
+                <div class="group relative overflow-hidden rounded-xl aspect-[4/3] bg-stone-900 border border-brand-gold/20">
+                    <img 
+                        src="https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?auto=format&fit=crop&w=800&q=80" 
+                        alt="Área de manicura y estética" 
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        referrerpolicy="no-referrer"
+                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white text-sm font-medium tracking-wide">Atención Detallista en Manicura y Cuidados</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reseñas Reales -->
+    <section id="opiniones" class="py-24 bg-brand-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-semibold uppercase tracking-[0.3em] text-brand-gold">Experiencias Verificadas</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-light text-white mt-2 mb-4">
+                    La Voz de Nuestras Clientas
+                </h2>
+                <div class="w-16 h-0.5 bg-brand-gold mx-auto mb-6"></div>
+                <p class="text-stone-400 text-sm">
+                    La satisfacción y confianza depositada en nuestro trabajo es el verdadero motor de nuestra dedicación diaria.
+                </p>
+            </div>
+
+            <!-- Testimonials Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Review 1 -->
+                <div class="glass-panel p-7 rounded-2xl flex flex-col justify-between border-t-2 border-t-brand-gold">
+                    <div>
+                        <div class="flex text-brand-gold text-xs space-x-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-stone-300 text-sm italic font-serif leading-relaxed mb-6">
+                            "Magníficas profesionales, un trato increíble y te aconsejan lo mejor para ti!"
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-3 pt-4 border-t border-white/10">
+                        <div class="w-9 h-9 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-gold font-bold text-xs">
+                            MG
+                        </div>
+                        <div>
+                            <h5 class="text-white text-xs font-semibold">Mercedes González</h5>
+                            <span class="text-[10px] text-stone-400">Cliente Verificada en Google</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="glass-panel p-7 rounded-2xl flex flex-col justify-between border-t-2 border-t-brand-gold">
+                    <div>
+                        <div class="flex text-brand-gold text-xs space-x-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-stone-300 text-sm italic font-serif leading-relaxed mb-6">
+                            "El mejor centro de belleza de la zona, Beatriz es una gran profesional siempre muy pendiente de sus clientes con sus consejos y tratamientos."
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-3 pt-4 border-t border-white/10">
+                        <div class="w-9 h-9 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-gold font-bold text-xs">
+                            MG
+                        </div>
+                        <div>
+                            <h5 class="text-white text-xs font-semibold">M.amparo Garcia</h5>
+                            <span class="text-[10px] text-stone-400">Cliente Verificada en Google</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="glass-panel p-7 rounded-2xl flex flex-col justify-between border-t-2 border-t-brand-gold">
+                    <div>
+                        <div class="flex text-brand-gold text-xs space-x-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-stone-300 text-sm italic font-serif leading-relaxed mb-6">
+                            "Lo mejor de iniesta de Beatriz ,cambios increíbles ,transformaciones espectaculares"
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-3 pt-4 border-t border-white/10">
+                        <div class="w-9 h-9 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-gold font-bold text-xs">
+                            RO
+                        </div>
+                        <div>
+                            <h5 class="text-white text-xs font-semibold">Rocio Ochoa</h5>
+                            <span class="text-[10px] text-stone-400">Cliente Verificada en Google</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="glass-panel p-7 rounded-2xl flex flex-col justify-between border-t-2 border-t-brand-gold">
+                    <div>
+                        <div class="flex text-brand-gold text-xs space-x-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-stone-300 text-sm italic font-serif leading-relaxed mb-6">
+                            "Una profesional en su trabajo. Buen trabajo y muy amable"
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-3 pt-4 border-t border-white/10">
+                        <div class="w-9 h-9 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-gold font-bold text-xs">
+                            RQ
+                        </div>
+                        <div>
+                            <h5 class="text-white text-xs font-semibold">Raquel</h5>
+                            <span class="text-[10px] text-stone-400">Cliente Verificada en Google</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 5 -->
+                <div class="glass-panel p-7 rounded-2xl flex flex-col justify-between border-t-2 border-t-brand-gold md:col-span-2 lg:col-span-1">
+                    <div>
+                        <div class="flex text-brand-gold text-xs space-x-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-stone-300 text-sm italic font-serif leading-relaxed mb-6">
+                            "Trato ideal y servicio más que perfecto"
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-3 pt-4 border-t border-white/10">
+                        <div class="w-9 h-9 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-gold font-bold text-xs">
+                            AA
+                        </div>
+                        <div>
+                            <h5 class="text-white text-xs font-semibold">Anouk Aguilar Sánchez</h5>
+                            <span class="text-[10px] text-stone-400">Cliente Verificada en Google</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Summary CTA Card -->
+                <div class="glass-panel p-7 rounded-2xl flex flex-col justify-center items-center text-center border border-brand-gold/30 bg-brand-gold/5">
+                    <span class="text-brand-gold text-3xl font-serif font-bold">5.0 / 5.0</span>
+                    <p class="text-xs text-stone-300 mt-2">La satisfacción de quienes nos confían su bienestar es nuestro compromiso.</p>
+                    <a href="tel:635949817" class="mt-5 inline-block px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider text-black bg-brand-gold hover:bg-brand-softGold transition-colors">
+                        Reservar Cita
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Ubicación y Contacto -->
+    <section id="contacto" class="py-24 bg-brand-noir relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-semibold uppercase tracking-[0.3em] text-brand-gold">Dónde Encontrarnos</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-light text-white mt-2 mb-4">
+                    Visítanos o Contáctanos
+                </h2>
+                <div class="w-16 h-0.5 bg-brand-gold mx-auto mb-6"></div>
+                <p class="text-stone-400 text-sm">
+                    Estamos situadas en Iniesta, prestando servicio a toda la zona y poblaciones cercanas como Enguídanos.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                
+                <!-- Contact Details -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="glass-panel p-8 rounded-2xl space-y-6">
+                        <h3 class="font-serif text-2xl text-white font-medium mb-6">Información de Contacto</h3>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-full bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold shrink-0 mt-0.5">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-semibold uppercase tracking-wider text-stone-300">Dirección</h4>
+                                <p class="text-stone-400 text-sm mt-1 leading-relaxed">
+                                    Calle Paseo del Arroyo , C. Júcar, 6, 16235 Iniesta, Cuenca, España
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-full bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold shrink-0 mt-0.5">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-semibold uppercase tracking-wider text-stone-300">Teléfono Directo</h4>
+                                <a href="tel:635949817" class="text-brand-gold font-medium text-lg mt-1 inline-block hover:underline">
+                                    635 94 98 17
+                                </a>
+                                <p class="text-[11px] text-stone-500">Llamadas y consultas de cita</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-full bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold shrink-0 mt-0.5">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-semibold uppercase tracking-wider text-stone-300">Correo Electrónico</h4>
+                                <a href="mailto:bea.tarancon@hotmail.es" class="text-stone-300 hover:text-brand-gold text-sm mt-1 inline-block transition-colors">
+                                    bea.tarancon@hotmail.es
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="pt-6 border-t border-white/10">
+                            <a href="tel:635949817" class="w-full flex items-center justify-center py-4 rounded-full text-xs font-semibold uppercase tracking-widest text-black bg-brand-gold hover:bg-brand-softGold transition-all duration-300 shadow-lg shadow-brand-gold/20">
+                                <i class="fa-solid fa-phone mr-2"></i> Reservar Cita Ahora
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Map Embed -->
+                <div class="lg:col-span-7">
+                    <div class="p-2 rounded-2xl glass-panel border border-brand-gold/30 overflow-hidden shadow-2xl">
+                        <iframe 
+                            src="https://www.google.com/maps?q=Centro%20de%20Estetica%20y%20Belleza%20Beatriz%20Taranc%C3%B3n%20Calle%20Paseo%20del%20Arroyo%20%2C%20C.%20J%C3%BAcar%2C%206%2C%2016235%20Iniesta%2C%20Cuenca%2C%20Espa%C3%B1a&output=embed" 
+                            width="100%" 
+                            height="380" 
+                            style="border:0; border-radius: 1rem;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-stone-500 py-12 border-t border-white/5 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="text-center md:text-left">
+                    <span class="font-serif text-lg text-white font-semibold uppercase tracking-widest">Beatriz Tarancón</span>
+                    <p class="text-[11px] text-stone-400 mt-1">Centro de Estética & Belleza • Cuidado Exclusivo y Bienestar</p>
+                </div>
+                
+                <div class="flex items-center space-x-6 text-sm">
+                    <a href="tel:635949817" class="text-brand-gold hover:text-white transition-colors" title="Llamar">
+                        <i class="fa-solid fa-phone"></i>
+                    </a>
+                    <a href="mailto:bea.tarancon@hotmail.es" class="text-stone-400 hover:text-brand-gold transition-colors" title="Enviar Email">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                </div>
+
+                <div class="text-center md:text-right text-[11px]">
+                    <p>&copy; <script>document.write(new Date().getFullYear())</script> Centro de Estetica y Belleza Beatriz Tarancón.</p>
+                    <p class="text-stone-600 mt-0.5">Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        const links = menu.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
