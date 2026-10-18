@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peluquería Caballeros Palmera | Barbería & Estilismo en Villaverde, Madrid</title>
+    <meta name="description" content="Peluquería Caballeros Palmera (Capelo 2) en Villaverde, Madrid 28021. Cortes clásicos, degradados modernos, arreglo de barba y atención personalizada por Karim al mejor precio.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        matte: {
+                            950: '#090a0c',
+                            900: '#111216',
+                            850: '#17181e',
+                            800: '#1f2128',
+                            700: '#2b2d37',
+                        },
+                        gold: {
+                            300: '#f5e2b3',
+                            400: '#e5c983',
+                            500: '#d4af37',
+                            600: '#b89223',
+                            700: '#947214',
+                        },
+                        sand: '#e8e2d5'
+                    },
+                    fontFamily: {
+                        cinzel: ['Cinzel', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #f5e2b3 0%, #d4af37 50%, #aa8014 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border-glow {
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.08);
+        }
+        .gold-border-glow:hover {
+            border-color: rgba(212, 175, 55, 0.55);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.18);
+        }
+    </style>
+</head>
+<body class="bg-matte-950 text-neutral-300 font-sans selection:bg-gold-500 selection:text-matte-950 antialiased">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-matte-900 border-b border-matte-800 text-xs py-2 px-4 text-center text-neutral-400">
+        <span class="inline-flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span>Abierto en Villaverde (C.P. 28021, Madrid) &bull; Conocido también como <strong>Capelo 2</strong></span>
+            <a href="mailto:litbcs@lightinthebox.com" class="text-gold-400 hover:text-gold-300 font-semibold underline ml-2">Reservar Cita</a>
+        </span>
+    </div>
+
+    <!-- MAIN NAVIGATION -->
+    <nav class="sticky top-0 z-50 bg-matte-950/95 backdrop-blur-md border-b border-matte-800 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand / Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 rounded-full bg-gradient-to-tr from-gold-600 via-gold-400 to-amber-200 flex items-center justify-center text-matte-950 text-xl font-bold shadow-lg shadow-gold-500/10 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-scissors"></i>
+                    </div>
+                    <div>
+                        <span class="font-cinzel text-lg sm:text-xl font-bold tracking-wider text-white block leading-tight">PALMERA</span>
+                        <span class="text-[10px] tracking-widest text-gold-400 uppercase font-semibold">Peluquería Caballeros &bull; Capelo 2</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                    <a href="#servicios" class="hover:text-gold-400 transition-colors">Cortes & Tarifas</a>
+                    <a href="#galeria" class="hover:text-gold-400 transition-colors">Instalaciones</a>
+                    <a href="#experiencia" class="hover:text-gold-400 transition-colors">La Experiencia</a>
+                    <a href="#opiniones" class="hover:text-gold-400 transition-colors">Reseñas</a>
+                    <a href="#ubicacion" class="hover:text-gold-400 transition-colors">Ubicación</a>
+                </div>
+
+                <!-- Desktop CTA -->
+                <div class="hidden md:flex items-center">
+                    <a href="mailto:litbcs@lightinthebox.com" class="inline-flex items-center gap-2 bg-gradient-to-r from-gold-500 to-gold-600 text-matte-950 hover:from-gold-400 hover:to-gold-500 font-bold px-6 py-2.5 rounded-full text-sm shadow-lg shadow-gold-500/20 hover:scale-105 transition-all">
+                        <i class="fa-regular fa-calendar-check"></i>
+                        <span>Reservar Cita</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" aria-label="Abrir menú" class="text-neutral-300 hover:text-white focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-matte-900 border-b border-matte-800 px-6 py-5 space-y-4">
+            <a href="#servicios" class="block hover:text-gold-400 py-1 mobile-link">Cortes & Tarifas</a>
+            <a href="#galeria" class="block hover:text-gold-400 py-1 mobile-link">Instalaciones</a>
+            <a href="#experiencia" class="block hover:text-gold-400 py-1 mobile-link">La Experiencia</a>
+            <a href="#opiniones" class="block hover:text-gold-400 py-1 mobile-link">Reseñas Reales</a>
+            <a href="#ubicacion" class="block hover:text-gold-400 py-1 mobile-link">Contacto y Mapa</a>
+            <div class="pt-2">
+                <a href="mailto:litbcs@lightinthebox.com" class="w-full text-center block bg-gold-500 text-matte-950 font-bold py-3 rounded-full hover:bg-gold-400 transition-colors">
+                    Reservar Cita
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="relative overflow-hidden bg-matte-950 py-20 lg:py-28 border-b border-matte-800">
+        <!-- Background decorative ambient glow -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gold-500/10 rounded-full blur-[140px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-matte-900 border border-gold-500/30 text-gold-400 text-xs uppercase tracking-widest font-semibold">
+                        <i class="fa-solid fa-certificate text-gold-400"></i> Villaverde &bull; Calidad y Esmero Artesanal
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-cinzel font-bold text-white tracking-tight leading-[1.15]">
+                        El arte del corte clásico y moderno en <span class="gold-gradient-text">Villaverde</span>
+                    </h1>
+                    
+                    <p class="text-neutral-400 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
+                        Bienvenido a <strong>Peluquería Caballeros Palmera</strong> (conocido también como <em>Capelo 2</em>). La atención meticulosa y el esmero de nuestro maestro <strong>Karim</strong> garantizan acabados impecables, trato cercano y tarifas verdaderamente justas.
+                    </p>
+
+                    <!-- Trust Badges -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-6 pt-2 text-sm text-neutral-300">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-star text-gold-400"></i>
+                            <span class="font-medium">5.0 Estrellas en Opiniones</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-tag text-gold-400"></i>
+                            <span class="font-medium">Precios Muy Económicos</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-location-dot text-gold-400"></i>
+                            <span class="font-medium">C.P. 28021 Madrid</span>
+                        </div>
+                    </div>
+
+                    <!-- Call To Action -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="mailto:litbcs@lightinthebox.com" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-gradient-to-r from-gold-500 to-gold-600 text-matte-950 font-bold px-8 py-4 rounded-full text-base shadow-xl shadow-gold-500/25 hover:from-gold-400 hover:to-gold-500 hover:scale-105 transition-all">
+                            <i class="fa-regular fa-envelope"></i>
+                            <span>Reservar Cita</span>
+                        </a>
+                        <a href="#servicios" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-matte-700 bg-matte-900/60 hover:bg-matte-800 text-white font-medium px-8 py-4 rounded-full text-base transition-colors">
+                            <span>Ver Tarifas & Cortes</span>
+                            <i class="fa-solid fa-arrow-down-long text-gold-400 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Image Showcase -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="relative rounded-2xl overflow-hidden gold-border-glow shadow-2xl bg-matte-900 aspect-[4/5]">
+                            <img 
+                                src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=900&q=80" 
+                                alt="Corte y barbería en Peluquería Caballeros Palmera" 
+                                class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700"
+                                referrerpolicy="no-referrer"
+                                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                            >
+                            <div class="absolute inset-0 bg-gradient-to-t from-matte-950 via-transparent to-transparent"></div>
+                            
+                            <!-- Floating Card Badge -->
+                            <div class="absolute bottom-5 left-5 right-5 bg-matte-900/90 backdrop-blur-md border border-matte-700/80 p-4 rounded-xl flex items-center justify-between">
+                                <div>
+                                    <p class="text-xs uppercase tracking-wider text-gold-400 font-semibold">Atención Destacada</p>
+                                    <p class="text-white font-bold text-sm">El toque maestro de Karim</p>
+                                </div>
+                                <div class="flex text-gold-400 text-xs">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- HIGHLIGHT STATS / BENEFICIOS -->
+    <section class="py-12 bg-matte-900 border-b border-matte-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="p-4 rounded-xl bg-matte-950/40 border border-matte-800">
+                    <p class="font-cinzel text-3xl font-bold text-gold-400">100%</p>
+                    <p class="text-xs text-neutral-400 mt-1 uppercase tracking-wider">Satisfacción Cliente</p>
+                </div>
+                <div class="p-4 rounded-xl bg-matte-950/40 border border-matte-800">
+                    <p class="font-cinzel text-3xl font-bold text-gold-400">Top</p>
+                    <p class="text-xs text-neutral-400 mt-1 uppercase tracking-wider">Precio Económico</p>
+                </div>
+                <div class="p-4 rounded-xl bg-matte-950/40 border border-matte-800">
+                    <p class="font-cinzel text-3xl font-bold text-gold-400">Esmero</p>
+                    <p class="text-xs text-neutral-400 mt-1 uppercase tracking-wider">En Cada Detalle</p>
+                </div>
+                <div class="p-4 rounded-xl bg-matte-950/40 border border-matte-800">
+                    <p class="font-cinzel text-3xl font-bold text-gold-400">28021</p>
+                    <p class="text-xs text-neutral-400 mt-1 uppercase tracking-wider">Villaverde, Madrid</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS / CARTA / TARIFAS -->
+    <section id="servicios" class="py-24 bg-matte-950 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <div class="inline-block px-3 py-1 rounded-full bg-matte-900 border border-gold-500/30 text-gold-400 text-xs font-semibold tracking-widest uppercase">
+                    Especialidades & Precios
+                </div>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-cinzel font-bold text-white">
+                    Nuestros Tratamientos, Cortes y Tarifas
+                </h2>
+                <p class="text-neutral-400 text-base">
+                    Servicios de alta barbería adaptados a tus preferencias: desde cortes clásicos pulidos hasta degradados contemporáneos y cuidado tradicional de barba. Precios altamente competitivos con el mejor trato humano.
+                </p>
+            </div>
+
+            <!-- Categories Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Category 1: Cortes de Caballero -->
+                <div class="bg-matte-900/80 rounded-2xl p-7 border border-matte-800 gold-border-glow transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between border-b border-matte-800 pb-4 mb-6">
+                            <div>
+                                <h3 class="font-cinzel text-xl font-bold text-white">Cortes de Pelo</h3>
+                                <p class="text-xs text-gold-400">Estilos masculinos a medida</p>
+                            </div>
+                            <span class="w-10 h-10 rounded-full bg-matte-800 flex items-center justify-center text-gold-400 text-lg">
+                                <i class="fa-solid fa-scissors"></i>
+                            </span>
+                        </div>
+
+                        <ul class="space-y-5">
+                            <li class="flex justify-between items-start">
+                                <div>
+                                    <p class="font-semibold text-neutral-200">Corte Clásico a Tijera / Máquina</p>
+                                    <p class="text-xs text-neutral-400 mt-0.5">Asesoramiento, lavado rápido y peinado profesional.</p>
+                                </div>
+                                <span class="font-cinzel text-gold-400 font-bold text-lg whitespace-nowrap ml-4">Económico</span>
+                            </li>
+                            <li class="flex justify-between items-start border-t border-matte-800/60 pt-4">
+                                <div>
+                                    <p class="font-semibold text-neutral-200">Degradado / Fade Moderno</p>
+                                    <p class="text-xs text-neutral-400 mt-0.5">Skin fade, low fade, mid fade con definición a navaja.</p>
+                                </div>
+                                <span class="font-cinzel text-gold-400 font-bold text-lg whitespace-nowrap ml-4">Económico</span>
+                            </li>
+                            <li class="flex justify-between items-start border-t border-matte-800/60 pt-4">
+                                <div>
+                                    <p class="font-semibold text-neutral-200">Corte Infantil & Juvenil</p>
+                                    <p class="text-xs text-neutral-400 mt-0.5">Paciencia, rapidez y los estilos más actuales para jóvenes.</p>
+                                </div>
+                                <span class="font-cinzel text-gold-400 font-bold text-lg whitespace-nowrap ml-4">Económico</span>
+                            </li>
+                            <li class="flex justify-between items-start border-t border-matte-800/60 pt-4">
+                                <div>
+                                    <p class="font-semibold text-neutral-200">Rapado Integral / Rasurado</p>
+                                    <p class="text-xs text-neutral-400 mt-0.5">Uniformidad, perfilado de cuello y patillas.</p>
+                                </div>
+                                <span class="font-cinzel text-gold-400 font-bold text-lg whitespace-nowrap ml-4">Económico</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-8 pt-4 border-t border-matte-800">
+                        <a href="mailto:litbcs@lightinthebox.com" class="w-full inline-flex items-center justify-center gap-2 bg-matte-800 hover:bg-gold-500 hover:text-matte-950 text-white font-semibold py-2.5 rounded-xl text-sm transition-all">
+                            <span>Reservar Cita</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Category 2: Barba y Afeitado Clásico -->
+                <div class="bg-matte-900/80 rounded-2xl p-7 border border-matte-800 gold-border-glow transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between border-b border-matte-800 pb-4 mb-6">
+                            <div>
+                                <h3 class="font-cinzel text-xl font-bold text-white">Barba & Afeitado</h3>
+                                <p class="text-xs text-gold-400">Rituales de cuidado facial</p>
+                            </div>
+                            <span class="w-10 h-10 rounded-full bg-matte-800 flex items-center justify-center text-gold-400 text-lg">
+                                <i class="fa-solid fa-user-ninja"></i>
+                            </span>
+                        </div>
+
+                        <ul class="space-y-5">
+                            <li class="flex justify-between items-start">
+                                <div>
+                                    <p class="font-semibold text-neutral-200">Arreglo y Perfilado de Barba</p>
+                                    <p class="text-xs text-neutral-400 mt-0.5">Recorte de simetría, línea con navaja y bálsamo hidratante.</p>
+                                </div>
+                                <span class="font-cinzel text-gold-400 font-bold text-lg whitespace-nowrap ml-4">Económico</span>
+                            </li>
+                            <li class="flex justify-between items-start border-t border-matte-800/60 pt-4">
+                                <div>
+                                    <p class="font-semibold text-neutral-200">Afeitado Tradicional Spa</p>
+                                    <p class="text-xs text-neutral-400 mt-0.5">Espuma caliente, navaja de precisión y loción refrescante.</p>
+                                </div>
+                                <span class="font-cinzel text-gold-400 font-bold text-lg whitespace-nowrap ml-4">Económico</span>
+                            </li>
+                            <li class="flex justify-between items-start border-t border-matte-800/60 pt-4">
+                                <div>
+                                    <p class="font-semibold text-neutral-200">Mantenimiento de Bigote & Perilla</p>
+                                    <p class="text-xs text-neutral-400 mt-0.5">Detallado milimétrico y limpieza de contornos.</p>
+                                </div>
+                                <span class="font-cinzel text-gold-400 font-bold text-lg whitespace-nowrap ml-4">Económico</span>
+                            </li>
+                            <li class="flex justify-between items-start border-t border-matte-800/60 pt-4">
+                                <div>
+                                    <p class="font-semibold text-neutral-200">Limpieza Facial Express</p>
+                                    <p class="text-xs text-neutral-400 mt-0.5">Exfoliación suave tras el afeitado para evitar irritaciones.</p>
+                                </div>
+                                <span class="font-cinzel text-gold-400 font-bold text-lg whitespace-nowrap ml-4">Económico</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-8 pt-4 border-t border-matte-800">
+                        <a href="mailto:litbcs@lightinthebox.com" class="w-full inline-flex items-center justify-center gap-2 bg-matte-800 hover:bg-gold-500 hover:text-matte-950 text-white font-semibold py-2.5 rounded-xl text-sm transition-all">
+                            <span>Reservar Cita</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Category 3: Packs Completos & Tratamientos -->
+                <div class="bg-matte-900/80 rounded-2xl p-7 border border-gold-500/30 gold-border-glow transition-all flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-gold-500 text-matte-950 text-[10px] uppercase font-bold tracking-wider py-1 px-3 rounded-bl-lg">
+                        Más Solicitado
+                    </div>
+                    <div>
+                        <div class="flex items-center justify-between border-b border-matte-800 pb-4 mb-6">
+                            <div>
+                                <h3 class="font-cinzel text-xl font-bold text-white">Combos Exclusivos</h3>
+                                <p class="text-xs text-gold-400">Renovación integral de estilo</p>
+                            </div>
+                            <span class="w-10 h-10 rounded-full bg-matte-800 flex items-center justify-center text-gold-400 text-lg">
+                                <i class="fa-solid fa-crown"></i>
+                            </span>
+                        </div>
+
+                        <ul class="space-y-5">
+                            <li class="flex justify-between items-start">
+                                <div>
+                                    <p class="font-semibold text-neutral-200">Pack Palmera Total</p>
+                                    <p class="text-xs text-neutral-400 mt-0.5">Corte de pelo completo + arreglo minucioso de barba + peinado.</p>
+                                </div>
+                                <span class="font-cinzel text-gold-400 font-bold text-lg whitespace-nowrap ml-4">Económico</span>
+                            </li>
+                            <li class="flex justify-between items-start border-t border-matte-800/60 pt-4">
+                                <div>
+                                    <p class="font-semibold text-neutral-200">Corte + Lavado Relajante</p>
+                                    <p class="text-xs text-neutral-400 mt-0.5">Champú revitalizante con masaje capilar tonificante.</p>
+                                </div>
+                                <span class="font-cinzel text-gold-400 font-bold text-lg whitespace-nowrap ml-4">Económico</span>
+                            </li>
+                            <li class="flex justify-between items-start border-t border-matte-800/60 pt-4">
+                                <div>
+                                    <p class="font-semibold text-neutral-200">Perfilado & Cejas</p>
+                                    <p class="text-xs text-neutral-400 mt-0.5">Limpieza de cejas masculina para un rostro más limpio y ordenado.</p>
+                                </div>
+                                <span class="font-cinzel text-gold-400 font-bold text-lg whitespace-nowrap ml-4">Económico</span>
+                            </li>
+                            <li class="flex justify-between items-start border-t border-matte-800/60 pt-4">
+                                <div>
+                                    <p class="font-semibold text-neutral-200">Tratamiento Capilar Anticaída</p>
+                                    <p class="text-xs text-neutral-400 mt-0.5">Aplicación de loción fortalecedora y estimulación del cuero cabelludo.</p>
+                                </div>
+                                <span class="font-cinzel text-gold-400 font-bold text-lg whitespace-nowrap ml-4">Económico</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-8 pt-4 border-t border-matte-800">
+                        <a href="mailto:litbcs@lightinthebox.com" class="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-gold-500 to-gold-600 text-matte-950 font-bold py-2.5 rounded-xl text-sm shadow-md hover:from-gold-400 hover:to-gold-500 transition-all">
+                            <span>Reservar Cita</span>
+                            <i class="fa-solid fa-calendar-check text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Callout Note -->
+            <div class="mt-12 p-6 rounded-2xl bg-matte-900 border border-matte-800 text-center max-w-2xl mx-auto">
+                <p class="text-neutral-300 text-sm">
+                    <span class="text-gold-400 font-semibold"><i class="fa-solid fa-circle-info mr-1"></i> Precios justos y transparentes:</span> Todos nuestros clientes destacan la extraordinaria relación calidad-precio. Ven o reserva tu hueco y disfruta de un servicio impecable.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERÍA: NUESTRAS INSTALACIONES Y TRABAJOS -->
+    <section id="galeria" class="py-24 bg-matte-900 border-t border-b border-matte-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <div class="inline-block px-3 py-1 rounded-full bg-matte-950 border border-gold-500/30 text-gold-400 text-xs font-semibold tracking-widest uppercase">
+                    Galería Visual
+                </div>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-cinzel font-bold text-white">
+                    Nuestras Instalaciones y Trabajos
+                </h2>
+                <p class="text-neutral-400 text-base">
+                    Un espacio agradable, limpio y equipado con el instrumental de barbería más exigente. Descubre el resultado de nuestro esmero diario en Villaverde.
+                </p>
+            </div>
+
+            <!-- Grid de Imágenes con Respaldo Infalible y referrerpolicy -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Image 1 -->
+                <div class="group relative overflow-hidden rounded-2xl bg-matte-950 aspect-[4/3] gold-border-glow">
+                    <img 
+                        src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=80" 
+                        alt="Corte y barbería en Peluquería Caballeros Palmera" 
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        referrerpolicy="no-referrer"
+                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-matte-950/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <div>
+                            <span class="text-gold-400 text-xs uppercase tracking-wider font-semibold">Técnica Precisa</span>
+                            <p class="text-white font-medium text-sm">Degradados de alta definición</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image 2 -->
+                <div class="group relative overflow-hidden rounded-2xl bg-matte-950 aspect-[4/3] gold-border-glow">
+                    <img 
+                        src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=800&q=80" 
+                        alt="Ambiente acogedor en Barbería Palmera Villaverde" 
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        referrerpolicy="no-referrer"
+                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-matte-950/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <div>
+                            <span class="text-gold-400 text-xs uppercase tracking-wider font-semibold">Sillón Tradicional</span>
+                            <p class="text-white font-medium text-sm">Comodidad y esmero garantizado</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image 3 -->
+                <div class="group relative overflow-hidden rounded-2xl bg-matte-950 aspect-[4/3] gold-border-glow">
+                    <img 
+                        src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=800&q=80" 
+                        alt="Afeitado clásico a navaja en Villaverde" 
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        referrerpolicy="no-referrer"
+                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-matte-950/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <div>
+                            <span class="text-gold-400 text-xs uppercase tracking-wider font-semibold">Barba & Navaja</span>
+                            <p class="text-white font-medium text-sm">Perfilado nítido y cuidado facial</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image 4 -->
+                <div class="group relative overflow-hidden rounded-2xl bg-matte-950 aspect-[4/3] gold-border-glow">
+                    <img 
+                        src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=800&q=80" 
+                        alt="Herramientas profesionales de peluquería masculina" 
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        referrerpolicy="no-referrer"
+                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-matte-950/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <div>
+                            <span class="text-gold-400 text-xs uppercase tracking-wider font-semibold">Higiene & Material</span>
+                            <p class="text-white font-medium text-sm">Herramientas desinfectadas y de primera línea</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image 5 -->
+                <div class="group relative overflow-hidden rounded-2xl bg-matte-950 aspect-[4/3] gold-border-glow">
+                    <img 
+                        src="https://images.unsplash.com/photo-1517832606589-715753d4f340?auto=format&fit=crop&w=800&q=80" 
+                        alt="Detalles de corte moderno para caballero" 
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        referrerpolicy="no-referrer"
+                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-matte-950/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <div>
+                            <span class="text-gold-400 text-xs uppercase tracking-wider font-semibold">Estilo Contemporáneo</span>
+                            <p class="text-white font-medium text-sm">Acabados estructurados con textura</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image 6 -->
+                <div class="group relative overflow-hidden rounded-2xl bg-matte-950 aspect-[4/3] gold-border-glow">
+                    <img 
+                        src="https://images.unsplash.com/photo-1512690459411-b9245aed614b?auto=format&fit=crop&w=800&q=80" 
+                        alt="Interior boutique de Peluquería Palmera" 
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        referrerpolicy="no-referrer"
+                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-matte-950/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <div>
+                            <span class="text-gold-400 text-xs uppercase tracking-wider font-semibold">Ambiente Agradable</span>
+                            <p class="text-white font-medium text-sm">Un rincón donde desconectar y renovarse</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botón de Acción -->
+            <div class="text-center mt-12">
+                <a href="mailto:litbcs@lightinthebox.com" class="inline-flex items-center gap-2 bg-gradient-to-r from-gold-500 to-gold-600 text-matte-950 font-bold px-8 py-3.5 rounded-full text-sm shadow-lg shadow-gold-500/20 hover:scale-105 transition-all">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span>Reservar Cita</span>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- LA EXPERIENCIA / POR QUÉ ELEGIRNOS -->
+    <section id="experiencia" class="py-24 bg-matte-950 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <div class="space-y-6">
+                    <div class="inline-block px-3 py-1 rounded-full bg-matte-900 border border-gold-500/30 text-gold-400 text-xs font-semibold tracking-widest uppercase">
+                        El Toque Humano
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-cinzel font-bold text-white leading-tight">
+                        La atención y el esmero que tu imagen merece
+                    </h2>
+                    <p class="text-neutral-400 leading-relaxed">
+                        En Villaverde somos la barbería elegida por quienes buscan un servicio cercano, honesto y riguroso. Nos destacamos por escuchar exactamente lo que deseas, aconsejarte con criterio y trabajar con calma y precisión quirúrgica.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-matte-900/60 border border-matte-800">
+                            <div class="w-10 h-10 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 shrink-0">
+                                <i class="fa-solid fa-award text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-semibold text-base">La Maestría de Karim</h3>
+                                <p class="text-neutral-400 text-sm mt-0.5">Reconocido por los clientes por su trato profesional, paciencia y esmero en cada trazo.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-matte-900/60 border border-matte-800">
+                            <div class="w-10 h-10 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 shrink-0">
+                                <i class="fa-solid fa-hand-holding-dollar text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-semibold text-base">Precios Inmejorables</h3>
+                                <p class="text-neutral-400 text-sm mt-0.5">Disfruta de un acabado boutique a precios realmente económicos y al alcance de todos los vecinos.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-matte-900/60 border border-matte-800">
+                            <div class="w-10 h-10 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 shrink-0">
+                                <i class="fa-solid fa-couch text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-semibold text-base">Ambiente Agradable y Cómodo</h3>
+                                <p class="text-neutral-400 text-sm mt-0.5">Un espacio limpio, con música agradable y un ambiente acogedor donde sentirte como en casa.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="mailto:litbcs@lightinthebox.com" class="inline-flex items-center gap-2 bg-gold-500 text-matte-950 hover:bg-gold-400 font-bold px-8 py-3.5 rounded-full text-sm transition-all shadow-lg shadow-gold-500/20">
+                            <span>Reservar Cita</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Side Feature Visual -->
+                <div class="relative">
+                    <div class="relative rounded-2xl overflow-hidden gold-border-glow bg-matte-900">
+                        <img 
+                            src="https://images.unsplash.com/photo-1593702295094-aea22597af65?auto=format&fit=crop&w=900&q=80" 
+                            alt="Maestro barbero trabajando en Peluquería Palmera" 
+                            class="w-full h-full object-cover"
+                            referrerpolicy="no-referrer"
+                            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-matte-950 via-matte-950/20 to-transparent"></div>
+                        
+                        <div class="absolute bottom-6 left-6 right-6 p-6 rounded-xl bg-matte-900/90 backdrop-blur-md border border-matte-800">
+                            <p class="font-cinzel text-xl text-white font-bold">"Ya no voy a otra"</p>
+                            <p class="text-sm text-neutral-300 mt-1 italic">
+                                "El trato muy bueno, el corte de pelo mejor y el precio muy muy económico."
+                            </p>
+                            <p class="text-xs text-gold-400 mt-2 font-semibold">&mdash; Opinión verificada de cliente</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- RESEÑAS REALES DE CLIENTES -->
+    <section id="opiniones" class="py-24 bg-matte-900 border-t border-b border-matte-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <div class="inline-block px-3 py-1 rounded-full bg-matte-950 border border-gold-500/30 text-gold-400 text-xs font-semibold tracking-widest uppercase">
+                    Testimonios Reales
+                </div>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-cinzel font-bold text-white">
+                    Opiniones Verificadas de Clientes
+                </h2>
+                <p class="text-neutral-400 text-base">
+                    Lo que dicen nuestros clientes habituales y vecinos de Villaverde tras pasar por nuestros sillones.
+                </p>
+            </div>
+
+            <!-- Review Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Review 1: Cesar Varona -->
+                <div class="bg-matte-950 p-6 rounded-2xl border border-matte-800 gold-border-glow flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex text-gold-400 text-sm gap-1">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="text-xs text-emerald-400 font-semibold bg-emerald-950/60 px-2.5 py-0.5 rounded-full border border-emerald-800/40">
+                                <i class="fa-solid fa-check text-[10px] mr-1"></i>Verificada
+                            </span>
+                        </div>
+                        <p class="text-neutral-300 text-sm leading-relaxed italic">
+                            "Ahora se llama Capelo 2, empezé a ir a unos meses y ya no voy a otra. El trato muy bueno, el corte de pelo mejor y, el precio muy muy económico. Acabo de estar esta misma mañana a primera hora."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-6 mt-4 border-t border-matte-800/80">
+                        <div class="w-10 h-10 rounded-full bg-gold-500/20 text-gold-400 font-bold flex items-center justify-center font-cinzel text-sm">
+                            CV
+                        </div>
+                        <div>
+                            <p class="text-white font-semibold text-sm">Cesar Varona</p>
+                            <p class="text-xs text-neutral-400">Cliente Recurrente &bull; Google Maps</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2: Carlos S. Maldonado Mendoza -->
+                <div class="bg-matte-950 p-6 rounded-2xl border border-matte-800 gold-border-glow flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex text-gold-400 text-sm gap-1">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="text-xs text-emerald-400 font-semibold bg-emerald-950/60 px-2.5 py-0.5 rounded-full border border-emerald-800/40">
+                                <i class="fa-solid fa-check text-[10px] mr-1"></i>Verificada
+                            </span>
+                        </div>
+                        <p class="text-neutral-300 text-sm leading-relaxed italic">
+                            "Buena atención, en mi caso salí conforme con el corte, precio y en todo aspecto."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-6 mt-4 border-t border-matte-800/80">
+                        <div class="w-10 h-10 rounded-full bg-gold-500/20 text-gold-400 font-bold flex items-center justify-center font-cinzel text-sm">
+                            CM
+                        </div>
+                        <div>
+                            <p class="text-white font-semibold text-sm">Carlos S. Maldonado Mendoza</p>
+                            <p class="text-xs text-neutral-400">Cliente Satisfecho &bull; Reseña Real</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3: Christopher Peinado -->
+                <div class="bg-matte-950 p-6 rounded-2xl border border-matte-800 gold-border-glow flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex text-gold-400 text-sm gap-1">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="text-xs text-emerald-400 font-semibold bg-emerald-950/60 px-2.5 py-0.5 rounded-full border border-emerald-800/40">
+                                <i class="fa-solid fa-check text-[10px] mr-1"></i>Verificada
+                            </span>
+                        </div>
+                        <p class="text-neutral-300 text-sm leading-relaxed italic">
+                            "La atención y el esmero de Karim es destacable."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-6 mt-4 border-t border-matte-800/80">
+                        <div class="w-10 h-10 rounded-full bg-gold-500/20 text-gold-400 font-bold flex items-center justify-center font-cinzel text-sm">
+                            CP
+                        </div>
+                        <div>
+                            <p class="text-white font-semibold text-sm">Christopher Peinado</p>
+                            <p class="text-xs text-neutral-400">Cliente Local &bull; Google Maps</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 4: Alberto Martín Berrón -->
+                <div class="bg-matte-950 p-6 rounded-2xl border border-matte-800 gold-border-glow flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex text-gold-400 text-sm gap-1">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="text-xs text-emerald-400 font-semibold bg-emerald-950/60 px-2.5 py-0.5 rounded-full border border-emerald-800/40">
+                                <i class="fa-solid fa-check text-[10px] mr-1"></i>Verificada
+                            </span>
+                        </div>
+                        <p class="text-neutral-300 text-sm leading-relaxed italic">
+                            "Buen servicio, economico; aconsejable"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-6 mt-4 border-t border-matte-800/80">
+                        <div class="w-10 h-10 rounded-full bg-gold-500/20 text-gold-400 font-bold flex items-center justify-center font-cinzel text-sm">
+                            AM
+                        </div>
+                        <div>
+                            <p class="text-white font-semibold text-sm">Alberto Martín Berrón</p>
+                            <p class="text-xs text-neutral-400">Cliente Frecuente &bull; Reseña Real</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 5: Juan Carlos Serna Martinez -->
+                <div class="bg-matte-950 p-6 rounded-2xl border border-matte-800 gold-border-glow flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex text-gold-400 text-sm gap-1">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="text-xs text-emerald-400 font-semibold bg-emerald-950/60 px-2.5 py-0.5 rounded-full border border-emerald-800/40">
+                                <i class="fa-solid fa-check text-[10px] mr-1"></i>Verificada
+                            </span>
+                        </div>
+                        <p class="text-neutral-300 text-sm leading-relaxed italic">
+                            "Bien agradable el sitio"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-6 mt-4 border-t border-matte-800/80">
+                        <div class="w-10 h-10 rounded-full bg-gold-500/20 text-gold-400 font-bold flex items-center justify-center font-cinzel text-sm">
+                            JC
+                        </div>
+                        <div>
+                            <p class="text-white font-semibold text-sm">Juan Carlos Serna Martinez</p>
+                            <p class="text-xs text-neutral-400">Cliente Local &bull; Google Maps</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card de Invitación -->
+                <div class="bg-gradient-to-br from-matte-900 to-matte-850 p-6 rounded-2xl border border-gold-500/30 flex flex-col justify-between text-center items-center">
+                    <div>
+                        <div class="w-12 h-12 rounded-full bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mx-auto mb-4">
+                            <i class="fa-solid fa-comment-dots text-xl"></i>
+                        </div>
+                        <h3 class="text-white font-cinzel font-bold text-lg mb-2">¿Listo para renovar tu corte?</h3>
+                        <p class="text-neutral-400 text-xs leading-relaxed">
+                            Únete a los cientos de vecinos de Villaverde que ya confían en el trato y el corte inigualable de nuestra peluquería.
+                        </p>
+                    </div>
+                    <div class="w-full pt-6">
+                        <a href="mailto:litbcs@lightinthebox.com" class="w-full block bg-gold-500 hover:bg-gold-400 text-matte-950 font-bold py-2.5 rounded-xl text-sm transition-all shadow-md">
+                            Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- UBICACIÓN, HORARIOS Y CONTACTO -->
+    <section id="ubicacion" class="py-24 bg-matte-950 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                
+                <!-- Info Column -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <div class="inline-block px-3 py-1 rounded-full bg-matte-900 border border-gold-500/30 text-gold-400 text-xs font-semibold tracking-widest uppercase mb-3">
+                            Encuéntranos
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-cinzel font-bold text-white leading-tight">
+                            Ubicación y Contacto
+                        </h2>
+                        <p class="text-neutral-400 text-sm mt-3 leading-relaxed">
+                            Estamos situados en el corazón de Villaverde, en la Calle de Juan José Martínez Seco. Fácil acceso a pie o en transporte público.
+                        </p>
+                    </div>
+
+                    <!-- Contact Details Cards -->
+                    <div class="space-y-4">
+                        <!-- Dirección -->
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-matte-900 border border-matte-800">
+                            <div class="w-10 h-10 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 shrink-0 mt-0.5">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gold-400 uppercase font-semibold">Dirección Exacta</p>
+                                <p class="text-white text-sm font-medium mt-0.5">C. de Juan José Martínez Seco, 83</p>
+                                <p class="text-neutral-400 text-xs">Villaverde, 28021 Madrid, España</p>
+                            </div>
+                        </div>
+
+                        <!-- Email Directo -->
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-matte-900 border border-matte-800">
+                            <div class="w-10 h-10 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 shrink-0 mt-0.5">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gold-400 uppercase font-semibold">Correo Electrónico & Citas</p>
+                                <a href="mailto:litbcs@lightinthebox.com" class="text-white hover:text-gold-400 text-sm font-medium mt-0.5 block break-all transition-colors">
+                                    litbcs@lightinthebox.com
+                                </a>
+                                <p class="text-neutral-400 text-xs">Respuesta para consultas y reservas</p>
+                            </div>
+                        </div>
+
+                        <!-- Horarios orientativos -->
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-matte-900 border border-matte-800">
+                            <div class="w-10 h-10 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 shrink-0 mt-0.5">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gold-400 uppercase font-semibold">Horario Habitual</p>
+                                <p class="text-white text-sm font-medium mt-0.5">Lunes a Sábado: 09:30 - 14:00 | 16:30 - 20:30</p>
+                                <p class="text-neutral-400 text-xs">Atendemos con cita previa y por orden de llegada</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Direct CTA Button -->
+                    <div class="pt-2">
+                        <a href="mailto:litbcs@lightinthebox.com" class="w-full inline-flex items-center justify-center gap-3 bg-gradient-to-r from-gold-500 to-gold-600 text-matte-950 font-bold px-8 py-3.5 rounded-full text-base shadow-lg shadow-gold-500/20 hover:scale-105 transition-all">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span>Reservar Cita</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Map Column con el IFRAME exacto requerido -->
+                <div class="lg:col-span-7">
+                    <div class="p-2 sm:p-3 rounded-2xl bg-matte-900 border border-matte-800 gold-border-glow shadow-2xl">
+                        <div class="overflow-hidden rounded-xl">
+                            <iframe src="https://www.google.com/maps?q=Peluqueria%20Caballeros%20Palmera%20C.%20de%20Juan%20Jos%C3%A9%20Mart%C3%ADnez%20Seco%2C%2083%2C%20Villaverde%2C%2028021%20Madrid%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                        <div class="mt-4 px-3 py-2 flex flex-col sm:flex-row items-center justify-between text-xs text-neutral-400 gap-2">
+                            <span><i class="fa-solid fa-compass text-gold-400 mr-1"></i> Villaverde Bajo / San Cristóbal, Madrid</span>
+                            <a href="https://maps.google.com/?q=Peluqueria+Caballeros+Palmera+C.+de+Juan+José+Martínez+Seco+83+Villaverde+28021+Madrid" target="_blank" rel="noopener noreferrer" class="text-gold-400 hover:underline">Abrir en Google Maps &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-matte-950 border-t border-matte-800 text-neutral-400 py-12 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-10 border-b border-matte-900 items-center text-center md:text-left">
+                
+                <div>
+                    <span class="font-cinzel text-xl font-bold tracking-wider text-white">PALMERA</span>
+                    <p class="text-xs text-gold-400 uppercase tracking-widest font-semibold mt-1">Peluquería Caballeros &bull; Capelo 2</p>
+                    <p class="text-xs text-neutral-500 mt-2">C. de Juan José Martínez Seco, 83, Villaverde, 28021 Madrid, España</p>
+                </div>
+
+                <div class="flex justify-center gap-6 text-sm">
+                    <a href="#servicios" class="hover:text-gold-400 transition-colors">Servicios</a>
+                    <a href="#galeria" class="hover:text-gold-400 transition-colors">Instalaciones</a>
+                    <a href="#opiniones" class="hover:text-gold-400 transition-colors">Opiniones</a>
+                    <a href="#ubicacion" class="hover:text-gold-400 transition-colors">Ubicación</a>
+                </div>
+
+                <div class="flex justify-center md:justify-end">
+                    <a href="mailto:litbcs@lightinthebox.com" class="inline-flex items-center gap-2 bg-matte-900 border border-gold-500/40 text-gold-400 hover:bg-gold-500 hover:text-matte-950 px-5 py-2 rounded-full font-semibold text-xs transition-all">
+                        <i class="fa-regular fa-calendar-check"></i>
+                        <span>Reservar Cita</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-neutral-500 gap-4">
+                <p>&copy; <span id="current-year"></span> Peluqueria Caballeros Palmera. Todos los derechos reservados.</p>
+                <p class="flex items-center gap-1">
+                    <span>Diseño boutique de caballeros en Villaverde</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MOBILE FIXED CTA BAR -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-matte-950/95 backdrop-blur-md border-t border-matte-800 p-3 z-40 flex items-center gap-3">
+        <a href="mailto:litbcs@lightinthebox.com" class="flex-1 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-gold-500 to-gold-600 text-matte-950 font-bold py-3 px-4 rounded-xl text-sm shadow-lg shadow-gold-500/25">
+            <i class="fa-regular fa-calendar-check text-base"></i>
+            <span>Reservar Cita</span>
+        </a>
+        <a href="#ubicacion" class="w-12 h-12 rounded-xl bg-matte-900 border border-matte-700 flex items-center justify-center text-gold-400 text-lg shrink-0">
+            <i class="fa-solid fa-map-location-dot"></i>
+        </a>
+    </div>
+
+    <!-- JAVASCRIPT FOR TOGGLES & SMOOTH SCROLL -->
+    <script>
+        // Set dynamic current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
