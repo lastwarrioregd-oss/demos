@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOTÒGRAF DANI | Estudio Fotográfico y Tienda de Cámaras en L'Aldea</title>
+    <meta name="description" content="FOTÒGRAF DANI - Estudio fotográfico boutique y tienda especializada en cámaras y fotografía en L'Aldea, Tarragona. Sesiones newborn, retrato, comuniones y eventos.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        matte: {
+                            900: '#0c0c0d',
+                            800: '#141416',
+                            700: '#1d1d21',
+                            600: '#2b2b30',
+                        },
+                        gold: {
+                            300: '#f3e5ab',
+                            400: '#e6ca85',
+                            500: '#d4af37',
+                            600: '#b89025',
+                        },
+                        sand: {
+                            50: '#faf8f5',
+                            100: '#f5f0e8',
+                            200: '#ebdccb',
+                            300: '#dfc7ab',
+                            800: '#524334',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa8018 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border {
+            border-color: rgba(212, 175, 55, 0.25);
+        }
+        .gold-border-hover:hover {
+            border-color: rgba(212, 175, 55, 0.7);
+        }
+    </style>
+</head>
+<body class="bg-matte-900 text-sand-100 font-sans antialiased selection:bg-gold-500 selection:text-black">
+
+    <!-- BARRA SUPERIOR DE CONTACTO -->
+    <div class="bg-matte-800 border-b border-white/5 py-2 px-4 sm:px-8 text-xs tracking-wider text-sand-200">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center space-x-6">
+                <span><i class="fa-solid fa-location-dot text-gold-400 mr-2"></i>Avinguda Catalunya, 380, L'Aldea (Tarragona)</span>
+                <span class="hidden md:inline"><i class="fa-regular fa-clock text-gold-400 mr-2"></i>Atención personalizada con cita previa</span>
+            </div>
+            <div class="flex items-center space-x-6">
+                <a href="tel:977450276" class="hover:text-gold-400 transition-colors flex items-center">
+                    <i class="fa-solid fa-phone text-gold-400 mr-2"></i>977 450 276
+                </a>
+                <a href="mailto:dpo@planeta.es" class="hover:text-gold-400 transition-colors hidden sm:flex items-center">
+                    <i class="fa-regular fa-envelope text-gold-400 mr-2"></i>dpo@planeta.es
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ENCABEZADO Y NAVEGACIÓN -->
+    <header class="sticky top-0 z-50 bg-matte-900/90 backdrop-blur-md border-b border-gold-500/20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logotipo Boutique -->
+                <a href="#" class="flex flex-col text-left group">
+                    <span class="font-serif text-2xl md:text-3xl tracking-[0.25em] text-white group-hover:text-gold-400 transition-colors duration-300">
+                        FOTÒGRAF DANI
+                    </span>
+                    <span class="text-[10px] uppercase tracking-[0.35em] text-gold-400 font-medium">
+                        Atelier & Tienda de Cámaras
+                    </span>
+                </a>
+
+                <!-- Menú de Navegación Escritorio -->
+                <nav class="hidden lg:flex items-center space-x-8 text-sm uppercase tracking-widest text-sand-200 font-medium">
+                    <a href="#inicio" class="hover:text-gold-400 transition-colors">Inicio</a>
+                    <a href="#servicios" class="hover:text-gold-400 transition-colors">Tratamientos & Tarifas</a>
+                    <a href="#galeria" class="hover:text-gold-400 transition-colors">Instalaciones</a>
+                    <a href="#opiniones" class="hover:text-gold-400 transition-colors">Reseñas</a>
+                    <a href="#contacto" class="hover:text-gold-400 transition-colors">Ubicación</a>
+                </nav>
+
+                <!-- Botón CTA Primario -->
+                <div class="hidden sm:flex items-center">
+                    <a href="tel:977450276" class="relative inline-flex items-center justify-center px-7 py-3 text-xs uppercase tracking-widest font-semibold text-black bg-gradient-to-r from-gold-300 via-gold-400 to-gold-500 rounded-none shadow-lg hover:brightness-110 transition-all duration-300 border border-gold-300">
+                        <i class="fa-solid fa-calendar-check mr-2"></i> Reservar Cita
+                    </a>
+                </div>
+
+                <!-- Botón Móvil Menú -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" aria-label="Abrir menú" class="text-sand-100 hover:text-gold-400 p-2 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-matte-800 border-b border-gold-500/20 px-6 py-6 space-y-4">
+            <a href="#inicio" class="block text-sm uppercase tracking-wider text-sand-100 hover:text-gold-400">Inicio</a>
+            <a href="#servicios" class="block text-sm uppercase tracking-wider text-sand-100 hover:text-gold-400">Tratamientos & Tarifas</a>
+            <a href="#galeria" class="block text-sm uppercase tracking-wider text-sand-100 hover:text-gold-400">Instalaciones y Trabajos</a>
+            <a href="#opiniones" class="block text-sm uppercase tracking-wider text-sand-100 hover:text-gold-400">Opiniones de Clientes</a>
+            <a href="#contacto" class="block text-sm uppercase tracking-wider text-sand-100 hover:text-gold-400">Contacto</a>
+            <div class="pt-4 border-t border-white/10">
+                <a href="tel:977450276" class="block w-full text-center py-3 px-4 bg-gold-400 text-black font-semibold text-xs uppercase tracking-widest hover:bg-gold-300 transition-colors">
+                    <i class="fa-solid fa-phone mr-2"></i> Reservar Cita
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION: ALTA ESTÉTICA BOUTIQUE -->
+    <section id="inicio" class="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-matte-900 py-16">
+        <!-- Imagen de Fondo con Overlay Oscuro -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=2000&q=80" 
+                 alt="FOTÒGRAF DANI Estudio Boutique" 
+                 referrerpolicy="no-referrer"
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                 class="w-full h-full object-cover object-center filter brightness-[0.32] contrast-105 scale-105 transition-transform duration-1000 ease-out">
+            <div class="absolute inset-0 bg-gradient-to-t from-matte-900 via-matte-900/60 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
+            <div class="inline-flex items-center space-x-3 px-4 py-1.5 rounded-full border border-gold-500/40 bg-black/40 backdrop-blur-sm">
+                <span class="w-2 h-2 rounded-full bg-gold-400 animate-ping"></span>
+                <span class="text-xs uppercase tracking-[0.3em] text-gold-300 font-medium">Boutique Fotográfica Exclusiva · L'Aldea</span>
+            </div>
+
+            <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-normal leading-tight text-white tracking-wide">
+                El Arte de Capturar <br>
+                <span class="italic font-light gold-gradient-text">Emociones Irrepetibles</span>
+            </h1>
+
+            <p class="max-w-2xl mx-auto text-base sm:text-lg text-sand-200 font-light leading-relaxed tracking-wide">
+                En <strong class="text-white font-medium">FOTÒGRAF DANI</strong> combinamos el alma de la fotografía artística tradicional con la más selecta tecnología en cámaras y ópticas. Retratos newborn con una delicadeza inigualable y reportajes diseñados para perdurar por generaciones.
+            </p>
+
+            <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="tel:977450276" class="w-full sm:w-auto px-9 py-4 bg-gradient-to-r from-gold-300 via-gold-400 to-gold-500 text-black font-semibold text-xs uppercase tracking-[0.25em] shadow-2xl hover:brightness-110 transition-all transform hover:-translate-y-0.5">
+                    Reservar Cita
+                </a>
+                <a href="#servicios" class="w-full sm:w-auto px-8 py-4 border border-sand-200/30 text-sand-100 hover:border-gold-400 hover:text-gold-300 font-medium text-xs uppercase tracking-[0.2em] transition-all bg-black/20 backdrop-blur-sm">
+                    Explorar Tarifas y Catálogo
+                </a>
+            </div>
+
+            <!-- Datos de Confianza Inmediata -->
+            <div class="pt-10 grid grid-cols-2 md:grid-cols-4 gap-6 border-t border-white/10 max-w-4xl mx-auto text-left">
+                <div class="border-l border-gold-500/40 pl-4">
+                    <p class="font-serif text-2xl text-gold-400 font-semibold">100%</p>
+                    <p class="text-xs uppercase tracking-wider text-sand-300">Trato Personalizado</p>
+                </div>
+                <div class="border-l border-gold-500/40 pl-4">
+                    <p class="font-serif text-2xl text-gold-400 font-semibold">Newborn</p>
+                    <p class="text-xs uppercase tracking-wider text-sand-300">Especialistas en Bebés</p>
+                </div>
+                <div class="border-l border-gold-500/40 pl-4">
+                    <p class="font-serif text-2xl text-gold-400 font-semibold">Cámaras</p>
+                    <p class="text-xs uppercase tracking-wider text-sand-300">Tienda & Asesoría</p>
+                </div>
+                <div class="border-l border-gold-500/40 pl-4">
+                    <p class="font-serif text-2xl text-gold-400 font-semibold">5.0 ★★★★★</p>
+                    <p class="text-xs uppercase tracking-wider text-sand-300">Valoraciones Reales</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTRODUCCIÓN / ATELIER BOUTIQUE -->
+    <section class="py-20 bg-matte-800 border-y border-white/5 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <span class="text-xs uppercase tracking-[0.3em] text-gold-400 font-semibold">Excelencia y Sensibilidad</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl text-white font-normal leading-snug">
+                        Magia, paciencia y técnica en cada encuadre
+                    </h2>
+                    <p class="text-sand-200 font-light leading-relaxed">
+                        En nuestro estudio de <span class="text-white font-medium">Avinguda Catalunya en L'Aldea</span>, cada sesión es una experiencia íntima y relajada. Conocemos el valor inestimable de los primeros días de tu bebé y la autenticidad de los momentos familiares más puros. Como comentan quienes confían en nosotros, Àngels y Dani convierten cada captura en una pieza de arte atemporal.
+                    </p>
+                    <p class="text-sand-200 font-light leading-relaxed">
+                        Además de nuestro taller de luz, disponemos de una exclusiva selección de cámaras fotográficas, lentes, accesorios y revelado químico/digital de alta fidelidad para aficionados exigentes y profesionales.
+                    </p>
+                    <div class="pt-2">
+                        <a href="tel:977450276" class="inline-flex items-center text-xs uppercase tracking-[0.25em] text-gold-400 hover:text-gold-300 font-semibold border-b border-gold-400 pb-1">
+                            Hablar directamente con el fotógrafo <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="relative p-3 border border-gold-500/30 rounded-none bg-matte-900 shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1000&q=80" 
+                             alt="Detalle de equipo de cámara boutique" 
+                             referrerpolicy="no-referrer"
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                             class="w-full h-[420px] object-cover filter contrast-105">
+                        <div class="absolute -bottom-6 -left-6 bg-matte-900 border border-gold-500/40 p-5 shadow-2xl hidden sm:block">
+                            <p class="text-xs uppercase tracking-widest text-gold-400 font-semibold">Atelier en L'Aldea</p>
+                            <p class="font-serif text-lg text-white">Fotógrafos profesionales certificados</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: NUESTROS TRATAMIENTOS, CORTES Y TARIFAS -->
+    <section id="servicios" class="py-24 bg-matte-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-xs uppercase tracking-[0.3em] text-gold-400 font-semibold">Tarifario & Servicios Boutique</span>
+                <h2 class="font-serif text-3xl sm:text-5xl text-white font-normal">
+                    Nuestros Tratamientos, Cortes y Tarifas
+                </h2>
+                <div class="w-24 h-0.5 bg-gradient-to-r from-transparent via-gold-400 to-transparent mx-auto"></div>
+                <p class="text-sand-200 font-light text-sm sm:text-base leading-relaxed">
+                    Especialidades de estudio, tratamientos de edición fotográfica fine art, sesiones para recién nacidos y venta especializada de equipamiento fotográfico.
+                </p>
+            </div>
+
+            <!-- Grid de Categorías con Formato de Carta Exclusiva -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Categoría 1: Sesiones Newborn y Bebés -->
+                <div class="bg-matte-800/80 border border-white/5 p-8 relative flex flex-col justify-between hover:border-gold-500/40 transition-all duration-300">
+                    <div>
+                        <div class="w-12 h-12 flex items-center justify-center bg-gold-400/10 border border-gold-500/20 text-gold-400 text-xl mb-6">
+                            <i class="fa-solid fa-baby"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl text-white mb-2">Newborn & Primera Infancia</h3>
+                        <p class="text-xs text-gold-400 uppercase tracking-widest mb-6">La especialidad mágica de Àngels</p>
+                        <p class="text-sm text-sand-200 leading-relaxed mb-6 font-light">
+                            Sesiones con temperatura controlada, atrezzo hipoalergénico de alta gama y el tiempo que tu bebé precise sin prisas.
+                        </p>
+
+                        <ul class="space-y-4 border-t border-white/10 pt-4 text-sm text-sand-100">
+                            <li class="flex justify-between items-baseline">
+                                <span>Sesión Newborn "Pureza"</span>
+                                <span class="font-serif text-gold-400 font-semibold">Consultar</span>
+                            </li>
+                            <li class="flex justify-between items-baseline">
+                                <span>Seguimiento Primer Año (Bebé)</span>
+                                <span class="font-serif text-gold-400 font-semibold">Consultar</span>
+                            </li>
+                            <li class="flex justify-between items-baseline">
+                                <span>Smash Cake & Cumpleaños</span>
+                                <span class="font-serif text-gold-400 font-semibold">Consultar</span>
+                            </li>
+                            <li class="flex justify-between items-baseline">
+                                <span>Maternidad & Embarazo</span>
+                                <span class="font-serif text-gold-400 font-semibold">Consultar</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-white/10">
+                        <a href="tel:977450276" class="block w-full text-center py-3 px-4 bg-gradient-to-r from-gold-300 via-gold-400 to-gold-500 text-black font-semibold text-xs uppercase tracking-widest hover:brightness-110 transition-all">
+                            Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Categoría 2: Estudio, Comuniones y Retrato Personal -->
+                <div class="bg-matte-800/80 border border-gold-500/30 p-8 relative flex flex-col justify-between shadow-xl">
+                    <div class="absolute -top-3 right-6 bg-gold-400 text-black text-[10px] font-bold uppercase tracking-widest px-3 py-1">
+                        Más Solicitado
+                    </div>
+                    <div>
+                        <div class="w-12 h-12 flex items-center justify-center bg-gold-400/10 border border-gold-500/20 text-gold-400 text-xl mb-6">
+                            <i class="fa-solid fa-camera-retro"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl text-white mb-2">Comuniones & Retrato de Estudio</h3>
+                        <p class="text-xs text-gold-400 uppercase tracking-widest mb-6">Elegancia y creatividad visual</p>
+                        <p class="text-sm text-sand-200 leading-relaxed mb-6 font-light">
+                            Iluminación estética que destaca la naturalidad de cada persona. Tratamiento de imagen personalizado y álbumes de lujo encuadernados a mano.
+                        </p>
+
+                        <ul class="space-y-4 border-t border-white/10 pt-4 text-sm text-sand-100">
+                            <li class="flex justify-between items-baseline">
+                                <span>Reportaje de Comunión Completo</span>
+                                <span class="font-serif text-gold-400 font-semibold">Tarifa a medida</span>
+                            </li>
+                            <li class="flex justify-between items-baseline">
+                                <span>Book Personal / Profesional</span>
+                                <span class="font-serif text-gold-400 font-semibold">Consultar</span>
+                            </li>
+                            <li class="flex justify-between items-baseline">
+                                <span>Retrato Familiar de Temporada</span>
+                                <span class="font-serif text-gold-400 font-semibold">Consultar</span>
+                            </li>
+                            <li class="flex justify-between items-baseline">
+                                <span>Fotos de DNI y Pasaporte al instante</span>
+                                <span class="font-serif text-gold-400 font-semibold">Disponibilidad directa</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-white/10">
+                        <a href="tel:977450276" class="block w-full text-center py-3 px-4 bg-gradient-to-r from-gold-300 via-gold-400 to-gold-500 text-black font-semibold text-xs uppercase tracking-widest hover:brightness-110 transition-all">
+                            Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Categoría 3: Tienda de Cámaras y Laboratorio -->
+                <div class="bg-matte-800/80 border border-white/5 p-8 relative flex flex-col justify-between hover:border-gold-500/40 transition-all duration-300">
+                    <div>
+                        <div class="w-12 h-12 flex items-center justify-center bg-gold-400/10 border border-gold-500/20 text-gold-400 text-xl mb-6">
+                            <i class="fa-solid fa-sliders"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl text-white mb-2">Tienda de Cámaras & Copistería Fine Art</h3>
+                        <p class="text-xs text-gold-400 uppercase tracking-widest mb-6">Equipamiento y acabados</p>
+                        <p class="text-sm text-sand-200 leading-relaxed mb-6 font-light">
+                            Venta de cámaras, objetivos, trípodes, tarjetas y accesorios de las principales marcas. Revelado fotográfico profesional e impresión en lienzo.
+                        </p>
+
+                        <ul class="space-y-4 border-t border-white/10 pt-4 text-sm text-sand-100">
+                            <li class="flex justify-between items-baseline">
+                                <span>Asesoramiento y Venta de Cámaras</span>
+                                <span class="font-serif text-gold-400 font-semibold">Marcas líderes</span>
+                            </li>
+                            <li class="flex justify-between items-baseline">
+                                <span>Impresión Fine Art y Lienzos</span>
+                                <span class="font-serif text-gold-400 font-semibold">Varios tamaños</span>
+                            </li>
+                            <li class="flex justify-between items-baseline">
+                                <span>Enmarcación Artesanal a Medida</span>
+                                <span class="font-serif text-gold-400 font-semibold">Catálogo amplio</span>
+                            </li>
+                            <li class="flex justify-between items-baseline">
+                                <span>Digitalización de Recuerdos Antiguos</span>
+                                <span class="font-serif text-gold-400 font-semibold">Por lote</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-white/10">
+                        <a href="tel:977450276" class="block w-full text-center py-3 px-4 bg-gradient-to-r from-gold-300 via-gold-400 to-gold-500 text-black font-semibold text-xs uppercase tracking-widest hover:brightness-110 transition-all">
+                            Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERÍA: NUESTRAS INSTALACIONES Y TRABAJOS -->
+    <section id="galeria" class="py-24 bg-matte-800 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                <div>
+                    <span class="text-xs uppercase tracking-[0.3em] text-gold-400 font-semibold">Portafolio Visual</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl text-white font-normal mt-2">
+                        Nuestras Instalaciones y Trabajos
+                    </h2>
+                </div>
+                <p class="text-sand-300 max-w-md text-sm font-light">
+                    Una muestra de nuestro espacio de creación en L'Aldea y la sensibilidad de las sesiones que realizamos para cada cliente.
+                </p>
+            </div>
+
+            <!-- Galería de Fotos -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Foto 1 -->
+                <div class="group relative overflow-hidden bg-matte-900 border border-white/10 aspect-[4/5]">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" 
+                         alt="Sesión de retrato artístico FOTÒGRAF DANI" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter brightness-95">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-xs uppercase tracking-widest text-gold-400">Estudio Boutique</span>
+                            <h4 class="font-serif text-xl text-white">Retrato y Sensibilidad Artística</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto 2 -->
+                <div class="group relative overflow-hidden bg-matte-900 border border-white/10 aspect-[4/5]">
+                    <img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?auto=format&fit=crop&w=800&q=80" 
+                         alt="Sesión Newborn y fotografía de bebés en Tarragona" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter brightness-95">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-xs uppercase tracking-widest text-gold-400">Especialidad Newborn</span>
+                            <h4 class="font-serif text-xl text-white">Magia con Bebés & Familias</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto 3 -->
+                <div class="group relative overflow-hidden bg-matte-900 border border-white/10 aspect-[4/5]">
+                    <img src="https://images.unsplash.com/photo-1512790182412-b19e6d62bc39?auto=format&fit=crop&w=800&q=80" 
+                         alt="Tienda de cámaras y lentes de alta gama" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter brightness-95">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-xs uppercase tracking-widest text-gold-400">Equipamiento Óptico</span>
+                            <h4 class="font-serif text-xl text-white">Tienda Especializada de Cámaras</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto 4 -->
+                <div class="group relative overflow-hidden bg-matte-900 border border-white/10 aspect-[4/5]">
+                    <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=800&q=80" 
+                         alt="Instalaciones del estudio fotográfico" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter brightness-95">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-xs uppercase tracking-widest text-gold-400">Instalaciones</span>
+                            <h4 class="font-serif text-xl text-white">Set de Iluminación y Fondos</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto 5 -->
+                <div class="group relative overflow-hidden bg-matte-900 border border-white/10 aspect-[4/5]">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" 
+                         alt="Books personales y fotografía de comunión" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter brightness-95">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-xs uppercase tracking-widest text-gold-400">Edición Fine Art</span>
+                            <h4 class="font-serif text-xl text-white">Retratos Atemporales</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto 6 -->
+                <div class="group relative overflow-hidden bg-matte-900 border border-white/10 aspect-[4/5]">
+                    <img src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?auto=format&fit=crop&w=800&q=80" 
+                         alt="Álbumes y encuadernaciones de alta calidad" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter brightness-95">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-xs uppercase tracking-widest text-gold-400">Acabados Artesanales</span>
+                            <h4 class="font-serif text-xl text-white">Álbumes y Enmarcación</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botón CTA tras la Galería -->
+            <div class="text-center mt-12">
+                <a href="tel:977450276" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-gold-300 via-gold-400 to-gold-500 text-black font-semibold text-xs uppercase tracking-[0.25em] hover:brightness-110 transition-all">
+                    <i class="fa-solid fa-calendar-check mr-2"></i> Reservar Cita para tu Sesión
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: OPINIONES REALES VERIFICADAS -->
+    <section id="opiniones" class="py-24 bg-matte-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <div class="flex items-center justify-center space-x-1 text-gold-400 text-lg">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <span class="text-xs uppercase tracking-[0.3em] text-gold-400 font-semibold">Testimonios de Clientes</span>
+                <h2 class="font-serif text-3xl sm:text-5xl text-white font-normal">
+                    Opiniones Reales Verificadas
+                </h2>
+                <p class="text-sand-300 text-sm font-light">
+                    La satisfacción y el cariño de nuestras familias y clientes avalan cada trabajo.
+                </p>
+            </div>
+
+            <!-- Grid con las 5 reseñas reales literales -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Reseña 1: Zaida Lopera Marín -->
+                <div class="bg-matte-800 border border-gold-500/30 p-8 flex flex-col justify-between relative shadow-lg">
+                    <div class="space-y-4">
+                        <div class="flex text-gold-400 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sand-100 font-light text-sm italic leading-relaxed">
+                            "Àngels hace que cada foto sea mágica. No es fácil fotografiar a bebés y ella lo hace genial! Una artista de pies a cabeza ❤️"
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-white/10 flex items-center justify-between">
+                        <div>
+                            <h4 class="font-serif text-base text-white font-semibold">Zaida Lopera Marín</h4>
+                            <span class="text-xs text-gold-400 tracking-wider">Cliente Verificada</span>
+                        </div>
+                        <i class="fa-brands fa-google text-sand-300 text-xl"></i>
+                    </div>
+                </div>
+
+                <!-- Reseña 2: Gloria Asensio -->
+                <div class="bg-matte-800 border border-white/10 p-8 flex flex-col justify-between relative hover:border-gold-500/40 transition-colors">
+                    <div class="space-y-4">
+                        <div class="flex text-gold-400 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sand-100 font-light text-sm italic leading-relaxed">
+                            "Un gran profesional de la fotografía. Nunca decepcionados de su trabajo. Fotos muy bonitas y originales, y el trato muy amigable. Os lo recomiendo sin lugar a dudas😍😍…"
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-white/10 flex items-center justify-between">
+                        <div>
+                            <h4 class="font-serif text-base text-white font-semibold">Gloria Asensio</h4>
+                            <span class="text-xs text-gold-400 tracking-wider">Cliente Verificada</span>
+                        </div>
+                        <i class="fa-brands fa-google text-sand-300 text-xl"></i>
+                    </div>
+                </div>
+
+                <!-- Reseña 3: VICTOR DOOHAN -->
+                <div class="bg-matte-800 border border-white/10 p-8 flex flex-col justify-between relative hover:border-gold-500/40 transition-colors">
+                    <div class="space-y-4">
+                        <div class="flex text-gold-400 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sand-100 font-light text-sm italic leading-relaxed">
+                            "Fotografos profesionales hacen muy bien su trabajo sin duda los mejores de la zona !!!!"
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-white/10 flex items-center justify-between">
+                        <div>
+                            <h4 class="font-serif text-base text-white font-semibold">VICTOR DOOHAN</h4>
+                            <span class="text-xs text-gold-400 tracking-wider">Cliente Verificado</span>
+                        </div>
+                        <i class="fa-brands fa-google text-sand-300 text-xl"></i>
+                    </div>
+                </div>
+
+                <!-- Reseña 4: mmv.monica -->
+                <div class="bg-matte-800 border border-white/10 p-8 flex flex-col justify-between relative hover:border-gold-500/40 transition-colors">
+                    <div class="space-y-4">
+                        <div class="flex text-gold-400 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sand-100 font-light text-sm italic leading-relaxed">
+                            "Su trabajo es muy bueno. Nos gustó mucho el trato y su forma de trabajar."
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-white/10 flex items-center justify-between">
+                        <div>
+                            <h4 class="font-serif text-base text-white font-semibold">mmv.monica</h4>
+                            <span class="text-xs text-gold-400 tracking-wider">Cliente Verificada</span>
+                        </div>
+                        <i class="fa-brands fa-google text-sand-300 text-xl"></i>
+                    </div>
+                </div>
+
+                <!-- Reseña 5: ana garcia segura -->
+                <div class="bg-matte-800 border border-white/10 p-8 flex flex-col justify-between relative hover:border-gold-500/40 transition-colors md:col-span-2 lg:col-span-1">
+                    <div class="space-y-4">
+                        <div class="flex text-gold-400 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sand-100 font-light text-sm italic leading-relaxed">
+                            "Muy amable la fotografa"
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-white/10 flex items-center justify-between">
+                        <div>
+                            <h4 class="font-serif text-base text-white font-semibold">ana garcia segura</h4>
+                            <span class="text-xs text-gold-400 tracking-wider">Cliente Verificada</span>
+                        </div>
+                        <i class="fa-brands fa-google text-sand-300 text-xl"></i>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- UBICACIÓN, CONTACTO Y MAPA INTERACTIVO REAL -->
+    <section id="contacto" class="py-24 bg-matte-800 border-t border-white/5 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-xs uppercase tracking-[0.3em] text-gold-400 font-semibold">Visítanos en L'Aldea</span>
+                <h2 class="font-serif text-3xl sm:text-5xl text-white font-normal">
+                    Contacto y Ubicación
+                </h2>
+                <div class="w-24 h-0.5 bg-gradient-to-r from-transparent via-gold-400 to-transparent mx-auto"></div>
+                <p class="text-sand-200 text-sm font-light">
+                    Te esperamos en nuestro estudio para asesorarte sobre tu sesión o tu próxima cámara.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+                
+                <!-- Datos Directos -->
+                <div class="lg:col-span-5 space-y-8 bg-matte-900 p-8 border border-gold-500/30">
+                    <h3 class="font-serif text-2xl text-white font-normal mb-6">Información del Estudio</h3>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center bg-gold-400/10 text-gold-400 border border-gold-500/20">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs uppercase tracking-wider text-sand-300 font-semibold">Dirección</p>
+                            <p class="text-white text-sm font-light mt-1">Avinguda Catalunya, 380, 43896 LAldea, Tarragona, España</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center bg-gold-400/10 text-gold-400 border border-gold-500/20">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs uppercase tracking-wider text-sand-300 font-semibold">Teléfono Directo</p>
+                            <a href="tel:977450276" class="text-white hover:text-gold-400 text-base font-medium mt-1 inline-block transition-colors">
+                                977 450 276
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center bg-gold-400/10 text-gold-400 border border-gold-500/20">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs uppercase tracking-wider text-sand-300 font-semibold">Correo Electrónico</p>
+                            <a href="mailto:dpo@planeta.es" class="text-white hover:text-gold-400 text-sm font-light mt-1 inline-block transition-colors">
+                                dpo@planeta.es
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="pt-6 border-t border-white/10">
+                        <a href="tel:977450276" class="w-full inline-flex justify-center items-center px-6 py-4 bg-gradient-to-r from-gold-300 via-gold-400 to-gold-500 text-black font-semibold text-xs uppercase tracking-[0.25em] hover:brightness-110 transition-all shadow-xl">
+                            <i class="fa-solid fa-phone mr-2"></i> Reservar Cita Ahora
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mapa Interactivo Obligatorio -->
+                <div class="lg:col-span-7 bg-matte-900 p-2 border border-white/10 shadow-2xl">
+                    <iframe src="https://www.google.com/maps?q=FOT%C3%92GRAF%20DANI%20Avinguda%20Catalunya%2C%20380%2C%2043896%20LAldea%2C%20Tarragona%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER ELEGANTE -->
+    <footer class="bg-matte-900 border-t border-gold-500/20 py-12 text-sand-300 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <p class="font-serif text-xl tracking-[0.2em] text-white">FOTÒGRAF DANI</p>
+                <p class="text-[11px] text-gold-400 uppercase tracking-widest mt-1">Estudio Fotográfico Boutique & Tienda de Cámaras</p>
+                <p class="text-sand-300 mt-2 font-light">Avinguda Catalunya, 380, 43896 LAldea, Tarragona</p>
+            </div>
+
+            <div class="flex items-center space-x-6 text-sm">
+                <a href="tel:977450276" class="text-sand-200 hover:text-gold-400 transition-colors">Tel: 977 450 276</a>
+                <span class="text-white/20">|</span>
+                <a href="mailto:dpo@planeta.es" class="text-sand-200 hover:text-gold-400 transition-colors">dpo@planeta.es</a>
+            </div>
+
+            <div class="text-center md:text-right font-light">
+                <p>&copy; <span id="current-year"></span> FOTÒGRAF DANI. Todos los derechos reservados.</p>
+                <p class="text-[10px] text-sand-300/60 mt-1">Elegancia, delicadeza y compromiso en cada imagen.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE CTA EN MÓVIL/DESKTOP -->
+    <div class="fixed bottom-6 right-6 z-40">
+        <a href="tel:977450276" class="flex items-center space-x-3 bg-gradient-to-r from-gold-300 via-gold-400 to-gold-500 text-black px-6 py-3.5 shadow-2xl hover:brightness-110 transition-transform transform hover:scale-105 border border-gold-200 font-semibold text-xs uppercase tracking-widest">
+            <i class="fa-solid fa-phone text-sm"></i>
+            <span>Reservar Cita</span>
+        </a>
+    </div>
+
+    <!-- Script Simple para Menú y Año -->
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú al pulsar un enlace
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
