@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osteopatía-Aranda | Alfonso Martínez - Enfoque Holístico e Integrativo</title>
+    <meta name="description" content="Centro de Osteopatía y Técnicas Quiroprácticas en Aranda de Duero dirigido por Alfonso Martínez. Enfoque holístico e integrativo para aliviar dolores musculares, lumbagos y neuralgias.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            black: '#121212',
+                            dark: '#1a1a18',
+                            charcoal: '#242422',
+                            gold: '#C5A880',
+                            goldHover: '#b5976e',
+                            sand: '#F7F5F0',
+                            sandDark: '#EAE6DD',
+                            cream: '#FCFAF6',
+                            muted: '#8C887B'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gold-gradient {
+            background: linear-gradient(135deg, #DFD3C3 0%, #C5A880 50%, #A3845B 100%);
+        }
+        .gold-border {
+            border-color: rgba(197, 168, 128, 0.35);
+        }
+    </style>
+</head>
+<body class="bg-brand-sand text-brand-dark font-sans selection:bg-brand-gold selection:text-brand-black antialiased">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-brand-black text-brand-sand text-xs tracking-widest uppercase py-2 px-4 border-b border-brand-charcoal">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <span class="flex items-center gap-2">
+                <i class="fa-solid fa-location-dot text-brand-gold"></i> Calle Isabel I de Castilla, 47, Aranda de Duero
+            </span>
+            <div class="flex items-center gap-6">
+                <a href="tel:653188725" class="hover:text-brand-gold transition-colors flex items-center gap-1">
+                    <i class="fa-solid fa-phone text-brand-gold text-[10px]"></i> 653 188 725
+                </a>
+                <span class="hidden sm:inline text-brand-muted">|</span>
+                <span class="text-brand-gold font-medium">Atención Holística Exclusiva</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-brand-cream/90 backdrop-blur-md border-b border-brand-sandDark transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Title / Logo -->
+                <a href="#" class="flex flex-col">
+                    <span class="font-serif text-2xl sm:text-3xl font-semibold tracking-wide text-brand-black">
+                        Osteopatía<span class="text-brand-gold">·</span>Aranda
+                    </span>
+                    <span class="text-[10px] tracking-widest uppercase font-sans text-brand-muted font-medium">
+                        Alfonso Martínez — Enfoque Integrativo
+                    </span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide uppercase text-brand-charcoal">
+                    <a href="#filosofia" class="hover:text-brand-gold transition-colors">Filosofía</a>
+                    <a href="#tratamientos" class="hover:text-brand-gold transition-colors">Tratamientos</a>
+                    <a href="#instalaciones" class="hover:text-brand-gold transition-colors">Espacio</a>
+                    <a href="#opiniones" class="hover:text-brand-gold transition-colors">Testimonios</a>
+                    <a href="#contacto" class="hover:text-brand-gold transition-colors">Contacto</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden sm:block">
+                    <a href="tel:653188725" class="inline-flex items-center gap-2 px-6 py-3 bg-brand-black hover:bg-brand-charcoal text-brand-sand text-xs tracking-widest uppercase font-semibold transition-all duration-300 shadow-sm border border-brand-gold/40 hover:border-brand-gold rounded-full">
+                        <i class="fa-regular fa-calendar-check text-brand-gold"></i>
+                        Reservar Cita
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuBtn" aria-label="Abrir menú" class="p-2 text-brand-black focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-brand-cream border-b border-brand-sandDark px-6 py-5 space-y-4 text-center">
+            <a href="#filosofia" class="block text-sm font-medium tracking-wider uppercase text-brand-charcoal hover:text-brand-gold">Filosofía</a>
+            <a href="#tratamientos" class="block text-sm font-medium tracking-wider uppercase text-brand-charcoal hover:text-brand-gold">Tratamientos</a>
+            <a href="#instalaciones" class="block text-sm font-medium tracking-wider uppercase text-brand-charcoal hover:text-brand-gold">Espacio</a>
+            <a href="#opiniones" class="block text-sm font-medium tracking-wider uppercase text-brand-charcoal hover:text-brand-gold">Testimonios</a>
+            <a href="#contacto" class="block text-sm font-medium tracking-wider uppercase text-brand-charcoal hover:text-brand-gold">Contacto</a>
+            <div class="pt-2">
+                <a href="tel:653188725" class="inline-flex items-center justify-center gap-2 w-full px-5 py-3 bg-brand-black text-brand-sand text-xs tracking-widest uppercase font-semibold rounded-full border border-brand-gold">
+                    <i class="fa-regular fa-calendar-check text-brand-gold"></i>
+                    Reservar Cita
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[85vh] flex items-center bg-brand-black text-brand-sand overflow-hidden">
+        <!-- Background subtle grain / dark ambiance -->
+        <div class="absolute inset-0 opacity-40 bg-[radial-gradient(#C5A880_1px,transparent_1px)] [background-size:24px_24px]"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <!-- Hero Content -->
+            <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-brand-charcoal border border-brand-gold/30 text-xs uppercase tracking-widest text-brand-gold">
+                    <span class="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
+                    Especialista en Técnicas Quiroprácticas & Osteopatía
+                </div>
+                
+                <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal leading-tight text-brand-cream">
+                    Recupera tu equilibrio. <br>
+                    <span class="italic font-light text-brand-gold">Cuerpo, alineación</span> y bienestar duradero.
+                </h1>
+
+                <p class="text-brand-muted text-base sm:text-lg max-w-xl mx-auto lg:mx-0 font-light leading-relaxed">
+                    Dirigido por <strong>Alfonso Martínez</strong> en Aranda de Duero. Un enfoque holístico e integrativo diseñado para erradicar el origen del dolor y restaurar la vitalidad de tus sistemas musculares y articulares.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                    <a href="tel:653188725" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 bg-brand-gold hover:bg-brand-goldHover text-brand-black font-semibold text-xs uppercase tracking-widest transition-all duration-300 rounded-full shadow-lg shadow-brand-gold/20">
+                        <i class="fa-solid fa-phone"></i>
+                        Reservar Cita
+                    </a>
+                    <a href="#tratamientos" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 border border-brand-charcoal hover:border-brand-gold text-brand-sand font-medium text-xs uppercase tracking-widest transition-all duration-300 rounded-full">
+                        Ver Tratamientos
+                    </a>
+                </div>
+
+                <!-- Trust Points -->
+                <div class="grid grid-cols-3 gap-4 pt-8 border-t border-brand-charcoal/80 text-left">
+                    <div>
+                        <div class="font-serif text-2xl sm:text-3xl text-brand-gold">100%</div>
+                        <div class="text-xs text-brand-muted uppercase tracking-wider">Personalizado</div>
+                    </div>
+                    <div>
+                        <div class="font-serif text-2xl sm:text-3xl text-brand-gold">5.0 ★</div>
+                        <div class="text-xs text-brand-muted uppercase tracking-wider">Opiniones Reales</div>
+                    </div>
+                    <div>
+                        <div class="font-serif text-2xl sm:text-3xl text-brand-gold">Aranda</div>
+                        <div class="text-xs text-brand-muted uppercase tracking-wider">De Duero</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Image Showcase -->
+            <div class="lg:col-span-5 relative">
+                <div class="relative mx-auto max-w-md lg:max-w-none">
+                    <div class="absolute -inset-1.5 rounded-2xl bg-gradient-to-tr from-brand-gold/40 to-transparent blur-lg opacity-60"></div>
+                    <div class="relative rounded-2xl overflow-hidden border border-brand-gold/30 shadow-2xl bg-brand-charcoal">
+                        <img 
+                            src="https://scontent-atl3-1.xx.fbcdn.net/v/t39.30808-1/294040315_564668961852580_6822659405722375629_n.jpg?stp=dst-jpg_tt6&cstp=mx605x605&ctp=s605x605&_nc_cat=103&ccb=1-7&_nc_sid=3ab345&_nc_ohc=x7SPYwsLM1cQ7kNvwG7Nf-f&_nc_oc=AdpCv8cBZbCrPtPQUGXjAzadw75-ee1VjuH9UzAO9OgAeWBO4P0OhvAtMdtjhnr0KDg&_nc_zt=24&_nc_ht=scontent-atl3-1.xx&_nc_gid=_GNRs9aeoe5FuVlCG08uvw&_nc_ss=7b289&oh=00_AQOSn5ascYDb9oZGByEppmLUraYwkS-63wCLBgBidyzoMg&oe=6ADA4014" 
+                            alt="Alfonso Martínez - Osteopatía Aranda" 
+                            referrerpolicy="no-referrer"
+                            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                            class="w-full h-[460px] object-cover object-top hover:scale-105 transition-transform duration-700 filter contrast-105"
+                        >
+                        <div class="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-brand-black via-brand-black/80 to-transparent">
+                            <p class="font-serif text-xl text-brand-cream italic">Alfonso Martínez</p>
+                            <p class="text-xs uppercase tracking-widest text-brand-gold">Técnicas Quiroprácticas & Enfoque Holístico</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy & Holistic Approach Section -->
+    <section id="filosofia" class="py-24 bg-brand-cream border-b border-brand-sandDark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center space-y-4 mb-16">
+                <span class="text-xs font-semibold tracking-widest uppercase text-brand-gold">Filosofía de Consulta</span>
+                <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-brand-black font-normal">
+                    Tratar la causa, no solo el síntoma
+                </h2>
+                <div class="w-16 h-0.5 bg-brand-gold mx-auto"></div>
+                <p class="text-brand-muted text-base leading-relaxed">
+                    Entendemos el cuerpo humano como una unidad indivisible. Los desajustes óseos o tensionales repercuten en todo el organismo; mediante una evaluación precisa y técnicas manuales respetuosas, devolvemos la armonía a tu estructura.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="p-8 rounded-2xl bg-brand-sand border border-brand-sandDark hover:border-brand-gold transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-full bg-brand-cream border border-brand-sandDark flex items-center justify-center text-brand-gold mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-hands-holding text-2xl"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl text-brand-black mb-3">Enfoque Integrativo</h3>
+                    <p class="text-sm text-brand-muted leading-relaxed">
+                        Evaluación integral de postura, movilidad articular y sistema fascial para identificar el origen real de la molestia y prevenir recaídas continuas.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="p-8 rounded-2xl bg-brand-sand border border-brand-sandDark hover:border-brand-gold transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-full bg-brand-cream border border-brand-sandDark flex items-center justify-center text-brand-gold mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-spa text-2xl"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl text-brand-black mb-3">Alivio Eficaz y Rápido</h3>
+                    <p class="text-sm text-brand-muted leading-relaxed">
+                        Intervenciones específicas sobre lumbagos agudos, ciáticas y neuralgias. Tratamientos diseñados para generar un impacto notable desde la primera sesión.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="p-8 rounded-2xl bg-brand-sand border border-brand-sandDark hover:border-brand-gold transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-full bg-brand-cream border border-brand-sandDark flex items-center justify-center text-brand-gold mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-heart-pulse text-2xl"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl text-brand-black mb-3">Técnicas Quiroprácticas</h3>
+                    <p class="text-sm text-brand-muted leading-relaxed">
+                        Maniobras manuales adaptadas con absoluta sutileza biomecánica para descomprimir raíces nerviosas y restaurar el rango de movimiento articular.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Treatments, Services & Rates Section -->
+    <section id="tratamientos" class="py-24 bg-brand-sand">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                <div>
+                    <span class="text-xs font-semibold tracking-widest uppercase text-brand-gold">Atención Terapéutica</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-brand-black font-normal mt-2">
+                        Nuestros Tratamientos y Tarifas
+                    </h2>
+                    <p class="text-brand-muted text-sm sm:text-base mt-2 max-w-xl">
+                        Cada sesión con Alfonso Martínez es un espacio privado de análisis minucioso y técnica individualizada.
+                    </p>
+                </div>
+                <div>
+                    <a href="tel:653188725" class="inline-flex items-center gap-2 px-6 py-3 bg-brand-black hover:bg-brand-charcoal text-brand-sand text-xs tracking-widest uppercase font-semibold rounded-full border border-brand-gold/40 transition-colors">
+                        <i class="fa-solid fa-phone text-brand-gold"></i>
+                        Reservar Cita
+                    </a>
+                </div>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Item 1 -->
+                <div class="bg-brand-cream p-8 rounded-2xl border border-brand-sandDark shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+                    <div>
+                        <div class="flex justify-between items-baseline mb-4">
+                            <span class="text-xs uppercase tracking-widest text-brand-gold font-semibold">Especialidad</span>
+                            <span class="font-serif text-lg font-medium text-brand-black">Consulte sesión</span>
+                        </div>
+                        <h3 class="font-serif text-2xl text-brand-black mb-3">Tratamiento de Neuralgia Intercostal</h3>
+                        <p class="text-sm text-brand-muted leading-relaxed mb-6">
+                            Técnicas manuales específicas para descomprimir el nervio intercostal, reduciendo la opresión punzante torácica y los despertares nocturnos por dolor.
+                        </p>
+                        <ul class="text-xs text-brand-charcoal space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold text-[10px]"></i> Descompresión de raíces dorsales</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold text-[10px]"></i> Regulación de la mecánica respiratoria</li>
+                        </ul>
+                    </div>
+                    <a href="tel:653188725" class="text-xs uppercase tracking-widest font-semibold text-brand-black hover:text-brand-gold flex items-center gap-2 pt-4 border-t border-brand-sandDark">
+                        Reservar Cita <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Item 2: Highlighted -->
+                <div class="bg-brand-black text-brand-sand p-8 rounded-2xl border border-brand-gold shadow-xl flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-brand-gold text-brand-black text-[10px] uppercase font-bold tracking-widest py-1 px-4 rounded-bl-xl">
+                        Más Solicitado
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-baseline mb-4">
+                            <span class="text-xs uppercase tracking-widest text-brand-gold font-semibold">Urgencia & Dolor</span>
+                            <span class="font-serif text-lg font-medium text-brand-gold">Atención Inmediata</span>
+                        </div>
+                        <h3 class="font-serif text-2xl text-brand-cream mb-3">Lumbagos Agudos & Ciática</h3>
+                        <p class="text-sm text-brand-sand/70 leading-relaxed mb-6">
+                            Protocolo intensivo para crisis agudas lumbares (dolor escala 8-10). Liberación de la articulación sacroilíaca, espasmos musculares y presión discal.
+                        </p>
+                        <ul class="text-xs text-brand-sand/80 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold text-[10px]"></i> Alivio sensible desde la 1ª sesión</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold text-[10px]"></i> Técnicas quiroprácticas suaves</li>
+                        </ul>
+                    </div>
+                    <a href="tel:653188725" class="text-xs uppercase tracking-widest font-semibold text-brand-gold hover:text-brand-cream flex items-center gap-2 pt-4 border-t border-brand-charcoal">
+                        Reservar Cita <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="bg-brand-cream p-8 rounded-2xl border border-brand-sandDark shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+                    <div>
+                        <div class="flex justify-between items-baseline mb-4">
+                            <span class="text-xs uppercase tracking-widest text-brand-gold font-semibold">Estructural</span>
+                            <span class="font-serif text-lg font-medium text-brand-black">Enfoque Holístico</span>
+                        </div>
+                        <h3 class="font-serif text-2xl text-brand-black mb-3">Reajuste de Huesos y Articulaciones</h3>
+                        <p class="text-sm text-brand-muted leading-relaxed mb-6">
+                            Corrección de bloqueos mecánicos en columna cervical, dorsal, pelvis y extremidades. Indicado para rigidez articular y sobrecargas posturales.
+                        </p>
+                        <ul class="text-xs text-brand-charcoal space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold text-[10px]"></i> Normalización articular biomecánica</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold text-[10px]"></i> Test biomecánico individual</li>
+                        </ul>
+                    </div>
+                    <a href="tel:653188725" class="text-xs uppercase tracking-widest font-semibold text-brand-black hover:text-brand-gold flex items-center gap-2 pt-4 border-t border-brand-sandDark">
+                        Reservar Cita <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="bg-brand-cream p-8 rounded-2xl border border-brand-sandDark shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+                    <div>
+                        <div class="flex justify-between items-baseline mb-4">
+                            <span class="text-xs uppercase tracking-widest text-brand-gold font-semibold">Terapia Miofascial</span>
+                            <span class="font-serif text-lg font-medium text-brand-black">Sesión Integral</span>
+                        </div>
+                        <h3 class="font-serif text-2xl text-brand-black mb-3">Contracturas & Problemas Musculares</h3>
+                        <p class="text-sm text-brand-muted leading-relaxed mb-6">
+                            Liberación de nudos miofasciales crónicos, contracturas dorsocervicales y acortamientos que provocan dolor referido y fatiga física.
+                        </p>
+                        <ul class="text-xs text-brand-charcoal space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold text-[10px]"></i> Drenaje de toxinas tisulares</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold text-[10px]"></i> Recuperación de flexibilidad</li>
+                        </ul>
+                    </div>
+                    <a href="tel:653188725" class="text-xs uppercase tracking-widest font-semibold text-brand-black hover:text-brand-gold flex items-center gap-2 pt-4 border-t border-brand-sandDark">
+                        Reservar Cita <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="bg-brand-cream p-8 rounded-2xl border border-brand-sandDark shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+                    <div>
+                        <div class="flex justify-between items-baseline mb-4">
+                            <span class="text-xs uppercase tracking-widest text-brand-gold font-semibold">Cráneo-Sacral</span>
+                            <span class="font-serif text-lg font-medium text-brand-black">Bienestar Profundo</span>
+                        </div>
+                        <h3 class="font-serif text-2xl text-brand-black mb-3">Tensión Cervical y Cefaleas</h3>
+                        <p class="text-sm text-brand-muted leading-relaxed mb-6">
+                            Alivio de dolores de cabeza de origen tensional, bruxismo o sobrecarga de trapecios. Armonización del eje occipito-cervical.
+                        </p>
+                        <ul class="text-xs text-brand-charcoal space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold text-[10px]"></i> Disminución de presión craneal</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold text-[10px]"></i> Liberación de tensión mandibular</li>
+                        </ul>
+                    </div>
+                    <a href="tel:653188725" class="text-xs uppercase tracking-widest font-semibold text-brand-black hover:text-brand-gold flex items-center gap-2 pt-4 border-t border-brand-sandDark">
+                        Reservar Cita <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="bg-brand-cream p-8 rounded-2xl border border-brand-sandDark shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+                    <div>
+                        <div class="flex justify-between items-baseline mb-4">
+                            <span class="text-xs uppercase tracking-widest text-brand-gold font-semibold">Mantenimiento</span>
+                            <span class="font-serif text-lg font-medium text-brand-black">Preventivo</span>
+                        </div>
+                        <h3 class="font-serif text-2xl text-brand-black mb-3">Sesión de Seguimiento Preventivo</h3>
+                        <p class="text-sm text-brand-muted leading-relaxed mb-6">
+                            Revisión periódica para mantener los logros obtenidos, consolidar la postura sana y evitar recidivas ante actividades laborales o deportivas intensas.
+                        </p>
+                        <ul class="text-xs text-brand-charcoal space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold text-[10px]"></i> Control osteopático general</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold text-[10px]"></i> Pautas higiénico-posturales</li>
+                        </ul>
+                    </div>
+                    <a href="tel:653188725" class="text-xs uppercase tracking-widest font-semibold text-brand-black hover:text-brand-gold flex items-center gap-2 pt-4 border-t border-brand-sandDark">
+                        Reservar Cita <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section: "Nuestras Instalaciones y Trabajos" -->
+    <section id="instalaciones" class="py-24 bg-brand-black text-brand-sand">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center space-y-4 mb-16">
+                <span class="text-xs font-semibold tracking-widest uppercase text-brand-gold">Entorno Clínico & Terapéutico</span>
+                <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-brand-cream font-normal">
+                    Nuestras Instalaciones y Trabajos
+                </h2>
+                <div class="w-16 h-0.5 bg-brand-gold mx-auto"></div>
+                <p class="text-brand-muted text-sm sm:text-base">
+                    Un espacio sereno y cálido en Aranda de Duero, concebido para brindar máxima confidencialidad, higiene y concentración durante cada terapia.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Real Photo Item -->
+                <div class="group relative rounded-2xl overflow-hidden border border-brand-charcoal h-80">
+                    <img 
+                        src="https://scontent-atl3-1.xx.fbcdn.net/v/t39.30808-1/294040315_564668961852580_6822659405722375629_n.jpg?stp=dst-jpg_tt6&cstp=mx605x605&ctp=s605x605&_nc_cat=103&ccb=1-7&_nc_sid=3ab345&_nc_ohc=x7SPYwsLM1cQ7kNvwG7Nf-f&_nc_oc=AdpCv8cBZbCrPtPQUGXjAzadw75-ee1VjuH9UzAO9OgAeWBO4P0OhvAtMdtjhnr0KDg&_nc_zt=24&_nc_ht=scontent-atl3-1.xx&_nc_gid=_GNRs9aeoe5FuVlCG08uvw&_nc_ss=7b289&oh=00_AQOSn5ascYDb9oZGByEppmLUraYwkS-63wCLBgBidyzoMg&oe=6ADA4014" 
+                        alt="Osteopatía Aranda - Alfonso Martínez"
+                        referrerpolicy="no-referrer"
+                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                        class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                        <span class="text-xs uppercase tracking-widest text-brand-gold">Dirección Clínica</span>
+                        <h4 class="font-serif text-xl text-brand-cream">Alfonso Martínez</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery 2 -->
+                <div class="group relative rounded-2xl overflow-hidden border border-brand-charcoal h-80">
+                    <img 
+                        src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=900&q=80" 
+                        alt="Terapia manual y bienestar en Aranda de Duero"
+                        referrerpolicy="no-referrer"
+                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                        <span class="text-xs uppercase tracking-widest text-brand-gold">Atención Manual</span>
+                        <h4 class="font-serif text-xl text-brand-cream">Técnicas Quiroprácticas Avanzadas</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery 3 -->
+                <div class="group relative rounded-2xl overflow-hidden border border-brand-charcoal h-80">
+                    <img 
+                        src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=900&q=80" 
+                        alt="Espacio terapéutico silencioso y sereno"
+                        referrerpolicy="no-referrer"
+                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                        <span class="text-xs uppercase tracking-widest text-brand-gold">Gabinete de Consulta</span>
+                        <h4 class="font-serif text-xl text-brand-cream">Ambiente Relajante e Higiénico</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Banner CTA -->
+            <div class="mt-12 p-8 rounded-2xl bg-brand-charcoal border border-brand-gold/30 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+                <div>
+                    <h3 class="font-serif text-2xl text-brand-cream">¿Sientes rigidez, bloqueo o dolor punzante?</h3>
+                    <p class="text-sm text-brand-muted mt-1">Podemos atender tu caso de manera individualizada y cercana.</p>
+                </div>
+                <a href="tel:653188725" class="inline-flex items-center gap-2 px-8 py-4 bg-brand-gold hover:bg-brand-goldHover text-brand-black font-semibold text-xs uppercase tracking-widest rounded-full transition-all shrink-0">
+                    <i class="fa-solid fa-phone"></i>
+                    Reservar Cita
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real Reviews Section -->
+    <section id="opiniones" class="py-24 bg-brand-cream border-b border-brand-sandDark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center space-y-4 mb-16">
+                <span class="text-xs font-semibold tracking-widest uppercase text-brand-gold">Experiencias Verificadas</span>
+                <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-brand-black font-normal">
+                    La voz de nuestros pacientes
+                </h2>
+                <div class="w-16 h-0.5 bg-brand-gold mx-auto"></div>
+                <p class="text-brand-muted text-sm sm:text-base">
+                    Testimonios directos extraídos de reseñas reales en Google Maps sobre Alfonso Martínez.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-brand-sand p-8 rounded-2xl border border-brand-sandDark relative flex flex-col justify-between hover:border-brand-gold/50 transition-colors">
+                    <div>
+                        <div class="flex items-center text-brand-gold gap-1 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="font-serif text-lg text-brand-charcoal italic leading-relaxed mb-6">
+                            "Reseña debida por largo tiempo. Estuve allí el año pasado. Mi neuralgia intercostal que me hacía despertarme a veces por las noches no volvió a aparecer en los meses siguientes, y eso que no hice visitas de seguimiento. Alfonso me aplicó…"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-brand-sandDark">
+                        <div class="w-10 h-10 rounded-full bg-brand-charcoal text-brand-sand flex items-center justify-center font-serif text-sm font-semibold">
+                            R
+                        </div>
+                        <div>
+                            <span class="block text-sm font-bold text-brand-black">Rai M.G.</span>
+                            <span class="block text-xs text-brand-muted">Reseña Verificada</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-brand-sand p-8 rounded-2xl border border-brand-sandDark relative flex flex-col justify-between hover:border-brand-gold/50 transition-colors">
+                    <div>
+                        <div class="flex items-center text-brand-gold gap-1 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="font-serif text-lg text-brand-charcoal italic leading-relaxed mb-6">
+                            "He ido dos veces solamente pero tengo que decir que realmente es bueno en su trabajo, fui con un lumbago de un 9 de dolor, y en la primera sesión noté muchísima mejoría, super recomendable. Ah se me olvidaba el trato magnífico"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-brand-sandDark">
+                        <div class="w-10 h-10 rounded-full bg-brand-charcoal text-brand-sand flex items-center justify-center font-serif text-sm font-semibold">
+                            I
+                        </div>
+                        <div>
+                            <span class="block text-sm font-bold text-brand-black">Isabel Jimenez borja</span>
+                            <span class="block text-xs text-brand-muted">Reseña Verificada</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-brand-sand p-8 rounded-2xl border border-brand-sandDark relative flex flex-col justify-between hover:border-brand-gold/50 transition-colors">
+                    <div>
+                        <div class="flex items-center text-brand-gold gap-1 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="font-serif text-lg text-brand-charcoal italic leading-relaxed mb-6">
+                            "Alfonso es muy profesional en su especialidad de Osteopatía, mi experiencia fue excepcional. Fuí hace un par de semanas y aún sigo valorando positivamente su trabajo. La verdad es que se lo recomiendo a todas las personas que se encuentren con problemas musculares y/o de huesos."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-brand-sandDark">
+                        <div class="w-10 h-10 rounded-full bg-brand-charcoal text-brand-sand flex items-center justify-center font-serif text-sm font-semibold">
+                            C
+                        </div>
+                        <div>
+                            <span class="block text-sm font-bold text-brand-black">Cristina Nunez Herrero</span>
+                            <span class="block text-xs text-brand-muted">Reseña Verificada</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="bg-brand-sand p-8 rounded-2xl border border-brand-sandDark relative flex flex-col justify-between hover:border-brand-gold/50 transition-colors">
+                    <div>
+                        <div class="flex items-center text-brand-gold gap-1 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="font-serif text-lg text-brand-charcoal italic leading-relaxed mb-6">
+                            "Me encuentro mucho mejor desde que me trato aquí."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-brand-sandDark">
+                        <div class="w-10 h-10 rounded-full bg-brand-charcoal text-brand-sand flex items-center justify-center font-serif text-sm font-semibold">
+                            E
+                        </div>
+                        <div>
+                            <span class="block text-sm font-bold text-brand-black">Ester</span>
+                            <span class="block text-xs text-brand-muted">Reseña Verificada</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Interactive Map Section -->
+    <section id="contacto" class="py-24 bg-brand-sand">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                
+                <!-- Contact Information -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-xs font-semibold tracking-widest uppercase text-brand-gold">Ubicación y Citas</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl text-brand-black font-normal mt-2">
+                            Pide tu cita con Alfonso Martínez
+                        </h2>
+                        <p class="text-brand-muted text-sm mt-3 leading-relaxed">
+                            Atención personalizada en Aranda de Duero. Puedes llamar por teléfono o escribir por correo para consultar disponibilidad de consulta.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6 pt-2">
+                        <!-- Address -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-cream border border-brand-sandDark flex items-center justify-center text-brand-gold shrink-0">
+                                <i class="fa-solid fa-location-dot text-lg"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs uppercase tracking-wider text-brand-muted font-medium">Dirección</span>
+                                <p class="text-sm font-medium text-brand-black mt-1">
+                                    Calle Isabel I de Castilla, 47<br>
+                                    09400 Aranda de Duero, Burgos, España
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-cream border border-brand-sandDark flex items-center justify-center text-brand-gold shrink-0">
+                                <i class="fa-solid fa-phone text-lg"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs uppercase tracking-wider text-brand-muted font-medium">Teléfono de Contacto</span>
+                                <a href="tel:653188725" class="text-base font-semibold text-brand-black hover:text-brand-gold transition-colors block mt-1">
+                                    653 188 725
+                                </a>
+                                <span class="text-xs text-brand-muted">Llamadas directas para cita previa</span>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-cream border border-brand-sandDark flex items-center justify-center text-brand-gold shrink-0">
+                                <i class="fa-solid fa-envelope text-lg"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs uppercase tracking-wider text-brand-muted font-medium">Correo Electrónico</span>
+                                <a href="mailto:osteopatia.alfonso@gmail.com" class="text-sm font-medium text-brand-black hover:text-brand-gold transition-colors block mt-1">
+                                    osteopatia.alfonso@gmail.com
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="tel:653188725" class="inline-flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 bg-brand-black hover:bg-brand-charcoal text-brand-sand text-xs uppercase tracking-widest font-semibold rounded-full border border-brand-gold transition-all shadow-md">
+                            <i class="fa-solid fa-phone text-brand-gold"></i>
+                            Reservar Cita Ahora
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Interactive Google Map -->
+                <div class="lg:col-span-7 bg-brand-cream p-4 sm:p-6 rounded-3xl border border-brand-sandDark shadow-sm">
+                    <div class="overflow-hidden rounded-2xl shadow-inner">
+                        <iframe src="https://www.google.com/maps?q=Osteopat%C3%ADa-Aranda.%20(Alfonso%20Mart%C3%ADnez).%20T%C3%A9cnicas%20quiropr%C3%A1cticas.%20Enfoque%20hol%C3%ADstico%20e%20integrativo.%20Calle%20Isabel%20I%20de%20Castilla%2C%2047%2C%2009400%20Aranda%20de%20Duero%2C%20Burgos%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <div class="mt-4 flex flex-col sm:flex-row justify-between items-center text-xs text-brand-muted gap-2 px-2">
+                        <span>Fácil aparcamiento en la zona y accesibilidad</span>
+                        <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="text-brand-gold hover:underline flex items-center gap-1 font-medium">
+                            Cómo llegar <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-black text-brand-sand/80 border-t border-brand-charcoal py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
+                <div>
+                    <span class="font-serif text-2xl font-semibold tracking-wide text-brand-cream">
+                        Osteopatía<span class="text-brand-gold">·</span>Aranda
+                    </span>
+                    <p class="text-xs text-brand-muted mt-1 uppercase tracking-widest">
+                        Alfonso Martínez · Técnicas quiroprácticas · Enfoque holístico e integrativo
+                    </p>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-6 text-xs uppercase tracking-wider text-brand-muted">
+                    <a href="#filosofia" class="hover:text-brand-gold transition-colors">Filosofía</a>
+                    <a href="#tratamientos" class="hover:text-brand-gold transition-colors">Tratamientos</a>
+                    <a href="#instalaciones" class="hover:text-brand-gold transition-colors">Espacio</a>
+                    <a href="#opiniones" class="hover:text-brand-gold transition-colors">Opiniones</a>
+                    <a href="#contacto" class="hover:text-brand-gold transition-colors">Contacto</a>
+                </div>
+
+                <div>
+                    <a href="tel:653188725" class="inline-flex items-center gap-2 px-5 py-2.5 bg-brand-charcoal hover:bg-brand-gold hover:text-brand-black text-brand-sand text-xs uppercase tracking-widest font-semibold rounded-full border border-brand-gold/30 transition-all">
+                        <i class="fa-solid fa-phone"></i>
+                        653 188 725
+                    </a>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-6 border-t border-brand-charcoal flex flex-col sm:flex-row justify-between items-center text-[11px] text-brand-muted gap-4">
+                <p>&copy; <span id="currentYear"></span> Osteopatía-Aranda (Alfonso Martínez). Todos los derechos reservados.</p>
+                <p>Calle Isabel I de Castilla, 47, 09400 Aranda de Duero, Burgos, España.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Button for Mobile -->
+    <div class="fixed bottom-6 right-6 sm:hidden z-50">
+        <a href="tel:653188725" class="flex items-center gap-2 px-5 py-3.5 bg-brand-gold text-brand-black font-bold text-xs uppercase tracking-widest rounded-full shadow-2xl border border-brand-cream/30 active:scale-95 transition-transform">
+            <i class="fa-solid fa-phone text-sm"></i>
+            <span>Reservar Cita</span>
+        </a>
+    </div>
+
+    <!-- Simple JavaScript for Interactions -->
+    <script>
+        // Set dynamic copyright year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on click
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
