@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S'Escargot | Pub Exclusivo & Lounge en Santa Eugènia</title>
+    <meta name="description" content="Descubre S'Escargot en Santa Eugènia, Mallorca. Un exclusivo pub boutique con ambiente sofisticado, sesiones DJ en vivo, coctelería premium y la mejor atmósfera.">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            900: '#0d0d0d',
+                            800: '#141414',
+                            700: '#1c1c1c',
+                            600: '#262626'
+                        },
+                        gold: {
+                            300: '#f3e5b8',
+                            400: '#e5ca78',
+                            500: '#c5a059',
+                            600: '#b08b43'
+                        },
+                        sand: {
+                            100: '#faf7f2',
+                            200: '#f3ece1',
+                            300: '#e6ded1',
+                            500: '#c4b9a7'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #f3e5b8 0%, #c5a059 50%, #9e782f 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border {
+            border: 1px solid rgba(197, 160, 89, 0.3);
+        }
+        .gold-glow:hover {
+            box-shadow: 0 0 25px rgba(197, 160, 89, 0.25);
+        }
+    </style>
+</head>
+<body class="bg-dark-900 text-sand-200 font-sans selection:bg-gold-500 selection:text-dark-900 antialiased overflow-x-hidden">
+
+    <!-- Top Bar Minimalista -->
+    <div class="border-b border-dark-700 bg-dark-900/90 text-xs py-2 tracking-widest uppercase text-sand-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center">
+            <div class="flex items-center space-x-6">
+                <span><i class="fa-solid fa-location-dot text-gold-500 mr-2"></i> Santa Eugènia, Illes Balears</span>
+                <span class="hidden md:inline"><i class="fa-solid fa-clock text-gold-500 mr-2"></i> Tardes & Noches Vibrantes</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="tel:696228262" class="hover:text-gold-400 transition-colors flex items-center gap-1">
+                    <i class="fa-solid fa-phone text-gold-500"></i> +34 696 22 82 62
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navegación Boutique -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-dark-900/90 border-b border-dark-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-20">
+            <a href="#" class="flex flex-col">
+                <span class="font-serif text-3xl md:text-4xl tracking-wider text-sand-100 font-bold">S'ESCARGOT</span>
+                <span class="text-[10px] tracking-[0.3em] uppercase text-gold-500 font-medium">Boutique Pub & Lounge</span>
+            </a>
+
+            <!-- Menú de escritorio -->
+            <nav class="hidden md:flex items-center space-x-8 text-xs font-medium uppercase tracking-widest text-sand-300">
+                <a href="#experiencia" class="hover:text-gold-400 transition-colors">Concepto</a>
+                <a href="#servicios" class="hover:text-gold-400 transition-colors">Carta & Tarifas</a>
+                <a href="#galeria" class="hover:text-gold-400 transition-colors">Instalaciones</a>
+                <a href="#opiniones" class="hover:text-gold-400 transition-colors">Reseñas</a>
+                <a href="#contacto" class="hover:text-gold-400 transition-colors">Ubicación</a>
+            </nav>
+
+            <!-- Botón CTA Principal -->
+            <div class="hidden md:block">
+                <a href="tel:696228262" class="relative inline-flex items-center justify-center px-7 py-3 text-xs tracking-widest uppercase font-semibold text-dark-900 bg-gradient-to-r from-gold-400 to-gold-500 hover:from-gold-300 hover:to-gold-400 transition duration-300 rounded-sm gold-glow shadow-md">
+                    <i class="fa-solid fa-calendar-check mr-2"></i> Reservar Cita
+                </a>
+            </div>
+
+            <!-- Botón Móvil -->
+            <button id="mobileMenuBtn" class="md:hidden text-sand-100 text-2xl focus:outline-none" aria-label="Abrir Menú">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+        </div>
+
+        <!-- Menú Desplegable Móvil -->
+        <div id="mobileMenu" class="hidden md:hidden bg-dark-800 border-b border-dark-700 px-6 py-6 transition-all duration-300">
+            <div class="flex flex-col space-y-4 text-sm font-medium tracking-wider uppercase text-sand-300">
+                <a href="#experiencia" class="hover:text-gold-400 py-1" onclick="toggleMenu()">Concepto</a>
+                <a href="#servicios" class="hover:text-gold-400 py-1" onclick="toggleMenu()">Carta & Tarifas</a>
+                <a href="#galeria" class="hover:text-gold-400 py-1" onclick="toggleMenu()">Instalaciones</a>
+                <a href="#opiniones" class="hover:text-gold-400 py-1" onclick="toggleMenu()">Reseñas</a>
+                <a href="#contacto" class="hover:text-gold-400 py-1" onclick="toggleMenu()">Ubicación</a>
+                <div class="pt-4">
+                    <a href="tel:696228262" class="w-full inline-flex items-center justify-center py-3 text-xs tracking-widest uppercase font-semibold text-dark-900 bg-gold-400 hover:bg-gold-300 transition duration-300 rounded-sm">
+                        <i class="fa-solid fa-calendar-check mr-2"></i> Reservar Cita
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-dark-900">
+        <!-- Fondo con imagen y overlay de lujo -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://scontent-iad3-2.xx.fbcdn.net/v/t39.30808-1/292297658_705650147441101_7608155217524622374_n.jpg?stp=dst-jpg_tt6&cstp=mx754x750&ctp=s720x720&_nc_cat=105&ccb=1-7&_nc_sid=3ab345&_nc_ohc=aaRDfPiwWsEQ7kNvwHZufaH&_nc_oc=Adqi4TSbyCrBEOqAb6Obx_kbSaXj7sbWxU5VGkJxO480EbQ0H-1IqJ_BnwGwe7m4NHw&_nc_zt=24&_nc_ht=scontent-iad3-2.xx&_nc_gid=LtbJqzqZhRzNPxmfOVRHug&_nc_ss=79289&oh=00_AQPPni4rhMM7WvTjZpqDZfJYRrx8xvLl0hrEYJgndkwiSA&oe=6ADB167D" 
+                 alt="S'Escargot Pub y Ambiente" 
+                 class="w-full h-full object-cover opacity-25 filter grayscale contrast-125"
+                 referrerpolicy="no-referrer"
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/80 to-transparent"></div>
+            <div class="absolute inset-0 bg-radial from-transparent via-dark-900/50 to-dark-900"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center py-20">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold-500/30 bg-gold-500/10 mb-6">
+                <span class="w-2 h-2 rounded-full bg-gold-400 animate-pulse"></span>
+                <span class="text-xs uppercase tracking-[0.25em] text-gold-300 font-semibold">El Pub de Referencia en Santa Eugènia</span>
+            </div>
+
+            <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold text-sand-100 leading-tight mb-6 tracking-wide">
+                El Ritual de la Noche, <br>
+                <span class="gold-gradient-text italic font-normal">Elevado al Máximo Nivel</span>
+            </h1>
+
+            <p class="max-w-2xl mx-auto text-sm sm:text-base md:text-lg text-sand-300 font-light leading-relaxed mb-10">
+                Música en vivo, DJs selectos, copas prémium y un ambiente auténtico en el corazón del pueblo. Vive encuentros únicos con la exclusividad y energía que mereces.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="tel:696228262" class="w-full sm:w-auto px-9 py-4 bg-gradient-to-r from-gold-400 to-gold-500 text-dark-900 font-semibold uppercase tracking-widest text-xs rounded-sm gold-glow transition duration-300 transform hover:-translate-y-0.5">
+                    <i class="fa-solid fa-glass-cheers mr-2"></i> Reservar Cita
+                </a>
+                <a href="#servicios" class="w-full sm:w-auto px-9 py-4 border border-sand-500/40 text-sand-100 font-medium uppercase tracking-widest text-xs rounded-sm hover:border-gold-400 hover:text-gold-400 transition duration-300">
+                    Descubrir Carta
+                </a>
+            </div>
+
+            <!-- Datos Rápidos -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-16 mt-8 border-t border-dark-700/80 text-left">
+                <div class="border-l border-gold-500/40 pl-4">
+                    <p class="text-gold-400 font-serif text-2xl font-bold">Directo</p>
+                    <p class="text-xs text-sand-500 uppercase tracking-wider">Sesiones & DJs</p>
+                </div>
+                <div class="border-l border-gold-500/40 pl-4">
+                    <p class="text-gold-400 font-serif text-2xl font-bold">Timing</p>
+                    <p class="text-xs text-sand-500 uppercase tracking-wider">Servicio Dinámico</p>
+                </div>
+                <div class="border-l border-gold-500/40 pl-4">
+                    <p class="text-gold-400 font-serif text-2xl font-bold">100%</p>
+                    <p class="text-xs text-sand-500 uppercase tracking-wider">Ambiente Local</p>
+                </div>
+                <div class="border-l border-gold-500/40 pl-4">
+                    <p class="text-gold-400 font-serif text-2xl font-bold">Boutique</p>
+                    <p class="text-xs text-sand-500 uppercase tracking-wider">Copas & Cervezas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Concepto & Experiencia -->
+    <section id="experiencia" class="py-20 bg-dark-800 border-t border-b border-dark-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <span class="text-xs uppercase tracking-[0.3em] text-gold-500 font-semibold block">Nuestra Esencia</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl text-sand-100 leading-tight">
+                        Donde la vida del pueblo se funde con el compás de la fiesta
+                    </h2>
+                    <p class="text-sand-300 text-sm sm:text-base leading-relaxed">
+                        S'Escargot es el auténtico punto de reunión de Santa Eugènia. Un lugar con carácter, música en directo durante los fines de semana, personal dinámico y una cuidada selección de destilados y cervezas frías para desconectar de la rutina.
+                    </p>
+                    <p class="text-sand-500 text-sm leading-relaxed">
+                        Ya sea para celebrar con tu grupo de amigos un cumpleaños, vibrar con las sesiones de DJ o disfrutar de la noche mallorquina en buena compañía, nuestro equipo se encarga de que tu única preocupación sea disfrutar del momento.
+                    </p>
+                    <div class="pt-4">
+                        <a href="tel:696228262" class="inline-flex items-center gap-3 text-gold-400 font-medium tracking-widest uppercase text-xs hover:text-gold-300 transition-colors">
+                            <span>Asegura tu mesa para el fin de semana</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 relative">
+                    <div class="space-y-4">
+                        <div class="bg-dark-700 p-6 rounded-sm border border-gold-500/20 hover:border-gold-500/50 transition-all">
+                            <i class="fa-solid fa-compact-disc text-3xl text-gold-400 mb-3"></i>
+                            <h3 class="font-serif text-xl text-sand-100 font-bold mb-1">Sesiones DJ</h3>
+                            <p class="text-xs text-sand-500">Música con ritmo para encender la pista los viernes y sábados.</p>
+                        </div>
+                        <div class="bg-dark-700 p-6 rounded-sm border border-gold-500/20 hover:border-gold-500/50 transition-all">
+                            <i class="fa-solid fa-beer-mug-empty text-3xl text-gold-400 mb-3"></i>
+                            <h3 class="font-serif text-xl text-sand-100 font-bold mb-1">Cervezas & Cubatas</h3>
+                            <p class="text-xs text-sand-500">Marcas premium, combinados fríos servidos al instante.</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4 pt-8">
+                        <div class="bg-dark-700 p-6 rounded-sm border border-gold-500/20 hover:border-gold-500/50 transition-all">
+                            <i class="fa-solid fa-bolt text-3xl text-gold-400 mb-3"></i>
+                            <h3 class="font-serif text-xl text-sand-100 font-bold mb-1">Atención Ágil</h3>
+                            <p class="text-xs text-sand-500">Servicio rápido y juvenil para que nunca falte una copa.</p>
+                        </div>
+                        <div class="bg-dark-700 p-6 rounded-sm border border-gold-500/20 hover:border-gold-500/50 transition-all">
+                            <i class="fa-solid fa-champagne-glasses text-3xl text-gold-400 mb-3"></i>
+                            <h3 class="font-serif text-xl text-sand-100 font-bold mb-1">Eventos & Grupos</h3>
+                            <p class="text-xs text-sand-500">Celebraciones populares y momentos para recordar.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN REGLAMENTARIA: Nuestros Tratamientos, Cortes y Tarifas -->
+    <section id="servicios" class="py-24 bg-dark-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-[0.3em] text-gold-500 font-semibold block mb-2">Carta de Experiencias & Servicios</span>
+                <h2 class="font-serif text-3xl sm:text-5xl text-sand-100">Nuestros Tratamientos, Cortes y Tarifas</h2>
+                <div class="w-20 h-0.5 bg-gold-500 mx-auto mt-4 mb-6"></div>
+                <p class="text-sand-500 text-sm">
+                    Selección exclusiva para quienes valoran el buen beber, la atmósfera nocturna y el trato selecto. Precios transparentes y servicio de mesa boutique.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Bloque 1: Coctelería de Autor & Destilados Prémium -->
+                <div class="bg-dark-800 p-8 rounded-sm border border-dark-700 hover:border-gold-500/40 transition duration-300">
+                    <div class="flex items-center justify-between pb-4 mb-6 border-b border-dark-700">
+                        <h3 class="font-serif text-2xl text-sand-100 font-bold">Destilados & Copas</h3>
+                        <i class="fa-solid fa-martini-glass-citrus text-gold-400 text-xl"></i>
+                    </div>
+                    <ul class="space-y-6">
+                        <li class="flex justify-between items-start">
+                            <div>
+                                <h4 class="text-sand-100 font-medium text-sm">Copa Clásica de Pub</h4>
+                                <p class="text-xs text-sand-500">Ginebra, Ron o Whisky nacional con refresco a elegir.</p>
+                            </div>
+                            <span class="text-gold-400 font-serif font-bold text-lg">7.00€</span>
+                        </li>
+                        <li class="flex justify-between items-start">
+                            <div>
+                                <h4 class="text-sand-100 font-medium text-sm">Copa Premium Reserva</h4>
+                                <p class="text-xs text-sand-500">Destilados selectos con tónica aromatizada o cítricos frescos.</p>
+                            </div>
+                            <span class="text-gold-400 font-serif font-bold text-lg">9.50€</span>
+                        </li>
+                        <li class="flex justify-between items-start">
+                            <div>
+                                <h4 class="text-sand-100 font-medium text-sm">Chupitos de la Casa</h4>
+                                <p class="text-xs text-sand-500">Hierbas mallorquinas, tequila o licor de hierbas frío.</p>
+                            </div>
+                            <span class="text-gold-400 font-serif font-bold text-lg">2.50€</span>
+                        </li>
+                    </ul>
+                    <div class="mt-8 pt-4 border-t border-dark-700">
+                        <a href="tel:696228262" class="w-full block text-center py-2.5 text-xs uppercase tracking-widest font-semibold border border-gold-500/40 text-gold-400 hover:bg-gold-500 hover:text-dark-900 transition-colors rounded-sm">
+                            Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Bloque 2: Cervezas, Vinos y Aperitivos -->
+                <div class="bg-dark-800 p-8 rounded-sm border border-gold-500/40 shadow-lg relative">
+                    <span class="absolute -top-3 right-6 bg-gold-500 text-dark-900 text-[10px] tracking-widest uppercase font-bold px-3 py-1 rounded-sm">
+                        Favoritos
+                    </span>
+                    <div class="flex items-center justify-between pb-4 mb-6 border-b border-dark-700">
+                        <h3 class="font-serif text-2xl text-sand-100 font-bold">Cervezas & Barra</h3>
+                        <i class="fa-solid fa-beer-mug-empty text-gold-400 text-xl"></i>
+                    </div>
+                    <ul class="space-y-6">
+                        <li class="flex justify-between items-start">
+                            <div>
+                                <h4 class="text-sand-100 font-medium text-sm">Caña Tirada & Quinto</h4>
+                                <p class="text-xs text-sand-500">Cerveza helada de grifo o botellín local bien frío.</p>
+                            </div>
+                            <span class="text-gold-400 font-serif font-bold text-lg">2.50€</span>
+                        </li>
+                        <li class="flex justify-between items-start">
+                            <div>
+                                <h4 class="text-sand-100 font-medium text-sm">Jarra & Tercio Especial</h4>
+                                <p class="text-xs text-sand-500">Cervezas de importación y tostadas de cuerpo intenso.</p>
+                            </div>
+                            <span class="text-gold-400 font-serif font-bold text-lg">3.80€</span>
+                        </li>
+                        <li class="flex justify-between items-start">
+                            <div>
+                                <h4 class="text-sand-100 font-medium text-sm">Vinos Mallorquines & Tinto</h4>
+                                <p class="text-xs text-sand-500">Copa de vino de la tierra, selección de bodegas isleñas.</p>
+                            </div>
+                            <span class="text-gold-400 font-serif font-bold text-lg">3.50€</span>
+                        </li>
+                    </ul>
+                    <div class="mt-8 pt-4 border-t border-dark-700">
+                        <a href="tel:696228262" class="w-full block text-center py-2.5 text-xs uppercase tracking-widest font-semibold bg-gold-400 text-dark-900 hover:bg-gold-300 transition-colors rounded-sm font-semibold">
+                            Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Bloque 3: Mesas VIP, Eventos & Cumpleaños -->
+                <div class="bg-dark-800 p-8 rounded-sm border border-dark-700 hover:border-gold-500/40 transition duration-300">
+                    <div class="flex items-center justify-between pb-4 mb-6 border-b border-dark-700">
+                        <h3 class="font-serif text-2xl text-sand-100 font-bold">Eventos & Grupos</h3>
+                        <i class="fa-solid fa-crown text-gold-400 text-xl"></i>
+                    </div>
+                    <ul class="space-y-6">
+                        <li class="flex justify-between items-start">
+                            <div>
+                                <h4 class="text-sand-100 font-medium text-sm">Mesa de Cumpleaños</h4>
+                                <p class="text-xs text-sand-500">Reserva de espacio prioritario para celebraciones en grupo.</p>
+                            </div>
+                            <span class="text-gold-400 font-serif font-bold text-lg">Consultar</span>
+                        </li>
+                        <li class="flex justify-between items-start">
+                            <div>
+                                <h4 class="text-sand-100 font-medium text-sm">Botella en Mesa con Refrescos</h4>
+                                <p class="text-xs text-sand-500">Servicio de botella completa prémium con mixers a elección.</p>
+                            </div>
+                            <span class="text-gold-400 font-serif font-bold text-lg">75.00€</span>
+                        </li>
+                        <li class="flex justify-between items-start">
+                            <div>
+                                <h4 class="text-sand-100 font-medium text-sm">Piqueo Nocturno</h4>
+                                <p class="text-xs text-sand-500">Snacks de bar seleccionados para acompañar tus copas.</p>
+                            </div>
+                            <span class="text-gold-400 font-serif font-bold text-lg">4.00€</span>
+                        </li>
+                    </ul>
+                    <div class="mt-8 pt-4 border-t border-dark-700">
+                        <a href="tel:696228262" class="w-full block text-center py-2.5 text-xs uppercase tracking-widest font-semibold border border-gold-500/40 text-gold-400 hover:bg-gold-500 hover:text-dark-900 transition-colors rounded-sm">
+                            Reservar Cita
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nota de servicio -->
+            <p class="text-center text-xs text-sand-500 mt-10 italic">
+                * Precios orientativos para servicio en barra y sala. Para reservas de grupos grandes y eventos especiales, aconsejamos contactar con antelación.
+            </p>
+        </div>
+    </section>
+
+    <!-- SECCIÓN REGLAMENTARIA: Nuestras Instalaciones y Trabajos -->
+    <section id="galeria" class="py-24 bg-dark-800 border-t border-dark-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-xs uppercase tracking-[0.3em] text-gold-500 font-semibold block mb-2">Galería Visual</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl text-sand-100">Nuestras Instalaciones y Trabajos</h2>
+                </div>
+                <div class="mt-4 md:mt-0">
+                    <a href="tel:696228262" class="inline-flex items-center gap-2 text-xs uppercase tracking-widest font-semibold text-gold-400 hover:text-gold-300">
+                        Reservar Cita Ahora <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Malla de Galería con Imagen Real y Fotografías de Ambiente Exclusivo -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Foto 1 (Foto Real del Negocio) -->
+                <div class="group relative overflow-hidden rounded-sm aspect-square bg-dark-700 border border-dark-600">
+                    <img src="https://scontent-iad3-2.xx.fbcdn.net/v/t39.30808-1/292297658_705650147441101_7608155217524622374_n.jpg?stp=dst-jpg_tt6&cstp=mx754x750&ctp=s720x720&_nc_cat=105&ccb=1-7&_nc_sid=3ab345&_nc_ohc=aaRDfPiwWsEQ7kNvwHZufaH&_nc_oc=Adqi4TSbyCrBEOqAb6Obx_kbSaXj7sbWxU5VGkJxO480EbQ0H-1IqJ_BnwGwe7m4NHw&_nc_zt=24&_nc_ht=scontent-iad3-2.xx&_nc_gid=LtbJqzqZhRzNPxmfOVRHug&_nc_ss=79289&oh=00_AQPPni4rhMM7WvTjZpqDZfJYRrx8xvLl0hrEYJgndkwiSA&oe=6ADB167D" 
+                         alt="S'Escargot Pub Oficial" 
+                         class="w-full h-full object-cover transition duration-500 group-hover:scale-105"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition duration-300"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <span class="text-[10px] tracking-widest uppercase text-gold-400 font-bold">Identidad S'Escargot</span>
+                        <h4 class="text-sand-100 font-serif text-lg">Punto de Encuentro Oficial</h4>
+                    </div>
+                </div>
+
+                <!-- Foto 2 -->
+                <div class="group relative overflow-hidden rounded-sm aspect-square bg-dark-700 border border-dark-600">
+                    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=900&q=80" 
+                         alt="Ambiente Nocturno y Barra" 
+                         class="w-full h-full object-cover transition duration-500 group-hover:scale-105"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition duration-300"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <span class="text-[10px] tracking-widest uppercase text-gold-400 font-bold">Coctelería & Copas</span>
+                        <h4 class="text-sand-100 font-serif text-lg">Barra Activa y Dinámica</h4>
+                    </div>
+                </div>
+
+                <!-- Foto 3 -->
+                <div class="group relative overflow-hidden rounded-sm aspect-square bg-dark-700 border border-dark-600">
+                    <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=900&q=80" 
+                         alt="DJs y Sesiones de Fin de Semana" 
+                         class="w-full h-full object-cover transition duration-500 group-hover:scale-105"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition duration-300"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <span class="text-[10px] tracking-widest uppercase text-gold-400 font-bold">Música en Vivo</span>
+                        <h4 class="text-sand-100 font-serif text-lg">Sesiones DJ & Ritmo</h4>
+                    </div>
+                </div>
+
+                <!-- Foto 4 -->
+                <div class="group relative overflow-hidden rounded-sm aspect-square bg-dark-700 border border-dark-600">
+                    <img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=900&q=80" 
+                         alt="Espacios Íntimos" 
+                         class="w-full h-full object-cover transition duration-500 group-hover:scale-105"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition duration-300"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <span class="text-[10px] tracking-widest uppercase text-gold-400 font-bold">Instalaciones</span>
+                        <h4 class="text-sand-100 font-serif text-lg">Atmósfera de Pub Cálida</h4>
+                    </div>
+                </div>
+
+                <!-- Foto 5 -->
+                <div class="group relative overflow-hidden rounded-sm aspect-square bg-dark-700 border border-dark-600">
+                    <img src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=900&q=80" 
+                         alt="Cervezas Artesanas y Grifo" 
+                         class="w-full h-full object-cover transition duration-500 group-hover:scale-105"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition duration-300"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <span class="text-[10px] tracking-widest uppercase text-gold-400 font-bold">Servicio Impecable</span>
+                        <h4 class="text-sand-100 font-serif text-lg">Variedad de Cervezas</h4>
+                    </div>
+                </div>
+
+                <!-- Foto 6 -->
+                <div class="group relative overflow-hidden rounded-sm aspect-square bg-dark-700 border border-dark-600">
+                    <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=900&q=80" 
+                         alt="Noches Inolvidables en Santa Eugènia" 
+                         class="w-full h-full object-cover transition duration-500 group-hover:scale-105"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition duration-300"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <span class="text-[10px] tracking-widest uppercase text-gold-400 font-bold">Celebraciones</span>
+                        <h4 class="text-sand-100 font-serif text-lg">Fiestas & Aniversarios</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reseñas Reales Verificadas -->
+    <section id="opiniones" class="py-24 bg-dark-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-[0.3em] text-gold-500 font-semibold block mb-2">Voces de la Comunidad</span>
+                <h2 class="font-serif text-3xl sm:text-5xl text-sand-100">Opiniones Reales Verificadas</h2>
+                <div class="w-20 h-0.5 bg-gold-500 mx-auto mt-4 mb-6"></div>
+                <p class="text-sand-500 text-sm">
+                    La transparencia y el carácter auténtico nos definen. Lo que nuestros clientes dicen tras pasar por Carrer Major.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Reseña 1 -->
+                <div class="bg-dark-800 p-6 rounded-sm border border-dark-700 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-gold-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sand-300 text-xs sm:text-sm italic leading-relaxed mb-6">
+                            "El sitio espectacular, buen servicio. Trato genial. Camarero y DJs increíblemente guapos. Santa Eugenia Mola. No tardan. Timing perfecto."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-dark-700">
+                        <div class="w-9 h-9 rounded-full bg-gold-500/20 flex items-center justify-center text-gold-400 font-bold text-xs">
+                            LO
+                        </div>
+                        <div>
+                            <h4 class="text-sand-100 font-medium text-xs">Laura Ordinas Hernaiz</h4>
+                            <p class="text-[10px] text-sand-500 uppercase tracking-wider">Cliente Verificado • Google Maps</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 2 -->
+                <div class="bg-dark-800 p-6 rounded-sm border border-dark-700 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-gold-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sand-300 text-xs sm:text-sm italic leading-relaxed mb-6">
+                            "Un espacio muy popular, desde buena comida hasta la música. Sesiones en directo, fines de semana. Personal atento y trato muy vivaz y juvenil. Tienen marcha. Atienden rápido aunque local este lleno. Siempre hay que tener en cuenta, que en…"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-dark-700">
+                        <div class="w-9 h-9 rounded-full bg-gold-500/20 flex items-center justify-center text-gold-400 font-bold text-xs">
+                            KF
+                        </div>
+                        <div>
+                            <h4 class="text-sand-100 font-medium text-xs">kubiak foto</h4>
+                            <p class="text-[10px] text-sand-500 uppercase tracking-wider">Guía Local • Google Maps</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 3 -->
+                <div class="bg-dark-800 p-6 rounded-sm border border-dark-700 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-gold-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sand-300 text-xs sm:text-sm italic leading-relaxed mb-6">
+                            "Ahórrate el viaje, Pone que es un gastropub pero de este dominación solo tiene pub, fuimos a cenar viendo las fotografías y perdimos el tiempo, es un sitio para tomar copas o cerveza no creo ni que te pongan una triste tapa. Mira que pasamos por delante muchas veces y siempre hay gente, pero no se que día daran comida."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-dark-700">
+                        <div class="w-9 h-9 rounded-full bg-gold-500/20 flex items-center justify-center text-gold-400 font-bold text-xs">
+                            FI
+                        </div>
+                        <div>
+                            <h4 class="text-sand-100 font-medium text-xs">Frank de la Isla</h4>
+                            <p class="text-[10px] text-sand-500 uppercase tracking-wider">Cliente Verificado • Google Maps</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 4 -->
+                <div class="bg-dark-800 p-6 rounded-sm border border-dark-700 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-gold-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sand-300 text-xs sm:text-sm italic leading-relaxed mb-6">
+                            "entramos en este local, que por cierto, te quedas pegado en el suelo, y es so que era recién abierto 19h, y después de gastarnos más de 50€ en un ratito, y vemos que se ha llenando por qué hay un cumple de alguien del pueblo , pedimos unas…"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-dark-700">
+                        <div class="w-9 h-9 rounded-full bg-gold-500/20 flex items-center justify-center text-gold-400 font-bold text-xs">
+                            LL
+                        </div>
+                        <div>
+                            <h4 class="text-sand-100 font-medium text-xs">la loca</h4>
+                            <p class="text-[10px] text-sand-500 uppercase tracking-wider">Cliente Verificado • Reseña Local</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 5 -->
+                <div class="bg-dark-800 p-6 rounded-sm border border-dark-700 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-gold-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sand-300 text-xs sm:text-sm italic leading-relaxed mb-6">
+                            "para mi es un bar mas"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-dark-700">
+                        <div class="w-9 h-9 rounded-full bg-gold-500/20 flex items-center justify-center text-gold-400 font-bold text-xs">
+                            NM
+                        </div>
+                        <div>
+                            <h4 class="text-sand-100 font-medium text-xs">Noé Morey</h4>
+                            <p class="text-[10px] text-sand-500 uppercase tracking-wider">Cliente Verificado • Google Maps</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta Call To Action -->
+                <div class="bg-gradient-to-br from-gold-500/20 via-dark-800 to-dark-800 p-6 rounded-sm border border-gold-500/40 flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-full bg-gold-400 text-dark-900 flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-hand-holding-heart"></i>
+                        </div>
+                        <h4 class="font-serif text-xl text-sand-100 font-bold mb-2">¿Listo para vivir la experiencia S'Escargot?</h4>
+                        <p class="text-sand-300 text-xs leading-relaxed mb-6">
+                            Ven a disfrutar de copas frías, música con chispa y el punto de reunión con más vida de Santa Eugènia.
+                        </p>
+                    </div>
+                    <a href="tel:696228262" class="w-full text-center py-3 bg-gold-400 text-dark-900 font-semibold text-xs uppercase tracking-widest rounded-sm hover:bg-gold-300 transition-colors">
+                        Reservar Cita
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Ubicación & Contacto -->
+    <section id="contacto" class="py-24 bg-dark-800 border-t border-dark-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                
+                <!-- Datos de Contacto -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-xs uppercase tracking-[0.3em] text-gold-500 font-semibold block mb-2">Visítanos</span>
+                        <h2 class="font-serif text-3xl sm:text-5xl text-sand-100">Encuentra Tu Espacio</h2>
+                        <div class="w-16 h-0.5 bg-gold-500 mt-4 mb-6"></div>
+                        <p class="text-sand-300 text-sm leading-relaxed">
+                            Situado estratégicamente en la arteria principal de Santa Eugènia, Mallorca. Acércate a vivir el ambiente de pub o llámanos para reservar tu zona.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-sm bg-dark-700 border border-gold-500/30 flex items-center justify-center text-gold-400 shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs uppercase tracking-wider text-sand-500 font-semibold">Dirección Exacta</h4>
+                                <p class="text-sand-100 text-sm font-medium mt-0.5">Carrer Major, 48, 07142 Santa Eugnia, Illes Balears, España</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-sm bg-dark-700 border border-gold-500/30 flex items-center justify-center text-gold-400 shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs uppercase tracking-wider text-sand-500 font-semibold">Teléfono de Reservas</h4>
+                                <a href="tel:696228262" class="text-sand-100 text-sm font-medium mt-0.5 hover:text-gold-400 transition-colors block">
+                                    696 22 82 62
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-sm bg-dark-700 border border-gold-500/30 flex items-center justify-center text-gold-400 shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs uppercase tracking-wider text-sand-500 font-semibold">Correo Electrónico</h4>
+                                <a href="mailto:escarsescargot@gmail.com" class="text-sand-100 text-sm font-medium mt-0.5 hover:text-gold-400 transition-colors block">
+                                    escarsescargot@gmail.com
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
+                        <a href="tel:696228262" class="w-full inline-flex items-center justify-center py-4 bg-gradient-to-r from-gold-400 to-gold-500 text-dark-900 font-semibold uppercase tracking-widest text-xs rounded-sm gold-glow transition duration-300">
+                            <i class="fa-solid fa-calendar-check mr-2"></i> Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mapa Interactivo Obligatorio -->
+                <div class="lg:col-span-7 bg-dark-900 p-2 sm:p-3 rounded-2xl border border-dark-700 shadow-2xl">
+                    <iframe src="https://www.google.com/maps?q=S'Escargot%20Carrer%20Major%2C%2048%2C%2007142%20Santa%20Eugnia%2C%20Illes%20Balears%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Minimalista Boutique -->
+    <footer class="bg-dark-900 border-t border-dark-700 py-12 text-sand-500 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-center md:text-left">
+                <span class="font-serif text-2xl tracking-wider text-sand-100 font-bold block mb-1">S'ESCARGOT</span>
+                <p class="text-sand-500">Carrer Major, 48, 07142 Santa Eugnia, Illes Balears, España</p>
+            </div>
+
+            <div class="flex items-center space-x-6 text-sm">
+                <a href="tel:696228262" class="hover:text-gold-400 transition-colors" title="Llamar"><i class="fa-solid fa-phone"></i></a>
+                <a href="mailto:escarsescargot@gmail.com" class="hover:text-gold-400 transition-colors" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://maps.google.com" target="_blank" rel="noopener" class="hover:text-gold-400 transition-colors" title="Ubicación"><i class="fa-solid fa-map-location-dot"></i></a>
+            </div>
+
+            <div class="text-center md:text-right">
+                <p>&copy; <span id="year"></span> S'Escargot. Todos los derechos reservados.</p>
+                <p class="text-[10px] text-sand-500/70 mt-1">Santa Eugènia, Mallorca.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón Flotante de Llamada Rápida (Móvil) -->
+    <div class="md:hidden fixed bottom-6 right-6 z-50">
+        <a href="tel:696228262" class="flex items-center justify-center w-14 h-14 bg-gold-400 text-dark-900 rounded-full shadow-2xl gold-glow text-xl focus:outline-none" aria-label="Reservar Cita por Teléfono">
+            <i class="fa-solid fa-phone"></i>
+        </a>
+    </div>
+
+    <!-- Script de control de interacción -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+    </script>
+</body>
+</html>
