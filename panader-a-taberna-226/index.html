@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panadería Taberna | Boutique & Atelier Gourmet</title>
+    <meta name="description" content="Panadería Taberna en Burlada y Villava. Disfrute del auténtico café, panadería artesanal selecta, desayunos exclusivos y atención a mesa en un ambiente moderno y refinado.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        noir: '#0e0e10',
+                        carbon: '#17171a',
+                        surface: '#202025',
+                        gold: {
+                            DEFAULT: '#C5A059',
+                            light: '#E5C483',
+                            dark: '#9F7E3C',
+                            muted: '#bfa168'
+                        },
+                        sand: {
+                            light: '#FAF8F5',
+                            DEFAULT: '#F3EFE6',
+                            dark: '#E2DAC8'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #F9E7B9 0%, #C5A059 50%, #9F7E3C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border-gradient {
+            border-image: linear-gradient(to right, #C5A059, #F9E7B9, #9F7E3C) 1;
+        }
+    </style>
+</head>
+<body class="bg-noir text-neutral-300 font-sans antialiased selection:bg-gold selection:text-noir">
+
+    <!-- BARRA SUPERIOR EXCLUSIVA -->
+    <div class="border-b border-white/5 bg-carbon/60 text-xs text-neutral-400 py-2.5 px-4 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-6">
+                <span class="flex items-center gap-2 text-sand-light"><i class="fa-solid fa-location-dot text-gold"></i> C. Ricardo Bel, 16, Villava / Burlada</span>
+                <span class="hidden md:flex items-center gap-2"><i class="fa-regular fa-clock text-gold"></i> Lunes a Domingo: 07:30 - 20:30</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="mailto:sales@perfectfit.com" class="hover:text-gold transition-colors flex items-center gap-1.5"><i class="fa-regular fa-envelope text-gold"></i> sales@perfectfit.com</a>
+                <span class="text-neutral-600">|</span>
+                <a href="tel:948333095" class="text-gold-light hover:text-white font-semibold transition-colors flex items-center gap-1.5"><i class="fa-solid fa-phone"></i> 948 33 30 95</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVEGACIÓN PRINCIPAL -->
+    <header class="sticky top-0 z-50 bg-noir/90 backdrop-blur-lg border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="group flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full border border-gold/40 flex items-center justify-center bg-carbon group-hover:border-gold transition-colors">
+                    <i class="fa-solid fa-wheat-awn text-gold text-lg"></i>
+                </div>
+                <div>
+                    <span class="font-serif text-2xl font-bold tracking-wider text-white uppercase block leading-none">Taberna</span>
+                    <span class="text-[9px] uppercase tracking-[0.25em] text-gold font-medium">Boutique & Café Atelier</span>
+                </div>
+            </a>
+
+            <!-- Menu Desktop -->
+            <nav class="hidden md:flex items-center space-x-8 text-xs uppercase tracking-widest font-medium">
+                <a href="#experiencia" class="text-neutral-300 hover:text-gold transition-colors">La Experiencia</a>
+                <a href="#tarifas" class="text-neutral-300 hover:text-gold transition-colors">Carta & Tarifas</a>
+                <a href="#instalaciones" class="text-neutral-300 hover:text-gold transition-colors">Instalaciones</a>
+                <a href="#opiniones" class="text-neutral-300 hover:text-gold transition-colors">Opiniones</a>
+                <a href="#contacto" class="text-neutral-300 hover:text-gold transition-colors">Ubicación</a>
+            </nav>
+
+            <!-- CTA Desktop Button -->
+            <div class="hidden sm:block">
+                <a href="tel:948333095" class="relative inline-flex items-center justify-center px-6 py-2.5 text-xs font-semibold uppercase tracking-widest text-noir bg-gold hover:bg-gold-light transition-all duration-300 rounded-full shadow-[0_0_20px_rgba(197,160,89,0.3)] hover:scale-105">
+                    <i class="fa-solid fa-calendar-check mr-2"></i> Reservar Cita
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobileMenuBtn" aria-label="Abrir Menú" class="md:hidden text-neutral-300 hover:text-gold text-xl focus:outline-none">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobileMenu" class="hidden md:hidden bg-carbon border-b border-white/10 px-6 py-6 transition-all duration-300">
+            <div class="flex flex-col space-y-4 text-xs uppercase tracking-widest">
+                <a href="#experiencia" class="text-neutral-300 hover:text-gold py-1">La Experiencia</a>
+                <a href="#tarifas" class="text-neutral-300 hover:text-gold py-1">Carta & Tarifas</a>
+                <a href="#instalaciones" class="text-neutral-300 hover:text-gold py-1">Instalaciones</a>
+                <a href="#opiniones" class="text-neutral-300 hover:text-gold py-1">Opiniones</a>
+                <a href="#contacto" class="text-neutral-300 hover:text-gold py-1">Ubicación</a>
+                <div class="pt-3 border-t border-white/10">
+                    <a href="tel:948333095" class="w-full text-center inline-block py-3 text-xs font-semibold uppercase tracking-widest text-noir bg-gold hover:bg-gold-light rounded-full">
+                        <i class="fa-solid fa-phone mr-1"></i> Reservar Cita
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-24">
+        <!-- Background Imagery with Dark Aesthetic Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1920&q=80" 
+                 alt="Panadería Taberna Gourmet Villava Burlada" 
+                 class="w-full h-full object-cover object-center filter brightness-[0.28] contrast-125 scale-105 transform animate-pulse duration-1000"
+                 referrerpolicy="no-referrer"
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+            <div class="absolute inset-0 bg-gradient-to-t from-noir via-noir/60 to-transparent"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(197,160,89,0.12)_0,transparent_70%)]"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 text-center">
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold/40 bg-carbon/80 backdrop-blur-md mb-8">
+                <span class="w-2 h-2 rounded-full bg-gold animate-ping"></span>
+                <span class="text-[11px] font-semibold uppercase tracking-widest text-gold-light">Nueva Dirección · Excelencia & Vanguardia</span>
+            </div>
+
+            <!-- Title -->
+            <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold text-white tracking-tight leading-[1.1] mb-6">
+                El Arte de la Panadería <br class="hidden sm:block">
+                <span class="gold-gradient-text italic font-normal">& la Alta Cafetería</span>
+            </h1>
+
+            <p class="max-w-2xl mx-auto text-sm sm:text-base text-neutral-300 font-light leading-relaxed mb-10">
+                Ubicada en el enclave de Villava y Burlada, reinventamos cada mañana el placer del café perfecto, la masa madre crujiente y una exclusiva atención personalizada a mesa con ambiente musical curado.
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+                <a href="tel:948333095" class="w-full sm:w-auto px-9 py-4 rounded-full text-xs font-semibold uppercase tracking-[0.2em] bg-gold text-noir hover:bg-gold-light transition-all duration-300 shadow-xl shadow-gold/20 hover:scale-105 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-phone"></i> Reservar Cita
+                </a>
+                <a href="#tarifas" class="w-full sm:w-auto px-9 py-4 rounded-full text-xs font-semibold uppercase tracking-[0.2em] text-sand-light border border-white/20 hover:border-gold hover:text-gold transition-all duration-300 bg-carbon/40 backdrop-blur-sm flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-compass"></i> Descubrir Carta
+                </a>
+            </div>
+
+            <!-- Highlight Metrics -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-16 mt-16 border-t border-white/10 max-w-4xl mx-auto text-left">
+                <div class="border-l border-gold/40 pl-4">
+                    <span class="font-serif text-2xl text-gold-light block font-semibold">+100%</span>
+                    <span class="text-[11px] uppercase tracking-wider text-neutral-400">Artesanal & Diario</span>
+                </div>
+                <div class="border-l border-gold/40 pl-4">
+                    <span class="font-serif text-2xl text-gold-light block font-semibold">Mesa</span>
+                    <span class="text-[11px] uppercase tracking-wider text-neutral-400">Servicio Personalizado</span>
+                </div>
+                <div class="border-l border-gold/40 pl-4">
+                    <span class="font-serif text-2xl text-gold-light block font-semibold">Taberna</span>
+                    <span class="text-[11px] uppercase tracking-wider text-neutral-400">Café de Especialidad</span>
+                </div>
+                <div class="border-l border-gold/40 pl-4">
+                    <span class="font-serif text-2xl text-gold-light block font-semibold">5 Estrellas</span>
+                    <span class="text-[11px] uppercase tracking-wider text-neutral-400">Nueva Experiencia</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: EXPERIENCIA BOUTIQUE -->
+    <section id="experiencia" class="py-24 bg-carbon/50 border-t border-b border-white/5 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <p class="text-gold text-xs font-semibold uppercase tracking-widest mb-3">Distinción en Cada Detalle</p>
+                <h2 class="font-serif text-3xl sm:text-5xl text-white font-bold">Un Refugio Cálido y Exclusivo</h2>
+                <div class="w-16 h-0.5 bg-gold mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-noir/80 border border-white/10 p-8 rounded-2xl hover:border-gold/50 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-mug-hot"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl text-white font-semibold mb-3">Café Calidad Taberna</h3>
+                    <p class="text-neutral-400 text-sm leading-relaxed mb-4">
+                        Tostado noble y extracción milimétrica. Un café insuperable que conquista desde el primer sorbo mañanero hasta la pausa reconfortante de la tarde.
+                    </p>
+                    <span class="text-gold text-xs font-semibold tracking-wider uppercase flex items-center gap-1 group-hover:translate-x-1 transition-transform">Garantía Incondicional &rarr;</span>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-noir/80 border border-white/10 p-8 rounded-2xl hover:border-gold/50 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl text-white font-semibold mb-3">Servicio Exclusivo a Mesa</h3>
+                    <p class="text-neutral-400 text-sm leading-relaxed mb-4">
+                        Atención cercana, femenina y sumamente amable. Llevamos tus consumiciones directo a la mesa para tu total descanso y confort mientras disfrutas de nuestra música.
+                    </p>
+                    <span class="text-gold text-xs font-semibold tracking-wider uppercase flex items-center gap-1 group-hover:translate-x-1 transition-transform">Nueva Gerencia &rarr;</span>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-noir/80 border border-white/10 p-8 rounded-2xl hover:border-gold/50 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-bread-slice"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl text-white font-semibold mb-3">Variedad & Masa Madre</h3>
+                    <p class="text-neutral-400 text-sm leading-relaxed mb-4">
+                        Hornos en marcha cada jornada. Panes rústicos, bollería selecta, opciones saladas y bocados gourmet elaborados para paladares refinados.
+                    </p>
+                    <span class="text-gold text-xs font-semibold tracking-wider uppercase flex items-center gap-1 group-hover:translate-x-1 transition-transform">Horneado Continuo &rarr;</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: NUESTROS TRATAMIENTOS, CORTES Y TARIFAS (MANDATORY NAME) -->
+    <section id="tarifas" class="py-24 bg-noir relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold text-xs font-semibold uppercase tracking-[0.2em] block mb-2">Carta de Autor & Precios Transparentes</span>
+                <h2 class="font-serif text-3xl sm:text-5xl text-white font-bold tracking-tight">Nuestros Tratamientos, Cortes y Tarifas</h2>
+                <div class="w-20 h-0.5 bg-gold mx-auto mt-4 mb-4"></div>
+                <p class="text-neutral-400 text-sm">Disfrute en barra o en mesa de nuestras combinaciones exclusivas preparadas al instante con la mayor pulcritud.</p>
+            </div>
+
+            <!-- Tarifas Grid / Categories -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <!-- Bloque 1: Cafetería & Desayunos Signature -->
+                <div class="bg-carbon/70 border border-white/10 p-8 rounded-3xl backdrop-blur-sm hover:border-gold/40 transition-colors">
+                    <div class="flex items-center gap-3 border-b border-white/10 pb-4 mb-6">
+                        <i class="fa-solid fa-mug-saucer text-gold text-xl"></i>
+                        <h3 class="font-serif text-2xl text-white font-bold">Cafetería & Desayunos Signature</h3>
+                    </div>
+                    <ul class="space-y-6">
+                        <li class="flex items-start justify-between border-b border-white/5 pb-4">
+                            <div>
+                                <h4 class="text-white font-medium text-sm sm:text-base flex items-center gap-2">
+                                    Café Taberna Blend Noble <span class="bg-gold/20 text-gold text-[10px] uppercase font-bold px-2 py-0.5 rounded-full">Recomendado</span>
+                                </h4>
+                                <p class="text-xs text-neutral-400 mt-1">Expresso de altura o con leche cremosa microtexturizada servido a temperatura óptima.</p>
+                            </div>
+                            <span class="text-gold font-serif font-bold text-lg whitespace-nowrap ml-4">1,60 €</span>
+                        </li>
+                        <li class="flex items-start justify-between border-b border-white/5 pb-4">
+                            <div>
+                                <h4 class="text-white font-medium text-sm sm:text-base">Desayuno Completo Taberna</h4>
+                                <p class="text-xs text-neutral-400 mt-1">Café o infusión boutique + Zumo de naranja natural + Tostada de hogaza con AOVE y tomate o croissant de mantequilla.</p>
+                            </div>
+                            <span class="text-gold font-serif font-bold text-lg whitespace-nowrap ml-4">4,20 €</span>
+                        </li>
+                        <li class="flex items-start justify-between border-b border-white/5 pb-4">
+                            <div>
+                                <h4 class="text-white font-medium text-sm sm:text-base">Café Especial Vienés o Bombón Velvet</h4>
+                                <p class="text-xs text-neutral-400 mt-1">Leche condensada artesana, doble shot de café y espuma de nata montada al momento con canela.</p>
+                            </div>
+                            <span class="text-gold font-serif font-bold text-lg whitespace-nowrap ml-4">2,50 €</span>
+                        </li>
+                        <li class="flex items-start justify-between">
+                            <div>
+                                <h4 class="text-white font-medium text-sm sm:text-base">Infusiones & Tés Premium</h4>
+                                <p class="text-xs text-neutral-400 mt-1">Selección de hoja entera: Chai especiado, Verde Gunpowder, Rooibos vainilla o Frutos del bosque.</p>
+                            </div>
+                            <span class="text-gold font-serif font-bold text-lg whitespace-nowrap ml-4">1,90 €</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Bloque 2: Cortes de Panadería & Masa Madre -->
+                <div class="bg-carbon/70 border border-white/10 p-8 rounded-3xl backdrop-blur-sm hover:border-gold/40 transition-colors">
+                    <div class="flex items-center gap-3 border-b border-white/10 pb-4 mb-6">
+                        <i class="fa-solid fa-wheat-awn text-gold text-xl"></i>
+                        <h3 class="font-serif text-2xl text-white font-bold">Cortes de Panadería & Masa Madre</h3>
+                    </div>
+                    <ul class="space-y-6">
+                        <li class="flex items-start justify-between border-b border-white/5 pb-4">
+                            <div>
+                                <h4 class="text-white font-medium text-sm sm:text-base flex items-center gap-2">
+                                    Hogaza Rústica Taberna (Corte Diario) <span class="bg-gold/20 text-gold text-[10px] uppercase font-bold px-2 py-0.5 rounded-full">Top Ventas</span>
+                                </h4>
+                                <p class="text-xs text-neutral-400 mt-1">Fermentación lenta de 24h, corteza caramelizada crujiente y miga esponjosa alveolada.</p>
+                            </div>
+                            <span class="text-gold font-serif font-bold text-lg whitespace-nowrap ml-4">2,10 €</span>
+                        </li>
+                        <li class="flex items-start justify-between border-b border-white/5 pb-4">
+                            <div>
+                                <h4 class="text-white font-medium text-sm sm:text-base">Barra Artesanal de Tradición Navarra</h4>
+                                <p class="text-xs text-neutral-400 mt-1">Harinas de molino seleccionadas, sin aditivos, perfecta para comidas familiares diarias.</p>
+                            </div>
+                            <span class="text-gold font-serif font-bold text-lg whitespace-nowrap ml-4">1,35 €</span>
+                        </li>
+                        <li class="flex items-start justify-between border-b border-white/5 pb-4">
+                            <div>
+                                <h4 class="text-white font-medium text-sm sm:text-base">Pan de Semillas & Centeno Bio</h4>
+                                <p class="text-xs text-neutral-400 mt-1">Avena, linaza dorada, sésamo tostado y pipas de girasol. Alto valor nutritivo.</p>
+                            </div>
+                            <span class="text-gold font-serif font-bold text-lg whitespace-nowrap ml-4">2,60 €</span>
+                        </li>
+                        <li class="flex items-start justify-between">
+                            <div>
+                                <h4 class="text-white font-medium text-sm sm:text-base">Panecillos Gourmet & Especiales</h4>
+                                <p class="text-xs text-neutral-400 mt-1">Variedad en formato individual de cebolla caramelizada, nueces y pasas o multicereales.</p>
+                            </div>
+                            <span class="text-gold font-serif font-bold text-lg whitespace-nowrap ml-4">0,85 €</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Bloque 3: Bocados Salados & Aperitivos -->
+                <div class="bg-carbon/70 border border-white/10 p-8 rounded-3xl backdrop-blur-sm hover:border-gold/40 transition-colors">
+                    <div class="flex items-center gap-3 border-b border-white/10 pb-4 mb-6">
+                        <i class="fa-solid fa-utensils text-gold text-xl"></i>
+                        <h3 class="font-serif text-2xl text-white font-bold">Pinchos, Salados & Pausa de Tarde</h3>
+                    </div>
+                    <ul class="space-y-6">
+                        <li class="flex items-start justify-between border-b border-white/5 pb-4">
+                            <div>
+                                <h4 class="text-white font-medium text-sm sm:text-base flex items-center gap-2">
+                                    Pincho de Tortilla Suprema <span class="bg-gold/20 text-gold text-[10px] uppercase font-bold px-2 py-0.5 rounded-full">Favorito</span>
+                                </h4>
+                                <p class="text-xs text-neutral-400 mt-1">Jugosa, con o sin cebolla, patatas tiernas de la huerta servida con pan recién horneado.</p>
+                            </div>
+                            <span class="text-gold font-serif font-bold text-lg whitespace-nowrap ml-4">2,30 €</span>
+                        </li>
+                        <li class="flex items-start justify-between border-b border-white/5 pb-4">
+                            <div>
+                                <h4 class="text-white font-medium text-sm sm:text-base">Pulgas & Minis Selectos</h4>
+                                <p class="text-xs text-neutral-400 mt-1">Jamón ibérico al corte con tomate, lomo con pimientos confitados o queso brie con nueces.</p>
+                            </div>
+                            <span class="text-gold font-serif font-bold text-lg whitespace-nowrap ml-4">2,10 €</span>
+                        </li>
+                        <li class="flex items-start justify-between">
+                            <div>
+                                <h4 class="text-white font-medium text-sm sm:text-base">Empanadas & Hojaldres Caseros</h4>
+                                <p class="text-xs text-neutral-400 mt-1">Porción de masa crujiente de atún estofado con verduras o pollo asado al toque provenzal.</p>
+                            </div>
+                            <span class="text-gold font-serif font-bold text-lg whitespace-nowrap ml-4">2,80 €</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Bloque 4: Dulces de Boutique & Repostería -->
+                <div class="bg-carbon/70 border border-white/10 p-8 rounded-3xl backdrop-blur-sm hover:border-gold/40 transition-colors">
+                    <div class="flex items-center gap-3 border-b border-white/10 pb-4 mb-6">
+                        <i class="fa-solid fa-cake-candles text-gold text-xl"></i>
+                        <h3 class="font-serif text-2xl text-white font-bold">Dulces de Boutique & Repostería</h3>
+                    </div>
+                    <ul class="space-y-6">
+                        <li class="flex items-start justify-between border-b border-white/5 pb-4">
+                            <div>
+                                <h4 class="text-white font-medium text-sm sm:text-base flex items-center gap-2">
+                                    Croissant de Mantequilla Francesa <span class="bg-gold/20 text-gold text-[10px] uppercase font-bold px-2 py-0.5 rounded-full">Gourmet</span>
+                                </h4>
+                                <p class="text-xs text-neutral-400 mt-1">Hojaldrado fino, textura aireada e intenso aroma tostado tradicional.</p>
+                            </div>
+                            <span class="text-gold font-serif font-bold text-lg whitespace-nowrap ml-4">1,60 €</span>
+                        </li>
+                        <li class="flex items-start justify-between border-b border-white/5 pb-4">
+                            <div>
+                                <h4 class="text-white font-medium text-sm sm:text-base">Napolitana Gianduja o Crema Vainilla</h4>
+                                <p class="text-xs text-neutral-400 mt-1">Relleno abundante y cobertura de almendra laminada tostada.</p>
+                            </div>
+                            <span class="text-gold font-serif font-bold text-lg whitespace-nowrap ml-4">1,80 €</span>
+                        </li>
+                        <li class="flex items-start justify-between">
+                            <div>
+                                <h4 class="text-white font-medium text-sm sm:text-base">Bizcochos & Tartas del Día</h4>
+                                <p class="text-xs text-neutral-400 mt-1">Zanahoria con crema de queso, tarta de queso al horno o brownie de chocolate belga.</p>
+                            </div>
+                            <span class="text-gold font-serif font-bold text-lg whitespace-nowrap ml-4">3,20 €</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Central Call To Action in Pricing -->
+            <div class="mt-14 text-center">
+                <p class="text-neutral-400 text-xs mb-4 uppercase tracking-widest">¿Desea encargar un pedido especial de pan o reservar mesa para grupos?</p>
+                <a href="tel:948333095" class="inline-flex items-center gap-2 px-10 py-3.5 rounded-full text-xs font-semibold uppercase tracking-widest bg-gold text-noir hover:bg-gold-light transition-all duration-300 shadow-xl shadow-gold/10">
+                    <i class="fa-solid fa-phone"></i> Reservar Cita
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: NUESTRAS INSTALACIONES Y TRABAJOS (MANDATORY NAME) -->
+    <section id="instalaciones" class="py-24 bg-carbon/40 border-t border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                <div>
+                    <span class="text-gold text-xs font-semibold uppercase tracking-widest block mb-2">Galería de Espacios & Elaboraciones</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl text-white font-bold">Nuestras Instalaciones y Trabajos</h2>
+                    <div class="w-16 h-0.5 bg-gold mt-4"></div>
+                </div>
+                <p class="text-neutral-400 text-sm max-w-md">
+                    Un vistazo a la atmósfera íntima y cuidada de nuestro establecimiento, donde el aroma a grano selecto y masa fresca crea una vivencia inconfundible.
+                </p>
+            </div>
+
+            <!-- Gallery Grid with strict fallback compliance -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Img 1 -->
+                <div class="group relative overflow-hidden rounded-2xl h-80 bg-noir border border-white/10">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80" 
+                         alt="Instalaciones Panadería Taberna Villava" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 brightness-90 group-hover:brightness-100"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-noir via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <span class="text-[10px] uppercase font-semibold text-gold tracking-widest">Espacios Boutique</span>
+                        <h4 class="font-serif text-lg text-white font-bold">Ambiente Íntimo & Servicio a Mesa</h4>
+                    </div>
+                </div>
+
+                <!-- Img 2 -->
+                <div class="group relative overflow-hidden rounded-2xl h-80 bg-noir border border-white/10">
+                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80" 
+                         alt="Masa madre y panes artesanales" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 brightness-90 group-hover:brightness-100"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-noir via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <span class="text-[10px] uppercase font-semibold text-gold tracking-widest">Obrador Diario</span>
+                        <h4 class="font-serif text-lg text-white font-bold">Hogazas y Panes de Lenta Fermentación</h4>
+                    </div>
+                </div>
+
+                <!-- Img 3 -->
+                <div class="group relative overflow-hidden rounded-2xl h-80 bg-noir border border-white/10">
+                    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80" 
+                         alt="Café de especialidad Taberna" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 brightness-90 group-hover:brightness-100"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-noir via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <span class="text-[10px] uppercase font-semibold text-gold tracking-widest">Café Signature</span>
+                        <h4 class="font-serif text-lg text-white font-bold">Extracción y Cremado Perfecto</h4>
+                    </div>
+                </div>
+
+                <!-- Img 4 -->
+                <div class="group relative overflow-hidden rounded-2xl h-80 bg-noir border border-white/10">
+                    <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=800&q=80" 
+                         alt="Bollería fina artesanal" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 brightness-90 group-hover:brightness-100"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-noir via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <span class="text-[10px] uppercase font-semibold text-gold tracking-widest">Atelier Dulce</span>
+                        <h4 class="font-serif text-lg text-white font-bold">Croissants y Hojaldres Crujientes</h4>
+                    </div>
+                </div>
+
+                <!-- Img 5 -->
+                <div class="group relative overflow-hidden rounded-2xl h-80 bg-noir border border-white/10">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" 
+                         alt="Salón y mesas de Panadería Taberna" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 brightness-90 group-hover:brightness-100"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-noir via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <span class="text-[10px] uppercase font-semibold text-gold tracking-widest">Confort & Sonido</span>
+                        <h4 class="font-serif text-lg text-white font-bold">Música y Acompañamiento Calmo</h4>
+                    </div>
+                </div>
+
+                <!-- Img 6 -->
+                <div class="group relative overflow-hidden rounded-2xl h-80 bg-noir border border-white/10">
+                    <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=800&q=80" 
+                         alt="Desayunos en mesa en Villava" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 brightness-90 group-hover:brightness-100"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-noir via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <span class="text-[10px] uppercase font-semibold text-gold tracking-widest">Experiencia Integral</span>
+                        <h4 class="font-serif text-lg text-white font-bold">Desayunos y Meriendas Únicos</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: OPINIONES REALES VERIFICADAS (MANDATORY REVIEWS IN 5-STAR CARDS) -->
+    <section id="opiniones" class="py-24 bg-noir relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-gold text-xs font-semibold uppercase tracking-[0.2em] block mb-2">Testimonios de Clientes</span>
+                <h2 class="font-serif text-3xl sm:text-5xl text-white font-bold">Opiniones Reales Verificadas</h2>
+                <div class="w-16 h-0.5 bg-gold mx-auto mt-4 mb-4"></div>
+                <p class="text-neutral-400 text-sm">Nuestros clientes avalan la calidez humana de las nuevas dueñas, la atención personalizada y la calidad irreprochable.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Review 1 -->
+                <div class="bg-carbon/60 border border-white/10 p-6 rounded-2xl flex flex-col justify-between hover:border-gold/50 transition-all duration-300">
+                    <div>
+                        <!-- Stars -->
+                        <div class="flex text-gold text-xs space-x-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-xs sm:text-sm text-neutral-300 italic leading-relaxed mb-6">
+                            "De la ostia, las nuevas dueñas son súper majas. Gran cambio, recomiendo ir a desayunar, variedad de productos. Recomendable 100%"
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/5 flex items-center justify-between">
+                        <div>
+                            <span class="text-white text-xs font-semibold block">Jon Fernández Aso</span>
+                            <span class="text-[10px] text-neutral-500 uppercase tracking-wider">Cliente Verificado</span>
+                        </div>
+                        <i class="fa-brands fa-google text-neutral-500 text-sm"></i>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-carbon/60 border border-white/10 p-6 rounded-2xl flex flex-col justify-between hover:border-gold/50 transition-all duration-300">
+                    <div>
+                        <div class="flex text-gold text-xs space-x-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-xs sm:text-sm text-neutral-300 italic leading-relaxed mb-6">
+                            "Un sitio GENIAL,las chicas que lo llevan ahora son super simpáticas y amables. Muchas variedad y calidad de productos El café muy bueno…"
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/5 flex items-center justify-between">
+                        <div>
+                            <span class="text-white text-xs font-semibold block">Iñigo</span>
+                            <span class="text-[10px] text-neutral-500 uppercase tracking-wider">Cliente Verificado</span>
+                        </div>
+                        <i class="fa-brands fa-google text-neutral-500 text-sm"></i>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-carbon/60 border border-white/10 p-6 rounded-2xl flex flex-col justify-between hover:border-gold/50 transition-all duration-300">
+                    <div>
+                        <div class="flex text-gold text-xs space-x-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-xs sm:text-sm text-neutral-300 italic leading-relaxed mb-6">
+                            "Buena atención y calidad de productos. Lugar agradable para tomar un café a la mañana o a la tarde."
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/5 flex items-center justify-between">
+                        <div>
+                            <span class="text-white text-xs font-semibold block">Clau NM</span>
+                            <span class="text-[10px] text-neutral-500 uppercase tracking-wider">Cliente Verificado</span>
+                        </div>
+                        <i class="fa-brands fa-google text-neutral-500 text-sm"></i>
+                    </div>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="bg-carbon/60 border border-white/10 p-6 rounded-2xl flex flex-col justify-between hover:border-gold/50 transition-all duration-300">
+                    <div>
+                        <div class="flex text-gold text-xs space-x-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-xs sm:text-sm text-neutral-300 italic leading-relaxed mb-6">
+                            "Buen sitio para tomar un café y...algo más. Ponen música con buen volumen por si estas sol@ sentirte acompañad@. Café calidad taberna que nunca decepciona. El servicio te lo realizan a mesa, lo cuál es buen detalle si estas inpedido o con las manos ocupadas."
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/5 flex items-center justify-between">
+                        <div>
+                            <span class="text-white text-xs font-semibold block">manuel reyes velasco</span>
+                            <span class="text-[10px] text-neutral-500 uppercase tracking-wider">Cliente Verificado</span>
+                        </div>
+                        <i class="fa-brands fa-google text-neutral-500 text-sm"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: UBICACIÓN, MAPA & CONTACTO -->
+    <section id="contacto" class="py-24 bg-carbon/50 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-gold text-xs font-semibold uppercase tracking-widest block mb-2">Visítenos en Villava / Burlada</span>
+                <h2 class="font-serif text-3xl sm:text-5xl text-white font-bold">Dónde Encontrarnos</h2>
+                <div class="w-16 h-0.5 bg-gold mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
+                <!-- Info Column -->
+                <div class="lg:col-span-5 bg-noir border border-white/10 p-8 sm:p-10 rounded-3xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center text-gold">
+                                <i class="fa-solid fa-store text-xs"></i>
+                            </div>
+                            <span class="font-serif text-xl font-bold text-white tracking-wide">Panadería Taberna</span>
+                        </div>
+
+                        <ul class="space-y-6 text-sm text-neutral-300">
+                            <li class="flex items-start gap-4">
+                                <i class="fa-solid fa-location-dot text-gold text-lg mt-1"></i>
+                                <div>
+                                    <span class="text-xs uppercase font-semibold text-neutral-400 block tracking-wider">Dirección Exacta</span>
+                                    <p class="font-medium text-white">C. Ricardo Bel, 16, 4 C, 31610 Villava, Navarra, España</p>
+                                    <span class="text-xs text-neutral-500">Conexión inmediata con Burlada / Burlata</span>
+                                </div>
+                            </li>
+
+                            <li class="flex items-start gap-4">
+                                <i class="fa-solid fa-phone text-gold text-lg mt-1"></i>
+                                <div>
+                                    <span class="text-xs uppercase font-semibold text-neutral-400 block tracking-wider">Teléfono de Reservas y Pedidos</span>
+                                    <a href="tel:948333095" class="text-white hover:text-gold font-semibold transition-colors text-base">948 33 30 95</a>
+                                </div>
+                            </li>
+
+                            <li class="flex items-start gap-4">
+                                <i class="fa-solid fa-envelope text-gold text-lg mt-1"></i>
+                                <div>
+                                    <span class="text-xs uppercase font-semibold text-neutral-400 block tracking-wider">Correo Electrónico</span>
+                                    <a href="mailto:sales@perfectfit.com" class="text-white hover:text-gold transition-colors">sales@perfectfit.com</a>
+                                </div>
+                            </li>
+
+                            <li class="flex items-start gap-4">
+                                <i class="fa-solid fa-clock text-gold text-lg mt-1"></i>
+                                <div>
+                                    <span class="text-xs uppercase font-semibold text-neutral-400 block tracking-wider">Horario de Atención</span>
+                                    <p class="text-white">Lunes a Domingo: 07:30h - 20:30h ininterrumpido</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-8 border-t border-white/10 mt-8">
+                        <a href="tel:948333095" class="w-full inline-flex items-center justify-center gap-2 py-4 rounded-full text-xs font-semibold uppercase tracking-widest bg-gold text-noir hover:bg-gold-light transition-all duration-300 shadow-lg shadow-gold/20">
+                            <i class="fa-solid fa-phone"></i> Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Interactive Map Column (Exact embed provided) -->
+                <div class="lg:col-span-7 rounded-3xl overflow-hidden border border-white/10 bg-noir min-h-[380px] shadow-2xl flex items-center justify-center p-2">
+                    <iframe src="https://www.google.com/maps?q=Panader%C3%ADa%20Taberna%20C.%20Ricardo%20Bel%2C%2016%2C%204%20C%2C%2031610%20Villava%2C%20Navarra%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-noir border-t border-white/10 pt-16 pb-12 text-xs text-neutral-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8 pb-12 border-b border-white/5">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full border border-gold/30 flex items-center justify-center bg-carbon text-gold">
+                        <i class="fa-solid fa-wheat-awn"></i>
+                    </div>
+                    <div>
+                        <span class="font-serif text-xl font-bold tracking-wider text-white uppercase block leading-none">Panadería Taberna</span>
+                        <span class="text-[9px] uppercase tracking-[0.25em] text-gold font-medium">Boutique & Café Atelier · Villava / Burlada</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-6 uppercase tracking-wider text-[11px] text-neutral-400">
+                    <a href="#experiencia" class="hover:text-gold transition-colors">La Experiencia</a>
+                    <a href="#tarifas" class="hover:text-gold transition-colors">Nuestros Tratamientos, Cortes y Tarifas</a>
+                    <a href="#instalaciones" class="hover:text-gold transition-colors">Instalaciones</a>
+                    <a href="#opiniones" class="hover:text-gold transition-colors">Opiniones</a>
+                    <a href="#contacto" class="hover:text-gold transition-colors">Ubicación</a>
+                </div>
+
+                <div>
+                    <a href="tel:948333095" class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-[11px] font-semibold uppercase tracking-widest border border-gold text-gold hover:bg-gold hover:text-noir transition-all duration-300">
+                        <i class="fa-solid fa-phone"></i> Reservar Cita
+                    </a>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px]">
+                <p>&copy; 2025 Panadería Taberna. Todos los derechos reservados. Villava - Burlada (Navarra).</p>
+                <div class="flex items-center gap-4 text-neutral-400">
+                    <span>Atención a mesa de primera</span>
+                    <span>•</span>
+                    <a href="mailto:sales@perfectfit.com" class="hover:text-gold">sales@perfectfit.com</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Interaction Script -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close mobile menu on link click
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
+    </script>
+</body>
+</html>
