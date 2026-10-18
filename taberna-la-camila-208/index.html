@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taberna La Camila | Gastronomía & Almuerzos en Catarroja</title>
+    <meta name="description" content="Bienvenido a Taberna La Camila en Catarroja, Valencia. Menú del día, los mejores bocadillos de calamares y raciones de la máxima calidad en un ambiente exclusivo.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            100: '#FDF8EC',
+                            300: '#E5C985',
+                            400: '#D4AF37',
+                            500: '#C5A059',
+                            600: '#A68038',
+                            700: '#846226'
+                        },
+                        sand: '#F5F0EB',
+                        matte: '#121212',
+                        cardbg: '#1C1C1C'
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #121212;
+            color: #F5F0EB;
+        }
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'Playfair Display', serif;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFF0CA 0%, #D4AF37 50%, #997828 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border-glow {
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.08);
+        }
+        .gold-border-glow:hover {
+            border-color: rgba(212, 175, 55, 0.8);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-matte text-sand antialiased selection:bg-gold-500 selection:text-black">
+
+    <!-- TOP HEADER BAR -->
+    <div class="bg-black/80 border-b border-gold-500/20 text-xs py-2 px-4 text-center sm:text-left">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-6 text-stone-300">
+                <span><i class="fa-solid fa-location-dot text-gold-400 mr-2"></i>Carrer Francesc Larrode Mestre, 1, Catarroja</span>
+                <span class="hidden md:inline"><i class="fa-clock text-gold-400 mr-2"></i>Almuerzos & Comidas Diarias</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="tel:960562325" class="text-gold-400 hover:text-gold-300 transition font-semibold">
+                    <i class="fa-solid fa-phone mr-1"></i> 960 562 325
+                </a>
+                <span class="text-stone-600">|</span>
+                <a href="mailto:tabernalacamila@gmail.com" class="hover:text-gold-400 transition">
+                    <i class="fa-solid fa-envelope mr-1"></i> tabernalacamila@gmail.com
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-50 bg-matte/90 backdrop-blur-md border-b border-gold-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- LOGO -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center text-black font-serif font-bold text-xl shadow-lg group-hover:scale-105 transition transform">
+                        C
+                    </div>
+                    <div>
+                        <span class="block font-serif text-xl sm:text-2xl font-bold tracking-wider text-white group-hover:text-gold-400 transition">
+                            TABERNA LA CAMILA
+                        </span>
+                        <span class="block text-[10px] tracking-widest text-gold-400 uppercase font-light">Gastronomía & Boutique</span>
+                    </div>
+                </a>
+
+                <!-- DESKTOP NAV -->
+                <nav class="hidden md:flex items-center gap-8 text-sm uppercase tracking-widest text-stone-300">
+                    <a href="#inicio" class="hover:text-gold-400 transition">Inicio</a>
+                    <a href="#especialidades" class="hover:text-gold-400 transition">Nuestros Tratamientos & Tarifas</a>
+                    <a href="#instalaciones" class="hover:text-gold-400 transition">Instalaciones</a>
+                    <a href="#opiniones" class="hover:text-gold-400 transition">Opiniones</a>
+                    <a href="#contacto" class="hover:text-gold-400 transition">Contacto</a>
+                </nav>
+
+                <!-- CTA BUTTON -->
+                <div class="hidden sm:block">
+                    <a href="tel:960562325" class="relative inline-flex items-center justify-center px-6 py-2.5 text-xs uppercase tracking-widest font-semibold text-black bg-gradient-to-r from-gold-300 via-gold-400 to-gold-500 rounded-full overflow-hidden shadow-lg hover:shadow-gold-500/30 hover:scale-105 transition duration-300">
+                        <i class="fa-solid fa-calendar-check mr-2"></i> Reservar Cita
+                    </a>
+                </div>
+
+                <!-- MOBILE MENU BUTTON -->
+                <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden text-gold-400 focus:outline-none p-2">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- MOBILE MENU -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cardbg border-b border-gold-500/20 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="block py-2 text-stone-300 hover:text-gold-400 uppercase tracking-wider text-sm">Inicio</a>
+            <a href="#especialidades" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="block py-2 text-stone-300 hover:text-gold-400 uppercase tracking-wider text-sm">Nuestros Tratamientos & Tarifas</a>
+            <a href="#instalaciones" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="block py-2 text-stone-300 hover:text-gold-400 uppercase tracking-wider text-sm">Instalaciones</a>
+            <a href="#opiniones" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="block py-2 text-stone-300 hover:text-gold-400 uppercase tracking-wider text-sm">Opiniones</a>
+            <a href="#contacto" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="block py-2 text-stone-300 hover:text-gold-400 uppercase tracking-wider text-sm">Contacto</a>
+            <a href="tel:960562325" class="block text-center py-3 text-xs uppercase tracking-widest font-bold text-black bg-gold-400 rounded-full mt-4">
+                Reservar Cita
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="relative min-h-[85vh] flex items-center justify-center overflow-hidden py-20">
+        <!-- Background Overlay -->
+        <div class="absolute inset-0 z-0 bg-gradient-to-r from-black via-black/85 to-black/60"></div>
+        <img src="https://scontent-sjc6-1.xx.fbcdn.net/v/t39.30808-1/302465369_497694329024971_144361984433570125_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx695x695&amp;ctp=s695x695&amp;_nc_cat=104&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=X8WEqR0T1ikQ7kNvwH5vvzf&amp;_nc_oc=AdpkFYUzcJYAlAb0d1m9_0aLp-vY6D73R1zgtCWmceLViMg7TYobc-Lo7LkYh53jZ7k&amp;_nc_zt=24&amp;_nc_ht=scontent-sjc6-1.xx&amp;_nc_gid=mi46ghDOJb8l-4dWYL0azg&amp;_nc_ss=7b289&amp;oh=00_AQPmRbwTx0s5n4q-2CY4nCtBCxNuyIGO4U8UVBz8TvcGng&amp;oe=6ADA0CFD" 
+             alt="Taberna La Camila Catarroja" 
+             class="absolute inset-0 w-full h-full object-cover object-center z-[-1] opacity-40 filter brightness-90"
+             referrerpolicy="no-referrer" 
+             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs uppercase tracking-widest mb-6 backdrop-blur-sm">
+                <i class="fa-solid fa-crown text-xs"></i> Experiencia Gastronómica Exclusiva en Catarroja
+            </div>
+            
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-serif font-bold text-white tracking-tight leading-tight mb-6">
+                Donde la Tradición <br>
+                <span class="gold-gradient-text italic font-normal">se Viste de Elegancia</span>
+            </h1>
+
+            <p class="text-stone-300 text-base sm:text-lg max-w-2xl mx-auto font-light leading-relaxed mb-10">
+                Sumérgete en la auténtica cultura del almuerzo valenciano, menús del día exquisitos y bocadillos artesanales elaborados con ingredientes de primera calidad en un espacio boutique acogedor y distinguido.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="tel:960562325" class="w-full sm:w-auto px-8 py-4 text-xs font-bold uppercase tracking-widest text-black bg-gradient-to-r from-gold-300 via-gold-400 to-gold-500 rounded-full shadow-2xl hover:shadow-gold-500/40 hover:scale-105 transition transform duration-300 text-center">
+                    <i class="fa-solid fa-calendar-check mr-2"></i> Reservar Cita
+                </a>
+                <a href="#especialidades" class="w-full sm:w-auto px-8 py-4 text-xs font-bold uppercase tracking-widest text-gold-300 border border-gold-500/40 hover:bg-gold-500/10 rounded-full transition duration-300 text-center backdrop-blur-sm">
+                    <i class="fa-solid fa-utensils mr-2"></i> Ver Menú & Cartas
+                </a>
+            </div>
+
+            <!-- Highlights badges -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 pt-10 border-t border-stone-800/80 text-center">
+                <div class="p-3">
+                    <p class="text-gold-400 font-serif text-2xl font-bold">100%</p>
+                    <p class="text-xs text-stone-400 uppercase tracking-wider mt-1">Sabor Auténtico</p>
+                </div>
+                <div class="p-3">
+                    <p class="text-gold-400 font-serif text-2xl font-bold">11,00€</p>
+                    <p class="text-xs text-stone-400 uppercase tracking-wider mt-1">Menú del Día Completo</p>
+                </div>
+                <div class="p-3">
+                    <p class="text-gold-400 font-serif text-2xl font-bold">Top</p>
+                    <p class="text-xs text-stone-400 uppercase tracking-wider mt-1">Bocadillos & Almuerzos</p>
+                </div>
+                <div class="p-3">
+                    <p class="text-gold-400 font-serif text-2xl font-bold">5★</p>
+                    <p class="text-xs text-stone-400 uppercase tracking-wider mt-1">Atención Boutique</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DISTINCIÓN / FEATURES -->
+    <section class="py-20 bg-black/60 border-y border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-400 text-xs font-semibold uppercase tracking-widest">Excelencia & Calidad</span>
+                <h2 class="text-3xl sm:text-4xl font-serif text-white font-bold mt-2">La Experiencia Taberna La Camila</h2>
+                <div class="w-16 h-0.5 bg-gold-400 mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-cardbg p-8 rounded-2xl gold-border-glow transition-all duration-300">
+                    <div class="w-14 h-14 rounded-full bg-gold-500/10 flex items-center justify-center text-gold-400 text-2xl mb-6">
+                        <i class="fa-solid fa-bread-slice"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-white mb-3">El Arte del Almuerzo</h3>
+                    <p class="text-stone-400 text-sm leading-relaxed">
+                        Variedad de almuerzos tradicionales con pan espectacular y crujiente, bocadillos abundantes como nuestros famosos calamares recién hechos.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-cardbg p-8 rounded-2xl gold-border-glow transition-all duration-300">
+                    <div class="w-14 h-14 rounded-full bg-gold-500/10 flex items-center justify-center text-gold-400 text-2xl mb-6">
+                        <i class="fa-solid fa-wine-glass"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-white mb-3">Menú del Día Exquisito</h3>
+                    <p class="text-stone-400 text-sm leading-relaxed">
+                        Propuesta diaria imbatible por 11€: ensalada, primer y segundo plato, bebida, pan, postre casero y café con solomillos y guisos de primera.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-cardbg p-8 rounded-2xl gold-border-glow transition-all duration-300">
+                    <div class="w-14 h-14 rounded-full bg-gold-500/10 flex items-center justify-center text-gold-400 text-2xl mb-6">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-white mb-3">Trato Cálido & Personalizado</h3>
+                    <p class="text-stone-400 text-sm leading-relaxed">
+                        Servicio atento y encantador en todo momento. Cuidamos cada detalle para que cada visita sea una experiencia memorable y repetible.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN "NUESTROS TRATAMIENTOS, CORTES Y TARIFAS" (CARTA Y ESPECIALIDADES) -->
+    <section id="especialidades" class="py-24 bg-matte relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-400 text-xs font-semibold uppercase tracking-widest">Nuestra Propuesta Gastronómica</span>
+                <h2 class="text-3xl sm:text-5xl font-serif text-white font-bold mt-2">Nuestros Tratamientos, Cortes y Tarifas</h2>
+                <p class="text-stone-400 text-sm mt-4">Una cuidada selección culinaria donde prima la calidad, la cantidad generosa y el sabor inigualable.</p>
+                <div class="w-20 h-0.5 bg-gold-400 mx-auto mt-4"></div>
+            </div>
+
+            <!-- Categories Grid -->
+            <div class="grid lg:grid-cols-3 gap-8">
+                
+                <!-- Categoría 1: Menú del Día Boutique -->
+                <div class="bg-cardbg rounded-2xl p-8 border border-stone-800 hover:border-gold-500/50 transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <div>
+                                <span class="text-xs uppercase tracking-widest text-gold-400 font-semibold">Menú Estrella</span>
+                                <h3 class="text-2xl font-serif font-bold text-white mt-1">Menú del Día Completo</h3>
+                            </div>
+                            <span class="text-2xl font-serif font-bold text-gold-400 bg-gold-500/10 px-3 py-1 rounded-lg border border-gold-500/30">11,00€</span>
+                        </div>
+                        <p class="text-stone-400 text-xs mb-6">Incluye ensalada de la casa, primer plato, segundo plato, bebida, pan recién horneado, postre de la casa y café.</p>
+                        
+                        <ul class="space-y-4 text-sm text-stone-300 border-t border-stone-800 pt-6">
+                            <li class="flex justify-between items-center">
+                                <span><i class="fa-solid fa-check text-gold-400 mr-2"></i> Ensalada Fresca de la Casa</span>
+                                <span class="text-xs text-stone-500">Incluido</span>
+                            </li>
+                            <li class="flex justify-between items-center">
+                                <span><i class="fa-solid fa-check text-gold-400 mr-2"></i> Primeros Platos Cuchara/Arroz</span>
+                                <span class="text-xs text-stone-500">Incluido</span>
+                            </li>
+                            <li class="flex justify-between items-center">
+                                <span><i class="fa-solid fa-check text-gold-400 mr-2"></i> Solomillo Tierno a la Plancha</span>
+                                <span class="text-xs text-stone-500">Especialidad</span>
+                            </li>
+                            <li class="flex justify-between items-center">
+                                <span><i class="fa-solid fa-check text-gold-400 mr-2"></i> Postre Casero, Pan y Café</span>
+                                <span class="text-xs text-stone-500">Incluido</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-stone-800">
+                        <a href="tel:960562325" class="block text-center py-3 px-4 text-xs font-bold uppercase tracking-widest text-black bg-gold-400 hover:bg-gold-300 rounded-xl transition">
+                            <i class="fa-solid fa-calendar-plus mr-1"></i> Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Categoría 2: Almuerzos Valencianos & Bocadillos -->
+                <div class="bg-cardbg rounded-2xl p-8 border border-stone-800 hover:border-gold-500/50 transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <div>
+                                <span class="text-xs uppercase tracking-widest text-gold-400 font-semibold">Tradición Valenciana</span>
+                                <h3 class="text-2xl font-serif font-bold text-white mt-1">Almuerzos & Bocadillos</h3>
+                            </div>
+                            <span class="text-xs font-semibold text-gold-400 bg-gold-500/10 px-3 py-1 rounded-lg border border-gold-500/30">Según Bocadillo</span>
+                        </div>
+                        <p class="text-stone-400 text-xs mb-6">Servidos en un pan crujiente espectacular, acompañados de cacaos y aceitunas.</p>
+                        
+                        <ul class="space-y-4 text-sm text-stone-300 border-t border-stone-800 pt-6">
+                            <li class="flex justify-between items-start">
+                                <div>
+                                    <span class="font-semibold text-white">Bocadillo de Calamares</span>
+                                    <p class="text-xs text-stone-400">Calamares recién hechos, tiernos con alioli casero</p>
+                                </div>
+                                <span class="text-gold-400 font-serif font-bold text-sm">Muy Top</span>
+                            </li>
+                            <li class="flex justify-between items-start">
+                                <div>
+                                    <span class="font-semibold text-white">Almuerzo Chivito / Brascada</span>
+                                    <p class="text-xs text-stone-400">Carnes selectas con pan artesanal</p>
+                                </div>
+                                <span class="text-gold-400 font-serif font-bold text-sm">Popular</span>
+                            </li>
+                            <li class="flex justify-between items-start">
+                                <div>
+                                    <span class="font-semibold text-white">Variedad de Tortillas & Revueltos</span>
+                                    <p class="text-xs text-stone-400">Ingredientes frescos del día</p>
+                                </div>
+                                <span class="text-gold-400 font-serif font-bold text-sm">Clásico</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-stone-800">
+                        <a href="tel:960562325" class="block text-center py-3 px-4 text-xs font-bold uppercase tracking-widest text-black bg-gold-400 hover:bg-gold-300 rounded-xl transition">
+                            <i class="fa-solid fa-calendar-plus mr-1"></i> Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Categoría 3: Platos a Compartir & Tapas -->
+                <div class="bg-cardbg rounded-2xl p-8 border border-stone-800 hover:border-gold-500/50 transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <div>
+                                <span class="text-xs uppercase tracking-widest text-gold-400 font-semibold">Para Grupos & Amigos</span>
+                                <h3 class="text-2xl font-serif font-bold text-white mt-1">Platos a Compartir</h3>
+                            </div>
+                            <span class="text-xs font-semibold text-gold-400 bg-gold-500/10 px-3 py-1 rounded-lg border border-gold-500/30">Cantidades 10</span>
+                        </div>
+                        <p class="text-stone-400 text-xs mb-6">Generosidad, presentación distinguida y máxima calidad gastronómica para disfrutar en compañía.</p>
+                        
+                        <ul class="space-y-4 text-sm text-stone-300 border-t border-stone-800 pt-6">
+                            <li class="flex justify-between items-start">
+                                <div>
+                                    <span class="font-semibold text-white">Raciones de Calamares & Puntilla</span>
+                                    <p class="text-xs text-stone-400">Fritura crujiente en su punto justo</p>
+                                </div>
+                            </li>
+                            <li class="flex justify-between items-start">
+                                <div>
+                                    <span class="font-semibold text-white">Tablas Selección La Camila</span>
+                                    <p class="text-xs text-stone-400">Embutidos y quesos de la mejor categoría</p>
+                                </div>
+                            </li>
+                            <li class="flex justify-between items-start">
+                                <div>
+                                    <span class="font-semibold text-white">Especialidades del Chef</span>
+                                    <p class="text-xs text-stone-400">Platos de temporada servidos con abundancia</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-stone-800">
+                        <a href="tel:960562325" class="block text-center py-3 px-4 text-xs font-bold uppercase tracking-widest text-black bg-gold-400 hover:bg-gold-300 rounded-xl transition">
+                            <i class="fa-solid fa-calendar-plus mr-1"></i> Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERÍA: NUESTRAS INSTALACIONES Y TRABAJOS -->
+    <section id="instalaciones" class="py-24 bg-black/80 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-400 text-xs font-semibold uppercase tracking-widest">Ambiente Distinguido</span>
+                <h2 class="text-3xl sm:text-5xl font-serif text-white font-bold mt-2">Nuestras Instalaciones y Trabajos</h2>
+                <p class="text-stone-400 text-sm mt-3">Un espacio pensado para disfrutar del buen comer con un ambiente cálido, refinado y acogedor.</p>
+                <div class="w-16 h-0.5 bg-gold-400 mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Imagen Real Extraída -->
+                <div class="relative group rounded-2xl overflow-hidden border border-stone-800 gold-border-glow h-80">
+                    <img src="https://scontent-sjc6-1.xx.fbcdn.net/v/t39.30808-1/302465369_497694329024971_144361984433570125_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx695x695&amp;ctp=s695x695&amp;_nc_cat=104&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=X8WEqR0T1ikQ7kNvwH5vvzf&amp;_nc_oc=AdpkFYUzcJYAlAb0d1m9_0aLp-vY6D73R1zgtCWmceLViMg7TYobc-Lo7LkYh53jZ7k&amp;_nc_zt=24&amp;_nc_ht=scontent-sjc6-1.xx&amp;_nc_gid=mi46ghDOJb8l-4dWYL0azg&amp;_nc_ss=7b289&amp;oh=00_AQPmRbwTx0s5n4q-2CY4nCtBCxNuyIGO4U8UVBz8TvcGng&amp;oe=6ADA0CFD" 
+                         alt="Instalaciones Taberna La Camila" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition"></div>
+                    <div class="absolute bottom-4 left-4 right-4 text-left">
+                        <span class="text-xs text-gold-400 uppercase tracking-widest">Taberna La Camila</span>
+                        <h4 class="text-lg font-serif font-bold text-white">Nuestra Esencia</h4>
+                    </div>
+                </div>
+
+                <!-- Galería Secundaria 1 -->
+                <div class="relative group rounded-2xl overflow-hidden border border-stone-800 gold-border-glow h-80">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1000&q=80" 
+                         alt="Gastronomía y Platos Exquisitos" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition"></div>
+                    <div class="absolute bottom-4 left-4 right-4 text-left">
+                        <span class="text-xs text-gold-400 uppercase tracking-widest">Especialidades</span>
+                        <h4 class="text-lg font-serif font-bold text-white">Platos y Raciones Seleccionadas</h4>
+                    </div>
+                </div>
+
+                <!-- Galería Secundaria 2 -->
+                <div class="relative group rounded-2xl overflow-hidden border border-stone-800 gold-border-glow h-80">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=80" 
+                         alt="Ambiente de Taberna La Camila" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition"></div>
+                    <div class="absolute bottom-4 left-4 right-4 text-left">
+                        <span class="text-xs text-gold-400 uppercase tracking-widest">Catarroja</span>
+                        <h4 class="text-lg font-serif font-bold text-white">Un Rincón Único</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OPINIONES REALES VERIFICADAS -->
+    <section id="opiniones" class="py-24 bg-matte relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-400 text-xs font-semibold uppercase tracking-widest">Testimonios Reales</span>
+                <h2 class="text-3xl sm:text-5xl font-serif text-white font-bold mt-2">Opiniones Reales Verificadas</h2>
+                <p class="text-stone-400 text-sm mt-3">Lo que dicen nuestros clientes tras su visita a Taberna La Camila.</p>
+                <div class="w-16 h-0.5 bg-gold-400 mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Review 1 -->
+                <div class="bg-cardbg p-6 rounded-2xl border border-stone-800 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-1 text-gold-400 mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-stone-300 text-sm italic leading-relaxed mb-6">
+                            "Taberna la Camila en Catarroja. Bastante variedad de almuerzos y precios según el grupo de bocadillos. Lo podéis ver en las fotos.…"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-stone-800">
+                        <div class="w-10 h-10 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center font-bold font-serif">
+                            J
+                        </div>
+                        <div>
+                            <p class="text-white font-semibold text-sm">javi marco</p>
+                            <p class="text-xs text-stone-500">Cliente Verificado en Google</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-cardbg p-6 rounded-2xl border border-stone-800 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-1 text-gold-400 mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-stone-300 text-sm italic leading-relaxed mb-6">
+                            "Espectacular! La comida estaba buenísima, se nota la calidad en cada plato. Además, el camarero ha sido encantador, súper atento y amable en todo momento. Un sitio de 10 al que volveremos seguro."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-stone-800">
+                        <div class="w-10 h-10 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center font-bold font-serif">
+                            C
+                        </div>
+                        <div>
+                            <p class="text-white font-semibold text-sm">concepcion serrano asuncion</p>
+                            <p class="text-xs text-stone-500">Cliente Verificada en Google</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-cardbg p-6 rounded-2xl border border-stone-800 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-1 text-gold-400 mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-stone-300 text-sm italic leading-relaxed mb-6">
+                            "El bocadillo de calamares muy recomendable. calamares recién hechos con un pan espectacular"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-stone-800">
+                        <div class="w-10 h-10 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center font-bold font-serif">
+                            A
+                        </div>
+                        <div>
+                            <p class="text-white font-semibold text-sm">Antonio Valencia</p>
+                            <p class="text-xs text-stone-500">Cliente Verificado en Google</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="bg-cardbg p-6 rounded-2xl border border-stone-800 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-1 text-gold-400 mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-stone-300 text-sm italic leading-relaxed mb-6">
+                            "No sé puede comer mejor. Cantidades y calidad de 10. Fuimos un grupo de amigas desde Murcia e hicimos parada aquí de camino a Valencia, y apenas te desvías. Para la próxima vez volveremos 😊. Por cierto, en cuanto a los platos a compartir te los ponen todos y mucha cantidad…"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-stone-800">
+                        <div class="w-10 h-10 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center font-bold font-serif">
+                            A
+                        </div>
+                        <div>
+                            <p class="text-white font-semibold text-sm">Anabel</p>
+                            <p class="text-xs text-stone-500">Cliente Verificada en Google</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 5 -->
+                <div class="bg-cardbg p-6 rounded-2xl border border-stone-800 flex flex-col justify-between md:col-span-2 lg:col-span-1">
+                    <div>
+                        <div class="flex items-center gap-1 text-gold-400 mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-stone-300 text-sm italic leading-relaxed mb-6">
+                            "No puedes pedir más por 11€: ensalada, bebida, primer y segundo plato, pan, postre y café. Obviamente no puedes esperar una calidad de primera pero aún así, todo cumplió nuestras expectativas. El solomillo estaba muy rico aunque era…"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-stone-800">
+                        <div class="w-10 h-10 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center font-bold font-serif">
+                            J
+                        </div>
+                        <div>
+                            <p class="text-white font-semibold text-sm">José M. Martínez</p>
+                            <p class="text-xs text-stone-500">Cliente Verificado en Google</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO Y UBICACIÓN INTERACTIVA -->
+    <section id="contacto" class="py-24 bg-black/90 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Info de contacto -->
+                <div>
+                    <span class="text-gold-400 text-xs font-semibold uppercase tracking-widest">Encuéntranos en Catarroja</span>
+                    <h2 class="text-3xl sm:text-5xl font-serif text-white font-bold mt-2 mb-6">Ubicación & Contacto</h2>
+                    <p class="text-stone-400 text-sm mb-8 leading-relaxed">
+                        Visítanos en nuestra taberna en Catarroja o reserva tu mesa para asegurar la mejor atención para tus almuerzos o comidas diarias.
+                    </p>
+
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 text-xl shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold text-sm">Dirección Exacta</h4>
+                                <p class="text-stone-400 text-sm mt-0.5">Carrer Francesc Larrode Mestre, 1, 46470 Catarroja, Valencia, España</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 text-xl shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold text-sm">Teléfono Directo</h4>
+                                <a href="tel:960562325" class="text-gold-400 hover:text-gold-300 font-semibold text-base transition">960 562 325</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 text-xl shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold text-sm">Correo Electrónico</h4>
+                                <a href="mailto:tabernalacamila@gmail.com" class="text-stone-300 hover:text-gold-400 text-sm transition">tabernalacamila@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 flex flex-col sm:flex-row gap-4">
+                        <a href="tel:960562325" class="inline-flex items-center justify-center px-8 py-4 text-xs font-bold uppercase tracking-widest text-black bg-gradient-to-r from-gold-300 via-gold-400 to-gold-500 rounded-full shadow-lg hover:scale-105 transition duration-300">
+                            <i class="fa-solid fa-calendar-check mr-2"></i> Reservar Cita
+                        </a>
+                        <a href="https://www.google.com/maps?q=Taberna%20La%20Camila%20Carrer%20Francesc%20Larrode%20Mestre%2C%201%2C%2046470%20Catarroja%2C%20Valencia%2C%20Espa%C3%B1a" target="_blank" rel="noopener" class="inline-flex items-center justify-center px-8 py-4 text-xs font-bold uppercase tracking-widest text-gold-300 border border-gold-500/40 hover:bg-gold-500/10 rounded-full transition">
+                            <i class="fa-solid fa-map-location-dot mr-2"></i> Cómo Llegar
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mapa interactivo real -->
+                <div class="rounded-2xl overflow-hidden border border-gold-500/30 p-2 bg-cardbg shadow-2xl">
+                    <iframe src="https://www.google.com/maps?q=Taberna%20La%20Camila%20Carrer%20Francesc%20Larrode%20Mestre%2C%201%2C%2046470%20Catarroja%2C%20Valencia%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black py-12 border-t border-stone-900 text-stone-500 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full bg-gold-500 flex items-center justify-center text-black font-serif font-bold text-base">
+                        C
+                    </div>
+                    <span class="font-serif text-lg font-bold text-white tracking-wider">TABERNA LA CAMILA</span>
+                </div>
+
+                <div class="text-center md:text-left text-stone-400">
+                    <p>Carrer Francesc Larrode Mestre, 1, 46470 Catarroja, Valencia</p>
+                </div>
+
+                <div>
+                    <a href="tel:960562325" class="inline-flex items-center gap-2 text-gold-400 font-bold hover:underline">
+                        <i class="fa-solid fa-phone"></i> 960 562 325
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="mt-8 pt-8 border-t border-stone-900 text-center text-stone-600 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> Taberna La Camila. Todos los derechos reservados.</p>
+                <p class="text-stone-500">Diseño Boutique & Gastronomía Valenciana</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
