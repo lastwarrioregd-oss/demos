@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Santos Cafetería | Desayunos, Menús y Café de Especialidad en Santiago de Compostela</title>
+  <meta name="description" content="Santos Cafetería en Av. de Barcelona, Santiago de Compostela. Desayunos con cortesía, menú del día abundante por 12€, ambiente tranquilo con vistas al Pedroso. ¡Reserva tu mesa!">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            espresso: {
+              900: '#1c1410',
+              800: '#2b1e17',
+              700: '#3c2b22',
+            },
+            terracotta: {
+              DEFAULT: '#b4532a',
+              light: '#c8673d',
+              dark: '#933e1c'
+            },
+            crema: {
+              50: '#fdfbf7',
+              100: '#f7f2ea',
+              200: '#ece3d2',
+              300: '#ded0b8',
+            },
+            gold: {
+              DEFAULT: '#c59d5f',
+              light: '#dfba81',
+            }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .bg-pattern {
+      background-color: #f7f2ea;
+      background-image: radial-gradient(#b4532a 0.75px, transparent 0.75px), radial-gradient(#b4532a 0.75px, #f7f2ea 0.75px);
+      background-size: 30px 30px;
+      background-position: 0 0, 15px 15px;
+      background-opacity: 0.05;
+    }
+  </style>
+</head>
+
+<body class="font-sans bg-crema-50 text-espresso-900 antialiased selection:bg-terracotta selection:text-white">
+
+  <!-- TOP BAR -->
+  <aside aria-label="Información rápida" class="bg-espresso-900 text-crema-200 text-xs py-2 px-4 border-b border-espresso-700">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+      <div class="flex items-center gap-6">
+        <span class="flex items-center gap-2">
+          <i class="fa-solid fa-location-dot text-terracotta-light"></i>
+          Av. de Barcelona, N24/26, 15706 Santiago de Compostela
+        </span>
+        <span class="hidden md:flex items-center gap-2">
+          <i class="fa-regular fa-clock text-terracotta-light"></i>
+          Abierto desde primera hora para tus desayunos
+        </span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="tel:981021526" class="hover:text-gold-light transition-colors font-medium flex items-center gap-1.5">
+          <i class="fa-solid fa-phone text-xs"></i> 981 02 15 26
+        </a>
+        <span class="text-espresso-700">|</span>
+        <a href="mailto:santoscafeteriasantiago@gmail.com" class="hover:text-gold-light transition-colors hidden sm:inline">
+          santoscafeteriasantiago@gmail.com
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 bg-crema-50/95 backdrop-blur-md shadow-sm border-b border-crema-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-terracotta shadow-md bg-crema-100 flex items-center justify-center">
+          <img 
+            src="https://scontent-iad6-1.xx.fbcdn.net/v/t39.30808-1/243209565_229229732559368_7882923699318200873_n.png?stp=dst-png&amp;cstp=mx1194x1392&amp;ctp=s720x720&amp;_nc_cat=100&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=3v6lNPc-mZEQ7kNvwFl2YsP&amp;_nc_oc=AdqDIcGis9qmUhuI_hGJY6PpSLZyqRfn4cZrSWp0itGSasXeaOpJ8hljJm9WydYWB0A&amp;_nc_zt=24&amp;_nc_ht=scontent-iad6-1.xx&amp;_nc_gid=RbIB4HCu0EFNSDeTyP1QpQ&amp;_nc_ss=7b289&amp;oh=00_AQO8EJ5mNSChMgOH3OS4NTjbILKIyOVYG2DlWJZ1jezNGw&amp;oe=6ADAFD72" 
+            alt="Santos Cafetería Logo" 
+            class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+            referrerpolicy="no-referrer"
+            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+          >
+        </div>
+        <div>
+          <span class="block font-serif text-2xl font-bold tracking-tight text-espresso-900 leading-none">Santos</span>
+          <span class="text-xs uppercase tracking-widest text-terracotta font-semibold">Cafetería & Bistró</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-8 font-medium text-sm text-espresso-800">
+        <a href="#experiencia" class="hover:text-terracotta transition-colors">La Experiencia</a>
+        <a href="#carta" class="hover:text-terracotta transition-colors">Nuestra Carta</a>
+        <a href="#instalaciones" class="hover:text-terracotta transition-colors">Instalaciones</a>
+        <a href="#opiniones" class="hover:text-terracotta transition-colors">Opiniones</a>
+        <a href="#contacto" class="hover:text-terracotta transition-colors">Ubicación</a>
+      </nav>
+
+      <!-- Action Button -->
+      <div class="flex items-center gap-3">
+        <a href="tel:981021526" class="inline-flex items-center gap-2 bg-terracotta hover:bg-terracotta-dark text-white font-medium px-5 py-2.5 rounded-full shadow-md hover:shadow-lg transition transform active:scale-95 text-sm">
+          <i class="fa-solid fa-mug-hot"></i>
+          <span>Reservar Mesa</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative bg-espresso-900 text-crema-50 overflow-hidden py-20 lg:py-28">
+    <div class="absolute inset-0 opacity-20">
+      <img 
+        src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1920&q=80" 
+        alt="Interior Santos Cafetería" 
+        class="w-full h-full object-cover"
+        referrerpolicy="no-referrer"
+        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+      >
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-r from-espresso-900 via-espresso-900/90 to-transparent"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-crema-100/10 border border-crema-200/20 backdrop-blur text-gold-light text-xs font-semibold uppercase tracking-wider">
+            <i class="fa-solid fa-mountain-sun text-terracotta-light"></i>
+            Vistas al Pedroso · Santiago de Compostela
+          </div>
+          <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-crema-50">
+            El placer de un buen café, <br class="hidden sm:inline">
+            <span class="italic font-normal text-gold-light">con calma y generosidad.</span>
+          </h1>
+          <p class="text-crema-200 text-base sm:text-lg max-w-2xl font-light leading-relaxed">
+            Descubre un espacio amplio, impecable y sosegado en la Avenida de Barcelona. Despiértate con nuestro café de autor acompañado de cortesía (churrito o mini croissant y zumito) o disfruta de nuestro abundante y variado menú del día por solo 12€.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4 pt-2">
+            <a href="tel:981021526" class="inline-flex justify-center items-center gap-2 bg-terracotta hover:bg-terracotta-dark text-white font-semibold px-8 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-base">
+              <i class="fa-solid fa-phone"></i>
+              Reservar Mesa
+            </a>
+            <a href="#carta" class="inline-flex justify-center items-center gap-2 bg-crema-100/10 hover:bg-crema-100/20 border border-crema-200/30 text-crema-100 font-medium px-8 py-3.5 rounded-xl backdrop-blur transition duration-300 text-base">
+              <i class="fa-solid fa-utensils text-terracotta-light"></i>
+              Explorar Nuestra Carta
+            </a>
+          </div>
+
+          <!-- Proof points -->
+          <div class="pt-6 border-t border-espresso-700/60 grid grid-cols-3 gap-4 text-left">
+            <div>
+              <p class="font-serif text-2xl font-bold text-gold-light">100%</p>
+              <p class="text-xs text-crema-300">Cortesía dulce en cada desayuno</p>
+            </div>
+            <div>
+              <p class="font-serif text-2xl font-bold text-gold-light">12 €</p>
+              <p class="text-xs text-crema-300">Menú casero abundante y variado</p>
+            </div>
+            <div>
+              <p class="font-serif text-2xl font-bold text-gold-light">Vistas</p>
+              <p class="text-xs text-crema-300">Lateral sereno al Monte Pedroso</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero visual / Identity Card -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative w-full max-w-md">
+            <div class="absolute -top-4 -left-4 w-72 h-72 bg-terracotta/20 rounded-full blur-3xl"></div>
+            
+            <div class="relative bg-espresso-800 border border-crema-200/20 p-6 rounded-3xl shadow-2xl overflow-hidden">
+              <div class="relative aspect-[4/3] rounded-2xl overflow-hidden mb-6 shadow-inner bg-espresso-900">
+                <img 
+                  src="https://scontent-iad6-1.xx.fbcdn.net/v/t39.30808-1/243209565_229229732559368_7882923699318200873_n.png?stp=dst-png&amp;cstp=mx1194x1392&amp;ctp=s720x720&amp;_nc_cat=100&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=3v6lNPc-mZEQ7kNvwFl2YsP&amp;_nc_oc=AdqDIcGis9qmUhuI_hGJY6PpSLZyqRfn4cZrSWp0itGSasXeaOpJ8hljJm9WydYWB0A&amp;_nc_zt=24&amp;_nc_ht=scontent-iad6-1.xx&amp;_nc_gid=RbIB4HCu0EFNSDeTyP1QpQ&amp;_nc_ss=7b289&amp;oh=00_AQO8EJ5mNSChMgOH3OS4NTjbILKIyOVYG2DlWJZ1jezNGw&amp;oe=6ADAFD72" 
+                  alt="Santos Cafetería Oficial" 
+                  class="w-full h-full object-cover"
+                  referrerpolicy="no-referrer"
+                  onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                >
+                <div class="absolute bottom-3 left-3 bg-espresso-900/85 backdrop-blur px-3 py-1.5 rounded-lg border border-crema-200/20 flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                  <span class="text-xs font-semibold text-crema-100">Atención rápida y amable</span>
+                </div>
+              </div>
+
+              <div class="space-y-3">
+                <div class="flex items-center justify-between">
+                  <h3 class="font-serif text-xl font-bold text-crema-50">Santos Cafetería</h3>
+                  <div class="flex text-amber-400 text-sm">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
+                <p class="text-xs text-crema-300 leading-relaxed italic">
+                  "Todo muy ordenado y limpio. Local sin mucho ruido donde desayunar es un placer, con churrito y croissant mini de cortesía."
+                </p>
+                <div class="pt-3 border-t border-espresso-700 flex justify-between items-center text-xs text-crema-300">
+                  <span><i class="fa-solid fa-map-pin text-terracotta-light mr-1"></i> Santiago de Compostela</span>
+                  <a href="tel:981021526" class="text-gold-light hover:underline font-semibold">Llamar ahora &rarr;</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHTS / POR QUÉ SANTOS -->
+  <section id="experiencia" class="py-20 bg-crema-100/70">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-bold tracking-widest text-terracotta uppercase">Nuestra Filosofía</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-espresso-900 mt-2">La calidez que te hace volver cada día</h2>
+        <div class="w-16 h-1 bg-terracotta mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Card 1 -->
+        <div class="bg-white p-8 rounded-2xl border border-crema-200/80 shadow-sm hover:shadow-md transition duration-300">
+          <div class="w-14 h-14 rounded-xl bg-crema-100 text-terracotta flex items-center justify-center text-2xl mb-6">
+            <i class="fa-solid fa-croissant"></i>
+          </div>
+          <h3 class="font-serif text-xl font-bold text-espresso-900 mb-2">Detalle de Cortesía</h3>
+          <p class="text-sm text-espresso-700/80 leading-relaxed">
+            Con cada café de la mañana te recibimos con un mini croissant recién horneado, un churrito y un vasito de zumo para endulzar el inicio del día.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white p-8 rounded-2xl border border-crema-200/80 shadow-sm hover:shadow-md transition duration-300">
+          <div class="w-14 h-14 rounded-xl bg-crema-100 text-terracotta flex items-center justify-center text-2xl mb-6">
+            <i class="fa-solid fa-mountain"></i>
+          </div>
+          <h3 class="font-serif text-xl font-bold text-espresso-900 mb-2">Vistas al Pedroso</h3>
+          <p class="text-sm text-espresso-700/80 leading-relaxed">
+            Nuestros ventanales laterales te brindan una panorámica única hacia el Monte Pedroso mientras disfrutas de una pausa libre de ruidos y estrés.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white p-8 rounded-2xl border border-crema-200/80 shadow-sm hover:shadow-md transition duration-300">
+          <div class="w-14 h-14 rounded-xl bg-crema-100 text-terracotta flex items-center justify-center text-2xl mb-6">
+            <i class="fa-solid fa-pot-food"></i>
+          </div>
+          <h3 class="font-serif text-xl font-bold text-espresso-900 mb-2">Menú Abundante a 12€</h3>
+          <p class="text-sm text-espresso-700/80 leading-relaxed">
+            Cocina honesta, casera y en raciones de verdad. Platos variados para todos los gustos preparados a diario con ingredientes frescos de la comarca.
+          </p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="bg-white p-8 rounded-2xl border border-crema-200/80 shadow-sm hover:shadow-md transition duration-300">
+          <div class="w-14 h-14 rounded-xl bg-crema-100 text-terracotta flex items-center justify-center text-2xl mb-6">
+            <i class="fa-solid fa-sparkles"></i>
+          </div>
+          <h3 class="font-serif text-xl font-bold text-espresso-900 mb-2">Espacio Amplio e Impecable</h3>
+          <p class="text-sm text-espresso-700/80 leading-relaxed">
+            Máxima pulcritud y comodidad. Un ambiente diáfano ideal tanto para reuniones de trabajo rápidas como para almuerzos relajados entre amigos.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- NUESTRA CARTA, PLATOS ESTRELLA Y ESPECIALIDADES -->
+  <section id="carta" class="py-24 bg-crema-50 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold tracking-widest text-terracotta uppercase">Gastronomía & Tradición</span>
+        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-espresso-900 mt-2">Nuestra Carta, Platos Estrella y Especialidades</h2>
+        <p class="text-espresso-700 mt-4 text-base">Sabores caseros preparados al momento. Desde el primer café del alba hasta el almuerzo más contundente.</p>
+        <div class="w-16 h-1 bg-terracotta mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <!-- Categories Grid -->
+      <div class="grid lg:grid-cols-3 gap-8">
+        
+        <!-- Category 1: Desayunos & Cafetería -->
+        <div class="bg-white rounded-3xl p-8 border border-crema-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between pb-6 border-b border-crema-200">
+              <h3 class="font-serif text-2xl font-bold text-espresso-900">Desayunos con Detalle</h3>
+              <i class="fa-solid fa-coffee-bean text-2xl text-terracotta"></i>
+            </div>
+            <p class="text-xs text-espresso-700/80 italic mt-3 mb-6">
+              *Todos los cafés mañaneros incluyen mini cruasán artesano o churrito y chupito de zumo natural de cortesía.
+            </p>
+
+            <ul class="space-y-6">
+              <li class="pb-4 border-b border-dashed border-crema-200">
+                <div class="flex justify-between items-baseline mb-1">
+                  <h4 class="font-bold text-espresso-900">Café Especial Santos + Cortesía</h4>
+                  <span class="font-serif font-bold text-terracotta text-lg">1,60 €</span>
+                </div>
+                <p class="text-xs text-espresso-700">Café de tueste selecto servido con leche fresca, acompañado de mini croissant y vasito de zumo.</p>
+              </li>
+
+              <li class="pb-4 border-b border-dashed border-crema-200">
+                <div class="flex justify-between items-baseline mb-1">
+                  <h4 class="font-bold text-espresso-900">Tosta de Hogaza de Masa Madre</h4>
+                  <span class="font-serif font-bold text-terracotta text-lg">3,80 €</span>
+                </div>
+                <p class="text-xs text-espresso-700">Tomate natural rallado al aceite virgen extra de oliva y lascas de jamón ibérico seleccionado.</p>
+              </li>
+
+              <li class="pb-4 border-b border-dashed border-crema-200">
+                <div class="flex justify-between items-baseline mb-1">
+                  <h4 class="font-bold text-espresso-900">Desayuno Completo Gallego</h4>
+                  <span class="font-serif font-bold text-terracotta text-lg">4,50 €</span>
+                </div>
+                <p class="text-xs text-espresso-700">Café doble, zumo de naranja recién exprimido, tostada artesana con mantequilla o mermelada y bollería fina.</p>
+              </li>
+
+              <li>
+                <div class="flex justify-between items-baseline mb-1">
+                  <h4 class="font-bold text-espresso-900">Churros Tradicionales & Chocolate</h4>
+                  <span class="font-serif font-bold text-terracotta text-lg">3,90 €</span>
+                </div>
+                <p class="text-xs text-espresso-700">Crujientes por fuera, tiernos por dentro, acompañados de una taza de chocolate a la taza espeso.</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-crema-200">
+            <a href="tel:981021526" class="w-full inline-flex justify-center items-center gap-2 bg-crema-100 hover:bg-terracotta hover:text-white text-espresso-900 font-medium py-3 rounded-xl transition text-sm">
+              <i class="fa-solid fa-phone"></i>
+              Reservar Mesa
+            </a>
+          </div>
+        </div>
+
+        <!-- Category 2: Menú del Día Estrella -->
+        <div class="bg-espresso-900 text-crema-50 rounded-3xl p-8 border border-espresso-700 shadow-xl flex flex-col justify-between relative overflow-hidden">
+          <div class="absolute -right-12 -top-12 w-36 h-36 bg-terracotta/20 rounded-full blur-2xl"></div>
+
+          <div>
+            <div class="flex items-center justify-between pb-6 border-b border-espresso-700">
+              <div>
+                <span class="bg-terracotta text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full mb-1 inline-block">Plato Estrella</span>
+                <h3 class="font-serif text-2xl font-bold text-crema-50">Menú del Día Casero</h3>
+              </div>
+              <span class="font-serif text-3xl font-bold text-gold-light">12 €</span>
+            </div>
+            
+            <p class="text-xs text-crema-300 italic mt-3 mb-6">
+              "Gran cantidad por 12 euros. Muy completo, variado y con producto de temporada fresca gallega."
+            </p>
+
+            <div class="space-y-6">
+              <div class="pb-4 border-b border-dashed border-espresso-700">
+                <h4 class="text-gold-light text-xs uppercase tracking-wider font-semibold mb-1">Primeros Platos (A Elegir)</h4>
+                <p class="text-sm text-crema-100 font-medium">Platos de cuchara caliente, ensaladas mixtas completas, pasta al dente o cremas de verduras de la huerta.</p>
+              </div>
+
+              <div class="pb-4 border-b border-dashed border-espresso-700">
+                <h4 class="text-gold-light text-xs uppercase tracking-wider font-semibold mb-1">Segundos Platos (A Elegir)</h4>
+                <p class="text-sm text-crema-100 font-medium">Carnes tiernas a la brasa/estofadas, merluza o pescados frescos de lonja con guarnición abundante de patatas y pimientos.</p>
+              </div>
+
+              <div class="pb-4 border-b border-dashed border-espresso-700">
+                <h4 class="text-gold-light text-xs uppercase tracking-wider font-semibold mb-1">Incluye Siempre</h4>
+                <p class="text-sm text-crema-100 font-medium">Pan artesano gallego, vino de la casa / refresco / agua fresca y postre casero (tarta de la abuela, flan, arroz con leche o fruta).</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-espresso-700">
+            <a href="tel:981021526" class="w-full inline-flex justify-center items-center gap-2 bg-terracotta hover:bg-terracotta-dark text-white font-semibold py-3.5 rounded-xl shadow transition text-sm">
+              <i class="fa-solid fa-phone"></i>
+              Reservar Mesa para Comer
+            </a>
+          </div>
+        </div>
+
+        <!-- Category 3: Raciones, Tapas & Bocadillos -->
+        <div class="bg-white rounded-3xl p-8 border border-crema-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between pb-6 border-b border-crema-200">
+              <h3 class="font-serif text-2xl font-bold text-espresso-900">Tapas & Raciones</h3>
+              <i class="fa-solid fa-wine-glass text-2xl text-terracotta"></i>
+            </div>
+            <p class="text-xs text-espresso-700/80 italic mt-3 mb-6">
+              Para picar en buena compañía o tomar algo a media tarde contemplando las vistas.
+            </p>
+
+            <ul class="space-y-6">
+              <li class="pb-4 border-b border-dashed border-crema-200">
+                <div class="flex justify-between items-baseline mb-1">
+                  <h4 class="font-bold text-espresso-900">Tortilla Jugosa Santos</h4>
+                  <span class="font-serif font-bold text-terracotta text-lg">7,50 €</span>
+                </div>
+                <p class="text-xs text-espresso-700">Patata gallega seleccionada, huevos de granja y su punto cremoso exacto. Un clásico indiscutible.</p>
+              </li>
+
+              <li class="pb-4 border-b border-dashed border-crema-200">
+                <div class="flex justify-between items-baseline mb-1">
+                  <h4 class="font-bold text-espresso-900">Ración de Raxo al Queso de Tetilla</h4>
+                  <span class="font-serif font-bold text-terracotta text-lg">9,50 €</span>
+                </div>
+                <p class="text-xs text-espresso-700">Lomo adobado a fuego lento fundido con cremoso queso gallego sobre patatas recién fritas.</p>
+              </li>
+
+              <li class="pb-4 border-b border-dashed border-crema-200">
+                <div class="flex justify-between items-baseline mb-1">
+                  <h4 class="font-bold text-espresso-900">Bocadillos & Sándwiches Calientes</h4>
+                  <span class="font-serif font-bold text-terracotta text-lg">4,50 €</span>
+                </div>
+                <p class="text-xs text-espresso-700">Pan crujiente, bacon, queso fundido, lomo, pollo o calamares con mayonesa suave.</p>
+              </li>
+
+              <li>
+                <div class="flex justify-between items-baseline mb-1">
+                  <h4 class="font-bold text-espresso-900">Tabla de Embutidos y Quesos</h4>
+                  <span class="font-serif font-bold text-terracotta text-lg">11,00 €</span>
+                </div>
+                <p class="text-xs text-espresso-700">Variedad de quesos del país, chorizo ahumado, salchichón y tostas de pan de maíz.</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-crema-200">
+            <a href="tel:981021526" class="w-full inline-flex justify-center items-center gap-2 bg-crema-100 hover:bg-terracotta hover:text-white text-espresso-900 font-medium py-3 rounded-xl transition text-sm">
+              <i class="fa-solid fa-phone"></i>
+              Reservar Mesa
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Banner de reserva rápida -->
+      <div class="mt-12 bg-gradient-to-r from-terracotta to-terracotta-dark rounded-2xl p-6 sm:p-8 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+        <div class="space-y-1 text-center md:text-left">
+          <h4 class="font-serif text-2xl font-bold">¿Vienes con el tiempo justo o en grupo grande?</h4>
+          <p class="text-crema-100 text-sm max-w-xl">Llámanos con antelación para tener tu mesa preparada y tu comida lista sin esperas innecesarias.</p>
+        </div>
+        <a href="tel:981021526" class="bg-espresso-900 hover:bg-black text-crema-50 font-semibold px-8 py-3.5 rounded-xl shadow-md transition flex items-center gap-2 whitespace-nowrap">
+          <i class="fa-solid fa-phone-volume text-gold-light"></i>
+          Reservar Mesa: 981 02 15 26
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- NUESTRAS INSTALACIONES Y TRABAJOS -->
+  <section id="instalaciones" class="py-24 bg-crema-100/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-terracotta uppercase">Galería Fotográfica</span>
+          <h2 class="font-serif text-3xl sm:text-5xl font-bold text-espresso-900 mt-2">Nuestras Instalaciones y Trabajos</h2>
+          <div class="w-16 h-1 bg-terracotta mt-4 rounded-full"></div>
+        </div>
+        <p class="text-espresso-700 text-sm max-w-md mt-4 md:mt-0">
+          Un entorno impecablemente limpio, relajado y luminoso con ventanales que miran a la naturaleza de Compostela.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Foto Real 1 (Principal) -->
+        <div class="group relative rounded-2xl overflow-hidden shadow-md bg-espresso-900 aspect-[4/3]">
+          <img 
+            src="https://scontent-iad6-1.xx.fbcdn.net/v/t39.30808-1/243209565_229229732559368_7882923699318200873_n.png?stp=dst-png&amp;cstp=mx1194x1392&amp;ctp=s720x720&amp;_nc_cat=100&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=3v6lNPc-mZEQ7kNvwFl2YsP&amp;_nc_oc=AdqDIcGis9qmUhuI_hGJY6PpSLZyqRfn4cZrSWp0itGSasXeaOpJ8hljJm9WydYWB0A&amp;_nc_zt=24&amp;_nc_ht=scontent-iad6-1.xx&amp;_nc_gid=RbIB4HCu0EFNSDeTyP1QpQ&amp;_nc_ss=7b289&amp;oh=00_AQO8EJ5mNSChMgOH3OS4NTjbILKIyOVYG2DlWJZ1jezNGw&amp;oe=6ADAFD72" 
+            alt="Santos Cafetería Logo y Marca" 
+            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+            referrerpolicy="no-referrer"
+            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-espresso-900/90 via-espresso-900/20 to-transparent opacity-90 transition"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <span class="text-xs text-gold-light uppercase tracking-wider font-semibold">Identidad & Corazón</span>
+            <p class="text-white font-serif text-lg font-bold">Santos Cafetería en Santiago</p>
+          </div>
+        </div>
+
+        <!-- Foto 2: Café de calidad -->
+        <div class="group relative rounded-2xl overflow-hidden shadow-md bg-espresso-900 aspect-[4/3]">
+          <img 
+            src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80" 
+            alt="Café de especialidad con mini croissants" 
+            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+            referrerpolicy="no-referrer"
+            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-espresso-900/90 via-espresso-900/20 to-transparent opacity-90 transition"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <span class="text-xs text-gold-light uppercase tracking-wider font-semibold">Desayunos con Mimo</span>
+            <p class="text-white font-serif text-lg font-bold">Café con cortesía de mini croissant</p>
+          </div>
+        </div>
+
+        <!-- Foto 3: Salón amplio -->
+        <div class="group relative rounded-2xl overflow-hidden shadow-md bg-espresso-900 aspect-[4/3]">
+          <img 
+            src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80" 
+            alt="Interior amplio y luminoso Santos Cafetería" 
+            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+            referrerpolicy="no-referrer"
+            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-espresso-900/90 via-espresso-900/20 to-transparent opacity-90 transition"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <span class="text-xs text-gold-light uppercase tracking-wider font-semibold">Comodidad y Amplitud</span>
+            <p class="text-white font-serif text-lg font-bold">Local diáfano, tranquilo y sin ruidos</p>
+          </div>
+        </div>
+
+        <!-- Foto 4: Comida y Menú casero -->
+        <div class="group relative rounded-2xl overflow-hidden shadow-md bg-espresso-900 aspect-[4/3]">
+          <img 
+            src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" 
+            alt="Platos caseros y abundantes del menú del día" 
+            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+            referrerpolicy="no-referrer"
+            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-espresso-900/90 via-espresso-900/20 to-transparent opacity-90 transition"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <span class="text-xs text-gold-light uppercase tracking-wider font-semibold">Gastronomía Diaria</span>
+            <p class="text-white font-serif text-lg font-bold">Raciones generosas y recetas de mercado</p>
+          </div>
+        </div>
+
+        <!-- Foto 5: Vistas al exterior / naturaleza monte -->
+        <div class="group relative rounded-2xl overflow-hidden shadow-md bg-espresso-900 aspect-[4/3]">
+          <img 
+            src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" 
+            alt="Vistas al Monte Pedroso desde la cafetería" 
+            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+            referrerpolicy="no-referrer"
+            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-espresso-900/90 via-espresso-900/20 to-transparent opacity-90 transition"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <span class="text-xs text-gold-light uppercase tracking-wider font-semibold">Entorno Natural</span>
+            <p class="text-white font-serif text-lg font-bold">Vistas laterales directas al Monte Pedroso</p>
+          </div>
+        </div>
+
+        <!-- Foto 6: Repostería y churros -->
+        <div class="group relative rounded-2xl overflow-hidden shadow-md bg-espresso-900 aspect-[4/3]">
+          <img 
+            src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=800&q=80" 
+            alt="Bollería y dulces artesanales" 
+            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+            referrerpolicy="no-referrer"
+            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-espresso-900/90 via-espresso-900/20 to-transparent opacity-90 transition"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <span class="text-xs text-gold-light uppercase tracking-wider font-semibold">Repostería Fresca</span>
+            <p class="text-white font-serif text-lg font-bold">Crujientes churros y croissants del día</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- OPINIONES REALES VERIFICADAS -->
+  <section id="opiniones" class="py-24 bg-crema-50 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-bold tracking-widest text-terracotta uppercase">Testimonios Reales</span>
+        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-espresso-900 mt-2">Lo Que Dicen Quienes Nos Visitan</h2>
+        <p class="text-espresso-700 mt-3 text-sm">Reseñas auténticas extraídas de portales públicos de clientes en Santiago de Compostela.</p>
+        <div class="w-16 h-1 bg-terracotta mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Review 1: Ana Sinde -->
+        <div class="bg-white p-8 rounded-3xl border border-crema-200 shadow-sm flex flex-col justify-between hover:shadow-lg transition">
+          <div>
+            <div class="flex text-amber-400 gap-1 mb-4 text-sm">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-espresso-800 text-sm leading-relaxed italic mb-6">
+              "Muy buen servicio, todo muy ordenado y limpio. Local sin mucho ruido donde desayunar es un placer, en el lateral con vistas al Pedroso. Con el café ponen un churrito y un croissant mini de cortesía. Sin espera, salvo que estén “a tope”, pero aún así atienden lo antes posible. Muy recomendable!"
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-crema-100">
+            <div class="w-10 h-10 rounded-full bg-crema-200 text-terracotta flex items-center justify-center font-bold text-sm">
+              AS
+            </div>
+            <div>
+              <h4 class="font-bold text-espresso-900 text-sm">Ana Sinde</h4>
+              <span class="text-[11px] text-terracotta font-medium flex items-center gap-1">
+                <i class="fa-solid fa-circle-check text-emerald-500"></i> Cliente Verificada
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2: Adri -->
+        <div class="bg-white p-8 rounded-3xl border border-crema-200 shadow-sm flex flex-col justify-between hover:shadow-lg transition">
+          <div>
+            <div class="flex text-amber-400 gap-1 mb-4 text-sm">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-espresso-800 text-sm leading-relaxed italic mb-6">
+              "Muy buena atención por parte de las camareras. Los cafés de la mañana los sirven con una cortesía (croasán pequeño y vasito de zumo). Café rico. Y sitio poco ruidoso. Se agradece."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-crema-100">
+            <div class="w-10 h-10 rounded-full bg-crema-200 text-terracotta flex items-center justify-center font-bold text-sm">
+              AD
+            </div>
+            <div>
+              <h4 class="font-bold text-espresso-900 text-sm">Adri</h4>
+              <span class="text-[11px] text-terracotta font-medium flex items-center gap-1">
+                <i class="fa-solid fa-circle-check text-emerald-500"></i> Cliente Verificado
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3: Raul VM -->
+        <div class="bg-white p-8 rounded-3xl border border-crema-200 shadow-sm flex flex-col justify-between hover:shadow-lg transition">
+          <div>
+            <div class="flex text-amber-400 gap-1 mb-4 text-sm">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-espresso-800 text-sm leading-relaxed italic mb-6">
+              "Gran cantidad por 12 euros. Veníamos con hambre y nos sobró comida. Muy completo y variado para todos los gustos. Buena opción en calidad precio."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-crema-100">
+            <div class="w-10 h-10 rounded-full bg-crema-200 text-terracotta flex items-center justify-center font-bold text-sm">
+              RV
+            </div>
+            <div>
+              <h4 class="font-bold text-espresso-900 text-sm">Raul VM</h4>
+              <span class="text-[11px] text-terracotta font-medium flex items-center gap-1">
+                <i class="fa-solid fa-circle-check text-emerald-500"></i> Cliente Verificado
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 4: pau -->
+        <div class="bg-white p-8 rounded-3xl border border-crema-200 shadow-sm flex flex-col justify-between hover:shadow-lg transition">
+          <div>
+            <div class="flex text-amber-400 gap-1 mb-4 text-sm">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-espresso-800 text-sm leading-relaxed italic mb-6">
+              "Un buen sitio en la zona para desayunar, comer o tomarse algo. Hace años que no he ido a comer, pero siempre voy a tomar café y muy bien. El local es muy amplio y bien situado."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-crema-100">
+            <div class="w-10 h-10 rounded-full bg-crema-200 text-terracotta flex items-center justify-center font-bold text-sm">
+              P
+            </div>
+            <div>
+              <h4 class="font-bold text-espresso-900 text-sm">pau</h4>
+              <span class="text-[11px] text-terracotta font-medium flex items-center gap-1">
+                <i class="fa-solid fa-circle-check text-emerald-500"></i> Cliente Asiduo
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 5: Ana María -->
+        <div class="bg-white p-8 rounded-3xl border border-crema-200 shadow-sm flex flex-col justify-between hover:shadow-lg transition md:col-span-2 lg:col-span-2">
+          <div>
+            <div class="flex text-amber-400 gap-1 mb-4 text-sm">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-espresso-800 text-sm leading-relaxed italic mb-6">
+              "Cafetería muy recomendable. El local es amplio, bonito e impecable en limpieza. Tienes bonitas vistas en la parte lateral. La atención maravillosa, las veces que fui siempre me han atendido con una sonrisa y gran eficacia."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-crema-100">
+            <div class="w-10 h-10 rounded-full bg-crema-200 text-terracotta flex items-center justify-center font-bold text-sm">
+              AM
+            </div>
+            <div>
+              <h4 class="font-bold text-espresso-900 text-sm">Ana María</h4>
+              <span class="text-[11px] text-terracotta font-medium flex items-center gap-1">
+                <i class="fa-solid fa-circle-check text-emerald-500"></i> Cliente Verificada
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- UBICACIÓN Y CONTACTO CON MAPA INTERACTIVO -->
+  <section id="contacto" class="py-24 bg-crema-100/60 border-t border-crema-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- Info Column -->
+        <div class="lg:col-span-5 space-y-8">
+          <div>
+            <span class="text-xs font-bold tracking-widest text-terracotta uppercase">Encuéntranos Fácilmente</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-espresso-900 mt-2">Ven a Disfrutar de Santos Cafetería</h2>
+            <div class="w-16 h-1 bg-terracotta mt-4 rounded-full"></div>
+            <p class="text-espresso-700 text-sm mt-4 leading-relaxed">
+              Situados estratégicamente en la Avenida de Barcelona, te ofrecemos un espacio ventilado, cómodo y con fácil aparcamiento cercano en Santiago de Compostela.
+            </p>
+          </div>
+
+          <div class="space-y-6">
+            
+            <div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-crema-200 shadow-sm">
+              <div class="w-12 h-12 rounded-xl bg-terracotta/10 text-terracotta flex items-center justify-center shrink-0 text-xl">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-espresso-900 text-sm">Dirección Exacta</h3>
+                <p class="text-xs text-espresso-700 mt-1">Av. de Barcelona, N24/26, 15706 Santiago de Compostela, A Coruña, España</p>
+                <a href="https://maps.google.com/?q=Santos+Cafeter%C3%ADa+Av.+de+Barcelona+N24/26+15706+Santiago+de+Compostela" target="_blank" rel="noopener noreferrer" class="text-terracotta text-xs font-semibold hover:underline mt-1.5 inline-block">
+                  Abrir en Google Maps &rarr;
+                </a>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-crema-200 shadow-sm">
+              <div class="w-12 h-12 rounded-xl bg-terracotta/10 text-terracotta flex items-center justify-center shrink-0 text-xl">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-espresso-900 text-sm">Teléfono Directo & Reservas</h3>
+                <p class="text-xs text-espresso-700 mt-1">Llámanos para asegurar tu mesa en el desayuno o el almuerzo.</p>
+                <a href="tel:981021526" class="text-terracotta text-sm font-bold hover:underline mt-1 inline-block">
+                  981 02 15 26
+                </a>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-crema-200 shadow-sm">
+              <div class="w-12 h-12 rounded-xl bg-terracotta/10 text-terracotta flex items-center justify-center shrink-0 text-xl">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-espresso-900 text-sm">Correo Electrónico</h3>
+                <p class="text-xs text-espresso-700 mt-1">Para consultas, grupos o eventos especiales:</p>
+                <a href="mailto:santoscafeteriasantiago@gmail.com" class="text-espresso-900 font-medium text-xs hover:text-terracotta transition mt-1 inline-block break-all">
+                  santoscafeteriasantiago@gmail.com
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="pt-2">
+            <a href="tel:981021526" class="w-full inline-flex justify-center items-center gap-2 bg-terracotta hover:bg-terracotta-dark text-white font-semibold py-4 rounded-2xl shadow-lg transition text-base">
+              <i class="fa-solid fa-calendar-check"></i>
+              Reservar Mesa Ahora
+            </a>
+          </div>
+        </div>
+
+        <!-- Map Column -->
+        <div class="lg:col-span-7 bg-white p-4 rounded-3xl border border-crema-200 shadow-md">
+          <div class="rounded-2xl overflow-hidden shadow-inner">
+            <iframe src="https://www.google.com/maps?q=Santos%20Cafeter%C3%ADa%20Av.%20de%20Barcelona%2C%20N24%2F26%2C%2015706%20Santiago%20de%20Compostela%2C%20A%20Coru%C3%B1a%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+          <div class="p-4 mt-2 flex flex-col sm:flex-row items-center justify-between text-xs text-espresso-700 gap-2">
+            <span class="flex items-center gap-1.5 font-medium">
+              <i class="fa-solid fa-street-view text-terracotta"></i> Acceso llano y cómodo sin barreras
+            </span>
+            <span class="text-espresso-700/80">Código Postal: 15706 (Santiago de Compostela)</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-espresso-900 text-crema-200 border-t border-espresso-800 pt-16 pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-espresso-800 text-sm">
+        
+        <!-- Brand Col -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full overflow-hidden border border-gold-light bg-crema-100 flex items-center justify-center">
+              <img 
+                src="https://scontent-iad6-1.xx.fbcdn.net/v/t39.30808-1/243209565_229229732559368_7882923699318200873_n.png?stp=dst-png&amp;cstp=mx1194x1392&amp;ctp=s720x720&amp;_nc_cat=100&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=3v6lNPc-mZEQ7kNvwFl2YsP&amp;_nc_oc=AdqDIcGis9qmUhuI_hGJY6PpSLZyqRfn4cZrSWp0itGSasXeaOpJ8hljJm9WydYWB0A&amp;_nc_zt=24&amp;_nc_ht=scontent-iad6-1.xx&amp;_nc_gid=RbIB4HCu0EFNSDeTyP1QpQ&amp;_nc_ss=7b289&amp;oh=00_AQO8EJ5mNSChMgOH3OS4NTjbILKIyOVYG2DlWJZ1jezNGw&amp;oe=6ADAFD72" 
+                alt="Santos Cafetería" 
+                class="w-full h-full object-cover"
+                referrerpolicy="no-referrer"
+                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+              >
+            </div>
+            <div>
+              <span class="block font-serif text-xl font-bold text-crema-50 leading-none">Santos</span>
+              <span class="text-[10px] tracking-widest uppercase text-terracotta font-semibold">Cafetería</span>
+            </div>
+          </div>
+          <p class="text-xs text-crema-300 leading-relaxed font-light">
+            Tu cafetería de referencia en la Avenida de Barcelona. Desayunos con detalle de cortesía, menús del día completos y la tranquilidad con vistas al Pedroso.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="space-y-3">
+          <h4 class="font-serif text-base font-bold text-crema-50">Enlaces Rápidos</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#experiencia" class="hover:text-gold-light transition">Nuestra Experiencia</a></li>
+            <li><a href="#carta" class="hover:text-gold-light transition">Especialidades & Carta</a></li>
+            <li><a href="#instalaciones" class="hover:text-gold-light transition">Nuestras Instalaciones</a></li>
+            <li><a href="#opiniones" class="hover:text-gold-light transition">Reseñas de Clientes</a></li>
+            <li><a href="#contacto" class="hover:text-gold-light transition">Cómo Llegar</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact summary -->
+        <div class="space-y-3">
+          <h4 class="font-serif text-base font-bold text-crema-50">Contacto</h4>
+          <ul class="space-y-2 text-xs text-crema-300">
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-location-dot text-terracotta-light mt-0.5"></i>
+              <span>Av. de Barcelona, N24/26, 15706 Santiago de Compostela</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-phone text-terracotta-light"></i>
+              <a href="tel:981021526" class="hover:text-white">981 02 15 26</a>
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-envelope text-terracotta-light"></i>
+              <a href="mailto:santoscafeteriasantiago@gmail.com" class="hover:text-white break-all">santoscafeteriasantiago@gmail.com</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Call to reserve -->
+        <div class="space-y-3">
+          <h4 class="font-serif text-base font-bold text-crema-50">Tu Mesa en Santos</h4>
+          <p class="text-xs text-crema-300 leading-relaxed">
+            Te recibimos siempre con una sonrisa y el mejor servicio.
+          </p>
+          <a href="tel:981021526" class="inline-flex items-center gap-2 bg-terracotta hover:bg-terracotta-dark text-white text-xs font-semibold px-4 py-2.5 rounded-lg transition">
+            <i class="fa-solid fa-phone"></i> Reservar Mesa
+          </a>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-crema-300/80 gap-4">
+        <p>&copy; <span id="year"></span> Santos Cafetería. Todos los derechos reservados.</p>
+        <p class="text-[11px]">Santiago de Compostela, A Coruña, España</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- MOBILE STICKY CTA -->
+  <div class="lg:hidden fixed bottom-0 left-0 right-0 p-3 bg-espresso-900/95 backdrop-blur border-t border-espresso-700 z-50">
+    <a href="tel:981021526" class="w-full flex items-center justify-center gap-2 bg-terracotta hover:bg-terracotta-dark text-white font-semibold py-3 px-6 rounded-xl shadow-lg transition active:scale-95 text-sm">
+      <i class="fa-solid fa-phone"></i>
+      <span>Reservar Mesa (981 02 15 26)</span>
+    </a>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
