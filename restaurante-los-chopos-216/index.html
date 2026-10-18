@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante Los Chopos | Gastronomía Tradicional y Terraza en Quijorna</title>
+    <meta name="description" content="Descubre Restaurante Los Chopos en Quijorna, Madrid. Cocina tradicional de mercado, carnes selectas, gran terraza junto al parque, celebraciones y aparcamiento gratuito.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        terracotta: {
+                            50: '#fdf6f3',
+                            100: '#fbe9e3',
+                            500: '#c85a32',
+                            600: '#b44a24',
+                            700: '#963c1b',
+                            800: '#793219',
+                        },
+                        gourmet: {
+                            50: '#FAF8F5',
+                            100: '#F4EFEA',
+                            800: '#231F1D',
+                            900: '#171412',
+                        },
+                        cream: '#FBF9F5',
+                        gold: '#D4AF37'
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .wood-pattern {
+            background-color: #171412;
+            background-image: radial-gradient(#29231f 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .hero-overlay {
+            background: linear-gradient(180deg, rgba(23, 20, 18, 0.45) 0%, rgba(23, 20, 18, 0.88) 100%);
+        }
+    </style>
+</head>
+<body class="bg-gourmet-50 text-stone-800 font-sans antialiased selection:bg-terracotta-500 selection:text-white">
+
+    <!-- Top Contact Bar -->
+    <header class="bg-gourmet-900 text-stone-300 text-xs sm:text-sm py-2.5 px-4 border-b border-stone-800 relative z-50">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4 flex-wrap justify-center">
+                <span class="flex items-center gap-1.5 text-stone-300">
+                    <i class="fa-solid fa-location-dot text-terracotta-500"></i>
+                    C. Virgen del Pilar, 19, Quijorna, Madrid
+                </span>
+                <span class="hidden md:inline text-stone-600">|</span>
+                <span class="flex items-center gap-1.5 text-stone-300">
+                    <i class="fa-solid fa-parking text-amber-500"></i>
+                    Parking gratuito junto al restaurante
+                </span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="tel:918165845" class="hover:text-white font-semibold transition-colors flex items-center gap-1.5 text-stone-200">
+                    <i class="fa-solid fa-phone text-terracotta-500"></i>
+                    918 16 58 45
+                </a>
+                <span class="text-stone-600">|</span>
+                <a href="mailto:jddhelp@profrac.com" class="hover:text-white transition-colors">
+                    <i class="fa-regular fa-envelope text-stone-400 mr-1"></i>
+                    jddhelp@profrac.com
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Navigation -->
+    <nav class="sticky top-0 bg-white/95 backdrop-blur-md shadow-sm border-b border-stone-200 z-40 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex flex-col">
+                <span class="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-gourmet-900 leading-tight">
+                    Los Chopos
+                </span>
+                <span class="text-[10px] uppercase tracking-[0.25em] text-terracotta-600 font-semibold">
+                    Restaurante & Terraza
+                </span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex items-center gap-8 text-stone-700 font-medium text-sm tracking-wide">
+                <a href="#experiencia" class="hover:text-terracotta-600 transition-colors">Nosotros</a>
+                <a href="#carta" class="hover:text-terracotta-600 transition-colors">Carta & Especialidades</a>
+                <a href="#terraza" class="hover:text-terracotta-600 transition-colors">Terraza & Eventos</a>
+                <a href="#galeria" class="hover:text-terracotta-600 transition-colors">Instalaciones</a>
+                <a href="#opiniones" class="hover:text-terracotta-600 transition-colors">Opiniones</a>
+                <a href="#contacto" class="hover:text-terracotta-600 transition-colors">Ubicación</a>
+            </div>
+
+            <!-- Header Action Button -->
+            <div class="flex items-center gap-3">
+                <a href="tel:918165845" class="bg-terracotta-600 hover:bg-terracotta-700 text-white px-5 sm:px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-2 transform hover:-translate-y-0.5">
+                    <i class="fa-solid fa-utensils text-xs"></i>
+                    <span>Reservar Mesa</span>
+                </a>
+                
+                <button id="mobile-menu-btn" class="lg:hidden text-stone-700 p-2 focus:outline-none" aria-label="Abrir Menú">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-stone-200 bg-white px-6 py-5 shadow-xl transition-all">
+            <div class="flex flex-col gap-4 text-stone-700 font-medium">
+                <a href="#experiencia" class="py-2 border-b border-stone-100 hover:text-terracotta-600">Nosotros</a>
+                <a href="#carta" class="py-2 border-b border-stone-100 hover:text-terracotta-600">Carta & Especialidades</a>
+                <a href="#terraza" class="py-2 border-b border-stone-100 hover:text-terracotta-600">Terraza & Eventos</a>
+                <a href="#galeria" class="py-2 border-b border-stone-100 hover:text-terracotta-600">Instalaciones</a>
+                <a href="#opiniones" class="py-2 border-b border-stone-100 hover:text-terracotta-600">Opiniones Reales</a>
+                <a href="#contacto" class="py-2 hover:text-terracotta-600">Dónde Estamos</a>
+                <a href="tel:918165845" class="mt-2 w-full text-center bg-terracotta-600 text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-phone"></i>
+                    Reservar Mesa (918 16 58 45)
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[85vh] flex items-center justify-center wood-pattern text-white overflow-hidden py-20 px-4 sm:px-6">
+        <div class="absolute inset-0 z-0">
+            <img 
+                src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1920&q=80" 
+                alt="Ambiente acogedor y carnes en Los Chopos"
+                class="w-full h-full object-cover object-center scale-105 transform animate-fade-in"
+                referrerpolicy="no-referrer"
+                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+            >
+            <div class="hero-overlay absolute inset-0"></div>
+        </div>
+
+        <div class="relative z-10 max-w-4xl mx-auto text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-stone-200 text-xs sm:text-sm font-medium mb-6">
+                <i class="fa-solid fa-star text-amber-400 text-xs"></i>
+                <span>Comida casera, servicio de 10 y terraza junto al parque</span>
+            </div>
+            
+            <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold text-cream tracking-tight leading-[1.1] mb-6">
+                El placer del buen comer en el corazón de Quijorna
+            </h1>
+            
+            <p class="text-stone-300 text-lg sm:text-xl font-light max-w-2xl mx-auto mb-10 leading-relaxed">
+                Descubre una cocina sincera, platos generosos y la calidez de un equipo humano comprometido. Ideal para reuniones familiares, amigos y eventos inolvidables.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="tel:918165845" class="w-full sm:w-auto bg-terracotta-600 hover:bg-terracotta-500 text-white font-semibold text-lg px-8 py-4 rounded-full shadow-2xl hover:shadow-terracotta-500/30 transition-all duration-300 flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span>Reservar Mesa</span>
+                </a>
+                <a href="#carta" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-md font-medium text-lg px-8 py-4 rounded-full transition-all duration-300 flex items-center justify-center gap-2">
+                    <span>Ver Carta y Menús</span>
+                    <i class="fa-solid fa-arrow-down text-sm"></i>
+                </a>
+            </div>
+
+            <!-- Trust Badges -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 pt-8 border-t border-white/15 text-stone-300 text-xs sm:text-sm font-medium">
+                <div class="flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-tree text-emerald-400"></i>
+                    <span>Terraza en parque</span>
+                </div>
+                <div class="flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-square-parking text-sky-400"></i>
+                    <span>Parking gratis</span>
+                </div>
+                <div class="flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-users text-amber-400"></i>
+                    <span>Menús para grupos</span>
+                </div>
+                <div class="flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-heart text-terracotta-500"></i>
+                    <span>Atención de diez</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience / About Section -->
+    <section id="experiencia" class="py-20 bg-cream border-b border-stone-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                
+                <div class="space-y-6">
+                    <div class="inline-block text-terracotta-600 font-semibold tracking-wider text-xs uppercase bg-terracotta-50 px-3 py-1 rounded-md border border-terracotta-100">
+                        Hospitalidad y Pasión
+                    </div>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-gourmet-900 leading-tight">
+                        Donde cada cliente se siente en casa y cada plato cuenta una historia
+                    </h2>
+                    <p class="text-stone-600 text-base sm:text-lg leading-relaxed">
+                        En <strong class="text-stone-900">Restaurante Los Chopos</strong> unimos la esencia de la gastronomía española con un servicio volcado en los detalles. Nuestro equipo, con profesionales como Emilio y Pedro al frente de la sala, garantiza una rapidez impecable, un ambiente desenfadado y la máxima cordialidad.
+                    </p>
+                    <p class="text-stone-600 text-base sm:text-lg leading-relaxed">
+                        Ya sea para disfrutar de nuestro concurrido menú del día, organizar una celebración familiar o relajarse al atardecer en nuestra amplia terraza junto al parque, en Quijorna tienes tu mesa reservada.
+                    </p>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-4 border-t border-stone-200">
+                        <div>
+                            <span class="block font-serif text-3xl font-bold text-terracotta-600">+100%</span>
+                            <span class="text-xs text-stone-500 uppercase tracking-wider font-semibold">Producto Fresco</span>
+                        </div>
+                        <div>
+                            <span class="block font-serif text-3xl font-bold text-terracotta-600">10/10</span>
+                            <span class="text-xs text-stone-500 uppercase tracking-wider font-semibold">Gestión de Grupos</span>
+                        </div>
+                        <div>
+                            <span class="block font-serif text-3xl font-bold text-terracotta-600">0€</span>
+                            <span class="text-xs text-stone-500 uppercase tracking-wider font-semibold">Parking Cómodo</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
+                        <a href="tel:918165845" class="inline-flex items-center gap-2 bg-gourmet-900 hover:bg-stone-800 text-white px-7 py-3.5 rounded-full font-semibold transition-all">
+                            <span>Llamar y Reservar Mesa</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Image Mosaic -->
+                <div class="relative grid grid-cols-2 gap-4">
+                    <div class="space-y-4">
+                        <img 
+                            src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=700&q=80" 
+                            alt="Plato gourmet preparado en cocina"
+                            class="w-full h-64 sm:h-72 object-cover rounded-2xl shadow-lg"
+                            referrerpolicy="no-referrer"
+                            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                        >
+                        <div class="p-6 bg-terracotta-600 text-white rounded-2xl shadow-md">
+                            <i class="fa-solid fa-quote-left text-2xl text-terracotta-300 mb-2 block"></i>
+                            <p class="font-serif italic text-sm">"Cocina brutal y muy variada con menús impresionantes."</p>
+                            <span class="block text-xs uppercase tracking-wider font-semibold mt-2 text-terracotta-100">— Reseña de cliente</span>
+                        </div>
+                    </div>
+                    <div class="space-y-4 pt-8">
+                        <img 
+                            src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=700&q=80" 
+                            alt="Restaurante acogedor y clientes satisfechos"
+                            class="w-full h-72 sm:h-80 object-cover rounded-2xl shadow-lg"
+                            referrerpolicy="no-referrer"
+                            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                        >
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Nuestra Carta, Platos Estrella y Especialidades -->
+    <section id="carta" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-terracotta-600 font-semibold tracking-widest text-xs uppercase bg-terracotta-50 px-3.5 py-1.5 rounded-full border border-terracotta-100">
+                    Propuesta Gastronómica
+                </span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-gourmet-900 mt-4 mb-4">
+                    Nuestra Carta, Platos Estrella y Especialidades de la Casa
+                </h2>
+                <p class="text-stone-600 text-base sm:text-lg">
+                    Recetas elaboradas al momento con materia prima seleccionada, guisos con fundamento y carnes en su punto exacto.
+                </p>
+            </div>
+
+            <!-- Menu Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Category 1: Entrantes y Huerto -->
+                <div class="bg-gourmet-50 rounded-2xl p-6 sm:p-8 border border-stone-200/80 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-terracotta-100 text-terracotta-600 flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-leaf"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-gourmet-900 mb-6 pb-3 border-b border-stone-200">
+                            Entrantes & Ensaladas
+                        </h3>
+                        <ul class="space-y-6">
+                            <li>
+                                <div class="flex justify-between items-baseline mb-1">
+                                    <span class="font-bold text-stone-900 text-base">Ensalada de Rulo de Cabra</span>
+                                    <span class="text-xs bg-amber-100 text-amber-800 font-semibold px-2 py-0.5 rounded">Recomendado</span>
+                                </div>
+                                <p class="text-sm text-stone-600">Brotes selectos, rulo de cabra caramelizado, frutos secos y vinagreta balsámica de frutos rojos.</p>
+                            </li>
+                            <li>
+                                <div class="flex justify-between items-baseline mb-1">
+                                    <span class="font-bold text-stone-900 text-base">Croquetas Caseras del Chef</span>
+                                </div>
+                                <p class="text-sm text-stone-600">Masa melosa tradicional de jamón ibérico de bellota y rebozado extra crujiente.</p>
+                            </li>
+                            <li>
+                                <div class="flex justify-between items-baseline mb-1">
+                                    <span class="font-bold text-stone-900 text-base">Surtido de Ibéricos & Queso Curado</span>
+                                </div>
+                                <p class="text-sm text-stone-600">Selección de embutidos artesanos acompañados de tostas con tomate natural aliñado.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-stone-200 text-xs text-stone-500 flex items-center gap-1.5">
+                        <i class="fa-solid fa-circle-info text-terracotta-500"></i>
+                        <span>Opciones para compartir y tapear</span>
+                    </div>
+                </div>
+
+                <!-- Category 2: Carnes y Especialidades -->
+                <div class="bg-gourmet-50 rounded-2xl p-6 sm:p-8 border border-terracotta-200 shadow-sm flex flex-col justify-between relative hover:shadow-md transition-shadow">
+                    <span class="absolute -top-3 right-6 bg-terracotta-600 text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow">
+                        Plato Más Aclamado
+                    </span>
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-terracotta-600 text-white flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-fire-burner"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-gourmet-900 mb-6 pb-3 border-b border-stone-200">
+                            Carnes & Parrilla
+                        </h3>
+                        <ul class="space-y-6">
+                            <li>
+                                <div class="flex justify-between items-baseline mb-1">
+                                    <span class="font-bold text-stone-900 text-base">Solomillitos de Cerdo Tiernos</span>
+                                    <span class="text-xs bg-terracotta-100 text-terracotta-800 font-semibold px-2 py-0.5 rounded">Favorito</span>
+                                </div>
+                                <p class="text-sm text-stone-600">Marcados en su punto, tiernos y jugosos, servidos con salsa reducida y guarnición de patatas rústicas.</p>
+                            </li>
+                            <li>
+                                <div class="flex justify-between items-baseline mb-1">
+                                    <span class="font-bold text-stone-900 text-base">Entrecot a la Brasa</span>
+                                </div>
+                                <p class="text-sm text-stone-600">Corte madurado con sal en escamas y pimientos de padrón salteados.</p>
+                            </li>
+                            <li>
+                                <div class="flex justify-between items-baseline mb-1">
+                                    <span class="font-bold text-stone-900 text-base">Hamburguesas Gourmet Los Chopos</span>
+                                </div>
+                                <p class="text-sm text-stone-600">Carne picada al momento, cebolla caramelizada, queso fundido y pan brioche artesano.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-stone-200 text-xs text-stone-500 flex items-center gap-1.5">
+                        <i class="fa-solid fa-circle-info text-terracotta-500"></i>
+                        <span>Carnes de origen garantizado</span>
+                    </div>
+                </div>
+
+                <!-- Category 3: Menús y Eventos -->
+                <div class="bg-gourmet-50 rounded-2xl p-6 sm:p-8 border border-stone-200/80 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-champagne-glasses"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-gourmet-900 mb-6 pb-3 border-b border-stone-200">
+                            Menús & Celebraciones
+                        </h3>
+                        <ul class="space-y-6">
+                            <li>
+                                <div class="flex justify-between items-baseline mb-1">
+                                    <span class="font-bold text-stone-900 text-base">Menú del Día y Fin de Semana</span>
+                                </div>
+                                <p class="text-sm text-stone-600">Primer plato a elegir, segundo contundente, pan, bebida y postre casero. Gran relación calidad-precio.</p>
+                            </li>
+                            <li>
+                                <div class="flex justify-between items-baseline mb-1">
+                                    <span class="font-bold text-stone-900 text-base">Menús para Grupos y Cumpleaños</span>
+                                    <span class="text-xs bg-emerald-100 text-emerald-800 font-semibold px-2 py-0.5 rounded">A Medida</span>
+                                </div>
+                                <p class="text-sm text-stone-600">Servicio ágil y coordinado para comidas de empresas, aniversarios y reuniones de amigos.</p>
+                            </li>
+                            <li>
+                                <div class="flex justify-between items-baseline mb-1">
+                                    <span class="font-bold text-stone-900 text-base">Repostería Casera & Bodega</span>
+                                </div>
+                                <p class="text-sm text-stone-600">Tartas hechas en casa, flan tradicional y una cuidada carta de vinos con denominación de origen.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-stone-200 text-xs text-stone-500 flex items-center gap-1.5">
+                        <i class="fa-solid fa-circle-info text-terracotta-500"></i>
+                        <span>Consultar opciones para celíacos o alérgenos</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Callout Card -->
+            <div class="mt-14 bg-stone-900 text-white rounded-3xl p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
+                <div>
+                    <h3 class="font-serif text-2xl sm:text-3xl font-bold mb-2">¿Sois un grupo grande o celebráis una ocasión especial?</h3>
+                    <p class="text-stone-300 text-sm sm:text-base max-w-xl">
+                        Nos encargamos de toda la gestión con rapidez y atención personalizada. Diseñamos menús cerrados para que solo os preocupéis de disfrutar.
+                    </p>
+                </div>
+                <div class="flex-shrink-0">
+                    <a href="tel:918165845" class="bg-terracotta-600 hover:bg-terracotta-500 text-white px-8 py-3.5 rounded-full font-bold transition-all inline-flex items-center gap-2 shadow-lg">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>Reservar Mesa: 918 16 58 45</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Highlight: Terraza en el Parque & Grupos -->
+    <section id="terraza" class="py-20 bg-gourmet-100 border-t border-b border-stone-200 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="order-2 lg:order-1">
+                    <img 
+                        src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80" 
+                        alt="Terraza exterior junto al parque en Restaurante Los Chopos"
+                        class="rounded-3xl shadow-xl w-full h-[400px] object-cover"
+                        referrerpolicy="no-referrer"
+                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                    >
+                </div>
+                <div class="order-1 lg:order-2 space-y-6">
+                    <span class="text-terracotta-600 font-bold uppercase tracking-widest text-xs">Un entorno inigualable</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-gourmet-900 leading-snug">
+                        Nuestra Terraza en el Parque: Espacio, Frescura y Confort
+                    </h2>
+                    <p class="text-stone-700 leading-relaxed">
+                        Ubicados estratégicamente junto a una agradable zona verde en Quijorna, disponemos de una de las terrazas más amplias y tranquilas de la comarca. Perfecta para quienes buscan disfrutar al aire libre en un ambiente sosegado, con los niños jugando con seguridad y con fácil aparcamiento gratuito en la misma puerta.
+                    </p>
+                    <ul class="space-y-3 text-stone-700 text-sm sm:text-base font-medium">
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-emerald-600"></i>
+                            Ambiente al aire libre sombreado y confortable
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-emerald-600"></i>
+                            Ideal para cumpleaños, reuniones infantiles y celebraciones
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-emerald-600"></i>
+                            Parking gratuito continuo sin complicaciones de estacionamiento
+                        </li>
+                    </ul>
+                    <div class="pt-4">
+                        <a href="tel:918165845" class="inline-flex items-center gap-2 bg-terracotta-600 hover:bg-terracotta-700 text-white font-semibold px-6 py-3 rounded-full transition-all">
+                            <i class="fa-solid fa-chair"></i>
+                            <span>Reservar Mesa en Terraza</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section: Nuestras Instalaciones y Trabajos -->
+    <section id="galeria" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span class="text-terracotta-600 font-bold tracking-widest text-xs uppercase bg-terracotta-50 px-3.5 py-1.5 rounded-full border border-terracotta-100">
+                    Galería Fotográfica
+                </span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-gourmet-900 mt-4 mb-3">
+                    Nuestras Instalaciones y Trabajos
+                </h2>
+                <p class="text-stone-600 text-sm sm:text-base">
+                    Cada detalle está pensado para garantizar tu disfrute, desde nuestros fogones hasta el último rincón de nuestro salón y terraza.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery Item 1 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-md bg-stone-100 h-72">
+                    <img 
+                        src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" 
+                        alt="Comedor interior acogedor de Restaurante Los Chopos"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        referrerpolicy="no-referrer"
+                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-serif text-xl font-bold">Salón Acogedor y Climatizado</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-md bg-stone-100 h-72">
+                    <img 
+                        src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" 
+                        alt="Carnes a la brasa y raciones generosas"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        referrerpolicy="no-referrer"
+                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-serif text-xl font-bold">Solomillos y Carnes Seleccionadas</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-md bg-stone-100 h-72">
+                    <img 
+                        src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80" 
+                        alt="Ensaladas frescas y rulo de cabra"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        referrerpolicy="no-referrer"
+                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-serif text-xl font-bold">Ensaladas Artesanas</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-md bg-stone-100 h-72">
+                    <img 
+                        src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80" 
+                        alt="Presentación de platos de autor y tradicionales"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        referrerpolicy="no-referrer"
+                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-serif text-xl font-bold">Cocina Casera al Instante</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-md bg-stone-100 h-72">
+                    <img 
+                        src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=800&q=80" 
+                        alt="Mesas preparadas para celebraciones y grupos"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        referrerpolicy="no-referrer"
+                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-serif text-xl font-bold">Celebraciones y Cumpleaños</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-md bg-stone-100 h-72">
+                    <img 
+                        src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" 
+                        alt="Terraza exterior arbolada"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        referrerpolicy="no-referrer"
+                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-serif text-xl font-bold">Vistas y Terraza al Parque</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real Customer Reviews Section -->
+    <section id="opiniones" class="py-24 bg-cream border-t border-stone-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-2 bg-amber-100 border border-amber-200 text-amber-900 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-3">
+                    <i class="fa-solid fa-certificate text-amber-600"></i>
+                    <span>Reseñas Reales de Clientes en Google</span>
+                </div>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-gourmet-900 mb-4">
+                    La opinión de quienes ya nos han elegido
+                </h2>
+                <p class="text-stone-600 text-base sm:text-lg">
+                    La transparencia y el cariño de nuestros comensales son nuestra mayor carta de presentación.
+                </p>
+            </div>
+
+            <!-- Review Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Review 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-200 flex flex-col justify-between hover:shadow-md transition-shadow">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex text-amber-400 text-sm gap-1">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="text-xs font-bold text-stone-400 flex items-center gap-1">
+                                <i class="fa-brands fa-google text-red-500"></i> Google
+                            </span>
+                        </div>
+                        <p class="text-stone-700 italic text-sm leading-relaxed mb-6">
+                            "Hemos ido un grupo grande a comer, y la gestión ha sido de diez. Rapidez en el servicio, y muy atentos. La ensalada de rulo de cabra estaba muy rica, los solomillitos de cerdo muy…"
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-stone-100 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-terracotta-100 text-terracotta-700 font-bold flex items-center justify-center text-sm">
+                            PM
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-stone-900 text-sm">Patricia M.M.</h4>
+                            <span class="text-xs text-stone-500">Comida en grupo</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-200 flex flex-col justify-between hover:shadow-md transition-shadow">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex text-amber-400 text-sm gap-1">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="text-xs font-bold text-stone-400 flex items-center gap-1">
+                                <i class="fa-brands fa-google text-red-500"></i> Google
+                            </span>
+                        </div>
+                        <p class="text-stone-700 italic text-sm leading-relaxed mb-6">
+                            "✨ Gracias Emilio, profesionales así marcan la diferencia. Hoy quiero dejar una reseña muy especial para Emilio, del Restaurante Los Chopos…"
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-stone-100 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-800 font-bold flex items-center justify-center text-sm">
+                            LD
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-stone-900 text-sm">Lucía DY</h4>
+                            <span class="text-xs text-stone-500">Cliente Verificada</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-200 flex flex-col justify-between hover:shadow-md transition-shadow">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex text-amber-400 text-sm gap-1">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="text-xs font-bold text-stone-400 flex items-center gap-1">
+                                <i class="fa-brands fa-google text-red-500"></i> Google
+                            </span>
+                        </div>
+                        <p class="text-stone-700 italic text-sm leading-relaxed mb-6">
+                            "Fuimos porque nos lo habían recomendado. Probamos y celebramos un cumpleaños allí, ante todo la atención fue profesional y se portaron muy amables todos.…"
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-stone-100 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-stone-200 text-stone-800 font-bold flex items-center justify-center text-sm">
+                            AL
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-stone-900 text-sm">Albert</h4>
+                            <span class="text-xs text-stone-500">Celebración de cumpleaños</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-200 flex flex-col justify-between hover:shadow-md transition-shadow">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex text-amber-400 text-sm gap-1">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="text-xs font-bold text-stone-400 flex items-center gap-1">
+                                <i class="fa-brands fa-google text-red-500"></i> Google
+                            </span>
+                        </div>
+                        <p class="text-stone-700 italic text-sm leading-relaxed mb-6">
+                            "Sitio espectacular, cocina brutal🔝🔝🔝y muy variada, el personal muy amable y profesional, menús impresionantes, calidad precio de lujo. Tienen una terraza en un parque espectacular. Parking gratis al lado.…"
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-stone-100 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-800 font-bold flex items-center justify-center text-sm">
+                            AS
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-stone-900 text-sm">Alberto Serrano</h4>
+                            <span class="text-xs text-stone-500">Local Guide</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 5 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-200 flex flex-col justify-between hover:shadow-md transition-shadow lg:col-span-2">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex text-amber-400 text-sm gap-1">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="text-xs font-bold text-stone-400 flex items-center gap-1">
+                                <i class="fa-brands fa-google text-red-500"></i> Google
+                            </span>
+                        </div>
+                        <p class="text-stone-700 italic text-sm leading-relaxed mb-6">
+                            "Me lo recomendó un buen amigo y no se equivocó. Hacía tiempo que no disfrutaba de una comida tan rica y bien preparada. Además, el servicio fue de diez gracias a Pedro. Un chico muy atento y trabajador. Se agradece encontrar a gente joven con esas ganas y esa educación."
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-stone-100 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-sky-100 text-sky-800 font-bold flex items-center justify-center text-sm">
+                            AR
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-stone-900 text-sm">Antonio Romero</h4>
+                            <span class="text-xs text-stone-500">Recomendación de Amigo</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact Section -->
+    <section id="contacto" class="py-24 bg-white border-t border-stone-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-terracotta-600 font-bold tracking-widest text-xs uppercase bg-terracotta-50 px-3.5 py-1.5 rounded-full border border-terracotta-100">
+                    Fácil Llegada
+                </span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-gourmet-900 mt-4 mb-4">
+                    Ubicación y Reservas
+                </h2>
+                <p class="text-stone-600 text-base sm:text-lg">
+                    Ven a conocernos a Quijorna. Aparcamiento sin coste justo al lado para una llegada cómoda y tranquila.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
+                
+                <!-- Contact Cards -->
+                <div class="lg:col-span-5 flex flex-col justify-between space-y-6">
+                    <div class="bg-gourmet-50 p-6 sm:p-8 rounded-3xl border border-stone-200 shadow-sm space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-terracotta-100 text-terracotta-600 flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-stone-900 text-base">Dirección</h4>
+                                <p class="text-stone-600 text-sm mt-1 leading-relaxed">
+                                    C. Virgen del Pilar, 19, 28693 Quijorna, Madrid, España
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-terracotta-100 text-terracotta-600 flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-stone-900 text-base">Teléfono de Reservas</h4>
+                                <a href="tel:918165845" class="text-terracotta-600 font-bold text-lg mt-1 inline-block hover:underline">
+                                    918 16 58 45
+                                </a>
+                                <p class="text-xs text-stone-500">Recomendamos reservar con antelación para fines de semana y grupos.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-terracotta-100 text-terracotta-600 flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-regular fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-stone-900 text-base">Correo Electrónico</h4>
+                                <a href="mailto:jddhelp@profrac.com" class="text-stone-600 text-sm mt-1 inline-block hover:text-stone-900 underline">
+                                    jddhelp@profrac.com
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-square-parking"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-stone-900 text-base">Aparcamiento Gratuito</h4>
+                                <p class="text-stone-600 text-sm mt-1">
+                                    Zona de parking amplio y gratis ubicada al lado del restaurante.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="tel:918165845" class="w-full text-center bg-terracotta-600 hover:bg-terracotta-700 text-white font-bold text-lg py-4 px-6 rounded-2xl shadow-lg transition-all flex items-center justify-center gap-3">
+                        <i class="fa-solid fa-phone-volume"></i>
+                        <span>Llamar Ahora: Reservar Mesa</span>
+                    </a>
+                </div>
+
+                <!-- Interactive Map Embed -->
+                <div class="lg:col-span-7 bg-stone-100 rounded-3xl p-3 shadow-sm border border-stone-200 overflow-hidden flex flex-col">
+                    <iframe 
+                        src="https://www.google.com/maps?q=Restaurante%20Los%20Chopos%20C.%20Virgen%20del%20Pilar%2C%2019%2C%2028693%20Quijorna%2C%20Madrid%2C%20Espa%C3%B1a&output=embed" 
+                        width="100%" 
+                        height="380" 
+                        style="border:0; border-radius: 1rem;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                    <div class="p-3 text-center text-xs text-stone-500 font-medium">
+                        <i class="fa-solid fa-compass mr-1 text-terracotta-600"></i> Localízanos fácilmente en Quijorna, a pocos minutos de Villanueva de la Cañada y Brunete.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gourmet-900 text-stone-400 pt-16 pb-12 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-stone-800">
+                <div class="md:col-span-2 space-y-4">
+                    <span class="font-serif text-3xl font-bold text-cream tracking-tight block">
+                        Restaurante Los Chopos
+                    </span>
+                    <p class="text-sm text-stone-400 max-w-sm leading-relaxed">
+                        Cocina tradicional, servicio profesional y un entorno privilegiado junto al parque en Quijorna. Tu destino gastronómico de confianza para cada día y para grandes celebraciones.
+                    </p>
+                    <div class="flex gap-4 pt-2 text-stone-300">
+                        <a href="tel:918165845" class="w-9 h-9 rounded-full bg-stone-800 hover:bg-terracotta-600 flex items-center justify-center transition-colors" aria-label="Llamar">
+                            <i class="fa-solid fa-phone text-sm"></i>
+                        </a>
+                        <a href="mailto:jddhelp@profrac.com" class="w-9 h-9 rounded-full bg-stone-800 hover:bg-terracotta-600 flex items-center justify-center transition-colors" aria-label="Email">
+                            <i class="fa-regular fa-envelope text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h5 class="text-white font-bold text-sm tracking-wider uppercase mb-4">Acceso Rápido</h5>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="#experiencia" class="hover:text-white transition-colors">Quiénes Somos</a></li>
+                        <li><a href="#carta" class="hover:text-white transition-colors">Nuestra Carta</a></li>
+                        <li><a href="#terraza" class="hover:text-white transition-colors">Terraza en el Parque</a></li>
+                        <li><a href="#galeria" class="hover:text-white transition-colors">Galería</a></li>
+                        <li><a href="#opiniones" class="hover:text-white transition-colors">Opiniones Verificadas</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-white font-bold text-sm tracking-wider uppercase mb-4">Contacto Directo</h5>
+                    <p class="text-sm mb-2 text-stone-300">C. Virgen del Pilar, 19</p>
+                    <p class="text-sm mb-4 text-stone-300">28693 Quijorna, Madrid</p>
+                    <p class="text-sm font-semibold text-terracotta-500 mb-4">Tel: 918 16 58 45</p>
+                    <a href="tel:918165845" class="inline-block bg-terracotta-600 hover:bg-terracotta-500 text-white text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-lg transition-colors">
+                        Reservar Mesa
+                    </a>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 gap-4">
+                <p>&copy; <span id="year"></span> Restaurante Los Chopos (Quijorna, Madrid). Todos los derechos reservados.</p>
+                <div class="flex gap-4">
+                    <span>Aviso Legal</span>
+                    <span>•</span>
+                    <span>Política de Privacidad</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Button for Mobile -->
+    <div class="fixed bottom-5 right-5 z-40 sm:hidden">
+        <a href="tel:918165845" class="bg-terracotta-600 text-white font-bold px-5 py-3.5 rounded-full shadow-2xl flex items-center gap-2 text-sm border-2 border-white/20 active:scale-95 transition-transform">
+            <i class="fa-solid fa-phone text-xs animate-bounce"></i>
+            <span>Reservar Mesa</span>
+        </a>
+    </div>
+
+    <!-- Vanilla Script for Interactions -->
+    <script>
+        // Update year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
