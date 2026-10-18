@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atenea Beauty | Centro de Estética en Valencia</title>
+    <meta name="description" content="Atenea Beauty en Valencia. Centro de estética especializado en manicura, pedicura de autor, depilación facial, cejas y tratamientos personalizados con Mónica.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            black: '#121212',
+                            dark: '#1a1918',
+                            gold: '#c5a880',
+                            'gold-light': '#dfcbb5',
+                            'gold-hover': '#b3956d',
+                            sand: '#f7f4ef',
+                            beige: '#ebe4d8',
+                            card: '#1e1d1c'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #121212;
+            color: #f7f4ef;
+        }
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #dfcbb5 0%, #c5a880 50%, #9a7b56 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border {
+            border-color: rgba(197, 168, 128, 0.3);
+        }
+        .bg-gold-gradient {
+            background: linear-gradient(135deg, #c5a880 0%, #b3956d 100%);
+        }
+        .glass-card {
+            background: rgba(26, 25, 24, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(197, 168, 128, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-brand-black text-brand-sand antialiased selection:bg-brand-gold selection:text-brand-black">
+
+    <!-- NAV BAR -->
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-brand-black/90 backdrop-blur-md border-b border-brand-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-full border border-brand-gold flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-black transition-all">
+                        <i class="fa-solid fa-crown text-sm"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-serif text-2xl tracking-widest uppercase text-brand-sand font-bold group-hover:text-brand-gold transition-colors">Atenea</span>
+                        <span class="text-[10px] tracking-[0.3em] uppercase text-brand-gold -mt-1">Beauty Boutique</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-8 text-sm uppercase tracking-wider font-medium">
+                    <a href="#inicio" class="text-brand-sand hover:text-brand-gold transition-colors">Inicio</a>
+                    <a href="#experiencia" class="text-brand-sand hover:text-brand-gold transition-colors">Sobre Mónica</a>
+                    <a href="#tratamientos" class="text-brand-sand hover:text-brand-gold transition-colors">Tratamientos</a>
+                    <a href="#galeria" class="text-brand-sand hover:text-brand-gold transition-colors">Instalaciones</a>
+                    <a href="#opiniones" class="text-brand-sand hover:text-brand-gold transition-colors">Opiniones</a>
+                    <a href="#contacto" class="text-brand-sand hover:text-brand-gold transition-colors">Contacto</a>
+                </nav>
+
+                <!-- Action Button -->
+                <div class="hidden sm:flex items-center">
+                    <a href="tel:644317449" class="bg-gold-gradient text-brand-black px-6 py-2.5 rounded-full font-semibold text-sm tracking-wide hover:shadow-[0_0_20px_rgba(197,168,128,0.4)] transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+                        <i class="fa-solid fa-phone text-xs"></i>
+                        <span>Reservar Cita</span>
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" type="button" class="text-brand-sand hover:text-brand-gold focus:outline-none p-2" aria-label="Abrir menú">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-dark border-b border-brand-gold/20 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="mobile-link block py-2 text-brand-sand hover:text-brand-gold font-medium">Inicio</a>
+            <a href="#experiencia" class="mobile-link block py-2 text-brand-sand hover:text-brand-gold font-medium">Sobre Mónica</a>
+            <a href="#tratamientos" class="mobile-link block py-2 text-brand-sand hover:text-brand-gold font-medium">Tratamientos y Tarifas</a>
+            <a href="#galeria" class="mobile-link block py-2 text-brand-sand hover:text-brand-gold font-medium">Instalaciones</a>
+            <a href="#opiniones" class="mobile-link block py-2 text-brand-sand hover:text-brand-gold font-medium">Opiniones</a>
+            <a href="#contacto" class="mobile-link block py-2 text-brand-sand hover:text-brand-gold font-medium">Contacto</a>
+            <a href="tel:644317449" class="block w-full text-center bg-gold-gradient text-brand-black py-3 rounded-full font-bold uppercase tracking-wider text-sm mt-4">
+                <i class="fa-solid fa-phone mr-2"></i> Reservar Cita
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
+        <!-- Background Decor -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-black via-brand-black/90 to-transparent z-10"></div>
+            <img src="https://cdn1.treatwell.net/images/view/v2.i8552958.w720.h480.x9C489CC0/" 
+                 referrerpolicy="no-referrer" 
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" 
+                 alt="Atenea Beauty Center" 
+                 class="w-full h-full object-cover object-center opacity-40 filter scale-105 transform hover:scale-100 transition-transform duration-1000">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-brand-gold/40 bg-brand-gold/10 text-brand-gold text-xs font-semibold tracking-widest uppercase">
+                        <i class="fa-solid fa-star text-[10px]"></i>
+                        <span>Centro de Estética Exclusivo en Valencia</span>
+                    </div>
+                    
+                    <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
+                        Tu belleza en manos de una <span class="gold-gradient-text italic font-normal">auténtica artista</span>
+                    </h1>
+                    
+                    <p class="text-brand-sand/80 text-lg sm:text-xl max-w-2xl font-light leading-relaxed">
+                        Bienvenida a <strong class="text-brand-gold font-medium">Atenea Beauty</strong>. Un refugio de cuidado personalizado donde Mónica transforma cada servicio en un arte minucioso, delicado y perfeccionista.
+                    </p>
+
+                    <div class="pt-4 flex flex-col sm:flex-row gap-4">
+                        <a href="tel:644317449" class="bg-gold-gradient text-brand-black px-8 py-4 rounded-full font-bold text-center tracking-wide uppercase text-sm hover:shadow-[0_0_25px_rgba(197,168,128,0.5)] transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-calendar-check text-base"></i>
+                            <span>Reservar Cita Ahora</span>
+                        </a>
+                        <a href="#tratamientos" class="border border-brand-gold/50 text-brand-sand px-8 py-4 rounded-full font-medium text-center tracking-wide uppercase text-sm hover:bg-brand-gold/10 hover:border-brand-gold transition-all flex items-center justify-center gap-2">
+                            <span>Ver Servicios y Tarifas</span>
+                            <i class="fa-solid fa-arrow-down text-xs"></i>
+                        </a>
+                    </div>
+
+                    <!-- Trust Indicators -->
+                    <div class="pt-8 border-t border-brand-gold/20 grid grid-cols-3 gap-4 max-w-lg">
+                        <div>
+                            <div class="text-brand-gold font-serif text-2xl sm:text-3xl font-bold">5.0 ★</div>
+                            <div class="text-xs text-brand-sand/70 uppercase tracking-wider mt-1">Valoración Google</div>
+                        </div>
+                        <div>
+                            <div class="text-brand-gold font-serif text-2xl sm:text-3xl font-bold">100%</div>
+                            <div class="text-xs text-brand-sand/70 uppercase tracking-wider mt-1">Atención Personalizada</div>
+                        </div>
+                        <div>
+                            <div class="text-brand-gold font-serif text-2xl sm:text-3xl font-bold">Mónica</div>
+                            <div class="text-xs text-brand-sand/70 uppercase tracking-wider mt-1">Especialista Técnica</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 relative hidden lg:block">
+                    <div class="relative mx-auto max-w-md">
+                        <!-- Decorative Frame -->
+                        <div class="absolute -inset-4 rounded-2xl border border-brand-gold/30 transform rotate-2"></div>
+                        <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-brand-gold/20 aspect-[4/5]">
+                            <img src="https://cdn1.treatwell.net/images/view/v2.i8552958.w720.h480.x9C489CC0/" 
+                                 referrerpolicy="no-referrer" 
+                                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" 
+                                 alt="Instalaciones Atenea Beauty" 
+                                 class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-transparent"></div>
+                            <div class="absolute bottom-6 left-6 right-6 p-4 glass-card rounded-xl border border-brand-gold/30">
+                                <p class="text-xs font-serif italic text-brand-gold">"Un trabajo impecable, sin duda repetiré."</p>
+                                <p class="text-[11px] text-brand-sand/80 font-medium mt-1 uppercase tracking-wider">— Laura Pascual</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE MÓNICA / EXPERIENCIA -->
+    <section id="experiencia" class="py-20 bg-brand-dark relative border-t border-b border-brand-gold/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <div class="aspect-square rounded-2xl overflow-hidden border border-brand-gold/30 shadow-2xl relative">
+                        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=800&q=80" 
+                             referrerpolicy="no-referrer" 
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" 
+                             alt="Manicura y detalles estéticos" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <!-- Badge Overlay -->
+                    <div class="absolute -bottom-6 -right-6 bg-brand-black border border-brand-gold p-6 rounded-2xl shadow-xl hidden sm:block max-w-xs">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-heart text-brand-gold text-2xl"></i>
+                            <div>
+                                <h4 class="font-serif text-brand-sand font-bold text-sm">Trato Cercano y Paciente</h4>
+                                <p class="text-xs text-brand-sand/70">Especialista en nail art a mano alzada y reconstrucción.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <span class="text-brand-gold uppercase tracking-[0.2em] text-xs font-bold">Trato Exclusivo & Artesanal</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold leading-tight">
+                        La perfección está en los <span class="gold-gradient-text italic font-normal">detalles</span>
+                    </h2>
+                    <p class="text-brand-sand/80 leading-relaxed font-light">
+                        En <strong class="text-brand-sand font-medium">Atenea Beauty</strong> no eres un cliente más. Mónica se toma el tiempo necesario para escucharte, asesorarte con criterio y realizar cada tratamiento de forma pulcra, paciente y personalizada.
+                    </p>
+                    
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-brand-black/50 border border-brand-gold/10">
+                            <div class="w-10 h-10 rounded-full bg-brand-gold/10 text-brand-gold flex items-center justify-center shrink-0 mt-1">
+                                <i class="fa-solid fa-wand-magic-sparkles text-sm"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-serif text-lg font-semibold text-brand-sand">Artistas del Nail Art</h3>
+                                <p class="text-sm text-brand-sand/70">Dibujos a mano alzada perfeccionistas (flores, diseños exclusivos) y soluciones para uñas mordidas.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-brand-black/50 border border-brand-gold/10">
+                            <div class="w-10 h-10 rounded-full bg-brand-gold/10 text-brand-gold flex items-center justify-center shrink-0 mt-1">
+                                <i class="fa-solid fa-gem text-sm"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-serif text-lg font-semibold text-brand-sand">Diseño de Mirada Cuidadoso</h3>
+                                <p class="text-sm text-brand-sand/70">Depilación y depurado de cejas y labio con cera y técnicas suaves que protegen y embellecen tu piel.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="tel:644317449" class="inline-flex items-center gap-3 bg-brand-gold/10 hover:bg-brand-gold text-brand-gold hover:text-brand-black px-6 py-3 rounded-full border border-brand-gold/40 transition-all font-semibold text-sm">
+                            <span>Contactar con Mónica</span>
+                            <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRATAMIENTOS Y TARIFAS -->
+    <section id="tratamientos" class="py-24 bg-brand-black relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="text-brand-gold uppercase tracking-[0.2em] text-xs font-bold">Carta de Servicios</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold">
+                    Nuestros Tratamientos & <span class="gold-gradient-text italic font-normal">Tarifas</span>
+                </h2>
+                <p class="text-brand-sand/70 font-light">
+                    Servicios minuciosos realizados con productos de alta gama y la máxima higiene para garantizar resultados impecables.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Servicio Destacado 1 -->
+                <div class="bg-brand-dark p-8 rounded-2xl border border-brand-gold/30 relative flex flex-col justify-between hover:border-brand-gold transition-all duration-300 group">
+                    <div class="absolute -top-3 right-6 bg-gold-gradient text-brand-black text-[10px] uppercase font-bold tracking-widest py-1 px-3 rounded-full">
+                        Popular
+                    </div>
+                    <div>
+                        <div class="w-12 h-12 rounded-full bg-brand-gold/10 text-brand-gold flex items-center justify-center text-xl mb-6 group-hover:bg-brand-gold group-hover:text-brand-black transition-colors">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-brand-sand mb-2">Cejas y Labio Superior</h3>
+                        <p class="text-xs text-brand-gold uppercase tracking-wider mb-4 font-semibold">Duración aprox. 30 minutos</p>
+                        <p class="text-brand-sand/70 text-sm leading-relaxed mb-6">
+                            Depilación minuciosa y delicada con cera especial para pieles sensibles. Incluye diseño, definición perfecta de la mirada y cuidado post-depilación para evitar rojeces.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-brand-gold/10 flex items-center justify-between">
+                        <div class="text-2xl font-serif font-bold text-brand-gold">10 € - 12 €</div>
+                        <a href="tel:644317449" class="text-xs uppercase font-bold text-brand-sand hover:text-brand-gold flex items-center gap-1">
+                            <span>Reservar</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="bg-brand-dark p-8 rounded-2xl border border-brand-gold/20 flex flex-col justify-between hover:border-brand-gold transition-all duration-300 group">
+                    <div>
+                        <div class="w-12 h-12 rounded-full bg-brand-gold/10 text-brand-gold flex items-center justify-center text-xl mb-6 group-hover:bg-brand-gold group-hover:text-brand-black transition-colors">
+                            <i class="fa-solid fa-hand"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-brand-sand mb-2">Manicura Artística & Nail Art</h3>
+                        <p class="text-xs text-brand-gold uppercase tracking-wider mb-4 font-semibold">Especialidad de Mónica</p>
+                        <p class="text-brand-sand/70 text-sm leading-relaxed mb-6">
+                            Trabajo artesanal minucioso con esmaltado duradero y decoraciones exclusivas pintadas totalmente a mano (diseños florales, geométricos y más).
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-brand-gold/10 flex items-center justify-between">
+                        <div class="text-sm text-brand-gold font-medium">Consulte opciones y diseños</div>
+                        <a href="tel:644317449" class="text-xs uppercase font-bold text-brand-sand hover:text-brand-gold flex items-center gap-1">
+                            <span>Reservar</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="bg-brand-dark p-8 rounded-2xl border border-brand-gold/20 flex flex-col justify-between hover:border-brand-gold transition-all duration-300 group">
+                    <div>
+                        <div class="w-12 h-12 rounded-full bg-brand-gold/10 text-brand-gold flex items-center justify-center text-xl mb-6 group-hover:bg-brand-gold group-hover:text-brand-black transition-colors">
+                            <i class="fa-solid fa-spa"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-brand-sand mb-2">Reconstrucción & Uñas Mordidas</h3>
+                        <p class="text-xs text-brand-gold uppercase tracking-wider mb-4 font-semibold">Tratamiento Terapéutico y Estético</p>
+                        <p class="text-brand-sand/70 text-sm leading-relaxed mb-6">
+                            Servicio altamente paciente e impecable para restaurar manos dañadas o hábito de morderse las uñas. Sal de la sesión luciendo unas manos espectaculares.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-brand-gold/10 flex items-center justify-between">
+                        <div class="text-sm text-brand-gold font-medium">Asesoramiento personal</div>
+                        <a href="tel:644317449" class="text-xs uppercase font-bold text-brand-sand hover:text-brand-gold flex items-center gap-1">
+                            <span>Reservar</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 4 -->
+                <div class="bg-brand-dark p-8 rounded-2xl border border-brand-gold/20 flex flex-col justify-between hover:border-brand-gold transition-all duration-300 group">
+                    <div>
+                        <div class="w-12 h-12 rounded-full bg-brand-gold/10 text-brand-gold flex items-center justify-center text-xl mb-6 group-hover:bg-brand-gold group-hover:text-brand-black transition-colors">
+                            <i class="fa-solid fa-[#000]"></i>
+                            <i class="fa-solid fa-shoe-prints text-xl"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-brand-sand mb-2">Pedicura Completa Deluxe</h3>
+                        <p class="text-xs text-brand-gold uppercase tracking-wider mb-4 font-semibold">Salud y Belleza para tus pies</p>
+                        <p class="text-brand-sand/70 text-sm leading-relaxed mb-6">
+                            Limpieza profunda, exfoliación, tratamiento de durezas y esmaltado impecable para una sensación de descanso y pulcritud absoluta.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-brand-gold/10 flex items-center justify-between">
+                        <div class="text-sm text-brand-gold font-medium">Efecto duradero</div>
+                        <a href="tel:644317449" class="text-xs uppercase font-bold text-brand-sand hover:text-brand-gold flex items-center gap-1">
+                            <span>Reservar</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 5 -->
+                <div class="bg-brand-dark p-8 rounded-2xl border border-brand-gold/20 flex flex-col justify-between hover:border-brand-gold transition-all duration-300 group">
+                    <div>
+                        <div class="w-12 h-12 rounded-full bg-brand-gold/10 text-brand-gold flex items-center justify-center text-xl mb-6 group-hover:bg-brand-gold group-hover:text-brand-black transition-colors">
+                            <i class="fa-solid fa-feather-pointed"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-brand-sand mb-2">Tratamientos Faciales Personalizados</h3>
+                        <p class="text-xs text-brand-gold uppercase tracking-wider mb-4 font-semibold">Diagnóstico con Criterio</p>
+                        <p class="text-brand-sand/70 text-sm leading-relaxed mb-6">
+                            Sesiones adaptadas a tu tipo de piel para devolver luminosidad, elasticidad e hidratación profunda con técnicas avanzadas.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-brand-gold/10 flex items-center justify-between">
+                        <div class="text-sm text-brand-gold font-medium">Bajo diagnóstico</div>
+                        <a href="tel:644317449" class="text-xs uppercase font-bold text-brand-sand hover:text-brand-gold flex items-center gap-1">
+                            <span>Reservar</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Banner Llamada -->
+                <div class="bg-gradient-to-br from-brand-gold/20 via-brand-dark to-brand-black p-8 rounded-2xl border border-brand-gold/40 flex flex-col justify-between text-center relative overflow-hidden">
+                    <div class="space-y-4">
+                        <span class="text-brand-gold text-2xl"><i class="fa-solid fa-bell font-serif"></i></span>
+                        <h3 class="font-serif text-2xl font-bold text-brand-sand">¿Buscas un tratamiento específico?</h3>
+                        <p class="text-brand-sand/80 text-sm">
+                            Consulta directamente con Mónica. Te asesorará sin compromiso sobre la mejor opción para tus necesidades.
+                        </p>
+                    </div>
+                    <div class="pt-6">
+                        <a href="tel:644317449" class="w-full bg-gold-gradient text-brand-black py-3 px-6 rounded-full font-bold uppercase text-xs tracking-wider inline-block hover:shadow-lg transition-all">
+                            Llamar al 644 31 74 49
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERÍA & INSTALACIONES -->
+    <section id="galeria" class="py-20 bg-brand-dark border-t border-brand-gold/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div class="space-y-3">
+                    <span class="text-brand-gold uppercase tracking-[0.2em] text-xs font-bold">Espacio de Bienestar</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold">
+                        Nuestras Instalaciones & <span class="gold-gradient-text italic font-normal">Trabajos</span>
+                    </h2>
+                </div>
+                <p class="text-brand-sand/70 text-sm max-w-md mt-4 md:mt-0 font-light">
+                    Un ambiente acogedor, limpio y elegante pensado para tu descanso absoluto durante cada sesión.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Foto Real 1 -->
+                <div class="group relative aspect-[4/3] rounded-2xl overflow-hidden border border-brand-gold/20 shadow-lg">
+                    <img src="https://cdn1.treatwell.net/images/view/v2.i8552958.w720.h480.x9C489CC0/" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" 
+                         alt="Instalaciones Atenea Beauty Valencia" 
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-brand-gold font-serif text-lg font-medium">Centro de Estética Atenea Beauty</span>
+                    </div>
+                </div>
+
+                <!-- Foto Adicional Estética 2 -->
+                <div class="group relative aspect-[4/3] rounded-2xl overflow-hidden border border-brand-gold/20 shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" 
+                         alt="Trabajo de Manicura y Nail Art" 
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-brand-gold font-serif text-lg font-medium">Diseños de Uñas Exclusivos</span>
+                    </div>
+                </div>
+
+                <!-- Foto Adicional Estética 3 -->
+                <div class="group relative aspect-[4/3] rounded-2xl overflow-hidden border border-brand-gold/20 shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=800&q=80" 
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';" 
+                         alt="Ambiente Relax y Belleza" 
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-brand-gold font-serif text-lg font-medium">Ambiente Tranquilo y Cuidado</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESEÑAS REALES DE CLIENTES -->
+    <section id="opiniones" class="py-24 bg-brand-black relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="text-brand-gold uppercase tracking-[0.2em] text-xs font-bold">Experiencias Reales</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold">
+                    Lo que dicen nuestras <span class="gold-gradient-text italic font-normal">clientas</span>
+                </h2>
+                <p class="text-brand-sand/70 font-light">
+                    Opiniones verificadas registradas por nuestras clientas en Google Maps.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Reseña 1 -->
+                <div class="glass-card p-8 rounded-2xl border border-brand-gold/20 flex flex-col justify-between relative">
+                    <div class="space-y-4">
+                        <div class="flex text-brand-gold text-sm gap-1">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-brand-sand/90 text-sm leading-relaxed italic">
+                            "Que chica tan guay de verdad, la primera vez que voy y ya me ha conquistado. Me he hecho las cejas con cera y dios que agradable, super cuidadosa y atenta. Está pendiente de ti y de que te vayas contenta al 100%. Superó mis expectativas con creces!!! Vuelvo 100%"
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-brand-gold/10 flex items-center justify-between">
+                        <div>
+                            <p class="font-serif text-brand-gold font-bold text-base">Tania pa</p>
+                            <p class="text-[11px] text-brand-sand/50">Cliente Verificada en Google</p>
+                        </div>
+                        <i class="fa-brands fa-google text-brand-gold/40 text-xl"></i>
+                    </div>
+                </div>
+
+                <!-- Reseña 2 -->
+                <div class="glass-card p-8 rounded-2xl border border-brand-gold/20 flex flex-col justify-between relative">
+                    <div class="space-y-4">
+                        <div class="flex text-brand-gold text-sm gap-1">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-brand-sand/90 text-sm leading-relaxed italic">
+                            "¡Me ha encantado la experiencia! Me acabo de hacer la manicura y pedicura con Mónica y el resultado es espectacular. Es súper amable y una artista: me dibujó unas flores preciosas en las uñas que quedaron perfectas. Trabajo minucioso, limpio y con mucho talento. ¡Volveré sin duda!"
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-brand-gold/10 flex items-center justify-between">
+                        <div>
+                            <p class="font-serif text-brand-gold font-bold text-base">Raquel Marí</p>
+                            <p class="text-[11px] text-brand-sand/50">Cliente Verificada en Google</p>
+                        </div>
+                        <i class="fa-brands fa-google text-brand-gold/40 text-xl"></i>
+                    </div>
+                </div>
+
+                <!-- Reseña 3 -->
+                <div class="glass-card p-8 rounded-2xl border border-brand-gold/20 flex flex-col justify-between relative">
+                    <div class="space-y-4">
+                        <div class="flex text-brand-gold text-sm gap-1">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-brand-sand/90 text-sm leading-relaxed italic">
+                            "Increíble y totalmente recomendado, es una auténtica profesional, muy amable y cercana .. te aconseja con mucho criterio .. me he hecho varios tratamientos con ella y cada uno mejor que el anterior."
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-brand-gold/10 flex items-center justify-between">
+                        <div>
+                            <p class="font-serif text-brand-gold font-bold text-base">Jose Lañas Parra</p>
+                            <p class="text-[11px] text-brand-sand/50">Cliente Verificado en Google</p>
+                        </div>
+                        <i class="fa-brands fa-google text-brand-gold/40 text-xl"></i>
+                    </div>
+                </div>
+
+                <!-- Reseña 4 -->
+                <div class="glass-card p-8 rounded-2xl border border-brand-gold/20 flex flex-col justify-between relative">
+                    <div class="space-y-4">
+                        <div class="flex text-brand-gold text-sm gap-1">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-brand-sand/90 text-sm leading-relaxed italic">
+                            "Mónica es una persona super agradable y perfeccionista. Ha tenido mucha paciencia conmigo. Yo me muerdo las uñas y ella me ha puesto unas para dejarme las manos preciosas y ayudarme con mi problema. Un trabajo impecable, sin duda repetiré."
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-brand-gold/10 flex items-center justify-between">
+                        <div>
+                            <p class="font-serif text-brand-gold font-bold text-base">Laura Pascual Eduardo</p>
+                            <p class="text-[11px] text-brand-sand/50">Cliente Verificada en Google</p>
+                        </div>
+                        <i class="fa-brands fa-google text-brand-gold/40 text-xl"></i>
+                    </div>
+                </div>
+
+                <!-- Reseña 5 -->
+                <div class="glass-card p-8 rounded-2xl border border-brand-gold/20 flex flex-col justify-between relative md:col-span-2 lg:col-span-1">
+                    <div class="space-y-4">
+                        <div class="flex text-brand-gold text-sm gap-1">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-brand-sand/90 text-sm leading-relaxed italic">
+                            "Monica es una chica muy profesional, amable, disponible y muy simpática. Muy satisfecho!"
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-brand-gold/10 flex items-center justify-between">
+                        <div>
+                            <p class="font-serif text-brand-gold font-bold text-base">Antonio Putzu</p>
+                            <p class="text-[11px] text-brand-sand/50">Cliente Verificado en Google</p>
+                        </div>
+                        <i class="fa-brands fa-google text-brand-gold/40 text-xl"></i>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- MAPA & CONTACTO -->
+    <section id="contacto" class="py-24 bg-brand-dark border-t border-brand-gold/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Info Column -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-brand-gold uppercase tracking-[0.2em] text-xs font-bold">Ubicación y Citas</span>
+                        <h2 class="font-serif text-3xl sm:text-5xl font-bold mt-2">
+                            Ven a <span class="gold-gradient-text italic font-normal">visitarnos</span>
+                        </h2>
+                        <p class="text-brand-sand/70 text-sm mt-3 font-light">
+                            Estamos ubicados céntricamente pegados al Barrio de la Luz. Reserva tu cita previa por teléfono para asegurarte atención exclusiva.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-brand-gold/10 text-brand-gold flex items-center justify-center shrink-0 border border-brand-gold/20">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-semibold text-brand-sand text-lg">Dirección</h4>
+                                <p class="text-brand-sand/70 text-sm leading-relaxed">
+                                    Pegado al barrio de la Luz, Plaa de lAlqueria Nova, 7, 46950 Valncia, Valencia, España
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-brand-gold/10 text-brand-gold flex items-center justify-center shrink-0 border border-brand-gold/20">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-semibold text-brand-sand text-lg">Teléfono / WhatsApp</h4>
+                                <a href="tel:644317449" class="text-brand-gold hover:underline text-lg font-bold">
+                                    644 31 74 49
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-brand-gold/10 text-brand-gold flex items-center justify-center shrink-0 border border-brand-gold/20">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-semibold text-brand-sand text-lg">Correo Electrónico</h4>
+                                <a href="mailto:monicavegagarcia@hotmail.com" class="text-brand-sand/70 hover:text-brand-gold text-sm transition-colors">
+                                    monicavegagarcia@hotmail.com
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="tel:644317449" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-gold-gradient text-brand-black px-8 py-4 rounded-full font-bold uppercase text-sm tracking-wider hover:shadow-[0_0_20px_rgba(197,168,128,0.4)] transition-all">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>Llamar para Reservar Cita</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Interactive Map Column -->
+                <div class="lg:col-span-7">
+                    <div class="p-2 rounded-2xl bg-brand-black border border-brand-gold/30 shadow-2xl">
+                        <iframe src="https://www.google.com/maps?q=Atenea%20beauty%20Pegado%20al%20barrio%20de%20la%20Luz%2C%20Plaa%20de%20lAlqueria%20Nova%2C%207%2C%2046950%20Valncia%2C%20Valencia%2C%20Espa%C3%B1a&output=embed" width="100%" height="420" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-black border-t border-brand-gold/20 py-12 text-sm text-brand-sand/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full border border-brand-gold flex items-center justify-center text-brand-gold text-xs">
+                        <i class="fa-solid fa-crown"></i>
+                    </div>
+                    <span class="font-serif text-lg tracking-widest uppercase text-brand-sand font-bold">Atenea Beauty</span>
+                </div>
+
+                <div class="text-center md:text-left text-xs space-y-1">
+                    <p>Pegado al barrio de la Luz, Plaa de lAlqueria Nova, 7, 46950 Valncia, Valencia, España</p>
+                    <p>&copy; <span id="year"></span> Atenea Beauty. Todos los derechos reservados.</p>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <a href="tel:644317449" class="w-10 h-10 rounded-full bg-brand-dark border border-brand-gold/30 flex items-center justify-center text-brand-gold hover:bg-brand-gold hover:text-brand-black transition-all" title="Llamar por Teléfono">
+                        <i class="fa-solid fa-phone"></i>
+                    </a>
+                    <a href="mailto:monicavegagarcia@hotmail.com" class="w-10 h-10 rounded-full bg-brand-dark border border-brand-gold/30 flex items-center justify-center text-brand-gold hover:bg-brand-gold hover:text-brand-black transition-all" title="Enviar Email">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING CALL BUTTON FOR MOBILE -->
+    <div class="fixed bottom-6 right-6 z-40 sm:hidden">
+        <a href="tel:644317449" class="w-14 h-14 bg-gold-gradient rounded-full shadow-[0_0_20px_rgba(197,168,128,0.6)] flex items-center justify-center text-brand-black text-xl font-bold animate-pulse">
+            <i class="fa-solid fa-phone"></i>
+        </a>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Set dynamic current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
