@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio19 Barberia y Peluqueria | Experiencia & Estilo en Madrid</title>
+  <meta name="description" content="Studio19 Barberia y Peluqueria en Ciudad Lineal, Madrid. Maestría artesanal en cortes clásicos, degradados fade, cuidado de barba y estilismo exclusivo.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            warmBlack: '#171412',
+            noirDeep: '#100D0B',
+            terracotta: {
+              DEFAULT: '#C86138',
+              hover: '#B1522C',
+              dark: '#934020'
+            },
+            crema: {
+              light: '#FAF7F2',
+              DEFAULT: '#F4ECE1',
+              dark: '#E7DCce'
+            },
+            warmOchre: '#D4A373'
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-crema-light text-warmBlack font-sans antialiased selection:bg-terracotta selection:text-white">
+
+  <!-- Header Superior / Barra de Contacto -->
+  <div class="bg-noirDeep text-crema text-xs py-2 px-4 border-b border-crema/10">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-6">
+        <span class="flex items-center gap-2 text-crema-dark">
+          <i class="fa-solid fa-location-dot text-terracotta"></i> C. de Emilio Rubín, 9, Madrid
+        </span>
+        <span class="hidden md:flex items-center gap-2 text-crema-dark">
+          <i class="fa-regular fa-clock text-terracotta"></i> Atención Personalizada & Alta Precisión
+        </span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="mailto:vivimd0711@gmail.com" class="hover:text-terracotta transition-colors flex items-center gap-1.5">
+          <i class="fa-regular fa-envelope"></i> vivimd0711@gmail.com
+        </a>
+        <a href="tel:654030994" class="text-terracotta font-semibold hover:underline flex items-center gap-1.5">
+          <i class="fa-solid fa-phone"></i> 654 030 994
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navegación Principal -->
+  <header class="sticky top-0 z-50 bg-warmBlack/95 backdrop-blur-md border-b border-terracotta/20 shadow-xl transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo -->
+        <a href="#" class="flex flex-col group">
+          <span class="font-serif text-2xl sm:text-3xl font-bold tracking-wider text-crema group-hover:text-terracotta transition-colors">
+            STUDIO<span class="text-terracotta">19</span>
+          </span>
+          <span class="text-[10px] tracking-[0.25em] uppercase text-crema-dark/80 font-sans -mt-1">
+            Barberia y Peluqueria
+          </span>
+        </a>
+
+        <!-- Menu Desktop -->
+        <nav class="hidden md:flex items-center space-x-8 text-sm uppercase tracking-widest font-medium text-crema">
+          <a href="#carta" class="hover:text-terracotta transition-colors py-2">Especialidades</a>
+          <a href="#experiencia" class="hover:text-terracotta transition-colors py-2">El Taller</a>
+          <a href="#galeria" class="hover:text-terracotta transition-colors py-2">Instalaciones</a>
+          <a href="#opiniones" class="hover:text-terracotta transition-colors py-2">Opiniones</a>
+          <a href="#contacto" class="hover:text-terracotta transition-colors py-2">Contacto</a>
+        </nav>
+
+        <!-- CTA Principal Header -->
+        <div class="hidden sm:flex items-center">
+          <a href="tel:654030994" class="inline-flex items-center gap-2 bg-terracotta hover:bg-terracotta-hover text-white text-sm font-semibold tracking-wider px-6 py-3 rounded-full shadow-lg shadow-terracotta/30 transition-all duration-300 hover:scale-105 active:scale-95 uppercase">
+            <i class="fa-solid fa-calendar-check text-crema"></i>
+            <span>Reservar Mesa</span>
+          </a>
+        </div>
+
+        <!-- Boton Menu Movil -->
+        <button id="mobileMenuBtn" aria-label="Abrir menú" class="md:hidden text-crema text-2xl p-2 focus:outline-none">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menú Desplegable Móvil -->
+    <div id="mobileMenu" class="hidden md:hidden bg-noirDeep border-b border-terracotta/20 px-6 py-6 space-y-4">
+      <a href="#carta" class="block text-crema hover:text-terracotta font-medium tracking-wider text-lg py-1 border-b border-crema/10">Nuestra Carta</a>
+      <a href="#experiencia" class="block text-crema hover:text-terracotta font-medium tracking-wider text-lg py-1 border-b border-crema/10">El Taller</a>
+      <a href="#galeria" class="block text-crema hover:text-terracotta font-medium tracking-wider text-lg py-1 border-b border-crema/10">Instalaciones</a>
+      <a href="#opiniones" class="block text-crema hover:text-terracotta font-medium tracking-wider text-lg py-1 border-b border-crema/10">Opiniones Reales</a>
+      <a href="#contacto" class="block text-crema hover:text-terracotta font-medium tracking-wider text-lg py-1 border-b border-crema/10">Ubicación</a>
+      <div class="pt-2">
+        <a href="tel:654030994" class="w-full flex justify-center items-center gap-2 bg-terracotta hover:bg-terracotta-hover text-white font-semibold py-3 px-6 rounded-full shadow-lg uppercase text-sm tracking-wider">
+          <i class="fa-solid fa-phone"></i>
+          <span>Reservar Mesa</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section Gourmet & Acogedor -->
+  <section class="relative min-h-[85vh] flex items-center justify-center bg-warmBlack text-crema overflow-hidden">
+    <!-- Fondo con foto de alta resolución y filtro cálido -->
+    <div class="absolute inset-0 z-0">
+      <img src="https://cdn1.treatwell.net/images/view/v2.i14945911.w720.h480.xA8C16A98/" 
+           alt="Interior Studio19 Barberia y Peluqueria en Madrid" 
+           class="w-full h-full object-cover object-center scale-105 filter brightness-[0.4] contrast-110"
+           referrerpolicy="no-referrer"
+           onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+      <div class="absolute inset-0 bg-gradient-to-t from-noirDeep via-noirDeep/60 to-transparent"></div>
+      <div class="absolute inset-0 bg-radial-gradient from-terracotta/20 to-transparent pointer-events-none"></div>
+    </div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-terracotta/20 border border-terracotta/40 backdrop-blur-md mb-6">
+        <span class="w-2 h-2 rounded-full bg-terracotta animate-pulse"></span>
+        <span class="text-xs uppercase font-semibold tracking-widest text-crema">Artesanía, Calidez & Precisión en Madrid</span>
+      </div>
+
+      <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-crema leading-[1.1] mb-6">
+        El Arte del Cuidado Masculino, <br class="hidden sm:inline">
+        <span class="italic font-normal text-terracotta">Servido con Distinción.</span>
+      </h1>
+
+      <p class="max-w-2xl mx-auto text-crema-dark text-lg sm:text-xl font-light leading-relaxed mb-10">
+        En Studio19 fusionamos la tradición de la barbería clásica con la meticulosidad del mejor corte de autor. Un espacio cálido y exclusivo pensado para relajarte y renovar tu imagen personal.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+        <a href="tel:654030994" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-terracotta hover:bg-terracotta-hover text-white text-base font-semibold px-8 py-4 rounded-full shadow-2xl shadow-terracotta/50 transition-all duration-300 hover:scale-105 active:scale-95 uppercase tracking-wider">
+          <i class="fa-solid fa-phone"></i>
+          <span>Reservar Mesa</span>
+        </a>
+        <a href="#carta" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-transparent hover:bg-crema/10 text-crema border border-crema/30 text-base font-medium px-8 py-4 rounded-full transition-all duration-300">
+          <span>Ver Nuestra Carta</span>
+          <i class="fa-solid fa-arrow-down text-terracotta"></i>
+        </a>
+      </div>
+
+      <!-- Sellos de confianza -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 pt-10 border-t border-crema/15 text-crema-dark text-xs sm:text-sm">
+        <div class="flex items-center justify-center gap-2">
+          <i class="fa-solid fa-medal text-terracotta text-lg"></i>
+          <span>Trato Exclusivo</span>
+        </div>
+        <div class="flex items-center justify-center gap-2">
+          <i class="fa-solid fa-scissors text-terracotta text-lg"></i>
+          <span>Técnica & Fade Pro</span>
+        </div>
+        <div class="flex items-center justify-center gap-2">
+          <i class="fa-solid fa-spa text-terracotta text-lg"></i>
+          <span>Ambiente Acogedor</span>
+        </div>
+        <div class="flex items-center justify-center gap-2">
+          <i class="fa-solid fa-star text-terracotta text-lg"></i>
+          <span>5 Estrellas en Reseñas</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filosofía & Experiencia -->
+  <section id="experiencia" class="py-20 bg-crema text-warmBlack">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-5 relative">
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+            <img src="https://cdn1.treatwell.net/images/view/v2.i14945911.w720.h480.xA8C16A98/" 
+                 alt="Sillón de barbería Studio19" 
+                 class="w-full h-[440px] object-cover hover:scale-105 transition-transform duration-700"
+                 referrerpolicy="no-referrer"
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+          </div>
+          <div class="absolute -bottom-6 -right-6 bg-warmBlack text-crema p-6 rounded-xl shadow-xl hidden sm:block max-w-[220px]">
+            <p class="font-serif text-3xl font-bold text-terracotta leading-none">Studio 19</p>
+            <p class="text-xs uppercase tracking-wider text-crema-dark mt-1">Cdad. Lineal · Madrid</p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 space-y-6">
+          <span class="text-terracotta uppercase font-bold tracking-widest text-xs">Tradición y Detalle Gourmet</span>
+          <h2 class="font-serif text-3xl sm:text-5xl font-bold text-warmBlack leading-tight">
+            Un espacio donde cada detalle importa tanto como el resultado final
+          </h2>
+          <div class="w-16 h-1 bg-terracotta"></div>
+          <p class="text-warmBlack/80 leading-relaxed text-base sm:text-lg">
+            En <strong>Studio19 Barberia y Peluqueria</strong> creemos que un buen corte o el perfilado perfecto de una barba no se improvisa: se elabora con calma, maestría y productos de primera categoría. Nuestro local en Calle de Emilio Rubín ha sido concebido como un refugio cálido donde desconectar del ritmo acelerado de Madrid.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
+            <div class="bg-crema-light p-5 rounded-xl border border-crema-dark shadow-sm">
+              <i class="fa-solid fa-mug-hot text-terracotta text-2xl mb-2"></i>
+              <h3 class="font-bold text-lg mb-1">Hospitalidad Total</h3>
+              <p class="text-sm text-warmBlack/70">Atención cordial, asesoramiento personalizado de visagismo y trato impecable.</p>
+            </div>
+            <div class="bg-crema-light p-5 rounded-xl border border-crema-dark shadow-sm">
+              <i class="fa-solid fa-razor text-terracotta text-2xl mb-2"></i>
+              <h3 class="font-bold text-lg mb-1">Precisión & Rituales</h3>
+              <p class="text-sm text-warmBlack/70">Tijera, navaja tradicional y degradados Fade pulidos hasta el más mínimo milímetro.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN OBLIGATORIA: Nuestra Carta, Platos Estrella y Especialidades de la Casa -->
+  <section id="carta" class="py-24 bg-noirDeep text-crema relative overflow-hidden">
+    <!-- Detalles decorativos sutiles de fondo -->
+    <div class="absolute -top-32 -left-32 w-96 h-96 bg-terracotta/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-terracotta/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-terracotta uppercase font-bold tracking-widest text-xs">Menú Selecto de Servicios</span>
+        <h2 class="font-serif text-3xl sm:text-5xl md:text-6xl font-bold tracking-normal mt-2 text-crema">
+          Nuestra Carta, Platos Estrella y Especialidades de la Casa
+        </h2>
+        <div class="w-24 h-1 bg-terracotta mx-auto my-6"></div>
+        <p class="text-crema-dark text-base sm:text-lg">
+          Selección cuidada de cortes clásicos, degradados de alta precisión, rituales de barba y diseño artístico para caballero.
+        </p>
+      </div>
+
+      <!-- Categoría 1: Platos Estrella / Cortes Principales -->
+      <div class="mb-16">
+        <div class="flex items-center gap-4 mb-8">
+          <div class="h-px bg-terracotta/40 flex-1"></div>
+          <h3 class="font-serif text-2xl sm:text-3xl text-terracotta tracking-wider uppercase flex items-center gap-3">
+            <i class="fa-solid fa-crown text-xl"></i>
+            Especialidades de Corte
+          </h3>
+          <div class="h-px bg-terracotta/40 flex-1"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          
+          <!-- Item 1 -->
+          <div class="bg-warmBlack/80 p-6 rounded-2xl border border-crema/10 hover:border-terracotta/50 transition-all duration-300 flex flex-col justify-between group">
+            <div>
+              <div class="flex justify-between items-start gap-4">
+                <div>
+                  <h4 class="font-serif text-xl sm:text-2xl text-crema font-bold group-hover:text-terracotta transition-colors">
+                    Corte Clásico (Tijera - Máquina)
+                  </h4>
+                  <span class="inline-block text-xs uppercase tracking-wider text-warmOchre mt-1">
+                    <i class="fa-regular fa-clock mr-1"></i> 30 minutos
+                  </span>
+                </div>
+                <div class="text-right">
+                  <span class="font-serif text-2xl font-bold text-terracotta">17 €</span>
+                </div>
+              </div>
+              <p class="text-sm text-crema-dark/80 mt-3 leading-relaxed">
+                Técnica tradicional pulida a tijera y máquina con lavado, peinado y asesoría personalizada de estilo adaptado a tus facciones.
+              </p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-crema/10 flex items-center justify-between">
+              <span class="text-xs text-crema-dark/60 font-mono">¿Qué incluye? Corte + Asesoría</span>
+              <a href="tel:654030994" class="text-xs font-semibold uppercase tracking-wider text-crema hover:text-terracotta transition-colors flex items-center gap-1">
+                Reservar Mesa <i class="fa-solid fa-chevron-right text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="bg-warmBlack/80 p-6 rounded-2xl border border-crema/10 hover:border-terracotta/50 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+            <div class="absolute top-0 right-0 bg-terracotta text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1 rounded-bl-lg">
+              Estrella
+            </div>
+            <div>
+              <div class="flex justify-between items-start gap-4">
+                <div>
+                  <h4 class="font-serif text-xl sm:text-2xl text-crema font-bold group-hover:text-terracotta transition-colors">
+                    Corte Fade (Degradado)
+                  </h4>
+                  <span class="inline-block text-xs uppercase tracking-wider text-warmOchre mt-1">
+                    <i class="fa-regular fa-clock mr-1"></i> 30 minutos
+                  </span>
+                </div>
+                <div class="text-right">
+                  <span class="font-serif text-2xl font-bold text-terracotta">19 €</span>
+                </div>
+              </div>
+              <p class="text-sm text-crema-dark/80 mt-3 leading-relaxed">
+                Difuminado milimétrico Skin Fade, Low, Mid o High Fade con transición perfecta, rematado con navaja y fijación con productos gourmet.
+              </p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-crema/10 flex items-center justify-between">
+              <span class="text-xs text-crema-dark/60 font-mono">¿Qué incluye? Fade + Acabado</span>
+              <a href="tel:654030994" class="text-xs font-semibold uppercase tracking-wider text-crema hover:text-terracotta transition-colors flex items-center gap-1">
+                Reservar Mesa <i class="fa-solid fa-chevron-right text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="bg-warmBlack/80 p-6 rounded-2xl border border-crema/10 hover:border-terracotta/50 transition-all duration-300 flex flex-col justify-between group">
+            <div>
+              <div class="flex justify-between items-start gap-4">
+                <div>
+                  <h4 class="font-serif text-xl sm:text-2xl text-crema font-bold group-hover:text-terracotta transition-colors">
+                    Corte Niños (Hasta 17 años)
+                  </h4>
+                  <span class="inline-block text-xs uppercase tracking-wider text-warmOchre mt-1">
+                    <i class="fa-regular fa-clock mr-1"></i> 30 minutos
+                  </span>
+                </div>
+                <div class="text-right">
+                  <span class="font-serif text-2xl font-bold text-terracotta">15 €</span>
+                </div>
+              </div>
+              <p class="text-sm text-crema-dark/80 mt-3 leading-relaxed">
+                Estilo actual, fresco y paciente para los más jóvenes. Tendencias contemporáneas con máxima comodidad.
+              </p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-crema/10 flex items-center justify-between">
+              <span class="text-xs text-crema-dark/60 font-mono">¿Qué incluye? Corte adaptado</span>
+              <a href="tel:654030994" class="text-xs font-semibold uppercase tracking-wider text-crema hover:text-terracotta transition-colors flex items-center gap-1">
+                Reservar Mesa <i class="fa-solid fa-chevron-right text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="bg-warmBlack/80 p-6 rounded-2xl border border-crema/10 hover:border-terracotta/50 transition-all duration-300 flex flex-col justify-between group">
+            <div>
+              <div class="flex justify-between items-start gap-4">
+                <div>
+                  <h4 class="font-serif text-xl sm:text-2xl text-crema font-bold group-hover:text-terracotta transition-colors">
+                    Corte Jubilado
+                  </h4>
+                  <span class="inline-block text-xs uppercase tracking-wider text-warmOchre mt-1">
+                    <i class="fa-regular fa-clock mr-1"></i> 30 minutos
+                  </span>
+                </div>
+                <div class="text-right">
+                  <span class="font-serif text-2xl font-bold text-terracotta">13 €</span>
+                </div>
+              </div>
+              <p class="text-sm text-crema-dark/80 mt-3 leading-relaxed">
+                Corte distinguido y pulcro con trato preferente y respetuoso con la tradición de toda la vida.
+              </p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-crema/10 flex items-center justify-between">
+              <span class="text-xs text-crema-dark/60 font-mono">¿Qué incluye? Tarifa especial</span>
+              <a href="tel:654030994" class="text-xs font-semibold uppercase tracking-wider text-crema hover:text-terracotta transition-colors flex items-center gap-1">
+                Reservar Mesa <i class="fa-solid fa-chevron-right text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Categoría 2: Los Maridajes / Combos Barba & Cejas -->
+      <div class="mb-16">
+        <div class="flex items-center gap-4 mb-8">
+          <div class="h-px bg-terracotta/40 flex-1"></div>
+          <h3 class="font-serif text-2xl sm:text-3xl text-terracotta tracking-wider uppercase flex items-center gap-3">
+            <i class="fa-solid fa-user-tie text-xl"></i>
+            Rituales Completos con Barba y Cejas
+          </h3>
+          <div class="h-px bg-terracotta/40 flex-1"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+          <!-- Combo 1 -->
+          <div class="bg-warmBlack/80 p-6 rounded-2xl border border-crema/10 hover:border-terracotta/50 transition-all duration-300 flex flex-col justify-between group">
+            <div>
+              <div class="flex justify-between items-start gap-4">
+                <div>
+                  <h4 class="font-serif text-xl sm:text-2xl text-crema font-bold group-hover:text-terracotta transition-colors">
+                    Corte Clásico con Arreglo y Perfilado de Barba
+                  </h4>
+                  <span class="inline-block text-xs uppercase tracking-wider text-warmOchre mt-1">
+                    <i class="fa-regular fa-clock mr-1"></i> 45 minutos
+                  </span>
+                </div>
+                <div class="text-right">
+                  <span class="font-serif text-xl sm:text-2xl font-bold text-terracotta">30 € - 32 €</span>
+                </div>
+              </div>
+              <p class="text-sm text-crema-dark/80 mt-3 leading-relaxed">
+                El pack esencial de elegancia masculina: corte de pelo artesanal acompañado de definición de contornos, perfilado a navaja e hidratación de barba.
+              </p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-crema/10 flex items-center justify-between">
+              <span class="text-xs text-crema-dark/60 font-mono">¿Qué incluye? Corte + Barba spa</span>
+              <a href="tel:654030994" class="text-xs font-semibold uppercase tracking-wider text-crema hover:text-terracotta transition-colors flex items-center gap-1">
+                Reservar Mesa <i class="fa-solid fa-chevron-right text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Combo 2 -->
+          <div class="bg-warmBlack/80 p-6 rounded-2xl border border-crema/10 hover:border-terracotta/50 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+            <div class="absolute top-0 right-0 bg-terracotta text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1 rounded-bl-lg">
+              Favorito
+            </div>
+            <div>
+              <div class="flex justify-between items-start gap-4">
+                <div>
+                  <h4 class="font-serif text-xl sm:text-2xl text-crema font-bold group-hover:text-terracotta transition-colors">
+                    Corte Fade con Arreglo y Perfilado de Barba
+                  </h4>
+                  <span class="inline-block text-xs uppercase tracking-wider text-warmOchre mt-1">
+                    <i class="fa-regular fa-clock mr-1"></i> 45 minutos
+                  </span>
+                </div>
+                <div class="text-right">
+                  <span class="font-serif text-xl sm:text-2xl font-bold text-terracotta">32 € - 34 €</span>
+                </div>
+              </div>
+              <p class="text-sm text-crema-dark/80 mt-3 leading-relaxed">
+                Conexión armoniosa entre el degradado del cabello y las patillas/barba. Definición extrema de líneas con navaja y bálsamo nutritivo.
+              </p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-crema/10 flex items-center justify-between">
+              <span class="text-xs text-crema-dark/60 font-mono">¿Qué incluye? Fade + Ritual Barba</span>
+              <a href="tel:654030994" class="text-xs font-semibold uppercase tracking-wider text-crema hover:text-terracotta transition-colors flex items-center gap-1">
+                Reservar Mesa <i class="fa-solid fa-chevron-right text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Combo 3 -->
+          <div class="bg-warmBlack/80 p-6 rounded-2xl border border-crema/10 hover:border-terracotta/50 transition-all duration-300 flex flex-col justify-between group">
+            <div>
+              <div class="flex justify-between items-start gap-4">
+                <div>
+                  <h4 class="font-serif text-xl sm:text-2xl text-crema font-bold group-hover:text-terracotta transition-colors">
+                    Corte Jubilado + Arreglo y Perfilado Barba
+                  </h4>
+                  <span class="inline-block text-xs uppercase tracking-wider text-warmOchre mt-1">
+                    <i class="fa-regular fa-clock mr-1"></i> 45 minutos
+                  </span>
+                </div>
+                <div class="text-right">
+                  <span class="font-serif text-xl sm:text-2xl font-bold text-terracotta">26 € - 28 €</span>
+                </div>
+              </div>
+              <p class="text-sm text-crema-dark/80 mt-3 leading-relaxed">
+                Cuidado integral pensado para la comodidad y estética tradicional del veterano, con acabado limpio y suave.
+              </p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-crema/10 flex items-center justify-between">
+              <span class="text-xs text-crema-dark/60 font-mono">¿Qué incluye? Corte + Barba</span>
+              <a href="tel:654030994" class="text-xs font-semibold uppercase tracking-wider text-crema hover:text-terracotta transition-colors flex items-center gap-1">
+                Reservar Mesa <i class="fa-solid fa-chevron-right text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Combo 4 -->
+          <div class="bg-warmBlack/80 p-6 rounded-2xl border border-crema/10 hover:border-terracotta/50 transition-all duration-300 flex flex-col justify-between group">
+            <div>
+              <div class="flex justify-between items-start gap-4">
+                <div>
+                  <h4 class="font-serif text-xl sm:text-2xl text-crema font-bold group-hover:text-terracotta transition-colors">
+                    Corte Clásico + Depilación Cejas a Navaja
+                  </h4>
+                  <span class="inline-block text-xs uppercase tracking-wider text-warmOchre mt-1">
+                    <i class="fa-regular fa-clock mr-1"></i> 45 minutos
+                  </span>
+                </div>
+                <div class="text-right">
+                  <span class="font-serif text-xl sm:text-2xl font-bold text-terracotta">20 € - 22 €</span>
+                </div>
+              </div>
+              <p class="text-sm text-crema-dark/80 mt-3 leading-relaxed">
+                Alineación de la mirada y despeje de cejas con hoja tradicional combinado con corte simétrico y limpio.
+              </p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-crema/10 flex items-center justify-between">
+              <span class="text-xs text-crema-dark/60 font-mono">¿Qué incluye? Corte + Diseño Cejas</span>
+              <a href="tel:654030994" class="text-xs font-semibold uppercase tracking-wider text-crema hover:text-terracotta transition-colors flex items-center gap-1">
+                Reservar Mesa <i class="fa-solid fa-chevron-right text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Combo 5 -->
+          <div class="bg-warmBlack/80 p-6 rounded-2xl border border-crema/10 hover:border-terracotta/50 transition-all duration-300 flex flex-col justify-between group">
+            <div>
+              <div class="flex justify-between items-start gap-4">
+                <div>
+                  <h4 class="font-serif text-xl sm:text-2xl text-crema font-bold group-hover:text-terracotta transition-colors">
+                    Corte Fade + Depilación Cejas a Navaja
+                  </h4>
+                  <span class="inline-block text-xs uppercase tracking-wider text-warmOchre mt-1">
+                    <i class="fa-regular fa-clock mr-1"></i> 45 minutos
+                  </span>
+                </div>
+                <div class="text-right">
+                  <span class="font-serif text-xl sm:text-2xl font-bold text-terracotta">22 € - 24 €</span>
+                </div>
+              </div>
+              <p class="text-sm text-crema-dark/80 mt-3 leading-relaxed">
+                Degradado de alto impacto con limpieza y definición milimétrica del arco facial de la ceja.
+              </p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-crema/10 flex items-center justify-between">
+              <span class="text-xs text-crema-dark/60 font-mono">¿Qué incluye? Fade + Cejas</span>
+              <a href="tel:654030994" class="text-xs font-semibold uppercase tracking-wider text-crema hover:text-terracotta transition-colors flex items-center gap-1">
+                Reservar Mesa <i class="fa-solid fa-chevron-right text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Combo 6 Arte -->
+          <div class="bg-warmBlack/80 p-6 rounded-2xl border border-crema/10 hover:border-terracotta/50 transition-all duration-300 flex flex-col justify-between group">
+            <div>
+              <div class="flex justify-between items-start gap-4">
+                <div>
+                  <h4 class="font-serif text-xl sm:text-2xl text-crema font-bold group-hover:text-terracotta transition-colors">
+                    Hombre: Corte + Hair Tattoo
+                  </h4>
+                  <span class="inline-block text-xs uppercase tracking-wider text-warmOchre mt-1">
+                    <i class="fa-regular fa-clock mr-1"></i> 35 - 45 min
+                  </span>
+                </div>
+                <div class="text-right">
+                  <span class="font-serif text-xl sm:text-2xl font-bold text-terracotta">desde 24 €</span>
+                </div>
+              </div>
+              <p class="text-sm text-crema-dark/80 mt-3 leading-relaxed">
+                Creatividad en estado puro. Dibujos geométricos, líneas o sombras artísticas talladas en el cabello con navaja y micro-máquinas. Diseño pequeño y sencillo (35 min / 24 €).
+              </p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-crema/10 flex items-center justify-between">
+              <span class="text-xs text-crema-dark/60 font-mono">¿Qué incluye? Corte + Freestyle</span>
+              <a href="tel:654030994" class="text-xs font-semibold uppercase tracking-wider text-crema hover:text-terracotta transition-colors flex items-center gap-1">
+                Reservar Mesa <i class="fa-solid fa-chevron-right text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Banner Llamada a la Acción Carta -->
+      <div class="bg-gradient-to-r from-terracotta-dark via-terracotta to-terracotta-hover p-8 md:p-12 rounded-3xl text-center shadow-2xl relative overflow-hidden">
+        <div class="relative z-10">
+          <h3 class="font-serif text-2xl sm:text-4xl font-bold text-white mb-3">
+            ¿Deseas asegurar tu cita y disfrutar de la experiencia?
+          </h3>
+          <p class="text-crema-light text-sm sm:text-base max-w-xl mx-auto mb-8 font-light">
+            Atención prioritaria y asesoramiento personalizado con nuestros maestros barberos en Ciudad Lineal.
+          </p>
+          <a href="tel:654030994" class="inline-flex items-center gap-3 bg-white text-terracotta-dark hover:bg-crema text-base font-bold px-9 py-4 rounded-full shadow-xl transition-all duration-300 hover:scale-105 uppercase tracking-wider">
+            <i class="fa-solid fa-phone"></i>
+            <span>Reservar Mesa</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECCIÓN OBLIGATORIA: Nuestras Instalaciones y Trabajos -->
+  <section id="galeria" class="py-24 bg-crema-light text-warmBlack">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-terracotta uppercase font-bold tracking-widest text-xs">Galería de Excelencia</span>
+        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-warmBlack mt-2">
+          Nuestras Instalaciones y Trabajos
+        </h2>
+        <div class="w-20 h-1 bg-terracotta mx-auto my-4"></div>
+        <p class="text-warmBlack/75 text-base sm:text-lg">
+          Un ambiente donde la comodidad y la técnica se dan la mano. Imágenes directas de nuestro salón en Madrid.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Foto 1 Real del Negocio -->
+        <div class="group relative rounded-2xl overflow-hidden shadow-xl bg-warmBlack aspect-[4/3]">
+          <img src="https://cdn1.treatwell.net/images/view/v2.i14945911.w720.h480.xA8C16A98/" 
+               alt="Instalaciones y sillones en Studio19 Barberia" 
+               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+               referrerpolicy="no-referrer"
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+          <div class="absolute inset-0 bg-gradient-to-t from-noirDeep/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+            <span class="text-terracotta font-serif text-xl font-bold">Puestos de Corte & Confort</span>
+            <span class="text-crema text-xs tracking-wider uppercase">Sillones ergonómicos y herramientas profesionales</span>
+          </div>
+        </div>
+
+        <!-- Foto 2 Trabajo / Detalle -->
+        <div class="group relative rounded-2xl overflow-hidden shadow-xl bg-warmBlack aspect-[4/3]">
+          <img src="https://cdn1.treatwell.net/images/view/v2.i14945911.w720.h480.xA8C16A98/" 
+               alt="Detalle de precisión en Studio19" 
+               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out filter contrast-125"
+               referrerpolicy="no-referrer"
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+          <div class="absolute inset-0 bg-gradient-to-t from-noirDeep/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+            <span class="text-terracotta font-serif text-xl font-bold">Cortes Fade & Barbas</span>
+            <span class="text-crema text-xs tracking-wider uppercase">Líneas limpias y degradados sin marcas</span>
+          </div>
+        </div>
+
+        <!-- Foto 3 Ambiente -->
+        <div class="group relative rounded-2xl overflow-hidden shadow-xl bg-warmBlack aspect-[4/3]">
+          <img src="https://cdn1.treatwell.net/images/view/v2.i14945911.w720.h480.xA8C16A98/" 
+               alt="Atmósfera cálida Studio19" 
+               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out filter brightness-95"
+               referrerpolicy="no-referrer"
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+          <div class="absolute inset-0 bg-gradient-to-t from-noirDeep/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+            <span class="text-terracotta font-serif text-xl font-bold">Ambiente de Relax</span>
+            <span class="text-crema text-xs tracking-wider uppercase">Música suave, iluminación cuidada y café de cortesía</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-12 text-center">
+        <a href="tel:654030994" class="inline-flex items-center gap-2 bg-terracotta hover:bg-terracotta-hover text-white px-8 py-3.5 rounded-full font-semibold shadow-lg shadow-terracotta/30 transition-all uppercase text-sm tracking-wider">
+          <i class="fa-solid fa-phone"></i>
+          <span>Reservar Mesa</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECCIÓN OBLIGATORIA: Opiniones Reales Verificadas -->
+  <section id="opiniones" class="py-24 bg-crema text-warmBlack relative border-y border-crema-dark">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <div class="flex items-center justify-center gap-1 text-terracotta text-lg mb-2">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <span class="text-terracotta uppercase font-bold tracking-widest text-xs">Testimonios de Clientes</span>
+        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-warmBlack mt-2">
+          Opiniones Reales Verificadas
+        </h2>
+        <div class="w-16 h-1 bg-terracotta mx-auto my-4"></div>
+        <p class="text-warmBlack/70 text-sm sm:text-base">
+          La satisfacción y lealtad de quienes nos eligen en Madrid es nuestra mayor garantía de calidad.
+        </p>
+      </div>
+
+      <!-- Tarjeta Testimonial Principal Real -->
+      <div class="max-w-3xl mx-auto">
+        <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-crema-dark relative">
+          <i class="fa-solid fa-quote-left text-terracotta/20 text-6xl absolute top-6 left-6 -z-0"></i>
+          
+          <div class="relative z-10 text-center">
+            <div class="flex justify-center text-amber-500 mb-6 gap-1 text-xl">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+
+            <!-- Reseña literal obligatoria -->
+            <blockquote class="font-serif text-2xl sm:text-3xl text-warmBlack italic font-medium leading-relaxed mb-6">
+              “Excelente trato, profesionalidad y calidad.”
+            </blockquote>
+
+            <div class="flex items-center justify-center gap-3">
+              <div class="w-11 h-11 rounded-full bg-terracotta/20 flex items-center justify-center text-terracotta font-bold text-base">
+                <i class="fa-solid fa-user-check"></i>
+              </div>
+              <div class="text-left">
+                <p class="font-bold text-warmBlack text-base">Cliente Verificado</p>
+                <p class="text-xs text-warmBlack/60 flex items-center gap-1">
+                  <i class="fa-brands fa-google text-terracotta"></i> Reseña en Google Maps / Portales
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECCIÓN OBLIGATORIA: Ubicación y Contacto con Mapa Interactivo -->
+  <section id="contacto" class="py-24 bg-noirDeep text-crema">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-terracotta uppercase font-bold tracking-widest text-xs">Visítanos en Ciudad Lineal</span>
+        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-crema mt-2">
+          Ubicación & Contacto Directo
+        </h2>
+        <div class="w-20 h-1 bg-terracotta mx-auto my-4"></div>
+        <p class="text-crema-dark text-base sm:text-lg">
+          Fácil acceso y aparcamiento en la zona. Te esperamos con los brazos abiertos.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        
+        <!-- Info cards -->
+        <div class="lg:col-span-5 flex flex-col justify-between space-y-6">
+          
+          <div class="bg-warmBlack/90 p-6 sm:p-8 rounded-2xl border border-crema/10 shadow-lg space-y-6">
+            
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-terracotta/20 flex items-center justify-center text-terracotta text-xl flex-shrink-0">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div>
+                <h4 class="font-serif text-lg text-crema font-bold">Dirección Exacta</h4>
+                <p class="text-crema-dark text-sm mt-1 leading-relaxed">
+                  C. de Emilio Rubín, 9, Cdad. Lineal, 28033 Madrid, España
+                </p>
+                <span class="inline-block text-xs text-warmOchre mt-1">Código Postal 01019 / 28033 España</span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-terracotta/20 flex items-center justify-center text-terracotta text-xl flex-shrink-0">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div>
+                <h4 class="font-serif text-lg text-crema font-bold">Teléfono de Reservas</h4>
+                <a href="tel:654030994" class="text-crema-dark hover:text-terracotta text-lg font-semibold block mt-1 transition-colors">
+                  654 030 994
+                </a>
+                <span class="text-xs text-crema-dark/60">Llamada directa instantánea</span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-terracotta/20 flex items-center justify-center text-terracotta text-xl flex-shrink-0">
+                <i class="fa-regular fa-envelope"></i>
+              </div>
+              <div>
+                <h4 class="font-serif text-lg text-crema font-bold">Correo Electrónico</h4>
+                <a href="mailto:vivimd0711@gmail.com" class="text-crema-dark hover:text-terracotta text-sm block mt-1 transition-colors">
+                  vivimd0711@gmail.com
+                </a>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-crema/10">
+              <a href="tel:654030994" class="w-full inline-flex items-center justify-center gap-3 bg-terracotta hover:bg-terracotta-hover text-white font-semibold py-4 px-6 rounded-xl shadow-lg shadow-terracotta/30 transition-all uppercase tracking-wider text-sm">
+                <i class="fa-solid fa-phone"></i>
+                <span>Reservar Mesa</span>
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Nota de cortesía -->
+          <div class="bg-warmBlack/50 p-5 rounded-xl border border-crema/5 text-xs text-crema-dark/70 flex items-center gap-3">
+            <i class="fa-solid fa-circle-info text-terracotta text-lg"></i>
+            <p>Se recomienda llamar con antelación para asegurar tu turno y garantizar el tiempo dedicado exclusivamente a tu corte.</p>
+          </div>
+
+        </div>
+
+        <!-- Mapa Interactivo Obligatorio -->
+        <div class="lg:col-span-7 rounded-2xl overflow-hidden shadow-2xl border border-crema/15 bg-warmBlack flex flex-col justify-center min-h-[380px]">
+          <iframe src="https://www.google.com/maps?q=Studio19%20Barberia%20y%20Peluqueria%20C.%20de%20Emilio%20Rub%C3%ADn%2C%209%2C%20Cdad.%20Lineal%2C%2028033%20Madrid%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-warmBlack text-crema-dark py-12 border-t border-crema/10 text-xs sm:text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex flex-col items-center md:items-start">
+        <span class="font-serif text-2xl font-bold tracking-wider text-crema">
+          STUDIO<span class="text-terracotta">19</span>
+        </span>
+        <span class="text-[10px] uppercase tracking-widest text-crema-dark/70">Barberia y Peluqueria · Madrid</span>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-6 text-crema">
+        <a href="#carta" class="hover:text-terracotta transition-colors">Carta de Servicios</a>
+        <a href="#galeria" class="hover:text-terracotta transition-colors">Instalaciones</a>
+        <a href="#opiniones" class="hover:text-terracotta transition-colors">Opiniones</a>
+        <a href="#contacto" class="hover:text-terracotta transition-colors">Ubicación</a>
+      </div>
+
+      <div class="text-center md:text-right">
+        <p class="text-crema-dark/60">&copy; <span id="year"></span> Studio19 Barberia y Peluqueria. Todos los derechos reservados.</p>
+        <p class="text-[11px] text-crema-dark/40 mt-1">C. de Emilio Rubín, 9, Ciudad Lineal, Madrid</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botón Flotante Permanente de Reservas -->
+  <div class="fixed bottom-6 right-6 z-50">
+    <a href="tel:654030994" class="inline-flex items-center gap-3 bg-terracotta hover:bg-terracotta-hover text-white font-bold py-3.5 px-6 rounded-full shadow-2xl shadow-terracotta/60 hover:scale-105 active:scale-95 transition-all uppercase tracking-wider text-sm border-2 border-white/20">
+      <i class="fa-solid fa-phone animate-bounce"></i>
+      <span>Reservar Mesa</span>
+    </a>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // Año automático
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Toggle Menú Móvil
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Cerrar menú al hacer clic en un enlace
+    document.querySelectorAll('#mobileMenu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  </script>
+</body>
+</html>
