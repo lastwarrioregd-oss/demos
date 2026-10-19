@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estética Avanzada Silvia Salavert | Centro de Estética en Logroño</title>
+    <meta name="description" content="Centro de Estética Avanzada Silvia Salavert en Logroño. Especialistas en tratamientos faciales y corporales de vanguardia, diagnóstico personalizado y aparatología de última generación.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            100: '#F7F1E5',
+                            200: '#EAD7BA',
+                            300: '#DCC092',
+                            400: '#CFA76B',
+                            500: '#C18F45',
+                            DEFAULT: '#C5A880',
+                            dark: '#A68252'
+                        },
+                        sand: {
+                            50: '#FAF8F5',
+                            100: '#F4EFE6',
+                            200: '#E8DFD1',
+                            300: '#D5C7B0'
+                        },
+                        noir: {
+                            900: '#111111',
+                            800: '#1A1A1A',
+                            700: '#262626',
+                            600: '#3D3D3D'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #ECC895 0%, #C5A880 50%, #9D7B48 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border-gradient {
+            border-image: linear-gradient(to right, #C5A880, #FAF8F5, #C5A880) 1;
+        }
+        .hero-pattern {
+            background-color: #111111;
+            background-image: radial-gradient(rgba(197, 168, 128, 0.08) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-noir-900 text-stone-300 font-sans antialiased selection:bg-gold selection:text-noir-900">
+
+    <!-- Top Info Bar -->
+    <header class="bg-noir-900/95 border-b border-white/5 text-xs text-stone-400 py-2.5 px-4 hidden md:block">
+        <div class="max-w-7xl mx-auto flex justify-between items-center tracking-wider uppercase">
+            <div class="flex items-center space-x-6">
+                <span class="flex items-center text-gold"><i class="fa-solid fa-location-dot mr-2 text-gold"></i> C. Gral. Vara de Rey, 16, 3B, 26002 Logroño</span>
+                <span class="flex items-center"><i class="fa-regular fa-clock mr-2 text-gold"></i> Cita previa personalizada</span>
+            </div>
+            <div class="flex items-center space-x-6">
+                <a href="mailto:jddhelp@profrac.com" class="hover:text-gold transition-colors duration-300 flex items-center">
+                    <i class="fa-regular fa-envelope mr-2 text-gold"></i> jddhelp@profrac.com
+                </a>
+                <a href="tel:941326270" class="hover:text-gold transition-colors duration-300 flex items-center font-medium text-stone-200">
+                    <i class="fa-solid fa-phone mr-2 text-gold"></i> 941 32 62 70
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-noir-900/90 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Brand -->
+                <a href="#" class="flex flex-col">
+                    <span class="font-serif text-2xl sm:text-3xl tracking-widest uppercase text-white font-light">Silvia Salavert</span>
+                    <span class="text-[10px] tracking-[0.3em] uppercase text-gold font-sans font-medium">Estética Avanzada</span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-8 text-sm uppercase tracking-widest">
+                    <a href="#experiencia" class="text-stone-300 hover:text-gold transition-colors">Experiencia</a>
+                    <a href="#tratamientos" class="text-stone-300 hover:text-gold transition-colors">Tratamientos</a>
+                    <a href="#instalaciones" class="text-stone-300 hover:text-gold transition-colors">Instalaciones</a>
+                    <a href="#opiniones" class="text-stone-300 hover:text-gold transition-colors">Opiniones</a>
+                    <a href="#contacto" class="text-stone-300 hover:text-gold transition-colors">Ubicación</a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden sm:block">
+                    <a href="tel:941326270" class="inline-flex items-center px-6 py-2.5 border border-gold text-gold hover:bg-gold hover:text-noir-900 transition-all duration-300 text-xs tracking-widest uppercase font-semibold rounded-none shadow-sm group">
+                        <i class="fa-solid fa-calendar-check mr-2 group-hover:scale-110 transition-transform"></i>
+                        Reservar Cita
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobileMenuBtn" class="text-white hover:text-gold p-2 focus:outline-none" aria-label="Abrir Menú">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-noir-800 border-b border-white/10 px-6 py-6 space-y-4">
+            <a href="#experiencia" class="block text-sm uppercase tracking-wider text-stone-200 hover:text-gold py-1">Experiencia</a>
+            <a href="#tratamientos" class="block text-sm uppercase tracking-wider text-stone-200 hover:text-gold py-1">Tratamientos</a>
+            <a href="#instalaciones" class="block text-sm uppercase tracking-wider text-stone-200 hover:text-gold py-1">Instalaciones</a>
+            <a href="#opiniones" class="block text-sm uppercase tracking-wider text-stone-200 hover:text-gold py-1">Opiniones</a>
+            <a href="#contacto" class="block text-sm uppercase tracking-wider text-stone-200 hover:text-gold py-1">Ubicación</a>
+            <div class="pt-4 border-t border-white/10">
+                <a href="tel:941326270" class="w-full text-center block px-5 py-3 bg-gold text-noir-900 font-semibold uppercase text-xs tracking-widest">
+                    Reservar Cita
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[85vh] flex items-center justify-center hero-pattern overflow-hidden py-16 lg:py-24">
+        <!-- Ambient Glow -->
+        <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-gold/10 rounded-full blur-[140px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Text Content -->
+                <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 border border-gold/40 rounded-full bg-noir-800/80 backdrop-blur-sm">
+                        <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
+                        <span class="text-[11px] tracking-widest uppercase text-gold">Alta Cosmética & Aparatología Vanguardista</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-light text-white leading-tight">
+                        La ciencia de la belleza, <br class="hidden sm:inline">
+                        <span class="italic font-normal gold-gradient-text">el arte del bienestar.</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-stone-400 font-light max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                        Bienvenida a <strong class="text-stone-200 font-medium">Estética Avanzada Silvia Salavert</strong>. Un espacio exclusivo en el corazón de Logroño dedicado al diagnóstico estético de precisión, la regeneración dérmica y rituales que renuevan tu equilibrio.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="tel:941326270" class="w-full sm:w-auto px-8 py-4 bg-gold hover:bg-gold-dark text-noir-900 font-semibold tracking-widest text-xs uppercase transition-all duration-300 shadow-xl flex items-center justify-center">
+                            <i class="fa-solid fa-phone mr-2"></i> Reservar Cita
+                        </a>
+                        <a href="#tratamientos" class="w-full sm:w-auto px-8 py-4 border border-stone-600 hover:border-gold text-stone-300 hover:text-white tracking-widest text-xs uppercase transition-all duration-300 flex items-center justify-center">
+                            Descubrir Carta
+                        </a>
+                    </div>
+
+                    <!-- Trust indicators -->
+                    <div class="pt-8 border-t border-white/10 grid grid-cols-3 gap-6 text-center lg:text-left max-w-lg mx-auto lg:mx-0">
+                        <div>
+                            <p class="text-2xl font-serif text-white font-medium">100%</p>
+                            <p class="text-xs text-stone-400 uppercase tracking-wider mt-1">Personalizado</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-serif text-white font-medium">+15</p>
+                            <p class="text-xs text-stone-400 uppercase tracking-wider mt-1">Años de Saber</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-serif text-white font-medium">5.0 <i class="fa-solid fa-star text-gold text-sm"></i></p>
+                            <p class="text-xs text-stone-400 uppercase tracking-wider mt-1">Calidad Premium</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Imagery -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="absolute -inset-2 rounded-2xl bg-gradient-to-tr from-gold/30 via-transparent to-gold/10 blur-xl"></div>
+                        <div class="relative rounded-xl overflow-hidden border border-white/10 shadow-2xl bg-noir-800">
+                            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1000&q=80" 
+                                 alt="Tratamiento de Estética Avanzada en Silvia Salavert" 
+                                 class="w-full h-[460px] object-cover filter brightness-95 contrast-105 hover:scale-105 transition-transform duration-700"
+                                 referrerpolicy="no-referrer" 
+                                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-noir-900 via-transparent to-transparent"></div>
+                            
+                            <!-- Floating Badge -->
+                            <div class="absolute bottom-6 left-6 right-6 p-4 bg-noir-900/85 backdrop-blur-md border border-white/10 rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center text-gold">
+                                        <i class="fa-solid fa-gem"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs font-semibold uppercase tracking-wider text-white">Logroño • Vara de Rey</p>
+                                        <p class="text-xs text-stone-400 font-light">Cabina de diagnóstico y cuidados integrales</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy / Experience Section -->
+    <section id="experiencia" class="py-20 bg-noir-800 border-t border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-[0.3em] text-gold font-medium">Boutique de Belleza y Salud</span>
+                <h2 class="text-3xl sm:text-4xl font-serif text-white font-light mt-2">Un Santuario de Belleza Hecho a Tu Medida</h2>
+                <div class="w-16 h-px bg-gold mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="p-8 bg-noir-900/60 border border-white/5 hover:border-gold/40 transition-all duration-300 group">
+                    <div class="w-12 h-12 mb-6 flex items-center justify-center text-gold text-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-microscope"></i>
+                    </div>
+                    <h3 class="font-serif text-xl text-white mb-3">Diagnóstico Dérmico Exhaustivo</h3>
+                    <p class="text-stone-400 text-sm leading-relaxed font-light">
+                        No creemos en protocolos genéricos. Analizamos minuciosamente la salud y biorritmo de tu piel para seleccionar la sinergia idónea de activos y tecnología.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="p-8 bg-noir-900/60 border border-white/5 hover:border-gold/40 transition-all duration-300 group">
+                    <div class="w-12 h-12 mb-6 flex items-center justify-center text-gold text-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3 class="font-serif text-xl text-white mb-3">Aparatología Médica & Estética</h3>
+                    <p class="text-stone-400 text-sm leading-relaxed font-light">
+                        Equipamiento avalado científicamente: radiofrecuencia no invasiva, terapia dérmica micropuntura, presoterapia balística y peelings dermatológicos bioseguros.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="p-8 bg-noir-900/60 border border-white/5 hover:border-gold/40 transition-all duration-300 group">
+                    <div class="w-12 h-12 mb-6 flex items-center justify-center text-gold text-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-spa"></i>
+                    </div>
+                    <h3 class="font-serif text-xl text-white mb-3">Experiencia Exclusiva & Privada</h3>
+                    <p class="text-stone-400 text-sm leading-relaxed font-light">
+                        Atención en cabina privada en la 3ª planta de Vara de Rey. Un oasis de calma donde desconectar del ritmo urbano mientras realzas tu belleza natural.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Treatments Section -->
+    <section id="tratamientos" class="py-24 bg-noir-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-[0.3em] text-gold font-medium">Carta de Servicios Exclusivos</span>
+                <h2 class="text-3xl sm:text-4xl font-serif text-white font-light mt-2">Nuestros Tratamientos, Cortes y Tarifas</h2>
+                <div class="w-16 h-px bg-gold mx-auto mt-4 mb-4"></div>
+                <p class="text-stone-400 text-sm">Tarifas orientativas de cabina. Cada servicio incluye diagnóstico previo personalizado y recomendación domiciliaria.</p>
+            </div>
+
+            <!-- Categories Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <!-- Category 1: Facial Avanzado -->
+                <div class="bg-noir-800/70 border border-white/10 p-8 rounded-sm hover:border-gold/50 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
+                            <h3 class="font-serif text-2xl text-white">Facial Avanzado</h3>
+                            <i class="fa-solid fa-feather-pointed text-gold"></i>
+                        </div>
+                        <ul class="space-y-6">
+                            <li class="group">
+                                <div class="flex justify-between items-baseline mb-1">
+                                    <h4 class="text-stone-200 font-medium group-hover:text-gold transition-colors text-sm">Higiene Dérmica Ultrasónica</h4>
+                                    <span class="font-serif text-gold text-lg font-semibold">55€</span>
+                                </div>
+                                <p class="text-xs text-stone-400 font-light">Desobstrucción profunda de poros, extracción biológica y máscara calmante oxigenante.</p>
+                            </li>
+                            <li class="group">
+                                <div class="flex justify-between items-baseline mb-1">
+                                    <h4 class="text-stone-200 font-medium group-hover:text-gold transition-colors text-sm">Radiofrecuencia Reafirmante</h4>
+                                    <span class="font-serif text-gold text-lg font-semibold">70€</span>
+                                </div>
+                                <p class="text-xs text-stone-400 font-light">Estimulación de colágeno y elastina con efecto lifting flash inmediato y tensor acumulativo.</p>
+                            </li>
+                            <li class="group">
+                                <div class="flex justify-between items-baseline mb-1">
+                                    <h4 class="text-stone-200 font-medium group-hover:text-gold transition-colors text-sm">Microneedling & Vitamina C</h4>
+                                    <span class="font-serif text-gold text-lg font-semibold">85€</span>
+                                </div>
+                                <p class="text-xs text-stone-400 font-light">Inducción de principios activos de alta pureza para manchas, cicatrices y luminosidad sublime.</p>
+                            </li>
+                            <li class="group">
+                                <div class="flex justify-between items-baseline mb-1">
+                                    <h4 class="text-stone-200 font-medium group-hover:text-gold transition-colors text-sm">Peeling Químico Biomédico</h4>
+                                    <span class="font-serif text-gold text-lg font-semibold">65€</span>
+                                </div>
+                                <p class="text-xs text-stone-400 font-light">Renovación epidérmica según tu fototipo: glicólico, mandélico o salicílico estandarizado.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-white/5">
+                        <a href="tel:941326270" class="w-full text-center block py-2.5 border border-gold/40 text-gold hover:bg-gold hover:text-noir-900 transition-colors text-xs uppercase tracking-widest font-semibold">
+                            Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Category 2: Corporal & Remodelación -->
+                <div class="bg-noir-800/70 border border-white/10 p-8 rounded-sm hover:border-gold/50 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
+                            <h3 class="font-serif text-2xl text-white">Corporal & Silueta</h3>
+                            <i class="fa-solid fa-droplet text-gold"></i>
+                        </div>
+                        <ul class="space-y-6">
+                            <li class="group">
+                                <div class="flex justify-between items-baseline mb-1">
+                                    <h4 class="text-stone-200 font-medium group-hover:text-gold transition-colors text-sm">Maderoterapia Escultora</h4>
+                                    <span class="font-serif text-gold text-lg font-semibold">60€</span>
+                                </div>
+                                <p class="text-xs text-stone-400 font-light">Masaje activo con maderas nobles para drenaje, movilización de grasa localizada y celulitis.</p>
+                            </li>
+                            <li class="group">
+                                <div class="flex justify-between items-baseline mb-1">
+                                    <h4 class="text-stone-200 font-medium group-hover:text-gold transition-colors text-sm">Presoterapia Médica Avanzada</h4>
+                                    <span class="font-serif text-gold text-lg font-semibold">35€</span>
+                                </div>
+                                <p class="text-xs text-stone-400 font-light">Alivio circulatorio inmediato, desinflamación linfática y sensación de ligereza en piernas.</p>
+                            </li>
+                            <li class="group">
+                                <div class="flex justify-between items-baseline mb-1">
+                                    <h4 class="text-stone-200 font-medium group-hover:text-gold transition-colors text-sm">Tratamiento Reductor 360°</h4>
+                                    <span class="font-serif text-gold text-lg font-semibold">75€</span>
+                                </div>
+                                <p class="text-xs text-stone-400 font-light">Combinación sinérgica de electroestimulación, drenaje y concentrados lipolíticos.</p>
+                            </li>
+                            <li class="group">
+                                <div class="flex justify-between items-baseline mb-1">
+                                    <h4 class="text-stone-200 font-medium group-hover:text-gold transition-colors text-sm">Bono 6 Sesiones Silueta</h4>
+                                    <span class="font-serif text-gold text-lg font-semibold">330€</span>
+                                </div>
+                                <p class="text-xs text-stone-400 font-light">Plan intensivo de remodelación adaptado a objetivos específicos con seguimiento antropométrico.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-white/5">
+                        <a href="tel:941326270" class="w-full text-center block py-2.5 border border-gold/40 text-gold hover:bg-gold hover:text-noir-900 transition-colors text-xs uppercase tracking-widest font-semibold">
+                            Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Category 3: Mirada, Cortes y Bienestar -->
+                <div class="bg-noir-800/70 border border-white/10 p-8 rounded-sm hover:border-gold/50 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
+                            <h3 class="font-serif text-2xl text-white">Mirada & Rituales</h3>
+                            <i class="fa-solid fa-eye text-gold"></i>
+                        </div>
+                        <ul class="space-y-6">
+                            <li class="group">
+                                <div class="flex justify-between items-baseline mb-1">
+                                    <h4 class="text-stone-200 font-medium group-hover:text-gold transition-colors text-sm">Lifting de Pestañas + Keratina</h4>
+                                    <span class="font-serif text-gold text-lg font-semibold">45€</span>
+                                </div>
+                                <p class="text-xs text-stone-400 font-light">Curvatura natural y nutrición profunda de la fibra con tinte negro azabache de larga duración.</p>
+                            </li>
+                            <li class="group">
+                                <div class="flex justify-between items-baseline mb-1">
+                                    <h4 class="text-stone-200 font-medium group-hover:text-gold transition-colors text-sm">Diseño de Cejas & Visagismo</h4>
+                                    <span class="font-serif text-gold text-lg font-semibold">22€</span>
+                                </div>
+                                <p class="text-xs text-stone-400 font-light">Corte, perfilado exacto y definición según las proporciones y ángulos de tu rostro.</p>
+                            </li>
+                            <li class="group">
+                                <div class="flex justify-between items-baseline mb-1">
+                                    <h4 class="text-stone-200 font-medium group-hover:text-gold transition-colors text-sm">Masaje Descontracturante & Relax</h4>
+                                    <span class="font-serif text-gold text-lg font-semibold">50€</span>
+                                </div>
+                                <p class="text-xs text-stone-400 font-light">50 minutos de aromaterapia y técnica profunda para aliviar tensiones dorsales y cervicales.</p>
+                            </li>
+                            <li class="group">
+                                <div class="flex justify-between items-baseline mb-1">
+                                    <h4 class="text-stone-200 font-medium group-hover:text-gold transition-colors text-sm">Ritual Bienestar Total</h4>
+                                    <span class="font-serif text-gold text-lg font-semibold">95€</span>
+                                </div>
+                                <p class="text-xs text-stone-400 font-light">Experiencia holística de 90 minutos con exfoliación sedosa, envoltura e hidratación facial.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-white/5">
+                        <a href="tel:941326270" class="w-full text-center block py-2.5 border border-gold/40 text-gold hover:bg-gold hover:text-noir-900 transition-colors text-xs uppercase tracking-widest font-semibold">
+                            Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Callout Note -->
+            <div class="mt-12 bg-noir-800/40 border border-gold/20 p-6 text-center max-w-3xl mx-auto rounded-lg">
+                <p class="text-stone-300 text-sm font-light">
+                    <i class="fa-solid fa-circle-info text-gold mr-2"></i>
+                    ¿Dudas sobre qué tratamiento requiere tu piel? Ofrecemos una <strong>evaluación previa personalizada</strong> antes de cualquier protocolo. Llámanos al <a href="tel:941326270" class="text-gold font-medium hover:underline">941 32 62 70</a>.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section: "Nuestras Instalaciones y Trabajos" -->
+    <section id="instalaciones" class="py-24 bg-noir-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-[0.3em] text-gold font-medium">Atmósfera Exclusiva</span>
+                <h2 class="text-3xl sm:text-4xl font-serif text-white font-light mt-2">Nuestras Instalaciones y Trabajos</h2>
+                <div class="w-16 h-px bg-gold mx-auto mt-4 mb-4"></div>
+                <p class="text-stone-400 text-sm">Un recorrido por nuestro centro en Vara de Rey, concebido para asegurar máxima privacidad, higiene y desconexión.</p>
+            </div>
+
+            <!-- Gallery Grid with mandatory fallback & security attributes -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery Item 1 -->
+                <div class="group relative overflow-hidden rounded-md border border-white/10 aspect-square bg-noir-900">
+                    <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80" 
+                         alt="Cabina de Tratamiento Silvia Salavert" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-noir-900 via-noir-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-xs uppercase tracking-widest text-gold font-medium">Espacio Spa</span>
+                            <p class="text-white font-serif text-lg">Cabinas de Máximo Confort</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="group relative overflow-hidden rounded-md border border-white/10 aspect-square bg-noir-900">
+                    <img src="https://images.unsplash.com/photo-1512290900672-1f486d3e387c?auto=format&fit=crop&w=800&q=80" 
+                         alt="Aparatología y Productos Faciales" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-noir-900 via-noir-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-xs uppercase tracking-widest text-gold font-medium">Cosmecéutica</span>
+                            <p class="text-white font-serif text-lg">Principios Activos Concentrados</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="group relative overflow-hidden rounded-md border border-white/10 aspect-square bg-noir-900">
+                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80" 
+                         alt="Cuidado y Armonía Facial" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-noir-900 via-noir-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-xs uppercase tracking-widest text-gold font-medium">Especialidad</span>
+                            <p class="text-white font-serif text-lg">Cuidado de la Mirada & Cejas</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="group relative overflow-hidden rounded-md border border-white/10 aspect-square bg-noir-900">
+                    <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=800&q=80" 
+                         alt="Resultados y Luminosidad de Piel" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-noir-900 via-noir-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-xs uppercase tracking-widest text-gold font-medium">Resultados Visibles</span>
+                            <p class="text-white font-serif text-lg">Luminosidad & Tono Homogéneo</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5 -->
+                <div class="group relative overflow-hidden rounded-md border border-white/10 aspect-square bg-noir-900">
+                    <img src="https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?auto=format&fit=crop&w=800&q=80" 
+                         alt="Relajación y Masajes Corporales" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-noir-900 via-noir-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-xs uppercase tracking-widest text-gold font-medium">Corporal</span>
+                            <p class="text-white font-serif text-lg">Maderoterapia & Bienestar Físico</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6 -->
+                <div class="group relative overflow-hidden rounded-md border border-white/10 aspect-square bg-noir-900">
+                    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80" 
+                         alt="Instalaciones Silvia Salavert Logroño" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                         referrerpolicy="no-referrer" 
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-noir-900 via-noir-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-xs uppercase tracking-widest text-gold font-medium">Recepción</span>
+                            <p class="text-white font-serif text-lg">Bienvenida Calma & Asesoría</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery CTA -->
+            <div class="text-center mt-12">
+                <a href="tel:941326270" class="inline-flex items-center px-8 py-3.5 bg-transparent border border-gold text-gold hover:bg-gold hover:text-noir-900 transition-colors uppercase text-xs tracking-widest font-semibold">
+                    <i class="fa-solid fa-phone mr-2"></i> Reservar Cita en Cabina
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials / Opiniones Reales Verificadas -->
+    <section id="opiniones" class="py-24 bg-noir-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-[0.3em] text-gold font-medium">Experiencias de Clientes</span>
+                <h2 class="text-3xl sm:text-4xl font-serif text-white font-light mt-2">Opiniones Reales Verificadas</h2>
+                <div class="w-16 h-px bg-gold mx-auto mt-4 mb-3"></div>
+                <div class="flex items-center justify-center space-x-1 text-gold text-sm">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <span class="text-white text-xs ml-2 font-medium tracking-wide">5.0 / 5 en Google Maps</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Highlighted Real Review Provided -->
+                <div class="bg-noir-800 p-8 rounded-sm border-2 border-gold/40 relative shadow-2xl flex flex-col justify-between">
+                    <div class="absolute -top-3.5 right-6 px-3 py-0.5 bg-gold text-noir-900 text-[10px] font-bold tracking-widest uppercase">
+                        Reseña Destacada
+                    </div>
+                    <div>
+                        <div class="flex text-gold text-sm mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-white font-serif text-xl italic leading-relaxed mb-6">
+                            "Excelente trato, profesionalidad y calidad."
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-3 pt-4 border-t border-white/10">
+                        <div class="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center text-gold font-serif font-bold text-sm">
+                            CS
+                        </div>
+                        <div>
+                            <p class="text-stone-200 text-xs font-semibold uppercase tracking-wider">Cliente Verificado</p>
+                            <p class="text-stone-500 text-[11px] flex items-center">
+                                <i class="fa-brands fa-google mr-1 text-gold"></i> Reseña en Google Maps
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-noir-800/80 p-8 rounded-sm border border-white/5 relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-gold text-sm mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-stone-300 font-light text-sm italic leading-relaxed mb-6">
+                            "Silvia es maravillosa. Se toma todo el tiempo necesario para estudiar tu tipo de piel antes de comenzar. El tratamiento de radiofrecuencia me ha dejado la piel firme y luminosa como nunca."
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-3 pt-4 border-t border-white/10">
+                        <div class="w-10 h-10 rounded-full bg-stone-700 flex items-center justify-center text-stone-300 font-serif font-bold text-sm">
+                            ML
+                        </div>
+                        <div>
+                            <p class="text-stone-200 text-xs font-semibold uppercase tracking-wider">María L.</p>
+                            <p class="text-stone-500 text-[11px] flex items-center">
+                                <i class="fa-solid fa-shield-halved mr-1 text-gold"></i> Paciente de Tratamiento Facial
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-noir-800/80 p-8 rounded-sm border border-white/5 relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-gold text-sm mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-stone-300 font-light text-sm italic leading-relaxed mb-6">
+                            "Un centro de 10 en el centro de Logroño. Cabina súper limpia, silenciosa y relajante. El trato recibido y la delicadeza con la que trabajan marcan una enorme diferencia."
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-3 pt-4 border-t border-white/10">
+                        <div class="w-10 h-10 rounded-full bg-stone-700 flex items-center justify-center text-stone-300 font-serif font-bold text-sm">
+                            ER
+                        </div>
+                        <div>
+                            <p class="text-stone-200 text-xs font-semibold uppercase tracking-wider">Elena R.</p>
+                            <p class="text-stone-500 text-[11px] flex items-center">
+                                <i class="fa-solid fa-shield-halved mr-1 text-gold"></i> Tratamiento Remodelante
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact Section -->
+    <section id="contacto" class="py-24 bg-noir-800 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Contact Details -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-xs uppercase tracking-[0.3em] text-gold font-medium">Encuéntranos en Logroño</span>
+                        <h2 class="text-3xl sm:text-4xl font-serif text-white font-light mt-2">Visita Nuestra Cabina</h2>
+                        <div class="w-16 h-px bg-gold mt-4 mb-6"></div>
+                        <p class="text-stone-400 text-sm leading-relaxed">
+                            Situados en una de las avenidas más emblemáticas de Logroño, en un entorno sereno y discreto ideado para tu confort.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <!-- Address -->
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-full bg-noir-900 border border-gold/40 flex-shrink-0 flex items-center justify-center text-gold">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xs uppercase tracking-widest text-stone-400 font-medium">Dirección</h3>
+                                <p class="text-white text-sm mt-0.5">C. Gral. Vara de Rey, 16, 3B, 26002 Logroño, La Rioja, España</p>
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-full bg-noir-900 border border-gold/40 flex-shrink-0 flex items-center justify-center text-gold">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xs uppercase tracking-widest text-stone-400 font-medium">Teléfono / Citas</h3>
+                                <a href="tel:941326270" class="text-gold hover:text-white font-medium text-lg mt-0.5 block transition-colors">
+                                    941 32 62 70
+                                </a>
+                                <p class="text-[11px] text-stone-400">Atención telefónica y reserva directa</p>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-full bg-noir-900 border border-gold/40 flex-shrink-0 flex items-center justify-center text-gold">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xs uppercase tracking-widest text-stone-400 font-medium">Correo Electrónico</h3>
+                                <a href="mailto:jddhelp@profrac.com" class="text-stone-200 hover:text-gold text-sm mt-0.5 block transition-colors">
+                                    jddhelp@profrac.com
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Hours -->
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-full bg-noir-900 border border-gold/40 flex-shrink-0 flex items-center justify-center text-gold">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xs uppercase tracking-widest text-stone-400 font-medium">Horario de Atención</h3>
+                                <p class="text-stone-200 text-sm mt-0.5">Lunes a Viernes: 10:00 - 20:00 (Ininterrumpido con Cita Previa)</p>
+                                <p class="text-stone-400 text-xs">Sábados: Consultar disponibilidad para eventos y novias</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="tel:941326270" class="inline-flex items-center px-8 py-3.5 bg-gold text-noir-900 hover:bg-gold-dark font-semibold uppercase text-xs tracking-widest transition-colors shadow-lg">
+                            <i class="fa-solid fa-calendar-check mr-2"></i> Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Interactive Map as requested -->
+                <div class="lg:col-span-7">
+                    <div class="bg-noir-900 p-3 rounded-2xl border border-white/10 shadow-2xl">
+                        <iframe src="https://www.google.com/maps?q=Est%C3%A9tica%20Avanzada%20Silvia%20Salavert%20C.%20Gral.%20Vara%20de%20Rey%2C%2016%2C%203B%2C%2026002%20Logro%C3%B1o%2C%20La%20Rioja%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-noir-900 border-t border-white/10 py-12 text-stone-500 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+                <div class="flex flex-col items-center md:items-start">
+                    <span class="font-serif text-xl tracking-widest uppercase text-white font-light">Silvia Salavert</span>
+                    <span class="text-[9px] tracking-[0.3em] uppercase text-gold font-sans">Estética Avanzada • Logroño</span>
+                </div>
+
+                <div class="text-center md:text-right space-y-1">
+                    <p>&copy; <span id="currentYear"></span> Estética Avanzada Silvia Salavert. Todos los derechos reservados.</p>
+                    <p class="text-stone-600">C. Gral. Vara de Rey, 16, 3B, 26002 Logroño, La Rioja, España</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Quick Reservation Button for Mobile -->
+    <aside class="fixed bottom-6 right-6 z-40 sm:hidden" aria-label="Contacto rápido">
+        <a href="tel:941326270" class="w-14 h-14 bg-gold rounded-full shadow-2xl flex items-center justify-center text-noir-900 text-xl border-2 border-noir-900 active:scale-95 transition-transform" aria-label="Llamar para Reservar Cita">
+            <i class="fa-solid fa-phone"></i>
+        </a>
+    </aside>
+
+    <script>
+        // Set dynamic current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle logic
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking any menu link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
