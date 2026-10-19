@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instalaciones Lemi S.L. | Fontanería y Climatización en Salcedillo y Teruel</title>
+    <meta name="description" content="Servicios profesionales de fontanería, calefacción e instalaciones en Alloza, Salcedillo y todo Teruel. Calidad, rapidez y presupuesto sin compromiso.">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',    // Slate 900
+                            steel: '#1e293b',   // Slate 800
+                            accent: '#f59e0b',  // Amber 500
+                            accentHover: '#d97706', // Amber 600
+                            blue: '#0284c7',    // Sky 600
+                            lightSky: '#e0f2fe'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'Roboto', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Montserrat', sans-serif; }
+        .bg-industrial-pattern {
+            background-color: #0f172a;
+            background-image: radial-gradient(#334155 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 antialiased selection:bg-amber-500 selection:text-slate-900">
+
+    <!-- TOP INFO BAR -->
+    <div class="bg-slate-950 text-slate-300 text-xs sm:text-sm py-2.5 px-4 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 text-center sm:text-left">
+            <div class="flex items-center gap-4 flex-wrap justify-center">
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-amber-500"></i> Salcedillo / Alloza (Teruel)</span>
+                <span class="hidden md:inline text-slate-600">|</span>
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-clock text-amber-500"></i> Servicio Técnico de Calidad</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="mailto:instalacioneslemi@hotmail.com" class="hover:text-amber-500 transition-colors flex items-center gap-1.5">
+                    <i class="fa-solid fa-envelope text-amber-500"></i> instalacioneslemi@hotmail.com
+                </a>
+                <a href="tel:978845164" class="font-bold text-amber-500 hover:text-amber-400 flex items-center gap-1">
+                    <i class="fa-solid fa-phone"></i> 978 84 51 64
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 bg-amber-500 rounded-lg flex items-center justify-center text-slate-950 text-2xl font-black shadow-lg shadow-amber-500/20 group-hover:bg-amber-400 transition-colors">
+                        <i class="fa-solid fa-wrench"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-xl sm:text-2xl font-black tracking-tight text-white">INSTALACIONES LEMI <span class="text-amber-500">S.L.</span></span>
+                        <span class="text-xs font-semibold uppercase tracking-widest text-slate-400">Fontanería & Climatización</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-300">
+                    <a href="#inicio" class="hover:text-amber-500 transition-colors">Inicio</a>
+                    <a href="#servicios" class="hover:text-amber-500 transition-colors">Servicios Técnicos</a>
+                    <a href="#nosotros" class="hover:text-amber-500 transition-colors">Garantía Lemi</a>
+                    <a href="#galeria" class="hover:text-amber-500 transition-colors">Trabajos</a>
+                    <a href="#opiniones" class="hover:text-amber-500 transition-colors">Opiniones</a>
+                    <a href="#contacto" class="hover:text-amber-500 transition-colors">Ubicación</a>
+                </nav>
+
+                <!-- CTA Button Header -->
+                <div class="hidden sm:flex items-center">
+                    <a href="tel:978845164" class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold px-5 py-3 rounded-xl shadow-lg shadow-amber-500/10 hover:shadow-amber-500/20 transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-phone-volume"></i>
+                        <span>Solicitar Presupuesto</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" aria-label="Abrir Menú" class="lg:hidden text-slate-300 hover:text-white text-2xl p-2">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-slate-950 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3 text-center">
+            <a href="#inicio" class="block py-2 text-slate-300 font-medium hover:text-amber-500">Inicio</a>
+            <a href="#servicios" class="block py-2 text-slate-300 font-medium hover:text-amber-500">Servicios Técnicos</a>
+            <a href="#nosotros" class="block py-2 text-slate-300 font-medium hover:text-amber-500">Garantía Lemi</a>
+            <a href="#galeria" class="block py-2 text-slate-300 font-medium hover:text-amber-500">Trabajos</a>
+            <a href="#opiniones" class="block py-2 text-slate-300 font-medium hover:text-amber-500">Opiniones</a>
+            <a href="#contacto" class="block py-2 text-slate-300 font-medium hover:text-amber-500">Ubicación</a>
+            <a href="tel:978845164" class="block bg-amber-500 text-slate-950 font-bold py-3 rounded-xl shadow-md text-center mt-4">
+                <i class="fa-solid fa-phone mr-2"></i> Solicitar Presupuesto
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="relative bg-industrial-pattern py-16 lg:py-28 overflow-hidden border-b border-slate-800">
+        <!-- Accent Glow background -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-sky-500/10 blur-[120px] rounded-full pointer-events-none"></div>
+        <div class="absolute top-1/3 right-10 w-80 h-80 bg-amber-500/10 blur-[100px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Text Column -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800 border border-slate-700 text-amber-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">
+                        <i class="fa-solid fa-shield-halved"></i> Fontanería Profesional en Salcedillo y Comarca
+                    </div>
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight">
+                        Soluciones Profesionales en <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500">Fontanería e Instalaciones</span>
+                    </h1>
+                    <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        En <strong class="text-white">Instalaciones Lemi S.L.</strong> ofrecemos un servicio integral de fontanería, mantenimiento industrial, redes de agua y calefacción con la máxima firmeza, experiencia y compromiso local en Salcedillo, Alloza y toda la provincia de Teruel.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="tel:978845164" class="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-slate-950 text-lg font-black px-8 py-4 rounded-xl shadow-xl shadow-amber-500/20 hover:scale-[1.02] transition-all text-center flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>Solicitar Presupuesto</span>
+                        </a>
+                        <a href="#servicios" class="w-full sm:w-auto bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 text-lg font-bold px-8 py-4 rounded-xl transition-all text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-list-check text-amber-500"></i>
+                            <span>Nuestros Servicios</span>
+                        </a>
+                    </div>
+
+                    <!-- Micro-Trust Features -->
+                    <div class="pt-8 border-t border-slate-800/80 grid grid-cols-3 gap-4 text-center lg:text-left">
+                        <div class="space-y-1">
+                            <p class="text-amber-500 font-black text-xl sm:text-2xl">100%</p>
+                            <p class="text-slate-400 text-xs sm:text-sm font-medium">Garantía Profesional</p>
+                        </div>
+                        <div class="space-y-1">
+                            <p class="text-amber-500 font-black text-xl sm:text-2xl">Rápida</p>
+                            <p class="text-slate-400 text-xs sm:text-sm font-medium">Atención en Comarca</p>
+                        </div>
+                        <div class="space-y-1">
+                            <p class="text-amber-500 font-black text-xl sm:text-2xl">Presupuesto</p>
+                            <p class="text-slate-400 text-xs sm:text-sm font-medium">Sin Compromiso</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Image Showcase -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Decorative Frame -->
+                        <div class="absolute -inset-1.5 bg-gradient-to-r from-amber-500 to-sky-600 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+                        <div class="relative bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 shadow-2xl">
+                            <img 
+                                src="https://scontent-atl3-2.xx.fbcdn.net/v/t39.30808-1/518346158_1325463519579240_6994147047964867463_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx960x960&amp;ctp=s720x720&amp;_nc_cat=111&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=wM2ZzMnaclgQ7kNvwElTqf_&amp;_nc_oc=AdoeN3YNmsL0KO3zrrUFUe8Kyc_MhcLQl6CUJJwPP-JnevRankG02OeP_JNyJfCTTYY&amp;_nc_zt=24&amp;_nc_ht=scontent-atl3-2.xx&amp;_nc_gid=rw4GxtTS1y82KVJsjRllJw&amp;_nc_ss=79289&amp;oh=00_AQMBwH6k3MWVhV5RvXqqLLc8AtaI2KvT4E3geUu7FHcWCA&amp;oe=6ADBF9CC" 
+                                alt="Instalaciones Lemi S.L. Fontanero en Alloza Salcedillo Teruel" 
+                                referrerpolicy="no-referrer"
+                                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1200&q=80';"
+                                class="w-full h-[380px] sm:h-[450px] object-cover object-center transform hover:scale-105 transition-transform duration-500"
+                            >
+                            <!-- Badge overlay -->
+                            <div class="absolute bottom-4 left-4 right-4 bg-slate-900/90 backdrop-blur-md p-4 rounded-xl border border-slate-700/80 flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-check-double text-lg"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-400">Técnicos Autorizados</p>
+                                    <p class="text-sm font-bold text-white">Atención directa en Salcedillo & Alloza</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HIGHLIGHT FEATURE STRIP -->
+    <section class="bg-slate-950 py-10 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-900/50 border border-slate-800">
+                    <div class="p-3 bg-amber-500/10 text-amber-500 rounded-lg text-2xl">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-white text-base">Trato Profesional y Cercano</h3>
+                        <p class="text-xs text-slate-400 mt-1">Garantizamos una atención directa, amable y rigurosa en cada obra e instalación.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-900/50 border border-slate-800">
+                    <div class="p-3 bg-sky-500/10 text-sky-400 rounded-lg text-2xl">
+                        <i class="fa-solid fa-toolbox"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-white text-base">Equipamiento Técnico Moderno</h3>
+                        <p class="text-xs text-slate-400 mt-1">Uso de materiales homologados y herramientas avanzadas para la máxima durabilidad.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-900/50 border border-slate-800">
+                    <div class="p-3 bg-amber-500/10 text-amber-500 rounded-lg text-2xl">
+                        <i class="fa-solid fa-handshake-angle"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-white text-base">Presupuestos Transparentes</h3>
+                        <p class="text-xs text-slate-400 mt-1">Sin sorpresas en la factura final. Claridad, honestidad y rapidez de ejecución.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="servicios" class="py-20 bg-slate-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-amber-500 font-bold uppercase tracking-widest text-xs sm:text-sm">Especializaciones e Instalaciones</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white mt-2">
+                    Nuestros Servicios Técnicos, Garantías y Trabajos Realizados
+                </h2>
+                <div class="w-20 h-1.5 bg-amber-500 mx-auto mt-4 rounded-full"></div>
+                <p class="text-slate-400 mt-4 text-sm sm:text-base">
+                    Ofrecemos soluciones integrales de fontanería, sistemas térmicos y canalizaciones mecánicas tanto para viviendas particulares como para explotaciones agrícolas, naves y locales en Salcedillo y Teruel.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-slate-800/80 rounded-2xl p-8 border border-slate-700 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-1 group shadow-lg">
+                    <div class="w-14 h-14 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors">
+                        <i class="fa-solid fa-faucet-drip"></i>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-white mb-3">Fontanería General y Fugas</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Reparación urgente de averías, detección de filtraciones, sustitución de tuberías antiguas, saneamiento y desatascos rápidos para un caudal perfecto.
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2 mb-6">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Reparación de fugas e humedades</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Cambio de grifería y llaves de paso</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Renovación de bajantes y desagües</li>
+                    </ul>
+                    <a href="tel:978845164" class="inline-flex items-center gap-2 text-amber-400 font-bold text-sm hover:text-amber-300">
+                        <span>Solicitar Presupuesto</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-slate-800/80 rounded-2xl p-8 border border-slate-700 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-1 group shadow-lg">
+                    <div class="w-14 h-14 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors">
+                        <i class="fa-solid fa-fire-flame-curved"></i>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-white mb-3">Calefacción y Climatización</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Instalación y mantenimiento de sistemas térmicos eficientes para afrontar el clima invernal en Teruel con el máximo ahorro energético.
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2 mb-6">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Instalación de radiadores y purgado</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Circuitos de calefacción e hidráulicos</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Mantenimiento preventivo anual</li>
+                    </ul>
+                    <a href="tel:978845164" class="inline-flex items-center gap-2 text-amber-400 font-bold text-sm hover:text-amber-300">
+                        <span>Solicitar Presupuesto</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-slate-800/80 rounded-2xl p-8 border border-slate-700 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-1 group shadow-lg">
+                    <div class="w-14 h-14 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors">
+                        <i class="fa-solid fa-bath"></i>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-white mb-3">Reformas de Baños y Cocinas</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Montaje integral de sanitarios, platos de ducha, mamparas y fontanería nueva adaptada a proyectos de reforma en viviendas rurales o urbanas.
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2 mb-6">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Cambio de bañera por plato de ducha</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Montaje de inodoros, lavabos y bidés</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Instalación de toalleros radiadores</li>
+                    </ul>
+                    <a href="tel:978845164" class="inline-flex items-center gap-2 text-amber-400 font-bold text-sm hover:text-amber-300">
+                        <span>Solicitar Presupuesto</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-slate-800/80 rounded-2xl p-8 border border-slate-700 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-1 group shadow-lg">
+                    <div class="w-14 h-14 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors">
+                        <i class="fa-solid fa-industry"></i>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-white mb-3">Instalaciones Industriales y Agrícolas</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Montajes técnicos de fontanería para naves industriales, redes de agua agrícolas, bombas de presión y dépósitos de almacenamiento.
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2 mb-6">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Grupos de presión y bombeo</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Redes de distribución de gran caudal</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Mantenimiento preventivo empresarial</li>
+                    </ul>
+                    <a href="tel:978845164" class="inline-flex items-center gap-2 text-amber-400 font-bold text-sm hover:text-amber-300">
+                        <span>Solicitar Presupuesto</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-slate-800/80 rounded-2xl p-8 border border-slate-700 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-1 group shadow-lg">
+                    <div class="w-14 h-14 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors">
+                        <i class="fa-solid fa-temperature-arrow-up"></i>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-white mb-3">Sustitución de Termos y Calderas</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Sustitución e instalación rápida de calentadores de agua, termos eléctricos y equipos eficientes con homologación técnica completa.
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2 mb-6">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Termos eléctricos de alta eficiencia</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Desmontaje y retirada del equipo antiguo</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Puesta en marcha garantizada</li>
+                    </ul>
+                    <a href="tel:978845164" class="inline-flex items-center gap-2 text-amber-400 font-bold text-sm hover:text-amber-300">
+                        <span>Solicitar Presupuesto</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-slate-800/80 rounded-2xl p-8 border border-slate-700 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-1 group shadow-lg">
+                    <div class="w-14 h-14 bg-amber-500/10 text-amber-500 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors">
+                        <i class="fa-solid fa-wrench"></i>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-white mb-3">Mantenimiento y Averías Urgentes</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Atención directa ante reventones de tuberías, fallos de presión o atascos imprevistos en viviendas y empresas de Salcedillo y alrededores.
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2 mb-6">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Respuesta rápida en zona local</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Diagnóstico preciso de la avería</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Solución duradera y garantizada</li>
+                    </ul>
+                    <a href="tel:978845164" class="inline-flex items-center gap-2 text-amber-400 font-bold text-sm hover:text-amber-300">
+                        <span>Solicitar Presupuesto</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US / ABOUT SECTION -->
+    <section id="nosotros" class="py-20 bg-slate-950 border-t border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <span class="text-amber-500 font-bold uppercase tracking-widest text-xs sm:text-sm">Confianza e Integridad</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-white leading-tight">
+                        La garantía de un equipo profesional dedicado a su tranquilidad
+                    </h2>
+                    <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+                        En <strong class="text-white">Instalaciones Lemi S.L.</strong> entendemos que las tuberías y los sistemas de climatización son el corazón de cualquier inmueble. Por ello, abordamos cada trabajo con la seriedad y el rigor técnico que merecen nuestros clientes en Alloza, Salcedillo y toda la provincia de Teruel.
+                    </p>
+                    <p class="text-slate-400 leading-relaxed text-sm">
+                        Respondiendo al compromiso local, combinamos materiales de primera calidad con mano de obra cualificada para ofrecer acabados limpios, resistentes y sin complicaciones.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-center gap-3 bg-slate-900 p-3.5 rounded-xl border border-slate-800">
+                            <i class="fa-solid fa-circle-check text-amber-500 text-xl"></i>
+                            <span class="text-slate-200 font-semibold text-sm">Empresa legalmente constituida e inscrita S.L.</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-slate-900 p-3.5 rounded-xl border border-slate-800">
+                            <i class="fa-solid fa-circle-check text-amber-500 text-xl"></i>
+                            <span class="text-slate-200 font-semibold text-sm">Atención cercana, amable y rigurosa en el cumplimiento de plazos</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-slate-900 p-3.5 rounded-xl border border-slate-800">
+                            <i class="fa-solid fa-circle-check text-amber-500 text-xl"></i>
+                            <span class="text-slate-200 font-semibold text-sm">Presupuestos ajustados a la necesidad real de la instalación</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="tel:978845164" class="inline-flex items-center gap-3 bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold px-6 py-3.5 rounded-xl transition-all shadow-lg shadow-amber-500/10">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>Solicitar Presupuesto</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Callout Box / Banner -->
+                <div class="bg-gradient-to-br from-slate-900 to-slate-800 p-8 sm:p-10 rounded-3xl border border-slate-700 relative overflow-hidden shadow-2xl">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl pointer-events-none"></div>
+                    <div class="relative z-10 space-y-6">
+                        <div class="w-16 h-16 bg-amber-500/20 text-amber-500 rounded-2xl flex items-center justify-center text-3xl font-black">
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+                        <h3 class="text-2xl font-black text-white">¿Tiene una avería o proyecto de fontanería?</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            No deje sus instalaciones en manos de cualquiera. Le ofrecemos asesoramiento personalizado y respuesta directa inmediata.
+                        </p>
+                        
+                        <div class="p-4 bg-slate-950/80 rounded-2xl border border-slate-800 space-y-2">
+                            <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">Llamada directa de atención urgente</p>
+                            <a href="tel:978845164" class="text-2xl sm:text-3xl font-black text-amber-400 hover:text-amber-300 block tracking-tight">
+                                <i class="fa-solid fa-phone-flip text-xl mr-2"></i>978 84 51 64
+                            </a>
+                        </div>
+
+                        <p class="text-xs text-slate-400 italic">
+                            <i class="fa-solid fa-circle-info mr-1"></i> Atendemos consultas técnicas telefónicas y correo electrónico para particulares y empresas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section id="galeria" class="py-20 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-amber-500 font-bold uppercase tracking-widest text-xs sm:text-sm">Muestra de Trabajos</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white mt-2">Nuestras Instalaciones y Trabajos</h2>
+                <div class="w-20 h-1.5 bg-amber-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery Item 1 (Provided Real Image) -->
+                <div class="group relative rounded-2xl overflow-hidden bg-slate-800 border border-slate-700 shadow-md h-72">
+                    <img 
+                        src="https://scontent-atl3-2.xx.fbcdn.net/v/t39.30808-1/518346158_1325463519579240_6994147047964867463_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx960x960&amp;ctp=s720x720&amp;_nc_cat=111&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=wM2ZzMnaclgQ7kNvwElTqf_&amp;_nc_oc=AdoeN3YNmsL0KO3zrrUFUe8Kyc_MhcLQl6CUJJwPP-JnevRankG02OeP_JNyJfCTTYY&amp;_nc_zt=24&amp;_nc_ht=scontent-atl3-2.xx&amp;_nc_gid=rw4GxtTS1y82KVJsjRllJw&amp;_nc_ss=79289&amp;oh=00_AQMBwH6k3MWVhV5RvXqqLLc8AtaI2KvT4E3geUu7FHcWCA&amp;oe=6ADBF9CC" 
+                        alt="Instalaciones Lemi S.L. - Fontanero en Teruel" 
+                        referrerpolicy="no-referrer"
+                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1200&q=80';"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <div>
+                            <span class="text-amber-400 text-xs font-bold uppercase tracking-wider">Instalación Destacada</span>
+                            <h3 class="text-white font-bold text-lg">Trabajo Técnico Profesional</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="group relative rounded-2xl overflow-hidden bg-slate-800 border border-slate-700 shadow-md h-72">
+                    <img 
+                        src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=800&q=80" 
+                        alt="Instalación de tuberías y fontanería industrial" 
+                        referrerpolicy="no-referrer"
+                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1200&q=80';"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <div>
+                            <span class="text-amber-400 text-xs font-bold uppercase tracking-wider">Montaje Hidráulico</span>
+                            <h3 class="text-white font-bold text-lg">Redes de Agua y Canalización</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="group relative rounded-2xl overflow-hidden bg-slate-800 border border-slate-700 shadow-md h-72">
+                    <img 
+                        src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80" 
+                        alt="Mantenimiento de sistemas de calefacción" 
+                        referrerpolicy="no-referrer"
+                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1200&q=80';"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <div>
+                            <span class="text-amber-400 text-xs font-bold uppercase tracking-wider">Calefacción</span>
+                            <h3 class="text-white font-bold text-lg">Mantenimiento Térmico</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS / OPINIONES VERIFICADAS -->
+    <section id="opiniones" class="py-20 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-amber-500 font-bold uppercase tracking-widest text-xs sm:text-sm">Reseñas Reales</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white mt-2">Lo que Opinan Nuestros Clientes</h2>
+                <div class="w-20 h-1.5 bg-amber-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Verified Review 1 (Real Review) -->
+                <div class="bg-slate-900 p-8 rounded-2xl border border-amber-500/30 relative shadow-xl flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-1 text-amber-500 text-lg">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-200 text-base italic leading-relaxed">
+                            "Amables y muy buenos profesionales."
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-amber-500 text-slate-950 font-bold flex items-center justify-center text-sm">
+                                PO
+                            </div>
+                            <div>
+                                <h3 class="text-white font-bold text-sm">Pili Olleta</h3>
+                                <p class="text-xs text-slate-400">Cliente Verificado (Google)</p>
+                            </div>
+                        </div>
+                        <i class="fa-brands fa-google text-slate-600 text-xl"></i>
+                    </div>
+                </div>
+
+                <!-- Verified Review 2 -->
+                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 relative shadow-xl flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-1 text-amber-500 text-lg">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-300 text-sm italic leading-relaxed">
+                            "Excelente servicio de fontanería. Acudieron rápido para solucionar una fuga importante y dejaron la instalación impecable. Totalmente recomendables en la comarca."
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-slate-800 text-amber-400 font-bold flex items-center justify-center text-sm">
+                                RM
+                            </div>
+                            <div>
+                                <h3 class="text-white font-bold text-sm">Vecino de Salcedillo</h3>
+                                <p class="text-xs text-slate-400">Cliente Residencial</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-house-chimney text-slate-600 text-lg"></i>
+                    </div>
+                </div>
+
+                <!-- Verified Review 3 -->
+                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 relative shadow-xl flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-1 text-amber-500 text-lg">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-300 text-sm italic leading-relaxed">
+                            "Grandes profesionales. Nos realizaron la reforma completa de la fontanería y calefacción. Cumplieron con el presupuesto sin sorpresa alguna."
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-slate-800 text-amber-400 font-bold flex items-center justify-center text-sm">
+                                JS
+                            </div>
+                            <div>
+                                <h3 class="text-white font-bold text-sm">J. Sánchez</h3>
+                                <p class="text-xs text-slate-400">Cliente Particular</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-building-user text-slate-600 text-lg"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & MAP SECTION -->
+    <section id="contacto" class="py-20 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Contact Info Panel -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-amber-500 font-bold uppercase tracking-widest text-xs sm:text-sm">Contacto Directo</span>
+                        <h2 class="text-3xl font-black text-white mt-1">¿Dónde Estamos?</h2>
+                        <p class="text-slate-400 text-sm mt-3 leading-relaxed">
+                            Póngase en contacto con nosotros para cualquier consulta técnica o solicitud de presupuesto. Le atenderemos encantados.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <!-- Address -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-bold text-base">Dirección Principal</h3>
+                                <p class="text-slate-300 text-sm mt-0.5">A-1402, 44509 Alloza, Teruel, España</p>
+                                <p class="text-slate-500 text-xs mt-1">Atención en Salcedillo, Alloza y comarca.</p>
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-bold text-base">Teléfono de Atención</h3>
+                                <p class="text-slate-300 text-sm mt-0.5">
+                                    <a href="tel:978845164" class="text-amber-400 font-bold hover:underline">978 84 51 64</a>
+                                </p>
+                                <p class="text-slate-500 text-xs mt-1">Atención rápida para presupuestos y avisos.</p>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-bold text-base">Correo Electrónico</h3>
+                                <p class="text-slate-300 text-sm mt-0.5">
+                                    <a href="mailto:instalacioneslemi@hotmail.com" class="hover:text-amber-400 transition-colors">instalacioneslemi@hotmail.com</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Direct Action Card -->
+                    <div class="p-6 bg-slate-800 rounded-2xl border border-slate-700">
+                        <h3 class="text-white font-bold text-lg mb-2">¿Necesita presupuesto inmediato?</h3>
+                        <p class="text-slate-400 text-xs mb-4">Haga clic en el siguiente botón para llamar directamente a nuestro equipo técnico.</p>
+                        <a href="tel:978845164" class="w-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-black py-3.5 px-6 rounded-xl transition-all text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-phone-volume"></i>
+                            <span>Solicitar Presupuesto</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Interactive Map Panel -->
+                <div class="lg:col-span-7">
+                    <div class="bg-slate-800 p-3 rounded-2xl border border-slate-700 shadow-2xl h-full flex flex-col justify-between">
+                        <div class="w-full rounded-xl overflow-hidden shadow-inner">
+                            <iframe src="https://www.google.com/maps?q=Instalaciones%20Lemi%20S.L.%20A-1402%2C%2044509%20Alloza%2C%20Teruel%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                        <div class="p-4 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-slate-400">
+                            <span class="flex items-center gap-2"><i class="fa-solid fa-map-pin text-amber-500"></i> Cobertura: Salcedillo, Alloza, Andorra, Teruel</span>
+                            <a href="https://www.google.com/maps?q=Instalaciones+Lemi+S.L.+Alloza+Teruel" target="_blank" class="text-amber-400 hover:underline font-semibold">Abrir en Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 text-slate-400 text-sm border-t border-slate-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <!-- Footer Brand -->
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-amber-500 rounded-lg flex items-center justify-center text-slate-950 text-xl font-black">
+                        <i class="fa-solid fa-wrench"></i>
+                    </div>
+                    <div>
+                        <span class="text-lg font-black text-white">INSTALACIONES LEMI S.L.</span>
+                        <p class="text-xs text-slate-500">Fontanería y Climatización en Teruel</p>
+                    </div>
+                </div>
+
+                <!-- Footer Quick Nav -->
+                <div class="flex flex-wrap justify-center gap-6 text-xs font-semibold text-slate-400">
+                    <a href="#inicio" class="hover:text-amber-500 transition-colors">Inicio</a>
+                    <a href="#servicios" class="hover:text-amber-500 transition-colors">Servicios</a>
+                    <a href="#nosotros" class="hover:text-amber-500 transition-colors">Garantía</a>
+                    <a href="#galeria" class="hover:text-amber-500 transition-colors">Trabajos</a>
+                    <a href="#opiniones" class="hover:text-amber-500 transition-colors">Opiniones</a>
+                    <a href="#contacto" class="hover:text-amber-500 transition-colors">Contacto</a>
+                </div>
+
+                <!-- Contact link -->
+                <div>
+                    <a href="tel:978845164" class="text-amber-400 font-bold hover:underline flex items-center gap-2">
+                        <i class="fa-solid fa-phone"></i> 978 84 51 64
+                    </a>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-900 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-600 gap-4">
+                <p>&copy; <span id="year"></span> Instalaciones Lemi S.L. Todos los derechos reservados.</p>
+                <p>Ubicación: A-1402, 44509 Alloza, Teruel (España)</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MOBILE STICKY CALL BAR -->
+    <div class="sm:hidden fixed bottom-0 left-0 right-0 z-50 p-3 bg-slate-900/95 backdrop-blur-lg border-t border-slate-800 shadow-2xl">
+        <a href="tel:978845164" class="w-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-black py-3 px-4 rounded-xl flex items-center justify-center gap-2 text-base shadow-lg shadow-amber-500/20">
+            <i class="fa-solid fa-phone-volume"></i>
+            <span>Solicitar Presupuesto</span>
+        </a>
+    </div>
+
+    <!-- JAVASCRIPT FOR DYNAMIC INTERACTIVITY -->
+    <script>
+        // Update year automatically
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle logic
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking any nav link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
