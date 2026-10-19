@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alameda Centro Veterinario | Torres de la Alameda, Madrid</title>
+    <!-- Tailwind CSS v3 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        medical: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#064e3b',
+                        },
+                        soft: {
+                            blue: '#e0f2fe',
+                            teal: '#ccfbf1',
+                            dark: '#1e293b'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="font-sans text-slate-700 bg-medical-50/30 antialiased selection:bg-medical-500 selection:text-white">
+
+    <!-- TOP BAR -->
+    <div class="bg-medical-900 text-white text-xs sm:text-sm py-2 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-medical-500"></i> C. Mayor, 1, 28813 Torres de la Alameda, Madrid</span>
+                <span class="hidden md:flex items-center gap-1.5"><i class="fa-solid fa-clock text-medical-500"></i> L-V: 09:30 - 20:00</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="mailto:info@veterinarioenaracena.com" class="hover:text-medical-100 transition"><i class="fa-solid fa-envelope text-medical-500 mr-1"></i> info@veterinarioenaracena.com</a>
+                <a href="tel:624857551" class="bg-medical-500 hover:bg-medical-600 text-white font-bold px-3 py-1 rounded-full transition flex items-center gap-1">
+                    <i class="fa-solid fa-phone"></i> 624 85 75 51
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER / NAVBAR -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-medical-500 text-white flex items-center justify-center text-xl shadow-md shadow-medical-500/20">
+                    <i class="fa-solid fa-paw"></i>
+                </div>
+                <div>
+                    <span class="text-xl font-extrabold tracking-tight text-slate-900 block leading-none">ALAMEDA</span>
+                    <span class="text-xs font-semibold tracking-widest text-medical-600 uppercase">Centro Veterinario</span>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 font-medium text-slate-600">
+                <a href="#inicio" class="hover:text-medical-600 transition">Inicio</a>
+                <a href="#servicios" class="hover:text-medical-600 transition">Servicios</a>
+                <a href="#equipo" class="hover:text-medical-600 transition">Equipo</a>
+                <a href="#instalaciones" class="hover:text-medical-600 transition">Instalaciones</a>
+                <a href="#opiniones" class="hover:text-medical-600 transition">Opiniones</a>
+                <a href="#contacto" class="hover:text-medical-600 transition">Contacto</a>
+            </nav>
+
+            <div class="hidden lg:flex items-center gap-3">
+                <a href="tel:624857551" class="bg-medical-600 hover:bg-medical-700 text-white font-semibold px-5 py-2.5 rounded-xl shadow-lg shadow-medical-600/20 transition transform hover:-translate-y-0.5 flex items-center gap-2">
+                    <i class="fa-solid fa-calendar-check"></i> Pedir Cita Previa
+                </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button id="menu-btn" class="md:hidden text-slate-700 text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="block py-2 text-slate-700 font-medium hover:text-medical-600">Inicio</a>
+            <a href="#servicios" class="block py-2 text-slate-700 font-medium hover:text-medical-600">Servicios</a>
+            <a href="#equipo" class="block py-2 text-slate-700 font-medium hover:text-medical-600">Equipo</a>
+            <a href="#instalaciones" class="block py-2 text-slate-700 font-medium hover:text-medical-600">Instalaciones</a>
+            <a href="#opiniones" class="block py-2 text-slate-700 font-medium hover:text-medical-600">Opiniones</a>
+            <a href="#contacto" class="block py-2 text-slate-700 font-medium hover:text-medical-600">Contacto</a>
+            <a href="tel:624857551" class="w-full text-center bg-medical-600 text-white font-semibold py-3 rounded-xl block shadow-md mt-4">
+                <i class="fa-solid fa-calendar-check mr-2"></i> Pedir Cita Previa
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-32 bg-gradient-to-b from-medical-50/80 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-medical-100 text-medical-800 px-4 py-2 rounded-full text-sm font-semibold">
+                        <i class="fa-solid fa-shield-heart text-medical-600"></i> Cuidado veterinario de máxima confianza
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                        El cuidado experto que tu mascota <span class="text-medical-600">se merece</span> en Torres de la Alameda.
+                    </h1>
+                    <p class="text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0">
+                        Atención veterinaria integral, cercana y profesional. Sara, Sandra y todo el equipo cuidan de tus fieles compañeros con el máximo cariño, dedicando el tiempo necesario en cada consulta.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="tel:624857551" class="w-full sm:w-auto bg-medical-600 hover:bg-medical-700 text-white font-bold text-lg px-8 py-4 rounded-2xl shadow-xl shadow-medical-600/30 transition transform hover:-translate-y-1 flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-phone-volume"></i> Pedir Cita Previa
+                        </a>
+                        <a href="#servicios" class="w-full sm:w-auto bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 font-semibold text-lg px-8 py-4 rounded-2xl transition flex items-center justify-center gap-2">
+                            Ver Servicios <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+
+                    <div class="pt-6 border-t border-slate-200/80 flex items-center justify-center lg:justify-start gap-6 text-slate-500 text-sm">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-star text-amber-400"></i>
+                            <span class="font-bold text-slate-800">5.0</span> 
+                            <span>Reseñas excelentes</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-user-doctor text-medical-600"></i>
+                            <span>Veterinarias Expertas</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-house-chimney-medical text-medical-600"></i>
+                            <span>Visita a domicilio</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Main Image -->
+                        <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white">
+                            <img src="https://static.cdninstagram.com/rsrc.php/v4/yD/r/R0fBIMurK8v.png" 
+                                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80';" 
+                                 referrerpolicy="no-referrer" 
+                                 alt="Alameda Centro Veterinario" 
+                                 class="w-full h-[420px] object-cover transform hover:scale-105 transition duration-700">
+                        </div>
+                        <!-- Floating badge -->
+                        <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3">
+                            <div class="w-12 h-12 bg-medical-50 text-medical-600 rounded-xl flex items-center justify-center text-2xl font-bold">
+                                <i class="fa-solid fa-award"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 font-semibold uppercase">Confianza Total</p>
+                                <p class="text-sm font-bold text-slate-800">Tratamiento cercano y detallado</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST BANNER / QUICK NETWORK LINKS -->
+    <section class="bg-white py-12 border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="p-4 rounded-2xl bg-medical-50/50">
+                    <i class="fa-solid fa-stethoscope text-3xl text-medical-600 mb-2"></i>
+                    <h3 class="font-bold text-slate-800">Consultas Generales</h3>
+                    <p class="text-xs text-slate-500 mt-1">Diagnóstico avanzado y seguimiento</p>
+                </div>
+                <div class="p-4 rounded-2xl bg-medical-50/50">
+                    <i class="fa-solid fa-laptop-medical text-3xl text-medical-600 mb-2"></i>
+                    <h3 class="font-bold text-slate-800">Videoconsulta</h3>
+                    <p class="text-xs text-slate-500 mt-1">Atención rápida online</p>
+                </div>
+                <div class="p-4 rounded-2xl bg-medical-50/50">
+                    <i class="fa-solid fa-house-medical text-3xl text-medical-600 mb-2"></i>
+                    <h3 class="font-bold text-slate-800">Visita a Domicilio</h3>
+                    <p class="text-xs text-slate-500 mt-1">Vacunas y revisiones en casa</p>
+                </div>
+                <div class="p-4 rounded-2xl bg-medical-50/50">
+                    <i class="fa-solid fa-file-medical text-3xl text-medical-600 mb-2"></i>
+                    <h3 class="font-bold text-slate-800">Informes al Detalle</h3>
+                    <p class="text-xs text-slate-500 mt-1">Cartillas y historiales precisos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE SERVICIOS Y ESPECIALIDADES -->
+    <section id="servicios" class="py-20 bg-slate-50/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-medical-600 font-bold text-sm tracking-wider uppercase bg-medical-100/80 px-4 py-1.5 rounded-full">Nuestros Tratamientos y Servicios</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-4">Cuidado integral para perros, gatos y mascotas</h2>
+                <p class="text-slate-600 mt-3">Nos adaptamos a las necesidades de tu animal con profesionalidad, cariño y tecnología punta.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Servicio 1 -->
+                <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition border border-slate-100 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-medical-50 text-medical-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-medical-600 group-hover:text-white transition duration-300">
+                            <i class="fa-solid fa-stethoscope"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Medicina Preventiva y General</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Revisiones periódicas, planes de vacunación completos, desparasitaciones y control exhaustivo de cartillas y salud general.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-medical-700 bg-medical-50 px-3 py-1 rounded-full">Esencial</span>
+                        <a href="tel:624857551" class="text-medical-600 hover:text-medical-700 font-bold text-sm flex items-center gap-1">Pedir Cita <i class="fa-solid fa-chevron-right text-xs"></i></a>
+                    </div>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition border border-slate-100 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-medical-50 text-medical-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-medical-600 group-hover:text-white transition duration-300">
+                            <i class="fa-solid fa-laptop-medical"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Videoconsulta Veterinaria</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            ¿Dudas rápidas o seguimiento de tratamientos? Te atendemos de forma telemática para ahorrar desplazamientos innecesarios a tu mascota.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-medical-700 bg-medical-50 px-3 py-1 rounded-full">Online</span>
+                        <a href="tel:624857551" class="text-medical-600 hover:text-medical-700 font-bold text-sm flex items-center gap-1">Pedir Cita <i class="fa-solid fa-chevron-right text-xs"></i></a>
+                    </div>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition border border-slate-100 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-medical-50 text-medical-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-medical-600 group-hover:text-white transition duration-300">
+                            <i class="fa-solid fa-house-chimney-medical"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Visitas a Domicilio</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Ideal para animales nerviosos o con movilidad reducida (como gatos o perros mayores). Vacunas y revisiones cómodamente en tu hogar.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-medical-700 bg-medical-50 px-3 py-1 rounded-full">A domicilio</span>
+                        <a href="tel:624857551" class="text-medical-600 hover:text-medical-700 font-bold text-sm flex items-center gap-1">Pedir Cita <i class="fa-solid fa-chevron-right text-xs"></i></a>
+                    </div>
+                </div>
+
+                <!-- Servicio 4 -->
+                <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition border border-slate-100 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-medical-50 text-medical-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-medical-600 group-hover:text-white transition duration-300">
+                            <i class="fa-solid fa-syringe"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Cirugía y Tratamientos Especiales</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Intervenciones quirúrgicas con máximo rigor (esterilizaciones delicadas como chihuahuas, etc.) y tratamientos oncológicos (quimioterapia) con total dedicación.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-medical-700 bg-medical-50 px-3 py-1 rounded-full">Especializado</span>
+                        <a href="tel:624857551" class="text-medical-600 hover:text-medical-700 font-bold text-sm flex items-center gap-1">Pedir Cita <i class="fa-solid fa-chevron-right text-xs"></i></a>
+                    </div>
+                </div>
+
+                <!-- Servicio 5 -->
+                <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition border border-slate-100 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-medical-50 text-medical-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-medical-600 group-hover:text-white transition duration-300">
+                            <i class="fa-solid fa-clipboard-user"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Informes y Asesoramiento Detallado</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Sin prisas ni atropellos. Nos tomamos el tiempo necesario para explicarte diagnósticos, resolver dudas y entregarte historiales y cartillas al detalle.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-medical-700 bg-medical-50 px-3 py-1 rounded-full">Atención Personal</span>
+                        <a href="tel:624857551" class="text-medical-600 hover:text-medical-700 font-bold text-sm flex items-center gap-1">Pedir Cita <i class="fa-solid fa-chevron-right text-xs"></i></a>
+                    </div>
+                </div>
+
+                <!-- Servicio 6 -->
+                <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition border border-slate-100 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-medical-50 text-medical-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-medical-600 group-hover:text-white transition duration-300">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Red de Clínicas y Tarifas</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Formamos parte de una red veterinaria sólida. Consulta nuestras tarifas veterinarias transparentes y encuentra tu clínica más cercana.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-medical-700 bg-medical-50 px-3 py-1 rounded-full">Transparencia</span>
+                        <a href="tel:624857551" class="text-medical-600 hover:text-medical-700 font-bold text-sm flex items-center gap-1">Pedir Cita <i class="fa-solid fa-chevron-right text-xs"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE EL EQUIPO PROFESIONAL -->
+    <section id="equipo" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-medical-600 font-bold text-sm tracking-wider uppercase bg-medical-100 px-4 py-1.5 rounded-full">Profesionales de Confianza</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-4 mb-6">Sara, Sandra y un equipo volcado en el bienestar animal</h2>
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        En Alameda Centro Veterinario sabemos que tu mascota es un miembro más de tu familia. Por eso, nuestras veterinarias combinan una alta cualificación científica con una enorme empatía y cercanía.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        Nuestros clientes destacan que nunca hay prisas: nos dedicamos al 100% en cada visita, resolviendo todas tus dudas y tratando tanto a perros como a gatos con el amor y el respeto que se merecen.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center gap-3 bg-medical-50/60 p-4 rounded-2xl">
+                            <i class="fa-solid fa-check-circle text-medical-600 text-xl"></i>
+                            <span class="font-bold text-slate-800 text-sm">Trato cercano y familiar</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-medical-50/60 p-4 rounded-2xl">
+                            <i class="fa-solid fa-check-circle text-medical-600 text-xl"></i>
+                            <span class="font-bold text-slate-800 text-sm">Experiencia contrastada</span>
+                        </div>
+                    </div>
+
+                    <a href="tel:624857551" class="inline-flex items-center gap-3 bg-medical-600 hover:bg-medical-700 text-white font-bold px-8 py-4 rounded-2xl shadow-lg shadow-medical-600/20 transition">
+                        <i class="fa-solid fa-calendar-check"></i> Pedir Cita Previa
+                    </a>
+                </div>
+
+                <div class="relative">
+                    <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-medical-50">
+                        <img src="https://static.cdninstagram.com/rsrc.php/v4/yD/r/R0fBIMurK8v.png" 
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80';" 
+                             referrerpolicy="no-referrer" 
+                             alt="Equipo Alameda Centro Veterinario" 
+                             class="w-full h-[450px] object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERÍA / INSTALACIONES -->
+    <section id="instalaciones" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-medical-600 font-bold text-sm tracking-wider uppercase bg-medical-100 px-4 py-1.5 rounded-full">Nuestras Instalaciones y Trabajos</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-4">Un espacio limpio, moderno y adaptado para tu tranquilidad</h2>
+                <p class="text-slate-600 mt-3">Equipamiento de última generación en un entorno diseñado para reducir el estrés de perros y gatos.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="rounded-3xl overflow-hidden shadow-md bg-white border border-slate-100 group">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://static.cdninstagram.com/rsrc.php/v4/yD/r/R0fBIMurK8v.png" 
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80';" 
+                             referrerpolicy="no-referrer" 
+                             alt="Clínica veterinaria" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-slate-900 text-lg">Consulta Adaptada</h3>
+                        <p class="text-slate-600 text-sm mt-1">Salas luminosas y esterilizadas para la máxima seguridad sanitaria.</p>
+                    </div>
+                </div>
+
+                <div class="rounded-3xl overflow-hidden shadow-md bg-white border border-slate-100 group">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://static.cdninstagram.com/rsrc.php/v4/yD/r/R0fBIMurK8v.png" 
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=800&q=80';" 
+                             referrerpolicy="no-referrer" 
+                             alt="Atención veterinaria" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-slate-900 text-lg">Cuidado Especializado</h3>
+                        <p class="text-slate-600 text-sm mt-1">Tratamientos avanzados con dedicación absoluta en cada paciente.</p>
+                    </div>
+                </div>
+
+                <div class="rounded-3xl overflow-hidden shadow-md bg-white border border-slate-100 group">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://static.cdninstagram.com/rsrc.php/v4/yD/r/R0fBIMurK8v.png" 
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=800&q=80';" 
+                             referrerpolicy="no-referrer" 
+                             alt="Mascotas felices" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-slate-900 text-lg">Bienestar Animal</h3>
+                        <p class="text-slate-600 text-sm mt-1">Pacientes felices que confían plenamente en Sara y Sandra.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OPINIONES REALES VERIFICADAS -->
+    <section id="opiniones" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-medical-600 font-bold text-sm tracking-wider uppercase bg-medical-100 px-4 py-1.5 rounded-full">Reseñas Verificadas de Google Maps</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-4">Lo que opinan quienes más confían en nosotros</h2>
+                <p class="text-slate-600 mt-3">Experiencias reales de clientes que han encontrado en nuestro centro el lugar ideal para sus mascotas.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Reseña 1 -->
+                <div class="bg-medical-50/40 p-8 rounded-3xl border border-medical-100/60 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-700 text-sm leading-relaxed italic">
+                            "Después de muchos meses buscando el lugar ideal para castrar a nuestro perrito (un chihuahua de apenas 1,5 kg y casi 4 años), dimos con esta clínica tras recibir muy buenas referencias. ¡Y se quedaron cortos!…"
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                        <span class="font-bold text-slate-900 text-sm">KellyMakeup creative</span>
+                        <span class="text-xs text-slate-400 font-semibold">Google Maps</span>
+                    </div>
+                </div>
+
+                <!-- Reseña 2 -->
+                <div class="bg-medical-50/40 p-8 rounded-3xl border border-medical-100/60 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-700 text-sm leading-relaxed italic">
+                            "Estamos muy contentos de haber encontrado el centro Alameda. Son muy cariñosas y profesionales. Nos dedican el tiempo necesario sin atropellos y siempre dispuestas a ayudar. Los informes, las cartillas... todo al detalle, como debe ser…"
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                        <span class="font-bold text-slate-900 text-sm">Raquel Fernández González</span>
+                        <span class="text-xs text-slate-400 font-semibold">Google Maps</span>
+                    </div>
+                </div>
+
+                <!-- Reseña 3 -->
+                <div class="bg-medical-50/40 p-8 rounded-3xl border border-medical-100/60 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-700 text-sm leading-relaxed italic">
+                            "Llevar a nuestro perro Balu a este veterinario siempre es una tranquilidad absoluta. Sara y Sandra son personas increíbles, cercanas y súper profesionales. Desde el primer momento nos han tratado con muchísimo cariño, tanto a Balu como a…"
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                        <span class="font-bold text-slate-900 text-sm">Ángela Marlasca</span>
+                        <span class="text-xs text-slate-400 font-semibold">Google Maps</span>
+                    </div>
+                </div>
+
+                <!-- Reseña 4 -->
+                <div class="bg-medical-50/40 p-8 rounded-3xl border border-medical-100/60 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-700 text-sm leading-relaxed italic">
+                            "Las chicas son maravillosas. Mi perrita está con un tratamiento de quimio y la atención y la profesionalidad por parte de las chicas es excelente. Tuve que cambiar de veterinario y me daba miedo no encontrar el sitio adecuado..."
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                        <span class="font-bold text-slate-900 text-sm">Natalia Sombra</span>
+                        <span class="text-xs text-slate-400 font-semibold">Google Maps</span>
+                    </div>
+                </div>
+
+                <!-- Reseña 5 -->
+                <div class="bg-medical-50/40 p-8 rounded-3xl border border-medical-100/60 flex flex-col justify-between md:col-span-2 lg:col-span-2">
+                    <div>
+                        <div class="flex text-amber-400 gap-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-700 text-sm leading-relaxed italic">
+                            "Recomendable 100%, la atención veterinaria es muy buena. Nosotros optamos por la visita a domicilio para vacunar a nuestros dos gatos; Lilo y Stitch, y hemos quedado encantados. Las dos veterinarias son muy amables y…"
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                        <span class="font-bold text-slate-900 text-sm">Verónica Barahona</span>
+                        <span class="text-xs text-slate-400 font-semibold">Google Maps</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- MAPA Y UBICACIÓN -->
+    <section id="contacto" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-medical-600 font-bold text-sm tracking-wider uppercase bg-medical-100 px-4 py-1.5 rounded-full">Encuentra Tu Clínica</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-4">Ven a visitarnos o ponte en contacto</h2>
+                <p class="text-slate-600 mt-3">Estamos situados en Torres de la Alameda, listos para recibirte a ti y a tu mascota.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 space-y-6">
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-medical-50 text-medical-600 rounded-2xl flex items-center justify-center text-xl shrink-0 mt-1">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-900">Dirección</h3>
+                                <p class="text-slate-600 text-sm mt-1">C. Mayor, 1, 28813 Torres de la Alameda, Madrid, España</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-medical-50 text-medical-600 rounded-2xl flex items-center justify-center text-xl shrink-0 mt-1">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-900">Teléfono</h3>
+                                <p class="text-slate-600 text-sm mt-1">624 85 75 51</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-medical-50 text-medical-600 rounded-2xl flex items-center justify-center text-xl shrink-0 mt-1">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-900">Correo Electrónico</h3>
+                                <p class="text-slate-600 text-sm mt-1">info@veterinarioenaracena.com</p>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t border-slate-100">
+                            <a href="tel:624857551" class="w-full bg-medical-600 hover:bg-medical-700 text-white font-bold py-4 rounded-2xl shadow-lg shadow-medical-600/20 transition flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-calendar-check"></i> Pedir Cita Previa
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <div class="bg-white p-4 rounded-3xl shadow-sm border border-slate-100">
+                        <iframe src="https://www.google.com/maps?q=ALAMEDA%20CENTRO%20VETERINARIO%20C.%20Mayor%2C%201%2C%2028813%20Torres%20de%20la%20Alameda%2C%20Madrid%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-medical-900 text-white py-14">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-medical-500 text-white flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-paw"></i>
+                        </div>
+                        <div>
+                            <span class="text-xl font-extrabold tracking-tight block leading-none">ALAMEDA</span>
+                            <span class="text-xs font-semibold tracking-widest text-medical-400 uppercase">Centro Veterinario</span>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Cuidado veterinario experto, profesional y muy cercano en Torres de la Alameda. Tu mascota en las mejores manos.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-lg mb-4 text-medical-200">Enlaces Rápidos</h3>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li><a href="#inicio" class="hover:text-white transition">Inicio</a></li>
+                        <li><a href="#servicios" class="hover:text-white transition">Servicios y Tratamientos</a></li>
+                        <li><a href="#equipo" class="hover:text-white transition">Nuestro Equipo</a></li>
+                        <li><a href="#instalaciones" class="hover:text-white transition">Instalaciones</a></li>
+                        <li><a href="#opiniones" class="hover:text-white transition">Opiniones Verificadas</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-lg mb-4 text-medical-200">Servicios Principales</h3>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li><span class="hover:text-white transition">Medicina Preventiva</span></li>
+                        <li><span class="hover:text-white transition">Videoconsulta</span></li>
+                        <li><span class="hover:text-white transition">Visita a Domicilio</span></li>
+                        <li><span class="hover:text-white transition">Cirugía y Oncología</span></li>
+                        <li><span class="hover:text-white transition">Tarifas Veterinarias</span></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-lg mb-4 text-medical-200">Contacto Directo</h3>
+                    <ul class="space-y-3 text-sm text-slate-300">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-location-dot text-medical-400 mt-1"></i>
+                            <span>C. Mayor, 1, 28813 Torres de la Alameda, Madrid</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-phone text-medical-400"></i>
+                            <span>624 85 75 51</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-envelope text-medical-400"></i>
+                            <span>info@veterinarioenaracena.com</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t border-medical-800 text-center text-slate-400 text-xs flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p>&copy; 2025 Alameda Centro Veterinario. Todos los derechos reservados.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-white transition">Aviso Legal</a>
+                    <a href="#" class="hover:text-white transition">Política de Privacidad</a>
+                    <a href="#" class="hover:text-white transition">Política de Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script para menú móvil -->
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+        
+        // Cerrar menú al hacer click en enlace móvil
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
