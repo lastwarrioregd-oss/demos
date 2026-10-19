@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puerto Lápice | Experiencia Histórica Exclusiva</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        noir: '#0e0e10',
+                        charcoal: '#18181b',
+                        gold: {
+                            light: '#e6c887',
+                            DEFAULT: '#c5a059',
+                            dark: '#9a7936'
+                        },
+                        sand: '#f5f0eb',
+                        cream: '#faf7f2'
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #f7dfa5 0%, #c5a059 50%, #9a7936 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border {
+            border: 1px solid rgba(197, 160, 89, 0.25);
+        }
+        .gold-border-hover:hover {
+            border-color: rgba(197, 160, 89, 0.7);
+        }
+    </style>
+</head>
+<body class="bg-noir text-zinc-300 font-sans antialiased selection:bg-gold selection:text-noir">
+
+    <!-- Top Announcement Bar -->
+    <div class="border-b border-zinc-800/80 bg-zinc-950/70 text-xs tracking-widest uppercase py-2.5 px-4 text-center text-zinc-400">
+        <span class="inline-flex items-center gap-2">
+            <i class="fa-solid fa-sparkles text-gold text-[10px]"></i>
+            Lugar de interés histórico &bull; Cuna Cervantina en Ciudad Real
+            <i class="fa-solid fa-sparkles text-gold text-[10px]"></i>
+        </span>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-noir/90 backdrop-blur-md border-b border-zinc-800">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-20">
+            <a href="#" class="flex flex-col">
+                <span class="font-serif text-2xl lg:text-3xl tracking-widest text-white uppercase">Puerto Lápice</span>
+                <span class="text-[9px] uppercase tracking-[0.35em] text-gold font-light">Patrimonio Manchego &bull; Est. Histórico</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center space-x-8 text-xs uppercase tracking-widest font-medium">
+                <a href="#experiencia" class="text-zinc-300 hover:text-gold transition-colors duration-200">El Enclave</a>
+                <a href="#servicios" class="text-zinc-300 hover:text-gold transition-colors duration-200">Tratamientos & Tarifas</a>
+                <a href="#galeria" class="text-zinc-300 hover:text-gold transition-colors duration-200">Instalaciones</a>
+                <a href="#opiniones" class="text-zinc-300 hover:text-gold transition-colors duration-200">Reseñas</a>
+                <a href="#contacto" class="text-zinc-300 hover:text-gold transition-colors duration-200">Ubicación</a>
+            </nav>
+
+            <!-- CTA Header Button -->
+            <div class="hidden sm:block">
+                <a href="mailto:jddhelp@profrac.com" class="inline-flex items-center gap-2 px-6 py-2.5 text-xs font-semibold uppercase tracking-widest text-noir bg-gradient-to-r from-gold-light via-gold to-gold-dark hover:brightness-110 transition-all duration-300 rounded-none shadow-lg shadow-gold/10">
+                    <span>Reservar Cita</span>
+                    <i class="fa-solid fa-arrow-right-long text-xs"></i>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobileMenuBtn" aria-label="Abrir menú" class="md:hidden text-zinc-300 hover:text-gold p-2">
+                <i class="fa-solid fa-bars-staggered text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-zinc-950 border-b border-zinc-800 px-6 py-6 space-y-4 text-xs uppercase tracking-widest">
+            <a href="#experiencia" class="block py-2 text-zinc-300 hover:text-gold">El Enclave</a>
+            <a href="#servicios" class="block py-2 text-zinc-300 hover:text-gold">Tratamientos & Tarifas</a>
+            <a href="#galeria" class="block py-2 text-zinc-300 hover:text-gold">Instalaciones</a>
+            <a href="#opiniones" class="block py-2 text-zinc-300 hover:text-gold">Reseñas</a>
+            <a href="#contacto" class="block py-2 text-zinc-300 hover:text-gold">Ubicación</a>
+            <a href="mailto:jddhelp@profrac.com" class="block w-full text-center py-3 text-noir bg-gold font-semibold mt-4">Reservar Cita</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden border-b border-zinc-800/80">
+        <!-- Background Overlay Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1509356843151-3e7d96241e11?auto=format&fit=crop&w=1920&q=80" 
+                 alt="Paisaje de molinos de La Mancha en Puerto Lápice" 
+                 referrerpolicy="no-referrer"
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                 class="w-full h-full object-cover object-center brightness-[0.27] scale-105 transform motion-safe:transition-transform duration-1000">
+            <div class="absolute inset-0 bg-gradient-to-t from-noir via-noir/60 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-6 py-20 text-center">
+            <span class="inline-block py-1.5 px-4 mb-6 text-[10px] md:text-xs uppercase tracking-[0.3em] text-gold border border-gold/30 bg-black/40 backdrop-blur-sm">
+                Enclave Quijotesco &bull; Colección Histórica
+            </span>
+            <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-light text-white tracking-wide leading-tight mb-6">
+                La Mancha en <span class="italic font-normal gold-gradient-text">Estado Puro</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-sm sm:text-base md:text-lg text-zinc-300 font-light leading-relaxed mb-10">
+                Sumérjase en las páginas inmortales de Don Quijote. Descubra la armonía de la arquitectura manchega, la solemnidad de los molinos de viento y el sosiego de un refugio histórico inigualable.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="mailto:jddhelp@profrac.com" class="w-full sm:w-auto px-8 py-3.5 text-xs font-semibold uppercase tracking-widest text-noir bg-gradient-to-r from-gold-light via-gold to-gold-dark hover:brightness-110 transition-all duration-300 shadow-xl shadow-gold/15">
+                    Reservar Cita
+                </a>
+                <a href="#servicios" class="w-full sm:w-auto px-8 py-3.5 text-xs font-semibold uppercase tracking-widest text-zinc-200 border border-zinc-700 hover:border-gold hover:text-gold transition-all duration-300 bg-noir/50 backdrop-blur-sm">
+                    Ver Tarifas & Rituales
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Concept & Heritage Narrative -->
+    <section id="experiencia" class="py-24 bg-noir border-b border-zinc-800">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-6">
+                    <span class="text-xs uppercase tracking-[0.25em] text-gold font-medium block">Un Destino Con Alma y Tradición</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-white font-light leading-snug">
+                        Plaza Porticada, Molinos de Viento & <span class="italic text-gold">Hospitalidad Señorial</span>
+                    </h2>
+                    <div class="w-16 h-[1px] bg-gold"></div>
+                    <p class="text-zinc-400 text-sm leading-relaxed font-light">
+                        Puerto Lápice se erige como una joya atemporal al pie de los cerros de la Mancha. Su famosa plaza central con pórticos de madera en color almagre, sus mesones legendarios y el sendero que asciende hacia los centinelas del viento conforman una estancia de deleite sosegado y autenticidad.
+                    </p>
+                    <p class="text-zinc-400 text-sm leading-relaxed font-light">
+                        Atención cercana, serenidad rural y un entorno donde cada rincón evoca la nobleza de una de las obras más universales de la literatura.
+                    </p>
+                    
+                    <div class="grid grid-cols-3 gap-6 pt-6 border-t border-zinc-800/80">
+                        <div>
+                            <p class="font-serif text-2xl sm:text-3xl text-gold font-light">13650</p>
+                            <p class="text-[10px] uppercase tracking-wider text-zinc-500 mt-1">Cód. Postal Histórico</p>
+                        </div>
+                        <div>
+                            <p class="font-serif text-2xl sm:text-3xl text-gold font-light">100%</p>
+                            <p class="text-[10px] uppercase tracking-wider text-zinc-500 mt-1">Esencia Quijotesca</p>
+                        </div>
+                        <div>
+                            <p class="font-serif text-2xl sm:text-3xl text-gold font-light">5.0 ★</p>
+                            <p class="text-[10px] uppercase tracking-wider text-zinc-500 mt-1">Experiencia Boutique</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="absolute -inset-4 border border-gold/20 transform translate-x-2 translate-y-2 pointer-events-none hidden sm:block"></div>
+                    <div class="relative overflow-hidden bg-zinc-900 aspect-[4/3] shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=80" 
+                             alt="Arquitectura y rincones de Puerto Lápice" 
+                             referrerpolicy="no-referrer"
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                             class="w-full h-full object-cover brightness-90 hover:scale-105 transition-transform duration-700">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: Nuestros Tratamientos, Cortes y Tarifas -->
+    <section id="servicios" class="py-24 bg-charcoal/60 border-b border-zinc-800">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-[0.3em] text-gold font-medium block mb-3">Carta de Experiencias Selectas</span>
+                <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-white font-light">Nuestros Tratamientos, Cortes y Tarifas</h2>
+                <div class="w-16 h-[1px] bg-gold mx-auto my-5"></div>
+                <p class="text-zinc-400 text-sm font-light leading-relaxed">
+                    Experiencias diseñadas con precisión boutique para disfrutar de la historia, la gastronomía artesanal y los rincones más emblemáticos de Puerto Lápice.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Card 1 -->
+                <div class="bg-noir p-8 gold-border gold-border-hover transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-baseline mb-4">
+                            <span class="text-[10px] uppercase tracking-widest text-gold bg-zinc-900 py-1 px-2.5 border border-gold/20">Ruta Cultural</span>
+                            <span class="font-serif text-xl text-gold">Tarifa Privada</span>
+                        </div>
+                        <h3 class="font-serif text-2xl text-white group-hover:text-gold transition-colors mb-3">Visita Noble a los Molinos</h3>
+                        <p class="text-zinc-400 text-xs leading-relaxed mb-6 font-light">
+                            Ascenso exclusivo al cerro donde dominan los tradicionales gigantes manchegos. Incluye acceso exterior a las estructuras históricas y sesión fotográfica panorámica.
+                        </p>
+                        <ul class="space-y-2 text-xs text-zinc-400 mb-8 border-t border-zinc-900 pt-4 font-light">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold text-[10px]"></i> Paseo guiado a los miradores del valle</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold text-[10px]"></i> Parada interpretativa quijotesca</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold text-[10px]"></i> Protocolo de recepción personalizada</li>
+                        </ul>
+                    </div>
+                    <a href="mailto:jddhelp@profrac.com" class="w-full py-3 text-center text-xs uppercase tracking-widest font-medium border border-gold text-gold hover:bg-gold hover:text-noir transition-colors duration-300">
+                        Reservar Cita
+                    </a>
+                </div>
+
+                <!-- Card 2 (Featured) -->
+                <div class="bg-noir p-8 border-2 border-gold relative flex flex-col justify-between group shadow-xl shadow-gold/5">
+                    <div class="absolute -top-3.5 right-6 bg-gold text-noir text-[9px] uppercase tracking-widest font-bold py-1 px-3">
+                        Experiencia Insignia
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-baseline mb-4">
+                            <span class="text-[10px] uppercase tracking-widest text-gold bg-zinc-900 py-1 px-2.5 border border-gold/30">Corte Gastronómico</span>
+                            <span class="font-serif text-xl text-gold">Selección Gourmet</span>
+                        </div>
+                        <h3 class="font-serif text-2xl text-white group-hover:text-gold transition-colors mb-3">Tratamiento & Cata Manchega</h3>
+                        <p class="text-zinc-400 text-xs leading-relaxed mb-6 font-light">
+                            Degustación sensorial y corte de queso manchego curado en bodega tradicional, maridado con vinos de autor en las inmediaciones de los pórticos centenarios.
+                        </p>
+                        <ul class="space-y-2 text-xs text-zinc-400 mb-8 border-t border-zinc-900 pt-4 font-light">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold text-[10px]"></i> Selección especial de cortes de quesería artesanal</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold text-[10px]"></i> Maridaje de tintos de denominación local</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold text-[10px]"></i> Asiento preferencial en entorno patrimonial</li>
+                        </ul>
+                    </div>
+                    <a href="mailto:jddhelp@profrac.com" class="w-full py-3 text-center text-xs uppercase tracking-widest font-semibold bg-gradient-to-r from-gold-light via-gold to-gold-dark text-noir hover:brightness-110 transition-all duration-300">
+                        Reservar Cita
+                    </a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-noir p-8 gold-border gold-border-hover transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-baseline mb-4">
+                            <span class="text-[10px] uppercase tracking-widest text-gold bg-zinc-900 py-1 px-2.5 border border-gold/20">Itinerario de Ocio</span>
+                            <span class="font-serif text-xl text-gold">Acceso Libre & Tour</span>
+                        </div>
+                        <h3 class="font-serif text-2xl text-white group-hover:text-gold transition-colors mb-3">Paseo de la Plaza & Pórticos</h3>
+                        <p class="text-zinc-400 text-xs leading-relaxed mb-6 font-light">
+                            Recorrido sosegado por la plaza central de arcos de madera, la iglesia parroquial y los históricos mesones que conservan el espíritu cervantino original.
+                        </p>
+                        <ul class="space-y-2 text-xs text-zinc-400 mb-8 border-t border-zinc-900 pt-4 font-light">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold text-[10px]"></i> Enclave accesible a escasos metros de la autovía</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold text-[10px]"></i> Sugerencias de mesones y tabernas típicas</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold text-[10px]"></i> Experiencia apta para todas las estaciones</li>
+                        </ul>
+                    </div>
+                    <a href="mailto:jddhelp@profrac.com" class="w-full py-3 text-center text-xs uppercase tracking-widest font-medium border border-gold text-gold hover:bg-gold hover:text-noir transition-colors duration-300">
+                        Reservar Cita
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Callout Note -->
+            <div class="mt-12 p-6 bg-zinc-900/60 border border-zinc-800 text-center flex flex-col sm:flex-row items-center justify-between gap-4">
+                <span class="text-xs text-zinc-400 font-light">
+                    ¿Desea una atención a medida o planificar una visita grupal en Puerto Lápice?
+                </span>
+                <a href="mailto:jddhelp@profrac.com" class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-gold hover:underline">
+                    <span>Contactar por correo</span>
+                    <i class="fa-solid fa-envelope text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: Nuestras Instalaciones y Trabajos -->
+    <section id="galeria" class="py-24 bg-noir border-b border-zinc-800">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-[0.3em] text-gold font-medium block mb-3">Atmósfera Manchega</span>
+                <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-white font-light">Nuestras Instalaciones y Trabajos</h2>
+                <div class="w-16 h-[1px] bg-gold mx-auto my-5"></div>
+                <p class="text-zinc-400 text-sm font-light leading-relaxed">
+                    Una mirada a los rincones donde la piedra, la cal y la madera narran historias de caballeros andantes y descanso intemporal.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="relative group overflow-hidden bg-zinc-900 aspect-[3/4]">
+                    <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=800&q=80" 
+                         alt="Instalaciones y detalles en Puerto Lápice" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 brightness-90">
+                    <div class="absolute inset-0 bg-gradient-to-t from-noir/90 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-[10px] uppercase tracking-widest text-gold font-light">Plaza Central</span>
+                            <p class="font-serif text-lg text-white">Galerías Porticadas</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden bg-zinc-900 aspect-[3/4]">
+                    <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=800&q=80" 
+                         alt="Paseo por las calles históricas" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 brightness-90">
+                    <div class="absolute inset-0 bg-gradient-to-t from-noir/90 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-[10px] uppercase tracking-widest text-gold font-light">Paseo de Molinos</span>
+                            <p class="font-serif text-lg text-white">Vistas al Horizonte</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden bg-zinc-900 aspect-[3/4]">
+                    <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=800&q=80" 
+                         alt="Mesones y ambiente quijotesco" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 brightness-90">
+                    <div class="absolute inset-0 bg-gradient-to-t from-noir/90 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-[10px] uppercase tracking-widest text-gold font-light">Mesón Don Quijote</span>
+                            <p class="font-serif text-lg text-white">Sabor & Calma</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden bg-zinc-900 aspect-[3/4]">
+                    <img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=800&q=80" 
+                         alt="Entorno y arquitectura tradicional" 
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 brightness-90">
+                    <div class="absolute inset-0 bg-gradient-to-t from-noir/90 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <span class="text-[10px] uppercase tracking-widest text-gold font-light">Rincones con Encanto</span>
+                            <p class="font-serif text-lg text-white">Estética Manchega</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <a href="mailto:jddhelp@profrac.com" class="inline-flex items-center gap-3 px-8 py-3.5 text-xs font-semibold uppercase tracking-widest text-noir bg-gold hover:brightness-110 transition-all">
+                    <span>Reservar Cita</span>
+                    <i class="fa-solid fa-calendar-check text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: Opiniones Reales Verificadas -->
+    <section id="opiniones" class="py-24 bg-charcoal/50 border-b border-zinc-800">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-[0.3em] text-gold font-medium block mb-3">Experiencias Compartidas</span>
+                <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-white font-light">Opiniones Reales Verificadas</h2>
+                <div class="w-16 h-[1px] bg-gold mx-auto my-5"></div>
+                <p class="text-zinc-400 text-sm font-light leading-relaxed">
+                    La apreciación de quienes han recorrido nuestras calles, plazas y senderos históricos.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Review 1 -->
+                <div class="bg-noir p-8 gold-border flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-gold text-xs space-x-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-zinc-300 text-sm font-serif italic mb-6 leading-relaxed">
+                            "⭐️ Puerto Lápice La Mancha en estado puro. Visitar Puerto Lápice es como entrar directamente en las páginas del Quijote.…"
+                        </p>
+                    </div>
+                    <div class="border-t border-zinc-800/80 pt-4 flex items-center justify-between">
+                        <span class="text-xs uppercase tracking-wider text-white font-medium">Mariquita Pérez</span>
+                        <span class="text-[10px] uppercase text-zinc-500 tracking-wider">Verificada</span>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-noir p-8 gold-border flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-gold text-xs space-x-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-zinc-300 text-sm font-serif italic mb-6 leading-relaxed">
+                            "Pueblecito pequeño, con encanto. Plaza central con pórticos, muchos bares. Iglesia bonita y puedes subir con un paseo a ver los molinos manchegos."
+                        </p>
+                    </div>
+                    <div class="border-t border-zinc-800/80 pt-4 flex items-center justify-between">
+                        <span class="text-xs uppercase tracking-wider text-white font-medium">Amanda Luque</span>
+                        <span class="text-[10px] uppercase text-zinc-500 tracking-wider">Verificada</span>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-noir p-8 gold-border flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-gold text-xs space-x-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-zinc-300 text-sm font-serif italic mb-6 leading-relaxed">
+                            "Te desvias poco de la autovia Visitable una iglesia de poco interés, ina plaza tipo manchego con variod bares y el mesón Don Quijote…"
+                        </p>
+                    </div>
+                    <div class="border-t border-zinc-800/80 pt-4 flex items-center justify-between">
+                        <span class="text-xs uppercase tracking-wider text-white font-medium">MARIANO CANO</span>
+                        <span class="text-[10px] uppercase text-zinc-500 tracking-wider">Verificada</span>
+                    </div>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="bg-noir p-8 gold-border flex flex-col justify-between lg:col-start-1 lg:col-end-2">
+                    <div>
+                        <div class="flex text-gold text-xs space-x-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-zinc-300 text-sm font-serif italic mb-6 leading-relaxed">
+                            "Gente muy simpática y agradable Muy atenta de sus visitantes"
+                        </p>
+                    </div>
+                    <div class="border-t border-zinc-800/80 pt-4 flex items-center justify-between">
+                        <span class="text-xs uppercase tracking-wider text-white font-medium">Samanta Guillen mayorga</span>
+                        <span class="text-[10px] uppercase text-zinc-500 tracking-wider">Verificada</span>
+                    </div>
+                </div>
+
+                <!-- Review 5 -->
+                <div class="bg-noir p-8 gold-border flex flex-col justify-between lg:col-span-2">
+                    <div>
+                        <div class="flex text-gold text-xs space-x-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-zinc-300 text-sm font-serif italic mb-6 leading-relaxed">
+                            "Un pueblo especial en Navidad, momento en el lo visité. Un sitio con encanto, sin duda"
+                        </p>
+                    </div>
+                    <div class="border-t border-zinc-800/80 pt-4 flex items-center justify-between">
+                        <span class="text-xs uppercase tracking-wider text-white font-medium">ADA</span>
+                        <span class="text-[10px] uppercase text-zinc-500 tracking-wider">Verificada</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: Mapa Interactivo y Ubicación -->
+    <section id="contacto" class="py-24 bg-noir">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Contact Details -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-xs uppercase tracking-[0.3em] text-gold font-medium block mb-3">Encuéntrenos</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl text-white font-light">Puerto Lápice</h2>
+                        <div class="w-12 h-[1px] bg-gold my-4"></div>
+                        <p class="text-zinc-400 text-sm font-light leading-relaxed">
+                            Estratégicamente situado en la provincia de Ciudad Real, con acceso inmediato y cómodo desde la autovía del Sur (A-4). Un alto en el camino que transforma cualquier trayecto en un viaje por la historia de España.
+                        </p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4 p-4 bg-zinc-950 border border-zinc-900">
+                            <i class="fa-solid fa-location-dot text-gold text-base mt-1"></i>
+                            <div>
+                                <h4 class="text-xs uppercase tracking-wider text-white font-medium">Dirección Exacta</h4>
+                                <p class="text-xs text-zinc-400 mt-0.5">13650 Puerto Lápice, Cdad. Real, España</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 bg-zinc-950 border border-zinc-900">
+                            <i class="fa-solid fa-envelope text-gold text-base mt-1"></i>
+                            <div>
+                                <h4 class="text-xs uppercase tracking-wider text-white font-medium">Atención y Reservas</h4>
+                                <a href="mailto:jddhelp@profrac.com" class="text-xs text-zinc-400 hover:text-gold transition-colors break-all">jddhelp@profrac.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <a href="mailto:jddhelp@profrac.com" class="inline-block w-full sm:w-auto text-center px-8 py-3.5 text-xs font-semibold uppercase tracking-widest text-noir bg-gradient-to-r from-gold-light via-gold to-gold-dark hover:brightness-110 transition-all duration-300">
+                            Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Interactive Map Embed -->
+                <div class="lg:col-span-7 bg-zinc-900 p-2 border border-zinc-800 shadow-2xl">
+                    <iframe src="https://www.google.com/maps?q=Puerto%20Lapice%2013650%20Puerto%20L%C3%A1pice%2C%20Cdad.%20Real%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-zinc-800/80 bg-zinc-950 py-12 text-zinc-500 text-xs">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex flex-col items-center md:items-start">
+                <span class="font-serif text-lg tracking-widest text-white uppercase">Puerto Lápice</span>
+                <span class="text-[10px] tracking-wider text-zinc-500">Lugar de Interés Histórico &bull; Ciudad Real, España</span>
+            </div>
+
+            <div class="text-center md:text-right space-y-1">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> Puerto Lápice. Todos los derechos reservados.</p>
+                <p class="text-[11px] text-zinc-600">Contacto directo: <a href="mailto:jddhelp@profrac.com" class="hover:text-gold">jddhelp@profrac.com</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Nav Script -->
+    <script>
+        const btn = document.getElementById('mobileMenuBtn');
+        const menu = document.getElementById('mobileMenu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
