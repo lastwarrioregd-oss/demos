@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centro Estética Ángeles | Belleza Avanzada y Cuidado Personal en Lebrija</title>
+  <meta name="description" content="Centro Estética Ángeles en Lebrija, Sevilla. Tratamientos faciales avanzados, biorevitalización, baby botox, hilos tensores, cursos de automaquillaje y estética integral.">
+
+  <!-- TailwindCSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              black: '#121212',
+              dark: '#1C1917',
+              gold: '#C5A880',
+              goldHover: '#B39366',
+              goldLight: '#E8DFD3',
+              sand: '#F7F5F0',
+              cream: '#FAFAF7',
+              muted: '#78716C'
+            }
+          },
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'serif'],
+            sans: ['Montserrat', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #E5C396 0%, #C5A880 50%, #9E7D52 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gold-border {
+      border-color: rgba(197, 168, 128, 0.35);
+    }
+  </style>
+</head>
+
+<body class="bg-brand-sand text-brand-dark font-sans antialiased selection:bg-brand-gold selection:text-white">
+
+  <!-- Top Announcement Bar -->
+  <header class="bg-brand-black text-brand-goldLight text-xs py-2 px-4 tracking-wider uppercase border-b border-brand-gold/20">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center space-x-6">
+        <span><i class="fa-solid fa-location-dot text-brand-gold mr-1.5"></i> C. Caracoles, 10, Lebrija (Sevilla)</span>
+        <span class="hidden md:inline"><i class="fa-solid fa-clock text-brand-gold mr-1.5"></i> Cita previa personalizada</span>
+      </div>
+      <div class="flex items-center space-x-4">
+        <a href="tel:692175494" class="hover:text-brand-gold transition duration-200"><i class="fa-solid fa-phone text-brand-gold mr-1"></i> 692 17 54 94</a>
+        <span class="text-brand-gold/40">|</span>
+        <a href="mailto:centroesteticaangeles@hotmail.es" class="hover:text-brand-gold transition duration-200"><i class="fa-solid fa-envelope text-brand-gold mr-1"></i> centroesteticaangeles@hotmail.es</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-brand-black/95 backdrop-blur-md border-b border-brand-gold/25 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo -->
+        <a href="#" class="flex flex-col">
+          <span class="font-serif text-2xl sm:text-3xl tracking-widest text-white uppercase font-light">
+            Centro Estética <span class="gold-gradient-text font-semibold">Ángeles</span>
+          </span>
+          <span class="text-[10px] uppercase tracking-[0.28em] text-brand-gold">Alta Cosmética &amp; Belleza Exclusiva</span>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden lg:flex items-center space-x-8">
+          <a href="#inicio" class="text-sm uppercase tracking-wider text-gray-300 hover:text-brand-gold transition">Inicio</a>
+          <a href="#tratamientos" class="text-sm uppercase tracking-wider text-gray-300 hover:text-brand-gold transition">Tratamientos</a>
+          <a href="#filosofia" class="text-sm uppercase tracking-wider text-gray-300 hover:text-brand-gold transition">Sobre Nosotros</a>
+          <a href="#galeria" class="text-sm uppercase tracking-wider text-gray-300 hover:text-brand-gold transition">Instalaciones</a>
+          <a href="#opiniones" class="text-sm uppercase tracking-wider text-gray-300 hover:text-brand-gold transition">Opiniones</a>
+          <a href="#contacto" class="text-sm uppercase tracking-wider text-gray-300 hover:text-brand-gold transition">Ubicación</a>
+        </div>
+
+        <!-- Action Button -->
+        <div class="hidden sm:block">
+          <a href="tel:692175494" class="inline-flex items-center justify-center px-6 py-2.5 bg-gradient-to-r from-brand-gold to-brand-goldHover text-brand-black font-semibold text-xs tracking-widest uppercase rounded-full shadow-lg hover:shadow-brand-gold/30 hover:scale-[1.02] transition-all duration-300">
+            <i class="fa-solid fa-calendar-check mr-2"></i> Reservar Cita
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <div class="lg:hidden flex items-center">
+          <button id="menu-toggle" type="button" class="text-brand-gold hover:text-white focus:outline-none p-2" aria-label="Abrir menú">
+            <i class="fa-solid fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-brand-dark border-t border-brand-gold/20 px-6 py-6 space-y-4">
+      <a href="#inicio" class="block text-sm uppercase tracking-wider text-white hover:text-brand-gold py-1">Inicio</a>
+      <a href="#tratamientos" class="block text-sm uppercase tracking-wider text-white hover:text-brand-gold py-1">Tratamientos y Tarifas</a>
+      <a href="#filosofia" class="block text-sm uppercase tracking-wider text-white hover:text-brand-gold py-1">Sobre Nosotros</a>
+      <a href="#galeria" class="block text-sm uppercase tracking-wider text-white hover:text-brand-gold py-1">Nuestras Instalaciones</a>
+      <a href="#opiniones" class="block text-sm uppercase tracking-wider text-white hover:text-brand-gold py-1">Testimonios</a>
+      <a href="#contacto" class="block text-sm uppercase tracking-wider text-white hover:text-brand-gold py-1">Contacto y Mapa</a>
+      <div class="pt-2">
+        <a href="tel:692175494" class="w-full text-center block px-6 py-3 bg-brand-gold text-brand-black font-semibold text-xs uppercase tracking-widest rounded-full">
+          <i class="fa-solid fa-phone mr-2"></i> Reservar Cita
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="inicio" class="relative min-h-[85vh] lg:min-h-[90vh] bg-brand-black flex items-center justify-center overflow-hidden">
+    <!-- Subtle Background Image with Dark Vignette Overlay -->
+    <div class="absolute inset-0 z-0">
+      <img 
+        src="https://scontent-iad6-1.xx.fbcdn.net/v/t39.30808-1/289973215_438462368285866_4761768376583832133_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx709x716&amp;ctp=s709x716&amp;_nc_cat=100&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=UeMTuA3_isIQ7kNvwE4xV0a&amp;_nc_oc=Adp2rTr0tm0SRUiOnkku-mQba2ajm7M-PIthndQQnxd4Lya0Kd78Wwh2V9C4GdOD9lE&amp;_nc_zt=24&amp;_nc_ht=scontent-iad6-1.xx&amp;_nc_gid=BirWaFJb2alssp0FXtfKNg&amp;_nc_ss=79289&amp;oh=00_AQNql-bi80ZojGhBfWFySCpFaNbe98MWPregGPB6ExUqZw&amp;oe=6ADB8BC6" 
+        alt="Centro Estética Ángeles Lebrija" 
+        class="w-full h-full object-cover opacity-25 filter blur-[1px] scale-105"
+        referrerpolicy="no-referrer"
+        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+      >
+      <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/85 to-brand-black/70"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 py-20 text-center text-white">
+      <div class="inline-flex items-center gap-2 border border-brand-gold/40 px-4 py-1.5 rounded-full mb-6 bg-brand-gold/10 backdrop-blur-sm">
+        <span class="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
+        <span class="text-xs uppercase tracking-[0.25em] text-brand-goldLight font-medium">Boutique de Belleza &amp; Estética de Vanguardia</span>
+      </div>
+      
+      <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-light tracking-tight leading-[1.1] mb-6">
+        El Arte de Realzar <br>
+        <span class="font-serif italic text-brand-gold">Tu Belleza Natural</span>
+      </h1>
+      
+      <p class="max-w-2xl mx-auto text-base sm:text-lg text-gray-300 font-light leading-relaxed mb-10">
+        Bienvenida al epicentro de la estética avanzada en Lebrija. Tratamientos faciales y corporales de última generación, armonización y cosmética exclusiva diseñados con máxima precisión y cercanía por <strong>Ángeles</strong>.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+        <a href="tel:692175494" class="w-full sm:w-auto px-9 py-4 bg-gradient-to-r from-brand-gold via-brand-goldHover to-brand-gold text-brand-black font-semibold text-xs tracking-[0.2em] uppercase rounded-full shadow-2xl hover:brightness-110 hover:shadow-brand-gold/40 transition duration-300 flex items-center justify-center">
+          <i class="fa-solid fa-phone mr-3"></i> Reservar Cita
+        </a>
+        <a href="#tratamientos" class="w-full sm:w-auto px-8 py-4 border border-brand-gold/40 text-brand-goldLight hover:bg-brand-gold/10 hover:border-brand-gold font-medium text-xs tracking-[0.2em] uppercase rounded-full transition duration-300">
+          Descubrir Tratamientos
+        </a>
+      </div>
+
+      <!-- Trust Badges -->
+      <div class="mt-14 pt-10 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-gray-300">
+        <div>
+          <p class="font-serif text-2xl lg:text-3xl text-brand-gold font-semibold">100%</p>
+          <p class="text-xs tracking-wider uppercase text-gray-400 mt-1">Atención Personalizada</p>
+        </div>
+        <div>
+          <p class="font-serif text-2xl lg:text-3xl text-brand-gold font-semibold">5.0 ★</p>
+          <p class="text-xs tracking-wider uppercase text-gray-400 mt-1">Opiniones Verificadas</p>
+        </div>
+        <div>
+          <p class="font-serif text-2xl lg:text-3xl text-brand-gold font-semibold">Avanzado</p>
+          <p class="text-xs tracking-wider uppercase text-gray-400 mt-1">Tratamientos Médicos-Estéticos</p>
+        </div>
+        <div>
+          <p class="font-serif text-2xl lg:text-3xl text-brand-gold font-semibold">Lebrija</p>
+          <p class="text-xs tracking-wider uppercase text-gray-400 mt-1">C. Caracoles, 10</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filosofía & Presentación -->
+  <section id="filosofia" class="py-20 lg:py-28 bg-brand-cream border-b border-brand-gold/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <!-- Visual Column -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            <div class="absolute -top-4 -left-4 w-full h-full border-2 border-brand-gold/40 rounded-2xl transform -rotate-2"></div>
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl bg-brand-dark">
+              <img 
+                src="https://scontent-iad6-1.xx.fbcdn.net/v/t39.30808-1/289973215_438462368285866_4761768376583832133_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx709x716&amp;ctp=s709x716&amp;_nc_cat=100&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=UeMTuA3_isIQ7kNvwE4xV0a&amp;_nc_oc=Adp2rTr0tm0SRUiOnkku-mQba2ajm7M-PIthndQQnxd4Lya0Kd78Wwh2V9C4GdOD9lE&amp;_nc_zt=24&amp;_nc_ht=scontent-iad6-1.xx&amp;_nc_gid=BirWaFJb2alssp0FXtfKNg&amp;_nc_ss=79289&amp;oh=00_AQNql-bi80ZojGhBfWFySCpFaNbe98MWPregGPB6ExUqZw&amp;oe=6ADB8BC6" 
+                alt="Directora Ángeles - Centro de Estética" 
+                class="w-full h-[420px] object-cover"
+                referrerpolicy="no-referrer"
+                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+              >
+            </div>
+            <!-- Boutique Badge -->
+            <div class="absolute -bottom-6 -right-4 bg-brand-black text-white p-5 rounded-xl shadow-xl border border-brand-gold/30">
+              <p class="font-serif italic text-brand-gold text-lg">"Pasión por los detalles"</p>
+              <p class="text-xs uppercase tracking-widest text-gray-400 mt-1">Ángeles · Dirección Técnica</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Text Column -->
+        <div class="lg:col-span-7">
+          <span class="text-xs font-semibold uppercase tracking-[0.3em] text-brand-gold">Excelencia &amp; Rigor</span>
+          <h2 class="font-serif text-3xl sm:text-5xl font-light text-brand-black mt-2 mb-6 leading-tight">
+            Un santuario de bienestar en el corazón de Lebrija
+          </h2>
+          <p class="text-brand-muted text-base sm:text-lg mb-6 leading-relaxed">
+            En <strong>Centro Estética Ángeles</strong> combinamos la calidez de un trato cercano y exclusivo con los protocolos estéticos más avanzados de la industria. Cada persona posee una armonía única, y nuestra misión es potenciarla con técnicas de vanguardia, aparatología puntera y productos de altísima gama.
+          </p>
+          <div class="space-y-4 mb-8">
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-gold flex-shrink-0 mt-1">
+                <i class="fa-solid fa-check text-xs"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-brand-dark text-sm uppercase tracking-wide">Protocolos Médicos y Estéticos Innovadores</h4>
+                <p class="text-sm text-brand-muted">Biorevitalización dérmica, Baby Botox, armonización de labios y lifting sin cirugía con hilos tensores reabsorbibles.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-gold flex-shrink-0 mt-1">
+                <i class="fa-solid fa-check text-xs"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-brand-dark text-sm uppercase tracking-wide">Puntualidad, Higiene y Máxima Pulcritud</h4>
+                <p class="text-sm text-brand-muted">Un espacio impoluto, concebido para desconectar del estrés en un entorno acogedor e íntimo.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-gold flex-shrink-0 mt-1">
+                <i class="fa-solid fa-check text-xs"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-brand-dark text-sm uppercase tracking-wide">Academia de Automaquillaje</h4>
+                <p class="text-sm text-brand-muted">Cursos formativos especializados tanto para adultos como para jóvenes, enseñando técnicas profesionales paso a paso.</p>
+              </div>
+            </div>
+          </div>
+          
+          <a href="tel:692175494" class="inline-flex items-center px-8 py-3.5 bg-brand-black text-brand-gold hover:text-white hover:bg-black font-semibold text-xs tracking-widest uppercase rounded-full shadow-lg transition">
+            <i class="fa-solid fa-phone mr-2"></i> Reservar Cita
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tratamientos, Servicios y Tarifas -->
+  <section id="tratamientos" class="py-20 lg:py-28 bg-brand-sand">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-semibold uppercase tracking-[0.3em] text-brand-gold">Menú Exclusivo</span>
+        <h2 class="font-serif text-3xl sm:text-5xl font-light text-brand-black mt-2 mb-4">
+          Nuestros Tratamientos &amp; Especialidades
+        </h2>
+        <div class="w-16 h-0.5 bg-brand-gold mx-auto mb-4"></div>
+        <p class="text-brand-muted text-sm sm:text-base">
+          Técnicas innovadoras y personalizadas para rejuvenecer la piel, realzar tus facciones y proporcionarte una experiencia estética de primer nivel en Lebrija.
+        </p>
+      </div>
+
+      <!-- Categories Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Bloque 1: Tratamientos Faciales Avanzados -->
+        <div class="bg-white rounded-2xl p-8 shadow-sm border border-brand-gold/20 flex flex-col justify-between hover:shadow-xl hover:border-brand-gold transition duration-300">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-brand-black text-brand-gold flex items-center justify-center text-xl mb-6">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+            <h3 class="font-serif text-2xl font-normal text-brand-black mb-2">Rejuvenecimiento &amp; Rostro</h3>
+            <p class="text-xs text-brand-gold font-semibold uppercase tracking-wider mb-6">Alta Medicina Estética &amp; Regeneración</p>
+            
+            <ul class="space-y-4 text-sm text-brand-dark/90 divide-y divide-gray-100">
+              <li class="pt-3 first:pt-0">
+                <div class="flex justify-between font-medium">
+                  <span>Biorevitalización Celular</span>
+                  <span class="text-brand-gold font-semibold">Consultar</span>
+                </div>
+                <p class="text-xs text-brand-muted mt-0.5">Hidratación profunda, luminosidad extrema y estímulo de colágeno dérmico.</p>
+              </li>
+              <li class="pt-3">
+                <div class="flex justify-between font-medium">
+                  <span>Baby Botox Preventivo</span>
+                  <span class="text-brand-gold font-semibold">Consultar</span>
+                </div>
+                <p class="text-xs text-brand-muted mt-0.5">Suavizado de líneas de expresión con acabado natural, fresco e imperceptible.</p>
+              </li>
+              <li class="pt-3">
+                <div class="flex justify-between font-medium">
+                  <span>Hilos Tensores Reabsorbibles</span>
+                  <span class="text-brand-gold font-semibold">Personalizado</span>
+                </div>
+                <p class="text-xs text-brand-muted mt-0.5">Lifting biológico sin cirugía para redefinir el óvalo facial y tensar tejidos.</p>
+              </li>
+              <li class="pt-3">
+                <div class="flex justify-between font-medium">
+                  <span>Contouring Facial &amp; Pómulos</span>
+                  <span class="text-brand-gold font-semibold">Consultar</span>
+                </div>
+                <p class="text-xs text-brand-muted mt-0.5">Proyección y armonización armónica de ángulos faciales y mandíbula.</p>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-8 pt-4 border-t border-gray-100">
+            <a href="tel:692175494" class="w-full inline-flex items-center justify-center py-2.5 px-4 bg-brand-black text-brand-gold hover:text-white rounded-lg text-xs font-semibold tracking-wider uppercase transition">
+              <i class="fa-solid fa-calendar-check mr-2"></i> Reservar Cita
+            </a>
+          </div>
+        </div>
+
+        <!-- Bloque 2: Perfeccionamiento & Labios -->
+        <div class="bg-white rounded-2xl p-8 shadow-sm border border-brand-gold/20 flex flex-col justify-between hover:shadow-xl hover:border-brand-gold transition duration-300">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-brand-black text-brand-gold flex items-center justify-center text-xl mb-6">
+              <i class="fa-solid fa-heart"></i>
+            </div>
+            <h3 class="font-serif text-2xl font-normal text-brand-black mb-2">Diseño de Labios &amp; Mirada</h3>
+            <p class="text-xs text-brand-gold font-semibold uppercase tracking-wider mb-6">Armonización &amp; Expresión</p>
+            
+            <ul class="space-y-4 text-sm text-brand-dark/90 divide-y divide-gray-100">
+              <li class="pt-3 first:pt-0">
+                <div class="flex justify-between font-medium">
+                  <span>Perfilado &amp; Volumen de Labios</span>
+                  <span class="text-brand-gold font-semibold">Consultar</span>
+                </div>
+                <p class="text-xs text-brand-muted mt-0.5">Hidratación, eversión sutil y definición de arco de cupido con ácido hialurónico.</p>
+              </li>
+              <li class="pt-3">
+                <div class="flex justify-between font-medium">
+                  <span>Tratamiento de Ojeras &amp; Mirada Cansada</span>
+                  <span class="text-brand-gold font-semibold">Consultar</span>
+                </div>
+                <p class="text-xs text-brand-muted mt-0.5">Atenuación del surco lagrimal y recuperación de vitalidad periorbital.</p>
+              </li>
+              <li class="pt-3">
+                <div class="flex justify-between font-medium">
+                  <span>Diseño y Depilación de Cejas</span>
+                  <span class="text-brand-gold font-semibold">A consultar</span>
+                </div>
+                <p class="text-xs text-brand-muted mt-0.5">Visagismo experto para encuadrar la mirada de forma armónica.</p>
+              </li>
+              <li class="pt-3">
+                <div class="flex justify-between font-medium">
+                  <span>Higiene Facial Profunda + Peeling</span>
+                  <span class="text-brand-gold font-semibold">A consultar</span>
+                </div>
+                <p class="text-xs text-brand-muted mt-0.5">Extracción minuciosa, desintoxicación celular y nutrición epidérmica.</p>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-8 pt-4 border-t border-gray-100">
+            <a href="tel:692175494" class="w-full inline-flex items-center justify-center py-2.5 px-4 bg-brand-black text-brand-gold hover:text-white rounded-lg text-xs font-semibold tracking-wider uppercase transition">
+              <i class="fa-solid fa-calendar-check mr-2"></i> Reservar Cita
+            </a>
+          </div>
+        </div>
+
+        <!-- Bloque 3: Formación & Corporal -->
+        <div class="bg-white rounded-2xl p-8 shadow-sm border border-brand-gold/20 flex flex-col justify-between hover:shadow-xl hover:border-brand-gold transition duration-300">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-brand-black text-brand-gold flex items-center justify-center text-xl mb-6">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <h3 class="font-serif text-2xl font-normal text-brand-black mb-2">Cursos &amp; Estética Corporal</h3>
+            <p class="text-xs text-brand-gold font-semibold uppercase tracking-wider mb-6">Automaquillaje &amp; Bienestar</p>
+            
+            <ul class="space-y-4 text-sm text-brand-dark/90 divide-y divide-gray-100">
+              <li class="pt-3 first:pt-0">
+                <div class="flex justify-between font-medium">
+                  <span>Curso Automaquillaje Personalizado</span>
+                  <span class="text-brand-gold font-semibold">Muy Solicitado</span>
+                </div>
+                <p class="text-xs text-brand-muted mt-0.5">Técnicas según tu morfología, selección de tonos y rutina express diaria.</p>
+              </li>
+              <li class="pt-3">
+                <div class="flex justify-between font-medium">
+                  <span>Masterclass Juvenil / Adolescentes</span>
+                  <span class="text-brand-gold font-semibold">Popular</span>
+                </div>
+                <p class="text-xs text-brand-muted mt-0.5">Iniciación al cuidado de la piel y maquillaje natural con guía paso a paso.</p>
+              </li>
+              <li class="pt-3">
+                <div class="flex justify-between font-medium">
+                  <span>Tratamientos Corporales Reductores</span>
+                  <span class="text-brand-gold font-semibold">Consultar</span>
+                </div>
+                <p class="text-xs text-brand-muted mt-0.5">Protocolos reafirmantes, drenantes y remodelación corporal integral.</p>
+              </li>
+              <li class="pt-3">
+                <div class="flex justify-between font-medium">
+                  <span>Maquillaje de Novias &amp; Eventos</span>
+                  <span class="text-brand-gold font-semibold">Bajo Cita</span>
+                </div>
+                <p class="text-xs text-brand-muted mt-0.5">Larga duración, acabado fotográfico y asesoría personalizada para tu día.</p>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-8 pt-4 border-t border-gray-100">
+            <a href="tel:692175494" class="w-full inline-flex items-center justify-center py-2.5 px-4 bg-brand-black text-brand-gold hover:text-white rounded-lg text-xs font-semibold tracking-wider uppercase transition">
+              <i class="fa-solid fa-calendar-check mr-2"></i> Reservar Cita
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Tarifa note -->
+      <div class="mt-12 bg-white/70 border border-brand-gold/30 rounded-xl p-6 text-center max-w-2xl mx-auto backdrop-blur-sm">
+        <p class="text-xs text-brand-muted uppercase tracking-wider">
+          <i class="fa-solid fa-circle-info text-brand-gold mr-1.5"></i>
+          Los tratamientos médico-estéticos requieren una valoración previa gratuita y sin compromiso para determinar las necesidades exactas de tu piel.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nuestras Instalaciones y Trabajos -->
+  <section id="galeria" class="py-20 lg:py-28 bg-brand-black text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div>
+          <span class="text-xs font-semibold uppercase tracking-[0.3em] text-brand-gold">Nuestras Instalaciones y Trabajos</span>
+          <h2 class="font-serif text-3xl sm:text-5xl font-light text-white mt-2">
+            Espacio Exclusivo &amp; Resultados Reales
+          </h2>
+        </div>
+        <p class="text-gray-400 text-sm max-w-md">
+          Un ambiente relajante, impecablemente esterilizado y diseñado para que tu momento de autocuidado sea una experiencia de absoluto confort.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Main Real Photo from Business -->
+        <div class="group relative overflow-hidden rounded-2xl md:col-span-2 h-96 bg-brand-dark">
+          <img 
+            src="https://scontent-iad6-1.xx.fbcdn.net/v/t39.30808-1/289973215_438462368285866_4761768376583832133_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx709x716&amp;ctp=s709x716&amp;_nc_cat=100&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=UeMTuA3_isIQ7kNvwE4xV0a&amp;_nc_oc=Adp2rTr0tm0SRUiOnkku-mQba2ajm7M-PIthndQQnxd4Lya0Kd78Wwh2V9C4GdOD9lE&amp;_nc_zt=24&amp;_nc_ht=scontent-iad6-1.xx&amp;_nc_gid=BirWaFJb2alssp0FXtfKNg&amp;_nc_ss=79289&amp;oh=00_AQNql-bi80ZojGhBfWFySCpFaNbe98MWPregGPB6ExUqZw&amp;oe=6ADB8BC6" 
+            alt="Centro Estética Ángeles - Instalaciones en Lebrija" 
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            referrerpolicy="no-referrer"
+            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-transparent opacity-80"></div>
+          <div class="absolute bottom-6 left-6 right-6">
+            <span class="text-xs uppercase tracking-widest text-brand-gold font-semibold">Gabinete Especializado</span>
+            <h3 class="font-serif text-2xl text-white">Centro Estética Ángeles en C. Caracoles</h3>
+          </div>
+        </div>
+
+        <!-- Supportive Aesthetic Clinic Image -->
+        <div class="group relative overflow-hidden rounded-2xl h-96 bg-brand-dark">
+          <img 
+            src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80" 
+            alt="Tratamientos Faciales y Cuidados" 
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            referrerpolicy="no-referrer"
+            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-transparent opacity-80"></div>
+          <div class="absolute bottom-6 left-6 right-6">
+            <span class="text-xs uppercase tracking-widest text-brand-gold font-semibold">Máxima Higiene</span>
+            <h3 class="font-serif text-xl text-white">Tecnología &amp; Esterilización</h3>
+          </div>
+        </div>
+
+        <!-- Additional Atmosphere Image 1 -->
+        <div class="group relative overflow-hidden rounded-2xl h-80 bg-brand-dark">
+          <img 
+            src="https://images.unsplash.com/photo-1512290900672-1f4864388e62?auto=format&fit=crop&w=800&q=80" 
+            alt="Cursos de Automaquillaje y Belleza" 
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            referrerpolicy="no-referrer"
+            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-transparent opacity-80"></div>
+          <div class="absolute bottom-6 left-6">
+            <span class="text-xs uppercase tracking-widest text-brand-gold font-semibold">Talleres Formativos</span>
+            <h3 class="font-serif text-lg text-white">Automaquillaje Personal</h3>
+          </div>
+        </div>
+
+        <!-- Additional Atmosphere Image 2 -->
+        <div class="group relative overflow-hidden rounded-2xl h-80 bg-brand-dark">
+          <img 
+            src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80" 
+            alt="Cosmética Exclusiva" 
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            referrerpolicy="no-referrer"
+            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-transparent opacity-80"></div>
+          <div class="absolute bottom-6 left-6">
+            <span class="text-xs uppercase tracking-widest text-brand-gold font-semibold">Productos Premium</span>
+            <h3 class="font-serif text-lg text-white">Principios Activos Puros</h3>
+          </div>
+        </div>
+
+        <!-- Additional Atmosphere Image 3 -->
+        <div class="group relative overflow-hidden rounded-2xl h-80 bg-brand-dark">
+          <img 
+            src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80" 
+            alt="Tratamientos y Cuidado Facial" 
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            referrerpolicy="no-referrer"
+            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-transparent opacity-80"></div>
+          <div class="absolute bottom-6 left-6">
+            <span class="text-xs uppercase tracking-widest text-brand-gold font-semibold">Atención Íntima</span>
+            <h3 class="font-serif text-lg text-white">Bienestar y Belleza</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Opiniones Reales Verificadas -->
+  <section id="opiniones" class="py-20 lg:py-28 bg-brand-cream border-t border-b border-brand-gold/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-semibold uppercase tracking-[0.3em] text-brand-gold">Experiencias Reales</span>
+        <h2 class="font-serif text-3xl sm:text-5xl font-light text-brand-black mt-2 mb-4">
+          La Voz de Nuestras Clientas
+        </h2>
+        <div class="w-16 h-0.5 bg-brand-gold mx-auto mb-4"></div>
+        <p class="text-brand-muted text-sm sm:text-base">
+          Reseñas reales verificadas de quienes confían su imagen y bienestar a la profesionalidad de Ángeles en Lebrija.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Reseña 1 -->
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-brand-gold/25 relative flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-500 mb-4 text-sm">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-brand-dark/90 italic font-serif text-lg leading-relaxed mb-6">
+              "El Mejor Centro Estético de Lebrija con una gran Profesional Ángeles , con los últimos y más novedosos tratamientos Faciales y Corporales , Biorevitalizacion, Babybotox, Labios, Hilos Tensores reabsorbibles, Contourning faciales,…"
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+            <div class="w-10 h-10 rounded-full bg-brand-black text-brand-gold flex items-center justify-center font-serif font-bold text-sm">
+              JB
+            </div>
+            <div>
+              <p class="font-semibold text-brand-black text-sm">JUAN ANTONIO BOTELLO RIVERA</p>
+              <p class="text-xs text-brand-muted">Cliente Verificado · Google</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reseña 2 -->
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-brand-gold/25 relative flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-500 mb-4 text-sm">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-brand-dark/90 italic font-serif text-lg leading-relaxed mb-6">
+              "Los cursos de automaquillaje fantásticos. En mi caso mi hija adolescente ha disfrutado de uno y hemos quedado muy contentos. Ángeles es encantadora y tiene mano para conseguir buenos resultados."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+            <div class="w-10 h-10 rounded-full bg-brand-black text-brand-gold flex items-center justify-center font-serif font-bold text-sm">
+              S
+            </div>
+            <div>
+              <p class="font-semibold text-brand-black text-sm">Son</p>
+              <p class="text-xs text-brand-muted">Cliente Verificado · Google</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reseña 3 -->
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-brand-gold/25 relative flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-500 mb-4 text-sm">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-brand-dark/90 italic font-serif text-lg leading-relaxed mb-6">
+              "Me ha gustado mucho , buena atención y muy puntual y todo muy limpio. La estética es super 😍😍…"
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+            <div class="w-10 h-10 rounded-full bg-brand-black text-brand-gold flex items-center justify-center font-serif font-bold text-sm">
+              DL
+            </div>
+            <div>
+              <p class="font-semibold text-brand-black text-sm">Dolores Lora</p>
+              <p class="text-xs text-brand-muted">Cliente Verificado · Google</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reseña 4 -->
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-brand-gold/25 relative flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-500 mb-4 text-sm">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-brand-dark/90 italic font-serif text-lg leading-relaxed mb-6">
+              "Atención muy cercana y profesional. Gran atención a los detalles."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+            <div class="w-10 h-10 rounded-full bg-brand-black text-brand-gold flex items-center justify-center font-serif font-bold text-sm">
+              JG
+            </div>
+            <div>
+              <p class="font-semibold text-brand-black text-sm">Jesús Galán Silva</p>
+              <p class="text-xs text-brand-muted">Cliente Verificado · Google</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reseña 5 -->
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-brand-gold/25 relative flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-500 mb-4 text-sm">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-brand-dark/90 italic font-serif text-lg leading-relaxed mb-6">
+              "Salí encantada con el trato y el trabajo realizado por Ángeles."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+            <div class="w-10 h-10 rounded-full bg-brand-black text-brand-gold flex items-center justify-center font-serif font-bold text-sm">
+              FP
+            </div>
+            <div>
+              <p class="font-semibold text-brand-black text-sm">Fabiola Perezru</p>
+              <p class="text-xs text-brand-muted">Cliente Verificado · Google</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta de Llamada a la Acción -->
+        <div class="bg-gradient-to-br from-brand-black to-brand-dark p-8 rounded-2xl shadow-xl text-white flex flex-col justify-between border border-brand-gold/40">
+          <div>
+            <span class="text-brand-gold text-xs font-semibold uppercase tracking-widest">¿Quieres tu propio diagnóstico?</span>
+            <h3 class="font-serif text-2xl font-light text-white mt-2 mb-4">Descubre el tratamiento idóneo para ti</h3>
+            <p class="text-gray-300 text-sm mb-6 leading-relaxed">
+              Consigue una piel radiante y rejuvenecida de la mano de una especialista con años de trayectoria y pasión en Lebrija.
+            </p>
+          </div>
+          <a href="tel:692175494" class="w-full text-center py-3 bg-brand-gold text-brand-black hover:bg-white font-semibold text-xs tracking-widest uppercase rounded-full transition duration-300">
+            <i class="fa-solid fa-phone mr-2"></i> Reservar Cita
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Ubicación & Contacto Directo -->
+  <section id="contacto" class="py-20 lg:py-28 bg-brand-sand">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Contact Info Details -->
+        <div class="lg:col-span-5 space-y-8">
+          <div>
+            <span class="text-xs font-semibold uppercase tracking-[0.3em] text-brand-gold">Visítanos</span>
+            <h2 class="font-serif text-3xl sm:text-5xl font-light text-brand-black mt-2 mb-4">
+              Ubicación &amp; Cita Previa
+            </h2>
+            <p class="text-brand-muted text-sm leading-relaxed">
+              Estamos en una ubicación céntrica y tranquila en Lebrija, acondicionada para tu máxima comodidad y privacidad.
+            </p>
+          </div>
+
+          <div class="space-y-6">
+            <!-- Dirección -->
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-white border border-brand-gold/30 flex items-center justify-center text-brand-gold shadow-sm flex-shrink-0">
+                <i class="fa-solid fa-map-location-dot text-lg"></i>
+              </div>
+              <div>
+                <h4 class="text-xs font-bold uppercase tracking-wider text-brand-black">Dirección</h4>
+                <p class="text-sm text-brand-muted mt-0.5">C. Caracoles, 10</p>
+                <p class="text-sm text-brand-muted">41740 Lebrija, Sevilla, España</p>
+              </div>
+            </div>
+
+            <!-- Teléfono -->
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-white border border-brand-gold/30 flex items-center justify-center text-brand-gold shadow-sm flex-shrink-0">
+                <i class="fa-solid fa-phone text-lg"></i>
+              </div>
+              <div>
+                <h4 class="text-xs font-bold uppercase tracking-wider text-brand-black">Teléfono &amp; WhatsApp</h4>
+                <a href="tel:692175494" class="text-base font-semibold text-brand-black hover:text-brand-gold transition mt-0.5 inline-block">
+                  692 17 54 94
+                </a>
+                <p class="text-xs text-brand-muted">Llamadas y atención para reservas</p>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-white border border-brand-gold/30 flex items-center justify-center text-brand-gold shadow-sm flex-shrink-0">
+                <i class="fa-solid fa-envelope text-lg"></i>
+              </div>
+              <div>
+                <h4 class="text-xs font-bold uppercase tracking-wider text-brand-black">Correo Electrónico</h4>
+                <a href="mailto:centroesteticaangeles@hotmail.es" class="text-sm font-medium text-brand-black hover:text-brand-gold transition mt-0.5 inline-block">
+                  centroesteticaangeles@hotmail.es
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA Box -->
+          <div class="pt-4">
+            <a href="tel:692175494" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 bg-brand-black text-brand-gold hover:text-white rounded-full font-semibold text-xs tracking-widest uppercase shadow-xl transition duration-300">
+              <i class="fa-solid fa-calendar-check mr-2"></i> Reservar Cita
+            </a>
+          </div>
+        </div>
+
+        <!-- Interactive Google Map Embed -->
+        <div class="lg:col-span-7">
+          <div class="bg-white p-3 rounded-2xl shadow-xl border border-brand-gold/30 overflow-hidden">
+            <iframe 
+              src="https://www.google.com/maps?q=Centro%20Est%C3%A9tica%20%C3%81ngeles%20C.%20Caracoles%2C%2010%2C%2041740%20Lebrija%2C%20Sevilla%2C%20Espa%C3%B1a&output=embed" 
+              width="100%" 
+              height="400" 
+              style="border:0; border-radius: 1rem;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              title="Ubicación Centro Estética Ángeles en Lebrija">
+            </iframe>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-brand-black text-gray-400 border-t border-brand-gold/20 pt-16 pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+        <!-- Col 1 -->
+        <div class="md:col-span-2 space-y-4">
+          <span class="font-serif text-2xl tracking-widest text-white uppercase font-light">
+            Centro Estética <span class="gold-gradient-text font-semibold">Ángeles</span>
+          </span>
+          <p class="text-xs leading-relaxed text-gray-400 max-w-sm">
+            Especialistas en tratamientos faciales y corporales de última generación, biorevitalización, baby botox, hilos tensores reabsorbibles y formación en automaquillaje en Lebrija (Sevilla).
+          </p>
+          <div class="pt-2">
+            <span class="inline-block text-[11px] tracking-widest text-brand-gold uppercase">Lebrija · Código Postal 41740</span>
+          </div>
+        </div>
+
+        <!-- Col 2 -->
+        <div>
+          <h4 class="text-white text-xs font-bold uppercase tracking-widest mb-4">Enlaces Rápidos</h4>
+          <ul class="space-y-2.5 text-xs tracking-wider">
+            <li><a href="#inicio" class="hover:text-brand-gold transition">Inicio</a></li>
+            <li><a href="#tratamientos" class="hover:text-brand-gold transition">Tratamientos</a></li>
+            <li><a href="#filosofia" class="hover:text-brand-gold transition">Sobre Nosotros</a></li>
+            <li><a href="#galeria" class="hover:text-brand-gold transition">Instalaciones</a></li>
+            <li><a href="#opiniones" class="hover:text-brand-gold transition">Opiniones</a></li>
+            <li><a href="#contacto" class="hover:text-brand-gold transition">Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3 -->
+        <div>
+          <h4 class="text-white text-xs font-bold uppercase tracking-widest mb-4">Contacto Directo</h4>
+          <ul class="space-y-2.5 text-xs text-gray-300">
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-phone text-brand-gold"></i>
+              <a href="tel:692175494" class="hover:text-brand-gold transition">692 17 54 94</a>
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-envelope text-brand-gold"></i>
+              <a href="mailto:centroesteticaangeles@hotmail.es" class="hover:text-brand-gold transition truncate">centroesteticaangeles@hotmail.es</a>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-map-pin text-brand-gold mt-0.5"></i>
+              <span>C. Caracoles, 10, 41740 Lebrija, Sevilla</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+        <p>&copy; <span id="year"></span> Centro Estética Ángeles. Todos los derechos reservados.</p>
+        <div class="flex items-center space-x-6">
+          <a href="#" class="hover:text-brand-gold transition">Aviso Legal</a>
+          <a href="#" class="hover:text-brand-gold transition">Política de Privacidad</a>
+          <a href="tel:692175494" class="text-brand-gold hover:underline">Reservar Cita</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Mobile Action Bar -->
+  <div class="fixed bottom-4 right-4 z-50 md:hidden">
+    <a href="tel:692175494" class="flex items-center gap-2 bg-gradient-to-r from-brand-gold to-brand-goldHover text-brand-black px-5 py-3.5 rounded-full font-bold shadow-2xl tracking-widest uppercase text-xs">
+      <i class="fa-solid fa-phone text-sm"></i>
+      <span>Reservar Cita</span>
+    </a>
+  </div>
+
+  <script>
+    // Dinamic Current Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu on click link
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  </script>
+</body>
+</html>
