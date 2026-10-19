@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H3 Estética y SPA | Centro de Belleza y Bienestar en Medina del Campo</title>
+    <meta name="description" content="H3 Estética y SPA en Medina del Campo. Especialistas en estética avanzada, manicura, tratamiento de uñas, extensión de pestañas y masajes relajantes. Reserva tu cita.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            400: '#E6CA65',
+                            500: '#D4AF37',
+                            600: '#C5A059',
+                            700: '#9A7B38',
+                        },
+                        sand: {
+                            50: '#FAF7F2',
+                            100: '#F4EFE6',
+                            200: '#E8DFD1',
+                        },
+                        dark: {
+                            900: '#121212',
+                            800: '#1A1A1A',
+                            700: '#2A2A2A',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .gold-gradient-text {
+            background: linear-[#D4AF37], #F3EFE6;
+            background: linear-gradient(135deg, #E6CA65 0%, #C5A059 50%, #9A7B38 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border-gradient {
+            border-image: linear-gradient(135deg, #E6CA65, #C5A059) 1;
+        }
+        .bg-pattern {
+            background-color: #121212;
+            background-image: radial-gradient(rgba(212, 175, 55, 0.05) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="font-sans bg-dark-900 text-stone-200 antialiased selection:bg-gold-600 selection:text-white">
+
+    <!-- Header / Navigation -->
+    <header class="fixed w-full top-0 z-50 bg-dark-900/90 backdrop-blur-md border-b border-gold-600/20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full border border-gold-500/50 flex items-center justify-center bg-dark-800 group-hover:border-gold-400 transition-colors">
+                    <span class="font-serif font-bold text-xl text-gold-500">H3</span>
+                </div>
+                <div>
+                    <span class="font-serif text-xl tracking-wider text-white block font-semibold">H3 ESTÉTICA</span>
+                    <span class="text-[10px] tracking-[0.2em] text-gold-400 uppercase block -mt-1">&amp; SPA BOUTIQUE</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
+                <a href="#inicio" class="text-stone-300 hover:text-gold-400 transition-colors">Inicio</a>
+                <a href="#nosotros" class="text-stone-300 hover:text-gold-400 transition-colors">El Centro</a>
+                <a href="#tratamientos" class="text-stone-300 hover:text-gold-400 transition-colors">Tratamientos</a>
+                <a href="#galeria" class="text-stone-300 hover:text-gold-400 transition-colors">Instalaciones</a>
+                <a href="#opiniones" class="text-stone-300 hover:text-gold-400 transition-colors">Reseñas</a>
+                <a href="#contacto" class="text-stone-300 hover:text-gold-400 transition-colors">Ubicación</a>
+            </nav>
+
+            <!-- Call CTA Button -->
+            <div class="hidden sm:flex items-center">
+                <a href="tel:601509011" class="relative inline-flex items-center justify-center px-6 py-2.5 text-xs font-semibold tracking-widest text-dark-900 uppercase transition-all duration-300 bg-gold-500 rounded-full hover:bg-gold-400 hover:shadow-[0_0_20px_rgba(212,175,55,0.4)]">
+                    <i class="fa-solid fa-calendar-check mr-2"></i> Reservar Cita
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-stone-300 hover:text-gold-400 p-2 focus:outline-none" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-800 border-b border-gold-600/20 px-4 pt-4 pb-6 space-y-3">
+            <a href="#inicio" class="block py-2 text-stone-200 hover:text-gold-400 font-medium">Inicio</a>
+            <a href="#nosotros" class="block py-2 text-stone-200 hover:text-gold-400 font-medium">El Centro</a>
+            <a href="#tratamientos" class="block py-2 text-stone-200 hover:text-gold-400 font-medium">Tratamientos y Tarifas</a>
+            <a href="#galeria" class="block py-2 text-stone-200 hover:text-gold-400 font-medium">Instalaciones</a>
+            <a href="#opiniones" class="block py-2 text-stone-200 hover:text-gold-400 font-medium">Reseñas de Clientes</a>
+            <a href="#contacto" class="block py-2 text-stone-200 hover:text-gold-400 font-medium">Ubicación y Contacto</a>
+            <a href="tel:601509011" class="block w-full text-center mt-4 py-3 bg-gold-500 text-dark-900 font-semibold rounded-full uppercase text-xs tracking-widest">
+                <i class="fa-solid fa-phone mr-2"></i> Reservar Cita (601 50 90 11)
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-pattern">
+        <!-- Background Overlay Image -->
+        <div class="absolute inset-0 z-0 opacity-25 mix-blend-luminosity">
+            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1920&q=80" 
+                 alt="H3 Estética y SPA Ambiente" 
+                 class="w-full h-full object-cover"
+                 referrerpolicy="no-referrer"
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+        </div>
+        
+        <!-- Gradient Overlay -->
+        <div class="absolute inset-0 z-0 bg-gradient-to-r from-dark-900 via-dark-900/90 to-transparent"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+            <div class="max-w-2xl">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-semibold uppercase tracking-widest mb-6">
+                    <i class="fa-solid fa-sparkles"></i> Centro de Estética Exclusivo en Medina del Campo
+                </div>
+                <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal tracking-tight text-white leading-tight mb-6">
+                    Tu Oasis de <span class="gold-gradient-text italic font-bold">Tranquilidad</span> &amp; Belleza Personalizada
+                </h1>
+                <p class="text-stone-300 text-base sm:text-lg font-light leading-relaxed mb-8">
+                    Descubre un espacio impecable diseñado para cuidarte. Especialistas en salud de uñas, extensión de pestañas, manicura de alta precisión y tratamientos corporales que devuelven a tu piel su armonía natural.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="tel:601509011" class="inline-flex items-center justify-center px-8 py-4 bg-gold-500 hover:bg-gold-400 text-dark-900 text-xs font-bold uppercase tracking-widest rounded-full transition-all duration-300 shadow-lg shadow-gold-500/20 hover:scale-105">
+                        <i class="fa-solid fa-calendar-check mr-3 text-base"></i> Reservar Cita
+                    </a>
+                    <a href="#tratamientos" class="inline-flex items-center justify-center px-8 py-4 border border-stone-600 hover:border-gold-500 text-stone-200 hover:text-gold-400 text-xs font-bold uppercase tracking-widest rounded-full transition-all duration-300 bg-dark-800/50 backdrop-blur-sm">
+                        Ver Tratamientos
+                    </a>
+                </div>
+
+                <!-- Trust Badges -->
+                <div class="mt-12 pt-8 border-t border-stone-800 grid grid-cols-3 gap-4">
+                    <div>
+                        <div class="text-gold-400 font-serif text-2xl font-bold">100%</div>
+                        <div class="text-stone-400 text-xs mt-1">Trato Personalizado</div>
+                    </div>
+                    <div>
+                        <div class="text-gold-400 font-serif text-2xl font-bold">Alta</div>
+                        <div class="text-stone-400 text-xs mt-1">Higiene e Impecabilidad</div>
+                    </div>
+                    <div>
+                        <div class="text-gold-400 font-serif text-2xl font-bold">Expertas</div>
+                        <div class="text-stone-400 text-xs mt-1">En Uñas y Pestañas</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us / Highlights Section -->
+    <section id="nosotros" class="py-20 bg-dark-800 border-y border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <div class="relative z-10 rounded-2xl overflow-hidden border border-gold-500/20 shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1000&q=80" 
+                             alt="Instalaciones H3 Estética y SPA" 
+                             class="w-full h-[450px] object-cover"
+                             referrerpolicy="no-referrer"
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 w-48 h-48 bg-gold-500/10 rounded-full blur-2xl -z-0"></div>
+                </div>
+
+                <div>
+                    <span class="text-gold-400 text-xs uppercase tracking-widest font-semibold">Bienvenida a H3 Estética y SPA</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-normal text-white mt-2 mb-6">
+                        Un espacio impecable creado para resaltar tu belleza auténtica
+                    </h2>
+                    <p class="text-stone-300 text-sm leading-relaxed mb-6 font-light">
+                        En <strong class="text-gold-400 font-medium">H3 Estética y SPA</strong>, creemos que la belleza comienza con la salud y el bienestar. Nos diferenciamos por ofrecer un ambiente sereno, impecable y profesional en el corazón de Medina del Campo.
+                    </p>
+                    <p class="text-stone-300 text-sm leading-relaxed mb-8 font-light">
+                        Ya sea que necesites recuperar la vitalidad de tus uñas dañadas, realzar la expresividad de tu mirada con pestañas de acabados perfectos o disfrutar de un tratamiento facial rejuvenecedor, nuestras profesionales te asesorarán con honestidad, cercanía y el máximo rigor.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 flex-shrink-0 mt-1">
+                                <i class="fa-solid fa-gem text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white text-base font-medium">Atención Educada y Cercana</h4>
+                                <p class="text-stone-400 text-xs mt-1">Un equipo encantador enfocado en que te sientas cuidada y escuchada en cada cita.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 flex-shrink-0 mt-1">
+                                <i class="fa-solid fa-pump-soap text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white text-base font-medium">Higiene e Higienización Estricta</h4>
+                                <p class="text-stone-400 text-xs mt-1">Clínica impecable que transmite máxima tranquilidad y seguridad en cada protocolo.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 flex-shrink-0 mt-1">
+                                <i class="fa-solid fa-hand-holding-heart text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white text-base font-medium">Especialistas en Recostrucción y Cuidado</h4>
+                                <p class="text-stone-400 text-xs mt-1">Recuperamos la salud de uñas debilitadas con técnicas avanzadas y productos premium.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services & Pricing Section -->
+    <section id="tratamientos" class="py-24 bg-dark-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-400 text-xs uppercase tracking-widest font-semibold">Carta de Servicios</span>
+                <h2 class="font-serif text-3xl sm:text-4xl text-white mt-2 mb-4">Nuestros Tratamientos y Tarifas</h2>
+                <div class="w-16 h-0.5 bg-gold-500 mx-auto mb-6"></div>
+                <p class="text-stone-400 text-sm font-light">
+                    Servicios de belleza y estética realizados por profesionales cualificadas con cosmética de alta gama.
+                </p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Service Card 1: Manicura y Uñas -->
+                <div class="bg-dark-800 rounded-2xl p-8 border border-stone-800 hover:border-gold-500/40 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 flex items-center justify-center text-gold-400 mb-6 group-hover:bg-gold-500 group-hover:text-dark-900 transition-colors">
+                            <i class="fa-solid fa-hand-sparkles text-xl"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl text-white mb-2">Manicura &amp; Cuidado de Uñas</h3>
+                        <p class="text-stone-400 text-xs mb-6">Tratamientos específicos para recuperar uñas frágiles, esmaltado perfecto y técnica impecable.</p>
+                        
+                        <ul class="space-y-4">
+                            <li class="flex justify-between items-center pb-2 border-b border-stone-800">
+                                <span class="text-stone-300 text-sm">Manicura Completa &amp; Esmaltado</span>
+                                <span class="text-gold-400 font-semibold text-sm">18 €</span>
+                            </li>
+                            <li class="flex justify-between items-center pb-2 border-b border-stone-800">
+                                <span class="text-stone-300 text-sm">Manicura Semipermanente</span>
+                                <span class="text-gold-400 font-semibold text-sm">25 €</span>
+                            </li>
+                            <li class="flex justify-between items-center pb-2 border-b border-stone-800">
+                                <span class="text-stone-300 text-sm">Tratamiento Reparador Uñas Frágiles</span>
+                                <span class="text-gold-400 font-semibold text-sm">30 €</span>
+                            </li>
+                            <li class="flex justify-between items-center pb-2 border-b border-stone-800">
+                                <span class="text-stone-300 text-sm">Pedicura Completa SPA</span>
+                                <span class="text-gold-400 font-semibold text-sm">35 €</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-4">
+                        <a href="tel:601509011" class="w-full inline-flex items-center justify-center py-3 bg-stone-900 hover:bg-gold-500 text-gold-400 hover:text-dark-900 border border-gold-500/30 text-xs font-bold uppercase tracking-wider rounded-lg transition-all">
+                            Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service Card 2: Pestañas y Cejas -->
+                <div class="bg-dark-800 rounded-2xl p-8 border border-gold-500/30 relative shadow-xl flex flex-col justify-between group">
+                    <div class="absolute -top-3 right-6 bg-gold-500 text-dark-900 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">
+                        Especialidad
+                    </div>
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 flex items-center justify-center text-gold-400 mb-6 group-hover:bg-gold-500 group-hover:text-dark-900 transition-colors">
+                            <i class="fa-solid fa-eye text-xl"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl text-white mb-2">Mirada: Pestañas &amp; Cejas</h3>
+                        <p class="text-stone-400 text-xs mb-6">Extensiones y mantenimientos minuciosos para potenciar tu mirada con absoluta naturalidad.</p>
+                        
+                        <ul class="space-y-4">
+                            <li class="flex justify-between items-center pb-2 border-b border-stone-800">
+                                <span class="text-stone-300 text-sm">Reposición de Pestañas</span>
+                                <span class="text-gold-400 font-semibold text-sm">32 €</span>
+                            </li>
+                            <li class="flex justify-between items-center pb-2 border-b border-stone-800">
+                                <span class="text-stone-300 text-sm">Extensión Pelo a Pelo Completa</span>
+                                <span class="text-gold-400 font-semibold text-sm">55 €</span>
+                            </li>
+                            <li class="flex justify-between items-center pb-2 border-b border-stone-800">
+                                <span class="text-stone-300 text-sm">Lifting de Pestañas + Tinte</span>
+                                <span class="text-gold-400 font-semibold text-sm">38 €</span>
+                            </li>
+                            <li class="flex justify-between items-center pb-2 border-b border-stone-800">
+                                <span class="text-stone-300 text-sm">Diseño &amp; Depilación de Cejas</span>
+                                <span class="text-gold-400 font-semibold text-sm">15 €</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-4">
+                        <a href="tel:601509011" class="w-full inline-flex items-center justify-center py-3 bg-gold-500 hover:bg-gold-400 text-dark-900 text-xs font-bold uppercase tracking-wider rounded-lg transition-all shadow-md">
+                            Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service Card 3: Estética Facial y SPA -->
+                <div class="bg-dark-800 rounded-2xl p-8 border border-stone-800 hover:border-gold-500/40 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 flex items-center justify-center text-gold-400 mb-6 group-hover:bg-gold-500 group-hover:text-dark-900 transition-colors">
+                            <i class="fa-solid fa-spa text-xl"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl text-white mb-2">Faciales &amp; Rituales SPA</h3>
+                        <p class="text-stone-400 text-xs mb-6">Higiene e hidratación profunda en un ambiente concebido para la relajación absoluta.</p>
+                        
+                        <ul class="space-y-4">
+                            <li class="flex justify-between items-center pb-2 border-b border-stone-800">
+                                <span class="text-stone-300 text-sm">Higiene Facial Profunda Detox</span>
+                                <span class="text-gold-400 font-semibold text-sm">45 €</span>
+                            </li>
+                            <li class="flex justify-between items-center pb-2 border-b border-stone-800">
+                                <span class="text-stone-300 text-sm">Tratamiento Iluminador Antiedad</span>
+                                <span class="text-gold-400 font-semibold text-sm">60 €</span>
+                            </li>
+                            <li class="flex justify-between items-center pb-2 border-b border-stone-800">
+                                <span class="text-stone-300 text-sm">Masaje Relajante Aromaterapia</span>
+                                <span class="text-gold-400 font-semibold text-sm">45 €</span>
+                            </li>
+                            <li class="flex justify-between items-center pb-2 border-b border-stone-800">
+                                <span class="text-stone-300 text-sm">Ritual Corporal Hidratante SPA</span>
+                                <span class="text-gold-400 font-semibold text-sm">50 €</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-4">
+                        <a href="tel:601509011" class="w-full inline-flex items-center justify-center py-3 bg-stone-900 hover:bg-gold-500 text-gold-400 hover:text-dark-900 border border-gold-500/30 text-xs font-bold uppercase tracking-wider rounded-lg transition-all">
+                            Reservar Cita
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galeria" class="py-20 bg-dark-800 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-gold-400 text-xs uppercase tracking-widest font-semibold">Galería</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl text-white mt-2">Nuestras Instalaciones y Trabajos</h2>
+                </div>
+                <p class="text-stone-400 text-xs sm:text-sm mt-4 md:mt-0 max-w-md">
+                    Un vistazo a nuestra clínica boutique: elegancia, higiene y acabados profesionales en cada detalle.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery Image 1 -->
+                <div class="relative group rounded-xl overflow-hidden h-64 bg-dark-700">
+                    <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=800&q=80" 
+                         alt="Manicura y Uñas H3 Estética" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white text-sm font-medium">Manicura de Alta Precisión</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Image 2 -->
+                <div class="relative group rounded-xl overflow-hidden h-64 bg-dark-700">
+                    <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80" 
+                         alt="Tratamiento Facial Exclusivo" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white text-sm font-medium">Cuidado Facial Personalizado</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Image 3 -->
+                <div class="relative group rounded-xl overflow-hidden h-64 bg-dark-700">
+                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80" 
+                         alt="Tratamiento de Pestañas" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white text-sm font-medium">Extensiones y Diseño de Mirada</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Image 4 -->
+                <div class="relative group rounded-xl overflow-hidden h-64 bg-dark-700">
+                    <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=800&q=80" 
+                         alt="Cabina SPA Relax" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white text-sm font-medium">Ambiente Relax &amp; Aromaterapia</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Image 5 -->
+                <div class="relative group rounded-xl overflow-hidden h-64 bg-dark-700">
+                    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80" 
+                         alt="Instalaciones H3 Estética" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white text-sm font-medium">Instalaciones Limpias e Impecables</span>
+                    </div>
+                </div>
+
+                <!-- Gallery Image 6 -->
+                <div class="relative group rounded-xl overflow-hidden h-64 bg-dark-700">
+                    <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80" 
+                         alt="Productos de Estética Avanzada" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white text-sm font-medium">Cosmética de Alta Gama</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Verified Reviews Section -->
+    <section id="opiniones" class="py-24 bg-dark-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-400 text-xs uppercase tracking-widest font-semibold">Reseñas Verificadas</span>
+                <h2 class="font-serif text-3xl sm:text-4xl text-white mt-2 mb-4">Lo Que Dicen Nuestras Clientas</h2>
+                <div class="w-16 h-0.5 bg-gold-500 mx-auto mb-6"></div>
+                <p class="text-stone-400 text-sm font-light">
+                    Opiniones reales de clientas que confían en nosotras en Medina del Campo.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <!-- Review 1 -->
+                <div class="bg-dark-800 p-8 rounded-2xl border border-stone-800 relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center text-gold-400 mb-4 gap-1">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                        </div>
+                        <p class="text-stone-300 text-sm italic leading-relaxed mb-6">
+                            "Excelente experiencia de principio a fin. La clínica es preciosa, impecable y transmite muchísima tranquilidad. El trato es profesional, cercano y muy personalizado; te asesoran con total honestidad y cuidado. En uñas, el resultado es fantástico."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-stone-800/60">
+                        <div class="w-10 h-10 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center font-bold text-sm">
+                            YL
+                        </div>
+                        <div>
+                            <h4 class="text-white text-sm font-semibold">yarisa lopez</h4>
+                            <span class="text-stone-500 text-xs">Cliente en Google Maps</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-dark-800 p-8 rounded-2xl border border-stone-800 relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center text-gold-400 mb-4 gap-1">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                        </div>
+                        <p class="text-stone-300 text-sm italic leading-relaxed mb-6">
+                            "Un trato inmejorable, grandes profesionales. Yo empecé a ir porque en otro centro de estética me destrozaron las uñas, las tenía blandas como el papel... y ellas lograron recuperármelas por completo. Estoy feliz."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-stone-800/60">
+                        <div class="w-10 h-10 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center font-bold text-sm">
+                            MA
+                        </div>
+                        <div>
+                            <h4 class="text-white text-sm font-semibold">Margarita Andres</h4>
+                            <span class="text-stone-500 text-xs">Cliente en Google Maps</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-dark-800 p-8 rounded-2xl border border-stone-800 relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center text-gold-400 mb-4 gap-1">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                        </div>
+                        <p class="text-stone-300 text-sm italic leading-relaxed mb-6">
+                            "Un centro súper agradable, las chicas atentas y profesionales, tanto las manicuras como los tratamientos me encantan siempre que voy. Es mi centro de estética sin duda."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-stone-800/60">
+                        <div class="w-10 h-10 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center font-bold text-sm">
+                            MF
+                        </div>
+                        <div>
+                            <h4 class="text-white text-sm font-semibold">Miss.foodie</h4>
+                            <span class="text-stone-500 text-xs">Cliente en Google Maps</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="bg-dark-800 p-8 rounded-2xl border border-stone-800 relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center text-gold-400 mb-4 gap-1">
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                            <i class="fa-solid fa-star text-sm"></i>
+                        </div>
+                        <p class="text-stone-300 text-sm italic leading-relaxed mb-6">
+                            "Son unas chicas encantadoras y super educadas. Hacen un trabajo espectacular, yo estoy encantada con ellas y la atención que siempre brindan."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-stone-800/60">
+                        <div class="w-10 h-10 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center font-bold text-sm">
+                            LC
+                        </div>
+                        <div>
+                            <h4 class="text-white text-sm font-semibold">laura cuadrado conde</h4>
+                            <span class="text-stone-500 text-xs">Cliente en Google Maps</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact Section -->
+    <section id="contacto" class="py-24 bg-dark-800 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Info Column -->
+                <div class="lg:col-span-5 flex flex-col justify-between">
+                    <div>
+                        <span class="text-gold-400 text-xs uppercase tracking-widest font-semibold">Contacto &amp; Citas</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl text-white mt-2 mb-6">Visítanos en Medina del Campo</h2>
+                        <p class="text-stone-300 text-sm font-light mb-8">
+                            Estamos convenientemente ubicadas para atender a nuestras clientas de Medina del Campo, Brahojos de Medina y alrededores. Pide tu cita telefónica o por email.
+                        </p>
+
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 flex-shrink-0 mt-1">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white text-sm font-medium">Dirección Exacta</h4>
+                                    <p class="text-stone-400 text-xs mt-1">C. Artillería, 25, 47400 Medina del Campo, Valladolid, España</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 flex-shrink-0 mt-1">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white text-sm font-medium">Teléfono de Citas</h4>
+                                    <a href="tel:601509011" class="text-gold-400 hover:underline text-sm font-semibold mt-1 block">601 50 90 11</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 flex-shrink-0 mt-1">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white text-sm font-medium">Correo Electrónico</h4>
+                                    <a href="mailto:recaudanet@queretaro.gob.mx" class="text-stone-300 hover:text-gold-400 text-xs mt-1 block">recaudanet@queretaro.gob.mx</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 flex-shrink-0 mt-1">
+                                    <i class="fa-solid fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white text-sm font-medium">Horario de Atención</h4>
+                                    <p class="text-stone-400 text-xs mt-1">Lunes a Viernes: 10:00 - 20:00 h</p>
+                                    <p class="text-stone-400 text-xs">Sábados: 09:00 - 14:00 h (Bajo Cita Previa)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-stone-800">
+                        <a href="tel:601509011" class="w-full inline-flex items-center justify-center py-4 bg-gold-500 hover:bg-gold-400 text-dark-900 text-xs font-bold uppercase tracking-widest rounded-full transition-all shadow-lg shadow-gold-500/20">
+                            <i class="fa-solid fa-calendar-check mr-2 text-base"></i> Reservar Cita Ahora
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Interactive Map -->
+                <div class="lg:col-span-7 h-[420px] lg:h-auto rounded-2xl overflow-hidden border border-stone-700 shadow-2xl relative">
+                    <iframe src="https://www.google.com/maps?q=H3%20Est%C3%A9tica%20y%20SPA%20C.%20Artiller%C3%ADa%2C%2025%2C%2047400%20Medina%20del%20Campo%2C%20Valladolid%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Call CTA -->
+    <a href="tel:601509011" class="fixed bottom-6 right-6 z-50 bg-gold-500 hover:bg-gold-400 text-dark-900 font-bold p-4 rounded-full shadow-2xl flex items-center gap-3 transition-transform duration-300 hover:scale-110 border-2 border-dark-900" aria-label="Reservar Cita por teléfono">
+        <i class="fa-solid fa-phone text-xl"></i>
+        <span class="hidden sm:inline text-xs uppercase tracking-widest font-extrabold pr-2">Reservar Cita</span>
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-dark-900 border-t border-stone-800 py-12 text-stone-400 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full border border-gold-500/40 flex items-center justify-center bg-dark-800">
+                    <span class="font-serif font-bold text-sm text-gold-500">H3</span>
+                </div>
+                <div>
+                    <span class="font-serif text-sm font-semibold text-white block">H3 Estética y SPA</span>
+                    <span class="text-[10px] text-stone-500">Medina del Campo • Brahojos de Medina</span>
+                </div>
+            </div>
+
+            <div class="text-center md:text-right text-stone-500 space-y-1">
+                <p>&copy; 2025 H3 Estética y SPA. Todos los derechos reservados.</p>
+                <p>C. Artillería, 25, 47400 Medina del Campo, Valladolid, España</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        const btn = id => document.getElementById(id);
+        const mobileMenuBtn = btn('mobile
