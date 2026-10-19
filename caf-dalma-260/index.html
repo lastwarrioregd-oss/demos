@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Dalma | Bar Restaurante en Gordoncillo, León</title>
+    <!-- Tailwind CSS (vía CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        terracota: '#994D1C',
+                        gourmetDark: '#1A120B',
+                        crema: '#FDFBF7',
+                        cremaOscura: '#F4ECE1',
+                        acentoOro: '#C5A880'
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #FDFBF7;
+            color: #1A120B;
+        }
+        h1, h2, h3, h4, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="bg-crema text-gourmetDark antialiased selection:bg-terracota selection:text-white">
+
+    <!-- Topbar Informativa -->
+    <div class="bg-gourmetDark text-crema text-xs py-2 px-4 border-b border-white/10">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <span><i class="fa-solid fa-location-dot text-acentoOro mr-1"></i> Plaza Mayor, 6, 24294 Gordoncillo, León</span>
+                <span class="hidden md:inline"><i class="fa-solid fa-clock text-acentoOro mr-1"></i> Abierto todos los días</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="tel:987757176" class="hover:text-acentoOro transition-colors"><i class="fa-solid fa-phone text-acentoOro mr-1"></i> 987 75 71 76</a>
+                <a href="mailto:jddhelp@profrac.com" class="hover:text-acentoOro transition-colors"><i class="fa-solid fa-envelope text-acentoOro mr-1"></i> jddhelp@profrac.com</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navegación Principal -->
+    <header class="sticky top-0 z-50 bg-crema/95 backdrop-blur-md border-b border-gourmetDark/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2">
+                <span class="text-2xl sm:text-3xl font-serif font-bold tracking-wider text-gourmetDark">Café <span class="text-terracota">Dalma</span></span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
+                <a href="#inicio" class="hover:text-terracota transition-colors">Inicio</a>
+                <a href="#experiencia" class="hover:text-terracota transition-colors">El Bar & Terraza</a>
+                <a href="#carta" class="hover:text-terracota transition-colors">Nuestra Carta</a>
+                <a href="#instalaciones" class="hover:text-terracota transition-colors">Instalaciones</a>
+                <a href="#opiniones" class="hover:text-terracota transition-colors">Reseñas</a>
+                <a href="#contacto" class="hover:text-terracota transition-colors">Ubicación</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="tel:987757176" class="hidden sm:inline-flex items-center justify-center bg-terracota text-white px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-terracota/90 transition shadow-md hover:shadow-lg">
+                    <i class="fa-solid fa-phone-volume mr-2"></i> Reservar Mesa
+                </a>
+                <button id="menu-btn" class="md:hidden text-gourmetDark text-2xl focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menú Móvil desplegable -->
+        <div id="mobile-menu" class="hidden md:hidden bg-crema border-b border-gourmetDark/10 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="block py-2 font-medium hover:text-terracota">Inicio</a>
+            <a href="#experiencia" class="block py-2 font-medium hover:text-terracota">El Bar & Terraza</a>
+            <a href="#carta" class="block py-2 font-medium hover:text-terracota">Nuestra Carta</a>
+            <a href="#instalaciones" class="block py-2 font-medium hover:text-terracota">Instalaciones</a>
+            <a href="#opiniones" class="block py-2 font-medium hover:text-terracota">Reseñas</a>
+            <a href="#contacto" class="block py-2 font-medium hover:text-terracota">Ubicación</a>
+            <a href="tel:987757176" class="w-full text-center block bg-terracota text-white py-3 rounded-full font-semibold mt-4">
+                <i class="fa-solid fa-phone-volume mr-2"></i> Reservar Mesa
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative min-h-[85vh] flex items-center justify-center bg-gourmetDark overflow-hidden">
+        <!-- Imagen de fondo con overlay y respaldo infalible -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://scontent-atl3-2.xx.fbcdn.net/v/t39.30808-1/309584206_473706108130644_2533465260156418664_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx720x720&amp;ctp=s720x720&amp;_nc_cat=105&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=DAJIsoXUB7EQ7kNvwGF2H10&amp;_nc_oc=AdpQeeTLtWewIFUabNtVkfEubsCgdhj8S7fddZZei_5hOHgXlsVqOpumxOP9jNwz-58&amp;_nc_zt=24&amp;_nc_ht=scontent-atl3-2.xx&amp;_nc_gid=W-ed-YUl_nByQvltM-FjfA&amp;_nc_ss=7b289&amp;oh=00_AQPawWGRaCj7Scp4I9uGyJx7yT9thoPmqYkF9oGt82KxTA&amp;oe=6ADC0BAF" 
+                 alt="Café Dalma fachada y ambiente" 
+                 class="w-full h-full object-cover opacity-40 scale-105 animate-fade"
+                 referrerpolicy="no-referrer" 
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+            <div class="absolute inset-0 bg-gradient-to-t from-gourmetDark via-gourmetDark/60 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 text-center py-24">
+            <span class="inline-block bg-acentoOro/20 text-acentoOro border border-acentoOro/40 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold tracking-widest uppercase mb-6 backdrop-blur-sm">
+                Plaza Mayor de Gordoncillo, León
+            </span>
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-serif font-bold text-crema tracking-tight mb-6 leading-tight">
+                Tradición, Vinos de la Tierra y <span class="italic text-acentoOro">Buen Ambiente</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-crema/80 max-w-2xl mx-auto font-light mb-10 leading-relaxed">
+                Disfruta de nuestra fantástica terraza en el corazón del pueblo, excelentes vinos locales, deliciosas tapas y comidas caseras elaboradas por encargo.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="tel:987757176" class="w-full sm:w-auto bg-terracota text-white px-8 py-4 rounded-full font-bold text-base hover:bg-terracota/90 transition shadow-xl transform hover:-translate-y-0.5">
+                    <i class="fa-solid fa-phone-volume mr-2"></i> Reservar Mesa
+                </a>
+                <a href="#carta" class="w-full sm:w-auto bg-white/10 backdrop-blur-md text-crema border border-white/20 px-8 py-4 rounded-full font-bold text-base hover:bg-white/20 transition">
+                    Ver Especialidades
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Experiencia / Introducción -->
+    <section id="experiencia" class="py-24 bg-crema">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-terracota font-semibold tracking-wider uppercase text-sm block mb-2">Punto de encuentro en Gordoncillo</span>
+                    <h2 class="text-3xl sm:text-5xl font-serif font-bold text-gourmetDark mb-6 leading-tight">
+                        El lugar perfecto para degustar el excelente vino del pueblo
+                    </h2>
+                    <p class="text-gourmetDark/80 text-lg mb-6 leading-relaxed">
+                        Situados estratégicamente en la Plaza Mayor frente al ayuntamiento, en <strong>Café Dalma</strong> ofrecemos una experiencia auténtica de bar-restaurante tradicional castellano. Ya sea para relajarte con un vino de la tierra en nuestra magnifica terraza o para encargar una comida especial, aquí siempre te sentirás como en casa.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6 pt-4 border-t border-gourmetDark/10">
+                        <div>
+                            <h3 class="font-serif font-bold text-2xl text-terracota mb-1">Terraza</h3>
+                            <p class="text-sm text-gourmetDark/70">Ubicación privilegiada en la plaza principal.</p>
+                        </div>
+                        <div>
+                            <h3 class="font-serif font-bold text-2xl text-terracota mb-1">Por Encargo</h3>
+                            <p class="text-sm text-gourmetDark/70">Comidas a petición y menús personalizados.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+                        <img src="https://scontent-atl3-2.xx.fbcdn.net/v/t39.30808-1/309584206_473706108130644_2533465260156418664_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx720x720&amp;ctp=s720x720&amp;_nc_cat=105&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=DAJIsoXUB7EQ7kNvwGF2H10&amp;_nc_oc=AdpQeeTLtWewIFUabNtVkfEubsCgdhj8S7fddZZei_5hOHgXlsVqOpumxOP9jNwz-58&amp;_nc_zt=24&amp;_nc_ht=scontent-atl3-2.xx&amp;_nc_gid=W-ed-YUl_nByQvltM-FjfA&amp;_nc_ss=7b289&amp;oh=00_AQPawWGRaCj7Scp4I9uGyJx7yT9thoPmqYkF9oGt82KxTA&amp;oe=6ADC0BAF" 
+                             alt="Terraza Café Dalma" 
+                             class="w-full h-[420px] object-cover hover:scale-105 transition-transform duration-700"
+                             referrerpolicy="no-referrer"
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 bg-gourmetDark text-crema p-6 rounded-2xl shadow-xl hidden sm:block max-w-xs border border-white/10">
+                        <p class="font-serif italic text-acentoOro text-lg mb-1">"Visita imprescindible cada vez que paso por el pueblo."</p>
+                        <span class="text-xs text-crema/60">- Mariano Castro, cliente verificado</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Carta y Especialidades -->
+    <section id="carta" class="py-24 bg-cremaOscura/50 border-y border-gourmetDark/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-terracota font-semibold tracking-wider uppercase text-sm block mb-2">Gastronomía y Sabor</span>
+                <h2 class="text-3xl sm:text-5xl font-serif font-bold text-gourmetDark mb-4">Nuestra Carta y Especialidades</h2>
+                <p class="text-gourmetDark/80">Productos de primera calidad, caldos de la tierra y preparaciones caseras pensadas para compartir.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Plato 1 -->
+                <div class="bg-crema p-8 rounded-2xl shadow-sm hover:shadow-md transition border border-gourmetDark/10 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="font-serif font-bold text-xl text-gourmetDark">Tabla de Quesos y Embutidos</h3>
+                            <span class="bg-terracota/10 text-terracota text-xs font-bold px-2.5 py-1 rounded-full">Recomendado</span>
+                        </div>
+                        <p class="text-gourmetDark/70 text-sm mb-6 leading-relaxed">
+                            Selección generosa de embutidos tradicionales y quesos curados artesanales. Suficiente para alimentar y disfrutar entre cuatro personas.
+                        </p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-gourmetDark/10 text-sm font-semibold text-terracota">
+                        <span><i class="fa-solid fa-utensils mr-1"></i> Para compartir</span>
+                        <span>Ideal con vino</span>
+                    </div>
+                </div>
+
+                <!-- Plato 2 -->
+                <div class="bg-crema p-8 rounded-2xl shadow-sm hover:shadow-md transition border border-gourmetDark/10 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="font-serif font-bold text-xl text-gourmetDark">Vinos de la Tierra</h3>
+                            <span class="bg-acentoOro/25 text-gourmetDark text-xs font-bold px-2.5 py-1 rounded-full">Bodega Local</span>
+                        </div>
+                        <p class="text-gourmetDark/70 text-sm mb-6 leading-relaxed">
+                            Excelente selección de vinos de Gordoncillo. Perfectos para tomar en nuestra animada terraza frente al ayuntamiento.
+                        </p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-gourmetDark/10 text-sm font-semibold text-terracota">
+                        <span><i class="fa-solid fa-wine-glass mr-1"></i> Denominación local</span>
+                        <span>Frescos y aromáticos</span>
+                    </div>
+                </div>
+
+                <!-- Plato 3 -->
+                <div class="bg-crema p-8 rounded-2xl shadow-sm hover:shadow-md transition border border-gourmetDark/10 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="font-serif font-bold text-xl text-gourmetDark">Garbanzos Espectaculares</h3>
+                            <span class="bg-terracota/10 text-terracota text-xs font-bold px-2.5 py-1 rounded-full">Estrella</span>
+                        </div>
+                        <p class="text-gourmetDark/70 text-sm mb-6 leading-relaxed">
+                            Plato de cuchara tradicional elaborado a fuego lento con mimo y recetas de antaño. Muy elogiado por nuestros visitantes.
+                        </p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-gourmetDark/10 text-sm font-semibold text-terracota">
+                        <span><i class="fa-solid fa-fire mr-1"></i> Casero</span>
+                        <span>Sabor auténtico</span>
+                    </div>
+                </div>
+
+                <!-- Plato 4 -->
+                <div class="bg-crema p-8 rounded-2xl shadow-sm hover:shadow-md transition border border-gourmetDark/10 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="font-serif font-bold text-xl text-gourmetDark">Comidas por Encargo</h3>
+                            <span class="bg-acentoOro/25 text-gourmetDark text-xs font-bold px-2.5 py-1 rounded-full">A medida</span>
+                        </div>
+                        <p class="text-gourmetDark/70 text-sm mb-6 leading-relaxed">
+                            Preparamos comidas completas a petición para grupos, familias o celebraciones especiales bajo reserva previa.
+                        </p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-gourmetDark/10 text-sm font-semibold text-terracota">
+                        <span><i class="fa-solid fa-calendar-check mr-1"></i> Bajo reserva</span>
+                        <span>Llámanos</span>
+                    </div>
+                </div>
+
+                <!-- Plato 5 -->
+                <div class="bg-crema p-8 rounded-2xl shadow-sm hover:shadow-md transition border border-gourmetDark/10 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="font-serif font-bold text-xl text-gourmetDark">Tapas Variadas</h3>
+                            <span class="bg-terracota/10 text-terracota text-xs font-bold px-2.5 py-1 rounded-full">Cortesía</span>
+                        </div>
+                        <p class="text-gourmetDark/70 text-sm mb-6 leading-relaxed">
+                            Acompaña tu consumición con nuestras tradicionales tapas de cortesía elaboradas diariamente en el bar.
+                        </p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-gourmetDark/10 text-sm font-semibold text-terracota">
+                        <span><i class="fa-solid fa-plate-wheat mr-1"></i> Del día</span>
+                        <span>Buen producto</span>
+                    </div>
+                </div>
+
+                <!-- Plato 6 -->
+                <div class="bg-gourmetDark text-crema p-8 rounded-2xl shadow-lg flex flex-col justify-between">
+                    <div>
+                        <span class="text-acentoOro text-xs font-bold tracking-widest uppercase block mb-2">Reserva tu experiencia</span>
+                        <h3 class="font-serif font-bold text-2xl mb-4 text-crema">¿Quieres encargar una comida especial?</h3>
+                        <p class="text-crema/80 text-sm mb-6 leading-relaxed">
+                            Llámanos directamente para coordinar tu menú a petición o reservar tu mesa en nuestra terraza de la Plaza Mayor.
+                        </p>
+                    </div>
+                    <a href="tel:987757176" class="w-full bg-terracota text-white text-center py-3.5 rounded-full font-bold text-sm hover:bg-terracota/90 transition shadow-md">
+                        <i class="fa-solid fa-phone mr-2"></i> 987 75 71 76
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Galería / Instalaciones -->
+    <section id="instalaciones" class="py-24 bg-crema">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-terracota font-semibold tracking-wider uppercase text-sm block mb-2">Conoce Nuestro Espacio</span>
+                <h2 class="text-3xl sm:text-5xl font-serif font-bold text-gourmetDark mb-4">Nuestras Instalaciones y Terraza</h2>
+                <p class="text-gourmetDark/80">Un ambiente acogedor en pleno centro neurálgico de Gordoncillo.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="rounded-2xl overflow-hidden shadow-md group h-80">
+                    <img src="https://scontent-atl3-2.xx.fbcdn.net/v/t39.30808-1/309584206_473706108130644_2533465260156418664_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx720x720&amp;ctp=s720x720&amp;_nc_cat=105&amp;ccb=1-7&amp;_nc_sid=3ab345&amp;_nc_ohc=DAJIsoXUB7EQ7kNvwGF2H10&amp;_nc_oc=AdpQeeTLtWewIFUabNtVkfEubsCgdhj8S7fddZZei_5hOHgXlsVqOpumxOP9jNwz-58&amp;_nc_zt=24&amp;_nc_ht=scontent-atl3-2.xx&amp;_nc_gid=W-ed-YUl_nByQvltM-FjfA&amp;_nc_ss=7b289&amp;oh=00_AQPawWGRaCj7Scp4I9uGyJx7yT9thoPmqYkF9oGt82KxTA&amp;oe=6ADC0BAF" 
+                         alt="Café Dalma Vista Principal" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-md group h-80">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80" 
+                         alt="Ambiente interior bar restaurante" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-md group h-80">
+                    <img src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=1200&q=80" 
+                         alt="Vinos y tapas Café Dalma" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80';">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Opiniones Reales Verificadas -->
+    <section id="opiniones" class="py-24 bg-gourmetDark text-crema relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-acentoOro font-semibold tracking-wider uppercase text-sm block mb-2">Opiniones Reales</span>
+                <h2 class="text-3xl sm:text-5xl font-serif font-bold text-crema mb-4">Lo que dicen nuestros clientes</h2>
+                <p class="text-crema/70">Experiencias reales compartidas por visitantes en Google Maps y portales de opinión.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Reseña 1 -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-acentoOro mb-4 gap-1 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-crema/90 text-sm italic mb-6 leading-relaxed">
+                            "Lugar para degustar el excelente vino del pueblo. Recomiendo pedir la tabla de quesos y embutidos, suficiente para alimentar a cuatro personas. Por encargo, te hacen comidas a petición. Visita imprescindible cada vez que paso por el pueblo."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                        <div class="w-10 h-10 rounded-full bg-terracota flex items-center justify-center font-bold text-white">MC</div>
+                        <div>
+                            <h4 class="font-bold text-sm text-crema">Mariano Castro</h4>
+                            <span class="text-xs text-crema/60">Google Local Guide</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 2 -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-acentoOro mb-4 gap-1 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-crema/90 text-sm italic mb-6 leading-relaxed">
+                            "Buena terraza en la plaza principal del pueblo, en frente del ayuntamiento, buen sitio para relajarse y tomar un vino de la tierra."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                        <div class="w-10 h-10 rounded-full bg-terracota flex items-center justify-center font-bold text-white">DJ</div>
+                        <div>
+                            <h4 class="font-bold text-sm text-crema">Diego Jimenez</h4>
+                            <span class="text-xs text-crema/60">Google Maps</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 3 -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-acentoOro mb-4 gap-1 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-crema/90 text-sm italic mb-6 leading-relaxed">
+                            "Comimos en la terraza y estupendamente. La dueña super amable, aunque era tarde nos ofreció una comida muy rica. Los garbanzos espectaculares."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                        <div class="w-10 h-10 rounded-full bg-terracota flex items-center justify-center font-bold text-white">LT</div>
+                        <div>
+                            <h4 class="font-bold text-sm text-crema">Casa Rural Los Tulipanes</h4>
+                            <span class="text-xs text-crema/60">Google Maps</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Ubicación y Contacto -->
+    <section id="contacto" class="py-24 bg-crema">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-terracota font-semibold tracking-wider uppercase text-sm block mb-2">Encuéntranos</span>
+                <h2 class="text-3xl sm:text-5xl font-serif font-bold text-gourmetDark mb-4">Visítanos en Gordoncillo</h2>
+                <p class="text-gourmetDark/80">Ven a disfrutar de nuestra ubicación privilegiada en plena Plaza Mayor.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="bg-cremaOscura/60 p-8 sm:p-10 rounded-3xl border border-gourmetDark/10 shadow-sm">
+                    <h3 class="font-serif font-bold text-2xl text-gourmetDark mb-6">Información de Contacto</h3>
+                    
+                    <ul class="space-y-6 text-gourmetDark/80">
+                        <li class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-terracota/10 text-terracota flex items-center justify-center shrink-0 text-lg">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <strong class="block text-gourmetDark font-semibold mb-1">Dirección Exacta</strong>
+                                <p class="text-sm">Plaza Mayor, 6, 24294 Gordoncillo, León, España</p>
+                            </div>
+                        </li>
+
+                        <li class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-terracota/10 text-terracota flex items-center justify-center shrink-0 text-lg">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <strong class="block text-gourmetDark font-semibold mb-1">Teléfono de Reservas</strong>
+                                <a href="tel:987757176" class="text-sm text-terracota font-bold hover:underline">987 75 71 76</a>
+                            </div>
+                        </li>
+
+                        <li class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-terracota/10 text-terracota flex items-center justify-center shrink-0 text-lg">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <strong class="block text-gourmetDark font-semibold mb-1">Correo Electrónico</strong>
+                                <a href="mailto:jddhelp@profrac.com" class="text-sm text-terracota font-bold hover:underline">jddhelp@profrac.com</a>
+                            </div>
+                        </li>
+
+                        <li class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-terracota/10 text-terracota flex items-center justify-center shrink-0 text-lg">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <strong class="block text-gourmetDark font-semibold mb-1">Horario</strong>
+                                <p class="text-sm">Abierto todos los días. Servicio de comidas por encargo.</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="mt-8 pt-8 border-t border-gourmetDark/10">
+                        <a href="tel:987757176" class="w-full block text-center bg-terracota text-white py-4 rounded-full font-bold text-sm hover:bg-terracota/90 transition shadow-md">
+                            <i class="fa-solid fa-phone-volume mr-2"></i> Reservar Mesa / Encargar Comida
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mapa interactivo obligatorio -->
+                <div class="rounded-3xl overflow-hidden shadow-xl border-4 border-white bg-white h-[420px]">
+                    <iframe src="https://www.google.com/maps?q=Caf%C3%A9%20Dalma%20Plaza%20Mayor%2C%206%2C%2024294%20Gordoncillo%2C%20Le%C3%B3n%2C%20Espa%C3%B1a&output=embed" width="100%" height="380" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gourmetDark text-crema py-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <span class="text-2xl font-serif font-bold tracking-wider text-crema">Café <span class="text-terracota">Dalma</span></span>
+                <p class="text-xs text-crema/60 mt-1">Bar restaurante tradicional en Plaza Mayor, Gordoncillo (León).</p>
+            </div>
+            <div class="text-xs text-crema/60 text-center">
+                &copy; <script>document.write(new Date().getFullYear())</script> Café Dalma. Todos los derechos reservados.
+            </div>
+            <div class="flex items-center gap-4 text-sm">
+                <a href="tel:987757176" class="bg-terracota text-white px-4 py-2 rounded-full font-bold hover:bg-terracota/90 transition">
+                    <i class="fa-solid fa-phone mr-1"></i> 987 75 71 76
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script sencillo para menú móvil -->
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú al hacer click en un enlace del menú móvil
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
